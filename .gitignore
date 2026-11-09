@@ -1,0 +1,10 @@
+# Database Production Replica Dumps (10GB+ exceeds GitHub 100MB limit)
+bi_dump_*.sql
+*.dump
+*.sql.gz
+*.sql.tar.gz
+
+# OS & Environment Artifacts
+Thumbs.db
+.DS_Store
+*.tmp
