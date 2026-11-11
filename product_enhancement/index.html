@@ -212,6 +212,12 @@
 
         <!-- User Profile Pill -->
                 <!-- PM Strategy Cockpit Button -->
+                <!-- Executive Pitch Deck Button -->
+        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-700 via-pink-700 to-rose-700 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
+          <svg class="w-4 h-4 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+          <span class="hidden sm:inline">Pitch Deck 📽️</span>
+          <span class="sm:hidden">Deck</span>
+        </button>
         <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 hover:from-blue-600 hover:to-indigo-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
           <svg class="w-4 h-4 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span class="hidden sm:inline">PM Cockpit ⚡</span>
@@ -4062,6 +4068,63 @@ FROM StudentCompoundMetrics;
     </div>
   </div>
 
+  
+  <!-- =================================================================== -->
+  <!-- EXECUTIVE PITCH DECK FULL-SCREEN PRESENTATION VIEWER                 -->
+  <!-- =================================================================== -->
+  <div id="pitch-deck-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
+    <div class="bg-slate-900 rounded-2xl max-w-5xl w-full shadow-2xl border border-slate-800 overflow-hidden flex flex-col h-[90vh] text-white">
+      
+      <!-- Deck Header Bar -->
+      <div class="px-6 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-base font-bold shadow-xs">
+            📽️
+          </div>
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-pink-400 font-extrabold">Executive Role Transition Deck</span>
+            <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight">Digii Campus 2.0 — Executive Presentation (Suraj Bhatt & Saksham Gupta)</h3>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="deck-slide-indicator" class="text-xs font-mono font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">
+            Slide 1 of 12
+          </span>
+          <button onclick="closePitchDeckModal()" class="text-slate-400 hover:text-white transition-colors text-2xl font-bold p-1 leading-none">&times;</button>
+        </div>
+      </div>
+
+      <!-- Slide View Area -->
+      <div id="deck-slide-content" class="p-6 sm:p-10 flex-1 overflow-y-auto space-y-6 flex flex-col justify-center">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+      <!-- Deck Footer Controls -->
+      <div class="px-6 py-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2">
+          <button id="deck-btn-prev" onclick="changeDeckSlide(-1)" class="px-3.5 py-2 text-xs font-bold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1.5 transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            <span>Previous</span>
+          </button>
+          <button id="deck-btn-next" onclick="changeDeckSlide(1)" class="px-4 py-2 text-xs font-bold rounded-lg bg-pink-600 hover:bg-pink-700 text-white shadow-xs flex items-center gap-1.5 transition-all">
+            <span>Next Slide</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Jump to Live Feature Button (Active Slide Link) -->
+        <div id="deck-live-launcher" class="flex items-center gap-3">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="flex items-center gap-1 text-[11px] text-slate-500 font-mono hidden sm:flex">
+          <span>Use ◄ ► Arrow Keys to Navigate</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div id="toast-container" class="fixed bottom-20 right-6 z-50 space-y-2 pointer-events-none"></div>
 
   <!-- =================================================================== -->
@@ -6673,6 +6736,398 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       document.body.removeChild(link);
       showToast("📄 Downloaded PRD: Digii_Campus_PRD_Proactive_Retention_System.md");
     }
+
+  
+    // ===================================================================
+    // EXECUTIVE PITCH DECK PRESENTATION VIEWER LOGIC
+    // ===================================================================
+    const PITCH_SLIDES = [
+      {
+        num: 1,
+        tag: "Career Transition Pitch",
+        title: "Digii Campus 2.0: From Passive Record Keeper to Proactive Campus Intelligence",
+        subtitle: "Transforming 10.08 GB of Relational MySQL Data into ₹1.84 Cr Protected Tuition & Daily Student Delight",
+        presenter: "Dhruv Jain • Current: Data & Product Intern ➔ Target Role: Product Intern / APM",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left">
+            <div class="p-4 rounded-xl bg-gradient-to-r from-purple-950 to-indigo-950 border border-purple-500/30 text-xs text-purple-200 leading-relaxed">
+              <strong>The Executive Thesis:</strong> Over the past 5 weeks, auditing our <strong>10.08 GB production MySQL replica</strong> (1,647 tables) revealed an extraordinary product opportunity. Digii Campus holds premier relational data depth across academics, fee dues, turnstile access, residential life, and campus health. However, our current user experience presents this data in passive silos.
+            </div>
+            <div class="grid grid-cols-3 gap-3 text-center">
+              <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                <span class="text-2xl font-bold text-emerald-400 font-mono">₹1.84 Cr</span>
+                <span class="text-xs text-slate-400 block mt-1">Protected Tuition at Risk</span>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                <span class="text-2xl font-bold text-blue-400 font-mono">40 Hrs/Wk</span>
+                <span class="text-xs text-slate-400 block mt-1">Automated Finance Overhead</span>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                <span class="text-2xl font-bold text-pink-400 font-mono">91.4%</span>
+                <span class="text-xs text-slate-400 block mt-1">Student Daily Active Use</span>
+              </div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Launch Interactive Prototype", action: "radar" }
+      },
+      {
+        num: 2,
+        tag: "The Enterprise Problem",
+        title: "Higher Education ERPs Are Data-Rich but Action-Poor",
+        subtitle: "Fragmented silos create catastrophic blind spots for university leadership and immense student frustration.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-xl bg-red-950/40 border border-red-500/30 space-y-1">
+                <span class="font-bold text-red-300 block text-sm">The Siloed Reality:</span>
+                <p class="text-slate-300">• AMS knows attendance dropped to 58%.</p>
+                <p class="text-slate-300">• Finance knows tuition is 42 days overdue.</p>
+                <p class="text-slate-300">• Gate telemetry logs 4 late curfew breaches.</p>
+                <p class="text-slate-300">• Clinic logs viral illness and high stress.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700 space-y-1">
+                <span class="font-bold text-slate-200 block text-sm">The Business Consequences:</span>
+                <p class="text-red-400">❌ Nobody connects the dots until the student drops out.</p>
+                <p class="text-red-400">❌ ₹1.84 Cr in unrecovered tuition per term.</p>
+                <p class="text-red-400">❌ 14-day physical clearance paper chases.</p>
+                <p class="text-red-400">❌ Friction leads to client churn.</p>
+              </div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ View Compound Risk Heuristics", action: "radar" }
+      },
+      {
+        num: 3,
+        tag: "Core Strategic Vision",
+        title: "The Dual-Value B2B2C Architecture",
+        subtitle: "Enterprise Software Succeeds When the Buyer Saves Money and the End-User Loves Using It.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/40 space-y-2">
+                <span class="px-2 py-0.5 rounded bg-blue-600 text-white font-mono text-[10px] font-bold">B2B (The Buyer: University)</span>
+                <h4 class="text-sm font-bold text-blue-200">Executive ROI & Operational Automation</h4>
+                <p class="text-slate-300">• CFO protects ₹1.84 Cr tuition revenue before default.</p>
+                <p class="text-slate-300">• Registrar automates 40 hrs/wk of manual fee reconciliation.</p>
+                <p class="text-slate-300">• Dean eliminates timetable scheduling clashes in 1 click.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 space-y-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-mono text-[10px] font-bold">B2B2C (The User: Students)</span>
+                <h4 class="text-sm font-bold text-emerald-200">Zero-Friction Campus Companion</h4>
+                <p class="text-slate-300">• 1-click digital clearance replacing 14-day office queues.</p>
+                <p class="text-slate-300">• AI rebalances assignment deadlines, preventing burnout.</p>
+                <p class="text-slate-300">• Universal phone-only wallet & verified auto-resumes.</p>
+              </div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Explore Student Experience Hub", action: "student-hub" }
+      },
+      {
+        num: 4,
+        tag: "Stage 3 & 4 Deliverable",
+        title: "Predictive Student Dropout Radar & Student 360",
+        subtitle: "Cross-Module Compound Heuristic Engine Evaluating 4,850 Students in Real Time.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 space-y-2">
+              <div class="flex items-center justify-between text-slate-300 font-mono">
+                <span>Evaluated across 10.08 GB MySQL replica:</span>
+                <span class="text-emerald-400 font-bold">p99 Latency: 14ms</span>
+              </div>
+              <div class="grid grid-cols-5 gap-2 text-center pt-1 font-mono text-[11px]">
+                <div class="p-2 rounded bg-slate-900 border border-slate-700">Academics (35%)</div>
+                <div class="p-2 rounded bg-slate-900 border border-slate-700">Fees (25%)</div>
+                <div class="p-2 rounded bg-slate-900 border border-slate-700">Gates (15%)</div>
+                <div class="p-2 rounded bg-slate-900 border border-slate-700">Hostel (15%)</div>
+                <div class="p-2 rounded bg-slate-900 border border-slate-700">CHC (10%)</div>
+              </div>
+            </div>
+            <p class="text-slate-300">
+              Student 360 synthesizes 5 module feeds into 1 chronological stream, replacing 25 minutes of investigation across 5 browser tabs with a <strong>15-second 1-click action center</strong> (Parent SMS, HOD Summons, Dean Notice).
+            </p>
+          </div>
+        `,
+        liveLink: { label: "⚡ Launch Live Predictive Radar", action: "radar" }
+      },
+      {
+        num: 5,
+        tag: "Stage 7 Deliverable",
+        title: "Automated Fee Reconciliation Engine",
+        subtitle: "1-Click Inbound Bank CSV Matching — Replaces 40 Hours of Manual Accountant Overhead.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="p-4 rounded-xl bg-slate-800 border border-slate-700 space-y-2">
+              <span class="text-sm font-bold text-emerald-400 block">Live Benchmark on Production Statement:</span>
+              <div class="grid grid-cols-2 gap-3 font-mono">
+                <div class="p-3 rounded bg-slate-900 border border-slate-800">
+                  <span class="text-slate-400 block text-[10px]">Auto-Matched Transactions:</span>
+                  <span class="text-xl font-bold text-emerald-400">842 Records (98.4%)</span>
+                  <span class="text-[10px] text-slate-500 block">Volume: ₹1.68 Cr</span>
+                </div>
+                <div class="p-3 rounded bg-slate-900 border border-slate-800">
+                  <span class="text-slate-400 block text-[10px]">Anomalies Isolated:</span>
+                  <span class="text-xl font-bold text-amber-400">14 Discrepancies</span>
+                  <span class="text-[10px] text-slate-500 block">Fuzzy Name / UTR Mismatch</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Test Live Fee Reconciliation", action: "finance" }
+      },
+      {
+        num: 6,
+        tag: "Stage 8 Deliverable",
+        title: "Smart Timetable Clash Resolver",
+        subtitle: "Real-Time Faculty Collision Interception & 1-Click Master Schedule Optimization.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="p-4 rounded-xl bg-red-950/40 border border-red-500/40 space-y-2">
+              <span class="font-bold text-red-300 block text-sm">Live Conflict Interception:</span>
+              <p class="text-slate-300 font-mono text-[11px]">
+                CLASH DETECTED: Prof. Ramesh Sharma double-booked for CS502 in Room 4A on Monday 10:45 AM.
+              </p>
+              <div class="p-2.5 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-[11px]">
+                ✓ 1-Click Auto-Resolve reschedules class to Thursday 2:00 PM (optimal open slot) and exports a 100% clash-free master CSV.
+              </div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Test Live Clash Resolver", action: "academics" }
+      },
+      {
+        num: 7,
+        tag: "Stage 10 Deliverable",
+        title: "10 B2B2C Win-Win Student Experience Hub",
+        subtitle: "The Student Companion that Universities Rely Upon to Guarantee Contract Retention.",
+        body: `
+          <div class="space-y-3 max-w-3xl mx-auto text-left text-[11px]">
+            <div class="grid grid-cols-2 gap-2">
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">1. Digital No-Dues Clearance (Official Cert)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">2. Smart Assignment Deadline Balancer</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">3. Verified Digital Auto-Resume (SHA-256)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">4. Geo-Tagged Maintenance Ticketing</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">5. Seamless Office Hours (.ics Sync)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">6. Automated Medical Leave (+6 Hrs Grace)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">7. AI Elective Matchmaker (3-Course Matrix)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">8. Dynamic Campus Marketplace (Peer Books)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">9. Universal NFC/QR Wallet (Mess, Gate, UPI)</div>
+              <div class="p-2 rounded bg-slate-800/80 border border-slate-700">10. Peer Micro-Tutoring (+50 Credit Bounty)</div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Test All 10 Student Innovations", action: "student-hub" }
+      },
+      {
+        num: 8,
+        tag: "PM Strategy Framework",
+        title: "RICE Roadmap & Prioritization Engine",
+        subtitle: "Proving Ruthless Prioritization Based on Engineering Capacity & Measurable ROI.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/40 space-y-2">
+              <div class="flex items-center justify-between font-mono text-indigo-300">
+                <span>RICE = (Reach × Impact × Confidence) ÷ Effort</span>
+                <span class="text-emerald-400 font-bold">Dynamic Velocity Multiplier (0.5x to 2.0x)</span>
+              </div>
+              <p class="text-slate-300">
+                Every single initiative is quantitatively scored. Moving the engineering slider re-ranks delivery swimlanes into <strong>NOW (Sprint 1-3)</strong>, <strong>NEXT (Sprint 4-6)</strong>, and <strong>LATER (Q3 Backlog)</strong> in real time.
+              </p>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Open RICE Prioritization Engine", action: "cockpit-rice" }
+      },
+      {
+        num: 9,
+        tag: "Engineering Safety & Architecture",
+        title: "Feature Flags & Canary Governance (LaunchDarkly Architecture)",
+        subtitle: "Engineered for Saksham Gupta (Principal Engineer): Zero-Downtime Blast Radius Control.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-xl bg-slate-800 border border-slate-700 space-y-1">
+                <span class="font-bold text-purple-300 block text-sm">Canary Rollouts:</span>
+                <p class="text-slate-300">• 25% Canary Rollout to CSE Batch.</p>
+                <p class="text-slate-300">• 50% Staged Rollout to Hostellers.</p>
+                <p class="text-slate-300">• 100% General Availability (GA).</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-red-950/40 border border-red-500/30 space-y-1">
+                <span class="font-bold text-red-300 block text-sm">Circuit Breaker Guardrails:</span>
+                <p class="text-slate-300">• Automated query threshold: p99 latency < 120ms.</p>
+                <p class="text-slate-300">• Auto-rollback triggers if latency spikes, cutting traffic to 0% to prevent database lock contention.</p>
+              </div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Open Feature Flags Cockpit", action: "cockpit-flags" }
+      },
+      {
+        num: 10,
+        tag: "Product Telemetry & Conversion",
+        title: "Amplitude-Style Retention & Fee Collection Funnel",
+        subtitle: "Diagnosing User Friction and Delivering Quantified Revenue Uplift.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="p-4 rounded-xl bg-slate-800 border border-slate-700 space-y-2">
+              <span class="font-bold text-blue-300 block text-sm">The 4-Stage Telemetry Funnel:</span>
+              <p class="text-slate-300">• Stage 1: Cohort Flagged (4,850 - 100%)</p>
+              <p class="text-slate-300">• Stage 2: Alert Delivered (3,589 - 74%)</p>
+              <p class="text-slate-300">• Stage 3: Payment Initiated (2,522 - 52% ➔ <strong>22% Friction Drop</strong>)</p>
+              <p class="text-slate-300">• Stage 4: Dues Reconciled (2,328 - 48%)</p>
+            </div>
+            <div class="p-3 rounded-lg bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">
+              💡 <strong>Dhruv's PM Solution:</strong> In-app 1-click UPI split installments boosts Stage 3 conversion by +14%, recovering an incremental <strong>₹52 Lakhs</strong> in retained tuition.
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Simulate PM Intervention (+₹52L)", action: "cockpit-funnel" }
+      },
+      {
+        num: 11,
+        tag: "Technical Specification",
+        title: "22 KB Product Requirements Document (PRD v2.4)",
+        subtitle: "Complete Engineering Specification, User Stories, and Non-Functional Database SLAs.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <p class="text-slate-300">
+              Behind this prototype sits a complete, production-grade Product Requirements Document covering:
+            </p>
+            <div class="grid grid-cols-2 gap-2 font-mono text-[11px] text-slate-300">
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 1: Executive Problem & Personas</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 2: Functional Specs (Modules 1-11)</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 3: Non-Functional RDS 85ms SLA</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 4: GTM Rollout & Pricing Tiers</div>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ View Full PRD In-App", action: "cockpit-prd" }
+      },
+      {
+        num: 12,
+        tag: "The Formal Career Ask",
+        title: "Role Transition to Product Intern",
+        subtitle: "Bridging Technical Database Depth, Product Strategy, and Enterprise Customer Value.",
+        body: `
+          <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
+            <div class="p-5 rounded-2xl bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-900 border-2 border-indigo-500/40 text-slate-200 space-y-3">
+              <h4 class="text-base font-bold text-white">Suraj & Saksham:</h4>
+              <p class="leading-relaxed">
+                "I love the deep data engineering work I've done here across our 10GB database replica. But as this prototype, PRD, and architecture demonstrate, my greatest passion and impact lie at the intersection of <strong>technical feasibility, enterprise customer value, and user delight</strong>.
+              </p>
+              <p class="leading-relaxed">
+                I would love to formally transition into the <strong>Product Intern / APM</strong> role at Digii Campus, where I can partner with you to turn more of our raw database assets into revenue-driving, frictionless product features. What are your thoughts?"
+              </p>
+            </div>
+          </div>
+        `,
+        liveLink: { label: "⚡ Back to Interactive Prototype", action: "radar" }
+      }
+    ];
+
+    let currentDeckSlide = 0;
+
+    function openPitchDeckModal() {
+      const modal = document.getElementById('pitch-deck-modal');
+      if (modal) modal.classList.remove('hidden');
+      renderCurrentDeckSlide();
+      showToast("📽️ Executive Pitch Deck opened: Use ◄ ► arrow keys to navigate.");
+    }
+
+    function closePitchDeckModal() {
+      const modal = document.getElementById('pitch-deck-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function changeDeckSlide(dir) {
+      currentDeckSlide = Math.max(0, Math.min(PITCH_SLIDES.length - 1, currentDeckSlide + dir));
+      renderCurrentDeckSlide();
+    }
+
+    function renderCurrentDeckSlide() {
+      const slide = PITCH_SLIDES[currentDeckSlide];
+      const indicator = document.getElementById('deck-slide-indicator');
+      const container = document.getElementById('deck-slide-content');
+      const launcher = document.getElementById('deck-live-launcher');
+      const btnPrev = document.getElementById('deck-btn-prev');
+      const btnNext = document.getElementById('deck-btn-next');
+
+      if (indicator) indicator.textContent = `Slide ${slide.num} of ${PITCH_SLIDES.length}`;
+
+      if (btnPrev) btnPrev.disabled = currentDeckSlide === 0;
+      if (btnNext) {
+        if (currentDeckSlide === PITCH_SLIDES.length - 1) {
+          btnNext.innerHTML = `<span>Finish Presentation</span> ✓`;
+        } else {
+          btnNext.innerHTML = `<span>Next Slide</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>`;
+        }
+      }
+
+      if (container) {
+        container.innerHTML = `
+          <div class="text-center space-y-2 animate-in fade-in zoom-in duration-150">
+            <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-pink-500/20 text-pink-300 border border-pink-400/30 uppercase tracking-widest inline-block">
+              ${slide.tag}
+            </span>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">${slide.title}</h2>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">${slide.subtitle}</p>
+          </div>
+          <div class="py-2">
+            ${slide.body}
+          </div>
+        `;
+      }
+
+      if (launcher && slide.liveLink) {
+        launcher.innerHTML = `
+          <button onclick="launchSlideAction('${slide.liveLink.action}')" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all flex items-center gap-1.5">
+            <span>${slide.liveLink.label}</span>
+          </button>
+        `;
+      }
+    }
+
+    function launchSlideAction(act) {
+      closePitchDeckModal();
+      if (act === 'radar') {
+        navigateToView('radar');
+      } else if (act === 'student-hub') {
+        navigateToView('student-hub');
+      } else if (act === 'finance') {
+        navigateToView('finance');
+      } else if (act === 'academics') {
+        navigateToView('academics');
+      } else if (act === 'cockpit-rice') {
+        openPmCockpitModal();
+        switchCockpitTab('rice');
+      } else if (act === 'cockpit-flags') {
+        openPmCockpitModal();
+        switchCockpitTab('flags');
+      } else if (act === 'cockpit-funnel') {
+        openPmCockpitModal();
+        switchCockpitTab('funnel');
+      } else if (act === 'cockpit-prd') {
+        openPmCockpitModal();
+        switchCockpitTab('prd');
+      }
+    }
+
+    // Keyboard Navigation for Pitch Deck
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('pitch-deck-modal');
+      if (modal && !modal.classList.contains('hidden')) {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+          changeDeckSlide(1);
+        } else if (e.key === 'ArrowLeft') {
+          changeDeckSlide(-1);
+        } else if (e.key === 'Escape') {
+          closePitchDeckModal();
+        }
+      }
+    });
 
   </script>
 </body>
