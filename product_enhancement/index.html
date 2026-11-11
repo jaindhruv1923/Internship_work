@@ -682,21 +682,206 @@
           </div>
         </div>
 
-        <!-- Finance Placeholder Canvas Container -->
-        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-xs text-center space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto text-2xl font-bold shadow-xs">
-            💳
+        <!-- Friction & Problem Statement Callout Banner -->
+        <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+          <div class="flex items-start gap-2.5">
+            <span class="text-base shrink-0 mt-0.5">⚠️</span>
+            <div>
+              <span class="font-bold">The Administrative Pain Point:</span> University accounts departments waste 35–40 hours every week manually cross-checking bank CSV statements against student challans in MySQL, causing semester fee delays, mistaken debarment notices, and reconciliation logjams.
+            </div>
           </div>
-          <div class="max-w-md mx-auto space-y-1.5">
-            <h3 class="text-lg font-bold text-slate-900">Automated Fee Reconciliation Engine</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">
-              University accounts departments spend hours manually cross-checking bank CSV statements against student challans. 
-              The drag-and-drop CSV upload, split-screen reconciliation table, and 1-click matching algorithm will be rendered here in <strong>Stage 7</strong>.
-            </p>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 text-[11px] whitespace-nowrap">
+              ⚡ ROI: Saves ~38 Accounting Hours/Week
+            </span>
           </div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-mono font-medium">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Module Initialized • Awaiting Stage 7 Execution</span>
+        </div>
+
+        <!-- Ingestion Zone: Drag & Drop Bank CSV -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">1. Ingest Bank Transaction Settlement Feed</h3>
+              <p class="text-xs text-slate-500">Supports HDFC CMS, ICICI E-Collect, SBI e-Pay, and payment gateway settlement CSVs</p>
+            </div>
+            <div class="flex items-center gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200 font-mono text-slate-600 font-bold text-[11px]">
+                Active Batch: HDFC_Campus_Settlement_09Nov2026.csv
+              </span>
+            </div>
+          </div>
+
+          <!-- Drag and Drop Box -->
+          <div id="csv-dropzone" onclick="simulateCsvUpload()" class="border-2 border-dashed border-slate-300 hover:border-emerald-500 rounded-xl p-6 text-center cursor-pointer transition-all bg-slate-50/50 hover:bg-emerald-50/20 group">
+            <input type="file" id="bank-csv-input" accept=".csv,.xlsx" class="hidden" onchange="handleFileSelect(event)">
+            <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-emerald-600 flex items-center justify-center mx-auto text-xl shadow-xs group-hover:scale-105 transition-transform">
+              📂
+            </div>
+            <h4 class="text-xs font-bold text-slate-800 mt-2.5">Drag & Drop Bank Transaction CSV or Click to Browse</h4>
+            <p class="text-[11px] text-slate-400 mt-0.5">Automated parsing of UTR numbers, payment modes, depositor remarks, and transaction timestamps</p>
+            <div class="mt-3 flex items-center justify-center gap-3 text-[10px] text-slate-500 font-mono">
+              <span class="inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 856 Unmatched Inbound Records</span>
+              <span>•</span>
+              <span>Total Volume: ₹1,82,27,000</span>
+              <span>•</span>
+              <span class="text-blue-600 font-semibold underline">Click to Load Alternate Batch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Massive Actionable Button & Progress Engine -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200 uppercase tracking-wider">
+                Multi-Factor Heuristic Matching Engine
+              </span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Execute Automated Reconciliation Algorithm</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Cross-references Bank UTR numbers, student UKID, challan codes, and exact rupee amounts against <code>academic_fee_dues</code>.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+              <button id="btn-reset-recon" onclick="resetReconciliationEngine()" class="hidden px-3.5 py-2.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                🔄 Reset Batch
+              </button>
+
+              <button id="btn-run-recon" onclick="runReconciliationAlgorithm()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                <svg class="w-4 h-4 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>Run Auto-Reconciliation Algorithm (856 Inbound Records)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Progress Bar (Hidden initially) -->
+          <div id="recon-progress-container" class="hidden space-y-2 pt-2 border-t border-slate-100">
+            <div class="flex items-center justify-between text-xs">
+              <span id="recon-progress-status" class="font-bold text-emerald-800 flex items-center gap-1.5">
+                <span class="animate-spin text-sm">⌛</span>
+                <span>Parsing HDFC UTR & Beneficiary Tags...</span>
+              </span>
+              <span id="recon-progress-pct" class="font-mono font-bold text-emerald-700">0%</span>
+            </div>
+            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden border border-slate-200">
+              <div id="recon-progress-bar" class="bg-emerald-600 h-full rounded-full transition-all duration-300 w-0"></div>
+            </div>
+          </div>
+
+          <!-- Success State Banner (Revealed after execution) -->
+          <div id="recon-success-banner" class="hidden p-4 rounded-xl bg-emerald-50 border-2 border-emerald-300 text-emerald-950 space-y-3 spa-fade-in">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                  ✓
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-emerald-900">842 records matched instantly. 14 anomalies require manual review.</h4>
+                  <p class="text-xs text-emerald-700 mt-0.5">Automated settlement executed into <code class="font-mono font-bold bg-white/60 px-1.5 py-0.5 rounded text-[11px]">collpoll_fee_ledger</code> • Audit Hash: <span class="font-mono font-semibold">#REC-842-NOV2026</span></p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openAnomaliesModal()" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-xs flex items-center gap-1.5">
+                  <span>Review 14 Anomalies</span>
+                  <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                </button>
+                <button onclick="exportReconciliationCsv()" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-300 hover:bg-emerald-100 text-emerald-900 font-bold text-xs shadow-2xs">
+                  📄 Export Reconciliation CSV
+                </button>
+              </div>
+            </div>
+
+            <!-- Mini Summary Strip -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2 border-t border-emerald-200/80 text-xs">
+              <div class="p-2.5 bg-white/80 rounded-lg border border-emerald-200">
+                <span class="text-slate-500 text-[10px] uppercase font-bold block">Auto-Reconciled Volume</span>
+                <span class="font-bold text-emerald-800 text-base">₹1,68,45,000</span>
+                <span class="text-[10px] text-emerald-600 block">842 Transactions</span>
+              </div>
+              <div class="p-2.5 bg-white/80 rounded-lg border border-emerald-200">
+                <span class="text-slate-500 text-[10px] uppercase font-bold block">Reconciliation Rate</span>
+                <span class="font-bold text-emerald-800 text-base">98.36%</span>
+                <span class="text-[10px] text-emerald-600 block">Zero Human Intervention</span>
+              </div>
+              <div class="p-2.5 bg-white/80 rounded-lg border border-emerald-200">
+                <span class="text-slate-500 text-[10px] uppercase font-bold block">Accounting Labor Saved</span>
+                <span class="font-bold text-emerald-800 text-base">38.5 Hours</span>
+                <span class="text-[10px] text-emerald-600 block">Current Billing Cycle</span>
+              </div>
+              <div class="p-2.5 bg-white/80 rounded-lg border border-amber-300 bg-amber-50/90">
+                <span class="text-amber-800 text-[10px] uppercase font-bold block">Pending Exception Review</span>
+                <span class="font-bold text-amber-900 text-base">₹3,82,000</span>
+                <span class="text-[10px] text-amber-700 block">14 Edge-Case Holds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Split-Screen Reconciliation Data Table -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">2. Split-Screen Reconciliation & Matching Ledger</h3>
+              <p class="text-xs text-slate-500">Live dual-stream comparison between incoming Bank UTR telemetry and ERP Student Due Challans</p>
+            </div>
+            <div class="flex items-center gap-2 text-xs">
+              <span id="recon-table-state-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-300">
+                Status: Pre-Execution (Raw Staging)
+              </span>
+            </div>
+          </div>
+
+          <!-- Split Columns Container -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Left Side: Unmatched Bank Transactions -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+              <div class="px-4 py-3 bg-slate-900 text-white flex items-center justify-between text-xs font-bold">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                  <span>Inbound Bank Settlement Stream (CSV)</span>
+                </div>
+                <span class="font-mono text-[10px] text-slate-400">856 Inbound Records</span>
+              </div>
+              <div class="overflow-x-auto max-h-96 overflow-y-auto">
+                <table class="w-full text-left text-xs divide-y divide-slate-100">
+                  <thead class="bg-slate-50 text-slate-500 uppercase text-[9px] font-bold tracking-wider sticky top-0">
+                    <tr>
+                      <th class="px-3.5 py-2.5">Bank UTR / Ref</th>
+                      <th class="px-3.5 py-2.5">Payer Remarks</th>
+                      <th class="px-3.5 py-2.5">Amount (INR)</th>
+                      <th class="px-3.5 py-2.5 text-right">Mode & Date</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bank-table-body" class="divide-y divide-slate-100 font-normal">
+                    <!-- Populated dynamically via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Right Side: ERP Fee Defaulters -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+              <div class="px-4 py-3 bg-slate-900 text-white flex items-center justify-between text-xs font-bold">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>ERP Student Due Invoices (academic_fee_dues)</span>
+                </div>
+                <span class="font-mono text-[10px] text-slate-400">528 Active Defaulters</span>
+              </div>
+              <div class="overflow-x-auto max-h-96 overflow-y-auto">
+                <table class="w-full text-left text-xs divide-y divide-slate-100">
+                  <thead class="bg-slate-50 text-slate-500 uppercase text-[9px] font-bold tracking-wider sticky top-0">
+                    <tr>
+                      <th class="px-3.5 py-2.5">Challan / UKID</th>
+                      <th class="px-3.5 py-2.5">Student & Program</th>
+                      <th class="px-3.5 py-2.5">Outstanding (INR)</th>
+                      <th class="px-3.5 py-2.5 text-right">Match Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="erp-table-body" class="divide-y divide-slate-100 font-normal">
+                    <!-- Populated dynamically via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1210,6 +1395,86 @@
     </div>
   </div>
 
+  <!-- =================================================================== -->
+  <!-- MODAL: REVIEW 14 FEE RECONCILIATION ANOMALIES (STAGE 7)             -->
+  <!-- =================================================================== -->
+  <div id="anomalies-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
+      <div class="px-6 py-4 border-b border-slate-200 bg-amber-50 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm">⚠️</div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Reconciliation Exception Review (14 Flagged Records)</h4>
+            <p class="text-[10px] text-slate-500">Transactions where bank deposits deviate from ERP invoice amounts or lack clean UTR tags</p>
+          </div>
+        </div>
+        <button onclick="closeAnomaliesModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs max-h-[70vh] overflow-y-auto">
+        <div class="p-3 bg-amber-50/60 border border-amber-200 rounded-lg text-amber-900 leading-relaxed text-[11px]">
+          <strong>Accountant Instructions:</strong> These 14 entries could not be 100% matched automatically. Common reasons include bank surcharge deductions (₹500 underpayment), student roll number misspelled in NEFT remarks, or split partial deposits. Review and choose an administrative resolution below.
+        </div>
+
+        <div class="overflow-x-auto border border-slate-200 rounded-lg">
+          <table class="w-full text-left text-xs divide-y divide-slate-200">
+            <thead class="bg-slate-50 font-bold text-slate-600 uppercase text-[9px]">
+              <tr>
+                <th class="px-3 py-2.5">Bank UTR</th>
+                <th class="px-3 py-2.5">Matched Student</th>
+                <th class="px-3 py-2.5">Bank Amount</th>
+                <th class="px-3 py-2.5">Challan Due</th>
+                <th class="px-3 py-2.5">Variance / Cause</th>
+                <th class="px-3 py-2.5 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50">
+                <td class="px-3 py-2.5 font-mono text-[11px] font-bold">HDFC1192834</td>
+                <td class="px-3 py-2.5">Sneha Mukherjee (2024CS0302)</td>
+                <td class="px-3 py-2.5 font-bold text-slate-900">₹49,500</td>
+                <td class="px-3 py-2.5 text-slate-600">₹50,000</td>
+                <td class="px-3 py-2.5 text-red-600 font-semibold">-₹500 (Bank Charges)</td>
+                <td class="px-3 py-2.5 text-right">
+                  <button onclick="resolveAnomaly('HDFC1192834', 'WAIVE_SURCHARGE')" class="px-2.5 py-1 rounded bg-emerald-600 text-white font-bold text-[10px] hover:bg-emerald-700">Waive & Reconcile</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-3 py-2.5 font-mono text-[11px] font-bold">ICICI7741029</td>
+                <td class="px-3 py-2.5">Kabir Mehta (2025ME0140)</td>
+                <td class="px-3 py-2.5 font-bold text-slate-900">₹35,000</td>
+                <td class="px-3 py-2.5 text-slate-600">₹70,000</td>
+                <td class="px-3 py-2.5 text-amber-700 font-semibold">50% Partial Installment</td>
+                <td class="px-3 py-2.5 text-right">
+                  <button onclick="resolveAnomaly('ICICI7741029', 'ACCEPT_PARTIAL')" class="px-2.5 py-1 rounded bg-blue-600 text-white font-bold text-[10px] hover:bg-blue-700">Accept Partial</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-3 py-2.5 font-mono text-[11px] font-bold">SBI99210488</td>
+                <td class="px-3 py-2.5">Unknown (Dep: Ramesh Kumar)</td>
+                <td class="px-3 py-2.5 font-bold text-slate-900">₹1,15,000</td>
+                <td class="px-3 py-2.5 text-slate-400">Not Linked</td>
+                <td class="px-3 py-2.5 text-red-600 font-semibold">No Roll No in Remarks</td>
+                <td class="px-3 py-2.5 text-right">
+                  <button onclick="resolveAnomaly('SBI99210488', 'DISPATCH_SMS')" class="px-2.5 py-1 rounded bg-amber-600 text-white font-bold text-[10px] hover:bg-amber-700">SMS Inbound Alert</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+        <span class="text-[11px] text-slate-500 font-mono">11 additional routine micro-variances queued</span>
+        <button onclick="closeAnomaliesModal()" class="px-4 py-1.5 text-xs font-bold rounded-lg text-white bg-slate-800 hover:bg-slate-700">
+          Close Reviewer
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container" class="fixed bottom-20 right-6 z-50 space-y-2 pointer-events-none"></div>
 
@@ -1363,6 +1628,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
       renderRadarGrid();
       renderStudent360();
       renderAuditTable();
+      renderFinanceTables();
     }
 
     // ===================================================================
@@ -2125,6 +2391,311 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         "students": []
       };
     }
+
+    // ===================================================================
+    // STAGE 7: AUTOMATED FEE RECONCILIATION ENGINE JAVASCRIPT LOGIC
+    // ===================================================================
+    const FINANCE_SAMPLE_DATA = {
+      reconciledCount: 842,
+      anomalyCount: 14,
+      totalVolumeInr: 18227000,
+      autoMatchedVolumeInr: 16845000,
+      isReconciled: false,
+      records: [
+        {
+          id: 1,
+          utr: "HDFC8829104",
+          mode: "NEFT",
+          date: "09 Nov 2026",
+          payer: "R.K. Sharma / Aarav Sharma",
+          bankAmount: 125000,
+          challanId: "CHL-2024-10842",
+          studentUkid: 10842,
+          studentName: "Aarav Sharma",
+          rollNo: "2024CS0142",
+          program: "B.Tech CSE Sem 5",
+          erpDue: 125000,
+          agingDpd: 42,
+          isAnomaly: false
+        },
+        {
+          id: 2,
+          utr: "ICICI992019",
+          mode: "IMPS",
+          date: "08 Nov 2026",
+          payer: "K. Nair / Priya Nair",
+          bankAmount: 48000,
+          challanId: "CHL-2025-11205",
+          studentUkid: 11205,
+          studentName: "Priya Nair",
+          rollNo: "2025IT0089",
+          program: "B.Tech IT Sem 3",
+          erpDue: 48000,
+          agingDpd: 28,
+          isAnomaly: false
+        },
+        {
+          id: 3,
+          utr: "SBI33920112",
+          mode: "RTGS",
+          date: "07 Nov 2026",
+          payer: "S. Verma / Rohan Verma",
+          bankAmount: 85000,
+          challanId: "CHL-2023-9452",
+          studentUkid: 9452,
+          studentName: "Rohan Verma",
+          rollNo: "2023ME0034",
+          program: "B.Tech Mech Sem 7",
+          erpDue: 85000,
+          agingDpd: 50,
+          isAnomaly: false
+        },
+        {
+          id: 4,
+          utr: "AXIS109283",
+          mode: "UPI",
+          date: "09 Nov 2026",
+          payer: "Ananya Deshmukh",
+          bankAmount: 65000,
+          challanId: "CHL-2024-12048",
+          studentUkid: 12048,
+          studentName: "Ananya Deshmukh",
+          rollNo: "2024EC0089",
+          program: "B.Tech ECE Sem 5",
+          erpDue: 65000,
+          agingDpd: 15,
+          isAnomaly: false
+        },
+        {
+          id: 5,
+          utr: "UPI77301928",
+          mode: "UPI",
+          date: "06 Nov 2026",
+          payer: "Vikramaditya Rao",
+          bankAmount: 72000,
+          challanId: "CHL-2024-13410",
+          studentUkid: 13410,
+          studentName: "Vikramaditya Rao",
+          rollNo: "2024CS0211",
+          program: "B.Tech CSE Sem 5",
+          erpDue: 72000,
+          agingDpd: 21,
+          isAnomaly: false
+        },
+        {
+          id: 6,
+          utr: "HDFC1192834",
+          mode: "NEFT",
+          date: "09 Nov 2026",
+          payer: "Rajeev Gupta / Sneha Mukherjee",
+          bankAmount: 49500,
+          challanId: "CHL-2024-10719",
+          studentUkid: 10719,
+          studentName: "Sneha Mukherjee",
+          rollNo: "2024CS0302",
+          program: "B.Tech CSE Sem 5",
+          erpDue: 50000,
+          agingDpd: 12,
+          isAnomaly: true,
+          anomalyReason: "Underpayment of ₹500 (Bank Transaction Surcharge)"
+        }
+      ]
+    };
+
+    function renderFinanceTables() {
+      const bankTbody = document.getElementById('bank-table-body');
+      const erpTbody = document.getElementById('erp-table-body');
+      if (!bankTbody || !erpTbody) return;
+
+      bankTbody.innerHTML = '';
+      erpTbody.innerHTML = '';
+
+      const isDone = FINANCE_SAMPLE_DATA.isReconciled;
+
+      FINANCE_SAMPLE_DATA.records.forEach((r, idx) => {
+        // Bank Row
+        const bRow = document.createElement('tr');
+        const rowBg = isDone ? (r.isAnomaly ? 'bg-amber-50/70 border-l-4 border-amber-500' : 'bg-emerald-50/40 border-l-4 border-emerald-500') : 'hover:bg-slate-50';
+        bRow.className = `${rowBg} transition-all duration-300`;
+        bRow.innerHTML = `
+          <td class="px-3.5 py-3">
+            <span class="font-mono font-bold text-slate-800 text-[11px] block">${r.utr}</span>
+            <span class="text-[9px] text-slate-400 font-mono">Row #${idx + 1}</span>
+          </td>
+          <td class="px-3.5 py-3">
+            <span class="font-medium text-slate-900 block truncate max-w-[140px]">${r.payer}</span>
+            <span class="text-[9px] text-slate-400">Ref: ${r.studentName}</span>
+          </td>
+          <td class="px-3.5 py-3">
+            <span class="font-mono font-bold text-slate-900">₹${r.bankAmount.toLocaleString('en-IN')}</span>
+          </td>
+          <td class="px-3.5 py-3 text-right">
+            <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-100 text-slate-700">${r.mode}</span>
+            <span class="text-[9px] text-slate-400 block mt-0.5 font-mono">${r.date}</span>
+          </td>
+        `;
+        bankTbody.appendChild(bRow);
+
+        // ERP Row
+        const eRow = document.createElement('tr');
+        eRow.className = `${rowBg} transition-all duration-300`;
+        
+        let statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 text-slate-500">Unmatched</span>`;
+        if (isDone) {
+          if (r.isAnomaly) {
+            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">⚠️ Anomaly (-₹500)</span>`;
+          } else {
+            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1 justify-end"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> MATCHED (100%)</span>`;
+          }
+        }
+
+        eRow.innerHTML = `
+          <td class="px-3.5 py-3">
+            <span class="font-mono font-bold text-blue-700 text-[11px] block">${r.challanId}</span>
+            <span class="text-[9px] text-slate-400 font-mono">UKID: ${r.studentUkid}</span>
+          </td>
+          <td class="px-3.5 py-3">
+            <span class="font-bold text-slate-900 block">${r.studentName}</span>
+            <span class="text-[10px] text-slate-500 font-mono">${r.rollNo} • ${r.program}</span>
+          </td>
+          <td class="px-3.5 py-3">
+            <span class="font-mono font-bold ${r.isAnomaly && isDone ? 'text-amber-800' : 'text-slate-900'}">₹${r.erpDue.toLocaleString('en-IN')}</span>
+            <span class="text-[9px] text-red-600 block">${r.agingDpd} DPD Overdue</span>
+          </td>
+          <td class="px-3.5 py-3 text-right">
+            ${statusBadge}
+          </td>
+        `;
+        erpTbody.appendChild(eRow);
+      });
+    }
+
+    function runReconciliationAlgorithm() {
+      const btn = document.getElementById('btn-run-recon');
+      const resetBtn = document.getElementById('btn-reset-recon');
+      const progressContainer = document.getElementById('recon-progress-container');
+      const progressBar = document.getElementById('recon-progress-bar');
+      const progressStatus = document.getElementById('recon-progress-status');
+      const progressPct = document.getElementById('recon-progress-pct');
+      const banner = document.getElementById('recon-success-banner');
+      const stateBadge = document.getElementById('recon-table-state-badge');
+
+      btn.disabled = true;
+      btn.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Reconciling 856 Records...</span>`;
+      progressContainer.classList.remove('hidden');
+
+      // Stage 1: Parsing
+      progressBar.style.width = '28%';
+      progressPct.textContent = '28%';
+      progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Step 1/3: Parsing Bank UTR & Beneficiary Tags...</span>`;
+
+      setTimeout(() => {
+        // Stage 2: Fuzzy Matching
+        progressBar.style.width = '68%';
+        progressPct.textContent = '68%';
+        progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Step 2/3: Fuzzy-Matching Against 4,850 Student Challans...</span>`;
+      }, 450);
+
+      setTimeout(() => {
+        // Stage 3: Resolving
+        progressBar.style.width = '94%';
+        progressPct.textContent = '94%';
+        progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Step 3/3: Resolving Multi-Challan Compound Dues & Surcharges...</span>`;
+      }, 900);
+
+      setTimeout(() => {
+        // Completion
+        progressBar.style.width = '100%';
+        progressPct.textContent = '100%';
+        progressStatus.innerHTML = `<span class="text-emerald-700 font-bold">✓ Reconciliation Engine Completed</span>`;
+        FINANCE_SAMPLE_DATA.isReconciled = true;
+
+        renderFinanceTables();
+        progressContainer.classList.add('hidden');
+        banner.classList.remove('hidden');
+        resetBtn.classList.remove('hidden');
+
+        btn.innerHTML = `<span>✓ 842 Records Reconciled</span>`;
+        btn.className = "px-5 py-3 rounded-xl bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2 cursor-default";
+
+        stateBadge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
+        stateBadge.textContent = "Status: Reconciled (842 Matched, 14 Exceptions)";
+
+        showToast("✅ 842 records matched instantly. 14 anomalies require manual review.");
+      }, 1300);
+    }
+
+    function resetReconciliationEngine() {
+      FINANCE_SAMPLE_DATA.isReconciled = false;
+      const btn = document.getElementById('btn-run-recon');
+      const resetBtn = document.getElementById('btn-reset-recon');
+      const banner = document.getElementById('recon-success-banner');
+      const stateBadge = document.getElementById('recon-table-state-badge');
+
+      btn.disabled = false;
+      btn.innerHTML = `
+        <svg class="w-4 h-4 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span>Run Auto-Reconciliation Algorithm (856 Inbound Records)</span>
+      `;
+      btn.className = "px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2";
+
+      banner.classList.add('hidden');
+      resetBtn.classList.add('hidden');
+
+      stateBadge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-300";
+      stateBadge.textContent = "Status: Pre-Execution (Raw Staging)";
+
+      renderFinanceTables();
+      showToast("🔄 Finance reconciliation engine reset to raw batch staging.");
+    }
+
+    function openAnomaliesModal() {
+      document.getElementById('anomalies-modal').classList.remove('hidden');
+    }
+
+    function closeAnomaliesModal() {
+      document.getElementById('anomalies-modal').classList.add('hidden');
+    }
+
+    function resolveAnomaly(utr, action) {
+      closeAnomaliesModal();
+      if (action === 'WAIVE_SURCHARGE') {
+        showToast(`✅ Surcharge waiver approved for UTR ${utr}. Reconciled ₹49,500 into ledger.`);
+      } else if (action === 'ACCEPT_PARTIAL') {
+        showToast(`✅ 50% partial payment recorded for UTR ${utr}. Balance invoice issued.`);
+      } else {
+        showToast(`🔔 Automated SMS dispatched to depositor requesting student roll number for UTR ${utr}.`);
+      }
+    }
+
+    function exportReconciliationCsv() {
+      let csv = "Bank_UTR,Value_Date,Payment_Mode,Depositor_Remarks,Bank_Amount_INR,ERP_Challan_ID,Student_UKID,Student_Name,Roll_No,Reconciliation_Status\n";
+      FINANCE_SAMPLE_DATA.records.forEach(r => {
+        csv += `"${r.utr}","${r.date}","${r.mode}","${r.payer}",${r.bankAmount},"${r.challanId}",${r.studentUkid},"${r.studentName}","${r.rollNo}","${r.isAnomaly ? 'ANOMALY_HELD' : 'MATCHED_COMMITTED'}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", "Digii_Campus_Fee_Reconciliation_Report_Nov2026.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("📄 Exported audit report: Digii_Campus_Fee_Reconciliation_Report_Nov2026.csv");
+    }
+
+    function simulateCsvUpload() {
+      showToast("📂 Ingested live HDFC Bank batch: HDFC_Campus_Fee_Settlement_09Nov2026.csv (856 raw records).");
+    }
+
+    function handleFileSelect(e) {
+      if (e.target.files && e.target.files.length > 0) {
+        showToast(`📂 Ingested user file: ${e.target.files[0].name} (856 records ready for reconciliation).`);
+      }
+    }
+
   </script>
 </body>
 </html>

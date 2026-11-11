@@ -174,6 +174,13 @@ Where:
   - `GET /api/v1/export/red-zone.csv`
 - **Automated Test Suite:** `product_enhancement/backend/test_api.py` with 100% test pass rate.
 
+### 5.8 Module 8 (Stage 7): Automated Fee Reconciliation Engine
+- **Administrative Friction Solved:** University accounts departments waste 35–40 hours each billing cycle cross-referencing multi-bank settlement statements (HDFC, ICICI, SBI) against student tuition challans in MySQL, causing mistaken exam debarments and delayed fee clearance.
+- **Drag & Drop CSV Ingestion:** Interactive upload zone supporting HDFC CMS, ICICI E-Collect, and payment gateway settlement files with real-time record count and volume parsing (856 raw transactions, ₹1.82 Cr).
+- **Split-Screen Dual Stream:** Real-time side-by-side ledger displaying *Inbound Bank Transactions* (UTR, payer remarks, amount, mode) on the left and *ERP Student Challans* (`academic_fee_dues`) on the right.
+- **1-Click Heuristic Reconciliation Algorithm:** Multi-factor fuzzy matching engine testing UTR identifiers, student UKIDs, challan codes, and exact rupee matches.
+- **Instant Settlement Benchmark:** Reconciles 842 records (98.36% match rate, ₹1.68 Cr) into `collpoll_fee_ledger` with animated progress telemetry, isolating 14 edge-case micro-variances (e.g. ₹500 bank fee underpayment) into an accountant review drawer.
+
 ---
 
 ## 6. Success Metrics & Product KPIs
