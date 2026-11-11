@@ -181,6 +181,13 @@ Where:
 - **1-Click Heuristic Reconciliation Algorithm:** Multi-factor fuzzy matching engine testing UTR identifiers, student UKIDs, challan codes, and exact rupee matches.
 - **Instant Settlement Benchmark:** Reconciles 842 records (98.36% match rate, ₹1.68 Cr) into `collpoll_fee_ledger` with animated progress telemetry, isolating 14 edge-case micro-variances (e.g. ₹500 bank fee underpayment) into an accountant review drawer.
 
+### 5.9 Module 9: Smart Timetable Clash Resolver (Stage 8)
+- **Problem Statement:** University Academic Registrars and Department HODs spend 2–3 weeks every semester manually cross-referencing room inventories, professor availability, and lecture overlaps across 312 courses. Double-booked faculty and room overlaps trigger chaotic student disruptions, cancelled classes, and daily backend support tickets.
+- **Constraint Optimization Engine:** Intercepts real-time course assignments by cross-validating 148 faculty schedules, 42 lecture room capacities, and student cohort attendance constraints from `ams_attendance` and `courses` database tables.
+- **Active Conflict Detection & Error-State Modal:** Dragging or assigning a conflicting class immediately activates an intelligent constraint alert: `"CLASH DETECTED: Prof. Sharma is already teaching CS502 in Room 4A. Nearest available slot: Thursday 2:00 PM."`
+- **1-Click Auto-Resolve Engine:** Automatically reschedules the conflicting course to the optimal zero-conflict window (Thursday 02:00 PM – 03:30 PM in Room 4A), immediately updating timetable slots, resetting conflict warnings, and saving 80+ hours of departmental scheduling labor.
+- **Master Timetable CSV Exporter:** Enables registrars to export the live, 100% clash-free master schedule into standardized RFC 4180 CSV format for immediate campus distribution.
+
 ---
 
 ## 6. Success Metrics & Product KPIs

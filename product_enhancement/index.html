@@ -583,34 +583,450 @@
               </div>
               <p class="text-[11px] text-slate-500 mt-1">Academic Blocks A, B, C & D</p>
             </div>
-            <div class="p-4 rounded-lg bg-blue-50/70 border border-blue-200">
+            <div class="p-4 rounded-lg bg-red-50/70 border border-red-200 transition-all" id="kpi-academic-card">
               <div class="flex items-center justify-between">
-                <p class="text-xs font-bold text-blue-800 uppercase tracking-wider">Timetable Engine</p>
-                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-blue-100 text-blue-800">Stage 8</span>
+                <p class="text-xs font-bold text-slate-800 uppercase tracking-wider">Clash Detection</p>
+                <span id="kpi-academic-badge" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-100 text-red-800 animate-pulse">1 Active</span>
               </div>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-blue-900">Clash Resolver</span>
+                <span id="kpi-academic-clashes" class="text-2xl font-bold text-red-700">1 Conflict</span>
               </div>
-              <p class="text-[11px] text-blue-700 mt-1">Smart Scheduling Engine</p>
+              <p id="kpi-academic-subtext" class="text-[11px] text-red-600 font-medium mt-1">Prof. Sharma double-booked</p>
             </div>
           </div>
         </div>
 
-        <!-- Academic Placeholder Canvas Container -->
-        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-xs text-center space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center mx-auto text-2xl font-bold shadow-xs">
-            📅
+        <!-- Friction & Problem Statement Callout Banner -->
+        <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+          <div class="flex items-start gap-2.5">
+            <span class="text-base shrink-0 mt-0.5">⚠️</span>
+            <div>
+              <span class="font-bold">The Administrative Pain Point:</span> University Academic Registrars and Department HODs spend 2–3 weeks every semester manually cross-referencing room inventories, professor availability, and lecture overlaps across 312 courses. Double-booked faculty and room overlaps trigger chaotic student disruptions, cancelled classes, and daily backend support tickets.
+            </div>
           </div>
-          <div class="max-w-md mx-auto space-y-1.5">
-            <h3 class="text-lg font-bold text-slate-900">Academics & Timetable Clash Resolver</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">
-              University scheduling generates severe faculty friction due to overlapping room and professor allocations. 
-              The interactive drag-and-drop calendar and 1-Click Auto-Resolve engine will be rendered here in <strong>Stage 8</strong>.
-            </p>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 font-bold border border-blue-300 text-[11px] whitespace-nowrap">
+              ⚡ ROI: Eliminates 100% of Scheduling Clashes • Saves 80+ Hours of HOD Planning
+            </span>
           </div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-mono font-medium">
-            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-            <span>Module Initialized • Awaiting Stage 8 Execution</span>
+        </div>
+
+        <!-- Timetable Context & Control Bar -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-slate-800 uppercase tracking-wider">Interactive Clash Resolver</span>
+                <span id="academics-clash-status-badge" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-red-100 text-red-800 border border-red-300 flex items-center gap-1.5 animate-pulse">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span> 1 Critical Faculty Clash Detected
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 mt-1">
+                Drag unassigned courses from the queue into calendar slots, or click any slot to verify availability against 148 faculty schedules.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+              <button onclick="triggerClashModal()" class="px-3.5 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-red-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                <span>Simulate Conflict (Monday 10:45 AM)</span>
+              </button>
+              <button id="btn-reset-academic" onclick="resetAcademicTimetable()" class="hidden px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                <span>Reset Timetable</span>
+              </button>
+              <button onclick="exportTimetableCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>Export Master Timetable (CSV)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Academic Scope Filters -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div>
+              <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Academic Department</label>
+              <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-blue-500">
+                <option selected>B.Tech Computer Science & Engineering</option>
+                <option>B.Tech Information Technology</option>
+                <option>B.Tech Mechanical Engineering</option>
+                <option>Master of Business Administration (MBA)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Cohort / Semester</label>
+              <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-blue-500">
+                <option selected>Semester 5 (Section A • 120 Students)</option>
+                <option>Semester 5 (Section B • 118 Students)</option>
+                <option>Semester 3 (Section A • 124 Students)</option>
+                <option>Semester 7 (Section A • 110 Students)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Room / Lecture Hall</label>
+              <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-blue-500">
+                <option selected>Lecture Hall 4A (Cap: 120 • Main Block)</option>
+                <option>Lecture Hall 2B (Cap: 80 • Tech Block)</option>
+                <option>Lab 3B - Distributed Cloud Systems (Cap: 60)</option>
+                <option>Auditorium 1 (Cap: 350)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Academic Week</label>
+              <div class="flex items-center gap-1.5">
+                <span class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-mono font-semibold text-slate-700 flex items-center justify-between">
+                  <span>Week 08: 09 Nov – 13 Nov 2026</span>
+                  <span class="text-blue-600 font-bold">Fall Sem</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty & Course Allocation Queue (Draggable Tray) -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                <span>Faculty & Course Allocation Queue</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200">Drag to Slot or Click to Assign</span>
+              </h3>
+              <p class="text-[11px] text-slate-500">
+                Items in this queue represent curriculum allocations requiring lecture slot commitments in Lecture Hall 4A.
+              </p>
+            </div>
+            <span class="text-[11px] text-slate-400 font-mono hidden sm:inline">HTML5 Drag & Drop Active</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
+            <!-- Course 1: The Conflicting Course CS502 -->
+            <div id="course-card-cs502" draggable="true" ondragstart="handleDragStartCourse(event, 'CS502')" class="p-3 rounded-xl border-2 border-dashed border-red-300 bg-red-50/50 hover:bg-red-50 transition-all cursor-grab active:cursor-grabbing group shadow-2xs">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-100 text-red-800 font-mono uppercase tracking-wider">Core Theory • 4.0 Cr</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-1 group-hover:text-red-700 transition-colors">CS502: Operating Systems</h4>
+                </div>
+                <span id="cs502-status-badge" class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">Clash Pending</span>
+              </div>
+              <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
+                <span class="text-slate-400">👨‍🏫</span>
+                <strong class="text-slate-900">Prof. Ramesh Sharma</strong>
+              </p>
+              <div class="mt-2.5 pt-2 border-t border-red-200/60 flex items-center justify-between text-[10px]">
+                <span class="text-red-700 font-mono font-medium">Room: LH-4A</span>
+                <button onclick="triggerClashModal()" class="px-2 py-1 rounded bg-red-600 hover:bg-red-700 text-white font-bold transition-colors shadow-2xs">
+                  ⚡ Assign (Test Clash)
+                </button>
+              </div>
+            </div>
+
+            <!-- Course 2: CS506 -->
+            <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/80">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono uppercase tracking-wider">Theory + Agile • 3.0 Cr</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-1">CS506: Software Engineering</h4>
+                </div>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Scheduled</span>
+              </div>
+              <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
+                <span class="text-slate-400">👩‍🏫</span>
+                <span>Dr. Ananya Sen</span>
+              </p>
+              <div class="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                <span>Room: LH-4A</span>
+                <span>Mon 09:00, Thu 09:00</span>
+              </div>
+            </div>
+
+            <!-- Course 3: CS508 Lab -->
+            <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/80">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-blue-100 text-blue-800 font-mono uppercase tracking-wider">Practical Lab • 2.0 Cr</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-1">CS508: Cloud Systems Lab</h4>
+                </div>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Scheduled</span>
+              </div>
+              <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
+                <span class="text-slate-400">👨‍💻</span>
+                <span>Prof. Gurdeep Singh</span>
+              </p>
+              <div class="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                <span>Room: Lab 3B</span>
+                <span>Tue 13:15, Fri 09:00</span>
+              </div>
+            </div>
+
+            <!-- Course 4: CS501 -->
+            <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/80">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono uppercase tracking-wider">Core Theory • 4.0 Cr</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-1">CS501: Adv. Data Structures</h4>
+                </div>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Scheduled</span>
+              </div>
+              <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
+                <span class="text-slate-400">👨‍🏫</span>
+                <span>Prof. Rajesh Verma</span>
+              </p>
+              <div class="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                <span>Room: LH-4A</span>
+                <span>Wed 09:00, Fri 10:45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Timetable Grid Matrix -->
+        <div class="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden">
+          <div class="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">Weekly Master Schedule Matrix: Lecture Hall 4A</h3>
+              <p class="text-xs text-slate-500">Live multi-entity constraint validation across Faculty Timetables, Room Capacity, and Student Cohort Syllabi.</p>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="inline-flex items-center gap-1.5 text-slate-600">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Confirmed Slot
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-slate-600">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Clash Alert
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-slate-600">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> AI Free Window
+              </span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse min-w-[850px]">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase tracking-wider text-[11px] font-mono">
+                  <th class="p-3.5 w-36 border-r border-slate-200">Time Slot</th>
+                  <th class="p-3.5 border-r border-slate-200">Monday</th>
+                  <th class="p-3.5 border-r border-slate-200">Tuesday</th>
+                  <th class="p-3.5 border-r border-slate-200">Wednesday</th>
+                  <th class="p-3.5 border-r border-slate-200">Thursday</th>
+                  <th class="p-3.5">Friday</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <!-- Slot 1: 09:00 - 10:30 -->
+                <tr>
+                  <td class="p-3.5 bg-slate-50/70 border-r border-slate-200 font-mono text-[11px]">
+                    <span class="font-bold text-slate-800 block">09:00 - 10:30</span>
+                    <span class="text-slate-400 text-[10px]">Morning Slot 1</span>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS506</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Software Eng.</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. Ananya Sen</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS503</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Database Systems</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. M. Sundaram</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS501</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Adv. Data Structures</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Prof. Rajesh Verma</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS506</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Software Eng.</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. Ananya Sen</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 align-top">
+                    <div class="p-2.5 rounded-lg bg-blue-50/60 border border-blue-200 hover:border-blue-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-blue-100 text-blue-800 font-mono">CS508 Lab</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Distributed Cloud Lab</p>
+                      <p class="text-[10px] text-blue-700 mt-0.5">Prof. Gurdeep Singh (Lab 3B)</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Slot 2: 10:45 - 12:15 (CONTAINS THE CONFLICT TARGET DROPZONE) -->
+                <tr class="bg-slate-50/30">
+                  <td class="p-3.5 bg-slate-50/70 border-r border-slate-200 font-mono text-[11px]">
+                    <span class="font-bold text-slate-800 block">10:45 - 12:15</span>
+                    <span class="text-slate-400 text-[10px]">Morning Slot 2</span>
+                  </td>
+
+                  <!-- MONDAY 10:45 AM: THE CONFLICT SLOT -->
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div id="slot-mon-1045" ondragover="allowDrop(event)" ondrop="handleDropConflict(event)" onclick="triggerClashModal()" class="p-3 rounded-xl border-2 border-dashed border-red-400 bg-red-50/70 hover:bg-red-100/90 transition-all cursor-pointer group text-center space-y-1.5 shadow-2xs">
+                      <div class="flex items-center justify-between">
+                        <span id="badge-mon-1045" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">⚡ Target Clash Slot</span>
+                        <span class="text-xs group-hover:scale-110 transition-transform">⚠️</span>
+                      </div>
+                      <p class="font-bold text-red-950 text-xs">Drop CS502 Here</p>
+                      <p class="text-[10px] text-red-700 font-mono leading-tight">Prof. Sharma already teaching in Room 2B</p>
+                      <div class="pt-1">
+                        <span class="inline-block px-2 py-0.5 rounded bg-red-600 text-white text-[9px] font-bold group-hover:bg-red-700">
+                          Click to Test Conflict
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS504</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Computer Networks</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Prof. Shamitr Mardikar</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS501</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Adv. Data Structures</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Prof. Rajesh Verma</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS505</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Web Architectures</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Prof. Piyush Anand</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS503</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Database Systems</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. M. Sundaram</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Slot 3: 12:15 - 13:15 (LUNCH & COMMON BREAK) -->
+                <tr class="bg-slate-100/60">
+                  <td class="p-2.5 bg-slate-100 border-r border-slate-200 font-mono text-[10px] text-slate-500">
+                    12:15 - 13:15
+                  </td>
+                  <td colspan="5" class="p-2.5 text-center text-[11px] font-semibold text-slate-500 tracking-wide">
+                    🍽️ Faculty & Student Common Lunch Break • Academic Office Hours & Research Mentorship
+                  </td>
+                </tr>
+
+                <!-- Slot 4: 13:15 - 14:45 (CONTAINS AUTO-RESOLVED DESTINATION SLOT: THURSDAY 2:00 PM) -->
+                <tr>
+                  <td class="p-3.5 bg-slate-50/70 border-r border-slate-200 font-mono text-[11px]">
+                    <span class="font-bold text-slate-800 block">13:15 - 14:45</span>
+                    <span class="text-slate-400 text-[10px]">Afternoon Slot 1</span>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS507</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">AI & Machine Learning</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. Kavita Rao</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-blue-50/60 border border-blue-200 hover:border-blue-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-blue-100 text-blue-800 font-mono">CS508 Lab</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Cloud Systems Lab</p>
+                      <p class="text-[10px] text-blue-700 mt-0.5">Prof. Gurdeep Singh (Lab 3B)</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS506 Lab</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Agile Sprint Lab</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. Ananya Sen</p>
+                    </div>
+                  </td>
+
+                  <!-- THURSDAY 02:00 PM: THE OPTIMAL RESOLUTION DESTINATION SLOT -->
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div id="slot-thu-1400" ondragover="allowDrop(event)" ondrop="handleDropOptimal(event)" class="p-3 rounded-xl border border-emerald-300 bg-emerald-50/40 hover:bg-emerald-50/80 transition-all text-center space-y-1.5 shadow-2xs">
+                      <div class="flex items-center justify-between">
+                        <span id="badge-thu-1400" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">🟢 AI Recommended Slot</span>
+                        <span class="text-xs">⚡</span>
+                      </div>
+                      <p class="font-bold text-slate-800 text-xs">Thursday 2:00 PM Slot</p>
+                      <p class="text-[10px] text-emerald-700 font-mono">Prof. Sharma & LH-4A 100% Free</p>
+                      <div class="pt-1">
+                        <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[9px] font-bold">
+                          Optimal Conflict-Free Window
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="p-2.5 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">CS507</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">AI & Machine Learning</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Dr. Kavita Rao</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Slot 5: 15:00 - 16:30 -->
+                <tr class="bg-slate-50/30">
+                  <td class="p-3.5 bg-slate-50/70 border-r border-slate-200 font-mono text-[11px]">
+                    <span class="font-bold text-slate-800 block">15:00 - 16:30</span>
+                    <span class="text-slate-400 text-[10px]">Afternoon Slot 2</span>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-purple-100 text-purple-800 font-mono">OE301</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Behavioral Economics</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Prof. S. Sengupta</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">OFFICE</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Faculty Office Hours</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Department Mentors</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-800 font-mono">CAPSTONE</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Project Sprint Review</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Faculty Jury Review</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 border-r border-slate-200 align-top">
+                    <div class="p-2.5 rounded-lg bg-indigo-50/70 border border-indigo-200">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-indigo-100 text-indigo-800 font-mono">SEMINAR</span>
+                      <p class="font-bold text-indigo-950 text-xs mt-1">Product Management in SaaS</p>
+                      <p class="text-[10px] text-indigo-700 mt-0.5">Industry Guest Lecture</p>
+                    </div>
+                  </td>
+                  <td class="p-2.5 align-top">
+                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+                      <span class="px-1 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 font-mono">CLUBS</span>
+                      <p class="font-bold text-slate-900 text-xs mt-1">Non-Academic Activities</p>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Campus Societies & Sports</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Bottom Footer Bar -->
+          <div class="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-600">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[11px] font-bold text-slate-700">Constraint Engine:</span>
+              <span>148 Faculty Workloads • 42 Room Capacities • Student Batch Attendance Regulations (AMS)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-emerald-700 font-bold">Latency: 14ms Query Response</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1398,6 +1814,101 @@
   <!-- =================================================================== -->
   <!-- MODAL: REVIEW 14 FEE RECONCILIATION ANOMALIES (STAGE 7)             -->
   <!-- =================================================================== -->
+  
+  <!-- =================================================================== -->
+  <!-- STAGE 8: CLASH DETECTION ACTIVE ERROR-STATE MODAL                   -->
+  <!-- =================================================================== -->
+  <div id="clash-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-2xl w-full shadow-2xl border border-red-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-red-600 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-red-700/80 flex items-center justify-center text-lg font-bold">
+            ⚠️
+          </div>
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-red-200 font-bold">Active Scheduling Conflict Alert</span>
+            <h3 class="text-sm font-bold tracking-tight text-white">Smart Timetable Conflict Inspector</h3>
+          </div>
+        </div>
+        <button onclick="closeClashModal()" class="text-red-200 hover:text-white transition-colors text-xl font-bold p-1">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5">
+        <!-- EXACT HOOK CALLOUT REQUIRED BY STAGE 8 -->
+        <div class="p-4 rounded-xl bg-red-50 border-2 border-red-200 text-red-900 shadow-2xs">
+          <div class="flex items-start gap-3">
+            <span class="text-xl shrink-0 mt-0.5">🚨</span>
+            <div>
+              <h4 class="text-sm font-extrabold text-red-800 leading-snug tracking-tight">
+                CLASH DETECTED: Prof. Sharma is already teaching CS502 in Room 4A. Nearest available slot: Thursday 2:00 PM.
+              </h4>
+              <p class="text-xs text-red-700 mt-1.5 leading-relaxed">
+                The constraint engine intercepted this assignment to prevent duplicate room occupancy and professor scheduling conflicts in production.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conflict Diagnostic Details -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-red-700 font-bold mb-1">
+              <span class="w-2 h-2 rounded-full bg-red-600"></span>
+              <span>1. Faculty Double-Booking</span>
+            </div>
+            <p class="text-slate-700">
+              <strong>Prof. Ramesh Sharma</strong> has an active lecture committed to <strong>CS401: Computer Architecture</strong> in <strong>Room 2B</strong> on Monday 10:45 AM – 12:15 PM.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-red-700 font-bold mb-1">
+              <span class="w-2 h-2 rounded-full bg-red-600"></span>
+              <span>2. Room Resource Contention</span>
+            </div>
+            <p class="text-slate-700">
+              <strong>Lecture Hall 4A</strong> is currently allocated for departmental revision seminars with 85 registered attendees during this exact window.
+            </p>
+          </div>
+        </div>
+
+        <!-- AI Recommendation Window -->
+        <div class="p-4 rounded-xl bg-emerald-50/80 border border-emerald-300 text-emerald-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+          <div class="flex items-start gap-2.5">
+            <span class="text-lg shrink-0 mt-0.5">💡</span>
+            <div>
+              <p class="text-xs font-bold text-emerald-900">AI Scheduling Optimizer Recommendation</p>
+              <p class="text-xs text-emerald-800 mt-0.5">
+                Target Slot: <strong>Thursday, 02:00 PM – 03:30 PM (Room 4A)</strong>
+              </p>
+              <p class="text-[11px] text-emerald-700 font-mono mt-1">
+                ✓ 0% Faculty Overlap • ✓ 0% Student Batch Clash • ✓ LH-4A 100% Free
+              </p>
+            </div>
+          </div>
+          <div class="shrink-0">
+            <span class="px-2 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px] border border-emerald-300">
+              Zero-Conflict Match
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <button onclick="closeClashModal()" class="w-full sm:w-auto px-4 py-2 text-xs font-bold rounded-lg text-slate-700 hover:bg-slate-200 transition-colors">
+          Cancel / Choose Different Slot
+        </button>
+        <button onclick="autoResolveAcademicClash()" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <span>1-Click Auto-Resolve Conflict</span>
+        </button>
+      </div>
+    </div>
+  </div>
   <div id="anomalies-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
       <div class="px-6 py-4 border-b border-slate-200 bg-amber-50 flex items-center justify-between">
@@ -2694,6 +3205,242 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (e.target.files && e.target.files.length > 0) {
         showToast(`📂 Ingested user file: ${e.target.files[0].name} (856 records ready for reconciliation).`);
       }
+    }
+
+
+    // ===================================================================
+    // STAGE 8: SMART TIMETABLE CLASH RESOLVER JAVASCRIPT LOGIC
+    // ===================================================================
+    let ACADEMIC_STATE = {
+      isResolved: false,
+      clashesRemaining: 1,
+      draggedCourse: null
+    };
+
+    function triggerClashModal() {
+      document.getElementById('clash-modal').classList.remove('hidden');
+    }
+
+    function closeClashModal() {
+      document.getElementById('clash-modal').classList.add('hidden');
+    }
+
+    function autoResolveAcademicClash() {
+      closeClashModal();
+      ACADEMIC_STATE.isResolved = true;
+      ACADEMIC_STATE.clashesRemaining = 0;
+
+      // 1. Update KPI Card 4
+      const kpiCard = document.getElementById('kpi-academic-card');
+      const kpiBadge = document.getElementById('kpi-academic-badge');
+      const kpiClashes = document.getElementById('kpi-academic-clashes');
+      const kpiSubtext = document.getElementById('kpi-academic-subtext');
+
+      if (kpiCard) {
+        kpiCard.className = "p-4 rounded-lg bg-emerald-50/70 border border-emerald-200 transition-all";
+      }
+      if (kpiBadge) {
+        kpiBadge.className = "px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800";
+        kpiBadge.textContent = "0 Active";
+        kpiBadge.classList.remove('animate-pulse');
+      }
+      if (kpiClashes) {
+        kpiClashes.className = "text-2xl font-bold text-emerald-700";
+        kpiClashes.textContent = "0 Conflicts";
+      }
+      if (kpiSubtext) {
+        kpiSubtext.className = "text-[11px] text-emerald-700 font-medium mt-1";
+        kpiSubtext.textContent = "100% Conflict-Free Schedule";
+      }
+
+      // 2. Update Header Status Badge
+      const statusBadge = document.getElementById('academics-clash-status-badge');
+      if (statusBadge) {
+        statusBadge.className = "px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1.5";
+        statusBadge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 100% Conflict-Free Schedule`;
+      }
+
+      // 3. Update Monday 10:45 AM Slot (Clear target state)
+      const slotMon = document.getElementById('slot-mon-1045');
+      if (slotMon) {
+        slotMon.className = "p-3 rounded-xl border border-slate-200 bg-slate-50/60 transition-all text-center space-y-1";
+        slotMon.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">Available</span>
+            <span class="text-xs text-slate-400">✓</span>
+          </div>
+          <p class="font-bold text-slate-700 text-xs mt-1">Open Study Window</p>
+          <p class="text-[10px] text-slate-500 font-mono">No Scheduled Lectures</p>
+        `;
+      }
+
+      // 4. Update Thursday 2:00 PM Slot (Populate with Resolved CS502)
+      const slotThu = document.getElementById('slot-thu-1400');
+      if (slotThu) {
+        slotThu.className = "p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-left space-y-1 shadow-sm transition-all animate-in zoom-in-95 duration-200";
+        slotThu.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-600 text-white font-mono shadow-2xs">✓ Auto-Resolved (No Conflicts)</span>
+            <span class="text-xs">⚡</span>
+          </div>
+          <h4 class="font-bold text-slate-900 text-xs mt-1">CS502: Operating Systems</h4>
+          <p class="text-[11px] text-emerald-900 font-semibold flex items-center gap-1">
+            <span>👨‍🏫</span> <span>Prof. Ramesh Sharma</span>
+          </p>
+          <p class="text-[10px] text-emerald-700 font-mono mt-0.5">LH-4A • Thu 14:00 - 15:30</p>
+        `;
+      }
+
+      // 5. Update CS502 Tray Card
+      const cardCs502 = document.getElementById('course-card-cs502');
+      const cs502Badge = document.getElementById('cs502-status-badge');
+      if (cardCs502) {
+        cardCs502.className = "p-3 rounded-xl border border-emerald-300 bg-emerald-50/50 transition-all";
+      }
+      if (cs502Badge) {
+        cs502Badge.className = "px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-600 text-white";
+        cs502Badge.textContent = "Scheduled: Thu 2:00 PM";
+        cs502Badge.classList.remove('animate-pulse');
+      }
+
+      // 6. Show Reset Button
+      const resetBtn = document.getElementById('btn-reset-academic');
+      if (resetBtn) resetBtn.classList.remove('hidden');
+
+      // 7. Toast Notification
+      showToast("✅ Clash Auto-Resolved: Prof. Sharma scheduled for Thursday 2:00 PM in Room 4A. 0 conflicts remain.");
+    }
+
+    function resetAcademicTimetable() {
+      ACADEMIC_STATE.isResolved = false;
+      ACADEMIC_STATE.clashesRemaining = 1;
+
+      // Reset KPI Card
+      const kpiCard = document.getElementById('kpi-academic-card');
+      const kpiBadge = document.getElementById('kpi-academic-badge');
+      const kpiClashes = document.getElementById('kpi-academic-clashes');
+      const kpiSubtext = document.getElementById('kpi-academic-subtext');
+
+      if (kpiCard) kpiCard.className = "p-4 rounded-lg bg-red-50/70 border border-red-200 transition-all";
+      if (kpiBadge) {
+        kpiBadge.className = "px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-100 text-red-800 animate-pulse";
+        kpiBadge.textContent = "1 Active";
+      }
+      if (kpiClashes) {
+        kpiClashes.className = "text-2xl font-bold text-red-700";
+        kpiClashes.textContent = "1 Conflict";
+      }
+      if (kpiSubtext) {
+        kpiSubtext.className = "text-[11px] text-red-600 font-medium mt-1";
+        kpiSubtext.textContent = "Prof. Sharma double-booked";
+      }
+
+      // Reset Header Status Badge
+      const statusBadge = document.getElementById('academics-clash-status-badge');
+      if (statusBadge) {
+        statusBadge.className = "px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-red-100 text-red-800 border border-red-300 flex items-center gap-1.5 animate-pulse";
+        statusBadge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-red-600"></span> 1 Critical Faculty Clash Detected`;
+      }
+
+      // Reset Monday Slot
+      const slotMon = document.getElementById('slot-mon-1045');
+      if (slotMon) {
+        slotMon.className = "p-3 rounded-xl border-2 border-dashed border-red-400 bg-red-50/70 hover:bg-red-100/90 transition-all cursor-pointer group text-center space-y-1.5 shadow-2xs";
+        slotMon.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span id="badge-mon-1045" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">⚡ Target Clash Slot</span>
+            <span class="text-xs group-hover:scale-110 transition-transform">⚠️</span>
+          </div>
+          <p class="font-bold text-red-950 text-xs">Drop CS502 Here</p>
+          <p class="text-[10px] text-red-700 font-mono leading-tight">Prof. Sharma already teaching in Room 2B</p>
+          <div class="pt-1">
+            <span class="inline-block px-2 py-0.5 rounded bg-red-600 text-white text-[9px] font-bold group-hover:bg-red-700">
+              Click to Test Conflict
+            </span>
+          </div>
+        `;
+      }
+
+      // Reset Thursday Slot
+      const slotThu = document.getElementById('slot-thu-1400');
+      if (slotThu) {
+        slotThu.className = "p-3 rounded-xl border border-emerald-300 bg-emerald-50/40 hover:bg-emerald-50/80 transition-all text-center space-y-1.5 shadow-2xs";
+        slotThu.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span id="badge-thu-1400" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">🟢 AI Recommended Slot</span>
+            <span class="text-xs">⚡</span>
+          </div>
+          <p class="font-bold text-slate-800 text-xs">Thursday 2:00 PM Slot</p>
+          <p class="text-[10px] text-emerald-700 font-mono">Prof. Sharma & LH-4A 100% Free</p>
+          <div class="pt-1">
+            <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[9px] font-bold">
+              Optimal Conflict-Free Window
+            </span>
+          </div>
+        `;
+      }
+
+      // Reset Tray Card
+      const cardCs502 = document.getElementById('course-card-cs502');
+      const cs502Badge = document.getElementById('cs502-status-badge');
+      if (cardCs502) {
+        cardCs502.className = "p-3 rounded-xl border-2 border-dashed border-red-300 bg-red-50/50 hover:bg-red-50 transition-all cursor-grab active:cursor-grabbing group shadow-2xs";
+      }
+      if (cs502Badge) {
+        cs502Badge.className = "px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse";
+        cs502Badge.textContent = "Clash Pending";
+      }
+
+      // Hide Reset Button
+      const resetBtn = document.getElementById('btn-reset-academic');
+      if (resetBtn) resetBtn.classList.add('hidden');
+
+      showToast("🔄 Academic timetable reset to raw draft staging.");
+    }
+
+    // Drag and Drop Event Handlers
+    function handleDragStartCourse(e, courseCode) {
+      ACADEMIC_STATE.draggedCourse = courseCode;
+      e.dataTransfer.setData('text/plain', courseCode);
+    }
+
+    function allowDrop(e) {
+      e.preventDefault();
+    }
+
+    function handleDropConflict(e) {
+      e.preventDefault();
+      triggerClashModal();
+    }
+
+    function handleDropOptimal(e) {
+      e.preventDefault();
+      autoResolveAcademicClash();
+    }
+
+    function exportTimetableCsv() {
+      const csv = `Day,Time_Slot,Course_Code,Course_Name,Faculty_Name,Room_No,Status\n` +
+        `Monday,09:00 - 10:30,CS506,Software Engineering,Dr. Ananya Sen,LH-4A,CONFIRMED\n` +
+        `Monday,10:45 - 12:15,${ACADEMIC_STATE.isResolved ? 'OPEN_SLOT,Self Study / Consultation,None,LH-4A,AVAILABLE' : 'CS502,Operating Systems,Prof. Ramesh Sharma,LH-4A,CLASH_HELD'}\n` +
+        `Monday,13:15 - 14:45,CS507,AI & Machine Learning,Dr. Kavita Rao,LH-4A,CONFIRMED\n` +
+        `Tuesday,09:00 - 10:30,CS503,Database Management Systems,Dr. M. Sundaram,LH-4A,CONFIRMED\n` +
+        `Tuesday,10:45 - 12:15,CS504,Computer Networks,Prof. Shamitr Mardikar,LH-4A,CONFIRMED\n` +
+        `Wednesday,09:00 - 10:30,CS501,Advanced Data Structures,Prof. Rajesh Verma,LH-4A,CONFIRMED\n` +
+        `Thursday,09:00 - 10:30,CS506,Software Engineering,Dr. Ananya Sen,LH-4A,CONFIRMED\n` +
+        `Thursday,14:00 - 15:30,${ACADEMIC_STATE.isResolved ? 'CS502,Operating Systems,Prof. Ramesh Sharma,LH-4A,AUTO_RESOLVED' : 'OPEN_SLOT,Recommended AI Window,None,LH-4A,RESERVED_FOR_OPTIMIZER'}\n` +
+        `Friday,09:00 - 10:30,CS508,Distributed Cloud Systems Lab,Prof. Gurdeep Singh,Lab 3B,CONFIRMED\n` +
+        `Friday,10:45 - 12:15,CS503,Database Management Systems,Dr. M. Sundaram,LH-4A,CONFIRMED\n`;
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", "Digii_Campus_Master_Timetable_BTech_CSE_Sem5.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("📄 Exported master timetable: Digii_Campus_Master_Timetable_BTech_CSE_Sem5.csv");
     }
 
   </script>
