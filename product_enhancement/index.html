@@ -3328,10 +3328,29 @@ FROM StudentCompoundMetrics;
           </div>
 
           <!-- Roadmap Swimlanes -->
-          <div class="pt-2">
-            <span class="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-2 font-mono">
-              Delivery Roadmap Swimlanes (Derived from RICE Rankings)
-            </span>
+                    <!-- Roadmap Swimlanes -->
+          <div class="pt-2 space-y-2">
+            <!-- 100% Implemented Status Callout -->
+            <div class="p-3 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 border border-emerald-400/40 shadow-xs">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px] uppercase border border-emerald-400/40">
+                  ✓ 100% Live Prototype Built
+                </span>
+                <span class="text-[11px] text-emerald-100">
+                  <strong>All 10 initiatives are already fully functional & interactive!</strong> Swimlanes represent the university staged rollout sequence.
+                </span>
+              </div>
+              <span class="text-[10px] text-emerald-300 font-mono font-bold shrink-0">
+                👉 Click any card below to launch live feature!
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-700 uppercase tracking-wider block font-mono">
+                Delivery Roadmap Swimlanes (Click Any Initiative to Launch)
+              </span>
+              <span class="text-[10px] text-slate-400 font-mono">Interactive Navigation Enabled</span>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
               <!-- NOW Q1 -->
               <div class="p-3.5 rounded-xl border-2 border-emerald-300 bg-emerald-50/40 space-y-2">
@@ -5933,6 +5952,59 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       renderRiceTable(mult);
     }
 
+        function launchRoadmapFeature(id) {
+      closePmCockpitModal();
+      if (id === 'nodues') {
+        navigateToView('student-hub');
+        const el = document.getElementById('btn-nodues-action');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.parentElement.parentElement.classList.add('ring-4', 'ring-indigo-500');
+          setTimeout(() => el.parentElement.parentElement.classList.remove('ring-4', 'ring-indigo-500'), 2500);
+        }
+        showToast("⚡ Launched: Zero-Friction Digital No-Dues Clearance module!");
+      } else if (id === 'radar') {
+        navigateToView('radar');
+        showToast("⚡ Launched: Predictive Student Dropout Radar!");
+      } else if (id === 'feerecon') {
+        navigateToView('finance');
+        showToast("⚡ Launched: Automated Fee Reconciliation Engine!");
+      } else if (id === 'deadline') {
+        navigateToView('student-hub');
+        const el = document.getElementById('btn-rebalance-deadline');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.parentElement.parentElement.classList.add('ring-4', 'ring-amber-500');
+          setTimeout(() => el.parentElement.parentElement.classList.remove('ring-4', 'ring-amber-500'), 2500);
+        }
+        showToast("⚡ Launched: Smart Assignment Deadline Balancer!");
+      } else if (id === 'resume') {
+        openResumeModal();
+        showToast("⚡ Launched: Verified Digital Auto-Resume Generator!");
+      } else if (id === 'medical') {
+        openMedicalSlipModal();
+        showToast("⚡ Launched: Automated Medical Leave & CHC Sync!");
+      } else if (id === 'clash') {
+        navigateToView('academics');
+        showToast("⚡ Launched: Smart Timetable Clash Resolver!");
+      } else if (id === 'elective') {
+        navigateToView('student-hub');
+        const el = document.getElementById('btn-elective-action');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.parentElement.parentElement.classList.add('ring-4', 'ring-teal-500');
+          setTimeout(() => el.parentElement.parentElement.classList.remove('ring-4', 'ring-teal-500'), 2500);
+        }
+        showToast("⚡ Launched: AI-Powered Elective & Major Matchmaker!");
+      } else if (id === 'market') {
+        openMarketplaceModal();
+        showToast("⚡ Launched: Campus Marketplace & Lost-and-Found!");
+      } else if (id === 'wallet') {
+        openIdCardModal();
+        showToast("⚡ Launched: Universal NFC/QR Campus Wallet!");
+      }
+    }
+
     function renderRiceTable(effortMult = 1.0) {
       const tbody = document.getElementById('rice-table-body');
       if (!tbody) return;
@@ -5966,10 +6038,15 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         }
 
         const tr = document.createElement('tr');
-        tr.className = "hover:bg-slate-50 transition-colors";
+        tr.className = "hover:bg-indigo-50/50 cursor-pointer transition-colors group";
+        tr.onclick = () => launchRoadmapFeature(item.id);
+        tr.title = `Click to launch live ${item.name} demo`;
         tr.innerHTML = `
           <td class="py-2.5 px-3">
-            <span class="font-bold text-slate-900 block">${item.name}</span>
+            <span class="font-bold text-slate-900 group-hover:text-indigo-900 block flex items-center gap-1.5">
+              <span>${item.name}</span>
+              <span class="text-[9px] text-indigo-600 font-mono font-bold group-hover:underline">⚡ Launch</span>
+            </span>
             <span class="text-[10px] text-slate-500 font-mono">${item.domain} • ${item.id}</span>
           </td>
           <td class="py-2.5 px-2 text-center font-mono">${item.reach.toLocaleString()}</td>
@@ -5984,19 +6061,45 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         tbody.appendChild(tr);
       });
 
-      // Update Swimlanes
+      // Update Swimlanes with live launch clickables
       const nowEl = document.getElementById('swimlane-now');
       const nextEl = document.getElementById('swimlane-next');
       const laterEl = document.getElementById('swimlane-later');
 
       if (nowEl) {
-        nowEl.innerHTML = nowItems.map(i => `<div class="p-2 rounded bg-white border border-emerald-200 text-emerald-950 font-bold flex items-center justify-between"><span>${i.name}</span><span class="font-mono text-[10px] text-emerald-700 font-extrabold">${i.riceScore}</span></div>`).join('');
+        nowEl.innerHTML = nowItems.map(i => `
+          <div onclick="launchRoadmapFeature('${i.id}')" class="p-2.5 rounded-lg bg-white hover:bg-emerald-100/60 border border-emerald-200 hover:border-emerald-400 text-emerald-950 font-bold flex items-center justify-between cursor-pointer transition-all shadow-2xs hover:shadow-xs group" title="Click to test live ${i.name}">
+            <div class="space-y-0.5">
+              <span class="block leading-tight text-slate-900 group-hover:text-emerald-900">${i.name}</span>
+              <span class="text-[9px] text-emerald-700 font-mono font-semibold">Live Prototype Ready ⚡</span>
+            </div>
+            <span class="font-mono text-[10px] text-emerald-800 font-extrabold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">${i.riceScore}</span>
+          </div>
+        `).join('');
       }
+
       if (nextEl) {
-        nextEl.innerHTML = nextItems.map(i => `<div class="p-2 rounded bg-white border border-blue-200 text-blue-950 font-medium flex items-center justify-between"><span>${i.name}</span><span class="font-mono text-[10px] text-blue-700 font-bold">${i.riceScore}</span></div>`).join('');
+        nextEl.innerHTML = nextItems.map(i => `
+          <div onclick="launchRoadmapFeature('${i.id}')" class="p-2.5 rounded-lg bg-white hover:bg-blue-100/60 border border-blue-200 hover:border-blue-400 text-blue-950 font-bold flex items-center justify-between cursor-pointer transition-all shadow-2xs hover:shadow-xs group" title="Click to test live ${i.name}">
+            <div class="space-y-0.5">
+              <span class="block leading-tight text-slate-900 group-hover:text-blue-900">${i.name}</span>
+              <span class="text-[9px] text-blue-700 font-mono font-semibold">Live Prototype Ready ⚡</span>
+            </div>
+            <span class="font-mono text-[10px] text-blue-800 font-extrabold bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">${i.riceScore}</span>
+          </div>
+        `).join('');
       }
+
       if (laterEl) {
-        laterEl.innerHTML = laterItems.map(i => `<div class="p-2 rounded bg-white border border-slate-200 text-slate-700 flex items-center justify-between"><span>${i.name}</span><span class="font-mono text-[10px] text-slate-500">${i.riceScore}</span></div>`).join('');
+        laterEl.innerHTML = laterItems.map(i => `
+          <div onclick="launchRoadmapFeature('${i.id}')" class="p-2.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 hover:border-slate-400 text-slate-800 font-bold flex items-center justify-between cursor-pointer transition-all shadow-2xs hover:shadow-xs group" title="Click to test live ${i.name}">
+            <div class="space-y-0.5">
+              <span class="block leading-tight text-slate-900 group-hover:text-slate-950">${i.name}</span>
+              <span class="text-[9px] text-slate-500 font-mono font-semibold">Live Prototype Ready ⚡</span>
+            </div>
+            <span class="font-mono text-[10px] text-slate-600 font-extrabold bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">${i.riceScore}</span>
+          </div>
+        `).join('');
       }
     }
 
