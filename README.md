@@ -77,6 +77,14 @@ The key focus of this repository is maintaining a transparent, reproducible reco
 .
 ├── .gitignore
 ├── README.md
+├── product_enhancement/
+│   ├── PRD_Proactive_Retention_System.md
+│   ├── index.html
+│   ├── package.json
+│   ├── server.ps1
+│   └── data/
+│       ├── schema_definition.json
+│       └── students_mock.json
 ├── week 01-12th-16th October-2026/
 │   └── WorkLog_Week01_12-16thOctober_Dhruv.pdf
 ├── week 02-19th-23rd October-2026/
@@ -89,6 +97,24 @@ The key focus of this repository is maintaining a transparent, reproducible reco
 └── week 04 - 2nd-6th November-2026/
     ├── Digii_Campus_BI_Database_Audit_Optimization_Week04.sql
     └── Internship Worklog - Week 4.pdf
+```
+
+---
+
+## Featured Product Enhancement: Proactive Student Retention System (BI Portal 2.0)
+
+As a proactive capstone bridging the 10.08 GB production database audit with enterprise product management, I designed and built an interactive working prototype of **Digii Campus BI Portal 2.0: Proactive Student Retention & Intelligence System** located in [`product_enhancement/`](product_enhancement/).
+
+### Key Capabilities:
+1. **Predictive Student Dropout Radar:** Analyzes cross-module operational signals (academics, fees, turnstiles, residential curfews, health visits) to compute a compound risk score (0–100) flagging students in distress weeks before formal administrative failure.
+2. **Student 360 Unified Timeline:** Replaces 5 fragmented ERP tabs with a single, chronological activity feed giving Deans and HODs full context in under 15 seconds.
+3. **1-Click Intervention Action Center:** Integrated, pre-composed multi-channel actions (`Automated Nudge Email`, `Escalate to HOD`, `Schedule Counseling`, `Summon Guardian`) directly closing the loop between data insight and student retention.
+4. **Comprehensive PRD:** Enterprise-grade Product Requirements Document detailing user personas, heuristic weighting formulas, and phased delivery roadmap ([`PRD_Proactive_Retention_System.md`](product_enhancement/PRD_Proactive_Retention_System.md)).
+
+To run the local prototype:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\product_enhancement\server.ps1 -Port 3000
+# Open http://localhost:3000 in your browser
 ```
 
 > **Note on Database Replica Dump:**  

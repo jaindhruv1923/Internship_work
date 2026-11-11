@@ -1,0 +1,35 @@
+{
+  "database": "collpoll",
+  "engine": "InnoDB",
+  "version": "MySQL 8.0.44",
+  "architectural_mappings": {
+    "student_profile": {
+      "source_tables": ["authenticator", "student", "UDC_01_STATUS"],
+      "fields_mapped": ["ukid", "enrollment_no", "first_name", "last_name", "email", "phone", "department", "batch", "current_semester"]
+    },
+    "academics_attendance": {
+      "source_tables": ["classroom_attendance", "course", "programme", "ams_student_cgpa", "ems_student_registration"],
+      "fields_mapped": ["overall_cgpa", "attendance_pct", "courses", "consecutive_absent_days", "missed_assessments"]
+    },
+    "fees_finance": {
+      "source_tables": ["academic_fee_instalment", "payment_receipt", "dues", "finance_challan"],
+      "fields_mapped": ["total_annual_fee", "amount_paid", "amount_overdue", "overdue_days", "status", "notices_sent"]
+    },
+    "turnstile_gate_telemetry": {
+      "source_tables": ["access_gate_log_ledger", "access_gate", "access_pass"],
+      "fields_mapped": ["monthly_punches", "late_entries_30d", "curfew_breaches_30d", "last_seen_gate", "last_seen_timestamp"]
+    },
+    "health_and_disciplinary": {
+      "source_tables": ["chc_request", "chc_request_log", "hostel_attendance", "hostel_allotment"],
+      "fields_mapped": ["chc_visits", "hostel_infractions", "disciplinary_notices"]
+    }
+  },
+  "risk_scoring_weights": {
+    "attendance_weight_pct": 35,
+    "fee_default_weight_pct": 30,
+    "academic_grades_weight_pct": 20,
+    "gate_curfew_infractions_weight_pct": 10,
+    "chc_wellness_flags_weight_pct": 5
+  }
+}
+
