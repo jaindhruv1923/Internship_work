@@ -238,27 +238,32 @@ class DigiiCampusApiHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/sql/lineage":
             sql_queries = {
                 "kpi_aggregation": """
--- 1. Red Zone Executive Summary Aggregation
+-- 1. Red Zone Executive Summary Aggregation (CollPoll 270-Table Schema)
 SELECT 
     COUNT(DISTINCT u.ukid) AS total_cohort,
     COUNT(DISTINCT CASE WHEN crs.composite_score >= 75 THEN u.ukid END) AS red_zone_count,
     COUNT(DISTINCT CASE WHEN crs.composite_score BETWEEN 50 AND 74 THEN u.ukid END) AS amber_zone_count,
-    SUM(CASE WHEN crs.composite_score >= 75 THEN fd.balance_amount ELSE 0 END) AS revenue_at_risk_inr
-FROM users u
+    SUM(CASE WHEN crs.composite_score >= 75 THEN dv.amount_due ELSE 0 END) AS revenue_at_risk_inr
+FROM student u
 INNER JOIN collpoll_composite_retention_scores crs ON u.ukid = crs.ukid
-LEFT JOIN academic_fee_dues fd ON u.ukid = fd.student_ukid AND fd.status = 'OVERDUE';
+LEFT JOIN dues_v2 dv ON u.ukid = dv.student_ukid AND dv.status = 'OVERDUE';
                 """.strip(),
                 "student_360_timeline": """
--- 2. Student 360 Unified Chronological Activity Feed
-SELECT 'ACADEMIC' AS domain, att.session_date AS event_time, 'Lecture Absence' AS title, CONCAT('Missed ', c.course_name) AS description
-FROM ams_attendance_summary att
-JOIN courses c ON att.course_id = c.id WHERE att.student_ukid = :student_ukid AND att.status = 'ABSENT'
+-- 2. Student 360 Unified Chronological Activity Feed (Grounded in CollPoll Production Tables)
+SELECT 'ACADEMIC' AS domain, ca.session_date AS event_time, 'Lecture Absence' AS title, CONCAT('Missed ', c.course_name) AS description
+FROM classroom_attendance ca
+JOIN course c ON ca.course_id = c.id WHERE ca.student_ukid = :student_ukid AND ca.status = 'ABSENT'
 UNION ALL
-SELECT 'FINANCE' AS domain, fd.due_date AS event_time, 'Fee Installment Overdue' AS title, CONCAT('Pending: ₹', fd.balance_amount) AS description
-FROM academic_fee_dues fd WHERE fd.student_ukid = :student_ukid AND fd.status = 'OVERDUE'
+SELECT 'FINANCE' AS domain, dv.due_date AS event_time, 'Fee Installment Overdue' AS title, CONCAT('Pending: ₹', dv.amount_due) AS description
+FROM dues_v2 dv WHERE dv.student_ukid = :student_ukid AND dv.status = 'OVERDUE'
 UNION ALL
-SELECT 'HOSTEL' AS domain, hb.breach_timestamp AS event_time, 'Curfew Breach Alert' AS title, hb.remarks AS description
-FROM hostel_curfew_breaches hb WHERE hb.student_ukid = :student_ukid
+SELECT 'GATEPASS' AS domain, gpl.in_entry AS event_time, 'Curfew Breach Alert' AS title, CONCAT('Late Gate Entry - Status: ', gps.status_name) AS description
+FROM gate_pass_log gpl
+JOIN gate_pass_status gps ON gpl.status_id = gps.id WHERE gpl.student_ukid = :student_ukid AND gpl.status_id IN (3, 4)
+UNION ALL
+SELECT 'CHC' AS domain, cr.created_at AS event_time, 'Service Request Logged' AS title, CONCAT('CHC: ', cs.service_name, ' (Status: ', cr.status, ')') AS description
+FROM chc_request cr
+JOIN chc_service cs ON cr.service_id = cs.id WHERE cr.requester_ukid = :student_ukid
 ORDER BY event_time DESC LIMIT 20;
                 """.strip()
             }

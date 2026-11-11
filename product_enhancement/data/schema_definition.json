@@ -2,34 +2,68 @@
   "database": "collpoll",
   "engine": "InnoDB",
   "version": "MySQL 8.0.44",
+  "total_schema_tables": 1647,
+  "core_workflow_tables": 270,
+  "schema_author": "Suraj Shetty",
   "architectural_mappings": {
     "student_profile": {
       "source_tables": ["authenticator", "student", "UDC_01_STATUS"],
+      "primary_key": "ukid",
       "fields_mapped": ["ukid", "enrollment_no", "first_name", "last_name", "email", "phone", "department", "batch", "current_semester"]
     },
     "academics_attendance": {
       "source_tables": ["classroom_attendance", "course", "programme", "ams_student_cgpa", "ems_student_registration"],
+      "foreign_key": "student_ukid",
       "fields_mapped": ["overall_cgpa", "attendance_pct", "courses", "consecutive_absent_days", "missed_assessments"]
     },
     "fees_finance": {
-      "source_tables": ["academic_fee_instalment", "payment_receipt", "dues", "finance_challan"],
-      "fields_mapped": ["total_annual_fee", "amount_paid", "amount_overdue", "overdue_days", "status", "notices_sent"]
+      "source_tables": ["dues_v2", "fee_demand_ledgers", "fee_consolidate_hostel_option", "fee_consolidated_transport_option"],
+      "foreign_key": "due_id",
+      "fields_mapped": ["due_id", "total_annual_fee", "amount_paid", "amount_overdue", "overdue_days", "status", "notices_sent"]
     },
     "turnstile_gate_telemetry": {
-      "source_tables": ["access_gate_log_ledger", "access_gate", "access_pass"],
-      "fields_mapped": ["monthly_punches", "late_entries_30d", "curfew_breaches_30d", "last_seen_gate", "last_seen_timestamp"]
+      "source_tables": ["gate_pass_log", "gate_pass_long_pass", "gate_pass_timings", "gate_pass_status", "gate_pass_audience"],
+      "foreign_key": "student_ukid",
+      "fields_mapped": ["monthly_punches", "late_entries_30d", "curfew_breaches_30d", "last_seen_gate", "last_seen_timestamp", "status_id"]
     },
-    "health_and_disciplinary": {
-      "source_tables": ["chc_request", "chc_request_log", "hostel_attendance", "hostel_allotment"],
-      "fields_mapped": ["chc_visits", "hostel_infractions", "disciplinary_notices"]
+    "hostel_and_dining": {
+      "source_tables": ["hostel_allotment", "hostel_attendance", "hostel_fee_policy", "infrastructure_version", "mess_meal", "mess_meal_usage"],
+      "foreign_key": "allotment_id",
+      "fields_mapped": ["infrastructure_id", "child_infrastructure_id", "due_id", "attendance_status", "meal_portions_deducted"]
+    },
+    "chc_workflow_engine": {
+      "source_tables": ["chc_request", "chc_service", "chc_work_centre", "chc_work_centre_action", "chc_middleware", "chc_request_log"],
+      "foreign_key": "requester_ukid",
+      "fields_mapped": ["service_id", "work_centre_id", "middleware_id", "action_id", "module_action_status", "sla_days_remaining"]
+    },
+    "infrastructure_booking": {
+      "source_tables": ["infra_booking", "infra_booking_item", "infrastructure_master", "infrastructure_version", "infra_booking_rules"],
+      "foreign_key": "infrastructure_version_id",
+      "fields_mapped": ["booking_id", "booking_module", "item_status", "decibel_level", "hvac_precool_dispatched"]
+    },
+    "transport_management_v2": {
+      "source_tables": ["transport_management_v2_route", "transport_management_v2_allotment", "transport_management_v2_vehicle_configuration", "transport_management_v2_vehicle_inventory_lock"],
+      "foreign_key": "due_id",
+      "fields_mapped": ["route_id", "stop_id", "vehicle_id", "occupancy_rate_pct", "diesel_saved_inr"]
+    },
+    "placements_tpo": {
+      "source_tables": ["placement_application", "placement_job", "placement_organization", "placement_student_status", "placement_offer_status"],
+      "foreign_key": "ukid",
+      "fields_mapped": ["job_id", "organization_id", "application_status_id", "offer_status_id", "verified_sgpa", "blooms_rubrics"]
     }
   },
   "risk_scoring_weights": {
     "attendance_weight_pct": 35,
-    "fee_default_weight_pct": 30,
-    "academic_grades_weight_pct": 20,
-    "gate_curfew_infractions_weight_pct": 10,
-    "chc_wellness_flags_weight_pct": 5
+    "fee_default_weight_pct": 25,
+    "gate_curfew_infractions_weight_pct": 15,
+    "hostel_residential_weight_pct": 15,
+    "chc_service_grievance_weight_pct": 10
+  },
+  "weight_rationale": {
+    "academics_35pct": "UGC Section 12 mandatory 75% attendance rule for semester exam eligibility (sub-65% triggers debarment).",
+    "fees_25pct": "Institutional Finance Syndicate bylaw: >30 days past due triggers administrative de-registration.",
+    "gates_15pct": "Campus Security curfew framework under gate_pass_timings & gate_pass_audience (status 3/4 late marks).",
+    "hostel_15pct": "Residential life policy under hostel_attendance correlating with student social disengagement.",
+    "chc_10pct": "Campus Help Centre open service tickets & unresolved escalations under chc_request."
   }
 }
-

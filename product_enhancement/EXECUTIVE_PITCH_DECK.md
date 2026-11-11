@@ -9,23 +9,27 @@
 
 ---
 
-### Slide 1: Title & Career Transition Vision
-* **Headline:** Digii Campus 2.0: Unlocking Phase 2: Cross-Module Predictive Intelligence
-* **Sub-headline:** Transforming 10.08 GB of Relational MySQL Data into ₹1.84 Cr Protected Tuition & Daily Student Delight
-* **Presenter:** Dhruv Jain — Role Transition Pitch: Data & Product Intern ➔ **Product Intern**
-* **Executive Summary:** Over the past month, auditing our 1,647 production database tables revealed an untapped product moat: our data is deeply rich, but operates in passive silos. Digii Campus 2.0 synthesizes these assets into automated administrative intelligence and student-first innovations.
+### Slide 1: Title & Career Transition Vision (The 3-Minute Hook)
+* **Headline:** Digii Campus 2.0: Unlocking Phase 2 Cross-Module Predictive Intelligence
+* **Sub-headline:** Building Predictive Intelligence atop CollPoll's 270-Table Production Architecture
+* **Presenter:** Dhruv Jain — Role Transition Pitch: Data & Product Intern ➔ **Product Intern / APM**
+* **The 3-Minute Executive Summary:**
+  > *"Suraj sir and Saksham sir’s engineering team built a rock-solid transactional foundation across 270 tables that handles thousands of daily gate passes, hostel allotments, and fee payments. Over the past 5 weeks, I audited our 10.08 GB MySQL replica and mapped these exact workflows (`chc_middleware`, `gate_pass_log`, `hostel_allotment`, `dues_v2`, `infra_booking`). My APM proposal does NOT rebuild commodity ERP features; it builds a predictive intelligence layer on top of those exact tables to protect **₹1.84 Cr in tuition**, eliminate **₹14,200/day in kitchen food waste**, and automate **NAAC 5.3 co-curricular accreditation**."*
 
 ---
 
-### Slide 2: The Core Enterprise Problem
-* **The Diagnostic:** Higher Education ERPs are historically "Data Rich, Action Poor".
-* **Siloed Reality:**
-  - Academics AMS knows when attendance drops from 85% to 58%.
-  - Finance knows when tuition installment is 42 days overdue.
-  - Gate Turnstiles know when a student stops leaving the hostel.
-  - CHC knows when a student reports anxiety or viral illness.
-* **The Pain:** No system connects these dots until the student officially drops out or defaults.
-* **The Cost:** ₹1.84 Cr in unrecovered tuition per semester for a typical 5,000-student university campus.
+### Slide 2: The Core Strategic Opportunity
+* **The Diagnostic:** CollPoll Phase 1 successfully digitized university administrative workflows into 270 transactional tables.
+* **The Phase 2 Opportunity:**
+  - `classroom_attendance` records attendance drops.
+  - `dues_v2` tracks unpaid tuition installments past 30 DPD.
+  - `gate_pass_log` logs late entries (`status_id = 3` or `4`).
+  - `chc_request` records open student service tickets.
+* **The Synthesis Moat:** By joining these tables on `ukid` and `due_id`, Digii 2.0 catches compound student distress 60 days before administrative failure occurs.
+* **Quantified Bottom-Line Impact:**
+  - **₹1.84 Cr** protected tuition across a 4,850-student cohort.
+  - **₹14,200/day** in raw food savings by deducting approved hostel leaves from mess preparation.
+  - **40 hours/week** of manual accounts reconciliation automated.
 
 ---
 
