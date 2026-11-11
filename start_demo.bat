@@ -33,3 +33,4 @@ echo ===========================================================================
 echo.
 echo Press any key to exit this launcher window (server will continue running in background).
 pause >nul
+

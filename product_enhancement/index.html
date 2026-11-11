@@ -1486,6 +1486,7 @@
             </p>
           </div>
           <div class="shrink-0 flex items-center gap-2">
+            <button id="btn-reset-mess" onclick="resetMessProcurement()" class="hidden px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition-colors">↺ Reset</button>
             <button id="btn-optimize-mess" onclick="optimizeMessProcurement()" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5">
               <span>⚡ Optimize Kitchen Prep (-630 Portions)</span>
             </button>
@@ -1605,11 +1606,38 @@
           </div>
         </div>
 
-        <!-- Gate Telemetry Log Table Stub -->
+        <!-- Gate Telemetry Log Table & Interactive Security Toolbar -->
         <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-            <h4 class="font-bold text-sm text-slate-900">Recent Turnstile Telemetry Feed (Live Sample)</h4>
-            <span class="text-[11px] font-mono text-slate-400">Streamed from collpoll_10gb_bi_dump</span>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Recent Turnstile Telemetry Feed (Live Stream)</h4>
+              <span class="text-[11px] font-mono text-slate-500">Streamed from collpoll_10gb_bi_dump (18 Gates Active)</span>
+            </div>
+            <!-- Security Filter Buttons -->
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <button id="btn-access-all" onclick="filterAccessTelemetry('ALL')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs">
+                All Telemetry
+              </button>
+              <button id="btn-access-travel" onclick="filterAccessTelemetry('IMPOSSIBLE_TRAVEL')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 transition-colors flex items-center gap-1">
+                <span>⚡ Impossible Travel (&lt;180s)</span>
+                <span class="px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-950 text-[10px]">2</span>
+              </button>
+              <button id="btn-access-curfew" onclick="filterAccessTelemetry('CURFEW')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-red-50 hover:bg-red-100 text-red-800 border border-red-300 transition-colors flex items-center gap-1">
+                <span>🚨 Curfew Breaches</span>
+                <span class="px-1.5 py-0.2 rounded-full bg-red-200 text-red-950 text-[10px]">7</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Anomaly Action Alert Bar (Hidden by default, shown when filtering anomalies) -->
+          <div id="access-action-banner" class="hidden p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-xs text-amber-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🚨</span>
+              <span><strong>Anomaly Detected:</strong> Aarav Sharma ID card punched at Gate 02 (East) and Gate 05 (Sports Complex) within 45s (Distance: 1.2 km). Impossible physical travel.</span>
+            </div>
+            <button id="btn-guard-dispatch" onclick="dispatchSecurityGuardCheck()" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs shrink-0 flex items-center gap-1.5">
+              <span>⚡ Dispatch Guard to Gate 05</span>
+            </button>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs">
@@ -1623,8 +1651,8 @@
                   <th class="px-4 py-2.5">Telemetry Status</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr class="hover:bg-slate-50">
+              <tbody id="access-telemetry-body" class="divide-y divide-slate-100 font-sans">
+                <tr class="hover:bg-slate-50" data-type="CURFEW">
                   <td class="px-4 py-2.5 font-bold text-slate-800">Gate 02 - East Turnstile</td>
                   <td class="px-4 py-2.5 text-slate-900">Aarav Sharma</td>
                   <td class="px-4 py-2.5 font-mono text-slate-500">2024CS0142</td>
@@ -1727,14 +1755,107 @@
           </div>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-            <h4 class="font-bold text-sm text-slate-900">Student Wellbeing & Counseling Triage</h4>
-            <span class="text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200 font-bold">Mental Health Proactive Desk</span>
+        <!-- Interactive Student Wellbeing & Counseling Triage Console -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="font-bold text-sm text-slate-900">Student Wellbeing & Confidential Care Triage</h4>
+                <span class="text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200 font-bold">Mental Health Proactive Desk</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Non-punitive psychological support and medical grace triage for students in academic or physical distress.</p>
+            </div>
+            <button onclick="downloadChcHealthDigest()" class="px-3.5 py-2 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-300 font-bold text-xs flex items-center gap-1.5 transition-colors shrink-0">
+              <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Download CHC Digest (.txt)</span>
+            </button>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            When academic performance collapses alongside late-night curfew breaches, CHC counselors receive an automated advisory to arrange supportive, non-punitive wellness check-ins before students drop out.
-          </p>
+
+          <!-- Confidential Triage Cases Table -->
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Student Patient</th>
+                  <th class="py-2.5 px-3">Health Reason / Symptom</th>
+                  <th class="py-2.5 px-2 text-center">Repeat Visits</th>
+                  <th class="py-2.5 px-2 text-center">Compound Risk</th>
+                  <th class="py-2.5 px-3">Triage Recommendation</th>
+                  <th class="py-2.5 px-3 text-right">Care Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 font-sans">
+                <tr id="chc-row-priya" class="hover:bg-purple-50/40 transition-colors">
+                  <td class="py-3 px-3">
+                    <span class="font-bold text-slate-900 block">Priya Nair</span>
+                    <span class="text-[10px] font-mono text-slate-500">2024CS0219 • B.Tech CSE</span>
+                  </td>
+                  <td class="py-3 px-3 text-slate-700">
+                    <span class="font-semibold text-purple-900">Severe Sleep Deprivation & Anxiety</span>
+                    <span class="text-[10px] text-slate-500 block">Correlates with 5 missed 8:30 AM lectures</span>
+                  </td>
+                  <td class="py-3 px-2 text-center font-mono font-bold text-slate-800">3 (14 Days)</td>
+                  <td class="py-3 px-2 text-center">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-red-100 text-red-800 border border-red-200">88 (Red Zone)</span>
+                  </td>
+                  <td class="py-3 px-3">
+                    <span id="chc-rec-priya" class="text-[11px] text-purple-950 font-medium">Quiet 1-on-1 counselor invite (zero academic penalties)</span>
+                  </td>
+                  <td class="py-3 px-3 text-right">
+                    <button id="btn-chc-priya" onclick="dispatchChcOutreach('2024CS0219')" class="px-2.5 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-2xs transition-all">
+                      ⚡ Dispatch Outreach
+                    </button>
+                  </td>
+                </tr>
+
+                <tr id="chc-row-kabir" class="hover:bg-purple-50/40 transition-colors">
+                  <td class="py-3 px-3">
+                    <span class="font-bold text-slate-900 block">Kabir Mehta</span>
+                    <span class="text-[10px] font-mono text-slate-500">2024ME0104 • B.Tech ME</span>
+                  </td>
+                  <td class="py-3 px-3 text-slate-700">
+                    <span class="font-semibold text-slate-900">Post-Surgery Knee Rehabilitation</span>
+                    <span class="text-[10px] text-slate-500 block">Restricted mobility in workshop labs</span>
+                  </td>
+                  <td class="py-3 px-2 text-center font-mono font-bold text-slate-800">4 (30 Days)</td>
+                  <td class="py-3 px-2 text-center">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-amber-100 text-amber-800 border border-amber-200">76 (Amber Zone)</span>
+                  </td>
+                  <td class="py-3 px-3">
+                    <span id="chc-rec-kabir" class="text-[11px] text-slate-700">Apply 8-hour lab attendance grace to avoid debarment</span>
+                  </td>
+                  <td class="py-3 px-3 text-right">
+                    <button id="btn-chc-kabir" onclick="dispatchChcAttendanceGrace('2024ME0104')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-2xs transition-all">
+                      ⚡ Apply Attendance Grace
+                    </button>
+                  </td>
+                </tr>
+
+                <tr id="chc-row-sneha" class="hover:bg-purple-50/40 transition-colors">
+                  <td class="py-3 px-3">
+                    <span class="font-bold text-slate-900 block">Sneha Rao</span>
+                    <span class="text-[10px] font-mono text-slate-500">2024EC0188 • B.Tech ECE</span>
+                  </td>
+                  <td class="py-3 px-3 text-slate-700">
+                    <span class="font-semibold text-slate-900">Midterm Exam Stress & Migraine</span>
+                    <span class="text-[10px] text-slate-500 block">Requested relaxation therapy referral</span>
+                  </td>
+                  <td class="py-3 px-2 text-center font-mono font-bold text-slate-800">2 (7 Days)</td>
+                  <td class="py-3 px-2 text-center">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-100 text-emerald-800 border border-emerald-200">54 (Low Risk)</span>
+                  </td>
+                  <td class="py-3 px-3">
+                    <span id="chc-rec-sneha" class="text-[11px] text-slate-700">Book slot in Friday mindfulness workshop</span>
+                  </td>
+                  <td class="py-3 px-3 text-right">
+                    <button id="btn-chc-sneha" onclick="dispatchChcSession('2024EC0188')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs shadow-2xs transition-all">
+                      ⚡ Book Workshop
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -1920,6 +2041,7 @@
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="text-[10px] text-slate-500 font-mono">Burnout Reduction: -68%</span>
+                <button onclick="openDeadlineModal()" class="px-2 py-0.5 rounded text-[11px] font-semibold text-indigo-700 hover:text-indigo-900 hover:bg-indigo-50 border border-indigo-200 transition-colors" title="Open full weekly calendar heatmap">📅 Open Heatmap Modal</button>
                 <button onclick="toggleScheduleView()" class="text-[10px] text-blue-600 hover:text-blue-800 font-bold underline font-mono">
                   [View Schedule Matrix]
                 </button>
@@ -2166,6 +2288,7 @@
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
               <span id="elective-seats-badge" class="text-[10px] text-teal-700 font-mono font-bold">Seats Remaining: 14 / 60</span>
               <div class="flex items-center gap-1.5">
+                <button onclick="openElectiveModal()" class="px-2.5 py-1 rounded text-[11px] font-bold text-teal-800 hover:text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-300 transition-colors flex items-center gap-1" title="Compare 3 electives side-by-side"><span>📊</span><span>Compare 3 Electives</span></button>
                 <button id="btn-elective-reset" onclick="resetElectiveRegistration()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
                   ↺ Reset
                 </button>
@@ -7128,6 +7251,207 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         }
       }
     });
+
+  
+    // ===================================================================
+    // HOSTEL, ACCESS & CHC INTERACTIVE DEMO HANDLERS
+    // ===================================================================
+
+    // Reset Mess Procurement
+    function resetMessProcurement() {
+      const btnOpt = document.getElementById('btn-optimize-mess');
+      const btnReset = document.getElementById('btn-reset-mess');
+      if (btnOpt) {
+        btnOpt.disabled = false;
+        btnOpt.className = "px-4 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5";
+        btnOpt.innerHTML = "<span>⚡ Optimize Kitchen Prep (-630 Portions)</span>";
+      }
+      if (btnReset) btnReset.classList.add('hidden');
+      showToast("↺ Mess Procurement Reset to standard 2,450 resident headcount baseline.");
+    }
+
+    // Access & Gates Filter Handlers
+    function filterAccessTelemetry(type) {
+      const banner = document.getElementById('access-action-banner');
+      const btnAll = document.getElementById('btn-access-all');
+      const btnTravel = document.getElementById('btn-access-travel');
+      const btnCurfew = document.getElementById('btn-access-curfew');
+      const tbody = document.getElementById('access-telemetry-body');
+
+      if (btnAll) btnAll.className = type === 'ALL' ? "px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs" : "px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition-colors";
+      if (btnTravel) btnTravel.className = type === 'IMPOSSIBLE_TRAVEL' ? "px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-600 text-white shadow-2xs" : "px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 transition-colors flex items-center gap-1";
+      if (btnCurfew) btnCurfew.className = type === 'CURFEW' ? "px-2.5 py-1.5 rounded-lg text-xs font-bold bg-red-600 text-white shadow-2xs" : "px-2.5 py-1.5 rounded-lg text-xs font-bold bg-red-50 hover:bg-red-100 text-red-800 border border-red-300 transition-colors flex items-center gap-1";
+
+      if (type === 'IMPOSSIBLE_TRAVEL') {
+        if (banner) banner.classList.remove('hidden');
+        if (tbody) {
+          tbody.innerHTML = `
+            <tr class="bg-amber-50/70 border-l-4 border-amber-500">
+              <td class="px-4 py-3 font-bold text-slate-900">Gate 02 - East Turnstile</td>
+              <td class="px-4 py-3 text-slate-900">Aarav Sharma</td>
+              <td class="px-4 py-3 font-mono text-slate-600">2024CS0142</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">ENTRY</span></td>
+              <td class="px-4 py-3 font-mono text-slate-600">10 Nov 2026, 22:45:00</td>
+              <td class="px-4 py-3 text-amber-800 font-bold">Punch 1 (Main Campus)</td>
+            </tr>
+            <tr class="bg-amber-50/70 border-l-4 border-amber-500">
+              <td class="px-4 py-3 font-bold text-slate-900">Gate 05 - Sports Complex</td>
+              <td class="px-4 py-3 text-slate-900">Aarav Sharma</td>
+              <td class="px-4 py-3 font-mono text-slate-600">2024CS0142</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">ENTRY</span></td>
+              <td class="px-4 py-3 font-mono text-slate-600">10 Nov 2026, 22:45:45</td>
+              <td id="status-punch-2" class="px-4 py-3 text-red-600 font-extrabold flex items-center gap-1">
+                <span>🚨 Multi-Punch (+45s / 1.2km)</span>
+              </td>
+            </tr>
+          `;
+        }
+        showToast("⚡ Filtered 2 Impossible Travel Records: Aarav Sharma card detected at 2 gates 1.2km apart in 45s.");
+      } else if (type === 'CURFEW') {
+        if (banner) banner.classList.add('hidden');
+        if (tbody) {
+          tbody.innerHTML = `
+            <tr class="bg-red-50/50 border-l-4 border-red-500">
+              <td class="px-4 py-3 font-bold text-slate-900">Gate 02 - East Turnstile</td>
+              <td class="px-4 py-3 text-slate-900">Aarav Sharma</td>
+              <td class="px-4 py-3 font-mono text-slate-600">2024CS0142</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">ENTRY (Curfew Breach)</span></td>
+              <td class="px-4 py-3 font-mono text-slate-600">10 Nov 2026, 22:45:00</td>
+              <td class="px-4 py-3 text-red-600 font-semibold">Flagged (Late Entry)</td>
+            </tr>
+            <tr class="bg-red-50/50 border-l-4 border-red-500">
+              <td class="px-4 py-3 font-bold text-slate-900">Gate 01 - Main Arch</td>
+              <td class="px-4 py-3 text-slate-900">Rohan Varma</td>
+              <td class="px-4 py-3 font-mono text-slate-600">2024CS0198</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">ENTRY (Late)</span></td>
+              <td class="px-4 py-3 font-mono text-slate-600">10 Nov 2026, 23:12:18</td>
+              <td class="px-4 py-3 text-red-600 font-semibold">Flagged (Hostel Warden SMS Sent)</td>
+            </tr>
+          `;
+        }
+        showToast("🚨 Filtered 7 Curfew Breaches: Late-night hostel gate arrivals logged past 10:00 PM.");
+      } else {
+        if (banner) banner.classList.add('hidden');
+        if (tbody) {
+          tbody.innerHTML = `
+            <tr class="hover:bg-slate-50">
+              <td class="px-4 py-2.5 font-bold text-slate-800">Gate 02 - East Turnstile</td>
+              <td class="px-4 py-2.5 text-slate-900">Aarav Sharma</td>
+              <td class="px-4 py-2.5 font-mono text-slate-500">2024CS0142</td>
+              <td class="px-4 py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">ENTRY (Curfew Breach)</span></td>
+              <td class="px-4 py-2.5 font-mono text-slate-400">10 Nov 2026, 22:45:00</td>
+              <td class="px-4 py-2.5 text-red-600 font-semibold">Flagged (Late Entry)</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="px-4 py-2.5 font-bold text-slate-800">Gate 01 - Main University Arch</td>
+              <td class="px-4 py-2.5 text-slate-900">Ananya Deshmukh</td>
+              <td class="px-4 py-2.5 font-mono text-slate-500">2024EC0089</td>
+              <td class="px-4 py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">ENTRY</span></td>
+              <td class="px-4 py-2.5 font-mono text-slate-400">10 Nov 2026, 21:14:02</td>
+              <td class="px-4 py-2.5 text-emerald-600 font-semibold">Normal Entry</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="px-4 py-2.5 font-bold text-slate-800">Gate 03 - Library & Lab Complex</td>
+              <td class="px-4 py-2.5 text-slate-900">Vikramaditya Roy</td>
+              <td class="px-4 py-2.5 font-mono text-slate-500">2024ME0034</td>
+              <td class="px-4 py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">EXIT</span></td>
+              <td class="px-4 py-2.5 font-mono text-slate-400">10 Nov 2026, 20:55:10</td>
+              <td class="px-4 py-2.5 text-blue-600 font-semibold">Normal Exit</td>
+            </tr>
+          `;
+        }
+        showToast("Showing all 8,412 live turnstile gate telemetry events.");
+      }
+    }
+
+    function dispatchSecurityGuardCheck() {
+      const btn = document.getElementById('btn-guard-dispatch');
+      const statusCell = document.getElementById('status-punch-2');
+      if (btn) {
+        btn.disabled = true;
+        btn.className = "px-3 py-1.5 rounded-lg bg-emerald-700 text-white font-bold text-xs shadow-2xs cursor-default";
+        btn.innerHTML = "✓ Guard Dispatched to Gate 05";
+      }
+      if (statusCell) {
+        statusCell.className = "px-4 py-3 text-emerald-700 font-bold flex items-center gap-1";
+        statusCell.innerHTML = "✓ Guard Investigating (Aarav Sharma Card Flagged)";
+      }
+      showToast("👮 Security Alert Dispatched: Guard Ramesh Kumar dispatched to Gate 05 to verify cardholder identity!");
+    }
+
+    // CHC Healthcare Center Handlers
+    function dispatchChcOutreach(studentId) {
+      const btn = document.getElementById('btn-chc-priya');
+      const rec = document.getElementById('chc-rec-priya');
+      if (btn) {
+        btn.disabled = true;
+        btn.className = "px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
+        btn.innerHTML = "✓ Outreach Dispatched";
+      }
+      if (rec) {
+        rec.innerHTML = "<span class='text-emerald-700 font-bold'>✓ Confidential SMS & Portal Invitation sent by Dr. Meenakshi. Zero academic penalty.</span>";
+      }
+      showToast("💜 CHC Confidential Outreach Sent: Empathetic counseling invitation dispatched to Priya Nair (2024CS0219).");
+    }
+
+    function dispatchChcAttendanceGrace(studentId) {
+      const btn = document.getElementById('btn-chc-kabir');
+      const rec = document.getElementById('chc-rec-kabir');
+      if (btn) {
+        btn.disabled = true;
+        btn.className = "px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
+        btn.innerHTML = "✓ 8 Hrs Grace Applied";
+      }
+      if (rec) {
+        rec.innerHTML = "<span class='text-emerald-700 font-bold'>✓ Approved: 8 workshop lab hours credited to ams_attendance. Debarment risk removed.</span>";
+      }
+      showToast("🏥 Attendance Grace Approved: 8 hours credited to Kabir Mehta for post-surgery rehabilitation.");
+    }
+
+    function dispatchChcSession(studentId) {
+      const btn = document.getElementById('btn-chc-sneha');
+      const rec = document.getElementById('chc-rec-sneha');
+      if (btn) {
+        btn.disabled = true;
+        btn.className = "px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
+        btn.innerHTML = "✓ Workshop Booked";
+      }
+      if (rec) {
+        rec.innerHTML = "<span class='text-emerald-700 font-bold'>✓ Confirmed: Friday 4:00 PM Mindfulness & Stress Management Session (Room 102).</span>";
+      }
+      showToast("🌿 Session Confirmed: Sneha Rao enrolled in Friday 4:00 PM Exam Stress Relief Workshop.");
+    }
+
+    function downloadChcHealthDigest() {
+      const text = `========================================================================\n` +
+        `DIGII CAMPUS - CAMPUS HEALTH & WELLBEING CENTER (CHC) WEEKLY DIGEST\n` +
+        `========================================================================\n` +
+        `Report ID: CHC-WEEKLY-2026-W45\n` +
+        `Generated: ${new Date().toISOString()}\n` +
+        `Confidentiality Tier: Tier 1 (HIPAA & FERPA Anonymized Compliance)\n\n` +
+        `EXECUTIVE WELLBEING SUMMARY:\n` +
+        `- Active Duty Clinicians: 4 (2 Physicians, 2 Mental Health Counselors)\n` +
+        `- Weekly Counseling Consultations: 28 sessions completed\n` +
+        `- Active SOS Wellness Flagged Cases: 3 students in academic-health distress\n\n` +
+        `TRIAGE ACTIONS EXECUTED:\n` +
+        `1. Priya Nair (2024CS0219): Confidential counseling outreach dispatched (Zero penalty).\n` +
+        `2. Kabir Mehta (2024ME0104): 8 lecture hours medical attendance grace credited.\n` +
+        `3. Sneha Rao (2024EC0188): Friday 4:00 PM exam stress workshop confirmed.\n\n` +
+        `CHIEF MEDICAL OFFICER SIGN-OFF:\n` +
+        `Dr. Anjali Deshmukh, MBBS, MD (Campus Health Officer)\n` +
+        `Digii Campus Health Center\n`;
+
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Digii_Campus_CHC_Weekly_Digest_${new Date().toISOString().split('T')[0]}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("📄 Official CHC Weekly Digest downloaded successfully!");
+    }
 
   </script>
 </body>
