@@ -4,13 +4,13 @@
 **Role:** Data & Product Intern (Proposing Formal Transition to **Product Intern / APM**)  
 **Repository:** [github.com/jaindhruv1923/Internship_work](https://github.com/jaindhruv1923/Internship_work)  
 **Reporting Period:** October – November 2026 (Odd Semester AY 2026-27)  
-**Managers & Mentors:** Mr. Suraj Bhatt (Engineering & BI Manager), Saksham Gupta (Principal Engineer), Gurdeep Singh, Piyush Anand, Shamitr Sudhir Mardikar  
+**Managers & Mentors:** Mr. Suraj Bhatt (Engineering & BI Manager), Saksham Gupta (Principal Engineer), Gurdeep Singh, Piyush Anand, Shamitr Sudhir Mardikar
 
 ---
 
 ## Executive Summary & Role Transition Objective
 
-This repository documents the weekly research, database engineering, enterprise BI optimization, and product architecture deliverables completed during my internship at **Digii Campus (formerly CollPoll)**. 
+This repository documents the weekly research, database engineering, enterprise BI optimization, and product architecture deliverables completed during my internship at **Digii Campus (formerly CollPoll)**.
 
 Over the 5-week tenure, my scope expanded from frontend product research to deep database engineering on our **10.08 GB production MySQL replica** (1,647 tables, 15 operational domains), culminating in the architecture and delivery of **Digii Campus 2.0: Enterprise Intelligence & B2B2C Student Experience Platform**.
 
@@ -23,19 +23,24 @@ By bridging relational data depth with product prioritization frameworks (RICE),
 To explore the fully working single-page application (SPA), run the one-click Windows launcher or start the zero-dependency local dev server:
 
 ### Option 1: One-Click Windows Launcher (Recommended)
+
 Double-click `start_demo.bat` in the repository root, or run:
+
 ```cmd
 .\start_demo.bat
 ```
-*Automatically validates port 3000, starts the background HTTP listener if needed, and launches `http://localhost:3000/index.html` in your default browser.*
+
+_Automatically validates port 3000, starts the background HTTP listener if needed, and launches `http://localhost:3000/index.html` in your default browser._
 
 ### Option 2: PowerShell Dev Server
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\product_enhancement\server.ps1 -Port 3000
 # Open http://localhost:3000/index.html in your browser
 ```
 
 ### Option 3: Backend Python Microservice & Automated Test Suite
+
 ```powershell
 # Run backend microservice
 python .\product_enhancement\backend\app.py 8000
@@ -49,6 +54,7 @@ python .\product_enhancement\backend\test_api.py
 ## Weekly Progression
 
 ### Week 01: Onboarding, Architecture Alignment & Access Protocols
+
 - **Period:** 12 October 2026 – 16 October 2026
 - **Deliverables:** `WorkLog_Week01_12-16thOctober_Dhruv.pdf`
 - **Core Focus:**
@@ -59,6 +65,7 @@ python .\product_enhancement\backend\test_api.py
 ---
 
 ### Week 02: Non-Academic Student Development Framework
+
 - **Period:** 19 October 2026 – 23 October 2026
 - **Deliverables:**
   - `WorkLog_Week02_19-23rdOctober_Dhruv.pdf`
@@ -72,6 +79,7 @@ python .\product_enhancement\backend\test_api.py
 ---
 
 ### Week 03: Product Research & Competitive Benchmarking
+
 - **Period:** 26 October 2026 – 30 October 2026
 - **Deliverables:**
   - `WorkLog_Week03_26-30thOctober_Dhruv.pdf`
@@ -84,6 +92,7 @@ python .\product_enhancement\backend\test_api.py
 ---
 
 ### Week 04: Enterprise BI Database Audit, Performance Optimization & Advanced Analytics
+
 - **Period:** 02 November 2026 – 06 November 2026
 - **Reviewer:** Mr. Suraj Bhatt (Engineering & BI Manager)
 - **KT & Architecture Mentors:** Shamitr Sudhir Mardikar, Gurdeep Singh, Prudvi Pratap Kanakala, Piyush Anand
@@ -102,6 +111,7 @@ python .\product_enhancement\backend\test_api.py
 ---
 
 ### Week 05: Enterprise Product Architecture, PM Cockpit & B2B2C Dual-Value Innovation
+
 - **Period:** 09 November 2026 – 13 November 2026
 - **Reviewers:** Mr. Suraj Bhatt (Engineering & BI Manager), Saksham Gupta (Principal Engineer)
 - **Deliverables:**
@@ -119,30 +129,30 @@ python .\product_enhancement\backend\test_api.py
   - **Non-Academic Student Development Module (NASD):** Direct functional realization of Dhruv Jain's Week 2 research framework, tracking Enrichment Credits (BML Munjal University model), 42 chartered campus societies (ACM, IEEE, Baja Racing, NSS), 18,420 verified volunteer hours, and automated accreditation compliance for NAAC Criterion 5.3 / NIRF. Includes 1-click credential verification and exportable official co-curricular diploma supplements.
   - **Enterprise BI Suite & Clean Design Language:** Completely sanitized all emojis across modules in favor of clean enterprise SVG typography. Integrated a live Multi-Campus Switcher (`Main Campus`, `North Campus NCR`, `Bengaluru`), real-time Department Filter (`CSE`, `ECE`, `ME`) for the Predictive Radar, and an interactive Hostel Night Roll-Call & Room Allocation Register.
   - **19 Operational Core ERP Modules with Active Workflows & File Downloads:**
-    1. *Predictive Dropout Radar (`view-radar`):* Multi-tier risk classifier with real-time department filtering (CSE/ECE/ME), dynamic cohort count, and 1-click advisor intervention triggers.
-    2. *Student 360 Timeline (`view-student360`):* Longitudinal chronicle linking academic scores, library swipes, hostel curfews, and fee receipts for any selected student.
-    3. *Student Experience Hub (`view-student-hub`):* 10 dual-value B2B2C modules with live action modals, real certificate downloads, and friction mitigators.
-    4. *Non-Academic Development Ledger (`view-development`):* Week 2 research realization tracking 3,840 enrichment credit students, 42 student clubs, 18,420 volunteer hours (NAAC 5.3), with 1-click `Verify & Accredit` and official diploma supplement export.
-    5. *TPO Placement Intelligence (`view-placements`):* Placement Readiness Index (PRI), corporate shortlist filter (Google, Deloitte, Microsoft, Tata Tech), and instant official placement selection letter generation (`.txt`).
-    6. *Statutory Grievance & POSH Ombudsperson (`view-grievance`):* Zero-knowledge cryptographic ticket pipeline, SLA escalation triggers, and official UGC-compliant CSV audit ledger.
-    7. *Faculty PBAS Appraisal (`view-faculty`):* Real-time UGC API Score calculator, teaching load balance dispatcher (surplus lab hour delegation), and Dean-ready PBAS matrix export.
-    8. *Scholarship & DBT Disbursement (`view-scholarships`):* Merit-cum-means and institutional aid disbursement ledger with automated tuition offset crediting and PFMS-ready bank advice export.
-    9. *Smart Exam Hall Seating Engine (`view-exams`):* Anti-cheating cross-jumbling bipartite graph algorithm preventing adjacent branch seating, with 1-click jumbling matrix re-calculation and hall door seating roster CSV export.
-    10. *Campus ESG & Green Audit (`view-energy`):* Real-time IoT power telemetry across campus zones, 1-click HVAC idle power-down execution, and ISO 50001 green audit CSV export.
-    11. *Course Registration Cart (`view-registration`):* Real-time prerequisite validation tree, credit cap monitor, live add/drop seat count decrement, and approved schedule slip export.
-    12. *Alumni & Endowment Network (`view-alumni`):* 1:1 mentorship booking engine, capstone project sponsorship pledge, and verified alumni directory CSV export.
-    13. *Lab Consumables & High-Value Assets (`view-inventory`):* RFID/QR asset tracking, 4-hour workstation slot reservation, and central procurement audit export.
-    14. *Accreditation Copilot (`view-accreditation`):* NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection), cross-module relational proof verification, and institutional data bundle CSV export.
-    15. *Academics & Timetable Engine (`view-academics`):* 32 credit track scheduler, live timetable clash resolver, and clash-free timetable CSV export.
-    16. *Finance & Fee Dues Recon (`view-finance`):* Batch reconciliation matcher recovering ₹1.84 Cr tuition exposure, with bank statement parser and audit export.
-    17. *Hostel & Curfew Desk (`view-hostel`):* Real-time biometric night roll-call register with curfew breach alarms and CSV roster export.
-    18. *Access & Turnstiles (`view-access`):* Biometric gate reader telemetry with impossible travel anti-passback violation alerts and 1-click security guard dispatch.
-    19. *Campus Health Center Triage (`view-chc`):* Mental health and medical leave sync with automated lecture attendance crediting.
+    1. _Predictive Dropout Radar (`view-radar`):_ Multi-tier risk classifier with real-time department filtering (CSE/ECE/ME), dynamic cohort count, and 1-click advisor intervention triggers.
+    2. _Student 360 Timeline (`view-student360`):_ Longitudinal chronicle linking academic scores, library swipes, hostel curfews, and fee receipts for any selected student.
+    3. _Student Experience Hub (`view-student-hub`):_ 10 dual-value B2B2C modules with live action modals, real certificate downloads, and friction mitigators.
+    4. _Non-Academic Development Ledger (`view-development`):_ Week 2 research realization tracking 3,840 enrichment credit students, 42 student clubs, 18,420 volunteer hours (NAAC 5.3), with 1-click `Verify & Accredit` and official diploma supplement export.
+    5. _TPO Placement Intelligence (`view-placements`):_ Placement Readiness Index (PRI), corporate shortlist filter (Google, Deloitte, Microsoft, Tata Tech), and instant official placement selection letter generation (`.txt`).
+    6. _Statutory Grievance & POSH Ombudsperson (`view-grievance`):_ Zero-knowledge cryptographic ticket pipeline, SLA escalation triggers, and official UGC-compliant CSV audit ledger.
+    7. _Faculty PBAS Appraisal (`view-faculty`):_ Real-time UGC API Score calculator, teaching load balance dispatcher (surplus lab hour delegation), and Dean-ready PBAS matrix export.
+    8. _Scholarship & DBT Disbursement (`view-scholarships`):_ Merit-cum-means and institutional aid disbursement ledger with automated tuition offset crediting and PFMS-ready bank advice export.
+    9. _Smart Exam Hall Seating Engine (`view-exams`):_ Anti-cheating cross-jumbling bipartite graph algorithm preventing adjacent branch seating, with 1-click jumbling matrix re-calculation and hall door seating roster CSV export.
+    10. _Campus ESG & Green Audit (`view-energy`):_ Real-time IoT power telemetry across campus zones, 1-click HVAC idle power-down execution, and ISO 50001 green audit CSV export.
+    11. _Course Registration Cart (`view-registration`):_ Real-time prerequisite validation tree, credit cap monitor, live add/drop seat count decrement, and approved schedule slip export.
+    12. _Alumni & Endowment Network (`view-alumni`):_ 1:1 mentorship booking engine, capstone project sponsorship pledge, and verified alumni directory CSV export.
+    13. _Lab Consumables & High-Value Assets (`view-inventory`):_ RFID/QR asset tracking, 4-hour workstation slot reservation, and central procurement audit export.
+    14. _Accreditation Copilot (`view-accreditation`):_ NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection), cross-module relational proof verification, and institutional data bundle CSV export.
+    15. _Academics & Timetable Engine (`view-academics`):_ 32 credit track scheduler, live timetable clash resolver, and clash-free timetable CSV export.
+    16. _Finance & Fee Dues Recon (`view-finance`):_ Batch reconciliation matcher recovering ₹1.84 Cr tuition exposure, with bank statement parser and audit export.
+    17. _Hostel & Curfew Desk (`view-hostel`):_ Real-time biometric night roll-call register with curfew breach alarms and CSV roster export.
+    18. _Access & Turnstiles (`view-access`):_ Biometric gate reader telemetry with impossible travel anti-passback violation alerts and 1-click security guard dispatch.
+    19. _Campus Health Center Triage (`view-chc`):_ Mental health and medical leave sync with automated lecture attendance crediting.
   - **PM Strategy & Engineering Cockpit (`PM Cockpit`):**
-    - *Tab 1: RICE Prioritization Engine* with dynamic effort multiplier slider (0.5x to 2.0x) and real-time Now / Next / Later swimlanes with live feature launch triggers.
-    - *Tab 2: Feature Flags & Canary Governance (LaunchDarkly Model)* with rollout sliders and circuit breaker auto-rollback (>120ms p99).
-    - *Tab 3: Telemetry Funnel (Amplitude Model)* diagnosing 22% payment drop-off, with simulated PM intervention recovering +₹52 Lakhs.
-    - *Tab 4: In-App PRD v2.4 Spec Viewer* with 1-click Markdown copy and download.
+    - _Tab 1: RICE Prioritization Engine_ with dynamic effort multiplier slider (0.5x to 2.0x) and real-time Now / Next / Later swimlanes with live feature launch triggers.
+    - _Tab 2: Feature Flags & Canary Governance (LaunchDarkly Model)_ with rollout sliders and circuit breaker auto-rollback (>120ms p99).
+    - _Tab 3: Telemetry Funnel (Amplitude Model)_ diagnosing 22% payment drop-off, with simulated PM intervention recovering +₹52 Lakhs.
+    - _Tab 4: In-App PRD v2.4 Spec Viewer_ with 1-click Markdown copy and download.
   - **Full-Screen Executive Pitch Deck Viewer (`Pitch Deck`):** In-browser 12-slide presentation mode with keyboard arrow navigation (`◄` `►`), interactive highlights, and direct jump buttons into every live feature.
 
 ---
@@ -188,14 +198,14 @@ python .\product_enhancement\backend\test_api.py
 
 ## Quantified Business ROI Delivered
 
-| Metric Area | Legacy Digii Campus (Baseline) | Digii Campus 2.0 (Week 5 Deliverable) | Quantified Business Impact |
-| :--- | :--- | :--- | :--- |
-| **At-Risk Tuition Exposure** | ₹1.84 Cr unrecovered per term | 142 at-risk students identified & intervened | **₹1.84 Cr protected tuition revenue** |
-| **Fee Reconciliation Time** | 40 manual hours per bank statement | Automated 1-click batch matcher (842 records) | **95% reduction in accountant overhead** |
-| **Student No-Dues Clearance** | 10 to 14 days running across campus | 1-click 4-department digital clearance | **Zero physical paper forms** |
-| **Batch Assignment Burnout** | 70% overload on clustered Fridays | AI-driven deadline rebalancer to Monday | **68% reduction in student burnout index** |
-| **Timetable Scheduling Clashes** | 12 to 15 manual revisions per department | Real-time clash detection & 1-click resolve | **100% clash-free master timetable CSV** |
-| **Student Daily Active Use (DAU)** | 48% (Administrative use only) | 91.4% projected (Wallet, Market, Tutoring) | **Unbreakable product retention moat** |
+| Metric Area                        | Legacy Digii Campus (Baseline)           | Digii Campus 2.0 (Week 5 Deliverable)         | Quantified Business Impact                 |
+| :--------------------------------- | :--------------------------------------- | :-------------------------------------------- | :----------------------------------------- |
+| **At-Risk Tuition Exposure**       | ₹1.84 Cr unrecovered per term            | 142 at-risk students identified & intervened  | **₹1.84 Cr protected tuition revenue**     |
+| **Fee Reconciliation Time**        | 40 manual hours per bank statement       | Automated 1-click batch matcher (842 records) | **95% reduction in accountant overhead**   |
+| **Student No-Dues Clearance**      | 10 to 14 days running across campus      | 1-click 4-department digital clearance        | **Zero physical paper forms**              |
+| **Batch Assignment Burnout**       | 70% overload on clustered Fridays        | AI-driven deadline rebalancer to Monday       | **68% reduction in student burnout index** |
+| **Timetable Scheduling Clashes**   | 12 to 15 manual revisions per department | Real-time clash detection & 1-click resolve   | **100% clash-free master timetable CSV**   |
+| **Student Daily Active Use (DAU)** | 48% (Administrative use only)            | 91.4% projected (Wallet, Market, Tutoring)    | **Unbreakable product retention moat**     |
 
 ---
 
@@ -229,6 +239,7 @@ The master script [`Digii_Campus_BI_Database_Audit_Optimization_Week04.sql`](wee
 ## Acknowledgments
 
 Special thanks to the Digii Campus engineering, BI, and product teams for their mentorship, knowledge transfer sessions, and guidance throughout this internship:
+
 - **Mr. Suraj Bhatt** — Engineering & BI Manager
 - **Saksham Gupta** — Principal Engineer
 - **Shamitr Sudhir Mardikar** — Database Architecture & Infrastructure
