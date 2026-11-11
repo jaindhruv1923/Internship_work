@@ -12,7 +12,7 @@
 
 This repository documents the weekly research, database engineering, enterprise BI optimization, and product architecture deliverables completed during my internship at **Digii Campus (formerly CollPoll)**.
 
-Over the 5-week tenure, my scope expanded from frontend product research to deep database engineering on our **10.08 GB production MySQL replica** (1,647 tables, 15 operational domains), culminating in the architecture and delivery of **Digii Campus 2.0: Enterprise Intelligence & B2B2C Student Experience Platform**.
+Over the 5-week tenure, my scope expanded from frontend product research to deep database engineering (grounded in Suraj Shetty's CollPoll Workflows document covering 270 tables across 6 modules: CHC, Gatepass, Hostel, Infrastructure, Placements, Transport) on our **10.08 GB production MySQL replica** (1,647 tables, 15 operational domains), culminating in the architecture and delivery of **Digii Campus 2.0: Enterprise Intelligence & B2B2C Student Experience Platform**.
 
 By bridging relational data depth with product prioritization frameworks (RICE), engineering safety guardrails (LaunchDarkly-style feature flags and circuit breakers), and dual-value user design, this work demonstrates my readiness to formally transition into the **Product Intern / APM** role.
 
@@ -128,7 +128,7 @@ python .\product_enhancement\backend\test_api.py
   - **Smart Timetable Clash Resolver (Stage 8):** Multi-entity constraint optimizer detecting faculty collisions in real time and auto-resolving professor commitments with 1-click, eliminating **100% of scheduling backend support tickets**.
   - **Non-Academic Student Development Module (NASD):** Direct functional realization of Dhruv Jain's Week 2 research framework, tracking Enrichment Credits (BML Munjal University model), 42 chartered campus societies (ACM, IEEE, Baja Racing, NSS), 18,420 verified volunteer hours, and automated accreditation compliance for NAAC Criterion 5.3 / NIRF. Includes 1-click credential verification and exportable official co-curricular diploma supplements.
   - **Enterprise BI Suite & Clean Design Language:** Completely sanitized all emojis across modules in favor of clean enterprise SVG typography. Integrated a live Multi-Campus Switcher (`Main Campus`, `North Campus NCR`, `Bengaluru`), real-time Department Filter (`CSE`, `ECE`, `ME`) for the Predictive Radar, and an interactive Hostel Night Roll-Call & Room Allocation Register.
-  - **20 Operational Predictive Intelligence & Disruptive Modules (Absent in Legacy Digii Campus):**
+  - **20 Operational Predictive Intelligence & Disruptive Modules (Net-New vs Current Digii Campus):**
     1. _Predictive Dropout Radar (`view-radar`):_ Multi-tier risk classifier with real-time department filtering (CSE/ECE/ME), dynamic cohort count, and 1-click advisor intervention triggers.
     2. _Student 360 Timeline (`view-student360`):_ Longitudinal chronicle linking academic scores, library swipes, hostel curfews, and fee receipts for any selected student.
     3. _Student Experience Hub (`view-student-hub`):_ 10 dual-value B2B2C modules with live action modals, real certificate downloads, and friction mitigators.
@@ -139,7 +139,7 @@ python .\product_enhancement\backend\test_api.py
     8. _Tamper-Proof Relational Auto-Resume (`view-autoresume` - Week 3 Proposal):_ Directly compiles authenticated SGPA, OBE Bloom's rubrics, and club leadership from MySQL into an institutionally sealed, QR-verifiable CV.
     9. _Turnstile Anti-Passback & Impossible Travel (`view-passback` - Week 4 Audit):_ Biometric velocity physics checker detecting proxy card taps at distant gates in <180s, triggering turnstile lockout and guard dispatch.
     10. _Non-Academic Development Ledger (`view-development` - Week 2 Proposal):_ Situational Evidence Profiler tracking 3,840 enrichment credit students, 42 clubs, 18,420 volunteer hours (NAAC 5.3) with diploma supplement export.
-    11. _Zero-Knowledge Statutory POSH Vault (`view-grievance`):_ Client-side SHA-256 encrypted whistleblower intake with anonymous tracking receipts and automated UGC 15-day SLA escalation countdown.
+    11. _CHC Workflow Intelligence & SLA Analytics (`view-grievance`):_ Cross-service request analytics on `chc_request`, `chc_work_centre` and `chc_middleware`, tracking SLA compliance, bottleneck work centres, and escalation patterns across all CHC-integrated modules.
     12. _Phantom Midnight Energy & Green Campus (`view-energy`):_ Occupancy-vs-meter cross-checking engine auto-shedding empty lecture hall HVAC at 2:00 AM, saving ₹18.4L/yr and exporting ISO 50001 green audits.
     13. _Alumni Capstone Micro-Endowment (`view-alumni`):_ Capstone prototype pitching exchange with 1:1 Google Meet mentorship bookings and Section 80G tax-exempt endowment pledges.
     14. _Accreditation Copilot (`view-accreditation`):_ NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection) with 1,647-table relational evidence scanning and SSR bundle export.
@@ -200,7 +200,7 @@ python .\product_enhancement\backend\test_api.py
 
 ## Quantified Business ROI Delivered
 
-| Metric Area                        | Legacy Digii Campus (Baseline)           | Digii Campus 2.0 (Week 5 Deliverable)         | Quantified Business Impact                 |
+| Metric Area                        | Current Digii Campus (Baseline)           | Digii Campus 2.0 (Week 5 Deliverable)         | Quantified Business Impact                 |
 | :--------------------------------- | :--------------------------------------- | :-------------------------------------------- | :----------------------------------------- |
 | **At-Risk Tuition Exposure**       | ₹1.84 Cr unrecovered per term            | 142 at-risk students identified & intervened  | **₹1.84 Cr protected tuition revenue**     |
 | **Fee Reconciliation Time**        | 40 manual hours per bank statement       | Automated 1-click batch matcher (842 records) | **95% reduction in accountant overhead**   |

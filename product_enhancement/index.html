@@ -206,8 +206,8 @@
 
         <a href="javascript:void(0)" onclick="navigateToView('grievance')" id="nav-grievance" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-          <span>Zero-Knowledge POSH Vault</span>
-          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-purple-900/60 text-purple-300 font-bold">CHC</span>
+          <span>CHC Workflow Analytics</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-blue-900/60 text-blue-300 font-bold">CHC v2</span>
         </a>
 
         <a href="javascript:void(0)" onclick="navigateToView('finance')" id="nav-finance" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
@@ -332,6 +332,12 @@
 
     <!-- Dynamic Content Area -->
     <main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6">
+
+      <!-- Simulated Data Disclaimer -->
+      <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-200 text-xs text-blue-800 font-medium">
+        <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Simulated Enterprise Cohort: 4,850 students modeled on 10.08 GB MySQL replica distributions. No live student PII. Schema grounded in CollPoll production tables per Suraj Shetty's workflow document (270 tables, 6 modules).</span>
+      </div>
 
       <!-- =================================================================== -->
       <!-- VIEW 1: PREDICTIVE DROPOUT RADAR (STAGE 3)                           -->
@@ -488,7 +494,7 @@
             UX Efficiency ROI
           </span>
           <span class="leading-relaxed">
-            <strong>ROI: Reduces cross-module investigation time from 18 mins across 5 legacy tabs to &lt;15 seconds</strong> by combining AMS, Fee Dues, Turnstile Gates, and Hostel Incident logs into a single real-time timeline.
+            <strong>ROI: Reduces cross-module investigation time from 18 mins across 5 separate modules to &lt;15 seconds</strong> by combining AMS, Fee Dues, Turnstile Gates, and Hostel Incident logs into a single real-time timeline.
           </span>
         </div>
 
@@ -619,7 +625,7 @@
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Zero-Friction UX</span>
               </div>
               <p class="text-xs text-slate-500 mt-0.5">
-                Synthesizes operational records across 5 legacy modules into one holistic view.
+                Synthesizes operational records across 5 existing operational modules into one holistic view.
               </p>
             </div>
 
@@ -1845,7 +1851,7 @@
         <!-- STAGE 9: PM ROI MODE OVERLAY - CHC -->
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
-            STUDENT CARE ROI
+            CHC WORKFLOW ENGINE ROI
           </span>
           <span class="leading-relaxed">
             <strong>ROI: Proactively triages 68% of student mental health risks</strong> before formal academic failure by correlating repeat clinic visits with classroom absence trends.
@@ -2774,7 +2780,7 @@
                   Student Life & Psychological Counseling • Week 3 Research
                 </span>
                 <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Absent in Legacy Digii Campus</span>
+                <span class="text-xs text-slate-500">Net-New Intelligence Module</span>
               </div>
               <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Student Campus Isolation & Mental Well-Being Sentinel</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
@@ -3063,7 +3069,7 @@
                   Academic Scheduling & Student Well-Being • AI Balancer
                 </span>
                 <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Absent in Legacy Digii LMS</span>
+                <span class="text-xs text-slate-500">Net-New LMS Intelligence Layer</span>
               </div>
               <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Smart Assignment Congestion & Deadline Balancer</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
@@ -3155,7 +3161,7 @@
                   Career Services & Recruiter Trust • Week 3 Proposal
                 </span>
                 <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Absent in Legacy Digii Campus</span>
+                <span class="text-xs text-slate-500">Net-New Intelligence Module</span>
               </div>
               <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Tamper-Proof Relational Auto-Resume Generator</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
@@ -3333,10 +3339,10 @@
 <section id="view-grievance" class="hidden space-y-6">
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
-            STATUTORY COMPLIANCE ROI
+            CHC WORKFLOW ENGINE ROI
           </span>
           <span class="leading-relaxed">
-            <strong>ROI: Guarantees 100% compliance with UGC/AICTE statutory mandates</strong> (Anti-Ragging, ICC POSH, Grievance Redressal) with automated 15-day SLA escalation, zero identity leaks, and 1-click Ministry compliance reporting.
+            <strong>ROI: Guarantees 100% compliance with UGC/AICTE statutory mandates</strong> Tracks SLA compliance across all 270 CHC-integrated tables, identifies bottleneck work centres, and monitors escalation patterns with automated SLA countdown timers.
           </span>
         </div>
 
@@ -3345,24 +3351,24 @@
             <div>
               <div class="flex items-center gap-2">
                 <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 uppercase tracking-wider">
-                  Statutory Ombudsperson & Regulatory Compliance
+                  CHC Request Intelligence & SLA Engine
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Framework: UGC Redressal Regulations (Gazette 2023)</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Zero-Knowledge Statutory Grievance & POSH Cell</h1>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">CHC Workflow Intelligence & SLA Analytics</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Anonymous cryptographic student grievance intake, statutory 15-day resolution timers, and independent ICC committee assignment.
+                Cross-service request analytics on chc_request, chc_work_centre and chc_middleware. Tracks SLA compliance, bottleneck work centres, and escalation patterns across all CHC-integrated modules.
               </p>
             </div>
             <div class="flex items-center gap-2 shrink-0">
-              <button onclick="openLodgeGrievanceModal()" class="px-3.5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="openChcRequestModal()" class="px-3.5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                <span>Lodge New Grievance</span>
+                <span>Raise CHC Service Request</span>
               </button>
-              <button onclick="downloadUgcComplianceReportCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+              <button onclick="downloadChcSlaReportCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export UGC Report (.csv)</span>
+                <span>Export SLA Report (.csv)</span>
               </button>
               <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -3374,7 +3380,7 @@
           <!-- Grievance Stats -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Grievances (YTD)</p>
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total CHC Requests (YTD)</p>
               <div class="flex items-baseline gap-2 mt-1">
                 <span class="text-2xl font-bold text-slate-900">48</span>
                 <span class="text-xs font-semibold text-emerald-600">44 Resolved</span>
@@ -3382,25 +3388,25 @@
               <p class="text-[11px] text-slate-500 mt-1">91.6% Resolution Rate</p>
             </div>
             <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
-              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Avg Resolution Time</p>
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Avg Work Centre Cycle</p>
               <div class="flex items-baseline gap-2 mt-1">
                 <span class="text-2xl font-bold text-emerald-800">4.2 Days</span>
               </div>
-              <p class="text-[11px] text-emerald-700 mt-1">UGC Mandated SLA: &lt; 15 Days</p>
+              <p class="text-[11px] text-emerald-700 mt-1">Configured SLA Target: &lt; 15 Days</p>
             </div>
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Inquiries</p>
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Requests</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900" id="grievance-active-count">4 Cases</span>
+                <span class="text-2xl font-bold text-slate-900" id="chc-active-count">4 Cases</span>
               </div>
-              <p class="text-[11px] text-purple-700 font-semibold mt-1">Under ICC / Anti-Ragging Panel</p>
+              <p class="text-[11px] text-purple-700 font-semibold mt-1">Under Work Centre Review</p>
             </div>
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Zero-Knowledge Token</p>
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Request Middleware Status</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900 font-mono text-sm">SHA-256 Mask</span>
+                <span class="text-2xl font-bold text-slate-900 font-mono text-sm">chc_middleware</span>
               </div>
-              <p class="text-[11px] text-slate-500 mt-1">Complainant Privacy Sealed</p>
+              <p class="text-[11px] text-slate-500 mt-1">Module Integration Active</p>
             </div>
           </div>
         </div>
@@ -3409,14 +3415,14 @@
         <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
             <div>
-              <h4 class="font-bold text-sm text-slate-900">Statutory Grievance Redressal Queue & Committee Actions</h4>
-              <span class="text-[11px] font-mono text-slate-500">Live Case Tracking with Countdown Timers</span>
+              <h4 class="font-bold text-sm text-slate-900">CHC Service Request Queue & Work Centre Actions</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Request Tracking with SLA Countdown Timers</span>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="filterGrievanceList('ALL')" id="grv-filter-all" class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-600 text-white">All Active</button>
-              <button onclick="filterGrievanceList('POSH')" id="grv-filter-posh" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">POSH / ICC</button>
-              <button onclick="filterGrievanceList('RAGGING')" id="grv-filter-ragging" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Anti-Ragging</button>
-              <button onclick="filterGrievanceList('RESOLVED')" id="grv-filter-resolved" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Resolved Archives</button>
+              <button onclick="filterChcRequestList('ALL')" id="chc-filter-all" class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-600 text-white">All Active</button>
+              <button onclick="filterChcRequestList('ESCALATED')" id="chc-filter-escalated" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Escalated SLA</button>
+              <button onclick="filterChcRequestList('RAGGING')" id="chc-filter-infra" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Infrastructure</button>
+              <button onclick="filterChcRequestList('RESOLVED')" id="chc-filter-closed" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Closed Requests</button>
             </div>
           </div>
 
@@ -3424,9 +3430,9 @@
             <table class="w-full text-left text-xs">
               <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
                 <tr>
-                  <th class="py-2.5 px-3">Case Token ID</th>
-                  <th class="py-2.5 px-3">Statutory Category</th>
-                  <th class="py-2.5 px-3">Brief Nature of Grievance</th>
+                  <th class="py-2.5 px-3">Request ID</th>
+                  <th class="py-2.5 px-3">Service Desk</th>
+                  <th class="py-2.5 px-3">Request Summary</th>
                   <th class="py-2.5 px-2 text-center">SLA Days Left</th>
                   <th class="py-2.5 px-3">Inquiry Panel</th>
                   <th class="py-2.5 px-3 text-right">Committee Action</th>
@@ -5087,7 +5093,7 @@ FROM StudentCompoundMetrics;
             
           </div>
           <div>
-            <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-200 font-bold">Campus Health Center (CHC)</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-200 font-bold">Campus Help Centre (CHC)</span>
             <h3 class="text-sm font-bold tracking-tight text-white">Official Medical Certificate & Grace Order</h3>
           </div>
         </div>
@@ -5466,7 +5472,7 @@ FROM StudentCompoundMetrics;
                 <span id="funnel-s3-count" class="text-xl font-bold text-slate-900 font-mono">2,522</span>
                 <span id="funnel-s3-pct" class="text-xs font-bold text-amber-700 font-mono">52.0%</span>
               </div>
-              <p id="funnel-s3-desc" class="text-[10px] text-amber-900">22% drop-off: Legacy payment gateway lacks UPI split pay.</p>
+              <p id="funnel-s3-desc" class="text-[10px] text-amber-900">22% drop-off: Standard payment gateway lacks UPI split installment option.</p>
               <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
                 <div id="funnel-s3-bar" class="bg-amber-600 h-1.5 rounded-full" style="width: 52%"></div>
               </div>
@@ -5535,7 +5541,7 @@ FROM StudentCompoundMetrics;
             </p>
             <div class="text-emerald-400 font-bold pt-2">## 1. Executive Summary & Problem Statement</div>
             <p>
-              Digii Campus (CollPoll) manages operational data for hundreds of thousands of students across premier higher education institutions. However, legacy ERP operations store data in disparate modules (Academics AMS, Finance Fees, Turnstiles, Residential Life, Campus Health).
+              Digii Campus (CollPoll) manages operational data for hundreds of thousands of students across premier higher education institutions. However, standard operational workflows maintain data across dedicated functional modules (Academics AMS, Finance Fees, Turnstiles, Residential Life, Campus Health).
               When a student enters academic or financial jeopardy, the signals manifest sequentially across 3 to 5 separate modules, yet remain invisible to decision-makers until the student officially defaults or drops out.
             </p>
             <div class="text-emerald-400 font-bold pt-2">## 2. Core Value Proposition: Dual-Value B2B2C Architecture</div>
@@ -6008,7 +6014,7 @@ FROM StudentCompoundMetrics;`,
 
       union: `-- ===================================================================
 -- 2. Student 360 Unified Chronological Feed (UNION ALL Pipeline)
--- Synthesizes 5 legacy modules into 1 chronological stream
+-- Synthesizes 5 existing operational modules into 1 chronological stream
 -- ===================================================================
 SELECT 
     'ACADEMICS' AS module,
@@ -6160,7 +6166,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
       } else if (view === 'passback') {
         renderPassbackTelemetry();
       } else if (view === 'grievance') {
-        renderGrievanceRoster();
+        renderChcRequestQueue();
       } else if (view === 'scholarships') {
         renderScholarshipRoster();
       } else if (view === 'energy') {
@@ -6925,7 +6931,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     });
 
     // Embedded Fallback Data with full 8 student records
-    const EMBEDDED_MOCK_DATA = {"system_metadata": {"organization": "Digii Campus (CollPoll)", "portal_version": "BI Portal 2.0 - Proactive Retention System", "academic_year": "2026-2027", "current_semester": "Odd Semester (Fall 2026)", "database_source_replica": "collpoll_10gb_bi_dump", "last_batch_sync": "2026-11-11T04:00:00Z", "total_active_students": 4850, "global_institution_health_score": 78.4, "students_in_red_zone_count": 142, "students_in_amber_zone_count": 386, "students_healthy_count": 4322}, "students": [{"ukid": 10842, "enrollment_no": "2024CS0142", "first_name": "Aarav", "last_name": "Sharma", "email": "aarav.sharma24@digiicampus.edu", "phone": "+91 98765 43210", "gender": "Male", "program": "B.Tech Computer Science & Engineering", "department": "Department of Computer Science", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "CS-B", "mentor_faculty": "Dr. Rameshwar Sundaram (Prof. CSE)", "accommodation_type": "HOSTELLER", "hostel_block": "Aravali Boys Hostel - Block C", "room_no": "C-314", "avatar_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 92, "delta_30d": "+28", "primary_threat": "Multi-Module Compound Risk: Fee Default + Severe Attendance Drop + Disciplinary Reprimand", "summary": "Attendance dropped from 84% to 58% in 3 weeks. \u20b91,25,000 fee installment overdue by 42 days. Missed midterm exam & 4 hostel curfew violations.", "dropout_probability_pct": 89.5, "recommended_action": "Immediate HOD Intervention & Parent Guardian Summon"}, "academics": {"overall_cgpa": 6.12, "previous_sgpa": 7.3, "current_semester_estimated_sgpa": 4.85, "overall_attendance_pct": 58.2, "attendance_threshold_met": false, "consecutive_absent_days": 8, "courses": [{"code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 54, "internal_score": "11/30", "status": "AT_RISK"}, {"code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 51, "internal_score": "08/30", "status": "AT_RISK"}, {"code": "CS503", "name": "Database Management Systems", "attendance_pct": 68, "internal_score": "18/30", "status": "MARGINAL"}, {"code": "CS504", "name": "Theory of Computation", "attendance_pct": 60, "internal_score": "14/30", "status": "AT_RISK"}], "missed_assessments": ["CS502 Mid-Term Practical (04 Nov 2026)", "CS501 Algo Surprise Quiz 2 (28 Oct 2026)"]}, "finance": {"total_annual_fee": 250000, "amount_paid": 125000, "amount_overdue": 125000, "overdue_days": 42, "fee_plan": "Semester Installment Plan (50-50)", "last_payment_date": "2026-06-18", "status": "OVERDUE_DEFAULT_NOTICE", "notices_sent": 3, "challan_status": "UNPAID"}, "access_gate_telemetry": {"monthly_punches": 38, "normal_average_punches": 115, "late_entries_30d": 4, "curfew_breaches_30d": 3, "missing_exit_logs": 2, "last_seen_gate": "Gate 02 - East Turnstile", "last_seen_timestamp": "2026-11-10T22:45:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10842-01", "timestamp": "2026-11-10T22:45:00", "module": "ACCESS_GATE", "severity": "CRITICAL", "title": "Curfew Breach & Late Entry Logged", "description": "Entered campus at Gate 02 after the 10:00 PM curfew without prior late pass approval.", "badge": "Gate Management", "icon": "gate_exit", "actor": "Automated Turnstile #04"}, {"id": "EVT-10842-02", "timestamp": "2026-11-08T11:30:00", "module": "ACADEMICS", "severity": "CRITICAL", "title": "Debarred Notice Issued: Attendance Below 60%", "description": "CS Department issued conditional debarment warning from Semester 5 end-term theory examinations.", "badge": "Academics", "icon": "academic_alert", "actor": "Prof. R. Sundaram (HOD)"}, {"id": "EVT-10842-03", "timestamp": "2026-11-04T14:00:00", "module": "ACADEMICS", "severity": "CRITICAL", "title": "Missed Mandatory Mid-Term Exam", "description": "Absent from CS502 Operating Systems practical laboratory examination without sanctioned medical leave.", "badge": "EMS Exam Cell", "icon": "exam_missed", "actor": "Controller of Examinations"}, {"id": "EVT-10842-04", "timestamp": "2026-10-30T10:00:00", "module": "FINANCE", "severity": "WARNING", "title": "Final Fee Default Notice Dispatched", "description": "Semester 5 installment overdue for 30+ days (\u20b91,25,000). Automated notice dispatched to parent's registered email.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Department"}, {"id": "EVT-10842-05", "timestamp": "2026-10-24T16:20:00", "module": "HOSTEL", "severity": "WARNING", "title": "Hostel Warden Official Reprimand", "description": "Flagged for repeated non-compliance with night roll-call roster and unauthorized room guests.", "badge": "Hostel Administration", "icon": "hostel_warning", "actor": "Chief Warden - Aravali"}, {"id": "EVT-10842-06", "timestamp": "2026-10-15T09:00:00", "module": "CHC_WELLNESS", "severity": "INFO", "title": "Counseling Referral - Student Did Not Attend", "description": "Referred by CSE department mentor for peer-group counseling session; student failed to report.", "badge": "Health & Wellness", "icon": "counseling_referral", "actor": "Campus Wellness Center"}]}, {"ukid": 11205, "enrollment_no": "2025IT0089", "first_name": "Priya", "last_name": "Nair", "email": "priya.nair25@digiicampus.edu", "phone": "+91 97654 32109", "gender": "Female", "program": "B.Tech Information Technology", "department": "Department of IT", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "IT-A", "mentor_faculty": "Dr. Suniti Sen (Assoc. Prof. IT)", "accommodation_type": "HOSTELLER", "hostel_block": "Kalpana Chawla Girls Hostel - Wing B", "room_no": "B-108", "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 88, "delta_30d": "+34", "primary_threat": "Acute Psychological & Health Distress + Academic Freefall", "summary": "4 CHC wellness clinic visits in 10 days for panic/insomnia. 61% attendance, failed 2 midterm quizzes, missed 6 hostel nightly roll-calls.", "dropout_probability_pct": 82.0, "recommended_action": "Urgent Medical Counselor Contact & Parent Consultation"}, "academics": {"overall_cgpa": 5.4, "previous_sgpa": 7.8, "current_semester_estimated_sgpa": 5.1, "overall_attendance_pct": 61.4, "attendance_threshold_met": false, "consecutive_absent_days": 5, "courses": [{"code": "IT301", "name": "Object Oriented Programming (Java)", "attendance_pct": 58, "internal_score": "09/30", "status": "AT_RISK"}, {"code": "IT302", "name": "Data Communication & Networks", "attendance_pct": 62, "internal_score": "12/30", "status": "AT_RISK"}, {"code": "IT303", "name": "Discrete Mathematics", "attendance_pct": 64, "internal_score": "14/30", "status": "MARGINAL"}], "missed_assessments": ["IT301 Mid-Term Quiz 2", "IT302 Assignment 3"]}, "finance": {"total_annual_fee": 220000, "amount_paid": 172000, "amount_overdue": 48000, "overdue_days": 35, "fee_plan": "Hostel & Tuition Dual Component", "last_payment_date": "2026-08-10", "status": "OVERDUE_WARNING", "notices_sent": 2, "challan_status": "PARTIALLY_PAID"}, "access_gate_telemetry": {"monthly_punches": 44, "normal_average_punches": 120, "late_entries_30d": 2, "curfew_breaches_30d": 1, "missing_exit_logs": 3, "last_seen_gate": "Gate 01 - North Main Gate", "last_seen_timestamp": "2026-11-09T18:15:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-11205-01", "timestamp": "2026-11-09T15:30:00", "module": "CHC_WELLNESS", "severity": "CRITICAL", "title": "Emergency CHC Consultation Logged", "description": "Patient reported to Campus Health Center with acute migraine and anxiety; advised 48-hr bed rest by Dr. Arvind.", "badge": "Health & Wellness", "icon": "chc_medical", "actor": "Dr. Arvind (Campus Physician)"}, {"id": "EVT-11205-02", "timestamp": "2026-11-07T21:40:00", "module": "HOSTEL", "severity": "WARNING", "title": "Unmarked Hostel Night Attendance", "description": "Missing from scheduled biometric nightly roll-call at Kalpana Chawla Hostel.", "badge": "Hostel Administration", "icon": "hostel_attendance", "actor": "Hostel Attendance Portal"}, {"id": "EVT-11205-03", "timestamp": "2026-11-03T11:00:00", "module": "ACADEMICS", "severity": "WARNING", "title": "Midterm Examination Score Below Cutoff", "description": "Scored 9/30 in IT301 Object Oriented Programming. Academic intervention required.", "badge": "Academics", "icon": "exam_missed", "actor": "Prof. S. Sen (IT Department)"}, {"id": "EVT-11205-04", "timestamp": "2026-10-25T12:00:00", "module": "FINANCE", "severity": "INFO", "title": "Mess & Dining Overdue Fee Reminder", "description": "Outstanding hostel mess arrears of \u20b948,000 flagged for Semester 3 billing cycle.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Department"}]}, {"ukid": 9452, "enrollment_no": "2023ME0034", "first_name": "Rohan", "last_name": "Verma", "email": "rohan.verma23@digiicampus.edu", "phone": "+91 96543 21098", "gender": "Male", "program": "B.Tech Mechanical Engineering", "department": "Department of Mechanical Engineering", "batch": "2023-2027", "current_year": 4, "current_semester": 7, "section": "ME-A", "mentor_faculty": "Prof. Arvind Trivedi (Dean Student Welfare)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 85, "delta_30d": "+19", "primary_threat": "Ghost Student / Extended Disengagement & Backlog Accumulation", "summary": "12 consecutive days with zero campus gate entries. 54% attendance, 3 active course backlogs, \u20b985,000 tuition fee overdue by 50 days.", "dropout_probability_pct": 79.0, "recommended_action": "Disciplinary Board Formal Summons"}, "academics": {"overall_cgpa": 5.1, "previous_sgpa": 5.8, "current_semester_estimated_sgpa": 4.2, "overall_attendance_pct": 54.1, "attendance_threshold_met": false, "consecutive_absent_days": 12, "courses": [{"code": "ME701", "name": "Power Plant Engineering", "attendance_pct": 50, "internal_score": "10/30", "status": "AT_RISK"}, {"code": "ME702", "name": "Refrigeration & Air Conditioning", "attendance_pct": 55, "internal_score": "12/30", "status": "AT_RISK"}, {"code": "ME703", "name": "Total Quality Management", "attendance_pct": 58, "internal_score": "15/30", "status": "AT_RISK"}], "missed_assessments": ["ME701 Quiz 1", "ME702 Lab Internal"]}, "finance": {"total_annual_fee": 210000, "amount_paid": 125000, "amount_overdue": 85000, "overdue_days": 50, "fee_plan": "Standard Annual Tuition", "last_payment_date": "2026-05-30", "status": "DEFAULT_FINAL_NOTICE", "notices_sent": 4, "challan_status": "UNPAID"}, "access_gate_telemetry": {"monthly_punches": 14, "normal_average_punches": 90, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 03 - Parking Turnstile", "last_seen_timestamp": "2026-10-28T09:12:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-9452-01", "timestamp": "2026-11-09T10:00:00", "module": "ADMINISTRATION", "severity": "CRITICAL", "title": "HOD Formal Absenteeism Notice Issued", "description": "Mechanical Department registered prolonged absence (12 consecutive days). Physical postal summons dispatched.", "badge": "Department Dean", "icon": "academic_alert", "actor": "Prof. A. Trivedi"}, {"id": "EVT-9452-02", "timestamp": "2026-10-31T17:00:00", "module": "FINANCE", "severity": "CRITICAL", "title": "Final Notice of Enrollment Suspension", "description": "Account flagged for automatic academic portal suspension due to \u20b985,000 pending fee exceeding 45 days grace period.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Directorate"}, {"id": "EVT-9452-03", "timestamp": "2026-10-28T09:12:00", "module": "ACCESS_GATE", "severity": "INFO", "title": "Last Campus Gate Exit Logged", "description": "Last recorded biometric tap at Gate 03. No physical presence recorded on campus since this date.", "badge": "Gate Management", "icon": "gate_exit", "actor": "Biometric Turnstile #12"}]}, {"ukid": 12048, "enrollment_no": "2025BD0022", "first_name": "Ananya", "last_name": "Deshmukh", "email": "ananya.deshmukh25@digiicampus.edu", "phone": "+91 95432 10987", "gender": "Female", "program": "B.Des Industrial & Product Design", "department": "School of Design", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "DES-A", "mentor_faculty": "Prof. Kavita Rao (HOD Design)", "accommodation_type": "HOSTELLER", "hostel_block": "Sarojini Naidu Girls Hostel", "room_no": "S-204", "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "MEDIUM", "score": 64, "delta_30d": "+12", "primary_threat": "Marginal Attendance Deficit (72%) with Strong Academic Merit", "summary": "Overall attendance 72% (3% below threshold) due to studio project deadlines. Fee installment pending but within grace window.", "dropout_probability_pct": 34.0, "recommended_action": "Automated Attendance Warning Nudge to Student"}, "academics": {"overall_cgpa": 8.15, "previous_sgpa": 8.4, "current_semester_estimated_sgpa": 8.0, "overall_attendance_pct": 72.1, "attendance_threshold_met": false, "consecutive_absent_days": 2, "courses": [{"code": "BD301", "name": "Design Thinking & Prototyping", "attendance_pct": 85, "internal_score": "27/30", "status": "HEALTHY"}, {"code": "BD302", "name": "Ergonomics in Product Design", "attendance_pct": 68, "internal_score": "22/30", "status": "MARGINAL"}, {"code": "BD303", "name": "Material Science for Designers", "attendance_pct": 64, "internal_score": "19/30", "status": "AT_RISK"}], "missed_assessments": []}, "finance": {"total_annual_fee": 280000, "amount_paid": 200000, "amount_overdue": 80000, "overdue_days": 5, "fee_plan": "Quarterly Tranche Plan", "last_payment_date": "2026-09-01", "status": "UPCOMING_DUE", "notices_sent": 1, "challan_status": "GENERATED"}, "access_gate_telemetry": {"monthly_punches": 92, "normal_average_punches": 105, "late_entries_30d": 1, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T19:30:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-12048-01", "timestamp": "2026-11-06T14:15:00", "module": "ACADEMICS", "severity": "WARNING", "title": "Automated 75% Attendance Nudge Sent", "description": "System dispatched SMS notification alerting student that attendance in Material Science dipped to 64%.", "badge": "Academics", "icon": "academic_alert", "actor": "Digii Attendance Nudge Engine"}, {"id": "EVT-12048-02", "timestamp": "2026-11-01T10:00:00", "module": "FINANCE", "severity": "INFO", "title": "Tranche 3 Fee Invoice Issued", "description": "Invoice for \u20b980,000 generated; due date scheduled for 15 November 2026.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Directorate"}]}, {"ukid": 13410, "enrollment_no": "2026MB0110", "first_name": "Vikramaditya", "last_name": "Rao", "email": "vikram.rao26@digiicampus.edu", "phone": "+91 94321 09876", "gender": "Male", "program": "MBA Business Analytics", "department": "School of Management", "batch": "2026-2028", "current_year": 1, "current_semester": 1, "section": "MBA-C", "mentor_faculty": "Dr. Manas Joshi (Prof. Finance)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "MEDIUM", "score": 58, "delta_30d": "+8", "primary_threat": "First-Year Adjustment Friction & Assignment Non-Submission", "summary": "74% attendance, missed 2 consecutive data modeling assignments, all fees paid on time.", "dropout_probability_pct": 28.0, "recommended_action": "Peer Mentor Assignment & Check-in"}, "academics": {"overall_cgpa": 6.85, "previous_sgpa": 0.0, "current_semester_estimated_sgpa": 6.85, "overall_attendance_pct": 74.0, "attendance_threshold_met": false, "consecutive_absent_days": 1, "courses": [{"code": "MB101", "name": "Managerial Economics", "attendance_pct": 78, "internal_score": "20/30", "status": "HEALTHY"}, {"code": "MB102", "name": "Statistical Decision Modeling", "attendance_pct": 69, "internal_score": "16/30", "status": "MARGINAL"}], "missed_assessments": ["MB102 Case Study Submission 1"]}, "finance": {"total_annual_fee": 350000, "amount_paid": 350000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Annual Cleared", "last_payment_date": "2026-07-22", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 68, "normal_average_punches": 80, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T17:45:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-13410-01", "timestamp": "2026-11-05T18:00:00", "module": "ACADEMICS", "severity": "INFO", "title": "Assignment Deadline Expired", "description": "Failed to submit Case Study on Decision Modeling before portal cut-off.", "badge": "LMS Portal", "icon": "academic_alert", "actor": "LMS Assignment Module"}]}, {"ukid": 10719, "enrollment_no": "2024CS0019", "first_name": "Sneha", "last_name": "Mukherjee", "email": "sneha.mukherjee24@digiicampus.edu", "phone": "+91 93210 98765", "gender": "Female", "program": "B.Tech Computer Science & Engineering", "department": "Department of Computer Science", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "CS-A", "mentor_faculty": "Dr. Rameshwar Sundaram (Prof. CSE)", "accommodation_type": "HOSTELLER", "hostel_block": "Kalpana Chawla Girls Hostel - Wing A", "room_no": "A-201", "avatar_url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 18, "delta_30d": "-4", "primary_threat": "None (Honor Student)", "summary": "Exemplary 92% attendance, CGPA 8.95, fees paid in full, zero disciplinary infractions, Robotics Club President.", "dropout_probability_pct": 3.0, "recommended_action": "Eligible for Merit Scholarship & Placement Fast-Track"}, "academics": {"overall_cgpa": 8.95, "previous_sgpa": 9.1, "current_semester_estimated_sgpa": 8.8, "overall_attendance_pct": 92.4, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 94, "internal_score": "29/30", "status": "HEALTHY"}, {"code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 90, "internal_score": "28/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 250000, "amount_paid": 250000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Semester Installment Plan", "last_payment_date": "2026-07-15", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 128, "normal_average_punches": 115, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 02 - East Turnstile", "last_seen_timestamp": "2026-11-11T09:05:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10719-01", "timestamp": "2026-11-02T16:00:00", "module": "NON_ACADEMIC", "severity": "SUCCESS", "title": "National Hackathon 1st Prize Logged", "description": "Won 1st prize at Inter-University Smart India Hackathon representational team.", "badge": "Clubs & Activities", "icon": "achievement_star", "actor": "Dean Student Affairs"}]}, {"ukid": 11355, "enrollment_no": "2025EC0055", "first_name": "Kabir", "last_name": "Mehta", "email": "kabir.mehta25@digiicampus.edu", "phone": "+91 92109 87654", "gender": "Male", "program": "B.Tech Electronics & Communication", "department": "Department of ECE", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "EC-B", "mentor_faculty": "Dr. Anuradha Basu (Prof. ECE)", "accommodation_type": "HOSTELLER", "hostel_block": "Himalaya Boys Hostel - Block A", "room_no": "A-112", "avatar_url": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 12, "delta_30d": "0", "primary_threat": "None (Top Performer)", "summary": "95% attendance, CGPA 9.20, zero dues, high engagement across technical workshops.", "dropout_probability_pct": 1.5, "recommended_action": "Dean's List Recognition"}, "academics": {"overall_cgpa": 9.2, "previous_sgpa": 9.35, "current_semester_estimated_sgpa": 9.15, "overall_attendance_pct": 95.2, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "EC301", "name": "Signals & Systems", "attendance_pct": 96, "internal_score": "30/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 230000, "amount_paid": 230000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Cleared", "last_payment_date": "2026-07-10", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 110, "normal_average_punches": 110, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-11T08:30:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-11355-01", "timestamp": "2026-10-20T11:00:00", "module": "ACADEMICS", "severity": "SUCCESS", "title": "Dean's Merit List Felicitation", "description": "Ranked 1st in Semester 2 Department of Electronics examination.", "badge": "Dean Academic", "icon": "achievement_star", "actor": "Academic Registrar"}]}, {"ukid": 10941, "enrollment_no": "2024BT0041", "first_name": "Meera", "last_name": "Iyer", "email": "meera.iyer24@digiicampus.edu", "phone": "+91 91098 76543", "gender": "Female", "program": "B.Tech Biotechnology", "department": "Department of Biotechnology", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "BT-A", "mentor_faculty": "Dr. Shalini Gupta (Prof. Biotech)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 22, "delta_30d": "-2", "primary_threat": "None", "summary": "88% attendance, CGPA 8.40, all dues cleared, Student Council Department Representative.", "dropout_probability_pct": 4.0, "recommended_action": "Standard Academic Progression"}, "academics": {"overall_cgpa": 8.4, "previous_sgpa": 8.55, "current_semester_estimated_sgpa": 8.35, "overall_attendance_pct": 88.0, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "BT501", "name": "Molecular Biology & Genetic Engineering", "attendance_pct": 89, "internal_score": "26/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 240000, "amount_paid": 240000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Cleared", "last_payment_date": "2026-08-01", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 84, "normal_average_punches": 90, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T17:10:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10941-01", "timestamp": "2026-10-18T14:00:00", "module": "CAMPUS_GOVERNANCE", "severity": "INFO", "title": "Elected Student Council Department Representative", "description": "Appointed representative for Biotech junior batches for AY 2026-27.", "badge": "Student Council", "icon": "achievement_star", "actor": "DSW Office"}]}]};
+    const EMBEDDED_MOCK_DATA = {"system_metadata": {"organization": "Digii Campus (CollPoll)", "portal_version": "BI Portal 2.0 - Proactive Retention System", "academic_year": "2026-2027", "current_semester": "Odd Semester (Fall 2026)", "database_source_replica": "collpoll_10gb_bi_dump", "last_batch_sync": "2026-11-11T04:00:00Z", "total_active_students": 4850, "global_institution_health_score": 78.4, "students_in_red_zone_count": 142, "students_in_amber_zone_count": 386, "students_healthy_count": 4322}, "students": [{"ukid": 10842, "enrollment_no": "2024CS0142", "first_name": "Aarav", "last_name": "Sharma", "email": "aarav.sharma24@digiicampus.edu", "phone": "+91 98765 43210", "gender": "Male", "program": "B.Tech Computer Science & Engineering", "department": "Department of Computer Science", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "CS-B", "mentor_faculty": "Dr. Rameshwar Sundaram (Prof. CSE)", "accommodation_type": "HOSTELLER", "hostel_block": "Aravali Boys Hostel - Block C", "room_no": "C-314", "avatar_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 92, "delta_30d": "+28", "primary_threat": "Multi-Module Compound Risk: Fee Default + Severe Attendance Drop + Disciplinary Reprimand", "summary": "Attendance dropped from 84% to 58% in 3 weeks. \u20b91,25,000 fee installment overdue by 42 days. Missed midterm exam & 4 hostel curfew violations.", "dropout_probability_pct": 89.5, "recommended_action": "Immediate HOD Intervention & Parent Guardian Summon"}, "academics": {"overall_cgpa": 6.12, "previous_sgpa": 7.3, "current_semester_estimated_sgpa": 4.85, "overall_attendance_pct": 58.2, "attendance_threshold_met": false, "consecutive_absent_days": 8, "courses": [{"code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 54, "internal_score": "11/30", "status": "AT_RISK"}, {"code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 51, "internal_score": "08/30", "status": "AT_RISK"}, {"code": "CS503", "name": "Database Management Systems", "attendance_pct": 68, "internal_score": "18/30", "status": "MARGINAL"}, {"code": "CS504", "name": "Theory of Computation", "attendance_pct": 60, "internal_score": "14/30", "status": "AT_RISK"}], "missed_assessments": ["CS502 Mid-Term Practical (04 Nov 2026)", "CS501 Algo Surprise Quiz 2 (28 Oct 2026)"]}, "finance": {"total_annual_fee": 250000, "amount_paid": 125000, "amount_overdue": 125000, "overdue_days": 42, "fee_plan": "Semester Installment Plan (50-50)", "last_payment_date": "2026-06-18", "status": "OVERDUE_DEFAULT_NOTICE", "notices_sent": 3, "challan_status": "UNPAID"}, "access_gate_telemetry": {"monthly_punches": 38, "normal_average_punches": 115, "late_entries_30d": 4, "curfew_breaches_30d": 3, "missing_exit_logs": 2, "last_seen_gate": "Gate 02 - East Turnstile", "last_seen_timestamp": "2026-11-10T22:45:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10842-01", "timestamp": "2026-11-10T22:45:00", "module": "ACCESS_GATE", "severity": "CRITICAL", "title": "Curfew Breach & Late Entry Logged", "description": "Entered campus at Gate 02 after the 10:00 PM curfew without prior late pass approval.", "badge": "Gate Management", "icon": "gate_exit", "actor": "Automated Turnstile #04"}, {"id": "EVT-10842-02", "timestamp": "2026-11-08T11:30:00", "module": "ACADEMICS", "severity": "CRITICAL", "title": "Debarred Notice Issued: Attendance Below 60%", "description": "CS Department issued conditional debarment warning from Semester 5 end-term theory examinations.", "badge": "Academics", "icon": "academic_alert", "actor": "Prof. R. Sundaram (HOD)"}, {"id": "EVT-10842-03", "timestamp": "2026-11-04T14:00:00", "module": "ACADEMICS", "severity": "CRITICAL", "title": "Missed Mandatory Mid-Term Exam", "description": "Absent from CS502 Operating Systems practical laboratory examination without sanctioned medical leave.", "badge": "EMS Exam Cell", "icon": "exam_missed", "actor": "Controller of Examinations"}, {"id": "EVT-10842-04", "timestamp": "2026-10-30T10:00:00", "module": "FINANCE", "severity": "WARNING", "title": "Final Fee Default Notice Dispatched", "description": "Semester 5 installment overdue for 30+ days (\u20b91,25,000). Automated notice dispatched to parent's registered email.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Department"}, {"id": "EVT-10842-05", "timestamp": "2026-10-24T16:20:00", "module": "HOSTEL", "severity": "WARNING", "title": "Hostel Warden Official Reprimand", "description": "Flagged for repeated non-compliance with night roll-call roster and unauthorized room guests.", "badge": "Hostel Administration", "icon": "hostel_warning", "actor": "Chief Warden - Aravali"}, {"id": "EVT-10842-06", "timestamp": "2026-10-15T09:00:00", "module": "CHC_WELLNESS", "severity": "INFO", "title": "Counseling Referral - Student Did Not Attend", "description": "Referred by CSE department mentor for peer-group counseling session; student failed to report.", "badge": "Health & Wellness", "icon": "counseling_referral", "actor": "Campus Wellness Center"}]}, {"ukid": 11205, "enrollment_no": "2025IT0089", "first_name": "Priya", "last_name": "Nair", "email": "priya.nair25@digiicampus.edu", "phone": "+91 97654 32109", "gender": "Female", "program": "B.Tech Information Technology", "department": "Department of IT", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "IT-A", "mentor_faculty": "Dr. Suniti Sen (Assoc. Prof. IT)", "accommodation_type": "HOSTELLER", "hostel_block": "Kalpana Chawla Girls Hostel - Wing B", "room_no": "B-108", "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 88, "delta_30d": "+34", "primary_threat": "Acute Psychological & Health Distress + Academic Freefall", "summary": "4 CHC wellness clinic visits in 10 days for panic/insomnia. 61% attendance, failed 2 midterm quizzes, missed 6 hostel nightly roll-calls.", "dropout_probability_pct": 82.0, "recommended_action": "Urgent Medical Counselor Contact & Parent Consultation"}, "academics": {"overall_cgpa": 5.4, "previous_sgpa": 7.8, "current_semester_estimated_sgpa": 5.1, "overall_attendance_pct": 61.4, "attendance_threshold_met": false, "consecutive_absent_days": 5, "courses": [{"code": "IT301", "name": "Object Oriented Programming (Java)", "attendance_pct": 58, "internal_score": "09/30", "status": "AT_RISK"}, {"code": "IT302", "name": "Data Communication & Networks", "attendance_pct": 62, "internal_score": "12/30", "status": "AT_RISK"}, {"code": "IT303", "name": "Discrete Mathematics", "attendance_pct": 64, "internal_score": "14/30", "status": "MARGINAL"}], "missed_assessments": ["IT301 Mid-Term Quiz 2", "IT302 Assignment 3"]}, "finance": {"total_annual_fee": 220000, "amount_paid": 172000, "amount_overdue": 48000, "overdue_days": 35, "fee_plan": "Hostel & Tuition Dual Component", "last_payment_date": "2026-08-10", "status": "OVERDUE_WARNING", "notices_sent": 2, "challan_status": "PARTIALLY_PAID"}, "access_gate_telemetry": {"monthly_punches": 44, "normal_average_punches": 120, "late_entries_30d": 2, "curfew_breaches_30d": 1, "missing_exit_logs": 3, "last_seen_gate": "Gate 01 - North Main Gate", "last_seen_timestamp": "2026-11-09T18:15:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-11205-01", "timestamp": "2026-11-09T15:30:00", "module": "CHC_WELLNESS", "severity": "CRITICAL", "title": "Emergency CHC Consultation Logged", "description": "Patient reported to Campus Help Centre with acute migraine and anxiety; advised 48-hr bed rest by Dr. Arvind.", "badge": "Health & Wellness", "icon": "chc_medical", "actor": "Dr. Arvind (Campus Physician)"}, {"id": "EVT-11205-02", "timestamp": "2026-11-07T21:40:00", "module": "HOSTEL", "severity": "WARNING", "title": "Unmarked Hostel Night Attendance", "description": "Missing from scheduled biometric nightly roll-call at Kalpana Chawla Hostel.", "badge": "Hostel Administration", "icon": "hostel_attendance", "actor": "Hostel Attendance Portal"}, {"id": "EVT-11205-03", "timestamp": "2026-11-03T11:00:00", "module": "ACADEMICS", "severity": "WARNING", "title": "Midterm Examination Score Below Cutoff", "description": "Scored 9/30 in IT301 Object Oriented Programming. Academic intervention required.", "badge": "Academics", "icon": "exam_missed", "actor": "Prof. S. Sen (IT Department)"}, {"id": "EVT-11205-04", "timestamp": "2026-10-25T12:00:00", "module": "FINANCE", "severity": "INFO", "title": "Mess & Dining Overdue Fee Reminder", "description": "Outstanding hostel mess arrears of \u20b948,000 flagged for Semester 3 billing cycle.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Department"}]}, {"ukid": 9452, "enrollment_no": "2023ME0034", "first_name": "Rohan", "last_name": "Verma", "email": "rohan.verma23@digiicampus.edu", "phone": "+91 96543 21098", "gender": "Male", "program": "B.Tech Mechanical Engineering", "department": "Department of Mechanical Engineering", "batch": "2023-2027", "current_year": 4, "current_semester": 7, "section": "ME-A", "mentor_faculty": "Prof. Arvind Trivedi (Dean Student Welfare)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 85, "delta_30d": "+19", "primary_threat": "Ghost Student / Extended Disengagement & Backlog Accumulation", "summary": "12 consecutive days with zero campus gate entries. 54% attendance, 3 active course backlogs, \u20b985,000 tuition fee overdue by 50 days.", "dropout_probability_pct": 79.0, "recommended_action": "Disciplinary Board Formal Summons"}, "academics": {"overall_cgpa": 5.1, "previous_sgpa": 5.8, "current_semester_estimated_sgpa": 4.2, "overall_attendance_pct": 54.1, "attendance_threshold_met": false, "consecutive_absent_days": 12, "courses": [{"code": "ME701", "name": "Power Plant Engineering", "attendance_pct": 50, "internal_score": "10/30", "status": "AT_RISK"}, {"code": "ME702", "name": "Refrigeration & Air Conditioning", "attendance_pct": 55, "internal_score": "12/30", "status": "AT_RISK"}, {"code": "ME703", "name": "Total Quality Management", "attendance_pct": 58, "internal_score": "15/30", "status": "AT_RISK"}], "missed_assessments": ["ME701 Quiz 1", "ME702 Lab Internal"]}, "finance": {"total_annual_fee": 210000, "amount_paid": 125000, "amount_overdue": 85000, "overdue_days": 50, "fee_plan": "Standard Annual Tuition", "last_payment_date": "2026-05-30", "status": "DEFAULT_FINAL_NOTICE", "notices_sent": 4, "challan_status": "UNPAID"}, "access_gate_telemetry": {"monthly_punches": 14, "normal_average_punches": 90, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 03 - Parking Turnstile", "last_seen_timestamp": "2026-10-28T09:12:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-9452-01", "timestamp": "2026-11-09T10:00:00", "module": "ADMINISTRATION", "severity": "CRITICAL", "title": "HOD Formal Absenteeism Notice Issued", "description": "Mechanical Department registered prolonged absence (12 consecutive days). Physical postal summons dispatched.", "badge": "Department Dean", "icon": "academic_alert", "actor": "Prof. A. Trivedi"}, {"id": "EVT-9452-02", "timestamp": "2026-10-31T17:00:00", "module": "FINANCE", "severity": "CRITICAL", "title": "Final Notice of Enrollment Suspension", "description": "Account flagged for automatic academic portal suspension due to \u20b985,000 pending fee exceeding 45 days grace period.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Directorate"}, {"id": "EVT-9452-03", "timestamp": "2026-10-28T09:12:00", "module": "ACCESS_GATE", "severity": "INFO", "title": "Last Campus Gate Exit Logged", "description": "Last recorded biometric tap at Gate 03. No physical presence recorded on campus since this date.", "badge": "Gate Management", "icon": "gate_exit", "actor": "Biometric Turnstile #12"}]}, {"ukid": 12048, "enrollment_no": "2025BD0022", "first_name": "Ananya", "last_name": "Deshmukh", "email": "ananya.deshmukh25@digiicampus.edu", "phone": "+91 95432 10987", "gender": "Female", "program": "B.Des Industrial & Product Design", "department": "School of Design", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "DES-A", "mentor_faculty": "Prof. Kavita Rao (HOD Design)", "accommodation_type": "HOSTELLER", "hostel_block": "Sarojini Naidu Girls Hostel", "room_no": "S-204", "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "MEDIUM", "score": 64, "delta_30d": "+12", "primary_threat": "Marginal Attendance Deficit (72%) with Strong Academic Merit", "summary": "Overall attendance 72% (3% below threshold) due to studio project deadlines. Fee installment pending but within grace window.", "dropout_probability_pct": 34.0, "recommended_action": "Automated Attendance Warning Nudge to Student"}, "academics": {"overall_cgpa": 8.15, "previous_sgpa": 8.4, "current_semester_estimated_sgpa": 8.0, "overall_attendance_pct": 72.1, "attendance_threshold_met": false, "consecutive_absent_days": 2, "courses": [{"code": "BD301", "name": "Design Thinking & Prototyping", "attendance_pct": 85, "internal_score": "27/30", "status": "HEALTHY"}, {"code": "BD302", "name": "Ergonomics in Product Design", "attendance_pct": 68, "internal_score": "22/30", "status": "MARGINAL"}, {"code": "BD303", "name": "Material Science for Designers", "attendance_pct": 64, "internal_score": "19/30", "status": "AT_RISK"}], "missed_assessments": []}, "finance": {"total_annual_fee": 280000, "amount_paid": 200000, "amount_overdue": 80000, "overdue_days": 5, "fee_plan": "Quarterly Tranche Plan", "last_payment_date": "2026-09-01", "status": "UPCOMING_DUE", "notices_sent": 1, "challan_status": "GENERATED"}, "access_gate_telemetry": {"monthly_punches": 92, "normal_average_punches": 105, "late_entries_30d": 1, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T19:30:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-12048-01", "timestamp": "2026-11-06T14:15:00", "module": "ACADEMICS", "severity": "WARNING", "title": "Automated 75% Attendance Nudge Sent", "description": "System dispatched SMS notification alerting student that attendance in Material Science dipped to 64%.", "badge": "Academics", "icon": "academic_alert", "actor": "Digii Attendance Nudge Engine"}, {"id": "EVT-12048-02", "timestamp": "2026-11-01T10:00:00", "module": "FINANCE", "severity": "INFO", "title": "Tranche 3 Fee Invoice Issued", "description": "Invoice for \u20b980,000 generated; due date scheduled for 15 November 2026.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Directorate"}]}, {"ukid": 13410, "enrollment_no": "2026MB0110", "first_name": "Vikramaditya", "last_name": "Rao", "email": "vikram.rao26@digiicampus.edu", "phone": "+91 94321 09876", "gender": "Male", "program": "MBA Business Analytics", "department": "School of Management", "batch": "2026-2028", "current_year": 1, "current_semester": 1, "section": "MBA-C", "mentor_faculty": "Dr. Manas Joshi (Prof. Finance)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "MEDIUM", "score": 58, "delta_30d": "+8", "primary_threat": "First-Year Adjustment Friction & Assignment Non-Submission", "summary": "74% attendance, missed 2 consecutive data modeling assignments, all fees paid on time.", "dropout_probability_pct": 28.0, "recommended_action": "Peer Mentor Assignment & Check-in"}, "academics": {"overall_cgpa": 6.85, "previous_sgpa": 0.0, "current_semester_estimated_sgpa": 6.85, "overall_attendance_pct": 74.0, "attendance_threshold_met": false, "consecutive_absent_days": 1, "courses": [{"code": "MB101", "name": "Managerial Economics", "attendance_pct": 78, "internal_score": "20/30", "status": "HEALTHY"}, {"code": "MB102", "name": "Statistical Decision Modeling", "attendance_pct": 69, "internal_score": "16/30", "status": "MARGINAL"}], "missed_assessments": ["MB102 Case Study Submission 1"]}, "finance": {"total_annual_fee": 350000, "amount_paid": 350000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Annual Cleared", "last_payment_date": "2026-07-22", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 68, "normal_average_punches": 80, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T17:45:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-13410-01", "timestamp": "2026-11-05T18:00:00", "module": "ACADEMICS", "severity": "INFO", "title": "Assignment Deadline Expired", "description": "Failed to submit Case Study on Decision Modeling before portal cut-off.", "badge": "LMS Portal", "icon": "academic_alert", "actor": "LMS Assignment Module"}]}, {"ukid": 10719, "enrollment_no": "2024CS0019", "first_name": "Sneha", "last_name": "Mukherjee", "email": "sneha.mukherjee24@digiicampus.edu", "phone": "+91 93210 98765", "gender": "Female", "program": "B.Tech Computer Science & Engineering", "department": "Department of Computer Science", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "CS-A", "mentor_faculty": "Dr. Rameshwar Sundaram (Prof. CSE)", "accommodation_type": "HOSTELLER", "hostel_block": "Kalpana Chawla Girls Hostel - Wing A", "room_no": "A-201", "avatar_url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 18, "delta_30d": "-4", "primary_threat": "None (Honor Student)", "summary": "Exemplary 92% attendance, CGPA 8.95, fees paid in full, zero disciplinary infractions, Robotics Club President.", "dropout_probability_pct": 3.0, "recommended_action": "Eligible for Merit Scholarship & Placement Fast-Track"}, "academics": {"overall_cgpa": 8.95, "previous_sgpa": 9.1, "current_semester_estimated_sgpa": 8.8, "overall_attendance_pct": 92.4, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 94, "internal_score": "29/30", "status": "HEALTHY"}, {"code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 90, "internal_score": "28/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 250000, "amount_paid": 250000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Semester Installment Plan", "last_payment_date": "2026-07-15", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 128, "normal_average_punches": 115, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 02 - East Turnstile", "last_seen_timestamp": "2026-11-11T09:05:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10719-01", "timestamp": "2026-11-02T16:00:00", "module": "NON_ACADEMIC", "severity": "SUCCESS", "title": "National Hackathon 1st Prize Logged", "description": "Won 1st prize at Inter-University Smart India Hackathon representational team.", "badge": "Clubs & Activities", "icon": "achievement_star", "actor": "Dean Student Affairs"}]}, {"ukid": 11355, "enrollment_no": "2025EC0055", "first_name": "Kabir", "last_name": "Mehta", "email": "kabir.mehta25@digiicampus.edu", "phone": "+91 92109 87654", "gender": "Male", "program": "B.Tech Electronics & Communication", "department": "Department of ECE", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "EC-B", "mentor_faculty": "Dr. Anuradha Basu (Prof. ECE)", "accommodation_type": "HOSTELLER", "hostel_block": "Himalaya Boys Hostel - Block A", "room_no": "A-112", "avatar_url": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 12, "delta_30d": "0", "primary_threat": "None (Top Performer)", "summary": "95% attendance, CGPA 9.20, zero dues, high engagement across technical workshops.", "dropout_probability_pct": 1.5, "recommended_action": "Dean's List Recognition"}, "academics": {"overall_cgpa": 9.2, "previous_sgpa": 9.35, "current_semester_estimated_sgpa": 9.15, "overall_attendance_pct": 95.2, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "EC301", "name": "Signals & Systems", "attendance_pct": 96, "internal_score": "30/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 230000, "amount_paid": 230000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Cleared", "last_payment_date": "2026-07-10", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 110, "normal_average_punches": 110, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-11T08:30:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-11355-01", "timestamp": "2026-10-20T11:00:00", "module": "ACADEMICS", "severity": "SUCCESS", "title": "Dean's Merit List Felicitation", "description": "Ranked 1st in Semester 2 Department of Electronics examination.", "badge": "Dean Academic", "icon": "achievement_star", "actor": "Academic Registrar"}]}, {"ukid": 10941, "enrollment_no": "2024BT0041", "first_name": "Meera", "last_name": "Iyer", "email": "meera.iyer24@digiicampus.edu", "phone": "+91 91098 76543", "gender": "Female", "program": "B.Tech Biotechnology", "department": "Department of Biotechnology", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "BT-A", "mentor_faculty": "Dr. Shalini Gupta (Prof. Biotech)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 22, "delta_30d": "-2", "primary_threat": "None", "summary": "88% attendance, CGPA 8.40, all dues cleared, Student Council Department Representative.", "dropout_probability_pct": 4.0, "recommended_action": "Standard Academic Progression"}, "academics": {"overall_cgpa": 8.4, "previous_sgpa": 8.55, "current_semester_estimated_sgpa": 8.35, "overall_attendance_pct": 88.0, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "BT501", "name": "Molecular Biology & Genetic Engineering", "attendance_pct": 89, "internal_score": "26/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 240000, "amount_paid": 240000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Cleared", "last_payment_date": "2026-08-01", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 84, "normal_average_punches": 90, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T17:10:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10941-01", "timestamp": "2026-10-18T14:00:00", "module": "CAMPUS_GOVERNANCE", "severity": "INFO", "title": "Elected Student Council Department Representative", "description": "Appointed representative for Biotech junior batches for AY 2026-27.", "badge": "Student Council", "icon": "achievement_star", "actor": "DSW Office"}]}]};
 
     function getFallbackData() {
       return EMBEDDED_MOCK_DATA;
@@ -8533,7 +8539,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (s3Card) {
         s3Card.className = "p-3.5 rounded-xl border-2 border-amber-300 bg-amber-50/50 shadow-2xs space-y-2";
       }
-      if (s3Desc) s3Desc.textContent = "22% drop-off: Legacy payment gateway lacks UPI split pay.";
+      if (s3Desc) s3Desc.textContent = "22% drop-off: Standard payment gateway lacks UPI split installment option.";
 
       if (s4Count) s4Count.textContent = "2,328";
       if (s4Pct) {
@@ -8556,7 +8562,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         `Audience: Mr. Suraj Bhatt & Saksham Gupta\n` +
         `Target Title: Product Intern (Enterprise Intelligence & Core ERP)\n\n` +
         `1. EXECUTIVE SUMMARY & PROBLEM STATEMENT\n` +
-        `Digii Campus (CollPoll) manages operational data for hundreds of thousands of students. Legacy operations isolate data in fragmented silos. Signals manifest across 3-5 modules but go unnoticed until default.\n\n` +
+        `Digii Campus (CollPoll) manages operational data for hundreds of thousands of students. Standard institutional operations maintain data across dedicated operational tablesilos. Signals manifest across 3-5 modules but go unnoticed until default.\n\n` +
         `2. B2B2C DUAL-VALUE ARCHITECTURE\n` +
         `- University: Protects Rs 1.84 Cr at-risk tuition per semester, automates 40 hrs/wk accounting.\n` +
         `- Student: Eliminates 14-day clearance lines, provides verified auto-resumes, balances assignment deadlines.\n\n` +
@@ -8591,13 +8597,13 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       {
         num: 1,
         tag: "Career Transition Pitch",
-        title: "Digii Campus 2.0: From Passive Record Keeper to Proactive Campus Intelligence",
+        title: "Digii Campus 2.0: Unlocking Phase 2: Cross-Module Predictive Intelligence",
         subtitle: "Transforming 10.08 GB of Relational MySQL Data into ₹1.84 Cr Protected Tuition & Daily Student Delight",
         presenter: "Dhruv Jain • Current: Data & Product Intern  Target Role: Product Intern / APM",
         body: `
           <div class="space-y-4 max-w-3xl mx-auto text-left">
             <div class="p-4 rounded-xl bg-gradient-to-r from-purple-950 to-indigo-950 border border-purple-500/30 text-xs text-purple-200 leading-relaxed">
-              <strong>The Executive Thesis:</strong> Over the past 5 weeks, auditing our <strong>10.08 GB production MySQL replica</strong> (1,647 tables) revealed an extraordinary product opportunity. Digii Campus holds premier relational data depth across academics, fee dues, turnstile access, residential life, and campus health. However, our current user experience presents this data in passive silos.
+              <strong>The Executive Thesis:</strong> Over the past 5 weeks, auditing our <strong>10.08 GB production MySQL replica</strong> (1,647 tables) revealed an extraordinary product opportunity. Digii Campus holds premier relational data depth across academics, fee dues, turnstile access, residential life, and campus health. However, our current user experience presents this data in operational modules.
             </div>
             <div class="grid grid-cols-3 gap-3 text-center">
               <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
@@ -9162,7 +9168,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         `3. Sneha Rao (2024EC0188): Friday 4:00 PM exam stress workshop confirmed.\n\n` +
         `CHIEF MEDICAL OFFICER SIGN-OFF:\n` +
         `Dr. Anjali Deshmukh, MBBS, MD (Campus Health Officer)\n` +
-        `Digii Campus Health Center\n`;
+        `Digii Campus Help Centre\n`;
 
       const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob);
@@ -9717,25 +9723,25 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     }
 
 
-    // 2. STATUTORY GRIEVANCE & POSH OMBUDSPERSON
-    let GRIEVANCE_CASES = [
-      { id: 'TKN-2026-8812', cat: 'POSH / Internal Complaints Committee', summary: 'Confidential inquiry regarding conduct during evening technical lab session.', daysLeft: 2, panel: '3-Member ICC Committee (External NGO Rep)', resolved: false },
-      { id: 'TKN-2026-8794', cat: 'Anti-Ragging Squad Incident', summary: 'Hostel Block C freshman intimidation report logged via UGC helpline.', daysLeft: 6, panel: 'Anti-Ragging Squad (Proctorial Board)', resolved: false },
+    // 2. CHC WORKFLOW ANALYTICS & SLA ENGINE
+    let CHC_REQUESTS = [
+      { id: 'TKN-2026-8812', cat: 'Gatepass Services', summary: 'Confidential inquiry regarding conduct during evening technical lab session.', daysLeft: 2, panel: '3-Member ICC Committee (External NGO Rep)', resolved: false },
+      { id: 'TKN-2026-8794', cat: 'Infrastructure Squad Incident', summary: 'Hostel Block C freshman intimidation report logged via UGC helpline.', daysLeft: 6, panel: 'Infrastructure Squad (Proctorial Board)', resolved: false },
       { id: 'TKN-2026-8742', cat: 'Academic Evaluation Dispute', summary: 'Mid-term answer sheet evaluation re-totaling discrepancy in CS502.', daysLeft: 9, panel: 'Departmental Academic Appeals Board', resolved: false },
       { id: 'TKN-2026-8690', cat: 'Hostel Maintenance Breach', summary: 'Geyser electrical leakage in Aravali Hostel 2nd floor bathroom.', daysLeft: 0, panel: 'Chief Warden & Estates Officer', resolved: true }
     ];
 
-    let activeGrievanceFilter = 'ALL';
+    let activeChcFilter = 'ALL';
 
-    function renderGrievanceRoster() {
+    function renderChcRequestQueue() {
       const tbody = document.getElementById('grievance-roster-body');
       if (!tbody) return;
 
-      let filtered = GRIEVANCE_CASES.filter(g => {
-        if (activeGrievanceFilter === 'ALL') return !g.resolved;
-        if (activeGrievanceFilter === 'POSH') return g.cat.includes('POSH') && !g.resolved;
-        if (activeGrievanceFilter === 'RAGGING') return g.cat.includes('Ragging') && !g.resolved;
-        if (activeGrievanceFilter === 'RESOLVED') return g.resolved;
+      let filtered = CHC_REQUESTS.filter(g => {
+        if (activeChcFilter === 'ALL') return !g.resolved;
+        if (activeChcFilter === 'ESCALATED') return g.daysLeft <= 5 && !g.resolved;
+        if (activeChcFilter === 'RAGGING') return g.cat.includes('Ragging') && !g.resolved;
+        if (activeChcFilter === 'CLOSED') return g.resolved;
         return true;
       });
 
@@ -9743,7 +9749,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         <tr class="hover:bg-slate-50 transition-colors">
           <td class="py-3 px-3 font-mono font-bold text-purple-700">${c.id}</td>
           <td class="py-3 px-3">
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${c.cat.includes('POSH') ? 'bg-pink-100 text-pink-800 border border-pink-300' : (c.cat.includes('Ragging') ? 'bg-red-100 text-red-800 border border-red-300' : 'bg-purple-100 text-purple-800')}">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${c.daysLeft <= 5 ? 'bg-red-100 text-red-800 border border-red-300' : (c.cat.includes('Ragging') ? 'bg-red-100 text-red-800 border border-red-300' : 'bg-purple-100 text-purple-800')}">
               ${c.cat}
             </span>
           </td>
@@ -9753,85 +9759,85 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           </td>
           <td class="py-3 px-3 text-slate-600 text-[11px] font-medium">${c.panel}</td>
           <td class="py-3 px-3 text-right">
-            ${c.resolved ? '<span class="text-xs text-slate-400 font-medium">Case Closed</span>' : `<button onclick="resolveGrievanceCase('${c.id}')" class="px-2.5 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white font-bold text-[11px] shadow-2xs">Sign-Off & Close</button>`}
+            ${c.resolved ? '<span class="text-xs text-slate-400 font-medium">Request Closed</span>' : `<button onclick="closeChcRequest('${c.id}')" class="px-2.5 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white font-bold text-[11px] shadow-2xs">Close Request</button>`}
           </td>
         </tr>
       `).join('');
     }
 
-    function filterGrievanceList(cat) {
-      activeGrievanceFilter = cat;
-      ['all', 'posh', 'ragging', 'resolved'].forEach(btn => {
-        const el = document.getElementById(`grv-filter-${btn}`);
+    function filterChcRequestList(cat) {
+      activeChcFilter = cat;
+      ['all', 'escalated', 'infra', 'closed'].forEach(btn => {
+        const el = document.getElementById(`chc-filter-${btn}`);
         if (el) {
           el.className = "px-2.5 py-1 rounded-md text-xs font-semibold transition-all " +
             (btn === cat.toLowerCase() ? "bg-purple-600 text-white font-bold" : "bg-slate-100 text-slate-700 hover:bg-slate-200");
         }
       });
-      renderGrievanceRoster();
+      renderChcRequestQueue();
     }
 
-    function openLodgeGrievanceModal() {
-      const modal = document.getElementById('modal-lodge-grievance');
+    function openChcRequestModal() {
+      const modal = document.getElementById('modal-chc-request');
       if (modal) modal.classList.remove('hidden');
     }
 
-    function closeLodgeGrievanceModal() {
-      const modal = document.getElementById('modal-lodge-grievance');
+    function closeChcRequestModal() {
+      const modal = document.getElementById('modal-chc-request');
       if (modal) modal.classList.add('hidden');
     }
 
-    function submitLodgeGrievance(e) {
+    function submitChcRequest(e) {
       e.preventDefault();
-      const cat = document.getElementById('grv-category').value;
-      const summary = document.getElementById('grv-summary').value;
-      const date = document.getElementById('grv-date').value;
+      const cat = document.getElementById('chc-service-desk').value;
+      const summary = document.getElementById('chc-summary').value;
+      const date = document.getElementById('chc-date').value;
 
       const randomToken = `TKN-2026-${Math.floor(1000 + Math.random() * 9000)}`;
-      GRIEVANCE_CASES.unshift({
+      CHC_REQUESTS.unshift({
         id: randomToken,
         cat: cat,
         summary: summary,
         daysLeft: 15,
-        panel: cat.includes('POSH') ? '3-Member ICC Committee' : 'Proctorial Grievance Board',
+        panel: cat === 'GATE_PASS' ? 'Gatepass Work Centre' : 'Proctorial Grievance Board',
         resolved: false
       });
 
-      renderGrievanceRoster();
-      closeLodgeGrievanceModal();
+      renderChcRequestQueue();
+      closeChcRequestModal();
 
       const receipt = "========================================================================\n" +
-        "DIGII CAMPUS - STATUTORY GRIEVANCE SUBMISSION RECEIPT\n" +
+        "DIGII CAMPUS - CHC SERVICE REQUEST RECEIPT\n" +
         "========================================================================\n" +
-        `CONFIDENTIAL CASE TOKEN: ${randomToken}\n` +
+        `CHC REQUEST TOKEN: ${randomToken}\n` +
         `Date of Filing: ${new Date().toLocaleDateString('en-GB')}\n` +
-        `Statutory Category: ${cat}\n` +
-        `Identity Privacy: Cryptographically Sealed (SHA-256 Mask Active)\n` +
-        `UGC Mandated SLA: 15 Calendar Days\n\n` +
-        "Keep this receipt safe. You can check case hearing status and committee sign-off\n" +
-        "using your token without disclosing your student identity.\n" +
+        `Service Desk: ${cat}\n` +
+        `Identity Privacy: Cryptographically Sealed (chc_middleware Active)\n` +
+        `Configured SLA Target: 15 Calendar Days\n\n` +
+        "Track this request through its work centres using the token below\n" +
+        "on the CHC dashboard. Status: chc_request.status = submitted.\n" +
         "========================================================================";
 
-      downloadTextFile(`Grievance_Receipt_${randomToken}.txt`, receipt);
-      showToast(`Statutory grievance lodged under token ${randomToken}. Confidential receipt exported!`);
+      downloadTextFile(`CHC_Request_${randomToken}.txt`, receipt);
+      showToast(`CHC request raised under token ${randomToken}. Request receipt exported!`);
     }
 
-    function resolveGrievanceCase(caseId) {
-      const c = GRIEVANCE_CASES.find(g => g.id === caseId);
+    function closeChcRequest(caseId) {
+      const c = CHC_REQUESTS.find(g => g.id === caseId);
       if (c) {
         c.resolved = true;
-        renderGrievanceRoster();
-        showToast(`Case ${caseId} resolved and signed off by Statutory Ombudsperson within UGC SLA.`);
+        renderChcRequestQueue();
+        showToast(`Case ${caseId} closed by work centre member within configured SLA.`);
       }
     }
 
-    function downloadUgcComplianceReportCsv() {
-      let csv = "Case Token ID,Statutory Category,Summary,SLA Days Remaining,Assigned Committee,Resolution Status\n";
-      GRIEVANCE_CASES.forEach(c => {
-        csv += `"${c.id}","${c.cat}","${c.summary}","${c.daysLeft}","${c.panel}","${c.resolved ? 'RESOLVED' : 'ACTIVE_INQUIRY'}"\n`;
+    function downloadChcSlaReportCsv() {
+      let csv = "Request ID,Service Desk,Summary,SLA Days Remaining,Current Work Centre,Resolution Status\n";
+      CHC_REQUESTS.forEach(c => {
+        csv += `"${c.id}","${c.cat}","${c.summary}","${c.daysLeft}","${c.panel}","${c.resolved ? 'CLOSED' : 'SUBMITTED'}"\n`;
       });
-      downloadCsvFile(`UGC_Compliance_Grievance_Report_${new Date().toISOString().split('T')[0]}.csv`, csv);
-      showToast("UGC Statutory Compliance Report exported!");
+      downloadCsvFile(`CHC_SLA_Report_${new Date().toISOString().split('T')[0]}.csv`, csv);
+      showToast("CHC SLA Compliance Report exported!");
     }
 
 
@@ -10484,7 +10490,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       { crit: 'Criterion 2', focus: 'Teaching-Learning & Student Progression Heuristics', bench: '1:15 Faculty-Student Ratio', score: '3.74 / 4.00' },
       { crit: 'Criterion 3', focus: 'Research, Extramural Innovations & Patents', bench: '₹1.5+ Cr Annual Grants', score: '3.61 / 4.00' },
       { crit: 'Criterion 4', focus: 'Infrastructure, IoT Telemetry & Precision Labs', bench: '100% Precision Lab Audit', score: '3.70 / 4.00' },
-      { crit: 'Criterion 5', focus: 'Student Support, Mentorship & POSH Compliance', bench: '100% Statutory UGC Resolution', score: '3.80 / 4.00' },
+      { crit: 'Criterion 5', focus: 'Student Support, Mentorship & Grievance Redressal', bench: '100% SLA UGC Resolution', score: '3.80 / 4.00' },
       { crit: 'Criterion 6', focus: 'Governance, Leadership & Financial Reconciliation', bench: 'Zero Financial Audit Mismatches', score: '3.65 / 4.00' },
       { crit: 'Criterion 7', focus: 'Institutional Values & ISO 50001 Green Audit', bench: '30% Idle Power Reduction', score: '3.78 / 4.00' }
     ];
@@ -11263,23 +11269,23 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
   </div>
 
   <!-- MODAL: LODGE ANONYMOUS GRIEVANCE (GRIEVANCE) -->
-  <div id="modal-lodge-grievance" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+  <div id="modal-chc-request" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
         <div>
           <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">Zero-Knowledge Cryptographic Intake</span>
           <h3 class="text-lg font-bold text-slate-900 mt-1">Lodge Confidential Statutory Grievance</h3>
         </div>
-        <button onclick="closeLodgeGrievanceModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+        <button onclick="closeChcRequestModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
-      <form onsubmit="submitLodgeGrievance(event)" class="space-y-3 text-xs">
+      <form onsubmit="submitChcRequest(event)" class="space-y-3 text-xs">
         <div>
-          <label class="block font-bold text-slate-700 mb-1">Statutory Category</label>
-          <select id="grv-category" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-purple-600">
-            <option value="POSH / Internal Complaints Committee (ICC)">POSH / Internal Complaints Committee (ICC - Women's Safety)</option>
-            <option value="Anti-Ragging Squad Incident">Anti-Ragging Squad Incident (UGC 24x7 Helpline)</option>
+          <label class="block font-bold text-slate-700 mb-1">Service Desk</label>
+          <select id="chc-service-desk" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-purple-600">
+            <option value="GATE_PASS">Gatepass &amp; Access Services (CHC Integrated)</option>
+            <option value="Infrastructure Squad Incident">Infrastructure Squad Incident (UGC 24x7 Helpline)</option>
             <option value="Academic Evaluation & Grading Dispute">Academic Evaluation & Grading Dispute</option>
             <option value="Hostel Maintenance & Security Breach">Hostel Maintenance & Security Breach</option>
             <option value="Fee Billing & Financial Aid Dispute">Fee Billing & Financial Aid Dispute</option>
@@ -11287,12 +11293,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         </div>
         <div>
           <label class="block font-bold text-slate-700 mb-1">Confidential Grievance Summary</label>
-          <textarea id="grv-summary" rows="3" required placeholder="Describe the incident objectively. Identity remains sealed under SHA-256 zero-knowledge mask." class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-purple-600"></textarea>
+          <textarea id="chc-summary" rows="3" required placeholder="Describe the incident objectively. Identity remains sealed under SHA-256 zero-knowledge mask." class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-purple-600"></textarea>
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-bold text-slate-700 mb-1">Incident Date</label>
-            <input type="date" id="grv-date" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-purple-600">
+            <input type="date" id="chc-date" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-purple-600">
           </div>
           <div>
             <label class="block font-bold text-slate-700 mb-1">Identity Mask Mode</label>
@@ -11306,7 +11312,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <strong>UGC Statutory Guarantee:</strong> Your submission automatically triggers a mandatory 15-day resolution clock. You will receive a cryptographic receipt to track inquiry progress without disclosing your identity.
         </div>
         <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
-          <button type="button" onclick="closeLodgeGrievanceModal()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">Cancel</button>
+          <button type="button" onclick="closeChcRequestModal()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">Cancel</button>
           <button type="submit" class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-bold shadow-xs">Submit Grievance & Download Token</button>
         </div>
       </form>

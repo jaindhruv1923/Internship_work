@@ -10,7 +10,7 @@
 ---
 
 ### Slide 1: Title & Career Transition Vision
-* **Headline:** Digii Campus 2.0: From Passive Record Keeper to Proactive Campus Intelligence
+* **Headline:** Digii Campus 2.0: Unlocking Phase 2: Cross-Module Predictive Intelligence
 * **Sub-headline:** Transforming 10.08 GB of Relational MySQL Data into ₹1.84 Cr Protected Tuition & Daily Student Delight
 * **Presenter:** Dhruv Jain — Role Transition Pitch: Data & Product Intern ➔ **Product Intern**
 * **Executive Summary:** Over the past month, auditing our 1,647 production database tables revealed an untapped product moat: our data is deeply rich, but operates in passive silos. Digii Campus 2.0 synthesizes these assets into automated administrative intelligence and student-first innovations.
@@ -50,8 +50,8 @@
 ---
 
 ### Slide 5: Student 360 Unified Timeline & Action Center (Stage 4 & 5)
-* **The Old Way:** Opening 5 different browser tabs (AMS, Fee Ledger, Hostel Register, Turnstile Logs, Clinic). Investigation takes 25 minutes per student.
-* **The Digii Campus 2.0 Way:** 1 single-pane chronological stream synthesizing operational events across all 5 modules in 15 seconds.
+* **Current Workflow:** Opening 5 different browser tabs (AMS, Fee Ledger, Hostel Register, Turnstile Logs, Clinic). Investigation takes 25 minutes per student.
+* **Phase 2 Enhancement:** 1 single-pane chronological stream synthesizing operational events across all 5 modules in 15 seconds.
 * **Action Center:** 1-click administrative interventions directly dispatching:
   - Parent Guardian SMS advisory
   - Academic Advisor counseling summons
@@ -61,7 +61,7 @@
 ---
 
 ### Slide 6: Automated Fee Reconciliation Engine (Stage 7)
-* **The Operational Nightmare:** Accountants spend 40 manual hours per bank statement reconciling NEFT/RTGS payments with missing roll numbers and truncated student names.
+* **Current Process:** Accountants spend 40 manual hours per bank statement reconciling NEFT/RTGS payments with missing roll numbers and truncated student names.
 * **The Solution:** 1-click batch reconciliation engine with fuzzy transaction matching.
 * **Live Demo Result:**
   - 842 Inbound Bank Transactions Matched Instantly (₹1.68 Cr Volume)
@@ -71,7 +71,7 @@
 ---
 
 ### Slide 7: Smart Timetable Clash Resolver (Stage 8)
-* **The Scheduling Nightmare:** Deans and HODs spend weeks revising timetables due to double-booked professors and occupied lecture halls.
+* **Current Process:** Deans and HODs spend weeks revising timetables due to double-booked professors and occupied lecture halls.
 * **The Solution:** Interactive weekly schedule matrix with real-time collision interception.
 * **Live Demo:**
   - Intercepts Prof. Ramesh Sharma double-booked in Room 4A for CS502.
@@ -82,7 +82,7 @@
 
 ### Slide 8: Disruptive Intelligence Modules Grounded in CollPoll 270-Table Schema
 * **The Strategic APM Pitch to Mr. Suraj Bhatt & Saksham Gupta:**
-  - *The Commodity Pitfall:* Legacy Digii Campus already sells Admissions, LMS, Fees, Placements, and Hostels. We are NOT rebuilding commodity ERP features!
+  - *The Commodity Pitfall:* Current Digii Campus already sells Admissions, LMS, Fees, Placements, and Hostels. We are NOT rebuilding commodity ERP features!
   - *The Product Moat:* We built predictive intelligence modules that connect our 1,647 siloed MySQL tables (and CollPoll's 270-table core workflow schema) to solve multi-crore pain points no competitor touches:
   1. **Predictive Food Waste & Meal Prep (PRGE):** Dynamically links approved hostel night leaves (`hostel_allotment`) to morning mess cooking (`mess_meal`), cutting 630 wasted meals/day and saving ₹4.2L/month (from Week 3 Proposal).
   2. **Student Social Isolation Sentinel:** Correlates turnstiles (`gate_pass_log`) with zero club/library interactions for 14+ days to flag silent mental health isolation before crisis occurs (from Week 3 Proposal).
@@ -92,7 +92,7 @@
   6. **Tamper-Proof Relational Auto-Resume:** Directly compiles authenticated SGPA, OBE Bloom's rubrics, and club leadership from MySQL into an institutionally sealed CV.
   7. **Turnstile Anti-Passback & Impossible Travel:** Biometric speed-of-travel physics checker detecting proxy card taps at distant gates in <180s (`gate_pass_log`), triggering lockout and guard dispatch.
   8. **Phantom Midnight Energy & Green Campus (ISO 50001):** Occupancy-vs-meter cross-checking engine auto-shedding empty lecture hall HVAC at 2:00 AM, saving ₹18.4L/yr.
-  9. **Zero-Knowledge Statutory POSH Vault:** Client-side SHA-256 encrypted whistleblower intake with anonymous tracking receipts and automated UGC 15-day SLA escalation countdown (`chc_middleware`).
+  9. **CHC Workflow Intelligence & SLA Analytics:** Cross-service request analytics on `chc_request`, `chc_work_centre` and `chc_middleware`, tracking bottleneck work centres and escalation patterns across all CHC-integrated modules.
   10. **Alumni Capstone Micro-Endowment:** Capstone prototype pitching exchange with 1:1 Google Meet mentorship bookings and Section 80G tax-exempt endowment pledges.
   11. **AI Admissions Allotment Matrix:** Dynamic cutoff slider, multi-round allotment matrix across General, OBC, SC, ST, EWS quotas, instant provisional offer generation, and sync to `dues_v2`.
   12. **Smart Campus Venue & Acoustic Interceptor:** Live decibel clash detection on `infra_booking` preventing sound-bleed between adjacent events, with automated rescheduling and HVAC pre-cooling dispatch.

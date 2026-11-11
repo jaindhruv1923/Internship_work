@@ -73,7 +73,7 @@ During Week 5, I designed, architected, and fully implemented **Digii Campus 2.0
 
 ## 3. Quantitative Business ROI Delivered
 
-| Metric Area | Legacy Digii Campus (Baseline) | Digii Campus 2.0 (Week 5 Deliverable) | Quantified Business Impact |
+| Metric Area | Current Digii Campus (Baseline) | Digii Campus 2.0 (Week 5 Deliverable) | Quantified Business Impact |
 | :--- | :--- | :--- | :--- |
 | **At-Risk Tuition Exposure** | ₹1.84 Cr unrecovered per term | 142 at-risk students identified & intervened | **₹1.84 Cr protected tuition revenue** |
 | **Fee Reconciliation Time** | 40 manual hours per bank statement | Automated 1-click batch matcher (842 records) | **95% reduction in accountant overhead** |
