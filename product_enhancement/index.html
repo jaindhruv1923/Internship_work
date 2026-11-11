@@ -161,7 +161,7 @@
       <p class="text-[10px] text-slate-400 leading-tight">Database: <code class="text-slate-300">collpoll</code> | 1,647 Tables</p>
       <div class="p-2 rounded bg-slate-800/80 border border-slate-700/60 text-[10px] text-slate-300 font-mono flex items-center justify-between">
         <span>Port: 3306 (MySQL 8.0)</span>
-        <span class="text-blue-400 underline font-bold group-hover:text-blue-300">Inspect ⚡</span>
+        <span class="text-blue-400 underline font-bold group-hover:text-blue-300">Inspect</span>
       </div>
     </div>
   </aside>
@@ -170,84 +170,89 @@
   <div class="flex-1 flex flex-col min-w-0">
 
     <!-- Top Navigation Header -->
-    <header class="h-16 bg-white border-b border-slate-200 px-4 sm:px-6 flex items-center justify-between gap-4 sticky top-0 z-30 shadow-xs">
-      <!-- Enterprise Campus Context Switcher -->
-      <div class="hidden xl:flex items-center gap-1.5 shrink-0">
-        <select id="campus-context-select" onchange="switchCampusContext(this.value)" class="text-xs font-bold bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-lg px-2.5 py-1.5 text-slate-800 cursor-pointer transition-colors shadow-2xs font-mono">
-          <option value="MAIN">Main Campus (Gurugram) • 4,850 Students</option>
-          <option value="NORTH">North Campus (Delhi NCR) • 3,200 Students</option>
-          <option value="BLR">Bengaluru Center of Excellence • 2,100 Students</option>
-        </select>
-      </div>
-      <!-- Search Input with Auto-Complete -->
-      <div class="flex-1 max-w-md relative">
-        <div class="relative">
-          <svg class="w-4 h-4 absolute left-3 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input 
-            id="global-search-input" 
-            type="text" 
-            placeholder="Search student by name, enrollment no (e.g. 2024CS0142), or UKID..." 
-            class="w-full pl-9 pr-4 py-2 bg-slate-100 hover:bg-slate-50 focus:bg-white border border-slate-200 focus:border-blue-500 rounded-lg text-xs transition-all outline-hidden text-slate-800 placeholder-slate-400 font-medium"
-            oninput="handleGlobalSearch(this.value)"
-          />
+        <!-- Top Navigation Header -->
+    <header class="h-16 bg-white border-b border-slate-200 px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-4 sticky top-0 z-30 shadow-xs select-none">
+      
+      <!-- Left: Campus Selector & Search Bar -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 max-w-2xl">
+        <!-- Campus Selector -->
+        <div class="hidden lg:flex items-center shrink-0">
+          <select id="campus-context-select" onchange="switchCampusContext(this.value)" class="text-xs font-semibold bg-slate-50 hover:bg-slate-100 border border-slate-300 rounded-lg px-2.5 py-1.5 text-slate-800 cursor-pointer transition-colors shadow-2xs font-mono">
+            <option value="MAIN">Main Campus (Gurugram) • 4,850 Students</option>
+            <option value="NORTH">North Campus (Delhi NCR) • 3,200 Students</option>
+            <option value="BLR">Bengaluru Center • 2,100 Students</option>
+          </select>
         </div>
-        <!-- Search Auto-suggest Dropdown -->
-        <div id="search-dropdown" class="hidden absolute top-11 left-0 right-0 bg-white border border-slate-200 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto divide-y divide-slate-100"></div>
+
+        <!-- Search Input -->
+        <div class="flex-1 min-w-[140px] sm:min-w-[200px] max-w-sm relative">
+          <div class="relative">
+            <svg class="w-4 h-4 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input 
+              id="global-search-input" 
+              type="text" 
+              placeholder="Search student, enrollment, or UKID..." 
+              class="w-full pl-9 pr-3 py-1.5 bg-slate-100 hover:bg-slate-50 focus:bg-white border border-slate-200 focus:border-blue-500 rounded-lg text-xs transition-all outline-hidden text-slate-800 placeholder-slate-400 font-medium"
+              oninput="handleGlobalSearch(this.value)"
+            />
+          </div>
+          <!-- Auto-suggest Dropdown -->
+          <div id="search-dropdown" class="hidden absolute top-10 left-0 right-0 bg-white border border-slate-200 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto divide-y divide-slate-100"></div>
+        </div>
       </div>
 
       <!-- Right Header Actions -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         <!-- Academic Context Tag -->
-        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200 text-xs font-medium text-slate-700">
+        <div class="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md border border-slate-200 text-xs font-semibold text-slate-700">
           <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-          <span>AY 2026-27 (Fall Semester)</span>
+          <span>AY 2026-27 (Fall)</span>
         </div>
 
         <!-- Notification Bell -->
-        <button onclick="triggerNotificationToast()" class="relative p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors" title="Retention Alerts">
+        <button onclick="triggerNotificationToast()" class="relative p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors" title="Retention & Academic Alerts">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-600 rounded-full animate-ping"></span>
-          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-600 rounded-full"></span>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-red-600 rounded-full animate-ping"></span>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-red-600 rounded-full"></span>
         </button>
 
-        <!-- STAGE 9: PM ROI Mode Toggle -->
-        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50/80 hover:bg-indigo-100/80 border border-indigo-200 transition-colors shadow-2xs">
-          <div class="flex items-center gap-2 cursor-pointer select-none" onclick="togglePmRoiMode()" title="Toggle PM Business Impact Overlays">
-            <span class="text-xs font-bold text-indigo-950 tracking-tight flex items-center gap-1.5">
-              <span>🚀</span>
-              <span class="hidden sm:inline">PM ROI Mode</span>
-              <span class="sm:hidden">ROI</span>
-            </span>
-            <button id="roi-toggle-btn" type="button" class="relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out focus:outline-hidden" role="switch" aria-checked="false">
-              <span id="roi-toggle-circle" aria-hidden="true" class="pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+        <!-- PM ROI Mode Toggle (Clean SVG, No Rocket Emoji) -->
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50/90 hover:bg-indigo-100 border border-indigo-200 transition-colors shadow-2xs">
+          <div class="flex items-center gap-1.5 cursor-pointer select-none" onclick="togglePmRoiMode()" title="Toggle PM Business Impact Overlays">
+            <svg class="w-3.5 h-3.5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            <span class="text-xs font-bold text-indigo-950 tracking-tight hidden md:inline">ROI Mode</span>
+            <button id="roi-toggle-btn" type="button" class="relative inline-flex h-4 w-7 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out focus:outline-hidden" role="switch" aria-checked="false">
+              <span id="roi-toggle-circle" aria-hidden="true" class="pointer-events-none inline-block h-3 w-3 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out translate-x-0"></span>
             </button>
-            <span id="roi-toggle-status" class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-200 text-slate-600 font-mono">OFF</span>
+            <span id="roi-toggle-status" class="text-[9px] font-bold uppercase tracking-wider px-1 py-0.2 rounded bg-slate-200 text-slate-600 font-mono">OFF</span>
           </div>
         </div>
 
-        <!-- User Profile Pill -->
-                <!-- PM Strategy Cockpit Button -->
-                <!-- Executive Pitch Deck Button -->
-        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-700 via-pink-700 to-rose-700 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
+        <!-- Executive Pitch Deck Button -->
+        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-700 via-pink-700 to-rose-700 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
           <svg class="w-4 h-4 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
-          <span class="hidden sm:inline">Executive Pitch Deck</span>
+          <span class="hidden sm:inline">Pitch Deck</span>
           <span class="sm:hidden">Deck</span>
         </button>
-        <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 hover:from-blue-600 hover:to-indigo-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
+
+        <!-- PM Strategy Cockpit Button -->
+        <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 hover:from-blue-600 hover:to-indigo-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
           <svg class="w-4 h-4 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-          <span class="hidden sm:inline">PM Strategy Cockpit</span>
+          <span class="hidden sm:inline">PM Cockpit</span>
           <span class="sm:hidden">PM</span>
         </button>
 
-        <div class="flex items-center gap-2 pl-3 border-l border-slate-200">
-          <div class="w-8 h-8 rounded-full bg-blue-100 border border-blue-300 flex items-center justify-center font-bold text-xs text-blue-800">
+        <!-- User Profile Pill -->
+        <div class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-slate-200 shrink-0">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 border border-blue-300 flex items-center justify-center font-bold text-xs text-blue-800">
             DJ
           </div>
-          <div class="hidden sm:block text-left">
+          <div class="hidden xl:block text-left">
             <p class="text-xs font-bold text-slate-900 leading-tight">Dhruv Jain</p>
             <p class="text-[10px] text-slate-500 font-medium">Data & Product Intern</p>
           </div>
         </div>
+
       </div>
     </header>
 
@@ -262,7 +267,7 @@
         <!-- STAGE 9: PM ROI MODE OVERLAY - RADAR -->
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
-            ⚡ Executive ROI
+            Executive ROI
           </span>
           <span class="leading-relaxed">
             <strong>ROI: Protects ₹1.84 Cr in at-risk tuition</strong> by converting multi-table decay signals (attendance slump, late curfew, overdue installment) into an automated 60-day early intervention window before student attrition.
@@ -406,7 +411,7 @@
         <!-- STAGE 9: PM ROI MODE OVERLAY - STUDENT 360 -->
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
-            ⚡ UX Efficiency ROI
+            UX Efficiency ROI
           </span>
           <span class="leading-relaxed">
             <strong>ROI: Reduces cross-module investigation time from 18 mins across 5 legacy tabs to &lt;15 seconds</strong> by combining AMS, Fee Dues, Turnstile Gates, and Hostel Incident logs into a single real-time timeline.
@@ -712,14 +717,14 @@
         <!-- Friction & Problem Statement Callout Banner -->
         <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
           <div class="flex items-start gap-2.5">
-            <span class="text-base shrink-0 mt-0.5">⚠️</span>
+            <span class="text-base shrink-0 mt-0.5"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
             <div>
               <span class="font-bold">The Administrative Pain Point:</span> University Academic Registrars and Department HODs spend 2–3 weeks every semester manually cross-referencing room inventories, professor availability, and lecture overlaps across 312 courses. Double-booked faculty and room overlaps trigger chaotic student disruptions, cancelled classes, and daily backend support tickets.
             </div>
           </div>
           <div class="shrink-0 flex items-center gap-2">
             <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 font-bold border border-blue-300 text-[11px] whitespace-nowrap">
-              ⚡ ROI: Eliminates 100% of Scheduling Clashes • Saves 80+ Hours of HOD Planning
+              ROI: Eliminates 100% of Scheduling Clashes • Saves 80+ Hours of HOD Planning
             </span>
           </div>
         </div>
@@ -821,13 +826,13 @@
                 <span id="cs502-status-badge" class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">Clash Pending</span>
               </div>
               <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
-                <span class="text-slate-400">👨‍🏫</span>
+                <span class="text-slate-400"></span>
                 <strong class="text-slate-900">Prof. Ramesh Sharma</strong>
               </p>
               <div class="mt-2.5 pt-2 border-t border-red-200/60 flex items-center justify-between text-[10px]">
                 <span class="text-red-700 font-mono font-medium">Room: LH-4A</span>
                 <button onclick="triggerClashModal()" class="px-2 py-1 rounded bg-red-600 hover:bg-red-700 text-white font-bold transition-colors shadow-2xs">
-                  ⚡ Assign (Test Clash)
+                  Assign (Test Clash)
                 </button>
               </div>
             </div>
@@ -842,7 +847,7 @@
                 <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Scheduled</span>
               </div>
               <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
-                <span class="text-slate-400">👩‍🏫</span>
+                <span class="text-slate-400"></span>
                 <span>Dr. Ananya Sen</span>
               </p>
               <div class="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
@@ -861,7 +866,7 @@
                 <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Scheduled</span>
               </div>
               <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
-                <span class="text-slate-400">👨‍💻</span>
+                <span class="text-slate-400"></span>
                 <span>Prof. Gurdeep Singh</span>
               </p>
               <div class="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
@@ -880,7 +885,7 @@
                 <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Scheduled</span>
               </div>
               <p class="text-[11px] text-slate-700 font-medium mt-1.5 flex items-center gap-1.5">
-                <span class="text-slate-400">👨‍🏫</span>
+                <span class="text-slate-400"></span>
                 <span>Prof. Rajesh Verma</span>
               </p>
               <div class="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
@@ -978,8 +983,8 @@
                   <td class="p-2.5 border-r border-slate-200 align-top">
                     <div id="slot-mon-1045" ondragover="allowDrop(event)" ondrop="handleDropConflict(event)" onclick="triggerClashModal()" class="p-3 rounded-xl border-2 border-dashed border-red-400 bg-red-50/70 hover:bg-red-100/90 transition-all cursor-pointer group text-center space-y-1.5 shadow-2xs">
                       <div class="flex items-center justify-between">
-                        <span id="badge-mon-1045" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">⚡ Target Clash Slot</span>
-                        <span class="text-xs group-hover:scale-110 transition-transform">⚠️</span>
+                        <span id="badge-mon-1045" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">Target Clash Slot</span>
+                        <span class="text-xs group-hover:scale-110 transition-transform"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
                       </div>
                       <p class="font-bold text-red-950 text-xs">Drop CS502 Here</p>
                       <p class="text-[10px] text-red-700 font-mono leading-tight">Prof. Sharma already teaching in Room 2B</p>
@@ -1027,7 +1032,7 @@
                     12:15 - 13:15
                   </td>
                   <td colspan="5" class="p-2.5 text-center text-[11px] font-semibold text-slate-500 tracking-wide">
-                    🍽️ Faculty & Student Common Lunch Break • Academic Office Hours & Research Mentorship
+                     Faculty & Student Common Lunch Break • Academic Office Hours & Research Mentorship
                   </td>
                 </tr>
 
@@ -1063,8 +1068,8 @@
                   <td class="p-2.5 border-r border-slate-200 align-top">
                     <div id="slot-thu-1400" ondragover="allowDrop(event)" ondrop="handleDropOptimal(event)" class="p-3 rounded-xl border border-emerald-300 bg-emerald-50/40 hover:bg-emerald-50/80 transition-all text-center space-y-1.5 shadow-2xs">
                       <div class="flex items-center justify-between">
-                        <span id="badge-thu-1400" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">🟢 AI Recommended Slot</span>
-                        <span class="text-xs">⚡</span>
+                        <span id="badge-thu-1400" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300"> AI Recommended Slot</span>
+                        <span class="text-xs"></span>
                       </div>
                       <p class="font-bold text-slate-800 text-xs">Thursday 2:00 PM Slot</p>
                       <p class="text-[10px] text-emerald-700 font-mono">Prof. Sharma & LH-4A 100% Free</p>
@@ -1225,14 +1230,14 @@
         <!-- Friction & Problem Statement Callout Banner -->
         <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
           <div class="flex items-start gap-2.5">
-            <span class="text-base shrink-0 mt-0.5">⚠️</span>
+            <span class="text-base shrink-0 mt-0.5"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
             <div>
               <span class="font-bold">The Administrative Pain Point:</span> University accounts departments waste 35–40 hours every week manually cross-checking bank CSV statements against student challans in MySQL, causing semester fee delays, mistaken debarment notices, and reconciliation logjams.
             </div>
           </div>
           <div class="shrink-0 flex items-center gap-2">
             <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 text-[11px] whitespace-nowrap">
-              ⚡ ROI: Saves ~38 Accounting Hours/Week
+              ROI: Saves ~38 Accounting Hours/Week
             </span>
           </div>
         </div>
@@ -1255,7 +1260,7 @@
           <div id="csv-dropzone" onclick="simulateCsvUpload()" class="border-2 border-dashed border-slate-300 hover:border-emerald-500 rounded-xl p-6 text-center cursor-pointer transition-all bg-slate-50/50 hover:bg-emerald-50/20 group">
             <input type="file" id="bank-csv-input" accept=".csv,.xlsx" class="hidden" onchange="handleFileSelect(event)">
             <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-emerald-600 flex items-center justify-center mx-auto text-xl shadow-xs group-hover:scale-105 transition-transform">
-              📂
+              
             </div>
             <h4 class="text-xs font-bold text-slate-800 mt-2.5">Drag & Drop Bank Transaction CSV or Click to Browse</h4>
             <p class="text-[11px] text-slate-400 mt-0.5">Automated parsing of UTR numbers, payment modes, depositor remarks, and transaction timestamps</p>
@@ -1282,7 +1287,7 @@
 
             <div class="flex flex-wrap items-center gap-2 shrink-0">
               <button id="btn-reset-recon" onclick="resetReconciliationEngine()" class="hidden px-3.5 py-2.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
-                🔄 Reset Batch
+                ↺ Reset Batch
               </button>
 
               <button id="btn-run-recon" onclick="runReconciliationAlgorithm()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
@@ -1296,7 +1301,7 @@
           <div id="recon-progress-container" class="hidden space-y-2 pt-2 border-t border-slate-100">
             <div class="flex items-center justify-between text-xs">
               <span id="recon-progress-status" class="font-bold text-emerald-800 flex items-center gap-1.5">
-                <span class="animate-spin text-sm">⌛</span>
+                <span class="animate-spin text-sm"></span>
                 <span>Parsing HDFC UTR & Beneficiary Tags...</span>
               </span>
               <span id="recon-progress-pct" class="font-mono font-bold text-emerald-700">0%</span>
@@ -1311,7 +1316,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                  ✓
+                  
                 </div>
                 <div>
                   <h4 class="text-sm font-bold text-emerald-900">842 records matched instantly. 14 anomalies require manual review.</h4>
@@ -1324,7 +1329,7 @@
                   <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
                 </button>
                 <button onclick="exportReconciliationCsv()" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-300 hover:bg-emerald-100 text-emerald-900 font-bold text-xs shadow-2xs">
-                  📄 Export Reconciliation CSV
+                   Export Reconciliation CSV
                 </button>
               </div>
             </div>
@@ -1699,7 +1704,7 @@
                 <span class="px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-950 text-[10px]">2</span>
               </button>
               <button id="btn-access-curfew" onclick="filterAccessTelemetry('CURFEW')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-red-50 hover:bg-red-100 text-red-800 border border-red-300 transition-colors flex items-center gap-1">
-                <span>🚨 Curfew Breaches</span>
+                <span> Curfew Breaches</span>
                 <span class="px-1.5 py-0.2 rounded-full bg-red-200 text-red-950 text-[10px]">7</span>
               </button>
             </div>
@@ -1708,7 +1713,7 @@
           <!-- Anomaly Action Alert Bar (Hidden by default, shown when filtering anomalies) -->
           <div id="access-action-banner" class="hidden p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-xs text-amber-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center gap-2">
-              <span class="text-base">🚨</span>
+              <span class="text-base"></span>
               <span><strong>Anomaly Detected:</strong> Aarav Sharma ID card punched at Gate 02 (East) and Gate 05 (Sports Complex) within 45s (Distance: 1.2 km). Impossible physical travel.</span>
             </div>
             <button id="btn-guard-dispatch" onclick="dispatchSecurityGuardCheck()" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs shrink-0 flex items-center gap-1.5">
@@ -2044,20 +2049,20 @@
             <!-- 4 Department Progress Cards (Clickable) -->
             <div class="grid grid-cols-2 gap-2 text-[11px]">
               <div onclick="showDeptClearanceInfo('LIBRARY')" class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900 cursor-pointer hover:bg-emerald-100 transition-colors group" title="Click to view Central Library clearance details">
-                <span class="font-bold">📚 Library:</span> Cleared (0 Overdue)
-                <span class="text-[9px] text-emerald-700 block font-mono group-hover:underline">RFID return verified ⚡</span>
+                <span class="font-bold"> Library:</span> Cleared (0 Overdue)
+                <span class="text-[9px] text-emerald-700 block font-mono group-hover:underline">RFID return verified</span>
               </div>
               <div onclick="showDeptClearanceInfo('HOSTEL')" class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900 cursor-pointer hover:bg-emerald-100 transition-colors group" title="Click to view Hostel clearance details">
-                <span class="font-bold">🏠 Hostel:</span> Room 402 Inspected
-                <span class="text-[9px] text-emerald-700 block font-mono group-hover:underline">Key handed over ⚡</span>
+                <span class="font-bold"> Hostel:</span> Room 402 Inspected
+                <span class="text-[9px] text-emerald-700 block font-mono group-hover:underline">Key handed over</span>
               </div>
               <div onclick="showDeptClearanceInfo('FINANCE')" class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900 cursor-pointer hover:bg-emerald-100 transition-colors group" title="Click to view Finance clearance details">
-                <span class="font-bold">💳 Finance:</span> ₹0 Pending Dues
-                <span class="text-[9px] text-emerald-700 block font-mono group-hover:underline">Reconciled in full ⚡</span>
+                <span class="font-bold"> Finance:</span> ₹0 Pending Dues
+                <span class="text-[9px] text-emerald-700 block font-mono group-hover:underline">Reconciled in full</span>
               </div>
               <div id="box-nodues-it" onclick="showDeptClearanceInfo('IT')" class="p-2 rounded bg-amber-50 border border-amber-200 text-amber-900 cursor-pointer hover:bg-amber-100 transition-colors group" title="Click to view IT Lab status">
-                <span class="font-bold">💻 IT Lab:</span> <span id="text-nodues-it">Pending Monitor #410</span>
-                <span class="text-[9px] text-amber-700 block font-mono group-hover:underline">Hardware check ⚡</span>
+                <span class="font-bold"> IT Lab:</span> <span id="text-nodues-it">Pending Monitor #410</span>
+                <span class="text-[9px] text-amber-700 block font-mono group-hover:underline">Hardware check</span>
               </div>
             </div>
 
@@ -2103,7 +2108,7 @@
             <!-- LMS Congestion Warning Box -->
             <div id="deadline-conflict-box" class="p-3 rounded-lg bg-red-50/70 border border-red-200 text-xs text-red-900 space-y-1">
               <div class="flex items-center gap-1.5 font-bold">
-                <span>⚠️</span>
+                <span><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
                 <span>LMS Overlap Alert: 70% of Batch has 3 major deliverables on Friday, 13 Nov!</span>
               </div>
               <p class="text-[11px] leading-relaxed">
@@ -2117,7 +2122,7 @@
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="text-[10px] text-slate-500 font-mono">Burnout Reduction: -68%</span>
-                <button onclick="openDeadlineModal()" class="px-2 py-0.5 rounded text-[11px] font-semibold text-indigo-700 hover:text-indigo-900 hover:bg-indigo-50 border border-indigo-200 transition-colors" title="Open full weekly calendar heatmap">📅 Open Heatmap Modal</button>
+                <button onclick="openDeadlineModal()" class="px-2 py-0.5 rounded text-[11px] font-semibold text-indigo-700 hover:text-indigo-900 hover:bg-indigo-50 border border-indigo-200 transition-colors" title="Open full weekly calendar heatmap"> Open Heatmap Modal</button>
                 <button onclick="toggleScheduleView()" class="text-[10px] text-blue-600 hover:text-blue-800 font-bold underline font-mono">
                   [View Schedule Matrix]
                 </button>
@@ -2167,12 +2172,12 @@
               <p class="text-[11px] text-slate-500">
                 Verified Skills: Data Structures (Grade A), Systems Programming (Grade A), Developer Club Lead.
               </p>
-              <span class="text-[10px] text-emerald-700 font-mono font-bold group-hover:underline block pt-0.5">👁️ Click to preview placement-verified credential modal ⚡</span>
+              <span class="text-[10px] text-emerald-700 font-mono font-bold group-hover:underline block pt-0.5"> Click to preview placement-verified credential modal</span>
             </div>
 
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
               <button onclick="openResumeModal()" class="text-[10px] text-emerald-700 font-mono font-semibold hover:underline flex items-center gap-1">
-                <span>✓ Placement Cell Certified</span>
+                <span> Placement Cell Certified</span>
                 <span class="text-slate-400 font-normal">• Preview</span>
               </button>
               <button onclick="exportVerifiedResume()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
@@ -2214,7 +2219,7 @@
                 <span class="text-[11px] text-slate-500">AC Fan Noise & Geyser Valve Check</span>
               </div>
               <span id="ticket-status-pill" onclick="showTechnicianTracker()" class="px-2 py-1 rounded text-[10px] font-bold bg-amber-100 text-amber-800 cursor-pointer hover:bg-amber-200 transition-colors" title="Click to view technician tracking details">
-                Technician Assigned ⚡
+                Technician Assigned
               </span>
             </div>
 
@@ -2256,12 +2261,12 @@
               <button onclick="bookOfficeHourSlot('Prof. Ramesh Sharma', 'Thu 03:00 - 03:15 PM')" class="p-2.5 rounded-lg bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-left transition-all group" title="Click to book with Prof. Ramesh Sharma">
                 <span class="font-bold text-slate-900 group-hover:text-purple-900 block">Prof. Ramesh Sharma</span>
                 <span class="text-[11px] text-blue-700 group-hover:text-purple-700 font-mono">Thu 03:00 - 03:15 PM</span>
-                <span class="text-[9px] text-slate-400 block group-hover:text-purple-600 font-medium">Click to reserve ⚡</span>
+                <span class="text-[9px] text-slate-400 block group-hover:text-purple-600 font-medium">Click to reserve</span>
               </button>
               <button onclick="bookOfficeHourSlot('Dr. Ananya Sen', 'Fri 11:00 - 11:15 AM')" class="p-2.5 rounded-lg bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-left transition-all group" title="Click to book with Dr. Ananya Sen">
                 <span class="font-bold text-slate-900 group-hover:text-purple-900 block">Dr. Ananya Sen</span>
                 <span class="text-[11px] text-emerald-700 group-hover:text-purple-700 font-mono">Fri 11:00 - 11:15 AM</span>
-                <span class="text-[9px] text-slate-400 block group-hover:text-purple-600 font-medium">Click to reserve ⚡</span>
+                <span class="text-[9px] text-slate-400 block group-hover:text-purple-600 font-medium">Click to reserve</span>
               </button>
             </div>
 
@@ -2307,7 +2312,7 @@
               <p class="text-[11px] text-emerald-800">
                 Eligible Grace: <strong>6 Lectures</strong> across CS501, CS502, CS506.
               </p>
-              <span class="text-[10px] text-emerald-700 font-mono font-bold group-hover:underline block pt-0.5">👁️ Click to view signed doctor's certificate modal ⚡</span>
+              <span class="text-[10px] text-emerald-700 font-mono font-bold group-hover:underline block pt-0.5"> Click to view signed doctor's certificate modal</span>
             </div>
 
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
@@ -2358,13 +2363,13 @@
                 <div>• Prerequisites: CS502 (Operating Systems), CS504 (Computer Networks) - <strong>Both Met</strong></div>
                 <div>• Career Synergy: Cloud Architect / DevOps Specialist (Highest Placement Demand)</div>
               </div>
-              <span class="text-[10px] text-teal-700 font-mono font-bold group-hover:underline block pt-0.5">🔍 Toggle syllabus & career synergy details ⚡</span>
+              <span class="text-[10px] text-teal-700 font-mono font-bold group-hover:underline block pt-0.5"> Toggle syllabus & career synergy details</span>
             </div>
 
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
               <span id="elective-seats-badge" class="text-[10px] text-teal-700 font-mono font-bold">Seats Remaining: 14 / 60</span>
               <div class="flex items-center gap-1.5">
-                <button onclick="openElectiveModal()" class="px-2.5 py-1 rounded text-[11px] font-bold text-teal-800 hover:text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-300 transition-colors flex items-center gap-1" title="Compare 3 electives side-by-side"><span>📊</span><span>Compare 3 Electives</span></button>
+                <button onclick="openElectiveModal()" class="px-2.5 py-1 rounded text-[11px] font-bold text-teal-800 hover:text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-300 transition-colors flex items-center gap-1" title="Compare 3 electives side-by-side"><span></span><span>Compare 3 Electives</span></button>
                 <button id="btn-elective-reset" onclick="resetElectiveRegistration()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
                   ↺ Reset
                 </button>
@@ -2405,12 +2410,12 @@
               <div onclick="openMarketplaceModalWithTab('browse', 1)" class="p-2 rounded bg-slate-50 hover:bg-indigo-50/60 border border-slate-200 hover:border-indigo-300 cursor-pointer transition-all group" title="Click to view & claim textbook">
                 <span class="font-bold text-slate-900 block">Operating Systems 10th Ed</span>
                 <span class="text-emerald-700 font-bold">₹350 (Block C)</span>
-                <span class="text-[9px] text-slate-400 group-hover:text-indigo-600 block">Click to claim ⚡</span>
+                <span class="text-[9px] text-slate-400 group-hover:text-indigo-600 block">Click to claim</span>
               </div>
               <div onclick="openMarketplaceModalWithTab('browse', 4)" class="p-2 rounded bg-slate-50 hover:bg-amber-50/60 border border-slate-200 hover:border-amber-300 cursor-pointer transition-all group" title="Click to view lost-and-found item">
                 <span class="font-bold text-slate-900 block">Found: Blue HP Mouse</span>
                 <span class="text-blue-700 font-bold">LH-4A Desk 12</span>
-                <span class="text-[9px] text-slate-400 group-hover:text-amber-600 block">Security Desk ⚡</span>
+                <span class="text-[9px] text-slate-400 group-hover:text-amber-600 block">Security Desk</span>
               </div>
             </div>
 
@@ -2459,17 +2464,17 @@
                 </div>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
-                <button onclick="simulateWalletAction('GATE')" class="px-2 py-1 rounded bg-white hover:bg-slate-100 text-slate-800 font-bold text-[10px] border border-slate-200 shadow-2xs">🚪 Gate</button>
-                <button onclick="simulateWalletAction('MESS')" class="px-2 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-bold text-[10px] shadow-2xs">🍛 Mess ₹60</button>
-                <button onclick="simulateWalletAction('LIB')" class="px-2 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-bold text-[10px] shadow-2xs">📚 Library</button>
-                <button onclick="simulateWalletAction('RECHARGE')" class="px-2 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] shadow-2xs">⚡ +₹500</button>
+                <button onclick="simulateWalletAction('GATE')" class="px-2 py-1 rounded bg-white hover:bg-slate-100 text-slate-800 font-bold text-[10px] border border-slate-200 shadow-2xs"> Gate</button>
+                <button onclick="simulateWalletAction('MESS')" class="px-2 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-bold text-[10px] shadow-2xs"> Mess ₹60</button>
+                <button onclick="simulateWalletAction('LIB')" class="px-2 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-bold text-[10px] shadow-2xs"> Library</button>
+                <button onclick="simulateWalletAction('RECHARGE')" class="px-2 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] shadow-2xs">+₹500</button>
               </div>
             </div>
 
             <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
               <span class="text-[10px] text-slate-400 font-mono">Proxy-Proof Biometric Bind</span>
               <button onclick="openIdCardModal()" class="text-xs font-bold text-indigo-700 hover:text-indigo-900 underline flex items-center gap-1">
-                <span>🪪 Enlarge Digital Pass</span>
+                <span> Enlarge Digital Pass</span>
               </button>
             </div>
           </div>
@@ -2730,7 +2735,7 @@
     <div class="bg-white rounded-xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
       <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">⚙️</div>
+          <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">️</div>
           <div>
             <h4 class="text-sm font-bold text-slate-900">Retention Heuristics & Risk Sensitivity Tuner</h4>
             <p class="text-[10px] text-slate-500">Recalculate cohort dropout detection parameters across 4,850 students</p>
@@ -2875,7 +2880,7 @@
         </div>
         <pre id="sql-code-block" class="p-4 rounded-lg bg-slate-950 border border-slate-800 text-emerald-400 overflow-x-auto text-[11px] leading-relaxed max-h-80 select-all"></pre>
         <div class="p-2.5 rounded bg-blue-950/40 border border-blue-900/60 text-[11px] text-blue-300 font-sans">
-          💡 Evaluated on <strong class="text-white">10.08 GB MySQL replica</strong> (`collpoll`). Utilizes composite covering indexes on <code class="font-mono text-emerald-400">(student_ukid, session_date, status)</code>.
+           Evaluated on <strong class="text-white">10.08 GB MySQL replica</strong> (`collpoll`). Utilizes composite covering indexes on <code class="font-mono text-emerald-400">(student_ukid, session_date, status)</code>.
         </div>
       </div>
 
@@ -2900,7 +2905,7 @@
       <div class="px-6 py-4 bg-red-600 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-red-700/80 flex items-center justify-center text-lg font-bold">
-            ⚠️
+            <svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-red-200 font-bold">Active Scheduling Conflict Alert</span>
@@ -2917,7 +2922,7 @@
         <!-- EXACT HOOK CALLOUT REQUIRED BY STAGE 8 -->
         <div class="p-4 rounded-xl bg-red-50 border-2 border-red-200 text-red-900 shadow-2xs">
           <div class="flex items-start gap-3">
-            <span class="text-xl shrink-0 mt-0.5">🚨</span>
+            <span class="text-xl shrink-0 mt-0.5"></span>
             <div>
               <h4 class="text-sm font-extrabold text-red-800 leading-snug tracking-tight">
                 CLASH DETECTED: Prof. Sharma is already teaching CS502 in Room 4A. Nearest available slot: Thursday 2:00 PM.
@@ -2954,14 +2959,14 @@
         <!-- AI Recommendation Window -->
         <div class="p-4 rounded-xl bg-emerald-50/80 border border-emerald-300 text-emerald-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
           <div class="flex items-start gap-2.5">
-            <span class="text-lg shrink-0 mt-0.5">💡</span>
+            <span class="text-lg shrink-0 mt-0.5"></span>
             <div>
               <p class="text-xs font-bold text-emerald-900">AI Scheduling Optimizer Recommendation</p>
               <p class="text-xs text-emerald-800 mt-0.5">
                 Target Slot: <strong>Thursday, 02:00 PM – 03:30 PM (Room 4A)</strong>
               </p>
               <p class="text-[11px] text-emerald-700 font-mono mt-1">
-                ✓ 0% Faculty Overlap • ✓ 0% Student Batch Clash • ✓ LH-4A 100% Free
+                 0% Faculty Overlap •  0% Student Batch Clash •  LH-4A 100% Free
               </p>
             </div>
           </div>
@@ -2989,7 +2994,7 @@
     <div class="bg-white rounded-xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
       <div class="px-6 py-4 border-b border-slate-200 bg-amber-50 flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm">⚠️</div>
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
           <div>
             <h4 class="text-sm font-bold text-slate-900">Reconciliation Exception Review (14 Flagged Records)</h4>
             <p class="text-[10px] text-slate-500">Transactions where bank deposits deviate from ERP invoice amounts or lack clean UTR tags</p>
@@ -3073,7 +3078,7 @@
       <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-lg font-bold">
-            🐬
+            
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-blue-300 font-bold">Live Data Lake Connection</span>
@@ -3135,7 +3140,7 @@ FROM StudentCompoundMetrics;
         <div id="mysql-query-results" class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-950 flex items-center justify-between">
           <div>
             <span class="font-bold text-xs text-emerald-900 flex items-center gap-1.5">
-              <span>✓ Query Executed Successfully (14ms)</span>
+              <span> Query Executed Successfully (14ms)</span>
             </span>
             <p class="text-[11px] text-emerald-800 mt-0.5 font-mono">
               Evaluated 4,850 students • 142 in Red Zone • ₹1.84 Cr fee exposure isolated.
@@ -3220,10 +3225,10 @@ FROM StudentCompoundMetrics;
 
         <div class="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-[11px] text-slate-600 flex items-center justify-between">
           <span class="flex items-center gap-1.5">
-            <span>📷</span>
+            <span></span>
             <span>Attached Photo: <strong>hostel_room402_ac_bearing.jpg</strong> (2.1 MB)</span>
           </span>
-          <span class="text-emerald-700 font-bold font-mono">✓ Verified</span>
+          <span class="text-emerald-700 font-bold font-mono"> Verified</span>
         </div>
       </div>
 
@@ -3249,7 +3254,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-lg font-bold">
-            🛒
+            
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-300 font-bold">Digii Peer-to-Peer Hub</span>
@@ -3398,7 +3403,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-gradient-to-r from-emerald-800 to-teal-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-md flex items-center justify-center text-lg font-bold">
-            🎓
+            
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-200 font-bold">Placement Cell Authenticated</span>
@@ -3423,7 +3428,7 @@ FROM StudentCompoundMetrics;
             <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 font-bold text-xs font-mono inline-block border border-emerald-300">
               CGPA: 8.42 / 10.0
             </span>
-            <span class="text-[10px] text-emerald-700 block mt-1 font-semibold">✓ 100% DB Verified</span>
+            <span class="text-[10px] text-emerald-700 block mt-1 font-semibold"> 100% DB Verified</span>
           </div>
         </div>
 
@@ -3467,15 +3472,15 @@ FROM StudentCompoundMetrics;
           <span class="text-xs font-bold text-slate-700 uppercase tracking-wider block">Dean Student Welfare — Verified Co-Curriculars</span>
           <div class="p-3 rounded-lg bg-emerald-50/50 border border-emerald-200 text-xs space-y-1.5">
             <div class="flex items-center gap-2">
-              <span class="text-emerald-700 font-bold">🏆 1st Place:</span>
+              <span class="text-emerald-700 font-bold"> 1st Place:</span>
               <span class="text-slate-800">Smart India Hackathon 2026 (Institutional Lead)</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-emerald-700 font-bold">⭐ Technical Lead:</span>
+              <span class="text-emerald-700 font-bold"> Technical Lead:</span>
               <span class="text-slate-800">Google Developer Student Club (GDSC Digii Campus)</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-emerald-700 font-bold">🤝 Peer Mentor:</span>
+              <span class="text-emerald-700 font-bold"> Peer Mentor:</span>
               <span class="text-slate-800">Level 3 Peer Tutor in Algorithms & Discrete Mathematics</span>
             </div>
           </div>
@@ -3522,7 +3527,7 @@ FROM StudentCompoundMetrics;
     <div class="bg-white rounded-2xl max-w-sm w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
       <div class="px-5 py-3.5 bg-indigo-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <span class="text-base">🪪</span>
+          <span class="text-base"></span>
           <span class="text-xs font-bold tracking-tight">Digii Campus Universal Digital ID</span>
         </div>
         <button onclick="closeIdCardModal()" class="text-slate-400 hover:text-white transition-colors text-xl font-bold p-1">&times;</button>
@@ -3560,7 +3565,7 @@ FROM StudentCompoundMetrics;
 
           <div class="flex items-center justify-between text-[9px] text-indigo-300 font-mono pt-1">
             <span>Blood: O+ • Hosteller (Block B-402)</span>
-            <span class="text-emerald-400 font-bold">✓ PASS ACTIVE</span>
+            <span class="text-emerald-400 font-bold"> PASS ACTIVE</span>
           </div>
         </div>
 
@@ -3569,16 +3574,16 @@ FROM StudentCompoundMetrics;
           <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Simulate One-Tap Phone Actions</span>
           <div class="grid grid-cols-2 gap-2 text-xs">
             <button onclick="simulateWalletAction('GATE')" class="p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold border border-slate-300 flex items-center justify-center gap-1.5">
-              <span>🚪 Gate Turnstile</span>
+              <span> Gate Turnstile</span>
             </button>
             <button onclick="simulateWalletAction('MESS')" class="p-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-bold shadow-xs flex items-center justify-center gap-1.5">
-              <span>🍛 Mess Lunch (₹60)</span>
+              <span> Mess Lunch (₹60)</span>
             </button>
             <button onclick="simulateWalletAction('LIB')" class="p-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-800 font-bold border border-blue-200 flex items-center justify-center gap-1.5">
-              <span>📚 Library Check-in</span>
+              <span> Library Check-in</span>
             </button>
             <button onclick="simulateWalletAction('RECHARGE')" class="p-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-xs flex items-center justify-center gap-1.5">
-              <span>⚡ +₹500 UPI Reload</span>
+              <span>+₹500 UPI Reload</span>
             </button>
           </div>
         </div>
@@ -3601,7 +3606,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-emerald-800 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-lg font-bold">
-            🏥
+            
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-200 font-bold">Campus Health Center (CHC)</span>
@@ -3648,7 +3653,7 @@ FROM StudentCompoundMetrics;
 
         <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900 text-white text-[11px] font-mono">
           <span>Digital Signature Authenticated:</span>
-          <span class="text-emerald-400 font-bold">✓ VERIFIED BY CHC DESK</span>
+          <span class="text-emerald-400 font-bold"> VERIFIED BY CHC DESK</span>
         </div>
       </div>
 
@@ -3681,7 +3686,7 @@ FROM StudentCompoundMetrics;
 
       <div class="p-6 space-y-4">
         <div class="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-950">
-          <span>🔒 <strong>100% Confidential:</strong> Your identity is masked from the batch. Only certified top-scoring peer tutors can accept your session request.</span>
+          <span> <strong>100% Confidential:</strong> Your identity is masked from the batch. Only certified top-scoring peer tutors can accept your session request.</span>
         </div>
 
         <div class="space-y-1.5">
@@ -3714,7 +3719,7 @@ FROM StudentCompoundMetrics;
           Cancel
         </button>
         <button onclick="submitTutorRequest()" class="px-4 py-2 text-xs font-bold rounded-lg text-white bg-emerald-600 hover:bg-emerald-700 shadow-xs">
-          ⚡ Broadcast Anonymous Request
+          Broadcast Anonymous Request
         </button>
       </div>
     </div>
@@ -3731,7 +3736,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xl shadow-md border border-indigo-400/30">
-            📊
+            
           </div>
           <div>
             <div class="flex items-center gap-2">
@@ -3827,14 +3832,14 @@ FROM StudentCompoundMetrics;
             <div class="p-3 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 border border-emerald-400/40 shadow-xs">
               <div class="flex items-center gap-2">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px] uppercase border border-emerald-400/40">
-                  ✓ 100% Live Prototype Built
+                   100% Live Prototype Built
                 </span>
                 <span class="text-[11px] text-emerald-100">
                   <strong>All 10 initiatives are already fully functional & interactive!</strong> Swimlanes represent the university staged rollout sequence.
                 </span>
               </div>
               <span class="text-[10px] text-emerald-300 font-mono font-bold shrink-0">
-                👉 Click any card below to launch live feature!
+                 Click any card below to launch live feature!
               </span>
             </div>
 
@@ -3904,7 +3909,7 @@ FROM StudentCompoundMetrics;
               </p>
             </div>
             <button onclick="simulateCircuitBreakerRollback()" class="shrink-0 px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5" title="Simulate Latency Spike > 120ms">
-              <span>⚡ Test Circuit Breaker Rollback</span>
+              <span>Test Circuit Breaker Rollback</span>
             </button>
           </div>
 
@@ -3917,7 +3922,7 @@ FROM StudentCompoundMetrics;
           <div class="p-3 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-between text-xs">
             <span class="text-slate-600 font-mono text-[11px]">Flag updates synced with AWS AppConfig / Redis edge cache</span>
             <button onclick="applyFeatureFlagChanges()" class="px-4 py-2 rounded-lg bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs shadow-xs transition-all">
-              ✓ Save & Deploy Flag State to Production
+               Save & Deploy Flag State to Production
             </button>
           </div>
         </div>
@@ -3940,7 +3945,7 @@ FROM StudentCompoundMetrics;
                 ↺ Reset Funnel
               </button>
               <button id="btn-funnel-intervene" onclick="simulatePmFunnelIntervention()" class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-xs transition-all flex items-center gap-1.5">
-                <span>⚡ Simulate Dhruv's PM Intervention (+14% Boost)</span>
+                <span>Simulate Dhruv's PM Intervention (+14% Boost)</span>
               </button>
             </div>
           </div>
@@ -3977,7 +3982,7 @@ FROM StudentCompoundMetrics;
             <div id="funnel-card-s3" class="p-3.5 rounded-xl border-2 border-amber-300 bg-amber-50/50 shadow-2xs space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-amber-900 uppercase font-mono block">Stage 3: Action Started</span>
-                <span class="px-1.5 py-0.2 rounded bg-red-100 text-red-800 font-mono text-[9px] font-bold">Friction Drop ⚠️</span>
+                <span class="px-1.5 py-0.2 rounded bg-red-100 text-red-800 font-mono text-[9px] font-bold">Friction Drop <svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
               </div>
               <div class="flex items-baseline justify-between">
                 <span id="funnel-s3-count" class="text-xl font-bold text-slate-900 font-mono">2,522</span>
@@ -4006,7 +4011,7 @@ FROM StudentCompoundMetrics;
           <!-- PM Insight Callout -->
           <div id="funnel-insight-box" class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs space-y-1.5">
             <div class="flex items-center gap-2 text-emerald-400 font-bold font-mono text-[11px] uppercase tracking-wider">
-              <span>💡 Dhruv's PM Diagnostic Note</span>
+              <span> Dhruv's PM Diagnostic Note</span>
             </div>
             <p id="funnel-insight-text" class="leading-relaxed text-slate-300">
               "Analyzing our 10GB database ledger (`collpoll.academic_fee_dues`), 68% of uncollected fees are held up not because parents refuse to pay, but because the current ERP forces full-semester lump-sum bank challans. By rolling out <strong>1-Click Instant UPI Split Installments</strong> (Innovation 09) and <strong>Zero-Friction No-Dues</strong> (Innovation 01), we recover an additional <strong>₹52 Lakhs</strong> in retained revenue."
@@ -4095,7 +4100,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-gradient-to-r from-indigo-900 to-blue-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-lg font-bold">
-            ✓
+            
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-300 font-bold">Official Document</span>
@@ -4142,28 +4147,28 @@ FROM StudentCompoundMetrics;
                 <span class="font-bold text-emerald-950 block">1. Central Library</span>
                 <span class="text-[10px] text-emerald-700">0 Overdue • Return Verified</span>
               </div>
-              <span class="text-emerald-700 font-bold font-mono">✓ PASS</span>
+              <span class="text-emerald-700 font-bold font-mono"> PASS</span>
             </div>
             <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between">
               <div>
                 <span class="font-bold text-emerald-950 block">2. Hostel Administration</span>
                 <span class="text-[10px] text-emerald-700">Room 402 Key Returned</span>
               </div>
-              <span class="text-emerald-700 font-bold font-mono">✓ PASS</span>
+              <span class="text-emerald-700 font-bold font-mono"> PASS</span>
             </div>
             <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between">
               <div>
                 <span class="font-bold text-emerald-950 block">3. University Finance Desk</span>
                 <span class="text-[10px] text-emerald-700">₹0 Overdue • Ledger Balanced</span>
               </div>
-              <span class="text-emerald-700 font-bold font-mono">✓ PASS</span>
+              <span class="text-emerald-700 font-bold font-mono"> PASS</span>
             </div>
             <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between">
               <div>
                 <span class="font-bold text-emerald-950 block">4. Central IT & Labs</span>
                 <span class="text-[10px] text-emerald-700">Monitor #410 Inspected</span>
               </div>
-              <span class="text-emerald-700 font-bold font-mono">✓ PASS</span>
+              <span class="text-emerald-700 font-bold font-mono"> PASS</span>
             </div>
           </div>
         </div>
@@ -4201,7 +4206,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-gradient-to-r from-amber-700 via-orange-800 to-amber-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-lg font-bold">
-            📅
+            
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-amber-200 font-bold">LMS Workload Balancer</span>
@@ -4216,7 +4221,7 @@ FROM StudentCompoundMetrics;
         <div id="modal-deadline-alert" class="p-4 rounded-xl bg-red-50 border-2 border-red-300 text-xs space-y-2">
           <div class="flex items-center justify-between">
             <span class="font-bold text-red-900 flex items-center gap-1.5 text-sm">
-              <span class="animate-pulse">⚠️</span> Severe Deadline Congestion on Friday, 13 Nov!
+              <span class="animate-pulse"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span> Severe Deadline Congestion on Friday, 13 Nov!
             </span>
             <span class="px-2 py-0.5 rounded bg-red-200 text-red-900 font-mono font-bold text-[10px]">95% Burnout Index</span>
           </div>
@@ -4276,7 +4281,7 @@ FROM StudentCompoundMetrics;
         <!-- AI Recommendation Proposal -->
         <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs space-y-1.5">
           <span class="font-bold text-amber-950 flex items-center gap-1.5">
-            <span>💡</span> <span>AI Optimization Proposal:</span>
+            <span></span> <span>AI Optimization Proposal:</span>
           </span>
           <p class="text-[11px] text-amber-900 leading-relaxed">
             Move <strong>CS502 Operating Systems Project</strong> deadline by 72 hours from Friday 13 Nov to <strong>Monday 16 Nov (11:59 PM)</strong>. 
@@ -4304,7 +4309,7 @@ FROM StudentCompoundMetrics;
       <div class="px-6 py-4 bg-gradient-to-r from-teal-800 to-cyan-900 text-white flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-lg font-bold">
-            ⚡
+           
           </div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-teal-200 font-bold">AI Course Matchmaker</span>
@@ -4336,7 +4341,7 @@ FROM StudentCompoundMetrics;
               <div class="flex items-center gap-2">
                 <span class="px-2 py-0.5 rounded bg-teal-600 text-white font-mono font-bold text-[10px]">94% Fit Score</span>
                 <h4 class="text-xs font-bold text-slate-900">CS604: Distributed Cloud Architecture</h4>
-                <span class="text-[10px] text-emerald-700 font-bold">★ AI Recommended</span>
+                <span class="text-[10px] text-emerald-700 font-bold"> AI Recommended</span>
               </div>
               <p class="text-[11px] text-slate-600">
                 Prerequisites: OS & Computer Networks (Both Grade A met). Highest placement recruitment volume (+42% salary premium).
@@ -4344,7 +4349,7 @@ FROM StudentCompoundMetrics;
               <span class="text-[10px] text-teal-800 font-mono font-semibold block">Capacity: 14 / 60 Seats Remaining</span>
             </div>
             <button onclick="preRegisterElective(); closeElectiveModal();" class="shrink-0 px-3.5 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-2xs transition-all">
-              ⚡ Pre-Register Seat #15
+              Pre-Register Seat #15
             </button>
           </div>
 
@@ -4360,7 +4365,7 @@ FROM StudentCompoundMetrics;
               </p>
               <span class="text-[10px] text-slate-500 font-mono block">Capacity: 42 / 60 Seats Remaining</span>
             </div>
-            <button onclick="showToast('⚡ Pre-registered for CS608 Deep Learning!'); closeElectiveModal();" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition-all">
+            <button onclick="showToast('Pre-registered for CS608 Deep Learning!'); closeElectiveModal();" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition-all">
               Select CS608
             </button>
           </div>
@@ -4377,7 +4382,7 @@ FROM StudentCompoundMetrics;
               </p>
               <span class="text-[10px] text-slate-500 font-mono block">Capacity: 55 / 60 Seats Remaining</span>
             </div>
-            <button onclick="showToast('⚡ Pre-registered for CS612 Blockchain!'); closeElectiveModal();" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition-all">
+            <button onclick="showToast('Pre-registered for CS612 Blockchain!'); closeElectiveModal();" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition-all">
               Select CS612
             </button>
           </div>
@@ -4385,7 +4390,7 @@ FROM StudentCompoundMetrics;
 
         <!-- HOD Predictive Planning Benefit -->
         <div class="p-3 rounded-lg bg-slate-100 border border-slate-200 text-xs text-slate-700 space-y-1">
-          <span class="font-bold text-slate-900 block">🔵 University HOD Value: Early Demand Forecasting</span>
+          <span class="font-bold text-slate-900 block"> University HOD Value: Early Demand Forecasting</span>
           <p class="text-[11px] text-slate-600 leading-relaxed">
             By collecting early student interest via this AI matchmaker, HOD Prof. Rajesh Verma receives automated alerts that CS604 will over-enroll (85+ students). The department can pre-assign an extra lab section (Lab 4B) and co-instructor weeks before semester launch.
           </p>
@@ -4861,7 +4866,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
             <!-- Compound Threat Callout -->
             <div class="mt-3.5 p-3 rounded-lg ${isRed ? 'bg-red-50 border border-red-200' : isAmber ? 'bg-amber-50 border border-amber-200' : 'bg-slate-50 border border-slate-200'} text-xs space-y-1">
               <span class="font-bold uppercase tracking-wider text-[10px] ${isRed ? 'text-red-700' : isAmber ? 'text-amber-800' : 'text-slate-500'}">
-                ${isRed ? '⚠️ Immediate Compound Threat' : isAmber ? '⚡ Marginal Disengagement' : '✔️ Normal Health'}
+                ${isRed ? '<svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> Immediate Compound Threat' : isAmber ? 'Marginal Disengagement' : '️ Normal Health'}
               </span>
               <p class="text-[11px] text-slate-700 leading-snug">${s.risk_profile.summary}</p>
             </div>
@@ -5123,7 +5128,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
     function executeModalAction() {
       const btn = document.getElementById('modal-confirm-btn');
-      btn.innerHTML = `<span class="animate-spin mr-1">⌛</span> Dispatching...`;
+      btn.innerHTML = `<span class="animate-spin mr-1"></span> Dispatching...`;
       btn.disabled = true;
 
       setTimeout(() => {
@@ -5165,7 +5170,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
         renderStudentTimeline();
         renderAuditTable();
-        showToast(`✅ ${actionLabel} for ${s.first_name} ${s.last_name} (${s.enrollment_no}). Logged into collpoll_audit_trail.`);
+        showToast(` ${actionLabel} for ${s.first_name} ${s.last_name} (${s.enrollment_no}). Logged into collpoll_audit_trail.`);
       }, 700);
     }
 
@@ -5258,7 +5263,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       renderRadarGrid();
       renderStudent360();
       closeWeightTunerModal();
-      showToast('⚡ Dynamic Heuristic weights applied: All student scores recalculated in real-time!');
+      showToast('Dynamic Heuristic weights applied: All student scores recalculated in real-time!');
     }
 
     // ===================================================================
@@ -5304,7 +5309,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     function copyCurrentSqlQuery() {
       const code = SQL_SAMPLES[currentSqlTab];
       navigator.clipboard.writeText(code).then(() => {
-        showToast('📋 MySQL Query copied to clipboard!');
+        showToast(' MySQL Query copied to clipboard!');
       });
     }
 
@@ -5329,7 +5334,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       link.click();
       document.body.removeChild(link);
 
-      showToast('📄 Downloaded live CSV: Digii_Campus_Red_Zone_Dropout_Cohort_Week04.csv');
+      showToast(' Downloaded live CSV: Digii_Campus_Red_Zone_Dropout_Cohort_Week04.csv');
     }
 
     function showToast(message) {
@@ -5349,7 +5354,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     }
 
     function triggerNotificationToast() {
-      showToast('🔔 3 Critical Dropout Threats require immediate intervention in B.Tech CSE, IT, and Mechanical.');
+      showToast(' 3 Critical Dropout Threats require immediate intervention in B.Tech CSE, IT, and Mechanical.');
     }
 
     // Global Search Autocomplete
@@ -5571,7 +5576,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         let statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 text-slate-500">Unmatched</span>`;
         if (isDone) {
           if (r.isAnomaly) {
-            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">⚠️ Anomaly (-₹500)</span>`;
+            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> Anomaly (-₹500)</span>`;
           } else {
             statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1 justify-end"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> MATCHED (100%)</span>`;
           }
@@ -5609,33 +5614,33 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const stateBadge = document.getElementById('recon-table-state-badge');
 
       btn.disabled = true;
-      btn.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Reconciling 856 Records...</span>`;
+      btn.innerHTML = `<span class="animate-spin text-sm mr-1"></span> <span>Reconciling 856 Records...</span>`;
       progressContainer.classList.remove('hidden');
 
       // Stage 1: Parsing
       progressBar.style.width = '28%';
       progressPct.textContent = '28%';
-      progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Step 1/3: Parsing Bank UTR & Beneficiary Tags...</span>`;
+      progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1"></span> <span>Step 1/3: Parsing Bank UTR & Beneficiary Tags...</span>`;
 
       setTimeout(() => {
         // Stage 2: Fuzzy Matching
         progressBar.style.width = '68%';
         progressPct.textContent = '68%';
-        progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Step 2/3: Fuzzy-Matching Against 4,850 Student Challans...</span>`;
+        progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1"></span> <span>Step 2/3: Fuzzy-Matching Against 4,850 Student Challans...</span>`;
       }, 450);
 
       setTimeout(() => {
         // Stage 3: Resolving
         progressBar.style.width = '94%';
         progressPct.textContent = '94%';
-        progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1">⌛</span> <span>Step 3/3: Resolving Multi-Challan Compound Dues & Surcharges...</span>`;
+        progressStatus.innerHTML = `<span class="animate-spin text-sm mr-1"></span> <span>Step 3/3: Resolving Multi-Challan Compound Dues & Surcharges...</span>`;
       }, 900);
 
       setTimeout(() => {
         // Completion
         progressBar.style.width = '100%';
         progressPct.textContent = '100%';
-        progressStatus.innerHTML = `<span class="text-emerald-700 font-bold">✓ Reconciliation Engine Completed</span>`;
+        progressStatus.innerHTML = `<span class="text-emerald-700 font-bold"> Reconciliation Engine Completed</span>`;
         FINANCE_SAMPLE_DATA.isReconciled = true;
 
         renderFinanceTables();
@@ -5643,13 +5648,13 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         banner.classList.remove('hidden');
         resetBtn.classList.remove('hidden');
 
-        btn.innerHTML = `<span>✓ 842 Records Reconciled</span>`;
+        btn.innerHTML = `<span> 842 Records Reconciled</span>`;
         btn.className = "px-5 py-3 rounded-xl bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2 cursor-default";
 
         stateBadge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
         stateBadge.textContent = "Status: Reconciled (842 Matched, 14 Exceptions)";
 
-        showToast("✅ 842 records matched instantly. 14 anomalies require manual review.");
+        showToast(" 842 records matched instantly. 14 anomalies require manual review.");
       }, 1300);
     }
 
@@ -5674,7 +5679,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       stateBadge.textContent = "Status: Pre-Execution (Raw Staging)";
 
       renderFinanceTables();
-      showToast("🔄 Finance reconciliation engine reset to raw batch staging.");
+      showToast("↺ Finance reconciliation engine reset to raw batch staging.");
     }
 
     function openAnomaliesModal() {
@@ -5688,11 +5693,11 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     function resolveAnomaly(utr, action) {
       closeAnomaliesModal();
       if (action === 'WAIVE_SURCHARGE') {
-        showToast(`✅ Surcharge waiver approved for UTR ${utr}. Reconciled ₹49,500 into ledger.`);
+        showToast(` Surcharge waiver approved for UTR ${utr}. Reconciled ₹49,500 into ledger.`);
       } else if (action === 'ACCEPT_PARTIAL') {
-        showToast(`✅ 50% partial payment recorded for UTR ${utr}. Balance invoice issued.`);
+        showToast(` 50% partial payment recorded for UTR ${utr}. Balance invoice issued.`);
       } else {
-        showToast(`🔔 Automated SMS dispatched to depositor requesting student roll number for UTR ${utr}.`);
+        showToast(` Automated SMS dispatched to depositor requesting student roll number for UTR ${utr}.`);
       }
     }
 
@@ -5711,16 +5716,16 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       link.click();
       document.body.removeChild(link);
 
-      showToast("📄 Exported audit report: Digii_Campus_Fee_Reconciliation_Report_Nov2026.csv");
+      showToast(" Exported audit report: Digii_Campus_Fee_Reconciliation_Report_Nov2026.csv");
     }
 
     function simulateCsvUpload() {
-      showToast("📂 Ingested live HDFC Bank batch: HDFC_Campus_Fee_Settlement_09Nov2026.csv (856 raw records).");
+      showToast(" Ingested live HDFC Bank batch: HDFC_Campus_Fee_Settlement_09Nov2026.csv (856 raw records).");
     }
 
     function handleFileSelect(e) {
       if (e.target.files && e.target.files.length > 0) {
-        showToast(`📂 Ingested user file: ${e.target.files[0].name} (856 records ready for reconciliation).`);
+        showToast(` Ingested user file: ${e.target.files[0].name} (856 records ready for reconciliation).`);
       }
     }
 
@@ -5784,7 +5789,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         slotMon.innerHTML = `
           <div class="flex items-center justify-between">
             <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700 font-mono">Available</span>
-            <span class="text-xs text-slate-400">✓</span>
+            <span class="text-xs text-slate-400"></span>
           </div>
           <p class="font-bold text-slate-700 text-xs mt-1">Open Study Window</p>
           <p class="text-[10px] text-slate-500 font-mono">No Scheduled Lectures</p>
@@ -5797,12 +5802,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         slotThu.className = "p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-left space-y-1 shadow-sm transition-all animate-in zoom-in-95 duration-200";
         slotThu.innerHTML = `
           <div class="flex items-center justify-between">
-            <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-600 text-white font-mono shadow-2xs">✓ Auto-Resolved (No Conflicts)</span>
-            <span class="text-xs">⚡</span>
+            <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-600 text-white font-mono shadow-2xs"> Auto-Resolved (No Conflicts)</span>
+            <span class="text-xs"></span>
           </div>
           <h4 class="font-bold text-slate-900 text-xs mt-1">CS502: Operating Systems</h4>
           <p class="text-[11px] text-emerald-900 font-semibold flex items-center gap-1">
-            <span>👨‍🏫</span> <span>Prof. Ramesh Sharma</span>
+            <span></span> <span>Prof. Ramesh Sharma</span>
           </p>
           <p class="text-[10px] text-emerald-700 font-mono mt-0.5">LH-4A • Thu 14:00 - 15:30</p>
         `;
@@ -5825,7 +5830,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (resetBtn) resetBtn.classList.remove('hidden');
 
       // 7. Toast Notification
-      showToast("✅ Clash Auto-Resolved: Prof. Sharma scheduled for Thursday 2:00 PM in Room 4A. 0 conflicts remain.");
+      showToast(" Clash Auto-Resolved: Prof. Sharma scheduled for Thursday 2:00 PM in Room 4A. 0 conflicts remain.");
     }
 
     function resetAcademicTimetable() {
@@ -5865,8 +5870,8 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         slotMon.className = "p-3 rounded-xl border-2 border-dashed border-red-400 bg-red-50/70 hover:bg-red-100/90 transition-all cursor-pointer group text-center space-y-1.5 shadow-2xs";
         slotMon.innerHTML = `
           <div class="flex items-center justify-between">
-            <span id="badge-mon-1045" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">⚡ Target Clash Slot</span>
-            <span class="text-xs group-hover:scale-110 transition-transform">⚠️</span>
+            <span id="badge-mon-1045" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-600 text-white animate-pulse">Target Clash Slot</span>
+            <span class="text-xs group-hover:scale-110 transition-transform"><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
           </div>
           <p class="font-bold text-red-950 text-xs">Drop CS502 Here</p>
           <p class="text-[10px] text-red-700 font-mono leading-tight">Prof. Sharma already teaching in Room 2B</p>
@@ -5884,8 +5889,8 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         slotThu.className = "p-3 rounded-xl border border-emerald-300 bg-emerald-50/40 hover:bg-emerald-50/80 transition-all text-center space-y-1.5 shadow-2xs";
         slotThu.innerHTML = `
           <div class="flex items-center justify-between">
-            <span id="badge-thu-1400" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">🟢 AI Recommended Slot</span>
-            <span class="text-xs">⚡</span>
+            <span id="badge-thu-1400" class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300"> AI Recommended Slot</span>
+            <span class="text-xs"></span>
           </div>
           <p class="font-bold text-slate-800 text-xs">Thursday 2:00 PM Slot</p>
           <p class="text-[10px] text-emerald-700 font-mono">Prof. Sharma & LH-4A 100% Free</p>
@@ -5912,7 +5917,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-reset-academic');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("🔄 Academic timetable reset to raw draft staging.");
+      showToast("↺ Academic timetable reset to raw draft staging.");
     }
 
     // Drag and Drop Event Handlers
@@ -5957,7 +5962,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       link.click();
       document.body.removeChild(link);
 
-      showToast("📄 Exported master timetable: Digii_Campus_Master_Timetable_BTech_CSE_Sem5.csv");
+      showToast(" Exported master timetable: Digii_Campus_Master_Timetable_BTech_CSE_Sem5.csv");
     }
 
 
@@ -5980,7 +5985,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           statusBadge.className = "text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-indigo-600 text-white font-mono animate-pulse";
           statusBadge.textContent = "ON";
         }
-        showToast("🚀 PM Pitch Mode Activated: Floating business ROI overlays visible across all modules.");
+        showToast("PM Pitch Mode Activated: Floating business ROI overlays visible across all modules.");
       } else {
         document.body.classList.remove('roi-mode-active');
         if (btn) btn.className = "relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out focus:outline-hidden";
@@ -6013,7 +6018,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const itBox = document.getElementById('box-nodues-it');
       const itText = document.getElementById('text-nodues-it');
       if (itBox) itBox.className = "p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900 cursor-pointer hover:bg-emerald-100 transition-colors group";
-      if (itText) itText.textContent = "✓ Cleared (Monitor Returned & Tested)";
+      if (itText) itText.textContent = " Cleared (Monitor Returned & Tested)";
 
       // 2. Update Badge to 100%
       const badge = document.getElementById('badge-nodues');
@@ -6065,7 +6070,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (rBtn) rBtn.classList.remove('hidden');
 
       openClearanceModal();
-      showToast("🎓 Digital No-Dues Complete: All 4 departments cleared. Official certificate opened!");
+      showToast(" Digital No-Dues Complete: All 4 departments cleared. Official certificate opened!");
     }
 
     // Innovation 02: Smart Assignment Deadline Balancer
@@ -6073,7 +6078,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const badge = document.getElementById('badge-deadline-stress');
       if (badge) {
         badge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
-        badge.textContent = "✓ Workload Balanced (0 Overlaps)";
+        badge.textContent = " Workload Balanced (0 Overlaps)";
       }
 
       const text = document.getElementById('text-deadline-rec');
@@ -6088,7 +6093,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         btn.innerHTML = `<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Deadline Shifted to Monday`;
       }
 
-      showToast("📅 Deadline Rebalanced: CS502 shifted to Monday 16 Nov. Automated notification dispatched to 120 students!");
+      showToast(" Deadline Rebalanced: CS502 shifted to Monday 16 Nov. Automated notification dispatched to 120 students!");
     }
 
     // Innovation 03: Verified Digital Auto-Resume Generator
@@ -6128,7 +6133,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       link.click();
       document.body.removeChild(link);
 
-      showToast("📄 Exported Verified Digital Resume: Digii_Verified_Digital_Resume_Aarav_Sharma.txt");
+      showToast(" Exported Verified Digital Resume: Digii_Verified_Digital_Resume_Aarav_Sharma.txt");
     }
 
     // Innovation 04: Unified Geo-Tagged Maintenance Ticketing
@@ -6152,10 +6157,10 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const pill = document.getElementById('ticket-status-pill');
       if (pill) {
         pill.className = "px-2 py-1 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 cursor-pointer hover:bg-emerald-200 transition-colors";
-        pill.textContent = "✓ Assigned: Sunil K. (ETA: Today 2:30 PM)";
+        pill.textContent = " Assigned: Sunil K. (ETA: Today 2:30 PM)";
       }
       closeMaintenanceModal();
-      showToast(`🛠️ Maintenance Ticket #MNT-2026-881 logged for Block B Room 402 (${catText.split('(')[0].trim()}). Facilities technician Sunil K. assigned!`);
+      showToast(` Maintenance Ticket #MNT-2026-881 logged for Block B Room 402 (${catText.split('(')[0].trim()}). Facilities technician Sunil K. assigned!`);
     }
 
     // Innovation 05: Seamless Office Hours Booking System
@@ -6186,7 +6191,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       link.click();
       document.body.removeChild(link);
 
-      showToast(`📅 Consultation confirmed with ${prof} (${slot})! Synced to calendar (.ics exported).`);
+      showToast(` Consultation confirmed with ${prof} (${slot})! Synced to calendar (.ics exported).`);
     }
 
     // Innovation 06: Automated Medical Leave & CHC Sync
@@ -6194,7 +6199,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const badge = document.getElementById('badge-med-sync');
       if (badge) {
         badge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
-        badge.textContent = "✓ 6 Lecture Hours Credited";
+        badge.textContent = " 6 Lecture Hours Credited";
       }
 
       const btn = document.getElementById('btn-med-sync');
@@ -6210,7 +6215,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (attVal) attVal.textContent = "64.6%";
       }
 
-      showToast("🏥 Medical Attendance Sync: 6 lecture hours credited in ams_attendance. 6 course professors notified!");
+      showToast(" Medical Attendance Sync: 6 lecture hours credited in ams_attendance. 6 course professors notified!");
     }
 
     // Innovation 07: AI-Powered Elective & Major Matchmaker
@@ -6219,16 +6224,16 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btn) {
         btn.disabled = true;
         btn.className = "px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
-        btn.textContent = "✓ Pre-Registered (Seat #15 Reserved)";
+        btn.textContent = " Pre-Registered (Seat #15 Reserved)";
       }
-      showToast("⚡ Pre-Registered for CS604 Distributed Cloud Architecture! HOD department roster updated.");
+      showToast("Pre-Registered for CS604 Distributed Cloud Architecture! HOD department roster updated.");
     }
 
     // Innovation 08: Dynamic Campus Marketplace & Lost-and-Found
     function openMarketplaceModal() {
       const modal = document.getElementById('marketplace-modal');
       if (modal) modal.classList.remove('hidden');
-      showToast("🛒 Campus Marketplace: Verified peer textbook & lab coat exchange opened.");
+      showToast(" Campus Marketplace: Verified peer textbook & lab coat exchange opened.");
     }
 
     function closeMarketplaceModal() {
@@ -6260,9 +6265,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btn) {
         btn.disabled = true;
         btn.className = "shrink-0 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
-        btn.textContent = "✓ Claimed";
+        btn.textContent = " Claimed";
       }
-      showToast(`🛒 Claimed '${title}'! Digii Chat opened with ${seller} (Aravali Hostel Room C-210) for instant handover.`);
+      showToast(` Claimed '${title}'! Digii Chat opened with ${seller} (Aravali Hostel Room C-210) for instant handover.`);
     }
 
     function submitMarketplaceListing() {
@@ -6291,7 +6296,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       }
 
       switchMarketplaceTab('browse');
-      showToast(`🛒 Listing published to Campus Marketplace: "${title}" (${price})!`);
+      showToast(` Listing published to Campus Marketplace: "${title}" (${price})!`);
     }
 
     // Innovation 09: Universal NFC/QR Campus Wallet
@@ -6310,7 +6315,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           balEl.classList.add('text-emerald-600');
           setTimeout(() => balEl.classList.remove('text-emerald-600'), 1500);
         }
-        showToast(`⚡ Instant UPI Wallet Recharge: ₹500 credited! New balance: ₹${newBal.toLocaleString('en-IN')}.`);
+        showToast(`Instant UPI Wallet Recharge: ₹500 credited! New balance: ₹${newBal.toLocaleString('en-IN')}.`);
         return;
       }
       if (action === 'MESS') {
@@ -6320,11 +6325,11 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           balEl.classList.add('text-emerald-600');
           setTimeout(() => balEl.classList.remove('text-emerald-600'), 1500);
         }
-        showToast(`🍛 Mess Scan: ₹60 deducted for Lunch. Remaining balance: ₹${newBal.toLocaleString('en-IN')}.`);
+        showToast(` Mess Scan: ₹60 deducted for Lunch. Remaining balance: ₹${newBal.toLocaleString('en-IN')}.`);
       } else if (action === 'GATE') {
-        showToast(`🚪 Gate 01 Turnstile Scan: QR Code verified. Turnstile unlocked (Normal Entry at ${new Date().toLocaleTimeString()}).`);
+        showToast(` Gate 01 Turnstile Scan: QR Code verified. Turnstile unlocked (Normal Entry at ${new Date().toLocaleTimeString()}).`);
       } else {
-        showToast(`📚 Central Library Scan: Checked in. Book borrowing quota: 4/4 available.`);
+        showToast(` Central Library Scan: Checked in. Book borrowing quota: 4/4 available.`);
       }
     }
 
@@ -6344,7 +6349,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         balEl.textContent = `₹${newBal.toLocaleString('en-IN')}`;
       }
 
-      showToast("🤝 Tutoring Bounty Accepted: Earned 50 Campus Credits! Remedial study room LH-2 booked for Wednesday 4:00 PM.");
+      showToast(" Tutoring Bounty Accepted: Earned 50 Campus Credits! Remedial study room LH-2 booked for Wednesday 4:00 PM.");
     }
 
     // Core Module Action: Optimize Mess Procurement
@@ -6355,7 +6360,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         btn.className = "px-4 py-2.5 rounded-lg bg-emerald-600 text-white text-xs font-bold shadow-xs cursor-default flex items-center gap-1.5";
         btn.innerHTML = `<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Kitchen Procurement Optimized (Saved ₹18,500)`;
       }
-      showToast("🍲 Kitchen Optimization Applied: Canceled 630 surplus portions across 3 dining halls. Saved ₹18,500 today!");
+      showToast(" Kitchen Optimization Applied: Canceled 630 surplus portions across 3 dining halls. Saved ₹18,500 today!");
     }
 
     // 10GB MySQL Data Lake Inspector Modal Handlers
@@ -6375,7 +6380,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         res.innerHTML = `
           <div>
             <span class="font-bold text-xs text-blue-900 flex items-center gap-1.5">
-              <span class="animate-spin inline-block">⚡</span> Query Executing on 10.08GB collpoll replica...
+              <span class="animate-spin inline-block"></span> Query Executing on 10.08GB collpoll replica...
             </span>
             <p class="text-[11px] text-blue-800 mt-0.5 font-mono">Scanning 1,647 tables with covering indices...</p>
           </div>
@@ -6384,7 +6389,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           res.innerHTML = `
             <div>
               <span class="font-bold text-xs text-emerald-900 flex items-center gap-1.5">
-                <span>✓ Query Executed Successfully (11ms)</span>
+                <span> Query Executed Successfully (11ms)</span>
               </span>
               <p class="text-[11px] text-emerald-800 mt-0.5 font-mono">
                 Evaluated 4,850 students • 142 in Red Zone • ₹1.84 Cr fee exposure isolated (0 Lock Contention).
@@ -6394,7 +6399,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
               100% In-Sync
             </span>
           `;
-          showToast("⚡ MySQL 8.0 Benchmark Complete: Executed CTE risk query in 11ms with 0 lock contention!");
+          showToast("MySQL 8.0 Benchmark Complete: Executed CTE risk query in 11ms with 0 lock contention!");
         }, 600);
       }
     }
@@ -6417,12 +6422,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const url = "https://verify.digiicampus.edu/student/2024CS0142";
       if (navigator.clipboard) {
         navigator.clipboard.writeText(url).then(() => {
-          showToast("🔗 Verified resume link copied to clipboard: " + url);
+          showToast(" Verified resume link copied to clipboard: " + url);
         }).catch(() => {
-          showToast("🔗 Verified link: " + url);
+          showToast(" Verified link: " + url);
         });
       } else {
-        showToast("🔗 Verified link: " + url);
+        showToast(" Verified link: " + url);
       }
     }
 
@@ -6455,23 +6460,23 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     function submitTutorRequest() {
       const course = document.getElementById('tutor-req-course')?.value || 'CS501';
       closeTutorRequestModal();
-      showToast(`🤝 Tutoring request for ${course} posted anonymously to top-ranking peer tutors!`);
+      showToast(` Tutoring request for ${course} posted anonymously to top-ranking peer tutors!`);
     }
 
     // Innovation 01 Helpers
     function showDeptClearanceInfo(dept) {
       if (dept === 'LIBRARY') {
-        showToast("📚 Central Library: 0 overdue books. RFID check completed. Fine balance: ₹0.");
+        showToast(" Central Library: 0 overdue books. RFID check completed. Fine balance: ₹0.");
       } else if (dept === 'HOSTEL') {
-        showToast("🏠 Hostel Office: Room C-314 inspected by Warden Sharma. Key deposited.");
+        showToast(" Hostel Office: Room C-314 inspected by Warden Sharma. Key deposited.");
       } else if (dept === 'FINANCE') {
-        showToast("💳 Finance Accounts: All 8 semester fees reconciled in full via ERP ledger.");
+        showToast(" Finance Accounts: All 8 semester fees reconciled in full via ERP ledger.");
       } else if (dept === 'IT') {
         const badge = document.getElementById('badge-nodues');
         if (badge && badge.textContent.includes('100%')) {
-          showToast("💻 IT Labs: Monitor #410 verified, tested, and returned to Lab 3B.");
+          showToast(" IT Labs: Monitor #410 verified, tested, and returned to Lab 3B.");
         } else {
-          showToast("💻 IT Labs: Monitor #410 return pending. Click 'Auto-Verify' to clear!");
+          showToast(" IT Labs: Monitor #410 return pending. Click 'Auto-Verify' to clear!");
         }
       }
     }
@@ -6510,7 +6515,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (scheduleToggleState) {
           conflictBox.innerHTML = `
             <div class="flex items-center gap-1.5 font-bold text-blue-900">
-              <span>📅</span>
+              <span></span>
               <span>Rebalanced Master Schedule (No Clustering)</span>
             </div>
             <div class="grid grid-cols-3 gap-1.5 pt-1 text-[10px] font-mono">
@@ -6523,7 +6528,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         } else {
           conflictBox.innerHTML = `
             <div class="flex items-center gap-1.5 font-bold">
-              <span>⚠️</span>
+              <span><svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>
               <span>Batch Overlap Detected on Friday, 13 Nov</span>
             </div>
             <p class="text-[11px] leading-relaxed">
@@ -6562,7 +6567,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
     // Innovation 04 Helper
     function showTechnicianTracker() {
-      showToast("🛠️ Facilities Dispatch: Technician Sunil K. en route to Block B Room 402. ETA: Today 2:30 PM (Call: +91 98112-44012).");
+      showToast(" Facilities Dispatch: Technician Sunil K. en route to Block B Room 402. ETA: Today 2:30 PM (Call: +91 98112-44012).");
     }
 
     // Innovation 06 Reset
@@ -6679,7 +6684,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (modal) modal.classList.remove('hidden');
       renderRiceTable();
       renderFeatureFlags();
-      showToast("🚀 PM Strategy Cockpit opened: Explore RICE Prioritization, Feature Flags & Funnels.");
+      showToast("PM Strategy Cockpit opened: Explore RICE Prioritization, Feature Flags & Funnels.");
     }
 
     function closePmCockpitModal() {
@@ -6841,7 +6846,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <div onclick="launchRoadmapFeature('${i.id}')" class="p-2.5 rounded-lg bg-white hover:bg-emerald-100/60 border border-emerald-200 hover:border-emerald-400 text-emerald-950 font-bold flex items-center justify-between cursor-pointer transition-all shadow-2xs hover:shadow-xs group" title="Click to test live ${i.name}">
             <div class="space-y-0.5">
               <span class="block leading-tight text-slate-900 group-hover:text-emerald-900">${i.name}</span>
-              <span class="text-[9px] text-emerald-700 font-mono font-semibold">Live Prototype Ready ⚡</span>
+              <span class="text-[9px] text-emerald-700 font-mono font-semibold">Live Prototype Ready</span>
             </div>
             <span class="font-mono text-[10px] text-emerald-800 font-extrabold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">${i.riceScore}</span>
           </div>
@@ -6853,7 +6858,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <div onclick="launchRoadmapFeature('${i.id}')" class="p-2.5 rounded-lg bg-white hover:bg-blue-100/60 border border-blue-200 hover:border-blue-400 text-blue-950 font-bold flex items-center justify-between cursor-pointer transition-all shadow-2xs hover:shadow-xs group" title="Click to test live ${i.name}">
             <div class="space-y-0.5">
               <span class="block leading-tight text-slate-900 group-hover:text-blue-900">${i.name}</span>
-              <span class="text-[9px] text-blue-700 font-mono font-semibold">Live Prototype Ready ⚡</span>
+              <span class="text-[9px] text-blue-700 font-mono font-semibold">Live Prototype Ready</span>
             </div>
             <span class="font-mono text-[10px] text-blue-800 font-extrabold bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">${i.riceScore}</span>
           </div>
@@ -6865,7 +6870,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <div onclick="launchRoadmapFeature('${i.id}')" class="p-2.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 hover:border-slate-400 text-slate-800 font-bold flex items-center justify-between cursor-pointer transition-all shadow-2xs hover:shadow-xs group" title="Click to test live ${i.name}">
             <div class="space-y-0.5">
               <span class="block leading-tight text-slate-900 group-hover:text-slate-950">${i.name}</span>
-              <span class="text-[9px] text-slate-500 font-mono font-semibold">Live Prototype Ready ⚡</span>
+              <span class="text-[9px] text-slate-500 font-mono font-semibold">Live Prototype Ready</span>
             </div>
             <span class="font-mono text-[10px] text-slate-600 font-extrabold bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">${i.riceScore}</span>
           </div>
@@ -6911,7 +6916,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const flag = FEATURE_FLAGS.find(f => f.id === flagId);
       if (flag) {
         flag.enabled = isEnabled;
-        showToast(`🚩 Flag '${flag.key}' switched to ${isEnabled ? 'ACTIVE' : 'PAUSED'}.`);
+        showToast(` Flag '${flag.key}' switched to ${isEnabled ? 'ACTIVE' : 'PAUSED'}.`);
       }
     }
 
@@ -6925,7 +6930,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     }
 
     function applyFeatureFlagChanges() {
-      showToast("🚀 Production Sync: All 6 feature flag configurations deployed to AWS AppConfig & Redis cache.");
+      showToast("Production Sync: All 6 feature flag configurations deployed to AWS AppConfig & Redis cache.");
     }
 
     function simulateCircuitBreakerRollback() {
@@ -6938,7 +6943,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         flag.status = "CIRCUIT_BREAKER_TRIGGERED";
       }
       renderFeatureFlags();
-      showToast("🚨 CIRCUIT BREAKER TRIPPED: p99 latency reached 142ms (>120ms limit). Automated rollback executed: 'feat_deadline_balancer' throttled to 0%!");
+      showToast(" CIRCUIT BREAKER TRIPPED: p99 latency reached 142ms (>120ms limit). Automated rollback executed: 'feat_deadline_balancer' throttled to 0%!");
     }
 
     // Telemetry Funnel Simulation
@@ -6971,7 +6976,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         s3Card.className = "p-3.5 rounded-xl border-2 border-emerald-400 bg-emerald-50/70 shadow-2xs space-y-2";
       }
       if (s3Desc) {
-        s3Desc.textContent = "✓ In-App UPI & 1-Click Split Installments live! 683 more students initiated payment.";
+        s3Desc.textContent = " In-App UPI & 1-Click Split Installments live! 683 more students initiated payment.";
       }
 
       if (s4Count) s4Count.textContent = "2,980";
@@ -6991,10 +6996,10 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
       const insight = document.getElementById('funnel-insight-text');
       if (insight) {
-        insight.innerHTML = "<strong>✅ IMPACT VALIDATION:</strong> By eliminating checkout friction via 1-Click UPI & Split-Installments, Stage 3 drop-off reduced from 22% to 8%. An incremental <strong>₹52 Lakhs</strong> in revenue was successfully safeguarded across 4,850 students.";
+        insight.innerHTML = "<strong> IMPACT VALIDATION:</strong> By eliminating checkout friction via 1-Click UPI & Split-Installments, Stage 3 drop-off reduced from 22% to 8%. An incremental <strong>₹52 Lakhs</strong> in revenue was successfully safeguarded across 4,850 students.";
       }
 
-      showToast("📈 PM Intervention Applied: +14% conversion lift, ₹52 Lakhs additional tuition retained!");
+      showToast(" PM Intervention Applied: +14% conversion lift, ₹52 Lakhs additional tuition retained!");
     }
 
     function resetFunnelSimulation() {
@@ -7053,12 +7058,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(prdText).then(() => {
-          showToast("📄 Full PRD Markdown copied to clipboard!");
+          showToast(" Full PRD Markdown copied to clipboard!");
         }).catch(() => {
-          showToast("📄 PRD available in PRD_Proactive_Retention_System.md");
+          showToast(" PRD available in PRD_Proactive_Retention_System.md");
         });
       } else {
-        showToast("📄 PRD available in PRD_Proactive_Retention_System.md");
+        showToast(" PRD available in PRD_Proactive_Retention_System.md");
       }
     }
 
@@ -7069,7 +7074,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      showToast("📄 Downloaded PRD: Digii_Campus_PRD_Proactive_Retention_System.md");
+      showToast(" Downloaded PRD: Digii_Campus_PRD_Proactive_Retention_System.md");
     }
 
   
@@ -7082,7 +7087,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         tag: "Career Transition Pitch",
         title: "Digii Campus 2.0: From Passive Record Keeper to Proactive Campus Intelligence",
         subtitle: "Transforming 10.08 GB of Relational MySQL Data into ₹1.84 Cr Protected Tuition & Daily Student Delight",
-        presenter: "Dhruv Jain • Current: Data & Product Intern ➔ Target Role: Product Intern / APM",
+        presenter: "Dhruv Jain • Current: Data & Product Intern  Target Role: Product Intern / APM",
         body: `
           <div class="space-y-4 max-w-3xl mx-auto text-left">
             <div class="p-4 rounded-xl bg-gradient-to-r from-purple-950 to-indigo-950 border border-purple-500/30 text-xs text-purple-200 leading-relaxed">
@@ -7123,15 +7128,15 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
               </div>
               <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700 space-y-1">
                 <span class="font-bold text-slate-200 block text-sm">The Business Consequences:</span>
-                <p class="text-red-400">❌ Nobody connects the dots until the student drops out.</p>
-                <p class="text-red-400">❌ ₹1.84 Cr in unrecovered tuition per term.</p>
-                <p class="text-red-400">❌ 14-day physical clearance paper chases.</p>
-                <p class="text-red-400">❌ Friction leads to client churn.</p>
+                <p class="text-red-400"> Nobody connects the dots until the student drops out.</p>
+                <p class="text-red-400"> ₹1.84 Cr in unrecovered tuition per term.</p>
+                <p class="text-red-400"> 14-day physical clearance paper chases.</p>
+                <p class="text-red-400"> Friction leads to client churn.</p>
               </div>
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ View Compound Risk Heuristics", action: "radar" }
+        liveLink: { label: "View Compound Risk Heuristics", action: "radar" }
       },
       {
         num: 3,
@@ -7158,7 +7163,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Explore Student Experience Hub", action: "student-hub" }
+        liveLink: { label: "Explore Student Experience Hub", action: "student-hub" }
       },
       {
         num: 4,
@@ -7211,7 +7216,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Test Live Fee Reconciliation", action: "finance" }
+        liveLink: { label: "Test Live Fee Reconciliation", action: "finance" }
       },
       {
         num: 6,
@@ -7226,12 +7231,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
                 CLASH DETECTED: Prof. Ramesh Sharma double-booked for CS502 in Room 4A on Monday 10:45 AM.
               </p>
               <div class="p-2.5 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-[11px]">
-                ✓ 1-Click Auto-Resolve reschedules class to Thursday 2:00 PM (optimal open slot) and exports a 100% clash-free master CSV.
+                 1-Click Auto-Resolve reschedules class to Thursday 2:00 PM (optimal open slot) and exports a 100% clash-free master CSV.
               </div>
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Test Live Clash Resolver", action: "academics" }
+        liveLink: { label: "Test Live Clash Resolver", action: "academics" }
       },
       {
         num: 7,
@@ -7254,7 +7259,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Test All 10 Student Innovations", action: "student-hub" }
+        liveLink: { label: "Test All 10 Student Innovations", action: "student-hub" }
       },
       {
         num: 8,
@@ -7274,7 +7279,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Open RICE Prioritization Engine", action: "cockpit-rice" }
+        liveLink: { label: "Open RICE Prioritization Engine", action: "cockpit-rice" }
       },
       {
         num: 9,
@@ -7298,7 +7303,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Open Feature Flags Cockpit", action: "cockpit-flags" }
+        liveLink: { label: "Open Feature Flags Cockpit", action: "cockpit-flags" }
       },
       {
         num: 10,
@@ -7311,15 +7316,15 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
               <span class="font-bold text-blue-300 block text-sm">The 4-Stage Telemetry Funnel:</span>
               <p class="text-slate-300">• Stage 1: Cohort Flagged (4,850 - 100%)</p>
               <p class="text-slate-300">• Stage 2: Alert Delivered (3,589 - 74%)</p>
-              <p class="text-slate-300">• Stage 3: Payment Initiated (2,522 - 52% ➔ <strong>22% Friction Drop</strong>)</p>
+              <p class="text-slate-300">• Stage 3: Payment Initiated (2,522 - 52%  <strong>22% Friction Drop</strong>)</p>
               <p class="text-slate-300">• Stage 4: Dues Reconciled (2,328 - 48%)</p>
             </div>
             <div class="p-3 rounded-lg bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">
-              💡 <strong>Dhruv's PM Solution:</strong> In-app 1-click UPI split installments boosts Stage 3 conversion by +14%, recovering an incremental <strong>₹52 Lakhs</strong> in retained tuition.
+               <strong>Dhruv's PM Solution:</strong> In-app 1-click UPI split installments boosts Stage 3 conversion by +14%, recovering an incremental <strong>₹52 Lakhs</strong> in retained tuition.
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Simulate PM Intervention (+₹52L)", action: "cockpit-funnel" }
+        liveLink: { label: "Simulate PM Intervention (+₹52L)", action: "cockpit-funnel" }
       },
       {
         num: 11,
@@ -7332,14 +7337,14 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
               Behind this prototype sits a complete, production-grade Product Requirements Document covering:
             </p>
             <div class="grid grid-cols-2 gap-2 font-mono text-[11px] text-slate-300">
-              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 1: Executive Problem & Personas</div>
-              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 2: Functional Specs (Modules 1-11)</div>
-              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 3: Non-Functional RDS 85ms SLA</div>
-              <div class="p-2.5 rounded bg-slate-800 border border-slate-700">✓ Section 4: GTM Rollout & Pricing Tiers</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700"> Section 1: Executive Problem & Personas</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700"> Section 2: Functional Specs (Modules 1-11)</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700"> Section 3: Non-Functional RDS 85ms SLA</div>
+              <div class="p-2.5 rounded bg-slate-800 border border-slate-700"> Section 4: GTM Rollout & Pricing Tiers</div>
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ View Full PRD In-App", action: "cockpit-prd" }
+        liveLink: { label: "View Full PRD In-App", action: "cockpit-prd" }
       },
       {
         num: 12,
@@ -7359,7 +7364,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </div>
           </div>
         `,
-        liveLink: { label: "⚡ Back to Interactive Prototype", action: "radar" }
+        liveLink: { label: "Back to Interactive Prototype", action: "radar" }
       }
     ];
 
@@ -7369,7 +7374,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const modal = document.getElementById('pitch-deck-modal');
       if (modal) modal.classList.remove('hidden');
       renderCurrentDeckSlide();
-      showToast("📽️ Executive Pitch Deck opened: Use ◄ ► arrow keys to navigate.");
+      showToast(" Executive Pitch Deck opened: Use ◄ ► arrow keys to navigate.");
     }
 
     function closePitchDeckModal() {
@@ -7395,7 +7400,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btnPrev) btnPrev.disabled = currentDeckSlide === 0;
       if (btnNext) {
         if (currentDeckSlide === PITCH_SLIDES.length - 1) {
-          btnNext.innerHTML = `<span>Finish Presentation</span> ✓`;
+          btnNext.innerHTML = `<span>Finish Presentation</span> `;
         } else {
           btnNext.innerHTML = `<span>Next Slide</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>`;
         }
@@ -7513,7 +7518,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
               <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">ENTRY</span></td>
               <td class="px-4 py-3 font-mono text-slate-600">10 Nov 2026, 22:45:45</td>
               <td id="status-punch-2" class="px-4 py-3 text-red-600 font-extrabold flex items-center gap-1">
-                <span>🚨 Multi-Punch (+45s / 1.2km)</span>
+                <span> Multi-Punch (+45s / 1.2km)</span>
               </td>
             </tr>
           `;
@@ -7541,7 +7546,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
             </tr>
           `;
         }
-        showToast("🚨 Filtered 7 Curfew Breaches: Late-night hostel gate arrivals logged past 10:00 PM.");
+        showToast(" Filtered 7 Curfew Breaches: Late-night hostel gate arrivals logged past 10:00 PM.");
       } else {
         if (banner) banner.classList.add('hidden');
         if (tbody) {
@@ -7582,13 +7587,13 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btn) {
         btn.disabled = true;
         btn.className = "px-3 py-1.5 rounded-lg bg-emerald-700 text-white font-bold text-xs shadow-2xs cursor-default";
-        btn.innerHTML = "✓ Guard Dispatched to Gate 05";
+        btn.innerHTML = " Guard Dispatched to Gate 05";
       }
       if (statusCell) {
         statusCell.className = "px-4 py-3 text-emerald-700 font-bold flex items-center gap-1";
-        statusCell.innerHTML = "✓ Guard Investigating (Aarav Sharma Card Flagged)";
+        statusCell.innerHTML = " Guard Investigating (Aarav Sharma Card Flagged)";
       }
-      showToast("👮 Security Alert Dispatched: Guard Ramesh Kumar dispatched to Gate 05 to verify cardholder identity!");
+      showToast(" Security Alert Dispatched: Guard Ramesh Kumar dispatched to Gate 05 to verify cardholder identity!");
     }
 
     // CHC Healthcare Center Handlers
@@ -7598,12 +7603,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btn) {
         btn.disabled = true;
         btn.className = "px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
-        btn.innerHTML = "✓ Outreach Dispatched";
+        btn.innerHTML = " Outreach Dispatched";
       }
       if (rec) {
-        rec.innerHTML = "<span class='text-emerald-700 font-bold'>✓ Confidential SMS & Portal Invitation sent by Dr. Meenakshi. Zero academic penalty.</span>";
+        rec.innerHTML = "<span class='text-emerald-700 font-bold'> Confidential SMS & Portal Invitation sent by Dr. Meenakshi. Zero academic penalty.</span>";
       }
-      showToast("💜 CHC Confidential Outreach Sent: Empathetic counseling invitation dispatched to Priya Nair (2024CS0219).");
+      showToast(" CHC Confidential Outreach Sent: Empathetic counseling invitation dispatched to Priya Nair (2024CS0219).");
     }
 
     function dispatchChcAttendanceGrace(studentId) {
@@ -7612,12 +7617,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btn) {
         btn.disabled = true;
         btn.className = "px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
-        btn.innerHTML = "✓ 8 Hrs Grace Applied";
+        btn.innerHTML = " 8 Hrs Grace Applied";
       }
       if (rec) {
-        rec.innerHTML = "<span class='text-emerald-700 font-bold'>✓ Approved: 8 workshop lab hours credited to ams_attendance. Debarment risk removed.</span>";
+        rec.innerHTML = "<span class='text-emerald-700 font-bold'> Approved: 8 workshop lab hours credited to ams_attendance. Debarment risk removed.</span>";
       }
-      showToast("🏥 Attendance Grace Approved: 8 hours credited to Kabir Mehta for post-surgery rehabilitation.");
+      showToast(" Attendance Grace Approved: 8 hours credited to Kabir Mehta for post-surgery rehabilitation.");
     }
 
     function dispatchChcSession(studentId) {
@@ -7626,12 +7631,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (btn) {
         btn.disabled = true;
         btn.className = "px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-2xs cursor-default";
-        btn.innerHTML = "✓ Workshop Booked";
+        btn.innerHTML = " Workshop Booked";
       }
       if (rec) {
-        rec.innerHTML = "<span class='text-emerald-700 font-bold'>✓ Confirmed: Friday 4:00 PM Mindfulness & Stress Management Session (Room 102).</span>";
+        rec.innerHTML = "<span class='text-emerald-700 font-bold'> Confirmed: Friday 4:00 PM Mindfulness & Stress Management Session (Room 102).</span>";
       }
-      showToast("🌿 Session Confirmed: Sneha Rao enrolled in Friday 4:00 PM Exam Stress Relief Workshop.");
+      showToast(" Session Confirmed: Sneha Rao enrolled in Friday 4:00 PM Exam Stress Relief Workshop.");
     }
 
     function downloadChcHealthDigest() {
@@ -7662,7 +7667,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast("📄 Official CHC Weekly Digest downloaded successfully!");
+      showToast(" Official CHC Weekly Digest downloaded successfully!");
     }
 
   
@@ -7673,11 +7678,11 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     // Campus Switcher
     function switchCampusContext(val) {
       if (val === 'NORTH') {
-        showToast("🏛️ Switched context to North Campus (Delhi NCR): 3,200 student profiles loaded from MySQL replica.");
+        showToast(" Switched context to North Campus (Delhi NCR): 3,200 student profiles loaded from MySQL replica.");
       } else if (val === 'BLR') {
-        showToast("🏛️ Switched context to Bengaluru Center: 2,100 student profiles loaded from MySQL replica.");
+        showToast(" Switched context to Bengaluru Center: 2,100 student profiles loaded from MySQL replica.");
       } else {
-        showToast("🏛️ Switched context to Main Campus (Gurugram): 4,850 student profiles loaded from MySQL replica.");
+        showToast(" Switched context to Main Campus (Gurugram): 4,850 student profiles loaded from MySQL replica.");
       }
     }
 
@@ -7718,7 +7723,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (filtered.length === 0) {
         container.innerHTML = `
           <div class="col-span-full p-8 text-center bg-white rounded-xl border border-slate-200">
-            <span class="text-3xl block">🔍</span>
+            <span class="text-3xl block"></span>
             <p class="font-bold text-slate-800 mt-2 text-sm">No students match current filter criteria</p>
             <p class="text-xs text-slate-500 mt-0.5">Try resetting the department filter or risk tab.</p>
           </div>
@@ -7737,12 +7742,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
     // Hostel Roster Interactive State
     const HOSTEL_ROSTER_DATA = [
-      { id: '2024CS0142', name: 'Aarav Sharma', block: 'BLOCK_B', room: 'Block B • Room 402', bed: 'Bed 1', curfew: '🚨 Curfew Breach (22:45)', mess: '3 Meals + Special', isCurfew: true, phone: '+91 98765 43210' },
-      { id: '2024CS0198', name: 'Rohan Varma', block: 'BLOCK_C', room: 'Block C • Room 210', bed: 'Bed 2', curfew: '✓ In Room (21:30 Biometric)', mess: '3 Meals Standard', isCurfew: false, phone: '+91 98765 11223' },
-      { id: '2024CS0219', name: 'Priya Nair', block: 'BLOCK_B', room: 'Block B • Room 314', bed: 'Bed 1', curfew: '✈️ Approved Weekend Pass', mess: 'Rebate Applied', isCurfew: false, phone: '+91 98765 33445' },
-      { id: '2024EC0089', name: 'Ananya Deshmukh', block: 'BLOCK_B', room: 'Block B • Room 108', bed: 'Bed 1', curfew: '✓ In Room (20:45 Biometric)', mess: '3 Meals Standard', isCurfew: false, phone: '+91 98765 55667' },
-      { id: '2024ME0034', name: 'Vikramaditya Roy', block: 'BLOCK_C', room: 'Block C • Room 305', bed: 'Bed 2', curfew: '✓ In Room (21:10 Biometric)', mess: '3 Meals Standard', isCurfew: false, phone: '+91 98765 77889' },
-      { id: '2024ME0104', name: 'Kabir Mehta', block: 'BLOCK_C', room: 'Block C • Room 112', bed: 'Bed 1', curfew: '🏥 CHC Medical Convalescence', mess: 'Special Diet', isCurfew: false, phone: '+91 98765 99001' }
+      { id: '2024CS0142', name: 'Aarav Sharma', block: 'BLOCK_B', room: 'Block B • Room 402', bed: 'Bed 1', curfew: ' Curfew Breach (22:45)', mess: '3 Meals + Special', isCurfew: true, phone: '+91 98765 43210' },
+      { id: '2024CS0198', name: 'Rohan Varma', block: 'BLOCK_C', room: 'Block C • Room 210', bed: 'Bed 2', curfew: ' In Room (21:30 Biometric)', mess: '3 Meals Standard', isCurfew: false, phone: '+91 98765 11223' },
+      { id: '2024CS0219', name: 'Priya Nair', block: 'BLOCK_B', room: 'Block B • Room 314', bed: 'Bed 1', curfew: ' Approved Weekend Pass', mess: 'Rebate Applied', isCurfew: false, phone: '+91 98765 33445' },
+      { id: '2024EC0089', name: 'Ananya Deshmukh', block: 'BLOCK_B', room: 'Block B • Room 108', bed: 'Bed 1', curfew: ' In Room (20:45 Biometric)', mess: '3 Meals Standard', isCurfew: false, phone: '+91 98765 55667' },
+      { id: '2024ME0034', name: 'Vikramaditya Roy', block: 'BLOCK_C', room: 'Block C • Room 305', bed: 'Bed 2', curfew: ' In Room (21:10 Biometric)', mess: '3 Meals Standard', isCurfew: false, phone: '+91 98765 77889' },
+      { id: '2024ME0104', name: 'Kabir Mehta', block: 'BLOCK_C', room: 'Block C • Room 112', bed: 'Bed 1', curfew: ' CHC Medical Convalescence', mess: 'Special Diet', isCurfew: false, phone: '+91 98765 99001' }
     ];
 
     let activeHostelBlock = 'ALL';
@@ -7785,8 +7790,8 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <td class="py-2.5 px-2 text-center text-slate-600 font-medium">${r.mess}</td>
           <td class="py-2.5 px-3 text-right">
             ${r.isCurfew 
-              ? `<button onclick="notifyHostelWarden('${r.id}', '${r.name}')" class="px-2.5 py-1 rounded bg-red-600 hover:bg-red-700 text-white font-bold text-xs shadow-2xs transition-all">⚡ Notify Warden</button>`
-              : `<button onclick="showToast('✓ Verified: ${r.name} in Room ${r.room.split('•')[1].trim()}')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors">Verify</button>`
+              ? `<button onclick="notifyHostelWarden('${r.id}', '${r.name}')" class="px-2.5 py-1 rounded bg-red-600 hover:bg-red-700 text-white font-bold text-xs shadow-2xs transition-all">Notify Warden</button>`
+              : `<button onclick="showToast(' Verified: ${r.name} in Room ${r.room.split('•')[1].trim()}')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300 transition-colors">Verify</button>`
             }
           </td>
         </tr>
@@ -7794,11 +7799,11 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     }
 
     function notifyHostelWarden(studentId, name) {
-      showToast(`🚨 Warden Alert Dispatched: SMS & app notification sent to Warden Sharma regarding ${name} (${studentId}) late entry curfew breach.`);
+      showToast(` Warden Alert Dispatched: SMS & app notification sent to Warden Sharma regarding ${name} (${studentId}) late entry curfew breach.`);
     }
 
     function dispatchHostelRollCallAdvisory() {
-      showToast("📢 Night Roll-Call Advisory Sent: Broadcast SMS sent to all 2,450 hostel residents for 10:00 PM biometric check-in.");
+      showToast(" Night Roll-Call Advisory Sent: Broadcast SMS sent to all 2,450 hostel residents for 10:00 PM biometric check-in.");
     }
 
     function downloadHostelRosterCsv() {
@@ -7816,7 +7821,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast("📄 Exported Hostel Occupancy & Meal Register CSV successfully!");
+      showToast(" Exported Hostel Occupancy & Meal Register CSV successfully!");
     }
 
   
@@ -7940,14 +7945,14 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <td class="py-3 px-2 text-center font-mono font-extrabold text-amber-700 text-sm">+${r.credits.toFixed(1)}</td>
           <td class="py-3 px-3">
             <span class="text-[11px] ${r.status === 'VERIFIED' ? 'text-emerald-700 font-bold' : 'text-amber-800 font-semibold'} block">
-              ${r.status === 'VERIFIED' ? '✓ Verified' : '⏳ Pending Review'}
+              ${r.status === 'VERIFIED' ? ' Verified' : ' Pending Review'}
             </span>
             <span class="text-[10px] text-slate-400 block">${r.verifier}</span>
           </td>
           <td class="py-3 px-3 text-right">
             ${r.status === 'PENDING'
               ? `<button onclick="verifyNasdRecord('${r.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs transition-all">Verify & Accredit</button>`
-              : `<button onclick="showToast('✓ Verified: ${r.name} credential locked into NIRF Criterion 5 ledger.')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition-colors">Locked</button>`
+              : `<button onclick="showToast(' Verified: ${r.name} credential locked into NIRF Criterion 5 ledger.')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition-colors">Locked</button>`
             }
           </td>
         </tr>
@@ -7960,12 +7965,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         rec.status = 'VERIFIED';
         rec.verifier = 'Dr. Meenakshi (Dean Student Welfare)';
         renderNasdRoster();
-        showToast(`✓ Co-Curricular Credential Verified: +${rec.credits} Enrichment Credits awarded to ${rec.name} for ${rec.club}.`);
+        showToast(` Co-Curricular Credential Verified: +${rec.credits} Enrichment Credits awarded to ${rec.name} for ${rec.club}.`);
       }
     }
 
     function dispatchClubAdvisory() {
-      showToast("📢 Advisory Broadcasted: Notified 42 Student Club Presidents for Semester AY 2026-27 Enrichment Audit.");
+      showToast(" Advisory Broadcasted: Notified 42 Student Club Presidents for Semester AY 2026-27 Enrichment Audit.");
     }
 
     function downloadNonAcademicTranscript() {
@@ -8004,7 +8009,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast("📄 Official Non-Academic Diploma Supplement downloaded successfully!");
+      showToast(" Official Non-Academic Diploma Supplement downloaded successfully!");
     }
 
   </script>
