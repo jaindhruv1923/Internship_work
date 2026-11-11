@@ -41,6 +41,14 @@
     .toast-animate {
       animation: slideInUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
+    /* SPA View Transitions */
+    @keyframes spaFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .spa-fade-in {
+      animation: spaFadeIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   </style>
 </head>
 <body class="min-h-screen flex antialiased bg-slate-50 text-slate-800">
@@ -79,28 +87,30 @@
 
       <div class="pt-4 px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-slate-400">Core ERP Modules</div>
 
-      <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <a href="javascript:void(0)" onclick="navigateToView('academics')" id="nav-academics" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
         <span>Academics & LMS</span>
+        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">Stage 8</span>
       </a>
 
-      <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      <a href="javascript:void(0)" onclick="navigateToView('finance')" id="nav-finance" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
         <span>Finance & Fees</span>
+        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">Stage 7</span>
       </a>
 
-      <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      <a href="javascript:void(0)" onclick="navigateToView('hostel')" id="nav-hostel" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
         <span>Hostel & Mess</span>
       </a>
 
-      <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <a href="javascript:void(0)" onclick="navigateToView('access')" id="nav-access" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         <span>Access & Gates</span>
       </a>
 
-      <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      <a href="javascript:void(0)" onclick="navigateToView('chc')" id="nav-chc" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
         <span>Campus Health (CHC)</span>
       </a>
     </nav>
@@ -519,6 +529,465 @@
 
       </section>
 
+      <!-- =================================================================== -->
+      <!-- VIEW 3: ACADEMICS & LMS MODULE (STAGE 6 PLACEHOLDER / STAGE 8 READY)-->
+      <!-- =================================================================== -->
+      <section id="view-academics" class="hidden space-y-6">
+        <!-- Module Header & Breadcrumb -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Core ERP Module
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>ams_attendance</code> & <code>exam_marks</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Academics & Learning Management System</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Centralized curriculum control, professor workload allocation, and real-time lecture scheduling across 6 academic schools.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Academic KPI Metric Cards -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Courses</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">312</span>
+                <span class="text-xs font-semibold text-emerald-600">All Semesters</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">B.Tech, MBA, MCA, M.Tech</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Faculty on Duty</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">148</span>
+                <span class="text-xs font-semibold text-blue-600">Active</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Average Load: 14 hrs/week</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Lecture Theatres</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">42</span>
+                <span class="text-xs font-semibold text-emerald-600">89% Occupancy</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Academic Blocks A, B, C & D</p>
+            </div>
+            <div class="p-4 rounded-lg bg-blue-50/70 border border-blue-200">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-bold text-blue-800 uppercase tracking-wider">Timetable Engine</p>
+                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-blue-100 text-blue-800">Stage 8</span>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-blue-900">Clash Resolver</span>
+              </div>
+              <p class="text-[11px] text-blue-700 mt-1">Smart Scheduling Engine</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Placeholder Canvas Container -->
+        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-xs text-center space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center mx-auto text-2xl font-bold shadow-xs">
+            📅
+          </div>
+          <div class="max-w-md mx-auto space-y-1.5">
+            <h3 class="text-lg font-bold text-slate-900">Academics & Timetable Clash Resolver</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              University scheduling generates severe faculty friction due to overlapping room and professor allocations. 
+              The interactive drag-and-drop calendar and 1-Click Auto-Resolve engine will be rendered here in <strong>Stage 8</strong>.
+            </p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-mono font-medium">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            <span>Module Initialized • Awaiting Stage 8 Execution</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW 4: FINANCE & FEES MODULE (STAGE 6 PLACEHOLDER / STAGE 7 READY) -->
+      <!-- =================================================================== -->
+      <section id="view-finance" class="hidden space-y-6">
+        <!-- Module Header & Breadcrumb -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Core ERP Module
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>academic_fee_dues</code> & <code>fee_payment_transactions</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Finance & Accounts Management</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Automated student fee collection, bank reconciliation, and automated overdue dues recovery.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Finance KPI Metric Cards -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Term Collections</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹14.20 Cr</span>
+                <span class="text-xs font-semibold text-emerald-600">88.5% Realized</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Fall Semester 2026</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Pending Dues</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">₹1.84 Cr</span>
+                <span class="text-xs font-semibold text-amber-700">528 Students</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Overdue Installments</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Unmatched Bank Txns</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">856</span>
+                <span class="text-xs font-semibold text-blue-600">Inbound CSV</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">HDFC, ICICI, SBI PG feeds</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <div class="flex items-center justify-between">
+                <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Auto-Reconcile</p>
+                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">Stage 7</span>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-900">CSV Matcher</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">Instant Bank Match Engine</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Finance Placeholder Canvas Container -->
+        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-xs text-center space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto text-2xl font-bold shadow-xs">
+            💳
+          </div>
+          <div class="max-w-md mx-auto space-y-1.5">
+            <h3 class="text-lg font-bold text-slate-900">Automated Fee Reconciliation Engine</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              University accounts departments spend hours manually cross-checking bank CSV statements against student challans. 
+              The drag-and-drop CSV upload, split-screen reconciliation table, and 1-click matching algorithm will be rendered here in <strong>Stage 7</strong>.
+            </p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-mono font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Module Initialized • Awaiting Stage 7 Execution</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW 5: HOSTEL & MESS MODULE (STAGE 6 PLACEHOLDER)                  -->
+      <!-- =================================================================== -->
+      <section id="view-hostel" class="hidden space-y-6">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Core ERP Module
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>hostel_room_allocations</code> & <code>mess_attendance</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Hostel & Dining Management</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Residential hostel occupancy, biometric night roll-calls, and campus dining meal distribution.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Hostel Capacity</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">2,450 / 2,650</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">92.4% Occupancy Rate</p>
+            </div>
+            <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
+              <p class="text-xs font-bold text-red-700 uppercase tracking-wider">Curfew Alerts (24h)</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-red-700">7</span>
+                <span class="text-xs text-red-600 font-semibold">Post 10:00 PM</span>
+              </div>
+              <p class="text-[11px] text-red-600 mt-1">Warden alerts dispatched</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Mess Meals Served</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">3,420</span>
+                <span class="text-xs text-blue-600 font-semibold">Today</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Breakfast, Lunch & Dinner</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Hostels</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">6 Blocks</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Aravali, Shivalik, Nilgiri, etc.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hostel Blocks Status Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-slate-900">Aravali Boys Hostel (Block C)</h4>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Normal</span>
+            </div>
+            <p class="text-xs text-slate-500">420 Beds • 398 Occupied • Biometric Gate Active</p>
+            <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 flex justify-between">
+              <span>Warden: Mr. K. Sharma</span>
+              <span class="text-red-600 font-bold">3 Curfew Flags</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-slate-900">Kalpana Chawla Girls Hostel (Block B)</h4>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Normal</span>
+            </div>
+            <p class="text-xs text-slate-500">380 Beds • 371 Occupied • RFID Turnstile Active</p>
+            <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 flex justify-between">
+              <span>Warden: Dr. Preeti Rao</span>
+              <span class="text-emerald-600 font-bold">100% Present</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-slate-900">Central Mess & Dining Hall 01</h4>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Dinner Prep</span>
+            </div>
+            <p class="text-xs text-slate-500">Capacity: 800 Concurrent Diners • Automated Turnstiles</p>
+            <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 flex justify-between">
+              <span>FSSAI Certified Hygiene</span>
+              <span class="text-slate-500 font-mono">1,120 Scans</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW 6: ACCESS & GATES MODULE (STAGE 6 PLACEHOLDER)                 -->
+      <!-- =================================================================== -->
+      <section id="view-access" class="hidden space-y-6">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Core ERP Module
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>access_gate_logs</code> & <code>turnstile_entry_exit_events</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus Access & Turnstile Telemetry</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Perimeter security telemetry, biometric RFID turnstile monitoring, and impossible travel anomaly detection.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Turnstiles</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">18 / 18</span>
+                <span class="text-xs font-semibold text-emerald-600">All Online</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Latency &lt; 85ms</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">24h Gate Scans</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">8,412</span>
+                <span class="text-xs font-semibold text-blue-600">Normal Flow</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Peak: 08:30 AM – 09:15 AM</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Impossible Travel</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">2</span>
+                <span class="text-xs font-semibold text-amber-700">&lt; 180s Multi-Punch</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Potential ID card sharing</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Visitor E-Passes</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">94</span>
+                <span class="text-xs font-semibold text-emerald-600">Verified</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Campus Guard Desk Sync</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gate Telemetry Log Table Stub -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h4 class="font-bold text-sm text-slate-900">Recent Turnstile Telemetry Feed (Live Sample)</h4>
+            <span class="text-[11px] font-mono text-slate-400">Streamed from collpoll_10gb_bi_dump</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-500 font-bold uppercase tracking-wider text-[10px]">
+                <tr>
+                  <th class="px-4 py-2.5">Turnstile Gate</th>
+                  <th class="px-4 py-2.5">Student / Faculty</th>
+                  <th class="px-4 py-2.5">Enrollment No</th>
+                  <th class="px-4 py-2.5">Punch Direction</th>
+                  <th class="px-4 py-2.5">Timestamp</th>
+                  <th class="px-4 py-2.5">Telemetry Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <tr class="hover:bg-slate-50">
+                  <td class="px-4 py-2.5 font-bold text-slate-800">Gate 02 - East Turnstile</td>
+                  <td class="px-4 py-2.5 text-slate-900">Aarav Sharma</td>
+                  <td class="px-4 py-2.5 font-mono text-slate-500">2024CS0142</td>
+                  <td class="px-4 py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">ENTRY (Curfew Breach)</span></td>
+                  <td class="px-4 py-2.5 font-mono text-slate-400">10 Nov 2026, 22:45:00</td>
+                  <td class="px-4 py-2.5 text-red-600 font-semibold">Flagged (Late Entry)</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="px-4 py-2.5 font-bold text-slate-800">Gate 01 - Main University Arch</td>
+                  <td class="px-4 py-2.5 text-slate-900">Ananya Deshmukh</td>
+                  <td class="px-4 py-2.5 font-mono text-slate-500">2024EC0089</td>
+                  <td class="px-4 py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">ENTRY</span></td>
+                  <td class="px-4 py-2.5 font-mono text-slate-400">11 Nov 2026, 08:42:15</td>
+                  <td class="px-4 py-2.5 text-emerald-600 font-semibold">Normal Verification</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="px-4 py-2.5 font-bold text-slate-800">Gate 03 - South Hostel Arch</td>
+                  <td class="px-4 py-2.5 text-slate-900">Rohan Verma</td>
+                  <td class="px-4 py-2.5 font-mono text-slate-500">2023ME0034</td>
+                  <td class="px-4 py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">EXIT</span></td>
+                  <td class="px-4 py-2.5 font-mono text-slate-400">28 Oct 2026, 09:12:00</td>
+                  <td class="px-4 py-2.5 text-amber-600 font-semibold">Zero entries past 14d</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW 7: CAMPUS HEALTH (CHC) MODULE (STAGE 6 PLACEHOLDER)            -->
+      <!-- =================================================================== -->
+      <section id="view-chc" class="hidden space-y-6">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Core ERP Module
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>chc_consultation_records</code> & <code>campus_health_prescriptions</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus Health & Wellness Center (CHC)</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Confidential medical consultations, proactive mental health support, and emergency student wellness management.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Duty Clinicians</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">4 / 4</span>
+                <span class="text-xs font-semibold text-emerald-600">On Duty</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">2 Physicians • 2 Counselors</p>
+            </div>
+            <div class="p-4 rounded-lg bg-purple-50/70 border border-purple-200">
+              <p class="text-xs font-bold text-purple-800 uppercase tracking-wider">Weekly Counseling</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-purple-800">28</span>
+                <span class="text-xs font-semibold text-purple-700">Sessions</span>
+              </div>
+              <p class="text-[11px] text-purple-700 mt-1">Stress & exam anxiety triage</p>
+            </div>
+            <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
+              <p class="text-xs font-bold text-red-700 uppercase tracking-wider">SOS Wellness Alerts</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-red-700">3</span>
+                <span class="text-xs font-semibold text-red-600">Active High Risk</span>
+              </div>
+              <p class="text-[11px] text-red-600 mt-1">Priya Nair flagged for check-in</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Confidentiality Tier</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">Tier 1</span>
+                <span class="text-xs font-semibold text-emerald-600">HIPAA Compliant</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Anonymized retention alerts</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h4 class="font-bold text-sm text-slate-900">Student Wellbeing & Counseling Triage</h4>
+            <span class="text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200 font-bold">Mental Health Proactive Desk</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            When academic performance collapses alongside late-night curfew breaches, CHC counselors receive an automated advisory to arrange supportive, non-punitive wellness check-ins before students drop out.
+          </p>
+        </div>
+      </section>
+
     </main>
 
     <!-- Footer -->
@@ -896,28 +1365,55 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
       renderAuditTable();
     }
 
-    // Navigation Switcher
-    function navigateToView(view) {
-      state.currentView = view;
-      const radarSection = document.getElementById('view-radar');
-      const student360Section = document.getElementById('view-student360');
-      const navRadar = document.getElementById('nav-radar');
-      const navS360 = document.getElementById('nav-student360');
+    // ===================================================================
+    // STAGE 6: SPA ROUTING & STATE MANAGEMENT ENGINE
+    // ===================================================================
+    const SPA_VIEWS = ['radar', 'student360', 'academics', 'finance', 'hostel', 'access', 'chc'];
 
-      if (view === 'radar') {
-        radarSection.classList.remove('hidden');
-        student360Section.classList.add('hidden');
-        navRadar.className = "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-600 text-white font-semibold shadow-xs";
-        navS360.className = "flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-300 transition-colors";
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        radarSection.classList.add('hidden');
-        student360Section.classList.remove('hidden');
-        navRadar.className = "flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-300 transition-colors";
-        navS360.className = "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-600 text-white font-semibold shadow-xs";
-        renderStudent360();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function navigateToView(view) {
+      if (!SPA_VIEWS.includes(view)) view = 'radar';
+      state.currentView = view;
+
+      // 1. Hide all view sections and remove animation class
+      SPA_VIEWS.forEach(v => {
+        const sec = document.getElementById(`view-${v}`);
+        if (sec) {
+          sec.classList.add('hidden');
+          sec.classList.remove('spa-fade-in');
+        }
+      });
+
+      // 2. Display the selected view with smooth fade-in
+      const activeSec = document.getElementById(`view-${view}`);
+      if (activeSec) {
+        activeSec.classList.remove('hidden');
+        activeSec.classList.add('spa-fade-in');
       }
+
+      // 3. Update active sidebar styles across all navigation items
+      SPA_VIEWS.forEach(v => {
+        const navEl = document.getElementById(`nav-${v}`);
+        if (navEl) {
+          if (v === view) {
+            navEl.className = "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-600 text-white font-semibold shadow-xs transition-colors";
+            const svg = navEl.querySelector('svg');
+            if (svg) svg.setAttribute('class', 'w-4 h-4 text-white');
+          } else {
+            navEl.className = "flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors";
+            const svg = navEl.querySelector('svg');
+            if (svg) svg.setAttribute('class', 'w-4 h-4 text-slate-400');
+          }
+        }
+      });
+
+      // 4. View lifecycle triggers
+      if (view === 'radar') {
+        renderRadarGrid();
+      } else if (view === 'student360') {
+        renderStudent360();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function navigateToActiveStudent() {
