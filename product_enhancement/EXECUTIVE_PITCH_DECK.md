@@ -80,20 +80,23 @@
 
 ---
 
-### Slide 8: 10 Net-New Disruptive Modules (Absent on https://digiicampus.com)
+### Slide 8: Disruptive Intelligence Modules Grounded in CollPoll 270-Table Schema
 * **The Strategic APM Pitch to Mr. Suraj Bhatt & Saksham Gupta:**
   - *The Commodity Pitfall:* Legacy Digii Campus already sells Admissions, LMS, Fees, Placements, and Hostels. We are NOT rebuilding commodity ERP features!
-  - *The Product Moat:* We built 10 net-new predictive intelligence modules that connect our 1,647 siloed MySQL tables to solve multi-crore pain points no competitor touches:
-  1. **Predictive Food Waste & Meal Prep (PRGE):** Dynamically links approved hostel night leaves to morning mess cooking, cutting 630 wasted meals/day and saving ₹4.2L/month (from Week 3 Proposal).
-  2. **Student Social Isolation Sentinel:** Correlates turnstiles with zero club/library interactions for 14+ days to flag silent mental health isolation before crisis occurs (from Week 3 Proposal).
+  - *The Product Moat:* We built predictive intelligence modules that connect our 1,647 siloed MySQL tables (and CollPoll's 270-table core workflow schema) to solve multi-crore pain points no competitor touches:
+  1. **Predictive Food Waste & Meal Prep (PRGE):** Dynamically links approved hostel night leaves (`hostel_allotment`) to morning mess cooking (`mess_meal`), cutting 630 wasted meals/day and saving ₹4.2L/month (from Week 3 Proposal).
+  2. **Student Social Isolation Sentinel:** Correlates turnstiles (`gate_pass_log`) with zero club/library interactions for 14+ days to flag silent mental health isolation before crisis occurs (from Week 3 Proposal).
   3. **Non-Academic Development (SEP):** Situational Evidence Profiler for non-academic competencies (Teamwork, Leadership, Reliability) with NAAC Criterion 5.3 diploma supplements (from Week 2 Proposal).
-  4. **Autonomous Instant No-Dues Clearance:** 1-click parallel audit across 8 departments completing graduation clearance in 3 seconds instead of 14-day paper queues.
+  4. **Autonomous Instant No-Dues Clearance:** 1-click parallel audit across 8 departments completing graduation clearance in 3 seconds instead of 14-day paper queues (`dues_v2`).
   5. **Smart Assignment Congestion Balancer:** Campus-wide heatmap detecting multi-course deadline pileups on Fridays and auto-staggering submissions to Monday.
   6. **Tamper-Proof Relational Auto-Resume:** Directly compiles authenticated SGPA, OBE Bloom's rubrics, and club leadership from MySQL into an institutionally sealed CV.
-  7. **Turnstile Anti-Passback & Impossible Travel:** Biometric speed-of-travel physics checker detecting proxy card taps at distant gates in <180s, triggering lockout and guard dispatch.
+  7. **Turnstile Anti-Passback & Impossible Travel:** Biometric speed-of-travel physics checker detecting proxy card taps at distant gates in <180s (`gate_pass_log`), triggering lockout and guard dispatch.
   8. **Phantom Midnight Energy & Green Campus (ISO 50001):** Occupancy-vs-meter cross-checking engine auto-shedding empty lecture hall HVAC at 2:00 AM, saving ₹18.4L/yr.
-  9. **Zero-Knowledge Statutory POSH Vault:** Client-side SHA-256 encrypted whistleblower intake with anonymous tracking receipts and automated UGC 15-day SLA escalation countdown.
+  9. **Zero-Knowledge Statutory POSH Vault:** Client-side SHA-256 encrypted whistleblower intake with anonymous tracking receipts and automated UGC 15-day SLA escalation countdown (`chc_middleware`).
   10. **Alumni Capstone Micro-Endowment:** Capstone prototype pitching exchange with 1:1 Google Meet mentorship bookings and Section 80G tax-exempt endowment pledges.
+  11. **AI Admissions Allotment Matrix:** Dynamic cutoff slider, multi-round allotment matrix across General, OBC, SC, ST, EWS quotas, instant provisional offer generation, and sync to `dues_v2`.
+  12. **Smart Campus Venue & Acoustic Interceptor:** Live decibel clash detection on `infra_booking` preventing sound-bleed between adjacent events, with automated rescheduling and HVAC pre-cooling dispatch.
+  13. **Dynamic Fleet & Transport v2 Route Optimizer:** Occupancy optimizer on `transport_management_v2_route`, auto-merging sub-40% bus lines and eliminating ₹1.28L/month in diesel burn.
 
 ---
 
@@ -133,8 +136,8 @@
 ### Slide 12: The Ask — Formal Transition to Product Intern
 * **What I've Delivered in 5 Weeks:**
   1. *Database Engineering:* 10.08 GB MySQL audit, 1,647 tables mapped, covering index optimization.
-  2. *Product Architecture:* 22 KB comprehensive PRD, JSON schemas, 19-view SPA (630+ KB) with zero dependencies.
-  3. *Engineering Partnership:* Canary feature flags, circuit breaker guardrails, automated test suite.
+  2. *Product Architecture:* 22 KB comprehensive PRD, JSON schemas, 20-view SPA (731 KB) with zero dependencies, 157 interactive handlers, 0 emojis.
+  3. *Engineering Partnership:* Canary feature flags, circuit breaker guardrails, automated test suite, CollPoll 270-table workflow integration.
   4. *Quantified Business Impact:* ₹1.84 Cr protected tuition, 40 hrs/wk saved in manual finance work.
 * **The Formal Transition Request:**
   > *"I want to formally step into the **Product Intern** role at Digii Campus. I've proven that I can bridge technical database depth, enterprise customer value, and user delight. Let's work together to make Digii Campus the undisputed market leader."*
