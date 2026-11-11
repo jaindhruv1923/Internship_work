@@ -30,8 +30,9 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 | **06:00 – 09:00** | **Student 360 & Action Center** | 15-second investigation replacing 5 tabs; live 1-click dispatch. |
 | **09:00 – 11:00** | **Automated Fee Reconciliation** | Inbound bank CSV matcher; 842 records matched instantly. |
 | **11:00 – 12:30** | **Smart Timetable Clash Resolver** | Real-time professor conflict detection; 1-click auto-resolve. |
-| **12:30 – 14:00** | **10 Win-Win Student Innovations** | B2B2C Product Thinking: Student Delight meets University ROI. |
-| **14:00 – 15:00** | **The Transition Ask** | Closing pitch for formal role transition to Product Intern. |
+| **12:30 – 13:45** | **10 Win-Win Student Innovations** | B2B2C Product Thinking: Student Delight meets University ROI. |
+| **13:45 – 14:30** | **PM Strategy & Engineering Cockpit** | RICE Matrix, LaunchDarkly flags, Funnels, In-App PRD. |
+| **14:30 – 15:00** | **The Transition Ask** | Closing pitch for formal role transition to Product Intern. |
 
 ---
 
@@ -125,7 +126,19 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 
 ---
 
-### Segment 8: The Formal Ask (14:00 – 15:00)
+### Segment 8: The PM Strategy Cockpit — RICE, Feature Flags & Funnels (14:00 – 14:30)
+* **What to Show:** Click the **PM Cockpit ⚡** button in the header or in the left sidebar.
+* **What to Say:**
+  > *"Finally, to prove that I think like a scalable Product Manager who partners seamlessly with Engineering, look at the **PM Strategy & Engineering Cockpit**:*
+  > 
+  > 1. **RICE Roadmap Matrix:** *(Move the Engineering Effort Multiplier slider)* — *I don't just generate ideas; I prioritize them quantitatively based on Reach, Impact, Confidence, and Effort. If engineering capacity tightens, our delivery swimlanes automatically re-rank into Now, Next, and Later.*
+  > 2. **Feature Flags & Canary Governance:** *(Show the LaunchDarkly-style toggles and rollout sliders)* — *Saksham, as Principal Engineer, you care about blast radius. I've designed these features behind canary feature flags (e.g., 25% rollout to CSE, 100% to Hostels), backed by an automated circuit breaker that throttles traffic if p99 query latency exceeds 120ms.*
+  > 3. **Product Telemetry Funnel:** *(Click 'Simulate PM Intervention')* — *I analyzed student drop-off between notice delivery (74%) and payment initiation (52%). By diagnosing that our desktop gateway lacked split UPI payments, our PM intervention recovers an incremental ₹52 Lakhs in retained tuition.*
+  > 4. **In-App PRD Spec:** *The complete 22KB PRD with user stories and database SLAs is embedded right here for instant engineering review."*
+
+---
+
+### Segment 9: The Formal Ask (14:30 – 15:00)
 * **What to Say:**
   > *"Suraj, Saksham: I love the deep data work I've done here. But as this prototype demonstrates, my greatest passion and impact lie at the intersection of **technical database depth, product architecture, and enterprise customer value**.*
   > 
