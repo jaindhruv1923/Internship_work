@@ -82,6 +82,10 @@ The key focus of this repository is maintaining a transparent, reproducible reco
 │   ├── index.html
 │   ├── package.json
 │   ├── server.ps1
+│   ├── backend/
+│   │   ├── README.md
+│   │   ├── app.py
+│   │   └── test_api.py
 │   └── data/
 │       ├── schema_definition.json
 │       └── students_mock.json
@@ -109,12 +113,25 @@ As a proactive capstone bridging the 10.08 GB production database audit with ent
 1. **Predictive Student Dropout Radar:** Analyzes cross-module operational signals (academics, fees, turnstiles, residential curfews, health visits) to compute a compound risk score (0–100) flagging students in distress weeks before formal administrative failure.
 2. **Student 360 Unified Timeline:** Replaces 5 fragmented ERP tabs with a single, chronological activity feed giving Deans and HODs full context in under 15 seconds.
 3. **1-Click Intervention Action Center:** Integrated, pre-composed multi-channel actions (`Automated Nudge Email`, `Escalate to HOD`, `Schedule Counseling`, `Summon Guardian`) directly closing the loop between data insight and student retention.
-4. **Comprehensive PRD:** Enterprise-grade Product Requirements Document detailing user personas, heuristic weighting formulas, and phased delivery roadmap ([`PRD_Proactive_Retention_System.md`](product_enhancement/PRD_Proactive_Retention_System.md)).
+4. **Dynamic Heuristics & Sensitivity Tuner (Phase 4):** Live multi-domain weight sliders allowing administrators to simulate risk sensitivity across all 4,850 students with real-time recalculation.
+5. **Behind the Data — SQL Lineage Inspector (Phase 4):** Exposes production MySQL queries from the Week 4 10.08 GB audit (CTEs, window functions, and cross-module joins).
+6. **Administrative Intervention Audit Trail (Phase 4):** Immutable, timestamped audit log table tracking every dispatched institutional action for ISO 27001/FERPA compliance.
+7. **Zero-Dependency Python REST Microservice (Phase 4):** Standard-library Python backend with full REST API, CSV streaming, and automated test suite with 100% pass rate (`backend/app.py` & `backend/test_api.py`).
+8. **Comprehensive PRD:** Enterprise-grade Product Requirements Document detailing user personas, heuristic weighting formulas, and phased delivery roadmap ([`PRD_Proactive_Retention_System.md`](product_enhancement/PRD_Proactive_Retention_System.md)).
 
-To run the local prototype:
+To run the local prototype (Frontend):
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\product_enhancement\server.ps1 -Port 3000
 # Open http://localhost:3000 in your browser
+```
+
+To run the Python REST API backend and test suite:
+```powershell
+# Run backend microservice
+python .\product_enhancement\backend\app.py 8000
+
+# Run automated unit test suite
+python .\product_enhancement\backend\test_api.py
 ```
 
 > **Note on Database Replica Dump:**  

@@ -4,7 +4,9 @@
   "description": "Digii Campus (CollPoll) Proactive Retention System & Student 360 Timeline Prototype",
   "author": "Dhruv Jain (Lead Product Manager & Data Specialist)",
   "scripts": {
-    "start": "powershell -ExecutionPolicy Bypass -File server.ps1"
+    "start": "powershell -ExecutionPolicy Bypass -File server.ps1",
+    "api": "python backend/app.py 8000",
+    "test": "python backend/test_api.py"
   },
   "keywords": [
     "digii-campus",
