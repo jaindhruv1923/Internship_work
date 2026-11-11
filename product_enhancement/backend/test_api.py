@@ -59,5 +59,12 @@ class TestDigiiCampusAPI(unittest.TestCase):
             self.assertIn("access_gate_telemetry", s)
             self.assertIn("timeline_events", s)
 
+    def test_mysql_bridge_and_b2b2c_state(self):
+        self.assertIn("mysql_bridge", APP_STATE)
+        self.assertEqual(APP_STATE["mysql_bridge"]["database"], "collpoll")
+        self.assertEqual(APP_STATE["mysql_bridge"]["table_count"], 1647)
+        self.assertIn("b2b2c_features", APP_STATE)
+        self.assertEqual(len(APP_STATE["b2b2c_features"]), 10)
+
 if __name__ == "__main__":
     unittest.main()

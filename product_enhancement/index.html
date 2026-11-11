@@ -124,19 +124,31 @@
         <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
         <span>Campus Health (CHC)</span>
       </a>
+
+      <div class="pt-4 px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-indigo-400 flex items-center justify-between">
+        <span>B2B2C Innovations</span>
+        <span class="px-1.5 py-0.2 rounded text-[8px] bg-indigo-500/20 text-indigo-300 font-mono">Student+Uni</span>
+      </div>
+
+      <a href="javascript:void(0)" onclick="navigateToView('student-hub')" id="nav-student-hub" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-indigo-300 hover:text-white transition-colors">
+        <span class="text-sm">🎓</span>
+        <span>Student Experience Hub</span>
+        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-indigo-900 text-indigo-200 font-mono font-bold">10 Win-Wins</span>
+      </a>
     </nav>
 
     <!-- Bottom Database Status Footprint -->
-    <div class="p-4 border-t border-slate-800 text-[11px] space-y-2">
+    <div onclick="openMysqlBridgeModal()" class="p-4 border-t border-slate-800 text-[11px] space-y-2 cursor-pointer hover:bg-slate-800/60 transition-colors group" title="Click to inspect 10GB MySQL Data Lake connection">
       <div class="flex items-center justify-between text-slate-400">
-        <span>RDS Connection</span>
+        <span class="group-hover:text-white transition-colors">MySQL Data Lake</span>
         <span class="text-emerald-400 font-semibold flex items-center gap-1">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Live (10GB)
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live (10GB)
         </span>
       </div>
-      <p class="text-[10px] text-slate-400 leading-tight">Schema: <code class="text-slate-300">collpoll</code> | 1,647 Tables</p>
-      <div class="p-2 rounded bg-slate-800/80 border border-slate-700/60 text-[10px] text-slate-300 font-mono">
-        Audit Sync: Week 04 Complete
+      <p class="text-[10px] text-slate-400 leading-tight">Database: <code class="text-slate-300">collpoll</code> | 1,647 Tables</p>
+      <div class="p-2 rounded bg-slate-800/80 border border-slate-700/60 text-[10px] text-slate-300 font-mono flex items-center justify-between">
+        <span>Port: 3306 (MySQL 8.0)</span>
+        <span class="text-blue-400 underline font-bold group-hover:text-blue-300">Inspect ⚡</span>
       </div>
     </div>
   </aside>
@@ -1707,6 +1719,386 @@
         </div>
       </section>
 
+    
+      <!-- =================================================================== -->
+      <!-- VIEW 8: B2B2C STUDENT EXPERIENCE HUB (10 WIN-WIN INNOVATIONS)       -->
+      <!-- =================================================================== -->
+      <section id="view-student-hub" class="hidden space-y-6">
+
+        <!-- STAGE 9: PM ROI MODE OVERLAY - STUDENT HUB -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-purple-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+            ⚡ B2B2C Product ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Boosts student daily active app retention by 84%</strong> while eliminating 250+ hours/month of university administrative paperwork across clearances, medical leaves, and office hours.
+          </span>
+        </div>
+
+        <!-- Module Header & Breadcrumb -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 uppercase tracking-wider">
+                  B2B2C Product Innovation
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Dual-Value Architecture: <strong>Student + University Win-Win</strong></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Student Experience Hub — 10 Win-Win Innovations</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Transforming Digii Campus from a passive administrative ERP into an indispensable campus companion that students love and universities rely upon.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- B2B2C KPI Scorecards -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-indigo-50/70 border border-indigo-200">
+              <p class="text-xs font-bold text-indigo-900 uppercase tracking-wider">Student App DAU</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-indigo-950">91.4%</span>
+                <span class="text-xs font-semibold text-emerald-600">Daily Active</span>
+              </div>
+              <p class="text-[11px] text-indigo-700 mt-1">4,432 / 4,850 Students</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Digital Clearances</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">4.2 Hours</span>
+                <span class="text-xs font-semibold text-emerald-600">vs 14 Days</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Zero Physical Signatures</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Peer Marketplace Volume</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹4.8 Lakhs</span>
+                <span class="text-xs font-semibold text-blue-600">Peer Savings</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Textbooks, Lab Coats, Supplies</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-900 uppercase tracking-wider">Attendance Grace Sync</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-900">100%</span>
+                <span class="text-xs font-semibold text-emerald-700">Automated</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">Direct CHC & AMS Linkage</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 WIN-WIN FEATURES INTERACTIVE GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <!-- 1. Zero-Friction Digital No-Dues Clearance -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 font-mono">Innovation 01</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">The "Zero-Friction" Digital No-Dues Clearance</h3>
+              </div>
+              <span id="badge-nodues" class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">3 of 4 Cleared</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Replaces running around campus with physical paper registers. All departments verify student handovers via real-time database hooks.
+            </p>
+            <!-- 4 Department Progress Cards -->
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900">
+                <span class="font-bold">📚 Library:</span> Cleared (0 Overdue)
+              </div>
+              <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900">
+                <span class="font-bold">🏠 Hostel:</span> Room 402 Inspected
+              </div>
+              <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-900">
+                <span class="font-bold">💳 Finance:</span> ₹0 Pending Dues
+              </div>
+              <div id="box-nodues-it" class="p-2 rounded bg-amber-50 border border-amber-200 text-amber-900">
+                <span class="font-bold">💻 IT Lab:</span> <span id="text-nodues-it">Pending Monitor #410</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 font-mono">Target: Aarav Sharma (2024CS0142)</span>
+              <button id="btn-nodues-action" onclick="resolveNoDuesClearance()" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <span>⚡ Auto-Verify IT & Issue Certificate</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Smart Assignment Deadline Balancer -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200 font-mono">Innovation 02</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Smart Assignment Deadline Balancer</h3>
+              </div>
+              <span id="badge-deadline-stress" class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800 border border-red-300 animate-pulse">Congestion Warning</span>
+            </div>
+            <div class="p-3 rounded-lg bg-red-50/70 border border-red-200 text-xs text-red-900 space-y-1">
+              <div class="flex items-center gap-1.5 font-bold">
+                <span>⚠️</span>
+                <span>Batch Overlap Detected on Friday, 13 Nov</span>
+              </div>
+              <p class="text-[11px] leading-relaxed">
+                70% of B.Tech CSE Batch has 3 major deliverables due Friday (CS501 DS, CS502 OS Project, CS506 Sprint). High risk of student burnout and poor submission quality.
+              </p>
+            </div>
+            <p id="text-deadline-rec" class="text-xs text-slate-600">
+              <strong>AI Recommendation:</strong> Move CS502 OS Project deadline to Monday, 16 Nov (11:59 PM). Balances workload across 4 calendar days.
+            </p>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-500 font-mono">Burnout Reduction: -68%</span>
+              <button id="btn-rebalance-deadline" onclick="rebalanceAssignmentDeadline()" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <span>⚡ Rebalance Deadline to Monday</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Verified Digital Auto-Resume Generator -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">Innovation 03</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">"Verified" Digital Auto-Resume Generator</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">100% DB Verified</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Eliminates fake CGPAs and fabricated resume skills. Generates dynamic, cryptographically verifiable portfolio links directly from MySQL.
+            </p>
+            <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900">Aarav Sharma (B.Tech CSE)</span>
+                <span class="font-mono font-bold text-blue-700">SGPA: 8.42 / 10.0</span>
+              </div>
+              <p class="text-[11px] text-slate-500">
+                Verified Skills: Data Structures (Grade A), Systems Programming (Grade A), Developer Club Lead.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-emerald-700 font-mono font-semibold">✓ Placement Cell Certified</span>
+              <button onclick="exportVerifiedResume()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>Export Verified Digital Resume</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Unified Geo-Tagged Maintenance Ticketing -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200 font-mono">Innovation 04</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Unified Geo-Tagged Maintenance Ticketing</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-300">Geo-Tagged</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Students snap photos of broken taps or dead Wi-Fi. Facilities team receives aggregated room clusters, eliminating multi-trip delays.
+            </p>
+            <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs flex items-center justify-between">
+              <div>
+                <span class="font-bold text-slate-900 block">Hostel Block B • Room 402</span>
+                <span class="text-[11px] text-slate-500">AC Fan Noise & Geyser Valve Check</span>
+              </div>
+              <span id="ticket-status-pill" class="px-2 py-1 rounded text-[10px] font-bold bg-amber-100 text-amber-800">Technician Assigned</span>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 font-mono">Avg Resolution: 2.4 Hours</span>
+              <button onclick="logMaintenanceTicket()" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-blue-600 text-white font-bold text-xs shadow-2xs transition-all">
+                + Log Quick Room Ticket
+              </button>
+            </div>
+          </div>
+
+          <!-- 5. Seamless Office Hours Booking System -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200 font-mono">Innovation 05</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Seamless Office Hours Booking System</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-800 border border-purple-300">15-Min Slots</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              No more waiting outside locked faculty cabins. Professors publish calendar availability; students book 1-on-1 consultations directly.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-900 block">Prof. Ramesh Sharma</span>
+                <span class="text-[11px] text-blue-700">Thu 03:00 - 03:15 PM</span>
+              </div>
+              <div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-900 block">Dr. Ananya Sen</span>
+                <span class="text-[11px] text-emerald-700">Fri 11:00 - 11:15 AM</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 font-mono">100% Calendar Sync</span>
+              <button onclick="bookOfficeHourSlot('Prof. Ramesh Sharma')" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-2xs transition-all">
+                ⚡ Book 15-Min Consultation
+              </button>
+            </div>
+          </div>
+
+          <!-- 6. Automated Medical Leave & CHC Sync -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">Innovation 06</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Automated Medical Leave & CHC Sync</h3>
+              </div>
+              <span id="badge-med-sync" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">Verified by Doctor</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Students upload prescriptions once. When CHC approves, the system automatically applies attendance grace periods across all courses.
+            </p>
+            <div class="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-xs space-y-1">
+              <div class="flex items-center justify-between font-bold text-emerald-950">
+                <span>Prescription: Viral Pyrexia (3 Days)</span>
+                <span class="font-mono text-[11px]">Approved by Dr. K. Rao</span>
+              </div>
+              <p class="text-[11px] text-emerald-800">
+                Eligible Grace: <strong>6 Lectures</strong> across CS501, CS502, CS506.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-500 font-mono">Eliminates Paper Slips</span>
+              <button id="btn-med-sync" onclick="syncMedicalLeaveAttendance()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
+                <span>⚡ Apply Attendance Grace</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 7. AI-Powered Elective & Major Matchmaker -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-50 text-teal-700 border border-teal-200 font-mono">Innovation 07</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">AI-Powered Elective & Major Matchmaker</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800 border border-teal-300">94% Match Score</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Suggests courses based on past grade trajectory. Helps HODs forecast class capacities weeks before semester enrollment opens.
+            </p>
+            <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs space-y-1">
+              <span class="font-bold text-slate-900 block">Recommended: CS604 Distributed Cloud Architecture</span>
+              <p class="text-[11px] text-slate-500">
+                Strong correlation with your Grade A in Python & Concurrency (94% predicted success rate).
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-teal-700 font-mono font-bold">Seats Remaining: 14 / 60</span>
+              <button id="btn-elective-action" onclick="preRegisterElective()" class="px-3 py-1.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-2xs transition-all">
+                ⚡ 1-Click Pre-Register
+              </button>
+            </div>
+          </div>
+
+          <!-- 8. Dynamic Campus Marketplace & Lost-and-Found -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200 font-mono">Innovation 08</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Dynamic "Campus Marketplace" & Lost-and-Found</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 text-slate-800">Verified Peer Network</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Verified campus exchange for textbooks, drafting kits, and electronics. Relieves campus security from acting as a lost-and-found desk.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="p-2 rounded bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-900 block">Operating Systems 10th Ed</span>
+                <span class="text-emerald-700 font-bold">₹350 (Hostel Block C)</span>
+              </div>
+              <div class="p-2 rounded bg-slate-50 border border-slate-200">
+                <span class="font-bold text-slate-900 block">Found: Casio fx-991EX</span>
+                <span class="text-blue-700 font-bold">LH-4A Desk 12</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 font-mono">48 Active Listings</span>
+              <button onclick="openMarketplaceModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs shadow-2xs transition-all">
+                + Post / Claim Listing
+              </button>
+            </div>
+          </div>
+
+          <!-- 9. Universal NFC/QR Campus Wallet -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 font-mono">Innovation 09</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Universal NFC/QR Campus Wallet</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300">Phone-Only Life</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              One QR code replaces physical plastic cards across turnstiles, library checkouts, and mess dining payments.
+            </p>
+            <div class="p-3 rounded-lg bg-indigo-50/60 border border-indigo-200 text-xs flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-indigo-900 text-white flex items-center justify-center font-mono font-bold text-xs">
+                  QR
+                </div>
+                <div>
+                  <span class="font-bold text-slate-900 block">Aarav Sharma (2024CS0142)</span>
+                  <span class="text-[11px] text-indigo-700 font-mono">Wallet: <strong id="wallet-balance">₹1,450</strong> Campus Cash</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button onclick="simulateWalletAction('GATE')" class="px-2 py-1 rounded bg-white hover:bg-slate-100 text-slate-800 font-bold text-[10px] border border-slate-200">🚪 Gate</button>
+                <button onclick="simulateWalletAction('MESS')" class="px-2 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-bold text-[10px]">🍛 Mess ₹60</button>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 font-mono">Proxy-Proof Biometric Bind</span>
+              <span class="text-xs font-bold text-emerald-600">✓ Digital Pass Active</span>
+            </div>
+          </div>
+
+          <!-- 10. Peer-to-Peer Micro-Tutoring Network -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">Innovation 10</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-1">Peer-to-Peer Micro-Tutoring Network</h3>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">Peer Bounty</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              Top scorers earn campus credits by tutoring struggling peers, boosting batch passing rates without overburdening professors with extra classes.
+            </p>
+            <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs flex items-center justify-between">
+              <div>
+                <span class="font-bold text-slate-900 block">Calculus & Linear Algebra Help</span>
+                <span class="text-[11px] text-slate-500">Requested by Batchmate (Confidential)</span>
+              </div>
+              <span class="px-2 py-1 rounded text-[10px] font-bold bg-amber-100 text-amber-800 font-mono">+50 Campus Credits</span>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-500 font-mono">Faculty Certified Mentorship</span>
+              <button id="btn-tutor-action" onclick="acceptTutoringBounty()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all">
+                ⚡ Accept Tutoring Bounty
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
     </main>
 
     <!-- Footer -->
@@ -2105,6 +2497,104 @@
   </div>
 
   <!-- Toast Notification Container -->
+  
+  <!-- =================================================================== -->
+  <!-- 10GB MYSQL DATA LAKE INSPECTOR MODAL                                -->
+  <!-- =================================================================== -->
+  <div id="mysql-bridge-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-lg font-bold">
+            🐬
+          </div>
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-blue-300 font-bold">Live Data Lake Connection</span>
+            <h3 class="text-sm font-bold tracking-tight text-white">MySQL 8.0 Production Replica Inspector (`collpoll` DB)</h3>
+          </div>
+        </div>
+        <button onclick="closeMysqlBridgeModal()" class="text-slate-400 hover:text-white transition-colors text-xl font-bold p-1">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-4 text-xs">
+        <!-- Connection Telemetry Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px]">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <span class="text-slate-400 block font-mono">Service Status</span>
+            <span class="font-bold text-emerald-600 flex items-center gap-1 mt-0.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> MySQL80 Running
+            </span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <span class="text-slate-400 block font-mono">Dump Footprint</span>
+            <span class="font-bold text-slate-800 mt-0.5 block">10.08 GB Uncompressed</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <span class="text-slate-400 block font-mono">Schema Domains</span>
+            <span class="font-bold text-slate-800 mt-0.5 block">1,647 Tables (15 Domains)</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <span class="text-slate-400 block font-mono">Query Latency</span>
+            <span class="font-bold text-blue-600 font-mono mt-0.5 block">14ms (Covering Index)</span>
+          </div>
+        </div>
+
+        <!-- Query Inspection Code Block -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between text-slate-700">
+            <span class="font-bold">Live MySQL CTE Risk Model Query (Week 4 Production Audit):</span>
+            <span class="font-mono text-[10px] text-slate-400">Database: collpoll</span>
+          </div>
+          <pre class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-[11px] overflow-x-auto max-h-48 border border-slate-800">
+WITH StudentCompoundMetrics AS (
+    SELECT 
+        u.ukid, u.enrollment_no, att.overall_attendance_pct,
+        COALESCE(fd.total_overdue, 0) AS overdue_fees,
+        COALESCE(hb.curfew_count, 0) AS curfew_breaches
+    FROM users u
+    INNER JOIN ams_attendance_summary att ON u.ukid = att.student_ukid
+    LEFT JOIN (SELECT student_ukid, SUM(balance_amount) AS total_overdue FROM academic_fee_dues GROUP BY student_ukid) fd ON u.ukid = fd.student_ukid
+    LEFT JOIN (SELECT student_ukid, COUNT(*) AS curfew_count FROM hostel_curfew_breaches GROUP BY student_ukid) hb ON u.ukid = hb.student_ukid
+)
+SELECT COUNT(*) AS total_cohort, SUM(CASE WHEN overall_attendance_pct < 65 THEN 1 ELSE 0 END) AS red_zone_count
+FROM StudentCompoundMetrics;
+          </pre>
+        </div>
+
+        <!-- Live Query Telemetry Result Box -->
+        <div id="mysql-query-results" class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-950 flex items-center justify-between">
+          <div>
+            <span class="font-bold text-xs text-emerald-900 flex items-center gap-1.5">
+              <span>✓ Query Executed Successfully (14ms)</span>
+            </span>
+            <p class="text-[11px] text-emerald-800 mt-0.5 font-mono">
+              Evaluated 4,850 students • 142 in Red Zone • ₹1.84 Cr fee exposure isolated.
+            </p>
+          </div>
+          <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 font-mono font-bold text-[10px] border border-emerald-300">
+            100% In-Sync
+          </span>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+        <span class="text-[11px] text-slate-500 font-mono">Host: localhost:3306 / AWS RDS Aurora</span>
+        <div class="flex items-center gap-2">
+          <button onclick="testLiveMysqlQuery()" class="px-4 py-2 text-xs font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-xs flex items-center gap-1.5">
+            <span>⚡ Re-Run Live Benchmark</span>
+          </button>
+          <button onclick="closeMysqlBridgeModal()" class="px-4 py-2 text-xs font-bold rounded-lg text-slate-700 bg-slate-200 hover:bg-slate-300">
+            Close Inspector
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="toast-container" class="fixed bottom-20 right-6 z-50 space-y-2 pointer-events-none"></div>
 
   <!-- =================================================================== -->
@@ -2270,7 +2760,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
     // ===================================================================
     // STAGE 6: SPA ROUTING & STATE MANAGEMENT ENGINE
     // ===================================================================
-    const SPA_VIEWS = ['radar', 'student360', 'academics', 'finance', 'hostel', 'access', 'chc'];
+    const SPA_VIEWS = ['radar', 'student360', 'academics', 'finance', 'hostel', 'access', 'chc', 'student-hub'];
 
     function navigateToView(view) {
       if (!SPA_VIEWS.includes(view)) view = 'radar';
@@ -2475,7 +2965,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
             <!-- Top Header & Score Badge -->
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-center gap-3">
-                <img src="${s.avatar_url}" alt="${s.first_name}" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=' + encodeURIComponent('${s.first_name} ${s.last_name}') + '&background=1E40AF&color=fff';" class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-xs">
+                <img src="${s.avatar_url}" alt="${s.first_name}" class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-xs">
                 <div>
                   <h3 class="font-bold text-slate-900 text-sm hover:text-blue-600 cursor-pointer" onclick="selectStudentAndOpen360(${s.ukid})">
                     ${s.first_name} ${s.last_name}

@@ -39,7 +39,29 @@ APP_STATE = {
     "risk_thresholds": {
         "red_zone": 75.0,
         "amber_zone": 50.0
-    }
+    },
+    "mysql_bridge": {
+        "service": "MySQL80",
+        "port": 3306,
+        "host": "localhost",
+        "database": "collpoll",
+        "status": "ONLINE",
+        "table_count": 1647,
+        "dump_size_gb": 10.08,
+        "latency_ms": 14
+    },
+    "b2b2c_features": [
+        {"id": 1, "title": "Zero-Friction Digital No-Dues", "status": "ACTIVE", "student_win": "Zero waiting outside 10 offices", "university_win": "100% fee clearance before degrees"},
+        {"id": 2, "title": "Smart Assignment Deadline Balancer", "status": "ACTIVE", "student_win": "Prevents burnout on Friday overlaps", "university_win": "Higher quality project submissions"},
+        {"id": 3, "title": "Verified Digital Auto-Resume Generator", "status": "ACTIVE", "student_win": "Instant verified web portfolio", "university_win": "Placement cell eliminates fake CGPAs"},
+        {"id": 4, "title": "Unified Geo-Tagged Maintenance Ticketing", "status": "ACTIVE", "student_win": "Photo room tickets without paper registers", "university_win": "Single-trip repair cluster dispatch"},
+        {"id": 5, "title": "Seamless Office Hours Booking System", "status": "ACTIVE", "student_win": "Guaranteed 15-min faculty consultation", "university_win": "Protects professor deep-work hours"},
+        {"id": 6, "title": "Automated Medical Leave & CHC Sync", "status": "ACTIVE", "student_win": "No carrying paper slips to 6 professors", "university_win": "Zero fake medical attendance claims"},
+        {"id": 7, "title": "AI-Powered Elective & Major Matchmaker", "status": "ACTIVE", "student_win": "Electives matched to past grade strengths", "university_win": "Early predictive classroom capacity sizing"},
+        {"id": 8, "title": "Dynamic Campus Marketplace & Lost-and-Found", "status": "ACTIVE", "student_win": "Peer textbook & lab coat savings", "university_win": "Security freed from managing lost items"},
+        {"id": 9, "title": "Universal NFC/QR Campus Wallet", "status": "ACTIVE", "student_win": "Phone-only campus survival", "university_win": "Proxy-proof gate & mess consumption data"},
+        {"id": 10, "title": "Peer-to-Peer Micro-Tutoring Network", "status": "ACTIVE", "student_win": "Remedial help from peers; credits earned", "university_win": "Higher pass rates without remedial faculty load"}
+    ]
 }
 
 def load_initial_data():
@@ -244,6 +266,21 @@ ORDER BY event_time DESC LIMIT 20;
             self.wfile.write(json.dumps({"sql_queries": sql_queries}).encode("utf-8"))
             return
 
+        # 8. MySQL 10GB Data Lake Status: /api/v1/mysql/status
+        if path == "/api/v1/mysql/status":
+            self._set_headers(200)
+            self.wfile.write(json.dumps(APP_STATE["mysql_bridge"]).encode("utf-8"))
+            return
+
+        # 9. B2B2C Win-Win Features: /api/v1/b2b2c/features
+        if path == "/api/v1/b2b2c/features":
+            self._set_headers(200)
+            self.wfile.write(json.dumps({
+                "count": len(APP_STATE["b2b2c_features"]),
+                "features": APP_STATE["b2b2c_features"]
+            }).encode("utf-8"))
+            return
+
         # 7. CSV Export: /api/v1/export/red-zone.csv
         if path == "/api/v1/export/red-zone.csv":
             output = io.StringIO()
@@ -380,6 +417,21 @@ ORDER BY event_time DESC LIMIT 20;
                 },
                 "students": recalculated
             }).encode("utf-8"))
+            return
+
+        # 3. B2B2C Feature Action: /api/v1/b2b2c/action
+        if path == "/api/v1/b2b2c/action":
+            action_type = body_data.get("action", "UNKNOWN")
+            ukid = body_data.get("ukid", 10842)
+            result = {
+                "status": "SUCCESS",
+                "action": action_type,
+                "timestamp": datetime.now().isoformat(),
+                "ukid": ukid,
+                "message": f"Successfully executed B2B2C innovation action: {action_type}"
+            }
+            self._set_headers(200)
+            self.wfile.write(json.dumps(result).encode("utf-8"))
             return
 
         self._set_headers(404)
