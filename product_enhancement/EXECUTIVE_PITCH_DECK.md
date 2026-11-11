@@ -80,20 +80,20 @@
 
 ---
 
-### Slide 8: The Complete 19-Module Enterprise Core ERP & Student Suite
-* **Beyond Theory — Real Operational Workflows & Active Downloads:** Digii Campus 2.0 expands from 9 to 19 fully interactive, database-backed modules:
-  - **Student Experience Hub (10 Dual-Value Innovations):** Digital No-Dues, Assignment Deadline Balancer, Verified Auto-Resume, Maintenance Dispatch, Office Hours Calendar Sync, Medical Leave Sync, Elective Matchmaker, Campus Marketplace, Universal Phone Wallet, Peer Tutoring.
-  - **Non-Academic Student Development (NASD):** Co-curricular credit ledger (NAAC 5.3) with 1-click accreditation and diploma supplement download.
-  - **TPO Placement Intelligence:** Automated corporate eligibility matrix (Google, Deloitte, Microsoft) with 1-click offer letter generation.
-  - **Statutory Grievance & POSH Ombudsperson:** Zero-knowledge cryptographic ticket pipeline with SLA escalation triggers and UGC CSV audit log.
-  - **Faculty PBAS Appraisal:** Real-time UGC API Score calculator and teaching load balance dispatcher.
-  - **Scholarship & DBT Disbursement:** Institutional aid disbursement ledger with automated tuition offset crediting and PFMS bank advice export.
-  - **Smart Exam Hall Seating Engine:** Anti-cheating cross-branch jumbling matrix preventing adjacent desk copying with seating chart CSV export.
-  - **Campus ESG & Green Audit:** Real-time IoT power telemetry with 1-click HVAC idle power-down execution and ISO 50001 audit export.
-  - **Course Registration Cart:** Prerequisite tree validation, credit cap monitor, and approved schedule slip export.
-  - **Alumni & Endowment Network:** 1:1 mentorship booking engine and verified alumni directory CSV export.
-  - **Lab Assets & High-Value Inventory:** RFID/QR asset tracking with workstation slot reservation and central procurement audit export.
-  - **Accreditation Copilot:** NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection) and institutional data bundle CSV export.
+### Slide 8: 10 Net-New Disruptive Modules (Absent on https://digiicampus.com)
+* **The Strategic APM Pitch to Mr. Suraj Bhatt & Saksham Gupta:**
+  - *The Commodity Pitfall:* Legacy Digii Campus already sells Admissions, LMS, Fees, Placements, and Hostels. We are NOT rebuilding commodity ERP features!
+  - *The Product Moat:* We built 10 net-new predictive intelligence modules that connect our 1,647 siloed MySQL tables to solve multi-crore pain points no competitor touches:
+  1. **Predictive Food Waste & Meal Prep (PRGE):** Dynamically links approved hostel night leaves to morning mess cooking, cutting 630 wasted meals/day and saving ₹4.2L/month (from Week 3 Proposal).
+  2. **Student Social Isolation Sentinel:** Correlates turnstiles with zero club/library interactions for 14+ days to flag silent mental health isolation before crisis occurs (from Week 3 Proposal).
+  3. **Non-Academic Development (SEP):** Situational Evidence Profiler for non-academic competencies (Teamwork, Leadership, Reliability) with NAAC Criterion 5.3 diploma supplements (from Week 2 Proposal).
+  4. **Autonomous Instant No-Dues Clearance:** 1-click parallel audit across 8 departments completing graduation clearance in 3 seconds instead of 14-day paper queues.
+  5. **Smart Assignment Congestion Balancer:** Campus-wide heatmap detecting multi-course deadline pileups on Fridays and auto-staggering submissions to Monday.
+  6. **Tamper-Proof Relational Auto-Resume:** Directly compiles authenticated SGPA, OBE Bloom's rubrics, and club leadership from MySQL into an institutionally sealed CV.
+  7. **Turnstile Anti-Passback & Impossible Travel:** Biometric speed-of-travel physics checker detecting proxy card taps at distant gates in <180s, triggering lockout and guard dispatch.
+  8. **Phantom Midnight Energy & Green Campus (ISO 50001):** Occupancy-vs-meter cross-checking engine auto-shedding empty lecture hall HVAC at 2:00 AM, saving ₹18.4L/yr.
+  9. **Zero-Knowledge Statutory POSH Vault:** Client-side SHA-256 encrypted whistleblower intake with anonymous tracking receipts and automated UGC 15-day SLA escalation countdown.
+  10. **Alumni Capstone Micro-Endowment:** Capstone prototype pitching exchange with 1:1 Google Meet mentorship bookings and Section 80G tax-exempt endowment pledges.
 
 ---
 

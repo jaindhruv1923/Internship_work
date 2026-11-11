@@ -128,26 +128,24 @@ python .\product_enhancement\backend\test_api.py
   - **Smart Timetable Clash Resolver (Stage 8):** Multi-entity constraint optimizer detecting faculty collisions in real time and auto-resolving professor commitments with 1-click, eliminating **100% of scheduling backend support tickets**.
   - **Non-Academic Student Development Module (NASD):** Direct functional realization of Dhruv Jain's Week 2 research framework, tracking Enrichment Credits (BML Munjal University model), 42 chartered campus societies (ACM, IEEE, Baja Racing, NSS), 18,420 verified volunteer hours, and automated accreditation compliance for NAAC Criterion 5.3 / NIRF. Includes 1-click credential verification and exportable official co-curricular diploma supplements.
   - **Enterprise BI Suite & Clean Design Language:** Completely sanitized all emojis across modules in favor of clean enterprise SVG typography. Integrated a live Multi-Campus Switcher (`Main Campus`, `North Campus NCR`, `Bengaluru`), real-time Department Filter (`CSE`, `ECE`, `ME`) for the Predictive Radar, and an interactive Hostel Night Roll-Call & Room Allocation Register.
-  - **19 Operational Core ERP Modules with Active Workflows & File Downloads:**
+  - **17 Operational Predictive Intelligence & Novel Modules (Absent in Legacy Digii Campus):**
     1. _Predictive Dropout Radar (`view-radar`):_ Multi-tier risk classifier with real-time department filtering (CSE/ECE/ME), dynamic cohort count, and 1-click advisor intervention triggers.
     2. _Student 360 Timeline (`view-student360`):_ Longitudinal chronicle linking academic scores, library swipes, hostel curfews, and fee receipts for any selected student.
     3. _Student Experience Hub (`view-student-hub`):_ 10 dual-value B2B2C modules with live action modals, real certificate downloads, and friction mitigators.
-    4. _Non-Academic Development Ledger (`view-development`):_ Week 2 research realization tracking 3,840 enrichment credit students, 42 student clubs, 18,420 volunteer hours (NAAC 5.3), with 1-click `Verify & Accredit` and official diploma supplement export.
-    5. _TPO Placement Intelligence (`view-placements`):_ Placement Readiness Index (PRI), corporate shortlist filter (Google, Deloitte, Microsoft, Tata Tech), and instant official placement selection letter generation (`.txt`).
-    6. _Statutory Grievance & POSH Ombudsperson (`view-grievance`):_ Zero-knowledge cryptographic ticket pipeline, SLA escalation triggers, and official UGC-compliant CSV audit ledger.
-    7. _Faculty PBAS Appraisal (`view-faculty`):_ Real-time UGC API Score calculator, teaching load balance dispatcher (surplus lab hour delegation), and Dean-ready PBAS matrix export.
-    8. _Scholarship & DBT Disbursement (`view-scholarships`):_ Merit-cum-means and institutional aid disbursement ledger with automated tuition offset crediting and PFMS-ready bank advice export.
-    9. _Smart Exam Hall Seating Engine (`view-exams`):_ Anti-cheating cross-jumbling bipartite graph algorithm preventing adjacent branch seating, with 1-click jumbling matrix re-calculation and hall door seating roster CSV export.
-    10. _Campus ESG & Green Audit (`view-energy`):_ Real-time IoT power telemetry across campus zones, 1-click HVAC idle power-down execution, and ISO 50001 green audit CSV export.
-    11. _Course Registration Cart (`view-registration`):_ Real-time prerequisite validation tree, credit cap monitor, live add/drop seat count decrement, and approved schedule slip export.
-    12. _Alumni & Endowment Network (`view-alumni`):_ 1:1 mentorship booking engine, capstone project sponsorship pledge, and verified alumni directory CSV export.
-    13. _Lab Consumables & High-Value Assets (`view-inventory`):_ RFID/QR asset tracking, 4-hour workstation slot reservation, and central procurement audit export.
-    14. _Accreditation Copilot (`view-accreditation`):_ NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection), cross-module relational proof verification, and institutional data bundle CSV export.
-    15. _Academics & Timetable Engine (`view-academics`):_ 32 credit track scheduler, live timetable clash resolver, and clash-free timetable CSV export.
+    4. _Social Isolation Sentinel (`view-isolation` - Week 3 Research):_ Correlates physical turnstiles with zero club/library interactions for 14+ days to flag silent mental health isolation to university counselors before crisis occurs.
+    5. _Predictive Kitchen Prep & Food Waste Reducer (`view-prge` - Week 3 Proposal):_ Dynamic cross-module linkage deducting approved hostel night leaves from morning mess preparation, cutting 630 wasted meals/day and saving ₹4.2L/month.
+    6. _Autonomous Multi-Dept No-Dues Instant Clearance (`view-nodues`):_ 1-click 8-department parallel relational audit (Library, Hostel, Sports, Labs, Accounts, HOD) completing degree clearance in 3 seconds with official certificate download.
+    7. _Smart Deadline Congestion Balancer (`view-deadline`):_ Campus-wide LMS submission heatmap detecting multi-course assignment clustering on Fridays and autonomously staggering deadlines to Monday afternoon.
+    8. _Tamper-Proof Relational Auto-Resume (`view-autoresume` - Week 3 Proposal):_ Directly compiles authenticated SGPA, OBE Bloom's rubrics, and club leadership from MySQL into an institutionally sealed, QR-verifiable CV.
+    9. _Turnstile Anti-Passback & Impossible Travel (`view-passback` - Week 4 Audit):_ Biometric velocity physics checker detecting proxy card taps at distant gates in <180s, triggering turnstile lockout and guard dispatch.
+    10. _Non-Academic Development Ledger (`view-development` - Week 2 Proposal):_ Situational Evidence Profiler tracking 3,840 enrichment credit students, 42 clubs, 18,420 volunteer hours (NAAC 5.3) with diploma supplement export.
+    11. _Zero-Knowledge Statutory POSH Vault (`view-grievance`):_ Client-side SHA-256 encrypted whistleblower intake with anonymous tracking receipts and automated UGC 15-day SLA escalation countdown.
+    12. _Phantom Midnight Energy & Green Campus (`view-energy`):_ Occupancy-vs-meter cross-checking engine auto-shedding empty lecture hall HVAC at 2:00 AM, saving ₹18.4L/yr and exporting ISO 50001 green audits.
+    13. _Alumni Capstone Micro-Endowment (`view-alumni`):_ Capstone prototype pitching exchange with 1:1 Google Meet mentorship bookings and Section 80G tax-exempt endowment pledges.
+    14. _Accreditation Copilot (`view-accreditation`):_ NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection) with 1,647-table relational evidence scanning and SSR bundle export.
+    15. _Academics Timetable Clash Interceptor (`view-academics`):_ 32 credit track scheduler, live timetable clash resolver, and clash-free timetable CSV export.
     16. _Finance & Fee Dues Recon (`view-finance`):_ Batch reconciliation matcher recovering ₹1.84 Cr tuition exposure, with bank statement parser and audit export.
-    17. _Hostel & Curfew Desk (`view-hostel`):_ Real-time biometric night roll-call register with curfew breach alarms and CSV roster export.
-    18. _Access & Turnstiles (`view-access`):_ Biometric gate reader telemetry with impossible travel anti-passback violation alerts and 1-click security guard dispatch.
-    19. _Campus Health Center Triage (`view-chc`):_ Mental health and medical leave sync with automated lecture attendance crediting.
+    17. _Financial Aid & DBT Gateway (`view-scholarships`):_ Institutional aid disbursement ledger with automated tuition offset crediting and PFMS-ready bank advice export.
   - **PM Strategy & Engineering Cockpit (`PM Cockpit`):**
     - _Tab 1: RICE Prioritization Engine_ with dynamic effort multiplier slider (0.5x to 2.0x) and real-time Now / Next / Later swimlanes with live feature launch triggers.
     - _Tab 2: Feature Flags & Canary Governance (LaunchDarkly Model)_ with rollout sliders and circuit breaker auto-rollback (>120ms p99).

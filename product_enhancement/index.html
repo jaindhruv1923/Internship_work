@@ -2734,13 +2734,17 @@
       <!-- =================================================================== -->
       <!-- VIEW 1: PLACEMENT INTELLIGENCE & TPO RECRUITMENT MATCHMAKER         -->
       <!-- =================================================================== -->
-      <section id="view-placements" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
-            NIRF GO & TPO ROI
+      
+      <!-- =================================================================== -->
+      <!-- VIEW: STUDENT SOCIAL ISOLATION & WELL-BEING SENTINEL (WEEK 3 PROPOSAL)-->
+      <!-- =================================================================== -->
+      <section id="view-isolation" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+            MENTAL HEALTH & RETENTION ROI
           </span>
           <span class="leading-relaxed">
-            <strong>ROI: Eliminates 120+ hours/season of manual TPO resume shortlisting</strong>, eliminates candidate debarment discrepancies, and elevates campus placement conversion by +18% through automated rule-based qualification.
+            <strong>ROI: Eliminates student mental health crises & silent dropouts</strong> by correlating physical turnstiles with zero club/library interactions for 14+ days, alerting university counselors weeks before academic failure.
           </span>
         </div>
 
@@ -2748,25 +2752,25 @@
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
-                  Core ERP Capability • Career Services
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 uppercase tracking-wider">
+                  Student Life & Psychological Counseling • Week 3 Research
                 </span>
                 <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Framework: AICTE TPO Guidelines 2026</span>
+                <span class="text-xs text-slate-500">Absent in Legacy Digii Campus</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Autonomous TPO Placement Intelligence & Candidate Matchmaker</h1>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Student Campus Isolation & Mental Well-Being Sentinel</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Rule-based recruitment drive eligibility matching, automated debarment checks, and 1-click corporate appointment generation.
+                Proactive spatial-temporal behavioral correlation detecting silent social withdrawal without invasive surveillance.
               </p>
             </div>
             <div class="flex items-center gap-2 shrink-0">
-              <button onclick="openPostDriveModal()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                <span>Post New Corporate Drive</span>
+              <button onclick="dispatchCounselorBatch()" class="px-3.5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Dispatch Counselor Triage</span>
               </button>
-              <button onclick="downloadNirfPlacementAuditCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+              <button onclick="downloadIsolationReportCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export NIRF Audit (.csv)</span>
+                <span>Export Wellness Audit (.csv)</span>
               </button>
               <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -2775,92 +2779,61 @@
             </div>
           </div>
 
-          <!-- TPO Stats -->
+          <!-- Isolation Stats -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Eligible Batch (2026)</p>
+            <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
+              <p class="text-xs font-bold text-red-800 uppercase tracking-wider">High Isolation Flag</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">485</span>
-                <span class="text-xs font-semibold text-emerald-600">88.4% Registered</span>
+                <span class="text-2xl font-bold text-red-800" id="isolation-high-count">3 Students</span>
               </div>
-              <p class="text-[11px] text-slate-500 mt-1">CSE, ECE & ME Cohort</p>
+              <p class="text-[11px] text-red-700 mt-1">Hostel-Only &gt;14 Consecutive Days</p>
             </div>
-            <div class="p-4 rounded-lg bg-blue-50/70 border border-blue-200">
-              <p class="text-xs font-bold text-blue-800 uppercase tracking-wider">Avg Package (CTC)</p>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Moderate Social Drag</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-blue-800">₹16.8 LPA</span>
-                <span class="text-xs font-semibold text-blue-600">+14% YoY</span>
+                <span class="text-2xl font-bold text-amber-800">5 Students</span>
               </div>
-              <p class="text-[11px] text-blue-700 mt-1">Highest: ₹44.5 LPA (Microsoft)</p>
+              <p class="text-[11px] text-amber-700 mt-1">Zero Club / Booth Interactions</p>
             </div>
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Corporate Drives</p>
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Detection Sensitivity</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900" id="tpo-drives-count">4 Drives</span>
+                <span class="text-2xl font-bold text-slate-900 font-mono">14 Days</span>
               </div>
-              <p class="text-[11px] text-slate-500 mt-1">Google, Microsoft, Deloitte, Tata Tech</p>
+              <p class="text-[11px] text-slate-500 mt-1">Sliding Time-Series Window</p>
             </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Placement Readiness (PRI)</p>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Counselor Interventions</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">82.4</span>
-                <span class="text-xs text-slate-500">/ 100</span>
+                <span class="text-2xl font-bold text-emerald-800" id="isolation-resolved-count">12 Active</span>
               </div>
-              <p class="text-[11px] text-emerald-600 font-semibold mt-1">368 Students Ready for Day 1</p>
+              <p class="text-[11px] text-emerald-700 mt-1">94% Retention Success Rate</p>
             </div>
           </div>
         </div>
 
-        <!-- Interactive Recruitment Matchmaker & Filter Controls -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-5">
-          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <!-- Interactive Sentinel Roster -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
             <div>
-              <h4 class="font-bold text-sm text-slate-900">Active Recruitment Drives & Live Candidate Eligibility</h4>
-              <span class="text-[11px] text-slate-500">Filter candidate pool in real time by company criteria and minimum CGPA threshold</span>
-            </div>
-            <div class="flex flex-wrap items-center gap-2">
-              <button onclick="runCorporateShortlist('ALL')" id="tpo-btn-all" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold text-xs shadow-2xs">All Candidates</button>
-              <button onclick="runCorporateShortlist('Google SWE')" id="tpo-btn-google" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300">Google SWE (₹32L)</button>
-              <button onclick="runCorporateShortlist('Microsoft FTE')" id="tpo-btn-msft" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300">Microsoft FTE (₹44.5L)</button>
-              <button onclick="runCorporateShortlist('Deloitte Consulting')" id="tpo-btn-deloitte" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300">Deloitte (₹14.5L)</button>
-              <button onclick="runCorporateShortlist('Tata Tech')" id="tpo-btn-tatatech" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300">Tata Tech (₹11.2L)</button>
+              <h4 class="font-bold text-sm text-slate-900">Spatial-Temporal Social Withdrawal Risk Queue</h4>
+              <span class="text-[11px] text-slate-500">Cross-Referenced from Gate Turnstiles, Library Swipes, and Campus Booth Feeds</span>
             </div>
           </div>
 
-          <!-- Dynamic Filter Toolbar: Slider & Debarment -->
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-4 w-full md:w-auto">
-              <label class="text-xs font-bold text-slate-700 shrink-0">Minimum CGPA Cutoff:</label>
-              <input type="range" id="tpo-cgpa-slider" min="6.5" max="9.0" step="0.1" value="7.0" oninput="updateTpoCgpaCutoff(this.value)" class="w-48 accent-blue-600">
-              <span id="tpo-cgpa-val" class="px-2 py-0.5 rounded font-mono font-bold text-xs bg-white border border-slate-300 text-blue-700">>= 7.00 CGPA</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <button onclick="runTpoDebarmentCheck()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs border border-slate-300 shadow-2xs flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                <span>Run Debarment Audit Check</span>
-              </button>
-              <button onclick="batchIssueOfferLetters()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Batch Issue Offer Letters (.txt)</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Candidates Table -->
           <div class="overflow-x-auto rounded-xl border border-slate-200">
             <table class="w-full text-left text-xs">
               <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
                 <tr>
                   <th class="py-2.5 px-3">Student Roll No</th>
                   <th class="py-2.5 px-3">Candidate & Dept</th>
-                  <th class="py-2.5 px-3 text-center">CGPA</th>
-                  <th class="py-2.5 px-3 text-center">PRI Score</th>
-                  <th class="py-2.5 px-3">Target Company & CTC</th>
-                  <th class="py-2.5 px-3">Placement Status</th>
-                  <th class="py-2.5 px-3 text-right">TPO Actions</th>
+                  <th class="py-2.5 px-3 text-center">Days Confined to Hostel</th>
+                  <th class="py-2.5 px-3 text-center">Library / Club Swipes</th>
+                  <th class="py-2.5 px-3">Isolation Risk Tier</th>
+                  <th class="py-2.5 px-3 text-right">Counselor Action</th>
                 </tr>
               </thead>
-              <tbody id="placements-roster-body" class="divide-y divide-slate-100 font-sans">
+              <tbody id="isolation-roster-body" class="divide-y divide-slate-100 font-sans">
                 <!-- Injected via JS -->
               </tbody>
             </table>
@@ -2869,9 +2842,477 @@
       </section>
 
       <!-- =================================================================== -->
-      <!-- VIEW 2: STATUTORY GRIEVANCE & POSH OMBUDSPERSON                     -->
+      <!-- VIEW: PREDICTIVE KITCHEN PREP & FOOD WASTE REDUCER (PRGE ENGINE)     -->
       <!-- =================================================================== -->
-      <section id="view-grievance" class="hidden space-y-6">
+      <section id="view-prge" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
+            PRGE FOOD WASTE ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates 630 wasted meals per day, saving ₹4.2 Lakhs/month in raw food procurement</strong> by automatically subtracting approved hostel leaves from daily morning dining preparation.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200 uppercase tracking-wider">
+                  Predictive Resource Engine (PRGE) • Week 3 Proposal
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Cross-Module Hostel-Mess Sync</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Predictive Kitchen Prep & Food Waste Reducer (PRGE)</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Automated dynamic linkage between approved hostel night leaves and dining hall preparation headcounts.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="executePrgeKitchenReduction()" id="btn-prge-optimize" class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                <span>Optimize Kitchen Prep (-630 Portions)</span>
+              </button>
+              <button onclick="downloadPrgeVoucher()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Waste Voucher (.txt)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- PRGE Metrics -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Registered Boarders</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">4,050 Diners</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Main Mess + South Dining</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Approved Hostel Leaves</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800" id="prge-leaves-count">630 Students</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Night Passes Authenticated</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Optimized Cook Headcount</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-800" id="prge-diners-count">3,420 Diners</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 font-semibold mt-1" id="prge-savings-tag">Pending Portions Reduction</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Monthly Food Savings</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900" id="prge-monthly-savings">₹4,20,000</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Direct Raw Material Savings</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRGE Procurement Table -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Raw Kitchen Procurement Rebalancing Ledger</h4>
+              <span class="text-[11px] text-slate-500">Live Portions Breakdown for Central Mess Hall (Aravali & Shivalik)</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Commodity Item</th>
+                  <th class="py-2.5 px-3 text-center">Baseline Bulk Order (4,050 Diners)</th>
+                  <th class="py-2.5 px-3 text-center">PRGE Optimized Order (3,420 Diners)</th>
+                  <th class="py-2.5 px-3 text-center">Procurement Cut</th>
+                  <th class="py-2.5 px-3 text-right">Daily Cost Savings</th>
+                </tr>
+              </thead>
+              <tbody id="prge-kitchen-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: AUTONOMOUS MULTI-DEPARTMENT NO-DUES INSTANT CLEARANCE ENGINE   -->
+      <!-- =================================================================== -->
+      <section id="view-nodues" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+            GRADUATION NO-DUES ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates 10 to 14 days of physical campus queues for 1,200+ graduating students</strong> by executing parallel real-time relational verification across 8 department databases in 3 seconds.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase tracking-wider">
+                  Registrar & Student Welfare Office • Degree Clearance
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Autonomous Parallel Database Audit</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Autonomous Multi-Department "No-Dues" Instant Clearance</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Real-time 8-department parallel audit checking fine balances, library returns, lab keys, and hostel room clearances.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="runInstantNoDuesAudit()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Run 8-Dept Instant Clearance</span>
+              </button>
+              <button onclick="downloadNoDuesCertificate()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Degree Certificate (.txt)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- No-Dues Candidate Header -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 mt-5">
+            <div>
+              <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Candidate Under Clearance</span>
+              <div class="flex items-baseline gap-2 mt-0.5">
+                <span class="text-lg font-bold text-slate-900">Aarav Sharma</span>
+                <span class="font-mono text-xs text-blue-700 font-bold">(Roll: 2024CS0142)</span>
+                <span class="text-xs text-slate-500">• B.Tech Computer Science (Final Year)</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-slate-700">Clearance Status:</span>
+              <span id="nodues-overall-status" class="px-2.5 py-1 rounded-md font-bold text-xs bg-emerald-100 text-emerald-800 border border-emerald-300">
+                100% CLEARED (8 / 8 DEPARTMENTS)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8-Department Clearance Matrix -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">8-Department Real-Time Database Audit Matrix</h4>
+              <span class="text-[11px] text-slate-500">Live Relational Query verifying zero pending fines, returned inventory, and verified dues</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="nodues-grid">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: SMART ASSIGNMENT CONGESTION & DEADLINE BALANCER                -->
+      <!-- =================================================================== -->
+      <section id="view-deadline" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
+            STUDENT BURNOUT MITIGATION ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Reduces student burnout by 68% and prevents mass submission server crashes</strong> by detecting multi-course assignment clustering and autonomously staggering non-urgent submissions.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
+                  Academic Scheduling & Student Well-Being • AI Balancer
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Absent in Legacy Digii LMS</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Smart Assignment Congestion & Deadline Balancer</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Campus-wide submission heatmap detecting deadline collisions across disparate courses and staggering deadlines automatically.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="rebalanceAssignmentDeadlines()" id="btn-rebalance-deadlines" class="px-3.5 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Auto-Stagger Deadlines to Monday</span>
+              </button>
+              <button onclick="downloadDeadlineScheduleCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Balancer Schedule (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Heatmap Stats -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
+              <p class="text-xs font-bold text-red-800 uppercase tracking-wider">Peak Friday Congestion</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-red-800" id="deadline-peak-count">4 Major Submissions</span>
+              </div>
+              <p class="text-[11px] text-red-700 mt-1">Critical Burnout Index: 88%</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Staggered Shift Target</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">Monday 2:00 PM</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">+72 Hours Stress Buffer</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Post-Balancer Index</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-800" id="deadline-burnout-score">24% (Balanced)</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">Optimal Cognitive Load</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Cohort Affected</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">184 Students</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">CSE 6th Semester Batch</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Congestion Heatmap -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">7-Day Campus Assignment Submission Congestion Heatmap</h4>
+              <span class="text-[11px] text-slate-500">Visualizing Cross-Course Deadline Collisions Before & After Staggering</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-7 gap-2" id="deadline-days-grid">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: TAMPER-PROOF CRYPTOGRAPHIC AUTO-RESUME GENERATOR              -->
+      <!-- =================================================================== -->
+      <section id="view-autoresume" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+            RECRUITER TRUST & NIRF ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates 100% of resume fraud and manual background verification calls</strong> by compiling verified MySQL academic grades, OBE competencies, and club leadership directly into an institutionally sealed CV.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Career Services & Recruiter Trust • Week 3 Proposal
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Absent in Legacy Digii Campus</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Tamper-Proof Relational Auto-Resume Generator</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Dynamic credential compiler pulling verified grades, OBE Bloom's rubrics, and authenticated hackathon projects directly from database records.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadAutoResumeDocument()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Download Verified Resume (.txt)</span>
+              </button>
+              <button onclick="downloadVerifiedCandidatesCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Recruiter Roster (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Auto-Resume Verification Badge -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 mt-5">
+            <div>
+              <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Candidate Profile</span>
+              <div class="flex items-baseline gap-2 mt-0.5">
+                <span class="text-lg font-bold text-slate-900">Aarav Sharma</span>
+                <span class="font-mono text-xs text-blue-700 font-bold">(Roll: 2024CS0142)</span>
+                <span class="text-xs text-slate-500">• CGPA: 8.42 • 0 Backlogs</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-md font-mono font-bold text-xs bg-emerald-100 text-emerald-800 border border-emerald-300">
+                100% INSTITUTIONALLY VERIFIED
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Credential Preview Card -->
+        <div class="p-6 rounded-xl bg-white border border-slate-200 shadow-xs space-y-5">
+          <div class="border-b border-slate-100 pb-4">
+            <h4 class="font-bold text-base text-slate-900">Relational Credential Compilation Preview</h4>
+            <p class="text-xs text-slate-500">Every single bullet point below is ingested live from production database tables with foreign key proofs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <span class="text-[10px] font-bold uppercase font-mono text-blue-700">Academic Standing (MySQL marks_sheet)</span>
+              <p class="text-2xl font-bold text-slate-900">8.42 CGPA</p>
+              <p class="text-xs text-slate-600">Top 5% in CSE Class of 2026. Zero active or historical course backlogs.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <span class="text-[10px] font-bold uppercase font-mono text-indigo-700">OBE Bloom's Competency (MySQL obe_eval)</span>
+              <p class="text-2xl font-bold text-slate-900">Level 4.8 / 5.0</p>
+              <p class="text-xs text-slate-600">Verified Complex Problem Solving & Distributed Algorithms.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <span class="text-[10px] font-bold uppercase font-mono text-amber-700">Co-Curricular Leadership (MySQL clubs_events)</span>
+              <p class="text-2xl font-bold text-slate-900">President, ACM</p>
+              <p class="text-xs text-slate-600">Organized 42-hour National Hackathon (850 attendees, ₹1.2L Prize Pool).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: TURNSTILE ANTI-PASSBACK & IMPOSSIBLE TRAVEL SENTINEL          -->
+      <!-- =================================================================== -->
+      <section id="view-passback" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
+            BIOMETRIC CAMPUS SECURITY ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates proxy card sharing & unauthorized boundary breaches</strong> by intercepting impossible spatial-temporal gate velocities (&lt;180s across 1.8km), locking turnstiles and dispatching campus guards.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
+                  Campus Security & Gate Biometrics • Week 4 Optimization
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Spatial-Temporal Physics Velocity Model</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Turnstile Anti-Passback & Impossible Travel Sentinel</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Physics-based biometric anomaly engine detecting proxy card sharing across distant physical perimeter gates.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="dispatchGuardToGate05()" class="px-3.5 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                <span>Dispatch Guard to Gate 05</span>
+              </button>
+              <button onclick="downloadPassbackSecurityCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Security Incident Log (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Passback Metrics -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
+              <p class="text-xs font-bold text-red-800 uppercase tracking-wider">Impossible Travel Violations</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-red-800" id="passback-violations-count">2 Violations</span>
+              </div>
+              <p class="text-[11px] text-red-700 mt-1">&lt;180s Between Gate 01 & Gate 05</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Turnstile Locks</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900" id="passback-lockout-status">Turnstile 5B Locked</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Biometric Verification Required</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Perimeter Distance</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">1.8 Kilometers</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Minimum Walking Time: 18 mins</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Guard Dispatch Status</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-sm font-bold text-emerald-800" id="passback-guard-status">Guard Unit Dispatched</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">ETA: 90 Seconds</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-Time Gate Anomaly Table -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Real-Time Biometric Turnstile Telemetry & Velocity Anomalies</h4>
+              <span class="text-[11px] text-slate-500">Live RFID & Biometric Swipes flagging physical speed-of-travel impossibility</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Student Roll No</th>
+                  <th class="py-2.5 px-3">Candidate Name</th>
+                  <th class="py-2.5 px-3">First Swipe (Gate & Time)</th>
+                  <th class="py-2.5 px-3">Second Swipe (Gate & Time)</th>
+                  <th class="py-2.5 px-3 text-center">Elapsed Velocity</th>
+                  <th class="py-2.5 px-3 text-right">Security Protocol</th>
+                </tr>
+              </thead>
+              <tbody id="passback-telemetry-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+<section id="view-grievance" class="hidden space-y-6">
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
             STATUTORY COMPLIANCE ROI
@@ -2981,122 +3422,7 @@
         </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- VIEW 3: FACULTY WORKLOAD, RESEARCH OUTPUT & PBAS APPRAISAL          -->
-      <!-- =================================================================== -->
-      <section id="view-faculty" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
-            FACULTY PBAS & CAS ROI
-          </span>
-          <span class="leading-relaxed">
-            <strong>ROI: Eliminates 300+ hours of paper-based annual faculty PBAS appraisals</strong>, prevents burn-out by dynamically balancing 16-hr weekly teaching contact limits, and automates UGC Career Advancement Scheme (CAS) promotions.
-          </span>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 uppercase tracking-wider">
-                  Dean of Faculty Affairs • CAS Engine
-                </span>
-                <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Framework: UGC Career Advancement Regulations 2023</span>
-              </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Faculty Workload, Research Output & PBAS Appraisal Optimizer</h1>
-              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Live UGC API Score computation, extramural funded grant tracking, and 1-click workload delegation.
-              </p>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
-              <button onclick="openSubmitPbasModal()" class="px-3.5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                <span>Submit Annual PBAS</span>
-              </button>
-              <button onclick="downloadFacultyPbasCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export PBAS Matrix (.csv)</span>
-              </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                <span>Back to Radar</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Faculty KPI Grid -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Avg Weekly Teaching Load</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900" id="faculty-avg-load">15.8 hrs</span>
-              </div>
-              <p class="text-[11px] text-emerald-700 font-semibold mt-1">Target: 16.0 hrs/wk</p>
-            </div>
-            <div class="p-4 rounded-lg bg-indigo-50/70 border border-indigo-200">
-              <p class="text-xs font-bold text-indigo-800 uppercase tracking-wider">Total Scopus/SCI Papers</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-indigo-800">142</span>
-                <span class="text-xs font-semibold text-indigo-600">+28 this term</span>
-              </div>
-              <p class="text-[11px] text-indigo-700 mt-1">NAAC Criterion 3.2 Lead</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Sponsored Extramural Grants</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">₹1.84 Cr</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">SERB, DST & MeitY Projects</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">CAS Promotions Ready</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">2 Faculty</span>
-              </div>
-              <p class="text-[11px] text-emerald-600 font-semibold mt-1">UGC API Score >= 110 Met</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Faculty Roster & Workload Rebalancer -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Faculty Teaching Load Matrix & Annual PBAS Scores</h4>
-              <span class="text-[11px] text-slate-500">Live Workload Monitoring with 1-Click Surplus Teaching Delegation</span>
-            </div>
-            <button onclick="recalculateFacultyPbasAll()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs border border-slate-300 shadow-2xs flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-              <span>Recalculate UGC API Scores</span>
-            </button>
-          </div>
-
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-2.5 px-3">Faculty Member & Dept</th>
-                  <th class="py-2.5 px-3">Weekly Contact Hours</th>
-                  <th class="py-2.5 px-3 text-center">SCI Papers</th>
-                  <th class="py-2.5 px-3 text-center">Sponsored Grants</th>
-                  <th class="py-2.5 px-3 text-center">UGC API Score</th>
-                  <th class="py-2.5 px-3">CAS Appraisal Status</th>
-                  <th class="py-2.5 px-3 text-right">Dean Actions</th>
-                </tr>
-              </thead>
-              <tbody id="faculty-roster-body" class="divide-y divide-slate-100 font-sans">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- =================================================================== -->
-      <!-- VIEW 4: SCHOLARSHIPS & FINANCIAL AID DISBURSEMENT ENGINE            -->
-      <!-- =================================================================== -->
-      <section id="view-scholarships" class="hidden space-y-6">
+<section id="view-scholarships" class="hidden space-y-6">
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
             DBT & FINANCIAL RETENTION ROI
@@ -3199,113 +3525,7 @@
         </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- VIEW 5: SMART EXAM HALL SEATING & ANTI-CHEATING MATRIX OPTIMIZER    -->
-      <!-- =================================================================== -->
-      <section id="view-exams" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
-            EXAM INTEGRITY ROI
-          </span>
-          <span class="leading-relaxed">
-            <strong>ROI: Eliminates 100% of exam hall malpractice and seating collisions</strong> by executing bipartite graph cross-branch jumbling across 42 exam halls, ensuring no two adjacent students ever take the same subject exam.
-          </span>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
-                  Controller of Examinations • Seating Engine
-                </span>
-                <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Framework: Bipartite Anti-Cheating Graph Matrix</span>
-              </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Smart Exam Hall Seating & Anti-Cheating Matrix Optimizer</h1>
-              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Automated multi-department checkerboard interleaving, live desk layout inspection, and hall door notice exports.
-              </p>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
-              <button onclick="regenerateExamJumblingMatrix()" class="px-3.5 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                <span>Re-Calculate Jumbling Matrix</span>
-              </button>
-              <button onclick="downloadExamSeatingChartCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export Door Notice (.csv)</span>
-              </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                <span>Back to Radar</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Exam Metrics -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Exam Halls Active</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">42 Halls</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">1,260 Candidates Seated</p>
-            </div>
-            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
-              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Adjacent Branch Overlap</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-emerald-800">0.0% (ZERO)</span>
-              </div>
-              <p class="text-[11px] text-emerald-700 mt-1">100% Anti-Cheating Invariance</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Selected Inspection Hall</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-xl font-bold text-slate-900 font-mono">LH-101 (Auditorium)</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Capacity: 30 Desks (5x6 Grid)</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Invigilator Assigned</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-sm font-bold text-slate-900">Prof. Ramesh Sharma</span>
-              </div>
-              <p class="text-[11px] text-emerald-600 font-semibold mt-1">Biometric Check-In Confirmed</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Visual 30-Desk Classroom Seating Map -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Visual Examination Hall Layout (Hall LH-101)</h4>
-              <span class="text-[11px] text-slate-500">Checkerboard Bipartite Interleaving (Click any desk to inspect student admit details)</span>
-            </div>
-            <div class="flex items-center gap-3 text-xs">
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-blue-500"></span> CSE (CS502)</span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-purple-500"></span> ME (ME401)</span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-500"></span> ECE (EC301)</span>
-            </div>
-          </div>
-
-          <!-- Front Stage / Invigilator Podium -->
-          <div class="p-2.5 rounded-lg bg-slate-100 text-center text-xs font-mono font-bold text-slate-600 border border-dashed border-slate-300">
-            [ FRONT OF EXAMINATION HALL • INVIGILATOR PODIUM & BIOMETRIC GATEWAY ]
-          </div>
-
-          <!-- 30 Interactive Desks Grid (5 rows x 6 cols) -->
-          <div id="exam-desks-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            <!-- Injected via JS -->
-          </div>
-        </div>
-      </section>
-
-      <!-- =================================================================== -->
-      <!-- VIEW 6: CAMPUS ESG & GREEN AUDIT ENERGY TELEMETRY                   -->
-      <!-- =================================================================== -->
-      <section id="view-energy" class="hidden space-y-6">
+<section id="view-energy" class="hidden space-y-6">
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-teal-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-teal-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-teal-500/30 text-teal-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-teal-400/50 shrink-0">
             ESG & ENERGY SAVINGS ROI
@@ -3408,118 +3628,7 @@
         </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- VIEW 7: AUTOMATED COURSE REGISTRATION & PREREQUISITE ENGINE         -->
-      <!-- =================================================================== -->
-      <section id="view-registration" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
-            REGISTRATION & RETENTION ROI
-          </span>
-          <span class="leading-relaxed">
-            <strong>ROI: Eliminates 1,200+ manual drop/add helpdesk tickets every semester</strong>, verifies prerequisite chains automatically against prior term grade sheets, and guarantees 100% clash-free schedules before enrollment lock.
-          </span>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
-                  Office of Academic Affairs • CBCS Portal
-                </span>
-                <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Framework: AICTE Choice Based Credit System</span>
-              </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Automated Course Registration & Prerequisite Validation Cart</h1>
-              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Automated relational prerequisite chain checks, real-time credit limit validation, and 1-click approved schedule generation.
-              </p>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
-              <button onclick="lockAndSubmitCourseCart()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Lock & Submit Course Cart</span>
-              </button>
-              <button onclick="downloadMasterEnrollmentRosterCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export Master Roster (.csv)</span>
-              </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                <span>Back to Radar</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Dynamic Registration Cart & Credit Gauge -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            <div class="p-4 rounded-lg bg-blue-50/70 border border-blue-200">
-              <p class="text-xs font-bold text-blue-800 uppercase tracking-wider">Registered Credits</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-blue-800" id="reg-total-credits">14</span>
-                <span class="text-xs text-blue-700">/ 24 Max Credits</span>
-              </div>
-              <p class="text-[11px] text-blue-600 mt-1">CBCS Optimal Load: 16–22</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Prerequisite Clearances</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">4 / 4 Courses</span>
-              </div>
-              <p class="text-[11px] text-emerald-600 font-semibold mt-1">100% Dependency Tree Validated</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Timetable Slot Conflicts</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-emerald-600" id="reg-conflicts-count">0 CLASHES</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Verified with Academics Engine</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Student</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-sm font-bold text-slate-900">Aarav Sharma (CSE)</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Roll: 2024CS0142 • Sem 6</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Course Cart Table -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Elective & Core Course Catalog (Fall Semester 2026)</h4>
-              <span class="text-[11px] text-slate-500">Click Enroll or Drop to Recalculate Credit Load and Reserved Seats Live</span>
-            </div>
-          </div>
-
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-2.5 px-3">Course Code</th>
-                  <th class="py-2.5 px-3">Course Title</th>
-                  <th class="py-2.5 px-3 text-center">Credits</th>
-                  <th class="py-2.5 px-3">Prerequisite Requirement</th>
-                  <th class="py-2.5 px-3 text-center">Seats Remaining</th>
-                  <th class="py-2.5 px-3">Cart Status</th>
-                  <th class="py-2.5 px-3 text-right">Cart Action</th>
-                </tr>
-              </thead>
-              <tbody id="registration-cart-body" class="divide-y divide-slate-100 font-sans">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- =================================================================== -->
-      <!-- VIEW 8: ALUMNI MENTORSHIP & CAPSTONE ENDOWMENT NETWORK              -->
-      <!-- =================================================================== -->
-      <section id="view-alumni" class="hidden space-y-6">
+<section id="view-alumni" class="hidden space-y-6">
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
             ALUMNI ENDOWMENT ROI
@@ -3622,116 +3731,7 @@
         </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- VIEW 9: CENTRAL LAB ASSETS & CONSUMABLES TRACKER                    -->
-      <!-- =================================================================== -->
-      <section id="view-inventory" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
-            ASSET CUSTODY & AUDIT ROI
-          </span>
-          <span class="leading-relaxed">
-            <strong>ROI: Eliminates laboratory equipment pilferage and stock-out delays</strong>, tracks ₹1.24 Cr in central precision instruments with digital QR/RFID check-in, and automates reorder PO requisitions.
-          </span>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
-                  University Comptroller & Central Procurement Office
-                </span>
-                <span class="text-xs text-slate-400">|</span>
-                <span class="text-xs text-slate-500">Framework: RFID Central Equipment & Chemical Ledger</span>
-              </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Central Lab Consumables & High-Value Asset Tracker</h1>
-              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Workstation slot reservations, RFID/QR barcode audits, and automated low-stock vendor purchase order generation.
-              </p>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
-              <button onclick="dispatchLowStockPo()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Dispatch Low-Stock PO</span>
-              </button>
-              <button onclick="downloadLabAssetInventoryCsv()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-300 transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export Asset Register (.csv)</span>
-              </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                <span>Back to Radar</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Inventory Stats -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Capitalized Assets</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">₹1.24 Cr</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">42 Precision Lab Workstations</p>
-            </div>
-            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
-              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Stock Reorder Alert</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-amber-800" id="lab-reorder-alert">1 Consumable Low</span>
-              </div>
-              <p class="text-[11px] text-amber-700 mt-1">Silicon Wafers (4 packs remaining)</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">RFID Barcode Coverage</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">100%</span>
-              </div>
-              <p class="text-[11px] text-emerald-600 font-semibold mt-1">Audit-Ready for Comptroller</p>
-            </div>
-            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Calibration Compliance</p>
-              <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900">97.6%</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">NABL Accredited Calibration</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Lab Assets Inventory Table -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Central Laboratory High-Value Instruments & Consumable Registry</h4>
-              <span class="text-[11px] text-slate-500">Live Equipment Custody and 4-Hour Workstation Reservation Engine</span>
-            </div>
-          </div>
-
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-2.5 px-3">Asset Barcode ID</th>
-                  <th class="py-2.5 px-3">Instrument / Chemical Consumable</th>
-                  <th class="py-2.5 px-3">Lab Facility</th>
-                  <th class="py-2.5 px-3 text-center">Unit Valuation</th>
-                  <th class="py-2.5 px-3">Stock / Custody Status</th>
-                  <th class="py-2.5 px-3 text-right">Student / Lab Action</th>
-                </tr>
-              </thead>
-              <tbody id="inventory-roster-body" class="divide-y divide-slate-100 font-sans">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- =================================================================== -->
-      <!-- VIEW 10: INSTITUTIONAL ACCREDITATION & NAAC / NIRF COPILOT          -->
-      <!-- =================================================================== -->
-      <section id="view-accreditation" class="hidden space-y-6">
+<section id="view-accreditation" class="hidden space-y-6">
         <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-950 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
           <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
             NAAC A++ & NIRF COPILOT ROI
@@ -5792,7 +5792,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
     // ===================================================================
     // STAGE 6: SPA ROUTING & STATE MANAGEMENT ENGINE
     // ===================================================================
-    const SPA_VIEWS = ['radar', 'student360', 'academics', 'finance', 'hostel', 'access', 'chc', 'development', 'student-hub', 'placements', 'grievance', 'faculty', 'scholarships', 'exams', 'energy', 'registration', 'alumni', 'inventory', 'accreditation'];
+    const SPA_VIEWS = ['radar', 'student360', 'student-hub', 'isolation', 'development', 'autoresume', 'alumni', 'accreditation', 'deadline', 'nodues', 'academics', 'prge', 'passback', 'energy', 'grievance', 'finance', 'scholarships'];
 
     function navigateToView(view) {
       if (!SPA_VIEWS.includes(view)) view = 'radar';
@@ -5837,28 +5837,30 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
         renderStudent360();
       } else if (view === 'development') {
         renderNasdRoster();
-      } else if (view === 'hostel') {
-        renderHostelRosterTable();
-      } else if (view === 'placements') {
-        renderPlacementsRoster();
+      } else if (view === 'isolation') {
+        renderIsolationRoster();
+      } else if (view === 'prge') {
+        renderPrgeKitchenTable();
+      } else if (view === 'nodues') {
+        renderNoDuesMatrix();
+      } else if (view === 'deadline') {
+        renderDeadlineHeatmap();
+      } else if (view === 'passback') {
+        renderPassbackTelemetry();
       } else if (view === 'grievance') {
         renderGrievanceRoster();
-      } else if (view === 'faculty') {
-        renderFacultyRoster();
       } else if (view === 'scholarships') {
         renderScholarshipRoster();
-      } else if (view === 'exams') {
-        renderExamsGrid();
       } else if (view === 'energy') {
         renderEnergyTelemetry();
-      } else if (view === 'registration') {
-        renderRegistrationCart();
       } else if (view === 'alumni') {
         renderAlumniRoster();
-      } else if (view === 'inventory') {
-        renderInventoryRoster();
       } else if (view === 'accreditation') {
         renderAccreditationDashboard();
+      } else if (view === 'finance') {
+        // finance view active
+      } else if (view === 'academics') {
+        // academics view active
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -10233,6 +10235,355 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    }
+
+  
+    // ===================================================================
+    // NOVEL, NON-COMMODITY ENTERPRISE MODULES LOGIC (ABSENT IN DIGII CAMPUS)
+    // ===================================================================
+
+    // 1. STUDENT SOCIAL ISOLATION & WELL-BEING SENTINEL (WEEK 3 PROPOSAL)
+    let ISOLATION_RECORDS = [
+      { id: '2024CS0142', name: 'Aarav Sharma', dept: 'CSE', hostelDays: 16, swipes: 0, tier: 'HIGH ISOLATION RISK', contacted: false },
+      { id: '2024CS0219', name: 'Priya Nair', dept: 'CSE', hostelDays: 15, swipes: 1, tier: 'HIGH ISOLATION RISK', contacted: false },
+      { id: '2024ME0104', name: 'Kabir Mehta', dept: 'ME', hostelDays: 14, swipes: 0, tier: 'HIGH ISOLATION RISK', contacted: false },
+      { id: '2024EC0188', name: 'Sneha Rao', dept: 'ECE', hostelDays: 8, swipes: 4, tier: 'MODERATE DRAG', contacted: true },
+      { id: '2024CE0092', name: 'Varun Joshi', dept: 'Civil', hostelDays: 6, swipes: 6, tier: 'MODERATE DRAG', contacted: true }
+    ];
+
+    function renderIsolationRoster() {
+      const tbody = document.getElementById('isolation-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = ISOLATION_RECORDS.map(r => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-mono font-bold text-slate-800">${r.id}</td>
+          <td class="py-3 px-3">
+            <div class="font-bold text-slate-900">${r.name}</div>
+            <div class="text-[11px] text-slate-500">${r.dept} Engineering</div>
+          </td>
+          <td class="py-3 px-3 text-center font-mono font-bold ${r.hostelDays >= 14 ? 'text-red-700' : 'text-slate-800'}">${r.hostelDays} Consecutive Days</td>
+          <td class="py-3 px-3 text-center font-mono font-bold text-slate-600">${r.swipes} Check-Ins</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${r.tier.includes('HIGH') ? 'bg-red-100 text-red-800 border border-red-300' : 'bg-amber-100 text-amber-800 border border-amber-300'}">
+              ${r.tier}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right">
+            ${r.contacted ? '<span class="text-xs text-emerald-600 font-bold">Counselor Assigned</span>' : `<button onclick="dispatchCounselorTriage('${r.id}')" class="px-2.5 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white font-bold text-[11px] shadow-2xs">Assign Counselor</button>`}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function dispatchCounselorTriage(id) {
+      const r = ISOLATION_RECORDS.find(x => x.id === id);
+      if (r) {
+        r.contacted = true;
+        renderIsolationRoster();
+        showToast(`Confidential Counselor Assigned: Dr. Nalini Iyer dispatched for ${r.name} (${id}).`);
+      }
+    }
+
+    function dispatchCounselorBatch() {
+      ISOLATION_RECORDS.forEach(r => r.contacted = true);
+      renderIsolationRoster();
+      const highEl = document.getElementById('isolation-high-count');
+      const resEl = document.getElementById('isolation-resolved-count');
+      if (highEl) highEl.textContent = '0 Unaddressed';
+      if (resEl) resEl.textContent = '15 Active Interventions';
+      showToast("Counselor Outreach Dispatched for all flagged students across Aravali & Shivalik Hostels!");
+    }
+
+    function downloadIsolationReportCsv() {
+      let csv = "Student Roll No,Candidate Name,Department,Days Confined to Hostel,Campus Activity Swipes,Isolation Risk Tier,Counselor Outreach Status\n";
+      ISOLATION_RECORDS.forEach(r => {
+        csv += `"${r.id}","${r.name}","${r.dept}","${r.hostelDays}","${r.swipes}","${r.tier}","${r.contacted ? 'ASSIGNED' : 'PENDING'}"\n`;
+      });
+      downloadCsvFile(`Campus_Isolation_Wellbeing_Audit_${new Date().toISOString().split('T')[0]}.csv`, csv);
+      showToast("Psychological Well-Being Audit CSV exported!");
+    }
+
+
+    // 2. PREDICTIVE KITCHEN PREP & FOOD WASTE REDUCER (PRGE ENGINE)
+    let PRGE_KITCHEN = [
+      { item: 'Basmati Rice (Morning Dal-Chawal)', base: '420 kg', opt: '350 kg', cut: '-70 kg (-16.6%)', save: '₹4,200' },
+      { item: 'Toor Dal & Mixed Pulses', base: '180 kg', opt: '150 kg', cut: '-30 kg (-16.6%)', save: '₹3,600' },
+      { item: 'Fresh Cow Milk (Morning Tea/Coffee)', base: '320 Liters', opt: '265 Liters', cut: '-55 Liters (-17.1%)', save: '₹3,300' },
+      { item: 'Seasonal Vegetables (Subzi Prep)', base: '360 kg', opt: '300 kg', cut: '-60 kg (-16.6%)', save: '₹3,100' }
+    ];
+
+    function renderPrgeKitchenTable() {
+      const tbody = document.getElementById('prge-kitchen-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = PRGE_KITCHEN.map(k => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-bold text-slate-900">${k.item}</td>
+          <td class="py-3 px-3 text-center font-mono text-slate-600">${k.base}</td>
+          <td class="py-3 px-3 text-center font-mono font-bold text-emerald-700">${k.opt}</td>
+          <td class="py-3 px-3 text-center font-mono font-bold text-red-600">${k.cut}</td>
+          <td class="py-3 px-3 text-right font-mono font-bold text-slate-900">${k.save}</td>
+        </tr>
+      `).join('');
+    }
+
+    function executePrgeKitchenReduction() {
+      const dinersEl = document.getElementById('prge-diners-count');
+      const tagEl = document.getElementById('prge-savings-tag');
+      const btn = document.getElementById('btn-prge-optimize');
+
+      if (dinersEl) dinersEl.textContent = '3,420 (Cook Order Confirmed)';
+      if (tagEl) {
+        tagEl.textContent = '₹14,200 Daily Procurement Saved';
+        tagEl.className = 'text-[11px] text-emerald-700 font-bold';
+      }
+      if (btn) {
+        btn.textContent = 'Kitchen Prep Optimized (-630 Portions)';
+        btn.className = 'px-3.5 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold shadow-2xs';
+      }
+
+      showToast("PRGE Kitchen Prep Optimized! Deducted 630 night-leave diners, saving ₹14,200 today.");
+    }
+
+    function downloadPrgeVoucher() {
+      const voucher = "========================================================================\n" +
+        "DIGII CAMPUS - PREDICTIVE KITCHEN PROCUREMENT ADJUSTMENT VOUCHER (PRGE)\n" +
+        "========================================================================\n" +
+        `DATE: ${new Date().toLocaleDateString('en-GB')}\n` +
+        "DINING HALL: Central Mess (Aravali & Shivalik Hostel Wings)\n" +
+        "BASELINE DINERS: 4,050 Boarders\n" +
+        "AUTHENTICATED NIGHT LEAVES: -630 Students\n" +
+        "OPTIMIZED PREPARATION TARGET: 3,420 Portions\n" +
+        "DAILY RAW INGREDIENT SAVINGS: ₹14,200\n" +
+        "MONTHLY PROJECTED SAVINGS: ₹4,20,000\n\n" +
+        "COMMODITY ADJUSTMENTS:\n" +
+        " - Basmati Rice: 420 kg -> 350 kg (Cut: -70 kg)\n" +
+        " - Toor Dal & Pulses: 180 kg -> 150 kg (Cut: -30 kg)\n" +
+        " - Cow Milk: 320L -> 265L (Cut: -55L)\n" +
+        " - Seasonal Vegetables: 360 kg -> 300 kg (Cut: -60 kg)\n\n" +
+        "Verified by University Comptroller & Catering Superintendant\n" +
+        "========================================================================";
+
+      downloadTextFile(`PRGE_Kitchen_Savings_Voucher_${new Date().toISOString().split('T')[0]}.txt`, voucher);
+      showToast("Kitchen Food Waste Prevention Voucher downloaded!");
+    }
+
+
+    // 3. AUTONOMOUS MULTI-DEPARTMENT NO-DUES CLEARANCE ENGINE
+    let NODUES_DEPARTMENTS = [
+      { dept: 'Central Library', status: '0 Books Overdue • ₹0 Fine', cleared: true },
+      { dept: 'Aravali Hostel Block C', status: 'Key Returned • Room Inspected', cleared: true },
+      { dept: 'Sports & Gymnasium', status: 'Locker Surrendered • Equipment Returned', cleared: true },
+      { dept: 'Chemistry & Precision Labs', status: 'Glassware Breakage ₹0 • Lab No-Dues', cleared: true },
+      { dept: 'Computer Science HOD', status: 'B.Tech Capstone Project Submitted', cleared: true },
+      { dept: 'Finance & Tuition Accounts', status: '₹0 Pending Dues • Caution Deposit Intact', cleared: true },
+      { dept: 'TPO & Placement Cell', status: 'Offer Letter Logged • No Debarment', cleared: true },
+      { dept: 'Alumni Affairs Office', status: 'Alumni Lifetime Membership Registered', cleared: true }
+    ];
+
+    function renderNoDuesMatrix() {
+      const grid = document.getElementById('nodues-grid');
+      if (!grid) return;
+
+      grid.innerHTML = NODUES_DEPARTMENTS.map((d, i) => `
+        <div class="p-4 rounded-xl bg-slate-50 border ${d.cleared ? 'border-emerald-200' : 'border-red-200'} space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-900">${d.dept}</span>
+            <span class="w-5 h-5 rounded-full ${d.cleared ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'} flex items-center justify-center font-bold text-xs">✓</span>
+          </div>
+          <p class="text-[11px] text-slate-600">${d.status}</p>
+          <div class="pt-1">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${d.cleared ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-red-50 text-red-700 border border-red-200'}">
+              ${d.cleared ? 'CLEARED IN AUDIT' : 'PENDING'}
+            </span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function runInstantNoDuesAudit() {
+      NODUES_DEPARTMENTS.forEach(d => d.cleared = true);
+      renderNoDuesMatrix();
+      showToast("8-Department Relational Audit Completed in 1.2s: Zero dues across all databases!");
+    }
+
+    function downloadNoDuesCertificate() {
+      const cert = "========================================================================\n" +
+        "DIGII CAMPUS - OFFICIAL AUTONOMOUS DEGREE CLEARANCE CERTIFICATE\n" +
+        "========================================================================\n" +
+        `DATE OF ISSUANCE: ${new Date().toLocaleDateString('en-GB')}\n` +
+        "CANDIDATE: Aarav Sharma (Roll: 2024CS0142)\n" +
+        "DEGREE: Bachelor of Technology (Computer Science & Engineering)\n" +
+        "AUTONOMOUS AUDIT RUNTIME: 1.28 Seconds (Parallel Relational Query)\n" +
+        "CRYPTOGRAPHIC VERIFICATION TOKEN: 0x8F92E3108B7A492C\n\n" +
+        "CLEARED DEPARTMENTS:\n" +
+        " [✓] Central Library (0 Overdue Books, ₹0 Fine)\n" +
+        " [✓] Aravali Hostel Block C (Key Returned, Room Clearance Passed)\n" +
+        " [✓] Sports & Gym Complex (Equipment Surrendered)\n" +
+        " [✓] Precision Science Labs (No Breakage Charges)\n" +
+        " [✓] CSE Department Head (B.Tech Capstone Project Ingested)\n" +
+        " [✓] University Finance Accounts (All Semester Fees Reconciled)\n" +
+        " [✓] Training & Placement Cell (Corporate Clearance Confirmed)\n" +
+        " [✓] Alumni Affairs Office (Lifetime Association Enrolled)\n\n" +
+        "The candidate is certified eligible for Convocational Degree Conferment.\n" +
+        "Registrar & Controller of Examinations\n" +
+        "========================================================================";
+
+      downloadTextFile("Official_No_Dues_Degree_Clearance_2024CS0142.txt", cert);
+      showToast("Official Degree No-Dues Clearance Certificate downloaded!");
+    }
+
+
+    // 4. SMART ASSIGNMENT CONGESTION & DEADLINE BALANCER
+    let DEADLINE_DAYS = [
+      { day: 'Mon', count: 1, courses: 'CS601 (Cloud Quiz)', color: 'emerald' },
+      { day: 'Tue', count: 0, courses: 'No Submissions', color: 'slate' },
+      { day: 'Wed', count: 1, courses: 'EC301 (Lab Report)', color: 'emerald' },
+      { day: 'Thu', count: 0, courses: 'No Submissions', color: 'slate' },
+      { day: 'Fri', count: 4, courses: 'CS502, CS504, ME401, CS612', color: 'red' },
+      { day: 'Sat', count: 0, courses: 'Weekend Buffer', color: 'slate' },
+      { day: 'Sun', count: 0, courses: 'Weekend Buffer', color: 'slate' }
+    ];
+
+    function renderDeadlineHeatmap() {
+      const grid = document.getElementById('deadline-days-grid');
+      if (!grid) return;
+
+      grid.innerHTML = DEADLINE_DAYS.map(d => {
+        const bg = d.color === 'red' ? 'bg-red-50 border-red-300 text-red-900' : (d.color === 'emerald' ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-slate-50 border-slate-200 text-slate-700');
+        const badge = d.color === 'red' ? 'bg-red-200 text-red-900' : (d.color === 'emerald' ? 'bg-emerald-200 text-emerald-900' : 'bg-slate-200 text-slate-600');
+
+        return `
+          <div class="p-3 rounded-xl border ${bg} text-center space-y-2">
+            <span class="text-xs font-mono font-bold uppercase">${d.day}</span>
+            <div class="text-2xl font-bold">${d.count}</div>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${badge}">${d.count === 0 ? 'Clear' : `${d.count} Due`}</span>
+            <p class="text-[10px] text-slate-500 truncate">${d.courses}</p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function rebalanceAssignmentDeadlines() {
+      // Shift 3 Friday deadlines to Monday & Tuesday
+      DEADLINE_DAYS[4].count = 1;
+      DEADLINE_DAYS[4].courses = 'CS502 Core Midterm';
+      DEADLINE_DAYS[4].color = 'emerald';
+
+      DEADLINE_DAYS[0].count = 2;
+      DEADLINE_DAYS[0].courses = 'CS601 Quiz + CS504 Shifted';
+      DEADLINE_DAYS[0].color = 'emerald';
+
+      DEADLINE_DAYS[1].count = 2;
+      DEADLINE_DAYS[1].courses = 'ME401 + CS612 Shifted';
+      DEADLINE_DAYS[1].color = 'emerald';
+
+      renderDeadlineHeatmap();
+
+      const peakEl = document.getElementById('deadline-peak-count');
+      const scoreEl = document.getElementById('deadline-burnout-score');
+      const btn = document.getElementById('btn-rebalance-deadlines');
+
+      if (peakEl) peakEl.textContent = '1 Submission (Balanced)';
+      if (scoreEl) scoreEl.textContent = '18% (Optimal Cognitive Load)';
+      if (btn) {
+        btn.textContent = 'Deadlines Rebalanced & Broadcasted';
+        btn.className = 'px-3.5 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold shadow-2xs';
+      }
+
+      showToast("AI Deadline Balancer Executed: Shifted 3 Friday assignments to next Monday/Tuesday, slashing burnout by 68%!");
+    }
+
+    function downloadDeadlineScheduleCsv() {
+      let csv = "Day of Week,Assignments Scheduled,Course Codes,Cognitive Load Status\n";
+      DEADLINE_DAYS.forEach(d => {
+        csv += `"${d.day}","${d.count}","${d.courses}","${d.color === 'red' ? 'OVERLOAD_BURNOUT' : 'OPTIMAL_BALANCED'}"\n`;
+      });
+      downloadCsvFile(`Rebalanced_Academic_Deadlines_${new Date().toISOString().split('T')[0]}.csv`, csv);
+      showToast("Rebalanced assignment schedule CSV exported!");
+    }
+
+
+    // 5. TAMPER-PROOF CRYPTOGRAPHIC AUTO-RESUME GENERATOR
+    function downloadAutoResumeDocument() {
+      const cv = "========================================================================\n" +
+        "DIGII CAMPUS - OFFICIAL TAMPER-PROOF INSTITUTIONALLY AUTHENTICATED CV\n" +
+        "========================================================================\n" +
+        "CANDIDATE: Aarav Sharma\n" +
+        "ROLL NUMBER: 2024CS0142 | B.Tech Computer Science & Engineering\n" +
+        "INSTITUTION: Autonomous Engineering Institute (AY 2026-27)\n" +
+        "AUTHENTICATION HASH: 0x9B10E494A0182CDE4 (Tamper-Sealed by University Controller)\n\n" +
+        "1. VERIFIED ACADEMIC CREDENTIALS (Source: MySQL ams_marks_sheet)\n" +
+        " - Cumulative GPA: 8.42 / 10.00 (Class Rank: Top 5%)\n" +
+        " - Active Backlogs: 0 | Historical Backlogs: 0\n" +
+        " - Core Subjects: Distributed Cloud Systems (A+), Operating Systems (A+), Algorithms (A)\n\n" +
+        "2. OUTCOME-BASED EDUCATION (OBE) RUBRIC MASTERY (Source: MySQL obe_eval)\n" +
+        " - Complex Problem Solving: Bloom's Level 4.8 / 5.0 (Highest Proficiency)\n" +
+        " - System Architecture & Scalability: Verified in 14 Evaluated Assignments\n\n" +
+        "3. CO-CURRICULAR & LEADERSHIP (Source: MySQL clubs_events & nasd_ledger)\n" +
+        " - President, ACM Student Chapter (AY 2025-26)\n" +
+        " - Lead Organizer: 42-Hour National Hackathon (850 Attendees, 42 Colleges)\n" +
+        " - 120 Hours Verified Community Tech Volunteering (NAAC Criterion 5.3)\n\n" +
+        "Corporate recruiters can verify this CV at: https://verify.digiicampus.com/cv/2024CS0142\n" +
+        "========================================================================";
+
+      downloadTextFile("Verified_Auto_Resume_Aarav_Sharma_2024CS0142.txt", cv);
+      showToast("Institutionally verified auto-resume downloaded!");
+    }
+
+    function downloadVerifiedCandidatesCsv() {
+      let csv = "Roll Number,Candidate Name,Department,Verified CGPA,OBE Competency Score,Club Leadership,Fraud Verification Status\n";
+      csv += '"2024CS0142","Aarav Sharma","CSE","8.42","Level 4.8","President ACM","100%_MYSQL_VERIFIED"\n';
+      csv += '"2024CS0198","Rohan Varma","CSE","7.80","Level 4.2","Lead GDSC","100%_MYSQL_VERIFIED"\n';
+      csv += '"2024EC0188","Sneha Rao","ECE","8.65","Level 4.9","Vice President IEEE","100%_MYSQL_VERIFIED"\n';
+      downloadCsvFile(`Verified_Recruiter_Roster_${new Date().toISOString().split('T')[0]}.csv`, csv);
+      showToast("Recruiter Verified Roster CSV exported!");
+    }
+
+
+    // 6. TURNSTILE ANTI-PASSBACK & IMPOSSIBLE TRAVEL SENTINEL
+    let PASSBACK_LOGS = [
+      { id: '2024ME0104', name: 'Kabir Mehta', swipe1: 'Gate 01 (North Campus) - 14:10:12', swipe2: 'Gate 05 (South Gate) - 14:11:40', elapsed: '88 Seconds (1.8 km distance)', violation: 'IMPOSSIBLE VELOCITY (>70 km/h)', locked: true },
+      { id: '2024CE0092', name: 'Varun Joshi', swipe1: 'Gate 02 (Auditorium) - 14:15:20', swipe2: 'Gate 04 (Hostel C) - 14:17:05', elapsed: '105 Seconds (1.2 km distance)', violation: 'IMPOSSIBLE VELOCITY (>45 km/h)', locked: true },
+      { id: '2024CS0142', name: 'Aarav Sharma', swipe1: 'Gate 01 (North Campus) - 09:12:00', swipe2: 'Library Turnstile - 09:35:10', elapsed: '23 Minutes (0.6 km distance)', violation: 'NORMAL WALKING PACE', locked: false }
+    ];
+
+    function renderPassbackTelemetry() {
+      const tbody = document.getElementById('passback-telemetry-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = PASSBACK_LOGS.map(l => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-mono font-bold text-slate-800">${l.id}</td>
+          <td class="py-3 px-3 font-bold text-slate-900">${l.name}</td>
+          <td class="py-3 px-3 text-slate-600 text-xs">${l.swipe1}</td>
+          <td class="py-3 px-3 text-slate-600 text-xs">${l.swipe2}</td>
+          <td class="py-3 px-3 text-center">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${l.locked ? 'bg-red-100 text-red-800 border border-red-300' : 'bg-emerald-100 text-emerald-800'}">
+              ${l.elapsed}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right">
+            ${l.locked ? '<span class="px-2 py-1 rounded bg-red-600 text-white font-bold text-[10px]">Turnstile Locked & Guard Dispatched</span>' : '<span class="text-xs text-slate-400 font-medium">Legitimate</span>'}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function dispatchGuardToGate05() {
+      const statusEl = document.getElementById('passback-guard-status');
+      if (statusEl) statusEl.textContent = 'Guard On Scene at Gate 05';
+      showToast("Security Guard Dispatched to Gate 05! Proxy card confiscated and logged.");
+    }
+
+    function downloadPassbackSecurityCsv() {
+      let csv = "Student Roll No,Candidate Name,First Swipe,Second Swipe,Elapsed Time,Violation Status,Security Lock\n";
+      PASSBACK_LOGS.forEach(l => {
+        csv += `"${l.id}","${l.name}","${l.swipe1}","${l.swipe2}","${l.elapsed}","${l.violation}","${l.locked ? 'LOCKED' : 'CLEARED'}"\n`;
+      });
+      downloadCsvFile(`Turnstile_Security_Passback_Audit_${new Date().toISOString().split('T')[0]}.csv`, csv);
+      showToast("Turnstile Security Anomaly Log exported!");
     }
 
   </script>
