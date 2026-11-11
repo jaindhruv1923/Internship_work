@@ -28,9 +28,10 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 | **02:00 – 03:00** | **The "PM ROI Mode" Flex** | Flipping the top header switch to showcase quantitative impact. |
 | **03:00 – 06:00** | **Predictive Student Dropout Radar** | Cross-module compound decay model protecting ₹1.84 Cr tuition. |
 | **06:00 – 09:00** | **Student 360 & Action Center** | 15-second investigation replacing 5 tabs; live 1-click dispatch. |
-| **09:00 – 11:30** | **Automated Fee Reconciliation** | Inbound bank CSV matcher; 842 records matched instantly. |
-| **11:30 – 13:30** | **Smart Timetable Clash Resolver** | Real-time professor conflict detection; 1-click auto-resolve. |
-| **13:30 – 15:00** | **The Transition Ask** | Closing pitch for formal role transition to Product Intern. |
+| **09:00 – 11:00** | **Automated Fee Reconciliation** | Inbound bank CSV matcher; 842 records matched instantly. |
+| **11:00 – 12:30** | **Smart Timetable Clash Resolver** | Real-time professor conflict detection; 1-click auto-resolve. |
+| **12:30 – 14:00** | **10 Win-Win Student Innovations** | B2B2C Product Thinking: Student Delight meets University ROI. |
+| **14:00 – 15:00** | **The Transition Ask** | Closing pitch for formal role transition to Product Intern. |
 
 ---
 
@@ -102,7 +103,29 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 
 ---
 
-### Segment 7: The Formal Ask (13:30 – 15:00)
+### Segment 7: The B2B2C Student Experience Hub — 10 Win-Win Innovations (12:30 – 14:00)
+* **What to Show:** Click on **Student Hub** in the left sidebar or the "View 10 Innovations" button on the top banner.
+* **What to Say:**
+  > *"Suraj, Saksham: While building the administrative workflows, I realized an essential SaaS truth: **Digii Campus is fundamentally a B2B2C company**. The university purchases the contract, but the students and faculty live inside the software every day. If students hate the app, adoption plummets; if students love the app, universities will never churn.*
+  > 
+  > *I designed and built the **Student Experience Hub: 10 Win-Win Innovations**, proving that we can bridge the gap between administrative compliance and end-user joy:*
+  > 
+  > 1. **Zero-Friction Digital No-Dues Clearance:** *(Click 'Auto-Verify IT & Issue Certificate')* — *Watch this: instead of 14 days running between 4 offices, 1 click reconciles Library, Hostel, Finance, and IT Lab, generating an official cryptographically verified clearance certificate instantly.*
+  > 2. **Smart Assignment Deadline Balancer:** *(Click 'Rebalance Deadline to Monday')* — *The system detects a 70% batch overload on Friday and suggests shifting the OS project to Monday, slashing burnout by 68%.*
+  > 3. **Verified Digital Auto-Resume Generator:** *(Click 'Export Verified Digital Resume')* — *Instead of students faking resumes, the ERP auto-generates a placement-ready certified digital credential directly from MySQL.*
+  > 4. **Unified Geo-Tagged Maintenance Ticketing:** *(Click '+ Log Quick Room Ticket')* — *Students snap a picture of a broken fan or leaking tap; the Facilities team receives a clustered room dispatch with an instant technician ETA.*
+  > 5. **Seamless Office Hours Booking:** *(Click 'Book 1-on-1 Slot')* — *Instantly reserves a 15-minute slot with Prof. Sharma and exports a standard `.ics` calendar invite.*
+  > 6. **Automated Medical Leave & CHC Sync:** *(Click 'Sync Medical Leave')* — *Verified health center visits automatically credit 6 lecture hours into `ams_attendance`, eliminating paper doctor slips.*
+  > 7. **AI Elective Matchmaker:** *(Click 'Pre-Register Elective')* — *Matches students with electives based on their past grade strengths, giving HODs early predictive demand counts.*
+  > 8. **Dynamic Campus Marketplace:** *(Click '+ Post / Claim Listing')* — *An internal, verified peer trading desk for textbooks, drafting kits, and lost-and-found items.*
+  > 9. **Universal NFC/QR Campus Wallet:** *(Click 'Mess ₹60' or 'Gate')* — *Simulates a phone-only campus life, deducting meal expenses and logging turnstiles with zero plastic cards.*
+  > 10. **Peer Micro-Tutoring Network:** *(Click 'Accept Tutoring Bounty')* — *Top scorers earn 50 Campus Credits helping batchmates in calculus, boosting passing rates organically.*
+  > 
+  > *This demonstrates true Product Management thinking: aligning student delight directly with university ROI."*
+
+---
+
+### Segment 8: The Formal Ask (14:00 – 15:00)
 * **What to Say:**
   > *"Suraj, Saksham: I love the deep data work I've done here. But as this prototype demonstrates, my greatest passion and impact lie at the intersection of **technical database depth, product architecture, and enterprise customer value**.*
   > 

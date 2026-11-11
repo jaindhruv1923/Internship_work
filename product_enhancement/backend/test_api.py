@@ -66,5 +66,28 @@ class TestDigiiCampusAPI(unittest.TestCase):
         self.assertIn("b2b2c_features", APP_STATE)
         self.assertEqual(len(APP_STATE["b2b2c_features"]), 10)
 
+    def test_html_onclick_handlers_integrity(self):
+        import re
+        html_path = os.path.join(SCRIPT_DIR, '..', 'index.html')
+        with open(html_path, 'r', encoding='utf-8') as f:
+            html = f.read()
+
+        raw_onclicks = re.findall(r'onclick=["\']([^"\']+)["\']', html)
+        called_funcs = set()
+        for raw in raw_onclicks:
+            m = re.match(r'([a-zA-Z0-9_]+)\s*\(', raw.strip())
+            if m:
+                called_funcs.add(m.group(1))
+
+        script_match = re.search(r'<script>(.*?)</script>', html, re.DOTALL)
+        self.assertIsNotNone(script_match, "index.html should have a script block")
+        script_text = script_match.group(1)
+        defined_funcs = set(re.findall(r'function\s+([a-zA-Z0-9_]+)\s*\(', script_text))
+        defined_funcs.update(re.findall(r'window\.([a-zA-Z0-9_]+)\s*=', script_text))
+        defined_funcs.update(re.findall(r'const\s+([a-zA-Z0-9_]+)\s*=\s*\(', script_text))
+
+        missing = [fn for fn in sorted(called_funcs) if fn not in defined_funcs and not fn.startswith('console') and not fn.startswith('alert')]
+        self.assertEqual(len(missing), 0, f"Missing onclick handlers in index.html: {missing}")
+
 if __name__ == "__main__":
     unittest.main()
