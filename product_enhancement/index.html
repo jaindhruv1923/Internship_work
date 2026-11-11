@@ -46,6 +46,17 @@
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
+        /* Stage 9: PM ROI Mode Floating Overlays */
+    .roi-overlay {
+      display: none;
+      animation: spaFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    body.roi-mode-active .roi-overlay {
+      display: flex !important;
+    }
+    .roi-badge-glow {
+      box-shadow: 0 0 15px rgba(129, 140, 248, 0.4);
+    }
     .spa-fade-in {
       animation: spaFadeIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -166,6 +177,21 @@
           <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-600 rounded-full"></span>
         </button>
 
+        <!-- STAGE 9: PM ROI Mode Toggle -->
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50/80 hover:bg-indigo-100/80 border border-indigo-200 transition-colors shadow-2xs">
+          <div class="flex items-center gap-2 cursor-pointer select-none" onclick="togglePmRoiMode()" title="Toggle PM Business Impact Overlays">
+            <span class="text-xs font-bold text-indigo-950 tracking-tight flex items-center gap-1.5">
+              <span>🚀</span>
+              <span class="hidden sm:inline">PM ROI Mode</span>
+              <span class="sm:hidden">ROI</span>
+            </span>
+            <button id="roi-toggle-btn" type="button" class="relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out focus:outline-hidden" role="switch" aria-checked="false">
+              <span id="roi-toggle-circle" aria-hidden="true" class="pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+            </button>
+            <span id="roi-toggle-status" class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-200 text-slate-600 font-mono">OFF</span>
+          </div>
+        </div>
+
         <!-- User Profile Pill -->
         <div class="flex items-center gap-2 pl-3 border-l border-slate-200">
           <div class="w-8 h-8 rounded-full bg-blue-100 border border-blue-300 flex items-center justify-center font-bold text-xs text-blue-800">
@@ -187,6 +213,16 @@
       <!-- =================================================================== -->
       <section id="view-radar" class="space-y-6">
         
+        <!-- STAGE 9: PM ROI MODE OVERLAY - RADAR -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+            ⚡ Executive ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Protects ₹1.84 Cr in at-risk tuition</strong> by converting multi-table decay signals (attendance slump, late curfew, overdue installment) into an automated 60-day early intervention window before student attrition.
+          </span>
+        </div>
+
         <!-- Executive KPI Banner -->
         <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -309,6 +345,16 @@
       <!-- VIEW 2: THE STUDENT 360 UNIFIED TIMELINE (STAGE 4 & 5)               -->
       <!-- =================================================================== -->
       <section id="view-student360" class="hidden space-y-6">
+
+        <!-- STAGE 9: PM ROI MODE OVERLAY - STUDENT 360 -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+            ⚡ UX Efficiency ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Reduces cross-module investigation time from 18 mins across 5 legacy tabs to &lt;15 seconds</strong> by combining AMS, Fee Dues, Turnstile Gates, and Hostel Incident logs into a single real-time timeline.
+          </span>
+        </div>
 
         <!-- Top Navigation Back Action -->
         <div class="flex items-center justify-between">
@@ -533,6 +579,16 @@
       <!-- VIEW 3: ACADEMICS & LMS MODULE (STAGE 6 PLACEHOLDER / STAGE 8 READY)-->
       <!-- =================================================================== -->
       <section id="view-academics" class="hidden space-y-6">
+
+        <!-- STAGE 9: PM ROI MODE OVERLAY - ACADEMICS -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-blue-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+            ⚡ Engineering & Academic ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates 100% of scheduling support tickets to the engineering backend</strong> and saves 80+ hours of manual HOD planning per semester via automated multi-entity room and professor constraint resolution.
+          </span>
+        </div>
         <!-- Module Header & Breadcrumb -->
         <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -1035,6 +1091,17 @@
       <!-- VIEW 4: FINANCE & FEES MODULE (STAGE 6 PLACEHOLDER / STAGE 7 READY) -->
       <!-- =================================================================== -->
       <section id="view-finance" class="hidden space-y-6">
+
+        <!-- STAGE 9: PM ROI MODE OVERLAY - FINANCE -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+            ⚡ Financial Operations ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Saves 40 hours/week of manual accounting labor</strong> and eliminates erroneous student exam debarments by instant bank settlement fuzzy matching against 4,850 student ledger records.
+          </span>
+        </div>
+
         <!-- Module Header & Breadcrumb -->
         <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -2121,15 +2188,22 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
 
     // Initialize Application
     document.addEventListener('DOMContentLoaded', () => {
+      // Pre-seed with embedded data so UI is instantly populated without waiting
+      state.mockData = getFallbackData();
+
       fetch('data/students_mock.json')
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
         .then(data => {
-          state.mockData = data;
+          if (data && data.students && data.students.length > 0) {
+            state.mockData = data;
+          }
           initApp();
         })
         .catch(err => {
-          console.error("Could not fetch mock data file, using embedded fallback:", err);
-          state.mockData = getFallbackData();
+          console.log("Using embedded local database replica:", err);
           initApp();
         });
     });
@@ -2414,53 +2488,88 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
     // ===================================================================
     // STAGE 4: STUDENT 360 RENDERING
     // ===================================================================
+    // Helper for safe DOM text setting
+    function safeSetText(id, text) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = text;
+      return el;
+    }
+
     function renderStudent360() {
       const s = state.activeStudent;
       if (!s) return;
 
-      document.getElementById('nav-student360-tag').textContent = s.first_name;
-      document.getElementById('breadcrumb-student-name').textContent = `${s.first_name} ${s.last_name}`;
-      document.getElementById('action-student-name').textContent = `${s.first_name} ${s.last_name} (${s.enrollment_no})`;
+      safeSetText('nav-student360-tag', s.first_name);
+      safeSetText('active-student-crumb', `${s.enrollment_no} (${s.first_name} ${s.last_name})`);
+      safeSetText('action-student-name', `${s.first_name} ${s.last_name} (${s.enrollment_no})`);
 
-      document.getElementById('s360-avatar').src = s.avatar_url;
-      document.getElementById('s360-name').textContent = `${s.first_name} ${s.last_name}`;
-      document.getElementById('s360-meta').textContent = `${s.program} • Semester ${s.current_semester} (${s.section}) • ${s.department}`;
-      document.getElementById('s360-score-badge').textContent = `${s.risk_profile.score}/100`;
-
-      const scoreEl = document.getElementById('s360-score-badge');
-      if (s.risk_profile.tier === 'HIGH') {
-        scoreEl.className = "px-3 py-1 rounded-lg text-xs font-mono font-bold bg-red-100 text-red-800 border border-red-300";
-      } else if (s.risk_profile.tier === 'MEDIUM') {
-        scoreEl.className = "px-3 py-1 rounded-lg text-xs font-mono font-bold bg-amber-100 text-amber-800 border border-amber-300";
-      } else {
-        scoreEl.className = "px-3 py-1 rounded-lg text-xs font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
+      // Avatar with robust fallback
+      const avatarEl = document.getElementById('s360-avatar');
+      if (avatarEl) {
+        avatarEl.src = s.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(s.first_name + ' ' + s.last_name)}&background=1E40AF&color=fff`;
+        avatarEl.onerror = function() {
+          this.onerror = null;
+          this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(s.first_name + ' ' + s.last_name)}&background=1E40AF&color=fff`;
+        };
       }
 
-      document.getElementById('s360-dropout-prob').textContent = `Dropout Probability: ${s.risk_profile.dropout_probability_pct}%`;
-      document.getElementById('s360-mentor').textContent = s.mentor_faculty;
-      document.getElementById('s360-guardian-phone').textContent = s.phone;
-      document.getElementById('s360-room').textContent = `${s.accommodation_type} • ${s.room_no || 'Day Scholar'}`;
+      safeSetText('s360-name', `${s.first_name} ${s.last_name}`);
+      safeSetText('s360-program', `${s.program} • Semester ${s.current_semester} (${s.section}) • ${s.department}`);
 
-      document.getElementById('s360-threat-desc').textContent = s.risk_profile.summary;
-      document.getElementById('s360-threat-action').textContent = `Recommended Intervention: ${s.risk_profile.recommended_action}`;
+      // Risk score & Tier Badge
+      const riskBadgeEl = document.getElementById('s360-risk-badge');
+      if (riskBadgeEl) {
+        riskBadgeEl.textContent = `${s.risk_profile.score}/100 • ${s.risk_profile.tier} RISK`;
+        if (s.risk_profile.tier === 'HIGH') {
+          riskBadgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-300";
+        } else if (s.risk_profile.tier === 'MEDIUM') {
+          riskBadgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300";
+        } else {
+          riskBadgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
+        }
+      }
 
+      safeSetText('s360-prob-pill', `Dropout Prob: ${s.risk_profile.dropout_probability_pct}%`);
+      safeSetText('s360-enrollment', s.enrollment_no);
+      safeSetText('s360-ukid', s.ukid);
+      safeSetText('s360-section', s.section);
+      safeSetText('s360-mentor', s.mentor_faculty);
+
+      // Threat description & action
+      safeSetText('s360-threat-desc', s.risk_profile.summary);
+      safeSetText('s360-threat-action', `Recommended Intervention: ${s.risk_profile.recommended_action}`);
+
+      // 1. Academics Module
       const attValEl = document.getElementById('s360-att-val');
-      attValEl.textContent = `${s.academics.overall_attendance_pct}%`;
-      attValEl.className = `text-xl font-bold ${s.academics.overall_attendance_pct < 65 ? 'text-red-600' : 'text-slate-900'}`;
-      document.getElementById('s360-cgpa-val').textContent = s.academics.overall_cgpa.toFixed(2);
-      document.getElementById('s360-absent-strip').textContent = `${s.academics.consecutive_absent_days} consecutive absent days logged`;
+      if (attValEl) {
+        attValEl.textContent = `${s.academics.overall_attendance_pct}%`;
+        attValEl.className = `text-xl font-bold ${s.academics.overall_attendance_pct < 65 ? 'text-red-600' : 'text-slate-900'}`;
+      }
+      safeSetText('s360-cgpa-val', s.academics.overall_cgpa.toFixed(2));
+      safeSetText('s360-absent-strip', `${s.academics.consecutive_absent_days} consecutive absent days logged`);
 
+      // 2. Finance Module
       const dueEl = document.getElementById('s360-overdue-val');
-      dueEl.textContent = `₹${s.finance.amount_overdue.toLocaleString('en-IN')}`;
-      dueEl.className = `text-xl font-bold ${s.finance.amount_overdue > 0 ? 'text-amber-700' : 'text-emerald-700'}`;
-      document.getElementById('s360-overdue-days').textContent = s.finance.amount_overdue > 0 ? `${s.finance.overdue_days} days overdue (Notice Sent)` : 'All installments cleared';
-      document.getElementById('s360-fee-status-strip').textContent = `Plan: ${s.finance.fee_plan}`;
+      if (dueEl) {
+        dueEl.textContent = `₹${s.finance.amount_overdue.toLocaleString('en-IN')}`;
+        dueEl.className = `text-xl font-bold ${s.finance.amount_overdue > 0 ? 'text-amber-700' : 'text-emerald-700'}`;
+      }
+      safeSetText('s360-overdue-days', s.finance.amount_overdue > 0 ? `${s.finance.overdue_days} days overdue (Notice Sent)` : 'All installments cleared');
+      safeSetText('s360-fee-status-strip', `Plan: ${s.finance.fee_plan}`);
 
-      document.getElementById('s360-punches-val').textContent = s.access_gate_telemetry.monthly_punches;
+      // 3. Gate Telemetry Module
+      safeSetText('s360-punches-val', s.access_gate_telemetry.monthly_punches);
       const curfewEl = document.getElementById('s360-curfew-val');
-      curfewEl.textContent = s.access_gate_telemetry.curfew_breaches_30d;
-      curfewEl.className = `text-base font-bold ${s.access_gate_telemetry.curfew_breaches_30d > 0 ? 'text-red-600' : 'text-slate-900'}`;
-      document.getElementById('s360-gate-status-strip').textContent = `Last seen: ${s.access_gate_telemetry.last_seen_gate}`;
+      if (curfewEl) {
+        curfewEl.textContent = s.access_gate_telemetry.curfew_breaches_30d;
+        curfewEl.className = `text-base font-bold ${s.access_gate_telemetry.curfew_breaches_30d > 0 ? 'text-red-600' : 'text-slate-900'}`;
+      }
+      safeSetText('s360-gate-status-strip', `Last seen: ${s.access_gate_telemetry.last_seen_gate}`);
+
+      // 4. Hostel & CHC Module
+      safeSetText('s360-hostel-val', `${s.accommodation_type} • ${s.hostel_block || 'Block B'}`);
+      safeSetText('s360-room-val', `Room: ${s.room_no || 'Day Scholar'}`);
+      safeSetText('s360-events-count-strip', `${s.timeline_events.length} Historical Logs Analyzed`);
 
       renderStudentTimeline();
       renderAuditTable();
@@ -2895,12 +3004,11 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       }
     });
 
-    // Embedded Fallback Data
+    // Embedded Fallback Data with full 8 student records
+    const EMBEDDED_MOCK_DATA = {"system_metadata": {"organization": "Digii Campus (CollPoll)", "portal_version": "BI Portal 2.0 - Proactive Retention System", "academic_year": "2026-2027", "current_semester": "Odd Semester (Fall 2026)", "database_source_replica": "collpoll_10gb_bi_dump", "last_batch_sync": "2026-11-11T04:00:00Z", "total_active_students": 4850, "global_institution_health_score": 78.4, "students_in_red_zone_count": 142, "students_in_amber_zone_count": 386, "students_healthy_count": 4322}, "students": [{"ukid": 10842, "enrollment_no": "2024CS0142", "first_name": "Aarav", "last_name": "Sharma", "email": "aarav.sharma24@digiicampus.edu", "phone": "+91 98765 43210", "gender": "Male", "program": "B.Tech Computer Science & Engineering", "department": "Department of Computer Science", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "CS-B", "mentor_faculty": "Dr. Rameshwar Sundaram (Prof. CSE)", "accommodation_type": "HOSTELLER", "hostel_block": "Aravali Boys Hostel - Block C", "room_no": "C-314", "avatar_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 92, "delta_30d": "+28", "primary_threat": "Multi-Module Compound Risk: Fee Default + Severe Attendance Drop + Disciplinary Reprimand", "summary": "Attendance dropped from 84% to 58% in 3 weeks. \u20b91,25,000 fee installment overdue by 42 days. Missed midterm exam & 4 hostel curfew violations.", "dropout_probability_pct": 89.5, "recommended_action": "Immediate HOD Intervention & Parent Guardian Summon"}, "academics": {"overall_cgpa": 6.12, "previous_sgpa": 7.3, "current_semester_estimated_sgpa": 4.85, "overall_attendance_pct": 58.2, "attendance_threshold_met": false, "consecutive_absent_days": 8, "courses": [{"code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 54, "internal_score": "11/30", "status": "AT_RISK"}, {"code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 51, "internal_score": "08/30", "status": "AT_RISK"}, {"code": "CS503", "name": "Database Management Systems", "attendance_pct": 68, "internal_score": "18/30", "status": "MARGINAL"}, {"code": "CS504", "name": "Theory of Computation", "attendance_pct": 60, "internal_score": "14/30", "status": "AT_RISK"}], "missed_assessments": ["CS502 Mid-Term Practical (04 Nov 2026)", "CS501 Algo Surprise Quiz 2 (28 Oct 2026)"]}, "finance": {"total_annual_fee": 250000, "amount_paid": 125000, "amount_overdue": 125000, "overdue_days": 42, "fee_plan": "Semester Installment Plan (50-50)", "last_payment_date": "2026-06-18", "status": "OVERDUE_DEFAULT_NOTICE", "notices_sent": 3, "challan_status": "UNPAID"}, "access_gate_telemetry": {"monthly_punches": 38, "normal_average_punches": 115, "late_entries_30d": 4, "curfew_breaches_30d": 3, "missing_exit_logs": 2, "last_seen_gate": "Gate 02 - East Turnstile", "last_seen_timestamp": "2026-11-10T22:45:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10842-01", "timestamp": "2026-11-10T22:45:00", "module": "ACCESS_GATE", "severity": "CRITICAL", "title": "Curfew Breach & Late Entry Logged", "description": "Entered campus at Gate 02 after the 10:00 PM curfew without prior late pass approval.", "badge": "Gate Management", "icon": "gate_exit", "actor": "Automated Turnstile #04"}, {"id": "EVT-10842-02", "timestamp": "2026-11-08T11:30:00", "module": "ACADEMICS", "severity": "CRITICAL", "title": "Debarred Notice Issued: Attendance Below 60%", "description": "CS Department issued conditional debarment warning from Semester 5 end-term theory examinations.", "badge": "Academics", "icon": "academic_alert", "actor": "Prof. R. Sundaram (HOD)"}, {"id": "EVT-10842-03", "timestamp": "2026-11-04T14:00:00", "module": "ACADEMICS", "severity": "CRITICAL", "title": "Missed Mandatory Mid-Term Exam", "description": "Absent from CS502 Operating Systems practical laboratory examination without sanctioned medical leave.", "badge": "EMS Exam Cell", "icon": "exam_missed", "actor": "Controller of Examinations"}, {"id": "EVT-10842-04", "timestamp": "2026-10-30T10:00:00", "module": "FINANCE", "severity": "WARNING", "title": "Final Fee Default Notice Dispatched", "description": "Semester 5 installment overdue for 30+ days (\u20b91,25,000). Automated notice dispatched to parent's registered email.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Department"}, {"id": "EVT-10842-05", "timestamp": "2026-10-24T16:20:00", "module": "HOSTEL", "severity": "WARNING", "title": "Hostel Warden Official Reprimand", "description": "Flagged for repeated non-compliance with night roll-call roster and unauthorized room guests.", "badge": "Hostel Administration", "icon": "hostel_warning", "actor": "Chief Warden - Aravali"}, {"id": "EVT-10842-06", "timestamp": "2026-10-15T09:00:00", "module": "CHC_WELLNESS", "severity": "INFO", "title": "Counseling Referral - Student Did Not Attend", "description": "Referred by CSE department mentor for peer-group counseling session; student failed to report.", "badge": "Health & Wellness", "icon": "counseling_referral", "actor": "Campus Wellness Center"}]}, {"ukid": 11205, "enrollment_no": "2025IT0089", "first_name": "Priya", "last_name": "Nair", "email": "priya.nair25@digiicampus.edu", "phone": "+91 97654 32109", "gender": "Female", "program": "B.Tech Information Technology", "department": "Department of IT", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "IT-A", "mentor_faculty": "Dr. Suniti Sen (Assoc. Prof. IT)", "accommodation_type": "HOSTELLER", "hostel_block": "Kalpana Chawla Girls Hostel - Wing B", "room_no": "B-108", "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 88, "delta_30d": "+34", "primary_threat": "Acute Psychological & Health Distress + Academic Freefall", "summary": "4 CHC wellness clinic visits in 10 days for panic/insomnia. 61% attendance, failed 2 midterm quizzes, missed 6 hostel nightly roll-calls.", "dropout_probability_pct": 82.0, "recommended_action": "Urgent Medical Counselor Contact & Parent Consultation"}, "academics": {"overall_cgpa": 5.4, "previous_sgpa": 7.8, "current_semester_estimated_sgpa": 5.1, "overall_attendance_pct": 61.4, "attendance_threshold_met": false, "consecutive_absent_days": 5, "courses": [{"code": "IT301", "name": "Object Oriented Programming (Java)", "attendance_pct": 58, "internal_score": "09/30", "status": "AT_RISK"}, {"code": "IT302", "name": "Data Communication & Networks", "attendance_pct": 62, "internal_score": "12/30", "status": "AT_RISK"}, {"code": "IT303", "name": "Discrete Mathematics", "attendance_pct": 64, "internal_score": "14/30", "status": "MARGINAL"}], "missed_assessments": ["IT301 Mid-Term Quiz 2", "IT302 Assignment 3"]}, "finance": {"total_annual_fee": 220000, "amount_paid": 172000, "amount_overdue": 48000, "overdue_days": 35, "fee_plan": "Hostel & Tuition Dual Component", "last_payment_date": "2026-08-10", "status": "OVERDUE_WARNING", "notices_sent": 2, "challan_status": "PARTIALLY_PAID"}, "access_gate_telemetry": {"monthly_punches": 44, "normal_average_punches": 120, "late_entries_30d": 2, "curfew_breaches_30d": 1, "missing_exit_logs": 3, "last_seen_gate": "Gate 01 - North Main Gate", "last_seen_timestamp": "2026-11-09T18:15:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-11205-01", "timestamp": "2026-11-09T15:30:00", "module": "CHC_WELLNESS", "severity": "CRITICAL", "title": "Emergency CHC Consultation Logged", "description": "Patient reported to Campus Health Center with acute migraine and anxiety; advised 48-hr bed rest by Dr. Arvind.", "badge": "Health & Wellness", "icon": "chc_medical", "actor": "Dr. Arvind (Campus Physician)"}, {"id": "EVT-11205-02", "timestamp": "2026-11-07T21:40:00", "module": "HOSTEL", "severity": "WARNING", "title": "Unmarked Hostel Night Attendance", "description": "Missing from scheduled biometric nightly roll-call at Kalpana Chawla Hostel.", "badge": "Hostel Administration", "icon": "hostel_attendance", "actor": "Hostel Attendance Portal"}, {"id": "EVT-11205-03", "timestamp": "2026-11-03T11:00:00", "module": "ACADEMICS", "severity": "WARNING", "title": "Midterm Examination Score Below Cutoff", "description": "Scored 9/30 in IT301 Object Oriented Programming. Academic intervention required.", "badge": "Academics", "icon": "exam_missed", "actor": "Prof. S. Sen (IT Department)"}, {"id": "EVT-11205-04", "timestamp": "2026-10-25T12:00:00", "module": "FINANCE", "severity": "INFO", "title": "Mess & Dining Overdue Fee Reminder", "description": "Outstanding hostel mess arrears of \u20b948,000 flagged for Semester 3 billing cycle.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Department"}]}, {"ukid": 9452, "enrollment_no": "2023ME0034", "first_name": "Rohan", "last_name": "Verma", "email": "rohan.verma23@digiicampus.edu", "phone": "+91 96543 21098", "gender": "Male", "program": "B.Tech Mechanical Engineering", "department": "Department of Mechanical Engineering", "batch": "2023-2027", "current_year": 4, "current_semester": 7, "section": "ME-A", "mentor_faculty": "Prof. Arvind Trivedi (Dean Student Welfare)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "HIGH", "score": 85, "delta_30d": "+19", "primary_threat": "Ghost Student / Extended Disengagement & Backlog Accumulation", "summary": "12 consecutive days with zero campus gate entries. 54% attendance, 3 active course backlogs, \u20b985,000 tuition fee overdue by 50 days.", "dropout_probability_pct": 79.0, "recommended_action": "Disciplinary Board Formal Summons"}, "academics": {"overall_cgpa": 5.1, "previous_sgpa": 5.8, "current_semester_estimated_sgpa": 4.2, "overall_attendance_pct": 54.1, "attendance_threshold_met": false, "consecutive_absent_days": 12, "courses": [{"code": "ME701", "name": "Power Plant Engineering", "attendance_pct": 50, "internal_score": "10/30", "status": "AT_RISK"}, {"code": "ME702", "name": "Refrigeration & Air Conditioning", "attendance_pct": 55, "internal_score": "12/30", "status": "AT_RISK"}, {"code": "ME703", "name": "Total Quality Management", "attendance_pct": 58, "internal_score": "15/30", "status": "AT_RISK"}], "missed_assessments": ["ME701 Quiz 1", "ME702 Lab Internal"]}, "finance": {"total_annual_fee": 210000, "amount_paid": 125000, "amount_overdue": 85000, "overdue_days": 50, "fee_plan": "Standard Annual Tuition", "last_payment_date": "2026-05-30", "status": "DEFAULT_FINAL_NOTICE", "notices_sent": 4, "challan_status": "UNPAID"}, "access_gate_telemetry": {"monthly_punches": 14, "normal_average_punches": 90, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 03 - Parking Turnstile", "last_seen_timestamp": "2026-10-28T09:12:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-9452-01", "timestamp": "2026-11-09T10:00:00", "module": "ADMINISTRATION", "severity": "CRITICAL", "title": "HOD Formal Absenteeism Notice Issued", "description": "Mechanical Department registered prolonged absence (12 consecutive days). Physical postal summons dispatched.", "badge": "Department Dean", "icon": "academic_alert", "actor": "Prof. A. Trivedi"}, {"id": "EVT-9452-02", "timestamp": "2026-10-31T17:00:00", "module": "FINANCE", "severity": "CRITICAL", "title": "Final Notice of Enrollment Suspension", "description": "Account flagged for automatic academic portal suspension due to \u20b985,000 pending fee exceeding 45 days grace period.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Directorate"}, {"id": "EVT-9452-03", "timestamp": "2026-10-28T09:12:00", "module": "ACCESS_GATE", "severity": "INFO", "title": "Last Campus Gate Exit Logged", "description": "Last recorded biometric tap at Gate 03. No physical presence recorded on campus since this date.", "badge": "Gate Management", "icon": "gate_exit", "actor": "Biometric Turnstile #12"}]}, {"ukid": 12048, "enrollment_no": "2025BD0022", "first_name": "Ananya", "last_name": "Deshmukh", "email": "ananya.deshmukh25@digiicampus.edu", "phone": "+91 95432 10987", "gender": "Female", "program": "B.Des Industrial & Product Design", "department": "School of Design", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "DES-A", "mentor_faculty": "Prof. Kavita Rao (HOD Design)", "accommodation_type": "HOSTELLER", "hostel_block": "Sarojini Naidu Girls Hostel", "room_no": "S-204", "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "MEDIUM", "score": 64, "delta_30d": "+12", "primary_threat": "Marginal Attendance Deficit (72%) with Strong Academic Merit", "summary": "Overall attendance 72% (3% below threshold) due to studio project deadlines. Fee installment pending but within grace window.", "dropout_probability_pct": 34.0, "recommended_action": "Automated Attendance Warning Nudge to Student"}, "academics": {"overall_cgpa": 8.15, "previous_sgpa": 8.4, "current_semester_estimated_sgpa": 8.0, "overall_attendance_pct": 72.1, "attendance_threshold_met": false, "consecutive_absent_days": 2, "courses": [{"code": "BD301", "name": "Design Thinking & Prototyping", "attendance_pct": 85, "internal_score": "27/30", "status": "HEALTHY"}, {"code": "BD302", "name": "Ergonomics in Product Design", "attendance_pct": 68, "internal_score": "22/30", "status": "MARGINAL"}, {"code": "BD303", "name": "Material Science for Designers", "attendance_pct": 64, "internal_score": "19/30", "status": "AT_RISK"}], "missed_assessments": []}, "finance": {"total_annual_fee": 280000, "amount_paid": 200000, "amount_overdue": 80000, "overdue_days": 5, "fee_plan": "Quarterly Tranche Plan", "last_payment_date": "2026-09-01", "status": "UPCOMING_DUE", "notices_sent": 1, "challan_status": "GENERATED"}, "access_gate_telemetry": {"monthly_punches": 92, "normal_average_punches": 105, "late_entries_30d": 1, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T19:30:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-12048-01", "timestamp": "2026-11-06T14:15:00", "module": "ACADEMICS", "severity": "WARNING", "title": "Automated 75% Attendance Nudge Sent", "description": "System dispatched SMS notification alerting student that attendance in Material Science dipped to 64%.", "badge": "Academics", "icon": "academic_alert", "actor": "Digii Attendance Nudge Engine"}, {"id": "EVT-12048-02", "timestamp": "2026-11-01T10:00:00", "module": "FINANCE", "severity": "INFO", "title": "Tranche 3 Fee Invoice Issued", "description": "Invoice for \u20b980,000 generated; due date scheduled for 15 November 2026.", "badge": "Finance & Dues", "icon": "fee_alert", "actor": "Accounts Directorate"}]}, {"ukid": 13410, "enrollment_no": "2026MB0110", "first_name": "Vikramaditya", "last_name": "Rao", "email": "vikram.rao26@digiicampus.edu", "phone": "+91 94321 09876", "gender": "Male", "program": "MBA Business Analytics", "department": "School of Management", "batch": "2026-2028", "current_year": 1, "current_semester": 1, "section": "MBA-C", "mentor_faculty": "Dr. Manas Joshi (Prof. Finance)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "MEDIUM", "score": 58, "delta_30d": "+8", "primary_threat": "First-Year Adjustment Friction & Assignment Non-Submission", "summary": "74% attendance, missed 2 consecutive data modeling assignments, all fees paid on time.", "dropout_probability_pct": 28.0, "recommended_action": "Peer Mentor Assignment & Check-in"}, "academics": {"overall_cgpa": 6.85, "previous_sgpa": 0.0, "current_semester_estimated_sgpa": 6.85, "overall_attendance_pct": 74.0, "attendance_threshold_met": false, "consecutive_absent_days": 1, "courses": [{"code": "MB101", "name": "Managerial Economics", "attendance_pct": 78, "internal_score": "20/30", "status": "HEALTHY"}, {"code": "MB102", "name": "Statistical Decision Modeling", "attendance_pct": 69, "internal_score": "16/30", "status": "MARGINAL"}], "missed_assessments": ["MB102 Case Study Submission 1"]}, "finance": {"total_annual_fee": 350000, "amount_paid": 350000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Annual Cleared", "last_payment_date": "2026-07-22", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 68, "normal_average_punches": 80, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T17:45:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-13410-01", "timestamp": "2026-11-05T18:00:00", "module": "ACADEMICS", "severity": "INFO", "title": "Assignment Deadline Expired", "description": "Failed to submit Case Study on Decision Modeling before portal cut-off.", "badge": "LMS Portal", "icon": "academic_alert", "actor": "LMS Assignment Module"}]}, {"ukid": 10719, "enrollment_no": "2024CS0019", "first_name": "Sneha", "last_name": "Mukherjee", "email": "sneha.mukherjee24@digiicampus.edu", "phone": "+91 93210 98765", "gender": "Female", "program": "B.Tech Computer Science & Engineering", "department": "Department of Computer Science", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "CS-A", "mentor_faculty": "Dr. Rameshwar Sundaram (Prof. CSE)", "accommodation_type": "HOSTELLER", "hostel_block": "Kalpana Chawla Girls Hostel - Wing A", "room_no": "A-201", "avatar_url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 18, "delta_30d": "-4", "primary_threat": "None (Honor Student)", "summary": "Exemplary 92% attendance, CGPA 8.95, fees paid in full, zero disciplinary infractions, Robotics Club President.", "dropout_probability_pct": 3.0, "recommended_action": "Eligible for Merit Scholarship & Placement Fast-Track"}, "academics": {"overall_cgpa": 8.95, "previous_sgpa": 9.1, "current_semester_estimated_sgpa": 8.8, "overall_attendance_pct": 92.4, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 94, "internal_score": "29/30", "status": "HEALTHY"}, {"code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 90, "internal_score": "28/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 250000, "amount_paid": 250000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Semester Installment Plan", "last_payment_date": "2026-07-15", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 128, "normal_average_punches": 115, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 02 - East Turnstile", "last_seen_timestamp": "2026-11-11T09:05:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10719-01", "timestamp": "2026-11-02T16:00:00", "module": "NON_ACADEMIC", "severity": "SUCCESS", "title": "National Hackathon 1st Prize Logged", "description": "Won 1st prize at Inter-University Smart India Hackathon representational team.", "badge": "Clubs & Activities", "icon": "achievement_star", "actor": "Dean Student Affairs"}]}, {"ukid": 11355, "enrollment_no": "2025EC0055", "first_name": "Kabir", "last_name": "Mehta", "email": "kabir.mehta25@digiicampus.edu", "phone": "+91 92109 87654", "gender": "Male", "program": "B.Tech Electronics & Communication", "department": "Department of ECE", "batch": "2025-2029", "current_year": 2, "current_semester": 3, "section": "EC-B", "mentor_faculty": "Dr. Anuradha Basu (Prof. ECE)", "accommodation_type": "HOSTELLER", "hostel_block": "Himalaya Boys Hostel - Block A", "room_no": "A-112", "avatar_url": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 12, "delta_30d": "0", "primary_threat": "None (Top Performer)", "summary": "95% attendance, CGPA 9.20, zero dues, high engagement across technical workshops.", "dropout_probability_pct": 1.5, "recommended_action": "Dean's List Recognition"}, "academics": {"overall_cgpa": 9.2, "previous_sgpa": 9.35, "current_semester_estimated_sgpa": 9.15, "overall_attendance_pct": 95.2, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "EC301", "name": "Signals & Systems", "attendance_pct": 96, "internal_score": "30/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 230000, "amount_paid": 230000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Cleared", "last_payment_date": "2026-07-10", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 110, "normal_average_punches": 110, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-11T08:30:00Z", "campus_status": "INSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-11355-01", "timestamp": "2026-10-20T11:00:00", "module": "ACADEMICS", "severity": "SUCCESS", "title": "Dean's Merit List Felicitation", "description": "Ranked 1st in Semester 2 Department of Electronics examination.", "badge": "Dean Academic", "icon": "achievement_star", "actor": "Academic Registrar"}]}, {"ukid": 10941, "enrollment_no": "2024BT0041", "first_name": "Meera", "last_name": "Iyer", "email": "meera.iyer24@digiicampus.edu", "phone": "+91 91098 76543", "gender": "Female", "program": "B.Tech Biotechnology", "department": "Department of Biotechnology", "batch": "2024-2028", "current_year": 3, "current_semester": 5, "section": "BT-A", "mentor_faculty": "Dr. Shalini Gupta (Prof. Biotech)", "accommodation_type": "DAY_SCHOLAR", "hostel_block": "None (Off-Campus Resident)", "room_no": "N/A", "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80", "risk_profile": {"tier": "LOW", "score": 22, "delta_30d": "-2", "primary_threat": "None", "summary": "88% attendance, CGPA 8.40, all dues cleared, Student Council Department Representative.", "dropout_probability_pct": 4.0, "recommended_action": "Standard Academic Progression"}, "academics": {"overall_cgpa": 8.4, "previous_sgpa": 8.55, "current_semester_estimated_sgpa": 8.35, "overall_attendance_pct": 88.0, "attendance_threshold_met": true, "consecutive_absent_days": 0, "courses": [{"code": "BT501", "name": "Molecular Biology & Genetic Engineering", "attendance_pct": 89, "internal_score": "26/30", "status": "HEALTHY"}], "missed_assessments": []}, "finance": {"total_annual_fee": 240000, "amount_paid": 240000, "amount_overdue": 0, "overdue_days": 0, "fee_plan": "Upfront Cleared", "last_payment_date": "2026-08-01", "status": "PAID_IN_FULL", "notices_sent": 0, "challan_status": "CLEARED"}, "access_gate_telemetry": {"monthly_punches": 84, "normal_average_punches": 90, "late_entries_30d": 0, "curfew_breaches_30d": 0, "missing_exit_logs": 0, "last_seen_gate": "Gate 01 - North Gate", "last_seen_timestamp": "2026-11-10T17:10:00Z", "campus_status": "OUTSIDE_CAMPUS"}, "timeline_events": [{"id": "EVT-10941-01", "timestamp": "2026-10-18T14:00:00", "module": "CAMPUS_GOVERNANCE", "severity": "INFO", "title": "Elected Student Council Department Representative", "description": "Appointed representative for Biotech junior batches for AY 2026-27.", "badge": "Student Council", "icon": "achievement_star", "actor": "DSW Office"}]}]};
+
     function getFallbackData() {
-      return {
-        "system_metadata": { "total_active_students": 4850, "global_institution_health_score": 78.4 },
-        "students": []
-      };
+      return EMBEDDED_MOCK_DATA;
     }
 
     // ===================================================================
@@ -3441,6 +3549,39 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       document.body.removeChild(link);
 
       showToast("📄 Exported master timetable: Digii_Campus_Master_Timetable_BTech_CSE_Sem5.csv");
+    }
+
+
+    // ===================================================================
+    // STAGE 9: PM ROI MODE LOGIC
+    // ===================================================================
+    state.pmRoiMode = false;
+
+    function togglePmRoiMode() {
+      state.pmRoiMode = !state.pmRoiMode;
+      const btn = document.getElementById('roi-toggle-btn');
+      const circle = document.getElementById('roi-toggle-circle');
+      const statusBadge = document.getElementById('roi-toggle-status');
+
+      if (state.pmRoiMode) {
+        document.body.classList.add('roi-mode-active');
+        if (btn) btn.className = "relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-indigo-600 transition-colors duration-200 ease-in-out focus:outline-hidden";
+        if (circle) circle.className = "pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out translate-x-4";
+        if (statusBadge) {
+          statusBadge.className = "text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-indigo-600 text-white font-mono animate-pulse";
+          statusBadge.textContent = "ON";
+        }
+        showToast("🚀 PM Pitch Mode Activated: Floating business ROI overlays visible across all modules.");
+      } else {
+        document.body.classList.remove('roi-mode-active');
+        if (btn) btn.className = "relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out focus:outline-hidden";
+        if (circle) circle.className = "pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out translate-x-0";
+        if (statusBadge) {
+          statusBadge.className = "text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-200 text-slate-600 font-mono";
+          statusBadge.textContent = "OFF";
+        }
+        showToast("PM Pitch Mode Deactivated: Switched to standard user mode.");
+      }
     }
 
   </script>

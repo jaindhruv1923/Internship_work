@@ -188,6 +188,16 @@ Where:
 - **1-Click Auto-Resolve Engine:** Automatically reschedules the conflicting course to the optimal zero-conflict window (Thursday 02:00 PM – 03:30 PM in Room 4A), immediately updating timetable slots, resetting conflict warnings, and saving 80+ hours of departmental scheduling labor.
 - **Master Timetable CSV Exporter:** Enables registrars to export the live, 100% clash-free master schedule into standardized RFC 4180 CSV format for immediate campus distribution.
 
+### 5.10 Module 10: "Pitch Mode" Analytics Overlay — PM ROI Mode (Stage 9)
+- **Purpose & Business Value:** Designed for live executive product demonstrations to engineering and business leadership. Provides immediate visual quantification of bottom-line financial and operational ROI across every functional subsystem.
+- **Dynamic Header Switch:** Subtle, accessible toggle switch in the primary navigation header (`#roi-toggle-btn`) with smooth transitions and status states (`OFF` / `ON`).
+- **Contextual Floating Overlays:**
+  - **Predictive Radar:** `"ROI: Protects ₹1.84 Cr in at-risk tuition through 60-day early compound decay intervention."`
+  - **Student 360:** `"ROI: Reduces cross-module investigation time from 18 mins across 5 legacy ERP tabs to <15 seconds."`
+  - **Academics & LMS:** `"ROI: Eliminates 100% of scheduling support tickets to the engineering backend and saves 80+ hours of HOD planning."`
+  - **Finance & Fees:** `"ROI: Saves 40 hours/week of manual accounting labor and eliminates erroneous student exam debarments."`
+- **Executive Pitch Utility:** Transforms a technical feature walkthrough into a high-level business proposition, proving mastery of both backend data engineering and enterprise B2B product monetization.
+
 ---
 
 ## 6. Success Metrics & Product KPIs
