@@ -81,75 +81,131 @@
     </div>
 
     <!-- Navigation Links -->
-    <nav class="flex-1 px-3 py-4 space-y-1 text-xs font-medium">
-      <div class="px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-slate-400">Retention & Intelligence</div>
+    <nav class="flex-1 px-3 py-4 space-y-4 text-xs font-medium overflow-y-auto">
       
-      <a href="javascript:void(0)" onclick="navigateToView('radar')" id="nav-radar" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-600 text-white font-semibold shadow-xs">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        <span>Predictive Radar</span>
-        <span class="ml-auto px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-red-500 text-white">3</span>
-      </a>
+      <!-- Group 1: Student Intelligence & Retention -->
+      <div class="space-y-1">
+        <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-slate-400">Retention & Intelligence</div>
+        
+        <a href="javascript:void(0)" onclick="navigateToView('radar')" id="nav-radar" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow-xs">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          <span>Predictive Radar</span>
+          <span class="ml-auto px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-red-500 text-white">3</span>
+        </a>
 
-      <a href="javascript:void(0)" onclick="navigateToActiveStudent()" id="nav-student360" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-300 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-        <span>Student 360 Timeline</span>
-        <span id="nav-student360-tag" class="ml-auto text-[10px] text-slate-400 font-mono">Select</span>
-      </a>
+        <a href="javascript:void(0)" onclick="navigateToActiveStudent()" id="nav-student360" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-300 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <span>Student 360 Timeline</span>
+          <span id="nav-student360-tag" class="ml-auto text-[10px] text-slate-400 font-mono">Select</span>
+        </a>
 
-      <div class="pt-4 px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-slate-400">Core ERP Modules</div>
-
-      <a href="javascript:void(0)" onclick="navigateToView('academics')" id="nav-academics" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        <span>Academics & LMS</span>
-        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">Stage 8</span>
-      </a>
-
-      <a href="javascript:void(0)" onclick="navigateToView('finance')" id="nav-finance" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-        <span>Finance & Fees</span>
-        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">Stage 7</span>
-      </a>
-
-      <a href="javascript:void(0)" onclick="navigateToView('hostel')" id="nav-hostel" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        <span>Hostel & Mess</span>
-      </a>
-
-      <a href="javascript:void(0)" onclick="navigateToView('access')" id="nav-access" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span>Access & Gates</span>
-      </a>
-
-      <a href="javascript:void(0)" onclick="navigateToView('chc')" id="nav-chc" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        <span>Campus Health (CHC)</span>
-      </a>
-
-      <!-- Week 2 Deliverable: Non-Academic Student Development Framework -->
-      <a href="javascript:void(0)" onclick="navigateToView('development')" id="nav-development" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
-        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-        <span>Non-Academic Development</span>
-        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-amber-900/60 text-amber-300 font-mono">NASD</span>
-      </a>
-
-      <div class="pt-4 px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-indigo-400 flex items-center justify-between">
-        <span>B2B2C Innovations</span>
-        <span class="px-1.5 py-0.2 rounded text-[8px] bg-indigo-500/20 text-indigo-300 font-mono">Student+Uni</span>
+        <a href="javascript:void(0)" onclick="navigateToView('student-hub')" id="nav-student-hub" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-indigo-300 hover:text-white transition-colors">
+          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          <span>Student Experience Hub</span>
+          <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-indigo-900 text-indigo-200 font-mono font-bold">10 Wins</span>
+        </a>
       </div>
 
-      <a href="javascript:void(0)" onclick="navigateToView('student-hub')" id="nav-student-hub" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-indigo-300 hover:text-white transition-colors">
-        <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-        <span>Student Experience Hub</span>
-        <span class="ml-auto text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-indigo-900 text-indigo-200 font-mono font-bold">10 Win-Wins</span>
-      </a>
-      <a href="javascript:void(0)" onclick="openPmCockpitModal()" id="nav-pm-cockpit" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-indigo-300 hover:text-white transition-colors group">
-        <svg class="w-4 h-4 text-indigo-400 group-hover:text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        <span>PM Strategy Cockpit</span>
-        <span class="ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded bg-indigo-500/30 text-indigo-200 border border-indigo-400/40">NEW</span>
-      </a>
+      <!-- Group 2: Career, Student Life & Accreditation -->
+      <div class="space-y-1">
+        <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-slate-400">Careers & Student Life</div>
+
+        <a href="javascript:void(0)" onclick="navigateToView('placements')" id="nav-placements" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span>Placement Intelligence</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-blue-900/60 text-blue-300 font-mono">TPO</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('development')" id="nav-development" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          <span>Non-Academic Dev (NASD)</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-amber-900/60 text-amber-300 font-mono">NAAC</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('grievance')" id="nav-grievance" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span>Statutory Ombudsperson</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-purple-900/60 text-purple-300 font-mono">UGC</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('alumni')" id="nav-alumni" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <span>Alumni & Endowment</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('accreditation')" id="nav-accreditation" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          <span>Accreditation Copilot</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-emerald-900/60 text-emerald-300 font-mono">NIRF</span>
+        </a>
+      </div>
+
+      <!-- Group 3: Academic & Operations Engine -->
+      <div class="space-y-1">
+        <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-slate-400">Academic & Operations</div>
+
+        <a href="javascript:void(0)" onclick="navigateToView('academics')" id="nav-academics" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <span>Academics & Timetable</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('registration')" id="nav-registration" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Course Registration</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('exams')" id="nav-exams" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          <span>Exam Seating Engine</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('faculty')" id="nav-faculty" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <span>Faculty PBAS Appraisal</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('inventory')" id="nav-inventory" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          <span>Lab Assets & Inventory</span>
+        </a>
+      </div>
+
+      <!-- Group 4: Finance, Infrastructure & ESG -->
+      <div class="space-y-1">
+        <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-slate-400">Finance & Campus Infra</div>
+
+        <a href="javascript:void(0)" onclick="navigateToView('finance')" id="nav-finance" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <span>Finance & Dues Recon</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('scholarships')" id="nav-scholarships" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Scholarships & Financial Aid</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('hostel')" id="nav-hostel" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <span>Hostel & Mess</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('access')" id="nav-access" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <span>Access & Turnstiles</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('chc')" id="nav-chc" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <span>Campus Health (CHC)</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="navigateToView('energy')" id="nav-energy" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <span>Campus ESG & Green Audit</span>
+        </a>
+      </div>
 
     </nav>
-
     <!-- Bottom Database Status Footprint -->
     <div onclick="openMysqlBridgeModal()" class="p-4 border-t border-slate-800 text-[11px] space-y-2 cursor-pointer hover:bg-slate-800/60 transition-colors group" title="Click to inspect 10GB MySQL Data Lake connection">
       <div class="flex items-center justify-between text-slate-400">
@@ -2670,6 +2726,1016 @@
 
       </section>
 
+    
+      <!-- =================================================================== -->
+      <!-- VIEW: PLACEMENT INTELLIGENCE & TPO RECRUITMENT MATCHMAKER            -->
+      <!-- =================================================================== -->
+      <section id="view-placements" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+            NIRF GO & TPO ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates 120+ hours/season of manual TPO resume shortlisting</strong>, eliminates candidate debarment discrepancies, and elevates campus placement conversion by +18% through automated rule-based qualification.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Core ERP Capability • Career Services
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>placement_drives</code>, <code>student_offers</code> & <code>recruiter_rules</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Placement Intelligence & Corporate Recruitment Matchmaker</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Automated corporate eligibility filtering, predictive student employability scoring (PRI), and direct offer letter issuance.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadNirfPlacementAuditCsv()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export NIRF Placement Audit (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scorecard -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Eligible Cohort Placed</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">74.6%</span>
+                <span class="text-xs font-semibold text-emerald-600">1,060 / 1,420</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Fall 2026 Graduating Class</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Corporate Drives</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">24 Companies</span>
+              </div>
+              <p class="text-[11px] text-blue-600 font-semibold mt-1">Google, Deloitte, Microsoft, Tata</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Average & Highest CTC</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹9.8 LPA</span>
+                <span class="text-xs font-semibold text-emerald-600">Max ₹44.5L</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">+14% YoY Compensation Growth</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Unplaced Tail-Risk</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">84 Students</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Flagged for TPO Remedial Prep</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Drives Quick-Shortlist Console -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Active Recruitment Drives & 1-Click Corporate Shortlist</h4>
+              <span class="text-[11px] font-mono text-slate-500">Instant Rule Matching Against 10GB Student Database</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="runCorporateShortlist('Google SWE')" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-all">
+                Run Google SWE Filter
+              </button>
+              <button onclick="runCorporateShortlist('Deloitte Consulting')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs shadow-2xs transition-all">
+                Run Deloitte Filter
+              </button>
+              <button onclick="runCorporateShortlist('ALL')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs border border-slate-300 transition-colors">
+                Reset Filter
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Student Candidate</th>
+                  <th class="py-2.5 px-2 text-center">CGPA</th>
+                  <th class="py-2.5 px-3">Placement Readiness (PRI)</th>
+                  <th class="py-2.5 px-3">Recruitment Pipeline Status</th>
+                  <th class="py-2.5 px-2 text-center">Package (CTC)</th>
+                  <th class="py-2.5 px-3 text-right">TPO Action</th>
+                </tr>
+              </thead>
+              <tbody id="placements-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: ZERO-KNOWLEDGE STATUTORY GRIEVANCE & POSH OMBUDSPERSON         -->
+      <!-- =================================================================== -->
+      <section id="view-grievance" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+            STATUTORY COMPLIANCE ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Guarantees 100% compliance with UGC/AICTE statutory mandates</strong> (Anti-Ragging, ICC POSH, Grievance Redressal) with automated 15-day SLA escalation, zero identity leaks, and 1-click Ministry compliance reporting.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 uppercase tracking-wider">
+                  Statutory Ombudsperson & Regulatory Compliance
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Framework: UGC Redressal Regulations (Gazette 2023)</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Zero-Knowledge Statutory Grievance & POSH Cell</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Anonymous cryptographic student grievance intake, statutory 15-day resolution timers, and independent ICC committee assignment.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadUgcComplianceReportCsv()" class="px-3.5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export UGC Compliance Report (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Grievances (YTD)</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">48</span>
+                <span class="text-xs font-semibold text-emerald-600">44 Resolved</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">91.6% Resolution Rate</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Avg Resolution Time</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-800">4.2 Days</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">UGC Mandated SLA: &lt; 15 Days</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Inquiries</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">4 Cases</span>
+              </div>
+              <p class="text-[11px] text-purple-700 font-semibold mt-1">Under ICC / Anti-Ragging Panel</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Zero-Knowledge Token</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900 font-mono text-sm">SHA-256 Mask</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Complainant Privacy Sealed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Statutory Grievance Redressal Queue & Committee Actions</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Case Tracking with Countdown Timers</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Case Token ID</th>
+                  <th class="py-2.5 px-3">Statutory Category</th>
+                  <th class="py-2.5 px-3">Brief Nature of Grievance</th>
+                  <th class="py-2.5 px-2 text-center">SLA Days Left</th>
+                  <th class="py-2.5 px-3">Inquiry Panel</th>
+                  <th class="py-2.5 px-3 text-right">Committee Action</th>
+                </tr>
+              </thead>
+              <tbody id="grievance-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: FACULTY WORKLOAD & PBAS APPRAISAL OPTIMIZER                    -->
+      <!-- =================================================================== -->
+      <section id="view-faculty" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+            ACADEMIC OPERATIONS ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Automates 600+ hours of annual Dean & HR paperwork</strong> for UGC PBAS/API score compilation and prevents faculty burnout by auto-rebalancing teaching load allocations across 148 faculty members.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 uppercase tracking-wider">
+                  Academic HR & Faculty Governance
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Framework: UGC PBAS & API Regulations 2018/2023</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Faculty Workload & PBAS Appraisal Optimizer</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Real-time teaching load balancing, sponsored research grant tracking, and automated Academic Performance Indicator (API) score computation.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadFacultyPbasCsv()" class="px-3.5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export PBAS Summary (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Teaching Faculty</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">148</span>
+                <span class="text-xs font-semibold text-emerald-600">All Departments</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Student-Faculty Ratio: 1:16.5</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Average Teaching Load</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">13.8 Hrs</span>
+                <span class="text-xs font-semibold text-blue-600">Per Week</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">UGC Standard: 14-16 Hrs</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Over-Allocated Faculty</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">4 Professors</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Exceeding 18 Hrs/Week Threshold</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Sponsored Grants (AY)</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹3.42 Cr</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">SERB, DST, Industry Sponsored</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Faculty Workload Allocation & Calculated PBAS/API Matrix</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Teaching Hours & Research Metric Aggregation</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Faculty Member</th>
+                  <th class="py-2.5 px-3">Designation & Department</th>
+                  <th class="py-2.5 px-2 text-center">Weekly Teaching Load</th>
+                  <th class="py-2.5 px-2 text-center">Research Papers (Scopus)</th>
+                  <th class="py-2.5 px-2 text-center">PBAS / API Score</th>
+                  <th class="py-2.5 px-3 text-right">Dean Action</th>
+                </tr>
+              </thead>
+              <tbody id="faculty-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: SCHOLARSHIPS & FINANCIAL AID DISBURSEMENT ENGINE               -->
+      <!-- =================================================================== -->
+      <section id="view-scholarships" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+            STUDENT WELFARE & FINANCE ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates tuition fee defaults by auto-offsetting approved scholarships</strong> against tuition invoices within 48 hours instead of 6 months of manual bank matching.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase tracking-wider">
+                  Financial Aid & Social Welfare
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>scholarships</code>, <code>dbt_bank_logs</code> & <code>tuition_waivers</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Institutional Scholarship & Financial Aid Disbursement Engine</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Merit-cum-means eligibility verification, direct benefit transfer (DBT) reconciliation, and 1-click tuition waiver crediting.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadDbtBankDisbursementCsv()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export DBT Bank CSV</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Aid Disbursed</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹2.18 Cr</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">420 Student Beneficiaries</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Scholarship Schemes</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">8 Schemes</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Merit, EWS, Girl Child, Sports</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Pending Verifications</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">12 Applications</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Awaiting Income / Grade Check</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Auto-Offset Success Rate</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">99.4%</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Zero Manual Paper Drafts</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Scholarship Approval Queue & 1-Click Fee Ledger Offset</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Verification of CGPA and Income Eligibility</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Student Beneficiary</th>
+                  <th class="py-2.5 px-3">Scholarship Scheme</th>
+                  <th class="py-2.5 px-2 text-center">CGPA Requirement</th>
+                  <th class="py-2.5 px-2 text-center">Award Amount</th>
+                  <th class="py-2.5 px-3">Disbursement Status</th>
+                  <th class="py-2.5 px-3 text-right">Accounts Action</th>
+                </tr>
+              </thead>
+              <tbody id="scholarships-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: SMART EXAM SEATING & ANTI-CHEATING MATRIX OPTIMIZER            -->
+      <!-- =================================================================== -->
+      <section id="view-exams" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
+            EXAMINATION CELL ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates 2 weeks of manual exam hall seating allocation</strong> across 4,850 students and guarantees 0 adjacent subject conflicts to completely eliminate exam hall proxy cheating.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
+                  Controller of Examinations (CoE)
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>exam_schedules</code>, <code>hall_allocations</code> & <code>student_seating</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Smart Exam Hall Seating & Anti-Cheating Jumbling Matrix</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Automated multi-branch student desk interleaving, printable door charts, and instant mobile hall-seat locator.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadExamSeatingChartCsv()" class="px-3.5 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Hall Seating Matrix (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Exam Halls Active</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">42 Halls</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Capacity: 5,100 Desks</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Adjacent Conflict Rate</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-800">0.00%</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">Zero Same-Subject Adjacent Desks</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Invigilators Deployed</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">84 Faculty</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">2 Faculty Per Examination Hall</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Session Running</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">Mid-Term AY26</span>
+              </div>
+              <p class="text-[11px] text-blue-600 font-semibold mt-1">Morning Shift (09:30 - 12:30)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Seating Grid Visualization -->
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Examination Hall A-101: Live Interleaved Seating Grid (Sample 16 Desks)</h4>
+              <span class="text-[11px] font-mono text-slate-500">Alternating CSE (Blue) and ME (Amber) to prevent visual cheating</span>
+            </div>
+            <button onclick="regenerateExamJumblingMatrix()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs shadow-2xs transition-all">
+              Re-Shuffle Jumbling Pattern
+            </button>
+          </div>
+
+          <div id="exam-desks-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: CAMPUS ESG & GREEN AUDIT ENERGY TELEMETRY                     -->
+      <!-- =================================================================== -->
+      <section id="view-energy" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+            SUSTAINABILITY & UTILITY ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Saves ₹8–12 Lakhs/month in campus electricity bills</strong> by cross-correlating turnstile room occupancy against HVAC power meters to power down unoccupied lecture blocks.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-50 text-teal-700 border border-teal-200 uppercase tracking-wider">
+                  Facilities & Smart Campus ESG
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Framework: NAAC Criterion 7.1 Green Audit & ISO 50001</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus Carbon Footprint & Energy Telemetry</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Real-time building power load telemetry, automated unpeopled HVAC shutoff triggers, and annual NAAC Green Audit documentation.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadGreenAuditReportCsv()" class="px-3.5 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Green Audit Report (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Campus Daily Consumption</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">14,280 kWh</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">-8.4% vs Last Month</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Energy Waste Isolated</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">3 Empty Halls</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">HVAC Active with 0 Occupancy</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Rooftop Solar Output</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">4,120 kWh</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">28.8% Solar Offset</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Carbon Offset (AY)</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">184 Tons CO2</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Equivalent to 8,200 Trees</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Building-Level Energy Telemetry vs Turnstile Occupancy</h4>
+              <span class="text-[11px] font-mono text-slate-500">Instant Automated Remote Power-Down Commands</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Campus Building / Block</th>
+                  <th class="py-2.5 px-2 text-center">Live Occupancy (Turnstiles)</th>
+                  <th class="py-2.5 px-2 text-center">Current Power Draw</th>
+                  <th class="py-2.5 px-3">HVAC / Lighting State</th>
+                  <th class="py-2.5 px-3">Anomaly Detection</th>
+                  <th class="py-2.5 px-3 text-right">Facilities Action</th>
+                </tr>
+              </thead>
+              <tbody id="energy-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: AUTOMATED COURSE REGISTRATION & PREREQUISITE VALIDATION        -->
+      <!-- =================================================================== -->
+      <section id="view-registration" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+            ACADEMIC REGISTRATION ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Eliminates semester course registration server crashes</strong> and 100% of illegal prerequisite course enrollments through microsecond relational DAG validation.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Academic Affairs & Curriculum Registry
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>course_catalog</code>, <code>prerequisites</code> & <code>enrollments</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Automated Course Registration & Prerequisite Engine</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Instant prerequisite DAG resolution, live section seat-cap reservation, and 1-click student registration checkout.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadMasterEnrollmentRosterCsv()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Enrollment Roster (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Courses Open</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">48 Courses</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Spring AY27 Semester</p>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Cart Checkouts Completed</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-800">4,120</span>
+                <span class="text-xs font-semibold text-emerald-600">84.9%</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">Average Checkout Time: 1.4s</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Prerequisite Violations</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">0 Overrides</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">100% Intercepted at Gate</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Target Student Context</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900 font-mono text-sm">2024CS0142</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Aarav Sharma (Eligible for 24 Credits)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Elective Course Cart & Prerequisite Pass/Fail Validation</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Seat Availability with Relational Academic Verification</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Course Code & Title</th>
+                  <th class="py-2.5 px-2 text-center">Credits</th>
+                  <th class="py-2.5 px-3">Mandatory Prerequisites</th>
+                  <th class="py-2.5 px-3">Prerequisite Validation</th>
+                  <th class="py-2.5 px-2 text-center">Seats Left</th>
+                  <th class="py-2.5 px-3 text-right">Student Action</th>
+                </tr>
+              </thead>
+              <tbody id="registration-cart-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: ALUMNI MENTORSHIP & ENDOWMENT NETWORK                         -->
+      <!-- =================================================================== -->
+      <section id="view-alumni" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
+            ALUMNI RELATIONS & ENDOWMENT ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Unlocks ₹1.45 Cr in corporate CSR and alumni endowment funding</strong> while providing students direct 1-on-1 industry referral intros and capstone sponsorship.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200 uppercase tracking-wider">
+                  Alumni Affairs & Corporate Philanthropy
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>alumni_directory</code>, <code>mentorship_bookings</code> & <code>endowment_pledges</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Alumni Mentorship & Capstone Endowment Network</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Verified directory of graduated alumni, 1-on-1 mentorship coffee chat reservations, and corporate capstone sponsorship.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadAlumniDirectoryCsv()" class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Alumni Directory (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Registered Alumni</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">8,420</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Across 18 Countries</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Mentors</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">312 Alumni</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">Offering 1-on-1 Slots</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Endowment Pledges</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹1.45 Cr</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">For Lab & Library Upgrade</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Referral Intros (AY)</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">184 Intros</span>
+              </div>
+              <p class="text-[11px] text-blue-600 font-semibold mt-1">Direct to Hiring Managers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Featured Alumni Mentors & 1-on-1 Consultation Booking</h4>
+              <span class="text-[11px] font-mono text-slate-500">Direct Calendar Linkage for Career Guidance & Referrals</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Alumnus Profile</th>
+                  <th class="py-2.5 px-3">Graduation & Major</th>
+                  <th class="py-2.5 px-3">Current Corporate Role</th>
+                  <th class="py-2.5 px-3">Mentorship Specialization</th>
+                  <th class="py-2.5 px-2 text-center">Open Slots</th>
+                  <th class="py-2.5 px-3 text-right">Connect Action</th>
+                </tr>
+              </thead>
+              <tbody id="alumni-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: CENTRAL LAB ASSET & HIGH-VALUE INVENTORY TRACKER               -->
+      <!-- =================================================================== -->
+      <section id="view-inventory" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+            STORES & PROCUREMENT ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Saves ₹25+ Lakhs annually in lost laboratory equipment and duplicate consumable orders</strong> by tying hardware checkouts directly into the student digital No-Dues clearance hook.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                  Central Stores & Research Laboratories
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Database Domain: <code>lab_assets</code>, <code>hardware_loans</code> & <code>consumables</code></span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Central Laboratory Inventory & High-Value Asset Tracker</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                GPU cluster slot reservation, precision equipment checkouts, calibration expiration tracking, and automated stores replenishment.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadLabAssetInventoryCsv()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Lab Asset Register (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Tracked Asset Value</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">₹8.40 Cr</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">1,240 Tagged Devices</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Currently on Loan</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">142 Items</span>
+              </div>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-1">0 Overdue Beyond 14 Days</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">GPU Compute Nodes</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">8 x NVIDIA A100</span>
+              </div>
+              <p class="text-[11px] text-blue-600 font-semibold mt-1">72% Utilization Rate</p>
+            </div>
+            <div class="p-4 rounded-lg bg-amber-50/70 border border-amber-200">
+              <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Calibration Due</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-amber-800">3 Instruments</span>
+              </div>
+              <p class="text-[11px] text-amber-700 mt-1">Spectrometer & CNC Lathe</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">High-Value Laboratory Hardware & Compute Reservation Register</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Hardware Asset Tracking with Digital Checkout Logs</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">Asset ID & Device Name</th>
+                  <th class="py-2.5 px-3">Lab Location</th>
+                  <th class="py-2.5 px-2 text-center">Unit Replacement Value</th>
+                  <th class="py-2.5 px-3">Current Custody Status</th>
+                  <th class="py-2.5 px-3">Calibration Status</th>
+                  <th class="py-2.5 px-3 text-right">Equipment Action</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- VIEW: INSTITUTIONAL ACCREDITATION & NAAC/NIRF COPILOT                -->
+      <!-- =================================================================== -->
+      <section id="view-accreditation" class="hidden space-y-6">
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+            IQAC & VICE CHANCELLOR ROI
+          </span>
+          <span class="leading-relaxed">
+            <strong>ROI: Auto-populates 85% of NAAC Self-Study Report (SSR) tables</strong> directly from relational MySQL tables, eliminating 6 months of frantic manual collation by 50 faculty members.
+          </span>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase tracking-wider">
+                  Internal Quality Assurance Cell (IQAC)
+                </span>
+                <span class="text-xs text-slate-400">|</span>
+                <span class="text-xs text-slate-500">Framework: NAAC Revised SSR & NIRF Institutional Ranking</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Institutional Accreditation & NAAC / NIRF Copilot</h1>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Automated multi-criteria compliance scoring, institutional quality indicators, and 1-click audit-ready SSR data export.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="downloadNaacSsrBundleCsv()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export NAAC SSR Data Bundle (.csv)</span>
+              </button>
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Back to Radar</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+            <div class="p-4 rounded-lg bg-emerald-50/70 border border-emerald-200">
+              <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Projected NAAC Grade</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-emerald-800">A++ (3.78 CGPA)</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 mt-1">Based on 7 Quantitative Criteria</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Projected NIRF Band</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">Rank 38 - 45</span>
+              </div>
+              <p class="text-[11px] text-blue-600 font-semibold mt-1">+12 Rank Improvement Projected</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Data Verification Proofs</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">100% Automated</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Tied to 10GB MySQL Replica</p>
+            </div>
+            <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+              <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">SSR Data Readiness</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-bold text-slate-900">92.4% Complete</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Criterion 1-7 Validated</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">NAAC Seven Criteria Scorecard & Direct Database Evidence</h4>
+              <span class="text-[11px] font-mono text-slate-500">Live Relational Proof Lines Across All 15 ERP Modules</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-3">NAAC Criterion</th>
+                  <th class="py-2.5 px-3">Core Focus Area</th>
+                  <th class="py-2.5 px-2 text-center">Institutional Benchmark</th>
+                  <th class="py-2.5 px-2 text-center">Calculated Score</th>
+                  <th class="py-2.5 px-3">Audit Readiness</th>
+                  <th class="py-2.5 px-3 text-right">Evidence Action</th>
+                </tr>
+              </thead>
+              <tbody id="accreditation-roster-body" class="divide-y divide-slate-100 font-sans">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!-- Footer -->
@@ -4626,7 +5692,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
     // ===================================================================
     // STAGE 6: SPA ROUTING & STATE MANAGEMENT ENGINE
     // ===================================================================
-    const SPA_VIEWS = ['radar', 'student360', 'academics', 'finance', 'hostel', 'access', 'chc', 'development', 'student-hub'];
+    const SPA_VIEWS = ['radar', 'student360', 'academics', 'finance', 'hostel', 'access', 'chc', 'development', 'student-hub', 'placements', 'grievance', 'faculty', 'scholarships', 'exams', 'energy', 'registration', 'alumni', 'inventory', 'accreditation'];
 
     function navigateToView(view) {
       if (!SPA_VIEWS.includes(view)) view = 'radar';
@@ -4673,6 +5739,26 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
         renderNasdRoster();
       } else if (view === 'hostel') {
         renderHostelRosterTable();
+      } else if (view === 'placements') {
+        renderPlacementsRoster();
+      } else if (view === 'grievance') {
+        renderGrievanceRoster();
+      } else if (view === 'faculty') {
+        renderFacultyRoster();
+      } else if (view === 'scholarships') {
+        renderScholarshipRoster();
+      } else if (view === 'exams') {
+        renderExamsGrid();
+      } else if (view === 'energy') {
+        renderEnergyTelemetry();
+      } else if (view === 'registration') {
+        renderRegistrationCart();
+      } else if (view === 'alumni') {
+        renderAlumniRoster();
+      } else if (view === 'inventory') {
+        renderInventoryRoster();
+      } else if (view === 'accreditation') {
+        renderAccreditationDashboard();
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -8010,6 +9096,676 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       showToast(" Official Non-Academic Diploma Supplement downloaded successfully!");
+    }
+
+  
+    // ===================================================================
+    // 10 NEW NICHE MODULES LOGIC & INTERACTIVE WORKFLOWS
+    // ===================================================================
+
+    // 1. PLACEMENT INTELLIGENCE (TPO ENGINE)
+    const PLACEMENT_CANDIDATES = [
+      { id: '2024CS0142', name: 'Aarav Sharma', cgpa: 8.42, pri: 94, status: 'Shortlisted for Google SWE', company: 'Google SWE', ctc: '₹32.0 LPA', isUnplaced: false },
+      { id: '2024CS0198', name: 'Rohan Varma', cgpa: 7.80, pri: 82, status: 'Offer Received (Deloitte)', company: 'Deloitte Consulting', ctc: '₹14.5 LPA', isUnplaced: false },
+      { id: '2024ME0104', name: 'Kabir Mehta', cgpa: 8.10, pri: 88, status: 'Tata Tech Technical Interview', company: 'Tata Tech', ctc: '₹11.2 LPA', isUnplaced: false },
+      { id: '2024EC0188', name: 'Sneha Rao', cgpa: 8.65, pri: 91, status: 'Shortlisted for Microsoft FTE', company: 'Microsoft FTE', ctc: '₹44.5 LPA', isUnplaced: false },
+      { id: '2024CS0219', name: 'Priya Nair', cgpa: 7.10, pri: 58, status: 'TPO Remedial Prep Track', company: 'None', ctc: 'Pending', isUnplaced: true }
+    ];
+
+    let activePlacementFilter = 'ALL';
+
+    function renderPlacementsRoster() {
+      const tbody = document.getElementById('placements-roster-body');
+      if (!tbody) return;
+
+      const filtered = activePlacementFilter === 'ALL'
+        ? PLACEMENT_CANDIDATES
+        : PLACEMENT_CANDIDATES.filter(c => c.company.toLowerCase().includes(activePlacementFilter.toLowerCase()) || (activePlacementFilter === 'UNPLACED' && c.isUnplaced));
+
+      tbody.innerHTML = filtered.map(c => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3">
+            <span class="font-bold text-slate-900 block">${c.name}</span>
+            <span class="text-[10px] font-mono text-slate-500">${c.id}</span>
+          </td>
+          <td class="py-3 px-2 text-center font-mono font-bold text-slate-800">${c.cgpa.toFixed(2)}</td>
+          <td class="py-3 px-3">
+            <div class="flex items-center gap-2">
+              <div class="w-16 bg-slate-200 rounded-full h-2 overflow-hidden">
+                <div class="bg-blue-600 h-2 rounded-full" style="width: ${c.pri}%"></div>
+              </div>
+              <span class="font-mono font-bold text-xs ${c.pri >= 80 ? 'text-emerald-700' : 'text-amber-700'}">${c.pri}%</span>
+            </div>
+          </td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${c.isUnplaced ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-blue-100 text-blue-800 border border-blue-200'}">
+              ${c.status}
+            </span>
+          </td>
+          <td class="py-3 px-2 text-center font-mono font-bold text-slate-900">${c.ctc}</td>
+          <td class="py-3 px-3 text-right">
+            ${c.isUnplaced
+              ? `<button onclick="assignTpoMockInterview('${c.id}')" class="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs transition-all">Assign Mentor</button>`
+              : `<button onclick="issuePlacementOfferLetter('${c.id}')" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-all">Issue Offer Doc</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function runCorporateShortlist(company) {
+      activePlacementFilter = company;
+      renderPlacementsRoster();
+      if (company === 'ALL') {
+        showToast("Showing all 5 placement drive student profiles.");
+      } else {
+        showToast(`Running automated database eligibility query for ${company}. Filtered candidate pool.`);
+      }
+    }
+
+    function issuePlacementOfferLetter(studentId) {
+      const student = PLACEMENT_CANDIDATES.find(c => c.id === studentId);
+      if (!student) return;
+
+      const doc = `========================================================================\n` +
+        `DIGII CAMPUS - OFFICIAL CORPORATE PLACEMENT SELECTION LETTER\n` +
+        `========================================================================\n` +
+        `Offer Reference: TPO-2026-CAMPUS-${student.id}\n` +
+        `Date of Issue: ${new Date().toISOString()}\n\n` +
+        `CANDIDATE DETAILS:\n` +
+        `- Full Name: ${student.name}\n` +
+        `- Enrollment No: ${student.id}\n` +
+        `- CGPA Standing: ${student.cgpa} / 10.0 (100% MySQL Verified)\n` +
+        `- Placement Readiness Index (PRI): ${student.pri}%\n\n` +
+        `EMPLOYMENT OFFER DETAILS:\n` +
+        `- Recruiter: ${student.company}\n` +
+        `- Designated Compensation (CTC): ${student.ctc}\n` +
+        `- Offer Verification Seal: DIGII-CAMPUS-SHA256-AUTHENTICATED\n\n` +
+        `TRAINING & PLACEMENT OFFICER SIGN-OFF:\n` +
+        `Col. Sanjeev Bakshi, Head of Corporate Relations & TPO\n` +
+        `Digii Campus Partner University\n`;
+
+      const blob = new Blob([doc], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Digii_Campus_Placement_Offer_${student.id}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(`Official Placement Selection Offer downloaded for ${student.name} (${student.company})!`);
+    }
+
+    function assignTpoMockInterview(studentId) {
+      const student = PLACEMENT_CANDIDATES.find(c => c.id === studentId);
+      if (student) {
+        student.status = 'TPO Mentorship Enrolled (Prof. Ramesh Sharma Assigned)';
+        student.pri = 74;
+        student.isUnplaced = false;
+        renderPlacementsRoster();
+        showToast(`TPO Remedial Track Assigned: 1-on-1 interview counseling booked for ${student.name}!`);
+      }
+    }
+
+    function downloadNirfPlacementAuditCsv() {
+      let csv = "Student Name,Enrollment No,CGPA,Employability PRI Score,Recruiter Company,Offered CTC,Placement Status\n";
+      PLACEMENT_CANDIDATES.forEach(c => {
+        csv += `"${c.name}","${c.id}","${c.cgpa}","${c.pri}%","${c.company}","${c.ctc}","${c.status}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `NIRF_Metric3_Placement_Audit_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official NIRF Metric 3 Placement Audit CSV downloaded successfully!");
+    }
+
+    // 2. STATUTORY GRIEVANCE & POSH OMBUDSPERSON
+    const GRIEVANCE_CASES = [
+      { id: 'GRV-2026-ZK-091', category: 'HOSTEL_SAFETY', brief: 'Repeated water heater circuit breaker tripping in Aravali C Block', slaDays: 8, panel: 'Hostel Grievance Sub-Committee', resolved: false },
+      { id: 'GRV-2026-ZK-104', category: 'ACADEMIC_EVAL', brief: 'Discrepancy in CS502 internal assessment grade calculation', slaDays: 11, panel: 'Academic Review Committee', resolved: false },
+      { id: 'GRV-2026-ZK-112', category: 'ANTI_RAGGING', brief: 'Late night unmonitored common-room disturbance report', slaDays: 14, panel: 'Statutory Anti-Ragging Cell', resolved: false },
+      { id: 'GRV-2026-ZK-082', category: 'INTERNAL_POSH', brief: 'Verbal misconduct during cultural festival prep', slaDays: 2, panel: 'Internal Complaints Committee (ICC)', resolved: true }
+    ];
+
+    function renderGrievanceRoster() {
+      const tbody = document.getElementById('grievance-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = GRIEVANCE_CASES.map(g => `
+        <tr class="hover:bg-slate-50 transition-colors ${g.resolved ? 'bg-slate-50/50' : ''}">
+          <td class="py-3 px-3 font-mono font-bold text-slate-800 text-xs">${g.id}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-purple-50 text-purple-800 border border-purple-200">
+              ${g.category}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-slate-700 text-xs">${g.brief}</td>
+          <td class="py-3 px-2 text-center font-mono font-bold ${g.resolved ? 'text-slate-400' : g.slaDays < 5 ? 'text-red-600 animate-pulse' : 'text-emerald-700'}">
+            ${g.resolved ? 'Closed' : `${g.slaDays} Days`}
+          </td>
+          <td class="py-3 px-3 text-xs text-slate-600">${g.panel}</td>
+          <td class="py-3 px-3 text-right">
+            ${g.resolved
+              ? `<span class="text-xs text-emerald-700 font-bold">Resolved within SLA</span>`
+              : `<button onclick="resolveGrievanceCase('${g.id}')" class="px-2.5 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-2xs transition-all">Resolve Case</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function resolveGrievanceCase(caseId) {
+      const c = GRIEVANCE_CASES.find(g => g.id === caseId);
+      if (c) {
+        c.resolved = true;
+        renderGrievanceRoster();
+        showToast(`Statutory Grievance Case ${caseId} resolved and signed off by Ombudsperson within UGC SLA.`);
+      }
+    }
+
+    function downloadUgcComplianceReportCsv() {
+      let csv = "Case ID,Statutory Category,Nature of Grievance,UGC Mandated SLA (Days),Assigned Panel,Resolution Status\n";
+      GRIEVANCE_CASES.forEach(g => {
+        csv += `"${g.id}","${g.category}","${g.brief}","${g.slaDays}","${g.panel}","${g.resolved ? 'RESOLVED' : 'IN_PROGRESS'}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `UGC_Statutory_Grievance_Report_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official UGC Annual Grievance Compliance CSV exported!");
+    }
+
+    // 3. FACULTY WORKLOAD & PBAS APPRAISAL
+    const FACULTY_MEMBERS = [
+      { name: 'Prof. Ramesh Sharma', dept: 'Computer Science (CSE)', role: 'Professor', loadHrs: 18.5, papers: 6, apiScore: 142, isOverloaded: true },
+      { name: 'Dr. Ananya Sen', dept: 'Computer Science (CSE)', role: 'Associate Professor', loadHrs: 14.0, papers: 4, apiScore: 118, isOverloaded: false },
+      { name: 'Dr. Vikram Malhotra', dept: 'Mechanical Eng (ME)', role: 'Professor & HOD', loadHrs: 17.5, papers: 5, apiScore: 136, isOverloaded: true },
+      { name: 'Dr. Preeti Rao', dept: 'Electronics (ECE)', role: 'Assistant Professor', loadHrs: 11.5, papers: 3, apiScore: 94, isOverloaded: false },
+      { name: 'Prof. Gayatri Joshi', dept: 'Dean Student Life', role: 'Professor', loadHrs: 12.0, papers: 4, apiScore: 110, isOverloaded: false }
+    ];
+
+    function renderFacultyRoster() {
+      const tbody = document.getElementById('faculty-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = FACULTY_MEMBERS.map(f => `
+        <tr class="hover:bg-slate-50 transition-colors ${f.isOverloaded ? 'bg-red-50/40' : ''}">
+          <td class="py-3 px-3 font-bold text-slate-900">${f.name}</td>
+          <td class="py-3 px-3 text-slate-700">${f.role} • ${f.dept}</td>
+          <td class="py-3 px-2 text-center font-mono font-bold ${f.isOverloaded ? 'text-red-700' : 'text-slate-800'}">
+            ${f.loadHrs.toFixed(1)} hrs/wk ${f.isOverloaded ? '<span class="text-[9px] text-red-600 block">(Burnout Risk)</span>' : ''}
+          </td>
+          <td class="py-3 px-2 text-center font-mono text-slate-800 font-bold">${f.papers}</td>
+          <td class="py-3 px-2 text-center font-mono font-extrabold text-indigo-700 text-sm">${f.apiScore}</td>
+          <td class="py-3 px-3 text-right">
+            ${f.isOverloaded
+              ? `<button onclick="rebalanceFacultyLoad('${f.name}')" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-2xs transition-all">Rebalance Load</button>`
+              : `<button onclick="showToast('Faculty workload for ${f.name} is within optimal 12-14 hr UGC band.')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300">Optimal</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function rebalanceFacultyLoad(name) {
+      const f = FACULTY_MEMBERS.find(m => m.name === name);
+      if (f) {
+        f.loadHrs = 14.0;
+        f.isOverloaded = false;
+        renderFacultyRoster();
+        showToast(`Faculty Workload Rebalanced: Delegated 4.5 surplus lab hours from ${name} to junior teaching fellows.`);
+      }
+    }
+
+    function downloadFacultyPbasCsv() {
+      let csv = "Faculty Member,Designation,Department,Teaching Load (Hrs/Wk),Scopus Research Papers,Calculated UGC PBAS API Score\n";
+      FACULTY_MEMBERS.forEach(f => {
+        csv += `"${f.name}","${f.role}","${f.dept}","${f.loadHrs}","${f.papers}","${f.apiScore}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Faculty_PBAS_Appraisal_Report_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official Faculty PBAS Appraisal Summary CSV downloaded!");
+    }
+
+    // 4. SCHOLARSHIPS & FINANCIAL AID DISBURSEMENT
+    const SCHOLARSHIP_DATA = [
+      { id: '2024CS0142', name: 'Aarav Sharma', scheme: 'Merit-Cum-Means Scholarship', reqCgpa: 8.0, actualCgpa: 8.42, amount: '₹45,000', status: 'Approved (Pending Offset)', approved: false },
+      { id: '2024CS0219', name: 'Priya Nair', scheme: 'State Social Welfare Scholarship', reqCgpa: 6.5, actualCgpa: 7.10, amount: '₹35,000', status: 'Approved (Pending Offset)', approved: false },
+      { id: '2024ME0104', name: 'Kabir Mehta', scheme: 'Sports Excellence Grant', reqCgpa: 7.0, actualCgpa: 8.10, amount: '₹25,000', status: 'Disbursed to Tuition Ledger', approved: true },
+      { id: '2024EC0188', name: 'Sneha Rao', scheme: 'Women in Tech STEM Fellowship', reqCgpa: 8.0, actualCgpa: 8.65, amount: '₹50,000', status: 'Disbursed to Tuition Ledger', approved: true }
+    ];
+
+    function renderScholarshipRoster() {
+      const tbody = document.getElementById('scholarships-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = SCHOLARSHIP_DATA.map(s => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3">
+            <span class="font-bold text-slate-900 block">${s.name}</span>
+            <span class="text-[10px] font-mono text-slate-500">${s.id}</span>
+          </td>
+          <td class="py-3 px-3 font-semibold text-slate-800 text-xs">${s.scheme}</td>
+          <td class="py-3 px-2 text-center font-mono text-slate-700">
+            Min ${s.reqCgpa.toFixed(1)} <span class="text-emerald-700 font-bold">(Got ${s.actualCgpa.toFixed(2)})</span>
+          </td>
+          <td class="py-3 px-2 text-center font-mono font-extrabold text-emerald-700">${s.amount}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${s.approved ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-amber-100 text-amber-800 border border-amber-300'}">
+              ${s.status}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right">
+            ${s.approved
+              ? `<span class="text-xs text-slate-400 font-semibold">Ledger Updated</span>`
+              : `<button onclick="offsetScholarshipToLedger('${s.id}')" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all">Offset Tuition Dues</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function offsetScholarshipToLedger(studentId) {
+      const s = SCHOLARSHIP_DATA.find(x => x.id === studentId);
+      if (s) {
+        s.approved = true;
+        s.status = 'Disbursed to Tuition Ledger';
+        renderScholarshipRoster();
+        showToast(`Scholarship Aid Approved: ${s.amount} automatically credited against tuition ledger for ${s.name} (${studentId}).`);
+      }
+    }
+
+    function downloadDbtBankDisbursementCsv() {
+      let csv = "Student Name,Enrollment No,Scholarship Scheme,Award Amount,CGPA Verified,Disbursement Status\n";
+      SCHOLARSHIP_DATA.forEach(s => {
+        csv += `"${s.name}","${s.id}","${s.scheme}","${s.amount}","${s.actualCgpa}","${s.status}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `DBT_Scholarship_Disbursement_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official DBT Bank Disbursement CSV downloaded!");
+    }
+
+    // 5. EXAM SEATING & ANTI-CHEATING JUMBLING MATRIX
+    const EXAM_DESKS = [
+      { desk: 'Desk A-01', branch: 'CSE', subject: 'CS502 OS', student: 'Aarav Sharma (2024CS0142)' },
+      { desk: 'Desk A-02', branch: 'ME', subject: 'ME501 Thermo', student: 'Kabir Mehta (2024ME0104)' },
+      { desk: 'Desk A-03', branch: 'CSE', subject: 'CS502 OS', student: 'Rohan Varma (2024CS0198)' },
+      { desk: 'Desk A-04', branch: 'ECE', subject: 'EC504 Signals', student: 'Sneha Rao (2024EC0188)' },
+      { desk: 'Desk B-01', branch: 'ME', subject: 'ME501 Thermo', student: 'Vikramaditya Roy (2024ME0034)' },
+      { desk: 'Desk B-02', branch: 'CSE', subject: 'CS502 OS', student: 'Priya Nair (2024CS0219)' },
+      { desk: 'Desk B-03', branch: 'ECE', subject: 'EC504 Signals', student: 'Ananya Deshmukh (2024EC0089)' },
+      { desk: 'Desk B-04', branch: 'ME', subject: 'ME501 Thermo', student: 'Rohit K. (2024ME0120)' }
+    ];
+
+    function renderExamsGrid() {
+      const container = document.getElementById('exam-desks-grid');
+      if (!container) return;
+
+      container.innerHTML = EXAM_DESKS.map(d => `
+        <div class="p-3 rounded-lg border text-xs space-y-1 ${
+          d.branch === 'CSE' ? 'bg-blue-50/80 border-blue-200 text-blue-950' :
+          d.branch === 'ME' ? 'bg-amber-50/80 border-amber-200 text-amber-950' :
+          'bg-purple-50/80 border-purple-200 text-purple-950'
+        }">
+          <div class="flex items-center justify-between font-mono font-bold">
+            <span>${d.desk}</span>
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-bold ${
+              d.branch === 'CSE' ? 'bg-blue-200 text-blue-900' :
+              d.branch === 'ME' ? 'bg-amber-200 text-amber-900' :
+              'bg-purple-200 text-purple-900'
+            }">${d.branch}</span>
+          </div>
+          <p class="font-bold text-slate-800 text-[11px] truncate">${d.student.split('(')[0]}</p>
+          <p class="text-[10px] text-slate-500 font-mono">${d.subject}</p>
+        </div>
+      `).join('');
+    }
+
+    function regenerateExamJumblingMatrix() {
+      EXAM_DESKS.reverse();
+      renderExamsGrid();
+      showToast("Exam Jumbling Matrix Re-Calculated: Zero adjacent course overlaps maintained across all 42 examination halls.");
+    }
+
+    function downloadExamSeatingChartCsv() {
+      let csv = "Desk Number,Assigned Branch,Subject Code,Student Candidate\n";
+      EXAM_DESKS.forEach(d => {
+        csv += `"${d.desk}","${d.branch}","${d.subject}","${d.student}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Exam_Hall_Seating_Door_Chart_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official Exam Hall Seating Matrix CSV exported!");
+    }
+
+    // 6. CAMPUS ESG & GREEN AUDIT ENERGY TELEMETRY
+    const ENERGY_BLOCKS = [
+      { block: 'Academic Block A (Lecture Theatres)', occupancy: 0, powerKw: '42.5 kW', hvac: 'ACTIVE', waste: true },
+      { block: 'Academic Block B (Computing Labs)', occupancy: 280, powerKw: '68.0 kW', hvac: 'ACTIVE', waste: false },
+      { block: 'Central Library Complex', occupancy: 410, powerKw: '54.2 kW', hvac: 'ACTIVE', waste: false },
+      { block: 'Aravali Hostel Block C', occupancy: 398, powerKw: '84.0 kW', hvac: 'ACTIVE', waste: false }
+    ];
+
+    function renderEnergyTelemetry() {
+      const tbody = document.getElementById('energy-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = ENERGY_BLOCKS.map(b => `
+        <tr class="hover:bg-slate-50 transition-colors ${b.waste ? 'bg-amber-50/50' : ''}">
+          <td class="py-3 px-3 font-bold text-slate-900">${b.block}</td>
+          <td class="py-3 px-2 text-center font-mono font-bold ${b.occupancy === 0 ? 'text-red-600' : 'text-slate-800'}">${b.occupancy} Students</td>
+          <td class="py-3 px-2 text-center font-mono font-bold text-slate-900">${b.powerKw}</td>
+          <td class="py-3 px-3 text-xs font-semibold text-slate-700">${b.hvac}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${b.waste ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'}">
+              ${b.waste ? 'Energy Waste (0 Occupants)' : 'Optimal Load'}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right">
+            ${b.waste
+              ? `<button onclick="powerDownBlock('${b.block}')" class="px-2.5 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-2xs transition-all">Power Down HVAC</button>`
+              : `<span class="text-xs text-slate-400 font-semibold">Normal</span>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function powerDownBlock(blockName) {
+      const b = ENERGY_BLOCKS.find(x => x.block === blockName);
+      if (b) {
+        b.waste = false;
+        b.powerKw = '4.2 kW (Standby)';
+        b.hvac = 'STANDBY / SHUTOFF';
+        renderEnergyTelemetry();
+        showToast(`Remote Power-Down Executed: Shut down surplus HVAC in ${blockName}. Saved 38.3 kWh!`);
+      }
+    }
+
+    function downloadGreenAuditReportCsv() {
+      let csv = "Campus Building,Turnstile Occupancy,Power Draw (kW),HVAC Status,Energy Efficiency Assessment\n";
+      ENERGY_BLOCKS.forEach(b => {
+        csv += `"${b.block}","${b.occupancy}","${b.powerKw}","${b.hvac}","${b.waste ? 'ENERGY_WASTE' : 'OPTIMAL'}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Campus_Green_Audit_NAAC7_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official NAAC Criterion 7 Green Audit Report CSV exported!");
+    }
+
+    // 7. AUTOMATED COURSE REGISTRATION & PREREQUISITES
+    const REGISTRATION_COURSES = [
+      { code: 'CS604', title: 'Distributed Cloud Architecture', credits: 4, prereq: 'CS502 (Operating Systems)', passed: true, seatsLeft: 18, registered: false },
+      { code: 'CS608', title: 'Deep Learning & Neural Networks', credits: 4, prereq: 'CS501 (Algorithms), MATH201', passed: true, seatsLeft: 6, registered: false },
+      { code: 'CS612', title: 'Blockchain & Cryptographic Protocol', credits: 3, prereq: 'CS504 (Computer Networks)', passed: true, seatsLeft: 24, registered: false },
+      { code: 'CS699', title: 'Advanced Quantum Computing Algorithms', credits: 4, prereq: 'MATH301 (Linear Algebra III - Not Passed)', passed: false, seatsLeft: 12, registered: false }
+    ];
+
+    function renderRegistrationCart() {
+      const tbody = document.getElementById('registration-cart-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = REGISTRATION_COURSES.map(c => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3">
+            <span class="font-bold text-slate-900 block">${c.code} - ${c.title}</span>
+          </td>
+          <td class="py-3 px-2 text-center font-mono font-bold text-slate-800">${c.credits}</td>
+          <td class="py-3 px-3 text-xs text-slate-600 font-mono">${c.prereq}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${c.passed ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-red-100 text-red-800 border border-red-300'}">
+              ${c.passed ? 'Passed (Grade A/B Met)' : 'Violation: Prerequisite Missing'}
+            </span>
+          </td>
+          <td class="py-3 px-2 text-center font-mono font-bold ${c.seatsLeft < 10 ? 'text-amber-700' : 'text-slate-800'}">${c.seatsLeft}</td>
+          <td class="py-3 px-3 text-right">
+            ${c.registered
+              ? `<span class="text-xs text-emerald-700 font-bold">Registered</span>`
+              : c.passed
+                ? `<button onclick="registerCourseItem('${c.code}')" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-all">Register</button>`
+                : `<button onclick="showToast('Registration Blocked: Missing mandatory prerequisite grade.')" class="px-2.5 py-1 rounded bg-slate-100 text-slate-400 font-semibold text-xs border border-slate-200 cursor-not-allowed">Blocked</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function registerCourseItem(code) {
+      const c = REGISTRATION_COURSES.find(x => x.code === code);
+      if (c && c.passed) {
+        c.registered = true;
+        c.seatsLeft = Math.max(0, c.seatsLeft - 1);
+        renderRegistrationCart();
+        showToast(`Course Registration Confirmed: Enrolled Aarav Sharma into ${code} (${c.title}). Relational seat decrement logged.`);
+      }
+    }
+
+    function downloadMasterEnrollmentRosterCsv() {
+      let csv = "Course Code,Course Title,Credits,Prerequisite Rule,Seats Available,Registration Status\n";
+      REGISTRATION_COURSES.forEach(c => {
+        csv += `"${c.code}","${c.title}","${c.credits}","${c.prereq}","${c.seatsLeft}","${c.registered ? 'ENROLLED' : 'OPEN'}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Semester_Master_Enrollment_Roster_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Official Semester Master Enrollment CSV exported!");
+    }
+
+    // 8. ALUMNI MENTORSHIP & ENDOWMENT NETWORK
+    const ALUMNI_DIRECTORY = [
+      { name: 'Kunal Singhal', gradYear: 'Class of 2021', major: 'B.Tech CSE', role: 'Senior Software Engineer @ Google', spec: 'Distributed Systems & Tech Mock Interviews', slots: 3, booked: false },
+      { name: 'Dr. Megha Kapoor', gradYear: 'Class of 2018', major: 'B.Tech ECE', role: 'Staff Hardware Architect @ Qualcomm', spec: 'Silicon VLSI & Graduate School Applications', slots: 2, booked: false },
+      { name: 'Siddharth Roy', gradYear: 'Class of 2019', major: 'B.Tech ME', role: 'Product Lead @ Tesla Mobility', spec: 'EV Powertrains & Startup Capstone Funding', slots: 4, booked: false }
+    ];
+
+    function renderAlumniRoster() {
+      const tbody = document.getElementById('alumni-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = ALUMNI_DIRECTORY.map(a => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-bold text-slate-900">${a.name}</td>
+          <td class="py-3 px-3 text-slate-700">${a.gradYear} • ${a.major}</td>
+          <td class="py-3 px-3 font-semibold text-slate-900">${a.role}</td>
+          <td class="py-3 px-3 text-xs text-slate-600">${a.spec}</td>
+          <td class="py-3 px-2 text-center font-mono font-bold text-slate-800">${a.slots}</td>
+          <td class="py-3 px-3 text-right">
+            ${a.booked
+              ? `<span class="text-xs text-emerald-700 font-bold">Session Booked</span>`
+              : `<button onclick="bookAlumniMentorship('${a.name}')" class="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs transition-all">Book 20-Min Chat</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function bookAlumniMentorship(name) {
+      const a = ALUMNI_DIRECTORY.find(x => x.name === name);
+      if (a) {
+        a.booked = true;
+        a.slots = Math.max(0, a.slots - 1);
+        renderAlumniRoster();
+        showToast(`Alumni Mentorship Booked: 20-min consultation confirmed with ${name} (${a.role}).`);
+      }
+    }
+
+    function downloadAlumniDirectoryCsv() {
+      let csv = "Alumni Name,Graduation Year,Major Degree,Current Corporate Role,Mentorship Specialization\n";
+      ALUMNI_DIRECTORY.forEach(a => {
+        csv += `"${a.name}","${a.gradYear}","${a.major}","${a.role}","${a.spec}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Digii_Campus_Alumni_Directory_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Alumni Directory CSV downloaded successfully!");
+    }
+
+    // 9. CENTRAL LAB ASSET & INVENTORY TRACKER
+    const LAB_ASSETS = [
+      { id: 'GPU-NODE-01', name: 'NVIDIA A100 Tensor Core 80GB', lab: 'Deep Learning Lab 4B', value: '₹14,50,000', custody: 'Reserved by GDSC Hackathon Team', calib: 'Optimal', reserved: false },
+      { id: 'OSC-RIG-402', name: 'Tektronix 4-Channel 1GHz Oscilloscope', lab: 'Analog Circuits Lab 2A', value: '₹3,20,000', custody: 'In Lab Cabinet 04', calib: 'Calibration Valid (May 2027)', reserved: false },
+      { id: '3DP-IND-01', name: 'Markforged Industrial Carbon 3D Printer', lab: 'Central Maker Space', value: '₹8,90,000', custody: 'Reserved by SAE Baja Racing', calib: 'Nozzle Calibration Due', reserved: false }
+    ];
+
+    function renderInventoryRoster() {
+      const tbody = document.getElementById('inventory-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = LAB_ASSETS.map(x => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-mono font-bold text-slate-900">${x.id} • ${x.name}</td>
+          <td class="py-3 px-3 text-slate-700">${x.lab}</td>
+          <td class="py-3 px-2 text-center font-mono font-bold text-slate-900">${x.value}</td>
+          <td class="py-3 px-3 text-xs text-slate-600">${x.custody}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${x.calib.includes('Due') ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'}">
+              ${x.calib}
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right">
+            ${x.reserved
+              ? `<span class="text-xs text-emerald-700 font-bold">Slot Reserved</span>`
+              : `<button onclick="reserveLabAssetSlot('${x.id}')" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-all">Reserve Slot</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function reserveLabAssetSlot(assetId) {
+      const x = LAB_ASSETS.find(a => a.id === assetId);
+      if (x) {
+        x.reserved = true;
+        x.custody = 'Reserved by Aarav Sharma (2024CS0142)';
+        renderInventoryRoster();
+        showToast(`Laboratory Equipment Slot Reserved: 4-hour workstation slot confirmed for ${x.name} (${assetId}).`);
+      }
+    }
+
+    function downloadLabAssetInventoryCsv() {
+      let csv = "Asset ID,Device Name,Lab Location,Replacement Value,Custody Status,Calibration Status\n";
+      LAB_ASSETS.forEach(x => {
+        csv += `"${x.id}","${x.name}","${x.lab}","${x.value}","${x.custody}","${x.calib}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Lab_Asset_Inventory_Register_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Central Laboratory Asset Register CSV downloaded!");
+    }
+
+    // 10. INSTITUTIONAL ACCREDITATION & NAAC/NIRF COPILOT
+    const NAAC_CRITERIA = [
+      { crit: 'Criterion 1', focus: 'Curricular Aspects & Feedback', bench: '90%', score: '94.2%', ready: true },
+      { crit: 'Criterion 2', focus: 'Teaching-Learning and Evaluation', bench: '85%', score: '91.8%', ready: true },
+      { crit: 'Criterion 3', focus: 'Research, Innovations and Extension', bench: '80%', score: '84.5%', ready: true },
+      { crit: 'Criterion 4', focus: 'Infrastructure and Learning Resources', bench: '90%', score: '95.0%', ready: true },
+      { crit: 'Criterion 5', focus: 'Student Support and Progression (TPO & NASD)', bench: '85%', score: '92.4%', ready: true },
+      { crit: 'Criterion 6', focus: 'Governance, Leadership and Management', bench: '80%', score: '88.6%', ready: true },
+      { crit: 'Criterion 7', focus: 'Institutional Values & Best Practices (ESG)', bench: '85%', score: '90.2%', ready: true }
+    ];
+
+    function renderAccreditationDashboard() {
+      const tbody = document.getElementById('accreditation-roster-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = NAAC_CRITERIA.map(c => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-bold text-slate-900">${c.crit}</td>
+          <td class="py-3 px-3 text-slate-700 font-semibold">${c.focus}</td>
+          <td class="py-3 px-2 text-center font-mono text-slate-600">${c.bench}</td>
+          <td class="py-3 px-2 text-center font-mono font-extrabold text-emerald-700 text-sm">${c.score}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+              ✓ 100% Relational Proof Verified
+            </span>
+          </td>
+          <td class="py-3 px-3 text-right">
+            <button onclick="showToast('Evidence Proof for ${c.crit}: Ingested live from MySQL replica tables.')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs border border-slate-300">View Lineage</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function downloadNaacSsrBundleCsv() {
+      let csv = "NAAC Criterion,Focus Area,Institutional Benchmark,Calculated Score,Audit Status\n";
+      NAAC_CRITERIA.forEach(c => {
+        csv += `"${c.crit}","${c.focus}","${c.bench}","${c.score}","AUDIT_READY"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `NAAC_SSR_Accreditation_Bundle_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("NAAC Self-Study Report (SSR) Data Bundle CSV exported!");
     }
 
   </script>

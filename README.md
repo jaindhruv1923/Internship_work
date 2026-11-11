@@ -118,23 +118,32 @@ python .\product_enhancement\backend\test_api.py
   - **Smart Timetable Clash Resolver (Stage 8):** Multi-entity constraint optimizer detecting faculty collisions in real time and auto-resolving professor commitments with 1-click, eliminating **100% of scheduling backend support tickets**.
   - **Non-Academic Student Development Module (NASD):** Direct functional realization of Dhruv Jain's Week 2 research framework, tracking Enrichment Credits (BML Munjal University model), 42 chartered campus societies (ACM, IEEE, Baja Racing, NSS), 18,420 verified volunteer hours, and automated accreditation compliance for NAAC Criterion 5.3 / NIRF. Includes 1-click credential verification and exportable official co-curricular diploma supplements.
   - **Enterprise BI Suite & Clean Design Language:** Completely sanitized all emojis across modules in favor of clean enterprise SVG typography. Integrated a live Multi-Campus Switcher (`Main Campus`, `North Campus NCR`, `Bengaluru`), real-time Department Filter (`CSE`, `ECE`, `ME`) for the Predictive Radar, and an interactive Hostel Night Roll-Call & Room Allocation Register.
-  - **10 B2B2C Student Experience Hub Innovations:** Complete student life cycle hub featuring 25 functional buttons, real downloads (`.txt` clearance certificate, `.ics` calendar sync, verified resume), and dedicated modals:
-    1. *Digital No-Dues Clearance:* Instant 4-department clearance & official certificate download.
-    2. *Smart Assignment Deadline Balancer:* Calendar congestion heatmap shifting submissions from Friday to Monday.
-    3. *Verified Digital Auto-Resume Generator:* Cryptographically verifiable portfolio backed by live MySQL tables.
-    4. *Unified Geo-Tagged Maintenance Ticketing:* Photo complaint dispatcher assigning hostel technician with live ETA.
-    5. *Seamless Office Hours Booking:* 15-min consultation reservation with real `.ics` calendar sync.
-    6. *Automated Medical Leave & CHC Sync:* Doctor prescription crediting 6 lecture hours to `ams_attendance`.
-    7. *AI-Powered Elective Matchmaker:* 3-course academic fit comparison matrix.
-    8. *Dynamic Campus Marketplace & Lost-Found:* Internal peer textbook exchange with room handover.
-    9. *Universal NFC/QR Campus Wallet:* Digital smart pass with turnstile entry, mess lunch deduction, and UPI top-up.
-    10. *Peer-to-Peer Micro-Tutoring Network:* Remedial tutor bounty deposit system.
-  - **PM Strategy & Engineering Cockpit (`PM Cockpit ⚡`):**
+  - **19 Operational Core ERP Modules with Active Workflows & File Downloads:**
+    1. *Predictive Dropout Radar (`view-radar`):* Multi-tier risk classifier with real-time department filtering (CSE/ECE/ME), dynamic cohort count, and 1-click advisor intervention triggers.
+    2. *Student 360 Timeline (`view-student360`):* Longitudinal chronicle linking academic scores, library swipes, hostel curfews, and fee receipts for any selected student.
+    3. *Student Experience Hub (`view-student-hub`):* 10 dual-value B2B2C modules with live action modals, real certificate downloads, and friction mitigators.
+    4. *Non-Academic Development Ledger (`view-development`):* Week 2 research realization tracking 3,840 enrichment credit students, 42 student clubs, 18,420 volunteer hours (NAAC 5.3), with 1-click `Verify & Accredit` and official diploma supplement export.
+    5. *TPO Placement Intelligence (`view-placements`):* Placement Readiness Index (PRI), corporate shortlist filter (Google, Deloitte, Microsoft, Tata Tech), and instant official placement selection letter generation (`.txt`).
+    6. *Statutory Grievance & POSH Ombudsperson (`view-grievance`):* Zero-knowledge cryptographic ticket pipeline, SLA escalation triggers, and official UGC-compliant CSV audit ledger.
+    7. *Faculty PBAS Appraisal (`view-faculty`):* Real-time UGC API Score calculator, teaching load balance dispatcher (surplus lab hour delegation), and Dean-ready PBAS matrix export.
+    8. *Scholarship & DBT Disbursement (`view-scholarships`):* Merit-cum-means and institutional aid disbursement ledger with automated tuition offset crediting and PFMS-ready bank advice export.
+    9. *Smart Exam Hall Seating Engine (`view-exams`):* Anti-cheating cross-jumbling bipartite graph algorithm preventing adjacent branch seating, with 1-click jumbling matrix re-calculation and hall door seating roster CSV export.
+    10. *Campus ESG & Green Audit (`view-energy`):* Real-time IoT power telemetry across campus zones, 1-click HVAC idle power-down execution, and ISO 50001 green audit CSV export.
+    11. *Course Registration Cart (`view-registration`):* Real-time prerequisite validation tree, credit cap monitor, live add/drop seat count decrement, and approved schedule slip export.
+    12. *Alumni & Endowment Network (`view-alumni`):* 1:1 mentorship booking engine, capstone project sponsorship pledge, and verified alumni directory CSV export.
+    13. *Lab Consumables & High-Value Assets (`view-inventory`):* RFID/QR asset tracking, 4-hour workstation slot reservation, and central procurement audit export.
+    14. *Accreditation Copilot (`view-accreditation`):* NAAC SSR 7-criteria telemetry (Grade A++ 3.68/4.00 projection), cross-module relational proof verification, and institutional data bundle CSV export.
+    15. *Academics & Timetable Engine (`view-academics`):* 32 credit track scheduler, live timetable clash resolver, and clash-free timetable CSV export.
+    16. *Finance & Fee Dues Recon (`view-finance`):* Batch reconciliation matcher recovering ₹1.84 Cr tuition exposure, with bank statement parser and audit export.
+    17. *Hostel & Curfew Desk (`view-hostel`):* Real-time biometric night roll-call register with curfew breach alarms and CSV roster export.
+    18. *Access & Turnstiles (`view-access`):* Biometric gate reader telemetry with impossible travel anti-passback violation alerts and 1-click security guard dispatch.
+    19. *Campus Health Center Triage (`view-chc`):* Mental health and medical leave sync with automated lecture attendance crediting.
+  - **PM Strategy & Engineering Cockpit (`PM Cockpit`):**
     - *Tab 1: RICE Prioritization Engine* with dynamic effort multiplier slider (0.5x to 2.0x) and real-time Now / Next / Later swimlanes with live feature launch triggers.
     - *Tab 2: Feature Flags & Canary Governance (LaunchDarkly Model)* with rollout sliders and circuit breaker auto-rollback (>120ms p99).
     - *Tab 3: Telemetry Funnel (Amplitude Model)* diagnosing 22% payment drop-off, with simulated PM intervention recovering +₹52 Lakhs.
     - *Tab 4: In-App PRD v2.4 Spec Viewer* with 1-click Markdown copy and download.
-  - **Full-Screen Executive Pitch Deck Viewer (`📽️ Pitch Deck Mode`):** In-browser 12-slide presentation mode with keyboard arrow navigation (`◄` `►`), interactive highlights, and direct jump buttons into every live feature.
+  - **Full-Screen Executive Pitch Deck Viewer (`Pitch Deck`):** In-browser 12-slide presentation mode with keyboard arrow navigation (`◄` `►`), interactive highlights, and direct jump buttons into every live feature.
 
 ---
 
