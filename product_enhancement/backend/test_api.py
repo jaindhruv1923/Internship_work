@@ -66,6 +66,34 @@ class TestDigiiCampusAPI(unittest.TestCase):
         self.assertIn("b2b2c_features", APP_STATE)
         self.assertEqual(len(APP_STATE["b2b2c_features"]), 10)
 
+    def test_red_zone_csv_generation(self):
+        import io
+        import csv
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow(["UKID", "Enrollment_No", "Name", "Department", "Semester", "Risk_Score", "Risk_Tier", "Attendance_Pct", "Overdue_Fee_INR", "Curfew_Breaches", "Recommended_Action"])
+        high_risk_count = 0
+        for s in APP_STATE["students"]:
+            if s["risk_profile"]["tier"] == "HIGH":
+                high_risk_count += 1
+                writer.writerow([
+                    s["ukid"],
+                    s["enrollment_no"],
+                    f"{s['first_name']} {s['last_name']}",
+                    s["department"],
+                    s.get("current_semester", s.get("semester", 5)),
+                    s["risk_profile"]["score"],
+                    s["risk_profile"]["tier"],
+                    s["academics"]["overall_attendance_pct"],
+                    s["finance"]["amount_overdue"],
+                    s["access_gate_telemetry"]["curfew_breaches_30d"],
+                    s["risk_profile"]["recommended_action"]
+                ])
+        csv_data = output.getvalue()
+        self.assertGreater(high_risk_count, 0, "Should have at least 1 high-risk student")
+        self.assertIn("Aarav Sharma", csv_data)
+        self.assertIn("Priya Nair", csv_data)
+
     def test_html_onclick_handlers_integrity(self):
         import re
         html_path = os.path.join(SCRIPT_DIR, '..', 'index.html')

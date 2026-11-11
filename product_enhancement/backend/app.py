@@ -16,7 +16,7 @@ import io
 import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Resolve workspace root and mock data path
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -163,7 +163,7 @@ class DigiiCampusApiHandler(BaseHTTPRequestHandler):
                 "service": "Digii Campus Proactive Retention API (BI Portal 2.0)",
                 "version": "2.0.0-phase4",
                 "active_students": len(APP_STATE["students"]),
-                "timestamp": datetime.utcnow().isoformat() + "Z"
+                "timestamp": datetime.now(timezone.utc).isoformat()
             }
             self._set_headers(200)
             self.wfile.write(json.dumps(resp).encode("utf-8"))
@@ -298,7 +298,7 @@ ORDER BY event_time DESC LIMIT 20;
                         s["enrollment_no"],
                         f"{s['first_name']} {s['last_name']}",
                         s["department"],
-                        s["semester"],
+                        s.get("current_semester", s.get("semester", 5)),
                         s["risk_profile"]["score"],
                         s["risk_profile"]["tier"],
                         s["academics"]["overall_attendance_pct"],
@@ -357,7 +357,7 @@ ORDER BY event_time DESC LIMIT 20;
                     "enrollment_no": student["enrollment_no"],
                     "action_type": action_type,
                     "dispatched_by": operator,
-                    "timestamp": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
+                    "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
                     "status": "DISPATCHED_TO_QUEUE",
                     "notes": custom_notes,
                     "delivery_metadata": {
@@ -374,7 +374,7 @@ ORDER BY event_time DESC LIMIT 20;
                     "module": "ADMINISTRATIVE_ACTION",
                     "badge": "Action Dispatched",
                     "title": f"Intervention: {action_type.replace('_', ' ').title()}",
-                    "timestamp": datetime.utcnow().isoformat() + "Z",
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
                     "actor": operator,
                     "description": custom_notes or f"Official proactive retention action ({action_type}) dispatched.",
                     "severity": "SUCCESS"
