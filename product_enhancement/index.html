@@ -55,9 +55,7 @@
     body.roi-mode-active .roi-overlay {
       display: flex !important;
     }
-    .roi-badge-glow {
-      box-shadow: 0 0 15px rgba(129, 140, 248, 0.4);
-    }
+    /* Clean minimalist enterprise styling */
     .spa-fade-in {
       animation: spaFadeIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -322,14 +320,14 @@
         </div>
 
         <!-- Executive Pitch Deck Button -->
-        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-700 via-pink-700 to-rose-700 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
+        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs shadow-xs transition-colors shrink-0">
           <svg class="w-4 h-4 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
           <span class="hidden sm:inline">Pitch Deck</span>
           <span class="sm:hidden">Deck</span>
         </button>
 
         <!-- PM Strategy Cockpit Button -->
-        <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 hover:from-blue-600 hover:to-indigo-600 text-white font-bold text-xs shadow-xs hover:shadow-md transition-all shrink-0">
+        <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold text-xs shadow-xs transition-colors shrink-0">
           <svg class="w-4 h-4 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span class="hidden sm:inline">PM Cockpit</span>
           <span class="sm:hidden">PM</span>
@@ -364,11 +362,11 @@
       <section id="view-radar" class="space-y-6">
         
         <!-- STAGE 9: PM ROI MODE OVERLAY - RADAR -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             Executive ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Protects ₹1.84 Cr in at-risk tuition</strong> by converting multi-table decay signals (attendance slump, late curfew, overdue installment) into an automated 60-day early intervention window before student attrition.
           </span>
         </div>
@@ -508,11 +506,11 @@
       <section id="view-student360" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - STUDENT 360 -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             UX Efficiency ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Reduces cross-module investigation time from 18 mins across 5 separate modules to &lt;15 seconds</strong> by combining AMS, Fee Dues, Turnstile Gates, and Hostel Incident logs into a single real-time timeline.
           </span>
         </div>
@@ -742,11 +740,11 @@
       <section id="view-academics" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - ACADEMICS -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-blue-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             ENGINEERING ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates 100% of scheduling support tickets to the engineering backend</strong> and saves 80+ hours of manual HOD planning per semester via automated multi-entity room and professor constraint resolution.
           </span>
         </div>
@@ -1254,11 +1252,11 @@
       <section id="view-finance" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - FINANCE -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             FINANCIAL OPERATIONS ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Saves 40 hours/week of manual accounting labor</strong> and eliminates erroneous student exam debarments by instant bank settlement fuzzy matching against 4,850 student ledger records.
           </span>
         </div>
@@ -1386,10 +1384,10 @@
 
             <div class="flex flex-wrap items-center gap-2 shrink-0">
               <button id="btn-reset-recon" onclick="resetReconciliationEngine()" class="hidden px-3.5 py-2.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
-                ↺ Reset Batch
+                Reset Batch
               </button>
 
-              <button id="btn-run-recon" onclick="runReconciliationAlgorithm()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+              <button id="btn-run-recon" onclick="runReconciliationAlgorithm()" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
                 <svg class="w-4 h-4 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Run Auto-Reconciliation Algorithm (856 Inbound Records)</span>
               </button>
@@ -1536,11 +1534,11 @@
       <section id="view-hostel" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - HOSTEL & MESS -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-orange-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             DINING OPERATIONS ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Saves ₹4.2 Lakhs/month in dining food waste</strong> by predicting daily meal headcount with 96.4% biometric accuracy and auto-tuning kitchen procurement.
           </span>
         </div>
@@ -1616,8 +1614,8 @@
             </p>
           </div>
           <div class="shrink-0 flex items-center gap-2">
-            <button id="btn-reset-mess" onclick="resetMessProcurement()" class="hidden px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition-colors">↺ Reset</button>
-            <button id="btn-optimize-mess" onclick="optimizeMessProcurement()" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5">
+            <button id="btn-reset-mess" onclick="resetMessProcurement()" class="hidden px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition-colors">Reset</button>
+            <button id="btn-optimize-mess" onclick="optimizeMessProcurement()" class="px-4 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5">
               <span>Optimize Kitchen Prep (-630 Portions)</span>
             </button>
           </div>
@@ -1719,11 +1717,11 @@
       <section id="view-access" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - ACCESS & GATES -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-rose-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             CAMPUS SECURITY ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates proxy turnstile punching and automates residential curfew compliance</strong> using SQL window functions detecting multi-gate punches within 180 seconds.
           </span>
         </div>
@@ -1868,11 +1866,11 @@
       <section id="view-chc" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - CHC -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             CHC WORKFLOW ENGINE ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Proactively triages 68% of student mental health risks</strong> before formal academic failure by correlating repeat clinic visits with classroom absence trends.
           </span>
         </div>
@@ -2046,11 +2044,11 @@
       <section id="view-student-hub" class="hidden space-y-6">
 
         <!-- STAGE 9: PM ROI MODE OVERLAY - STUDENT HUB -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-purple-900 to-slate-900 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             B2B2C PRODUCT ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Boosts student daily active app retention by 84%</strong> while eliminating 250+ hours/month of university administrative paperwork across clearances, medical leaves, and office hours.
           </span>
         </div>
@@ -2169,7 +2167,7 @@
               <span class="text-[10px] text-slate-400 font-mono">Target: Aarav Sharma (2024CS0142)</span>
               <div class="flex items-center gap-1.5">
                 <button id="btn-nodues-reset" onclick="resetNoDuesClearance()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
-                  ↺ Reset
+                  Reset
                 </button>
                 <button id="btn-nodues-action" onclick="resolveNoDuesClearance()" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
                   <span>Auto-Verify IT & Issue Certificate</span>
@@ -2228,7 +2226,7 @@
               </div>
               <div class="flex items-center gap-1.5">
                 <button id="btn-deadline-reset" onclick="resetAssignmentDeadline()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
-                  ↺ Reset
+                  Reset
                 </button>
                 <button id="btn-rebalance-deadline" onclick="rebalanceAssignmentDeadline()" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
                   <span>Rebalance Deadline to Monday</span>
@@ -2418,7 +2416,7 @@
               <span class="text-[10px] text-slate-500 font-mono">Eliminates Paper Slips</span>
               <div class="flex items-center gap-1.5">
                 <button id="btn-med-reset" onclick="resetMedicalLeave()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
-                  ↺ Reset
+                  Reset
                 </button>
                 <button id="btn-med-sync" onclick="syncMedicalLeaveAttendance()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5">
                   <span>Apply Attendance Grace</span>
@@ -2470,7 +2468,7 @@
               <div class="flex items-center gap-1.5">
                 <button onclick="openElectiveModal()" class="px-2.5 py-1 rounded text-[11px] font-bold text-teal-800 hover:text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-300 transition-colors flex items-center gap-1" title="Compare 3 electives side-by-side"><span></span><span>Compare 3 Electives</span></button>
                 <button id="btn-elective-reset" onclick="resetElectiveRegistration()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
-                  ↺ Reset
+                  Reset
                 </button>
                 <button id="btn-elective-action" onclick="preRegisterElective()" class="px-3 py-1.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-2xs transition-all">
                   Pre-Register
@@ -2618,7 +2616,7 @@
               </button>
               <div class="flex items-center gap-1.5">
                 <button id="btn-tutor-reset" onclick="resetTutoringBounty()" class="hidden px-2 py-1 rounded text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200" title="Reset for demo">
-                  ↺ Reset
+                  Reset
                 </button>
                 <button id="btn-tutor-action" onclick="acceptTutoringBounty()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all">
                   Accept Tutoring Bounty
@@ -2639,11 +2637,11 @@
       <section id="view-development" class="hidden space-y-6">
 
         <!-- ROI OVERLAY -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-yellow-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             NAAC ACCREDITATION & RETENTION ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Powers 100% compliance for NAAC Criterion 5 & NIRF Student Progression</strong> while boosting student campus engagement from 48% to 91.4% through structured enrichment credit recognition.
           </span>
         </div>
@@ -2782,11 +2780,11 @@
       <!-- VIEW: STUDENT SOCIAL ISOLATION & WELL-BEING SENTINEL (WEEK 3 PROPOSAL)-->
       <!-- =================================================================== -->
       <section id="view-isolation" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             MENTAL HEALTH & RETENTION ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates student mental health crises & silent dropouts</strong> by correlating physical turnstiles with zero club/library interactions for 14+ days, alerting university counselors weeks before academic failure.
           </span>
         </div>
@@ -2888,11 +2886,11 @@
       <!-- VIEW: PREDICTIVE KITCHEN PREP & FOOD WASTE REDUCER (PRGE ENGINE)     -->
       <!-- =================================================================== -->
       <section id="view-prge" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             PRGE FOOD WASTE ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates 630 wasted meals per day, saving ₹4.2 Lakhs/month in raw food procurement</strong> by automatically subtracting approved hostel leaves from daily morning dining preparation.
           </span>
         </div>
@@ -2993,11 +2991,11 @@
       <!-- VIEW: AUTONOMOUS MULTI-DEPARTMENT NO-DUES INSTANT CLEARANCE ENGINE   -->
       <!-- =================================================================== -->
       <section id="view-nodues" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             GRADUATION NO-DUES ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Compresses the 14-day graduation clearance cycle to under 3 seconds</strong> by checking institutional dues across all 270 tables simultaneously and cryptographically sealing clearance certificates.
           </span>
         </div>
@@ -3132,11 +3130,11 @@
       <!-- VIEW: SMART ASSIGNMENT CONGESTION & DEADLINE BALANCER                -->
       <!-- =================================================================== -->
       <section id="view-deadline" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             STUDENT BURNOUT MITIGATION ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Reduces student burnout by 68% and prevents mass submission server crashes</strong> by detecting multi-course assignment clustering and autonomously staggering non-urgent submissions.
           </span>
         </div>
@@ -3224,11 +3222,11 @@
       <!-- VIEW: TAMPER-PROOF CRYPTOGRAPHIC AUTO-RESUME GENERATOR              -->
       <!-- =================================================================== -->
       <section id="view-autoresume" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             RECRUITER TRUST, TPO OPS &amp; NIRF ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates 100% of resume fraud and manual background verification calls</strong> by compiling verified MySQL academic grades, OBE competencies, and club leadership directly into an institutionally sealed CV, while driving full-cycle placement drives.
           </span>
         </div>
@@ -3385,11 +3383,11 @@
       <!-- VIEW: TURNSTILE ANTI-PASSBACK & IMPOSSIBLE TRAVEL SENTINEL          -->
       <!-- =================================================================== -->
       <section id="view-passback" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-red-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-red-500/30 text-red-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-red-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             BIOMETRIC CAMPUS SECURITY ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates proxy card sharing & unauthorized boundary breaches</strong> by intercepting impossible spatial-temporal gate velocities (&lt;180s across 1.8km), locking turnstiles and dispatching campus guards.
           </span>
         </div>
@@ -3489,11 +3487,11 @@
 
 
 <section id="view-grievance" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-purple-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-purple-500/30 text-purple-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-purple-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             CHC WORKFLOW BPM &amp; STATUTORY COMPLIANCE ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Guarantees 100% compliance with UGC/AICTE statutory mandates</strong> &bull; Tracks SLA compliance across all 270 CHC-integrated tables, dynamically routes tickets to workcentres, and enforces multi-tier SLA countdown escalation.
           </span>
         </div>
@@ -3715,11 +3713,11 @@
       </section>
 
 <section id="view-scholarships" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             DBT & FINANCIAL RETENTION ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates 100% of student fee debarments due to delayed scholarship receipts</strong> by automatically crediting institutional scholarship aid against outstanding tuition ledgers in real time.
           </span>
         </div>
@@ -3818,11 +3816,11 @@
       </section>
 
 <section id="view-energy" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-teal-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-teal-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-teal-500/30 text-teal-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-teal-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             ESG & ENERGY SAVINGS ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Cuts annual university electric utility expenditure by ₹18.4 Lakhs</strong>, detects phantom midnight loads, and satisfies NAAC Criterion 7.1.2 Green Campus ISO 50001 compliance standards.
           </span>
         </div>
@@ -3921,11 +3919,11 @@
       </section>
 
 <section id="view-alumni" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-amber-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-amber-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-amber-500/30 text-amber-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-amber-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             ALUMNI ENDOWMENT ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Converts campus alumni into institutional revenue & placement mentors</strong>, unlocking ₹28.5 Lakhs in student capstone innovation sponsorship and elevating day-1 tech interview clearance by +34%.
           </span>
         </div>
@@ -4024,11 +4022,11 @@
       </section>
 
 <section id="view-accreditation" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-950 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             NAAC A++ & NIRF COPILOT ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates 6 months of manual data compilation for NAAC Self-Study Reports (SSR)</strong> by automatically aggregating quantitative proof directly from the 1,647 relational database tables across all 15 operational domains.
           </span>
         </div>
@@ -4133,11 +4131,11 @@
       <!-- VIEW: AI ADMISSIONS & MULTI-QUOTA SEAT ALLOTMENT MATRIX             -->
       <!-- =================================================================== -->
       <section id="view-admissions" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             ADMISSION CONVERSION ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates 3 weeks of manual seat allocation committee meetings</strong>, eliminates admission seat vacancies across quotas, and optimizes freshman tuition intake by ₹2.4 Cr via automated multi-round seat matrix shifting.
           </span>
         </div>
@@ -4227,11 +4225,11 @@
       <!-- VIEW: SMART CAMPUS INFRASTRUCTURE & ACOUSTIC VENUE BOOKING          -->
       <!-- =================================================================== -->
       <section id="view-venue" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             INFRASTRUCTURE & ASSET MANAGEMENT ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Eliminates sound-bleed conflicts across adjacent auditoriums</strong> and cuts &#8377;3.2 Lakhs in wasted air conditioning by automatically scheduling HVAC pre-cooling cycles 30 minutes before booked events, while maintaining 100% QR-tracked fixed asset inventory.
           </span>
         </div>
@@ -4573,11 +4571,11 @@
       <!-- VIEW: SMART DYNAMIC FLEET & TRANSPORT V2 ROUTE OPTIMIZER            -->
       <!-- =================================================================== -->
       <section id="view-transport" class="hidden space-y-6">
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 text-white text-xs font-semibold shadow-lg border border-blue-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-blue-500/30 text-blue-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-blue-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             FLEET DIESEL &amp; DUES RECONCILIATION ROI
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>ROI: Cuts annual university bus diesel consumption by &#8377;2.8 Lakhs/month</strong> by dynamically combining under-utilized pickup routes based on live student hostel leave checkouts, while reconciling student transport fee invoices directly into <code class="font-mono">dues_v2</code>.
           </span>
         </div>
@@ -4818,11 +4816,11 @@
       <section id="view-comparative" class="hidden space-y-6">
         
         <!-- Top PM Strategic ROI Banner -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-slate-900 to-blue-950 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             APM TRANSITION & BENCHMARK
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>Enterprise Strategic Thesis:</strong> Transforming Digii Campus from a 270-table transactional record system into an autonomous cross-departmental intelligence engine, protecting 1.84 Crore INR in tuition retention, eliminating 630 meals/day in mess waste, and automating graduation clearances from 14 days down to 1.2 seconds.
           </span>
         </div>
@@ -4881,7 +4879,7 @@
           <div class="xl:col-span-4 space-y-6 xl:sticky xl:top-20">
             
             <!-- Architectural Thesis Card -->
-            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 rounded-xl p-5 text-white border border-slate-700/80 shadow-md space-y-4">
+            <div class="bg-slate-900 rounded-xl p-5 text-slate-100 border border-slate-800 shadow-xs space-y-4">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-300 font-bold bg-indigo-900/60 px-2 py-0.5 rounded border border-indigo-700/50">Core Philosophy</span>
                 <span class="text-[10px] font-mono text-emerald-400 font-semibold flex items-center gap-1">
@@ -4991,11 +4989,11 @@
       <section id="view-operations-desk" class="hidden space-y-6">
         
         <!-- Top PM Strategic ROI Banner -->
-        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
-          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-blue-50/70 border border-blue-200 text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold font-mono tracking-wider uppercase border border-blue-200 shrink-0">
             ENTERPRISE ERP WORKBENCH
           </span>
-          <span class="leading-relaxed">
+          <span class="leading-relaxed text-slate-700">
             <strong>Active Production Workbench:</strong> Direct daily execution portal for student onboarding, CSV roster ingestion, live AMS faculty attendance marking, cashier fee collection, and warden out-pass approvals. Mutates live database state and immediately feeds predictive intelligence models.
           </span>
         </div>
@@ -5525,7 +5523,7 @@
     <div class="bg-white rounded-xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
       <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">️</div>
+          <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs"></div>
           <div>
             <h4 class="text-sm font-bold text-slate-900">Retention Heuristics & Risk Sensitivity Tuner</h4>
             <p class="text-[10px] text-slate-500">Recalculate cohort dropout detection parameters across 4,850 students</p>
@@ -5603,11 +5601,11 @@
           <span class="font-bold text-slate-800 block">Risk Tier Cutoff Thresholds:</span>
           <div class="grid grid-cols-2 gap-3 text-xs">
             <div>
-              <label class="block text-slate-500 mb-1">Critical Red Zone: Score ≥ <strong id="lbl-thresh-red" class="text-red-600">75</strong></label>
+              <label class="block text-slate-500 mb-1">Critical Red Zone: Score >= <strong id="lbl-thresh-red" class="text-red-600">75</strong></label>
               <input type="range" id="slider-thresh-red" min="60" max="90" value="75" oninput="document.getElementById('lbl-thresh-red').textContent = this.value" class="w-full accent-red-600">
             </div>
             <div>
-              <label class="block text-slate-500 mb-1">Moderate Amber Zone: Score ≥ <strong id="lbl-thresh-amber" class="text-amber-700">50</strong></label>
+              <label class="block text-slate-500 mb-1">Moderate Amber Zone: Score >= <strong id="lbl-thresh-amber" class="text-amber-700">50</strong></label>
               <input type="range" id="slider-thresh-amber" min="30" max="65" value="50" oninput="document.getElementById('lbl-thresh-amber').textContent = this.value" class="w-full accent-amber-600">
             </div>
           </div>
@@ -6190,7 +6188,7 @@ FROM StudentCompoundMetrics;
   <!-- =================================================================== -->
   <div id="resume-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
-      <div class="px-6 py-4 bg-gradient-to-r from-emerald-800 to-teal-900 text-white flex items-center justify-between">
+      <div class="px-6 py-4 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-md flex items-center justify-center text-lg font-bold">
             
@@ -6325,7 +6323,7 @@ FROM StudentCompoundMetrics;
 
       <div class="p-5 space-y-4 text-center">
         <!-- Physical Card Styling Preview -->
-        <div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white shadow-lg border border-indigo-500/30 text-left relative overflow-hidden">
+        <div class="p-4 rounded-2xl bg-slate-900 text-white shadow-xs border border-slate-800 text-left relative overflow-hidden">
           <!-- Hologram watermark -->
           <div class="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-indigo-500/10 blur-xl pointer-events-none"></div>
 
@@ -6523,9 +6521,9 @@ FROM StudentCompoundMetrics;
     <div class="bg-white rounded-2xl max-w-4xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150 flex flex-col max-h-[90vh]">
       
       <!-- Cockpit Header -->
-      <div class="px-6 py-4 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-between shrink-0">
+      <div class="px-6 py-4 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xl shadow-md border border-indigo-400/30">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-bold shadow-xs">
             
           </div>
           <div>
@@ -6577,7 +6575,7 @@ FROM StudentCompoundMetrics;
                 RICE Framework Scoring Engine
               </span>
               <p class="text-[11px] text-indigo-800 mt-0.5 leading-relaxed">
-                Calculates: <code class="bg-indigo-100 px-1.5 py-0.5 rounded font-mono font-bold text-indigo-950">(Reach × Impact × Confidence) ÷ Effort</code>. Proves ruthless prioritization based on engineering constraints.
+                Calculates: <code class="bg-indigo-100 px-1.5 py-0.5 rounded font-mono font-bold text-indigo-950">(Reach x Impact x Confidence) / Effort</code>. Proves ruthless prioritization based on engineering constraints.
               </p>
             </div>
             <!-- Dynamic Effort Multiplier Slider -->
@@ -6619,17 +6617,17 @@ FROM StudentCompoundMetrics;
                     <!-- Roadmap Swimlanes -->
           <div class="pt-2 space-y-2">
             <!-- 100% Implemented Status Callout -->
-            <div class="p-3 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 border border-emerald-400/40 shadow-xs">
+            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs">
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px] uppercase border border-emerald-400/40">
-                   100% Live Prototype Built
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold font-mono text-[10px] uppercase border border-emerald-300">
+                  100% Live Prototype Built
                 </span>
-                <span class="text-[11px] text-emerald-100">
-                  <strong>All 10 initiatives are already fully functional & interactive!</strong> Swimlanes represent the university staged rollout sequence.
+                <span class="text-[11px] text-emerald-900">
+                  <strong>All 10 initiatives are already fully functional &amp; interactive!</strong> Swimlanes represent the university staged rollout sequence.
                 </span>
               </div>
-              <span class="text-[10px] text-emerald-300 font-mono font-bold shrink-0">
-                 Click any card below to launch live feature!
+              <span class="text-[10px] text-emerald-700 font-mono font-bold shrink-0">
+                Click any card below to launch live feature!
               </span>
             </div>
 
@@ -6732,9 +6730,9 @@ FROM StudentCompoundMetrics;
             </div>
             <div class="flex items-center gap-2 shrink-0">
               <button id="btn-funnel-reset" onclick="resetFunnelSimulation()" class="hidden px-2.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs">
-                ↺ Reset Funnel
+                Reset Funnel
               </button>
-              <button id="btn-funnel-intervene" onclick="simulatePmFunnelIntervention()" class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-xs transition-all flex items-center gap-1.5">
+              <button id="btn-funnel-intervene" onclick="simulatePmFunnelIntervention()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all flex items-center gap-1.5">
                 <span>Simulate Dhruv's PM Intervention (+14% Boost)</span>
               </button>
             </div>
@@ -6887,7 +6885,7 @@ FROM StudentCompoundMetrics;
   <!-- =================================================================== -->
   <div id="clearance-cert-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
-      <div class="px-6 py-4 bg-gradient-to-r from-indigo-900 to-blue-900 text-white flex items-center justify-between">
+      <div class="px-6 py-4 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-lg font-bold">
             
@@ -6993,7 +6991,7 @@ FROM StudentCompoundMetrics;
   <!-- =================================================================== -->
   <div id="deadline-balancer-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
-      <div class="px-6 py-4 bg-gradient-to-r from-amber-700 via-orange-800 to-amber-900 text-white flex items-center justify-between">
+      <div class="px-6 py-4 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-lg font-bold">
             
@@ -7096,7 +7094,7 @@ FROM StudentCompoundMetrics;
   <!-- =================================================================== -->
   <div id="elective-matchmaker-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150">
-      <div class="px-6 py-4 bg-gradient-to-r from-teal-800 to-cyan-900 text-white flex items-center justify-between">
+      <div class="px-6 py-4 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-lg font-bold">
            
@@ -7206,7 +7204,7 @@ FROM StudentCompoundMetrics;
       <!-- Deck Header Bar -->
       <div class="px-6 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg></div>
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg></div>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-wider text-pink-400 font-extrabold">Executive Role Transition Deck</span>
             <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight">Digii Campus 2.0 — Executive Presentation (Suraj Bhatt & Saksham Gupta)</h3>
@@ -7244,7 +7242,7 @@ FROM StudentCompoundMetrics;
         </div>
 
         <div class="flex items-center gap-1 text-[11px] text-slate-500 font-mono hidden sm:flex">
-          <span>Use ◄ ► Arrow Keys to Navigate</span>
+          <span>Use Left / Right Arrow Keys to Navigate</span>
         </div>
       </div>
 
@@ -7703,7 +7701,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
             <!-- Compound Threat Callout -->
             <div class="mt-3.5 p-3 rounded-lg ${isRed ? 'bg-red-50 border border-red-200' : isAmber ? 'bg-amber-50 border border-amber-200' : 'bg-slate-50 border border-slate-200'} text-xs space-y-1">
               <span class="font-bold uppercase tracking-wider text-[10px] ${isRed ? 'text-red-700' : isAmber ? 'text-amber-800' : 'text-slate-500'}">
-                ${isRed ? '<svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> Immediate Compound Threat' : isAmber ? 'Marginal Disengagement' : '️ Normal Health'}
+                ${isRed ? '<svg class="w-4 h-4 text-amber-600 inline shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> Immediate Compound Threat' : isAmber ? 'Marginal Disengagement' : ' Normal Health'}
               </span>
               <p class="text-[11px] text-slate-700 leading-snug">${s.risk_profile.summary}</p>
             </div>
@@ -8181,7 +8179,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       toast.innerHTML = `
         <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
         <span class="flex-1">${message}</span>
-        <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white ml-2 text-sm">×</button>
+        <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white ml-2 text-sm">x</button>
       `;
       container.appendChild(toast);
 
@@ -8507,7 +8505,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         <svg class="w-4 h-4 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         <span>Run Auto-Reconciliation Algorithm (856 Inbound Records)</span>
       `;
-      btn.className = "px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2";
+      btn.className = "px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2";
 
       banner.classList.add('hidden');
       resetBtn.classList.add('hidden');
@@ -8516,7 +8514,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       stateBadge.textContent = "Status: Pre-Execution (Raw Staging)";
 
       renderFinanceTables();
-      showToast("↺ Finance reconciliation engine reset to raw batch staging.");
+      showToast("Finance reconciliation engine reset to raw batch staging.");
     }
 
     function openAnomaliesModal() {
@@ -8754,7 +8752,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-reset-academic');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("↺ Academic timetable reset to raw draft staging.");
+      showToast("Academic timetable reset to raw draft staging.");
     }
 
     // Drag and Drop Event Handlers
@@ -9340,7 +9338,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-nodues-reset');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("↺ Digital No-Dues reset to pending status.");
+      showToast("Digital No-Dues reset to pending status.");
     }
 
     // Innovation 02 Helpers
@@ -9399,7 +9397,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-deadline-reset');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("↺ Assignment deadline schedule reset to initial state.");
+      showToast("Assignment deadline schedule reset to initial state.");
     }
 
     // Innovation 04 Helper
@@ -9431,7 +9429,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (attVal) attVal.textContent = "58.2%";
       }
 
-      showToast("↺ Medical attendance grace reset.");
+      showToast("Medical attendance grace reset.");
     }
 
     // Innovation 07 Helpers
@@ -9454,7 +9452,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-elective-reset');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("↺ Pre-registration reservation released.");
+      showToast("Pre-registration reservation released.");
     }
 
     // Innovation 08 Helper
@@ -9483,7 +9481,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-tutor-reset');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("↺ Tutoring bounty reset to available status.");
+      showToast("Tutoring bounty reset to available status.");
     }
 
   
@@ -9877,7 +9875,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const resetBtn = document.getElementById('btn-funnel-reset');
       if (resetBtn) resetBtn.classList.add('hidden');
 
-      showToast("↺ Telemetry funnel reset to baseline.");
+      showToast("Telemetry funnel reset to baseline.");
     }
 
     // PRD Copy & Download Handlers
@@ -9927,7 +9925,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         presenter: "Dhruv Jain • Current: Data & Product Intern  Target Role: Product Intern / APM",
         body: `
           <div class="space-y-4 max-w-3xl mx-auto text-left">
-            <div class="p-4 rounded-xl bg-gradient-to-r from-purple-950 to-indigo-950 border border-purple-500/30 text-xs text-purple-200 leading-relaxed">
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 leading-relaxed">
               <strong>The Executive Thesis:</strong> Over the past 5 weeks, auditing our <strong>10.08 GB production MySQL replica</strong> (1,647 tables) revealed an extraordinary product opportunity. Digii Campus holds premier relational data depth across academics, fee dues, turnstile access, residential life, and campus health. However, our current user experience presents this data in operational modules.
             </div>
             <div class="grid grid-cols-3 gap-3 text-center">
@@ -10107,7 +10105,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
             <div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/40 space-y-2">
               <div class="flex items-center justify-between font-mono text-indigo-300">
-                <span>RICE = (Reach × Impact × Confidence) ÷ Effort</span>
+                <span>RICE = (Reach x Impact x Confidence) / Effort</span>
                 <span class="text-emerald-400 font-bold">Dynamic Velocity Multiplier (0.5x to 2.0x)</span>
               </div>
               <p class="text-slate-300">
@@ -10190,7 +10188,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         subtitle: "Bridging Technical Database Depth, Product Strategy, and Enterprise Customer Value.",
         body: `
           <div class="space-y-4 max-w-3xl mx-auto text-left text-xs">
-            <div class="p-5 rounded-2xl bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-900 border-2 border-indigo-500/40 text-slate-200 space-y-3">
+            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 text-slate-200 space-y-3">
               <h4 class="text-base font-bold text-white">Suraj & Saksham:</h4>
               <p class="leading-relaxed">
                 "I love the deep data engineering work I've done here across our 10GB database replica. But as this prototype, PRD, and architecture demonstrate, my greatest passion and impact lie at the intersection of <strong>technical feasibility, enterprise customer value, and user delight</strong>.
@@ -10211,7 +10209,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const modal = document.getElementById('pitch-deck-modal');
       if (modal) modal.classList.remove('hidden');
       renderCurrentDeckSlide();
-      showToast(" Executive Pitch Deck opened: Use ◄ ► arrow keys to navigate.");
+      showToast(" Executive Pitch Deck opened: Use Left / Right arrow keys to navigate.");
     }
 
     function closePitchDeckModal() {
@@ -10317,11 +10315,11 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const btnReset = document.getElementById('btn-reset-mess');
       if (btnOpt) {
         btnOpt.disabled = false;
-        btnOpt.className = "px-4 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5";
+        btnOpt.className = "px-4 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5";
         btnOpt.innerHTML = "<span>Optimize Kitchen Prep (-630 Portions)</span>";
       }
       if (btnReset) btnReset.classList.add('hidden');
-      showToast("↺ Mess Procurement Reset to standard 2,450 resident headcount baseline.");
+      showToast("Mess Procurement Reset to standard 2,450 resident headcount baseline.");
     }
 
     // Access & Gates Filter Handlers
@@ -11558,7 +11556,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <td class="py-3 px-3 text-center font-mono font-bold text-slate-800">${c.credits}</td>
           <td class="py-3 px-3">
             <span class="px-2 py-0.5 rounded text-[10px] font-bold ${c.passed ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
-              ✓ ${c.prereq}
+              Verified: ${c.prereq}
             </span>
           </td>
           <td class="py-3 px-3 text-center font-mono font-bold ${c.seatsLeft <= 3 ? 'text-amber-700' : 'text-slate-700'}">${c.seatsLeft}</td>
@@ -11832,7 +11830,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
           <td class="py-3 px-3 text-center font-mono font-bold text-emerald-700 text-xs">${c.score}</td>
           <td class="py-3 px-3">
             <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-              ✓ 100% Relational Lineage Verified
+              100% Relational Lineage Verified
             </span>
           </td>
           <td class="py-3 px-3 text-right">
@@ -12039,7 +12037,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         <div class="p-4 rounded-xl bg-slate-50 border ${d.cleared ? 'border-emerald-200' : 'border-red-200'} space-y-2">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-slate-900">${d.dept}</span>
-            <span class="w-5 h-5 rounded-full ${d.cleared ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'} flex items-center justify-center font-bold text-xs">✓</span>
+            <span class="w-5 h-5 rounded-full ${d.cleared ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'} flex items-center justify-center font-bold text-xs"></span>
           </div>
           <p class="text-[11px] text-slate-600">${d.status}</p>
           <div class="pt-1">
@@ -12067,14 +12065,14 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         "AUTONOMOUS AUDIT RUNTIME: 1.28 Seconds (Parallel Relational Query)\n" +
         "CRYPTOGRAPHIC VERIFICATION TOKEN: 0x8F92E3108B7A492C\n\n" +
         "CLEARED DEPARTMENTS:\n" +
-        " [✓] Central Library (0 Overdue Books, ₹0 Fine)\n" +
-        " [✓] Aravali Hostel Block C (Key Returned, Room Clearance Passed)\n" +
-        " [✓] Sports & Gym Complex (Equipment Surrendered)\n" +
-        " [✓] Precision Science Labs (No Breakage Charges)\n" +
-        " [✓] CSE Department Head (B.Tech Capstone Project Ingested)\n" +
-        " [✓] University Finance Accounts (All Semester Fees Reconciled)\n" +
-        " [✓] Training & Placement Cell (Corporate Clearance Confirmed)\n" +
-        " [✓] Alumni Affairs Office (Lifetime Association Enrolled)\n\n" +
+        " [CLEARED] Central Library (0 Overdue Books, ₹0 Fine)\n" +
+        " [CLEARED] Aravali Hostel Block C (Key Returned, Room Clearance Passed)\n" +
+        " [CLEARED] Sports & Gym Complex (Equipment Surrendered)\n" +
+        " [CLEARED] Precision Science Labs (No Breakage Charges)\n" +
+        " [CLEARED] CSE Department Head (B.Tech Capstone Project Ingested)\n" +
+        " [CLEARED] University Finance Accounts (All Semester Fees Reconciled)\n" +
+        " [CLEARED] Training & Placement Cell (Corporate Clearance Confirmed)\n" +
+        " [CLEARED] Alumni Affairs Office (Lifetime Association Enrolled)\n\n" +
         "The candidate is certified eligible for Convocational Degree Conferment.\n" +
         "Registrar & Controller of Examinations\n" +
         "========================================================================";
@@ -12333,9 +12331,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
     // 2. SMART CAMPUS INFRASTRUCTURE & ACOUSTIC VENUE BOOKING
     let VENUE_BOOKINGS = [
-      { venue: 'Auditorium Main Hall (Building A)', cap: '1,200 Seats', event: 'Annual International Tech Conference', db: '65 dB (Spoken Keynote)', hvac: 'PRE-COOLED (22°C Active)', conflict: false },
+      { venue: 'Auditorium Main Hall (Building A)', cap: '1,200 Seats', event: 'Annual International Tech Conference', db: '65 dB (Spoken Keynote)', hvac: 'PRE-COOLED (22 C Active)', conflict: false },
       { venue: 'Seminar Hall B (Adjacent to Hall A)', cap: '250 Seats', event: 'Campus Rock Band Rehearsal', db: '88 dB (Heavy Acoustic Bleed)', hvac: 'CHILLER OFF', conflict: true },
-      { venue: 'Management Amphitheatre (Block C)', cap: '180 Seats', event: 'Executive MBA Guest Lecture', db: '58 dB (Optimal)', hvac: 'PRE-COOLED (23°C Active)', conflict: false },
+      { venue: 'Management Amphitheatre (Block C)', cap: '180 Seats', event: 'Executive MBA Guest Lecture', db: '58 dB (Optimal)', hvac: 'PRE-COOLED (23 C Active)', conflict: false },
       { venue: 'Open Air Theatre (OAT North)', cap: '2,500 Seats', event: 'Open Facility Slot', db: 'Ambient (Outdoor)', hvac: 'NOT APPLICABLE', conflict: false }
     ];
 
@@ -12391,8 +12389,8 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     }
 
     function triggerHvacPrecoolingCycle() {
-      VENUE_BOOKINGS[0].hvac = 'PRE-COOLED (21°C Target)';
-      VENUE_BOOKINGS[2].hvac = 'PRE-COOLED (21°C Target)';
+      VENUE_BOOKINGS[0].hvac = 'PRE-COOLED (21 C Target)';
+      VENUE_BOOKINGS[2].hvac = 'PRE-COOLED (21 C Target)';
       renderVenueBookings();
       showToast("IoT HVAC Pre-Cooling Activated: Sent early cooling signal 30 mins in advance, saving standby power!");
     }
