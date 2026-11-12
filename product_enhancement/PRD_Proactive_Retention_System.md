@@ -267,6 +267,14 @@ A core responsibility of an APM is defending algorithmic weights against managem
 - **Audited Modules (17 Core Workflows):** Student Retention Radar, PRGE Food Waste Reducer, Degree No-Dues Clearance, Turnstile Anti-Passback, LMS Deadline Balancer, Timetable Clash Interceptor, Venue Smart Matcher, Dynamic Fleet Optimizer, OBE NAAC Copilot, SEP Non-Academic Development Points (NAAC 5.3), Verified Auto-Resume Builder, CHC BPM SLA Engine, Social Isolation Sentinel, ESG Phantom Energy Reducer, DBT Scholarship Reconciliation, Alumni 80G Endowment Ledger, and AI Admissions Allotment.
 - **Enterprise Features:** Two-column split UI (Platform Moat & Production Lineage on the left, 17-module card matrix on the right), multi-category filtering, instant full-text search, live direct prototype jump buttons, and automated RFC 4180 CSV / executive TXT exports.
 
+### 5.22 Module 22: Enterprise Operations & Student Management Workbench
+- **Operational Execution Engine:** Direct production workbench where administrators and faculty perform daily tasks that immediately mutate underlying data and feed predictive models:
+  1. *Student Roster & Bulk Ingest:* Drag-and-drop CSV parser with real-time schema validation, sample template download, 1-click 5-student demo batch, and direct modal enrollment into `student_master`.
+  2. *Faculty Attendance Register (AMS):* Live daily marking grid for course sections (CS-301, CS-304, EC-204) with Present/Absent/Late toggles; locks session attendance and dynamically triggers Red-Zone dropout alerts when cumulative attendance drops below 75% (UGC Section 12).
+  3. *Cashier & Fee Settlement Desk (dues_v2):* Real-time payment processor with fee breakdown, UPI/NetBanking reference generation, immediate No-Dues clearance unlock, and downloadable official receipt (`REC-2026-XXXX.txt`).
+  4. *Hostel Warden Out-Pass & Kitchen Sync:* Warden approval terminal generating signed QR gate passes in `gate_pass_log` and dynamically decrementing tomorrow's mess preparation batch in the PRGE Kitchen Engine.
+  5. *Campus Help Centre (CHC) Active Dispatch:* Service ticket creation and status lifecycle progression (`Submitted` -> `In Progress` -> `Resolved` -> `Closed`) across `chc_request` and `chc_work_centre`.
+
 ---
 
 ## 6. Success Metrics & Product KPIs

@@ -94,6 +94,11 @@
           <span class="font-semibold text-slate-200">Digii vs 2.0 Matrix</span>
           <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30">Side-by-Side</span>
         </a>
+        <a href="javascript:void(0)" onclick="navigateToView('operations-desk')" id="nav-operations-desk" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          <span class="font-semibold text-slate-200">Operations & Student Desk</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">Active ERP</span>
+        </a>
       </div>
 
       <!-- Group 1: Student Retention & Predictive Intelligence -->
@@ -4340,6 +4345,479 @@
         </div>
       </section>
 
+      <!-- STAGE 22: ENTERPRISE OPERATIONS & STUDENT MANAGEMENT WORKBENCH -->
+      <section id="view-operations-desk" class="hidden space-y-6">
+        
+        <!-- Top PM Strategic ROI Banner -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 text-white text-xs font-semibold shadow-lg border border-emerald-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-emerald-400/50 shrink-0">
+            ENTERPRISE ERP WORKBENCH
+          </span>
+          <span class="leading-relaxed">
+            <strong>Active Production Workbench:</strong> Direct daily execution portal for student onboarding, CSV roster ingestion, live AMS faculty attendance marking, cashier fee collection, and warden out-pass approvals. Mutates live database state and immediately feeds predictive intelligence models.
+          </span>
+        </div>
+
+        <!-- Header Card with Live Counters & Action Toolbar -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">Transactional & Predictive Operations</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800 border border-blue-200">CollPoll Production Engine</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-100 text-purple-800 border border-purple-200">Sub-Second Cascade</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Student Management & Campus Operations Desk</h1>
+              <p class="text-sm text-slate-500 mt-1 max-w-4xl">
+                Execute enterprise ERP workflows: upload bulk student batches via CSV, enroll new students, record daily course attendance, process fee cashier payments with instant receipts, and approve hostel leaves that dynamically adjust mess cooking batches.
+              </p>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+              <button onclick="openAddStudentModal()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-xs">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                <span>Add Single Student</span>
+              </button>
+              <button onclick="switchOperationsTab('roster')" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors">
+                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                <span>Bulk CSV Ingest</span>
+              </button>
+              <button onclick="exportStudentRosterCsv()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-colors">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Roster (.CSV)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Operational KPI Summary Bar -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-5">
+            <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Enrolled Students</div>
+                <div id="ops-total-students" class="text-xl font-bold text-slate-900 font-mono">8 Active</div>
+              </div>
+              <span class="p-2 rounded-md bg-blue-100 text-blue-700">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </span>
+            </div>
+            <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Class Attendance Avg</div>
+                <div id="ops-avg-attendance" class="text-xl font-bold text-emerald-600 font-mono">74.2%</div>
+              </div>
+              <span class="p-2 rounded-md bg-emerald-100 text-emerald-700">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+            </div>
+            <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Outstanding Dues</div>
+                <div id="ops-total-dues" class="text-xl font-bold text-red-600 font-mono">2,48,500 INR</div>
+              </div>
+              <span class="p-2 rounded-md bg-red-100 text-red-700">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+            </div>
+            <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Pending Out-Passes</div>
+                <div id="ops-pending-outpasses" class="text-xl font-bold text-amber-600 font-mono">3 Pending</div>
+              </div>
+              <span class="p-2 rounded-md bg-amber-100 text-amber-700">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Operational Mode Sub-Tabs -->
+          <div class="flex items-center gap-2 pt-5 border-t border-slate-100 overflow-x-auto text-xs font-semibold">
+            <button onclick="switchOperationsTab('roster')" id="ops-tab-roster" class="px-4 py-2 rounded-lg bg-blue-600 text-white shadow-xs flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>1. Student Roster & Bulk Ingest</span>
+            </button>
+            <button onclick="switchOperationsTab('attendance')" id="ops-tab-attendance" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+              <span>2. Faculty Attendance Register (AMS)</span>
+            </button>
+            <button onclick="switchOperationsTab('cashier')" id="ops-tab-cashier" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>3. Cashier & Fee Collection (dues_v2)</span>
+            </button>
+            <button onclick="switchOperationsTab('hostel')" id="ops-tab-hostel" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>4. Warden Out-Pass & Kitchen Sync</span>
+            </button>
+            <button onclick="switchOperationsTab('chc')" id="ops-tab-chc" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              <span>5. CHC Service Desk & Tickets</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: STUDENT ROSTER & BULK CSV INGEST -->
+        <div id="ops-view-roster" class="space-y-6">
+          
+          <!-- Bulk Ingestion Panel -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                  Bulk Student Ingestion Engine (CSV Parser & Schema Validator)
+                </h3>
+                <p class="text-xs text-slate-500 mt-0.5">Upload a CSV file to validate student fields against MySQL constraints and ingest multiple records into student_master.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="downloadSampleStudentCsv()" class="px-2.5 py-1.5 text-xs font-semibold rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-colors">Download Sample Template</button>
+                <button onclick="loadDemoStudentBatch()" class="px-3 py-1.5 text-xs font-semibold rounded bg-indigo-600 text-white hover:bg-indigo-700 shadow-xs transition-colors">Load Demo 5-Student Batch</button>
+              </div>
+            </div>
+
+            <!-- Ingest Drag & Drop Box -->
+            <div class="border-2 border-dashed border-slate-300 rounded-xl p-6 text-center bg-slate-50/60 hover:bg-slate-100/60 transition-colors cursor-pointer" onclick="document.getElementById('student-csv-input').click()">
+              <input type="file" id="student-csv-input" accept=".csv" class="hidden" onchange="handleStudentCsvUpload(event)">
+              <svg class="w-8 h-8 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+              <div class="text-xs font-bold text-slate-700">Click to upload CSV or drag and drop</div>
+              <p class="text-[11px] text-slate-500 mt-0.5">Required fields: name, roll_no, department, semester, cgpa, attendance_pct, fee_due, hostel_room, quota</p>
+            </div>
+
+            <!-- Staging Validation Table (Hidden until batch loaded) -->
+            <div id="ops-csv-preview-container" class="hidden space-y-3 pt-3 border-t border-slate-100">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-slate-800">Batch Ingestion Staging Area</span>
+                  <span id="ops-csv-validation-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">5 Valid Records</span>
+                </div>
+                <button onclick="commitBulkStudents()" class="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 shadow-xs transition-colors flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Commit Batch to Database</span>
+                </button>
+              </div>
+              <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                    <tr>
+                      <th class="py-2.5 px-3">Roll No</th>
+                      <th class="py-2.5 px-3">Student Name</th>
+                      <th class="py-2.5 px-3">Dept & Sem</th>
+                      <th class="py-2.5 px-3">Attendance</th>
+                      <th class="py-2.5 px-3">Fee Due (INR)</th>
+                      <th class="py-2.5 px-3">Hostel</th>
+                      <th class="py-2.5 px-3">Quota</th>
+                      <th class="py-2.5 px-3 text-right">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ops-csv-preview-body" class="divide-y divide-slate-100 font-mono text-[11px]">
+                    <!-- Injected via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Student Roster Table -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">Live Production Student Master (student_master + dues_v2 + ams)</h3>
+                <p class="text-xs text-slate-500 mt-0.5">Complete relational cohort directory synchronized across all 21 intelligence modules.</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <input type="text" id="ops-roster-search" oninput="filterStudentRoster()" placeholder="Search roll no, name, dept..." class="px-3 py-1.5 text-xs rounded-lg border border-slate-300 bg-slate-50 w-48 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500">
+                <select id="ops-roster-dept-filter" onchange="filterStudentRoster()" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-slate-50 text-slate-700">
+                  <option value="ALL">All Departments</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Electronics & Comm">Electronics & Comm</option>
+                  <option value="Mechanical Engg">Mechanical Engg</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Biotechnology">Biotechnology</option>
+                </select>
+                <select id="ops-roster-risk-filter" onchange="filterStudentRoster()" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-slate-50 text-slate-700">
+                  <option value="ALL">All Risk Zones</option>
+                  <option value="RED">Red Zone (High Risk)</option>
+                  <option value="AMBER">Amber Zone (Medium)</option>
+                  <option value="GREEN">Green Zone (Stable)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Student Master Table -->
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                  <tr>
+                    <th class="py-2.5 px-3">UKID / Roll No</th>
+                    <th class="py-2.5 px-3">Student Name</th>
+                    <th class="py-2.5 px-3">Dept & Year</th>
+                    <th class="py-2.5 px-3">AMS Attendance</th>
+                    <th class="py-2.5 px-3">Outstanding Dues</th>
+                    <th class="py-2.5 px-3">Risk Status</th>
+                    <th class="py-2.5 px-3 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="ops-roster-body" class="divide-y divide-slate-100">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: FACULTY ATTENDANCE REGISTER (AMS) -->
+        <div id="ops-view-attendance" class="hidden space-y-6">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-5">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                  Academic Attendance Management System (AMS) Live Register
+                </h3>
+                <p class="text-xs text-slate-500 mt-0.5">Faculty course session portal: Mark daily attendance, calculate class ratios, and trigger instant dropout alerts when attendance falls below 75%.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="markAllAttendance('PRESENT')" class="px-2.5 py-1.5 text-xs font-semibold rounded bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition-colors">Mark All Present</button>
+                <button onclick="markAllAttendance('ABSENT')" class="px-2.5 py-1.5 text-xs font-semibold rounded bg-red-50 text-red-700 hover:bg-red-100 border border-red-200 transition-colors">Mark All Absent</button>
+                <button onclick="submitDailyAttendance()" class="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white hover:bg-blue-700 shadow-xs transition-colors flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+                  <span>Submit & Lock Session</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Session Config Bar -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 bg-slate-50 p-3.5 rounded-lg border border-slate-200 text-xs">
+              <div>
+                <label class="block font-semibold text-slate-600 mb-1">Select Course</label>
+                <select id="ops-attendance-course" class="w-full px-2.5 py-1.5 rounded border border-slate-300 bg-white">
+                  <option value="CS-301">CS-301: Advanced Data Structures & Algorithms</option>
+                  <option value="CS-304">CS-304: Database Management Systems</option>
+                  <option value="EC-204">EC-204: Signals & Communication Systems</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-600 mb-1">Section</label>
+                <select id="ops-attendance-section" class="w-full px-2.5 py-1.5 rounded border border-slate-300 bg-white">
+                  <option value="Sec-A">Section A (Odd Semester 2026)</option>
+                  <option value="Sec-B">Section B (Odd Semester 2026)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-600 mb-1">Session Date</label>
+                <input type="date" id="ops-attendance-date" value="2026-11-12" class="w-full px-2.5 py-1.5 rounded border border-slate-300 bg-white">
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-600 mb-1">Session Slot</label>
+                <select id="ops-attendance-slot" class="w-full px-2.5 py-1.5 rounded border border-slate-300 bg-white">
+                  <option value="Slot-1">09:00 AM - 10:00 AM (Lecture 1)</option>
+                  <option value="Slot-2">10:00 AM - 11:00 AM (Lecture 2)</option>
+                  <option value="Slot-3">02:00 PM - 04:00 PM (Lab 1)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Real-Time Session Attendance Tracker -->
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                  <tr>
+                    <th class="py-2.5 px-3">Roll No</th>
+                    <th class="py-2.5 px-3">Student Name</th>
+                    <th class="py-2.5 px-3">Dept</th>
+                    <th class="py-2.5 px-3">Cumulative Attendance</th>
+                    <th class="py-2.5 px-3 text-center">Session Marking (Click to Toggle)</th>
+                    <th class="py-2.5 px-3 text-right">UGC Section 12 Status</th>
+                  </tr>
+                </thead>
+                <tbody id="ops-attendance-body" class="divide-y divide-slate-100">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: CASHIER & FEE COLLECTION (dues_v2) -->
+        <div id="ops-view-cashier" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            
+            <!-- Left: Cashier Processing Form -->
+            <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+              <div class="pb-3 border-b border-slate-100">
+                <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                  Cashier Fee Ingestion Terminal (dues_v2)
+                </h3>
+                <p class="text-xs text-slate-500 mt-0.5">Collect tuition, hostel, and exam fees with instant receipt generation and automatic No-Dues clearance unlock.</p>
+              </div>
+
+              <!-- Select Student -->
+              <div class="space-y-1 text-xs">
+                <label class="block font-semibold text-slate-700">Select Student for Fee Settlement</label>
+                <select id="ops-cashier-student-select" onchange="selectCashierStudent(this.value)" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                  <!-- Populated by JS -->
+                </select>
+              </div>
+
+              <!-- Live Balance Breakdown Card -->
+              <div id="ops-cashier-breakdown" class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
+                <div class="flex items-center justify-between text-slate-500">
+                  <span>Tuition Outstanding:</span>
+                  <span id="cashier-tuition" class="font-mono font-semibold text-slate-800">45,000 INR</span>
+                </div>
+                <div class="flex items-center justify-between text-slate-500">
+                  <span>Hostel & Mess Dues:</span>
+                  <span id="cashier-hostel" class="font-mono font-semibold text-slate-800">25,000 INR</span>
+                </div>
+                <div class="flex items-center justify-between text-slate-500">
+                  <span>Library & Lab Fines:</span>
+                  <span id="cashier-fines" class="font-mono font-semibold text-slate-800">1,500 INR</span>
+                </div>
+                <div class="pt-2 border-t border-slate-200 flex items-center justify-between font-bold text-sm">
+                  <span class="text-slate-900">Total Outstanding:</span>
+                  <span id="cashier-total" class="font-mono text-red-600">71,500 INR</span>
+                </div>
+              </div>
+
+              <!-- Payment Input Form -->
+              <div class="space-y-3 text-xs">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Amount to Collect (INR)</label>
+                  <input type="number" id="ops-cashier-amount" value="71500" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono font-bold text-slate-900 focus:outline-blue-500">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Settlement Mode</label>
+                  <select id="ops-cashier-mode" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+                    <option value="UPI Instant Settlement (QR)">UPI Instant Settlement (QR)</option>
+                    <option value="NetBanking (HDFC / ICICI / SBI)">NetBanking (HDFC / ICICI / SBI)</option>
+                    <option value="Demand Draft / Banker Cheque">Demand Draft / Banker Cheque</option>
+                    <option value="POS Card Swipe (Debit/Credit)">POS Card Swipe (Debit/Credit)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Transaction / UTR Reference</label>
+                  <input type="text" id="ops-cashier-utr" value="UTR-2026-98104271" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono text-slate-800 bg-slate-50">
+                </div>
+
+                <button onclick="processFeePayment()" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Process Payment & Clear Dues</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Live Fee Ledger & Settlement Log -->
+            <div class="lg:col-span-7 bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Recent Bank & Cashier Settlements (dues_v2 Ledger)</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Real-time ledger audit showing cleared dues and downloaded receipts.</p>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Audit Live</span>
+              </div>
+
+              <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                    <tr>
+                      <th class="py-2.5 px-3">Receipt ID</th>
+                      <th class="py-2.5 px-3">Student</th>
+                      <th class="py-2.5 px-3">Amount</th>
+                      <th class="py-2.5 px-3">Payment Mode</th>
+                      <th class="py-2.5 px-3">Date</th>
+                      <th class="py-2.5 px-3 text-right">No-Dues Impact</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ops-cashier-log-body" class="divide-y divide-slate-100 font-mono text-[11px]">
+                    <!-- Injected via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 4: WARDEN OUT-PASS & KITCHEN SYNC -->
+        <div id="ops-view-hostel" class="hidden space-y-6">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                  Hostel Out-Pass Warden Desk & PRGE Mess Kitchen Sync
+                </h3>
+                <p class="text-xs text-slate-500 mt-0.5">Approve or reject student weekend leaves. Approved passes dynamically decrement tomorrow's kitchen batch sizes in PRGE.</p>
+              </div>
+              <button onclick="openCreateOutpassModal()" class="px-3 py-1.5 text-xs font-semibold rounded bg-amber-600 text-white hover:bg-amber-700 shadow-xs transition-colors flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <span>Issue Manual Emergency Out-Pass</span>
+              </button>
+            </div>
+
+            <!-- Out-Pass Approval Queue Table -->
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                  <tr>
+                    <th class="py-2.5 px-3">Pass ID</th>
+                    <th class="py-2.5 px-3">Student Name & Roll</th>
+                    <th class="py-2.5 px-3">Hostel & Room</th>
+                    <th class="py-2.5 px-3">Leave Reason</th>
+                    <th class="py-2.5 px-3">Date Range</th>
+                    <th class="py-2.5 px-3">PRGE Kitchen Meal Impact</th>
+                    <th class="py-2.5 px-3 text-right">Warden Decision</th>
+                  </tr>
+                </thead>
+                <tbody id="ops-hostel-body" class="divide-y divide-slate-100">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: CHC SERVICE DESK & TICKETS -->
+        <div id="ops-view-chc" class="hidden space-y-6">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                  Campus Help Centre (CHC) Active Dispatch & SLA Terminal
+                </h3>
+                <p class="text-xs text-slate-500 mt-0.5">Manage administrative and student tickets across chc_request, chc_work_centre, and chc_middleware tables.</p>
+              </div>
+              <button onclick="openNewChcTicketModal()" class="px-3 py-1.5 text-xs font-semibold rounded bg-blue-600 text-white hover:bg-blue-700 shadow-xs transition-colors flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <span>Create Service Ticket</span>
+              </button>
+            </div>
+
+            <!-- CHC Tickets Table -->
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                  <tr>
+                    <th class="py-2.5 px-3">Ticket ID</th>
+                    <th class="py-2.5 px-3">Student</th>
+                    <th class="py-2.5 px-3">Service Category</th>
+                    <th class="py-2.5 px-3">Assigned Work Centre</th>
+                    <th class="py-2.5 px-3">Priority & SLA</th>
+                    <th class="py-2.5 px-3">Current Status</th>
+                    <th class="py-2.5 px-3 text-right">Update Workflow</th>
+                  </tr>
+                </thead>
+                <tbody id="ops-chc-body" class="divide-y divide-slate-100">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
     </main>
 
     <!-- Footer -->
@@ -6296,7 +6774,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
     // ===================================================================
     // STAGE 6: SPA ROUTING & STATE MANAGEMENT ENGINE
     // ===================================================================
-    const SPA_VIEWS = ['comparative', 'radar', 'student360', 'student-hub', 'isolation', 'development', 'autoresume', 'alumni', 'accreditation', 'admissions', 'deadline', 'nodues', 'academics', 'prge', 'venue', 'transport', 'passback', 'energy', 'grievance', 'finance', 'scholarships'];
+    const SPA_VIEWS = ['operations-desk', 'comparative', 'radar', 'student360', 'student-hub', 'isolation', 'development', 'autoresume', 'alumni', 'accreditation', 'admissions', 'deadline', 'nodues', 'academics', 'prge', 'venue', 'transport', 'passback', 'energy', 'grievance', 'finance', 'scholarships'];
 
     function navigateToView(view) {
       if (!SPA_VIEWS.includes(view)) view = 'radar';
@@ -6335,7 +6813,9 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
       });
 
       // 4. View lifecycle triggers
-      if (view === 'comparative') {
+      if (view === 'operations-desk') {
+        renderOperationsDesk();
+      } else if (view === 'comparative') {
         renderComparativeMatrix();
       } else if (view === 'radar') {
         renderRadarGrid();
@@ -6383,6 +6863,10 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
         state.activeStudent = state.mockData.students[0];
       }
       navigateToView('student360');
+    }
+
+    function selectStudent(ukid) {
+      selectStudentAndOpen360(ukid);
     }
 
     function selectStudentAndOpen360(ukid) {
@@ -11717,6 +12201,898 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       showToast("Executive Brief (.TXT) successfully downloaded!");
     }
 
+    // ===================================================================
+    // STAGE 22: ENTERPRISE OPERATIONS & STUDENT MANAGEMENT ENGINE
+    // ===================================================================
+    let OPERATIONS_STATE = {
+      activeTab: 'roster',
+      stagedCsv: [],
+      attendanceMarks: {}, // studentUkid -> 'PRESENT' | 'ABSENT' | 'LATE'
+      cashierLogs: [
+        {
+          id: "REC-2026-8812",
+          studentUkid: 10842,
+          studentName: "Dhruv Sharma",
+          amount: 45000,
+          mode: "UPI Instant Settlement",
+          date: "2026-11-12 09:30",
+          status: "Accounts Cleared"
+        },
+        {
+          id: "REC-2026-8794",
+          studentUkid: 10845,
+          studentName: "Ananya Iyer",
+          amount: 28000,
+          mode: "NetBanking (HDFC)",
+          date: "2026-11-11 16:15",
+          status: "Accounts Cleared"
+        }
+      ],
+      pendingOutpasses: [
+        {
+          id: "GP-9014",
+          studentUkid: 10843,
+          name: "Vikramaditya Rao",
+          roll: "2024ECE042",
+          hostel: "Block A - Room 304",
+          reason: "Family Wedding & Travel",
+          dateRange: "13 Nov 17:00 - 16 Nov 20:00",
+          mealsDeducted: 9,
+          status: "PENDING"
+        },
+        {
+          id: "GP-9015",
+          studentUkid: 10844,
+          name: "Sneha Mukherjee",
+          roll: "2023CSE019",
+          hostel: "Block B - Room 112",
+          reason: "Medical Checkup & Recovery",
+          dateRange: "12 Nov 18:00 - 14 Nov 19:00",
+          mealsDeducted: 6,
+          status: "PENDING"
+        },
+        {
+          id: "GP-9016",
+          studentUkid: 10847,
+          name: "Kavya Nambiar",
+          roll: "2024BT015",
+          hostel: "Block C - Room 402",
+          reason: "Inter-Collegiate Hackathon (IIT Delhi)",
+          dateRange: "14 Nov 08:00 - 17 Nov 22:00",
+          mealsDeducted: 10,
+          status: "PENDING"
+        }
+      ],
+      chcTickets: [
+        {
+          id: "CHC-REQ-4819",
+          studentUkid: 10842,
+          name: "Dhruv Sharma",
+          category: "Hostel Maintenance",
+          workCentre: "Hostel Facilities & Plumbing",
+          priority: "P1 - Urgent (24h SLA)",
+          slaRemaining: "14h 22m",
+          status: "IN_PROGRESS"
+        },
+        {
+          id: "CHC-REQ-4820",
+          studentUkid: 10843,
+          name: "Vikramaditya Rao",
+          category: "Fee Ledger Discrepancy",
+          workCentre: "Accounts & Finance Syndicate",
+          priority: "P2 - Medium (48h SLA)",
+          slaRemaining: "36h 40m",
+          status: "SUBMITTED"
+        },
+        {
+          id: "CHC-REQ-4821",
+          studentUkid: 10846,
+          name: "Rohan Verma",
+          category: "LMS Submission Glitch",
+          workCentre: "Academic Computing & IT Desk",
+          priority: "P3 - Normal (72h SLA)",
+          slaRemaining: "61h 10m",
+          status: "RESOLVED"
+        }
+      ]
+    };
+
+    function switchOperationsTab(tab) {
+      OPERATIONS_STATE.activeTab = tab;
+      const tabs = ['roster', 'attendance', 'cashier', 'hostel', 'chc'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`ops-tab-${t}`);
+        const view = document.getElementById(`ops-view-${t}`);
+        if (btn) {
+          if (t === tab) {
+            btn.className = "px-4 py-2 rounded-lg bg-blue-600 text-white shadow-xs flex items-center gap-2";
+          } else {
+            btn.className = "px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors flex items-center gap-2";
+          }
+        }
+        if (view) {
+          if (t === tab) {
+            view.classList.remove('hidden');
+          } else {
+            view.classList.add('hidden');
+          }
+        }
+      });
+      renderOperationsDesk();
+    }
+
+    function renderOperationsDesk() {
+      if (!state.mockData || !state.mockData.students) return;
+      const students = state.mockData.students;
+
+      // Update KPI Bar
+      const totalStudentsEl = document.getElementById('ops-total-students');
+      if (totalStudentsEl) totalStudentsEl.textContent = `${students.length} Active`;
+
+      const avgAttEl = document.getElementById('ops-avg-attendance');
+      if (avgAttEl) {
+        const sumAtt = students.reduce((acc, s) => acc + (s.overall_attendance_pct || s.attendance || 75), 0);
+        const avgAtt = (sumAtt / students.length).toFixed(1);
+        avgAttEl.textContent = `${avgAtt}%`;
+      }
+
+      const totalDuesEl = document.getElementById('ops-total-dues');
+      if (totalDuesEl) {
+        const sumDues = students.reduce((acc, s) => acc + (s.total_overdue || s.fee_due || s.overdue_fees || 0), 0);
+        totalDuesEl.textContent = `${sumDues.toLocaleString('en-IN')} INR`;
+      }
+
+      const pendingOutEl = document.getElementById('ops-pending-outpasses');
+      if (pendingOutEl) {
+        const pendingCount = OPERATIONS_STATE.pendingOutpasses.filter(p => p.status === 'PENDING').length;
+        pendingOutEl.textContent = `${pendingCount} Pending`;
+      }
+
+      // Render Sub-Views
+      if (OPERATIONS_STATE.activeTab === 'roster') {
+        renderStudentRoster();
+      } else if (OPERATIONS_STATE.activeTab === 'attendance') {
+        renderAttendanceSheet();
+      } else if (OPERATIONS_STATE.activeTab === 'cashier') {
+        renderCashierDesk();
+      } else if (OPERATIONS_STATE.activeTab === 'hostel') {
+        renderHostelOutpasses();
+      } else if (OPERATIONS_STATE.activeTab === 'chc') {
+        renderChcServiceDesk();
+      }
+    }
+
+    // 1. Student Roster Logic
+    function renderStudentRoster() {
+      const tbody = document.getElementById('ops-roster-body');
+      if (!tbody || !state.mockData) return;
+
+      const searchTerm = (document.getElementById('ops-roster-search')?.value || '').toLowerCase().trim();
+      const deptFilter = document.getElementById('ops-roster-dept-filter')?.value || 'ALL';
+      const riskFilter = document.getElementById('ops-roster-risk-filter')?.value || 'ALL';
+
+      const filtered = state.mockData.students.filter(s => {
+        const nameMatch = (s.name || '').toLowerCase().includes(searchTerm) || (s.enrollment_no || '').toLowerCase().includes(searchTerm);
+        const deptMatch = (deptFilter === 'ALL') || (s.department && s.department.toLowerCase().includes(deptFilter.toLowerCase()));
+        
+        const score = s.composite_risk_score !== undefined ? s.composite_risk_score : 50;
+        let riskZone = 'GREEN';
+        if (score >= (state.thresholds?.red || 75)) riskZone = 'RED';
+        else if (score >= (state.thresholds?.amber || 50)) riskZone = 'AMBER';
+        
+        const riskMatch = (riskFilter === 'ALL') || (riskZone === riskFilter);
+        return nameMatch && deptMatch && riskMatch;
+      });
+
+      tbody.innerHTML = filtered.map(s => {
+        const att = s.overall_attendance_pct !== undefined ? s.overall_attendance_pct : (s.attendance || 78);
+        const dues = s.total_overdue !== undefined ? s.total_overdue : (s.fee_due || s.overdue_fees || 0);
+        const score = s.composite_risk_score !== undefined ? s.composite_risk_score : 50;
+        let badge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">GREEN</span>';
+        if (score >= 75) badge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800 animate-pulse">RED ZONE</span>';
+        else if (score >= 50) badge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">AMBER</span>';
+
+        return `
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-slate-700 font-bold">${s.enrollment_no || s.ukid}</td>
+            <td class="py-2.5 px-3">
+              <div class="font-bold text-slate-900">${s.name}</div>
+              <div class="text-[10px] text-slate-400 font-mono">UKID: ${s.ukid} | Room: ${s.hostel_room || 'Day Scholar'}</div>
+            </td>
+            <td class="py-2.5 px-3 text-slate-600">${s.department || 'Computer Science'}<div class="text-[10px] text-slate-400">Semester ${s.current_semester || 5}</div></td>
+            <td class="py-2.5 px-3 font-mono ${att < 75 ? 'text-red-600 font-bold' : 'text-emerald-700 font-medium'}">${att}%</td>
+            <td class="py-2.5 px-3 font-mono ${dues > 0 ? 'text-red-600 font-bold' : 'text-slate-500'}">${dues > 0 ? dues.toLocaleString('en-IN') + ' INR' : 'Nil'}</td>
+            <td class="py-2.5 px-3">${badge}</td>
+            <td class="py-2.5 px-3 text-right">
+              <div class="flex items-center justify-end gap-1.5">
+                <button onclick="selectStudent(${s.ukid}); navigateToView('student360')" class="px-2 py-1 text-[10px] font-semibold rounded bg-slate-100 text-slate-700 hover:bg-blue-600 hover:text-white transition-colors">360 View</button>
+                <button onclick="quickCashierCollect(${s.ukid})" class="px-2 py-1 text-[10px] font-semibold rounded bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white transition-colors">Collect Fee</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterStudentRoster() {
+      renderStudentRoster();
+    }
+
+    function quickCashierCollect(ukid) {
+      switchOperationsTab('cashier');
+      selectCashierStudent(ukid);
+    }
+
+    // Bulk Ingestion & Demo CSV Handlers
+    function downloadSampleStudentCsv() {
+      const csv = `name,roll_no,department,semester,cgpa,attendance_pct,fee_due,hostel_room,quota\nAditya Kashyap,2026CSE150,Computer Science,5,8.4,89.0,0,Block A - Room 102,General Merit\nMeera Sundaram,2026ECE089,Electronics & Comm,5,7.8,71.2,45000,Block B - Room 308,OBC-NCL\nTanmay Joshi,2026ME044,Mechanical Engg,3,8.9,94.0,0,Day Scholar,General Merit\nRitu Singhal,2026BT021,Biotechnology,5,6.9,64.5,75000,Block B - Room 215,EWS Quota\nFarhan Akhtar,2026CE033,Civil Engineering,5,7.2,82.0,12000,Block A - Room 410,SC / ST`;
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Digii_Campus_Student_Ingestion_Template.csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Sample Student Ingestion CSV Template downloaded!");
+    }
+
+    function loadDemoStudentBatch() {
+      const demoStudents = [
+        { name: "Aditya Kashyap", roll_no: "2026CSE150", department: "Computer Science", semester: 5, cgpa: 8.4, attendance_pct: 89.0, fee_due: 0, hostel_room: "Block A - Room 102", quota: "General Merit" },
+        { name: "Meera Sundaram", roll_no: "2026ECE089", department: "Electronics & Comm", semester: 5, cgpa: 7.8, attendance_pct: 71.2, fee_due: 45000, hostel_room: "Block B - Room 308", quota: "OBC-NCL" },
+        { name: "Tanmay Joshi", roll_no: "2026ME044", department: "Mechanical Engg", semester: 3, cgpa: 8.9, attendance_pct: 94.0, fee_due: 0, hostel_room: "Day Scholar", quota: "General Merit" },
+        { name: "Ritu Singhal", roll_no: "2026BT021", department: "Biotechnology", semester: 5, cgpa: 6.9, attendance_pct: 64.5, fee_due: 75000, hostel_room: "Block B - Room 215", quota: "EWS Quota" },
+        { name: "Farhan Akhtar", roll_no: "2026CE033", department: "Civil Engineering", semester: 5, cgpa: 7.2, attendance_pct: 82.0, fee_due: 12000, hostel_room: "Block A - Room 410", quota: "SC / ST" }
+      ];
+      OPERATIONS_STATE.stagedCsv = demoStudents;
+      displayStagedCsvPreview();
+      showToast("Demo 5-student batch loaded into staging area!");
+    }
+
+    function handleStudentCsvUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = e.target.result;
+        const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+        if (lines.length < 2) {
+          showToast("CSV file is empty or missing data rows.");
+          return;
+        }
+
+        const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+        const parsed = [];
+
+        for (let i = 1; i < lines.length; i++) {
+          const parts = lines[i].split(',').map(p => p.trim());
+          if (parts.length >= 7) {
+            parsed.push({
+              name: parts[0] || `Student ${i}`,
+              roll_no: parts[1] || `2026STU${100 + i}`,
+              department: parts[2] || "Computer Science",
+              semester: parseInt(parts[3]) || 5,
+              cgpa: parseFloat(parts[4]) || 7.5,
+              attendance_pct: parseFloat(parts[5]) || 80.0,
+              fee_due: parseInt(parts[6]) || 0,
+              hostel_room: parts[7] || "Block A",
+              quota: parts[8] || "General"
+            });
+          }
+        }
+
+        OPERATIONS_STATE.stagedCsv = parsed;
+        displayStagedCsvPreview();
+        showToast(`Parsed ${parsed.length} student records from CSV!`);
+      };
+      reader.readAsText(file);
+    }
+
+    function displayStagedCsvPreview() {
+      const container = document.getElementById('ops-csv-preview-container');
+      const tbody = document.getElementById('ops-csv-preview-body');
+      const badge = document.getElementById('ops-csv-validation-badge');
+      if (!container || !tbody) return;
+
+      container.classList.remove('hidden');
+      if (badge) badge.textContent = `${OPERATIONS_STATE.stagedCsv.length} Validated Records (Ready to Ingest)`;
+
+      tbody.innerHTML = OPERATIONS_STATE.stagedCsv.map((s, idx) => `
+        <tr class="hover:bg-slate-50">
+          <td class="py-2 px-3 font-mono font-bold text-slate-800">${s.roll_no}</td>
+          <td class="py-2 px-3 font-sans font-bold text-slate-900">${s.name}</td>
+          <td class="py-2 px-3">${s.department} (Sem ${s.semester})</td>
+          <td class="py-2 px-3 font-mono ${s.attendance_pct < 75 ? 'text-red-600 font-bold' : 'text-emerald-700'}">${s.attendance_pct}%</td>
+          <td class="py-2 px-3 font-mono">${s.fee_due > 0 ? s.fee_due.toLocaleString('en-IN') + ' INR' : 'Nil'}</td>
+          <td class="py-2 px-3">${s.hostel_room}</td>
+          <td class="py-2 px-3">${s.quota}</td>
+          <td class="py-2 px-3 text-right">
+            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800">VALID</span>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function commitBulkStudents() {
+      if (!OPERATIONS_STATE.stagedCsv || OPERATIONS_STATE.stagedCsv.length === 0) return;
+      if (!state.mockData || !state.mockData.students) return;
+
+      let nextUkid = Math.max(...state.mockData.students.map(s => s.ukid || 10840)) + 1;
+
+      OPERATIONS_STATE.stagedCsv.forEach(item => {
+        // Calculate synthetic risk
+        let riskScore = 40;
+        if (item.attendance_pct < 75) riskScore += (75 - item.attendance_pct) * 2;
+        if (item.fee_due > 30000) riskScore += 25;
+
+        const newStudent = {
+          ukid: nextUkid++,
+          enrollment_no: item.roll_no,
+          name: item.name,
+          department: item.department,
+          current_semester: item.semester,
+          overall_attendance_pct: item.attendance_pct,
+          attendance: item.attendance_pct,
+          total_overdue: item.fee_due,
+          fee_due: item.fee_due,
+          overdue_fees: item.fee_due,
+          curfew_breaches_30d: 0,
+          chc_critical_tickets_30d: 0,
+          cgpa: item.cgpa,
+          hostel_room: item.hostel_room,
+          quota: item.quota,
+          composite_risk_score: Math.min(98, Math.round(riskScore)),
+          risk_zone: riskScore >= 75 ? 'RED' : (riskScore >= 50 ? 'AMBER' : 'GREEN'),
+          events: [
+            {
+              module: "ADMISSIONS",
+              timestamp: new Date().toISOString().replace('T', ' ').substring(0, 16),
+              title: "Bulk CSV Enrolment Completed",
+              description: `Enrolled into ${item.department} via ${item.quota}. Initial fee ledger initialized.`,
+              severity: "INFO"
+            }
+          ]
+        };
+        state.mockData.students.push(newStudent);
+      });
+
+      const count = OPERATIONS_STATE.stagedCsv.length;
+      OPERATIONS_STATE.stagedCsv = [];
+      document.getElementById('ops-csv-preview-container').classList.add('hidden');
+      
+      renderOperationsDesk();
+      renderRadarGrid();
+      showToast(`SUCCESS: Ingested ${count} students into live CollPoll student_master database!`);
+    }
+
+    function exportStudentRosterCsv() {
+      if (!state.mockData || !state.mockData.students) return;
+      const headers = ["UKID", "Roll Number", "Name", "Department", "Semester", "Attendance %", "Outstanding Dues (INR)", "Hostel Room", "Composite Risk Score", "Risk Zone"];
+      const rows = state.mockData.students.map(s => [
+        s.ukid,
+        `"${s.enrollment_no || ''}"`,
+        `"${s.name.replace(/"/g, '""')}"`,
+        `"${s.department || ''}"`,
+        s.current_semester || 5,
+        s.overall_attendance_pct !== undefined ? s.overall_attendance_pct : (s.attendance || 78),
+        s.total_overdue !== undefined ? s.total_overdue : (s.fee_due || 0),
+        `"${s.hostel_room || 'Day Scholar'}"`,
+        s.composite_risk_score !== undefined ? s.composite_risk_score : 50,
+        s.composite_risk_score >= 75 ? 'RED' : (s.composite_risk_score >= 50 ? 'AMBER' : 'GREEN')
+      ]);
+
+      const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Digii_Campus_Live_Student_Roster_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Live Student Roster CSV exported successfully!");
+    }
+
+    // Modal: Single Student Enrollment
+    function openAddStudentModal() {
+      document.getElementById('modal-add-student').classList.remove('hidden');
+    }
+
+    function closeAddStudentModal() {
+      document.getElementById('modal-add-student').classList.add('hidden');
+    }
+
+    function submitNewStudent(event) {
+      event.preventDefault();
+      const name = document.getElementById('new-std-name').value.trim();
+      const roll = document.getElementById('new-std-roll').value.trim();
+      const dept = document.getElementById('new-std-dept').value;
+      const sem = parseInt(document.getElementById('new-std-sem').value);
+      const att = parseFloat(document.getElementById('new-std-att').value) || 88;
+      const dues = parseInt(document.getElementById('new-std-dues').value) || 0;
+      const hostel = document.getElementById('new-std-hostel').value.trim();
+      const quota = document.getElementById('new-std-quota').value;
+
+      if (!name || !roll) return;
+
+      const nextUkid = Math.max(...state.mockData.students.map(s => s.ukid || 10840)) + 1;
+      let riskScore = 35;
+      if (att < 75) riskScore += (75 - att) * 2;
+      if (dues > 30000) riskScore += 25;
+
+      const newStudent = {
+        ukid: nextUkid,
+        enrollment_no: roll,
+        name: name,
+        department: dept,
+        current_semester: sem,
+        overall_attendance_pct: att,
+        attendance: att,
+        total_overdue: dues,
+        fee_due: dues,
+        overdue_fees: dues,
+        curfew_breaches_30d: 0,
+        chc_critical_tickets_30d: 0,
+        cgpa: 8.0,
+        hostel_room: hostel,
+        quota: quota,
+        composite_risk_score: Math.min(95, Math.round(riskScore)),
+        risk_zone: riskScore >= 75 ? 'RED' : (riskScore >= 50 ? 'AMBER' : 'GREEN'),
+        events: [
+          {
+            module: "ADMISSIONS",
+            timestamp: new Date().toISOString().replace('T', ' ').substring(0, 16),
+            title: "Direct Admission Enrolled",
+            description: `Student master entry generated for ${dept} via ${quota}.`,
+            severity: "INFO"
+          }
+        ]
+      };
+
+      state.mockData.students.unshift(newStudent);
+      closeAddStudentModal();
+      renderOperationsDesk();
+      renderRadarGrid();
+      showToast(`Student ${name} (${roll}) enrolled successfully into student_master!`);
+    }
+
+    // 2. Faculty Attendance Register (AMS)
+    function renderAttendanceSheet() {
+      const tbody = document.getElementById('ops-attendance-body');
+      if (!tbody || !state.mockData) return;
+
+      tbody.innerHTML = state.mockData.students.map(s => {
+        const mark = OPERATIONS_STATE.attendanceMarks[s.ukid] || 'PRESENT';
+        const currentAtt = s.overall_attendance_pct !== undefined ? s.overall_attendance_pct : (s.attendance || 78);
+        const isDebarred = currentAtt < 75;
+
+        return `
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-2.5 px-3 font-mono font-bold text-slate-800">${s.enrollment_no || s.ukid}</td>
+            <td class="py-2.5 px-3 font-bold text-slate-900">${s.name}</td>
+            <td class="py-2.5 px-3 text-slate-600">${s.department || 'Computer Science'}</td>
+            <td class="py-2.5 px-3 font-mono ${currentAtt < 75 ? 'text-red-600 font-bold' : 'text-emerald-700 font-medium'}">${currentAtt}%</td>
+            <td class="py-2.5 px-3">
+              <div class="flex items-center justify-center gap-1.5">
+                <button type="button" onclick="markAttendanceToggle(${s.ukid}, 'PRESENT')" class="px-2.5 py-1 rounded text-xs font-bold transition-all ${mark === 'PRESENT' ? 'bg-emerald-600 text-white shadow-xs' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}">P</button>
+                <button type="button" onclick="markAttendanceToggle(${s.ukid}, 'ABSENT')" class="px-2.5 py-1 rounded text-xs font-bold transition-all ${mark === 'ABSENT' ? 'bg-red-600 text-white shadow-xs' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}">A</button>
+                <button type="button" onclick="markAttendanceToggle(${s.ukid}, 'LATE')" class="px-2.5 py-1 rounded text-xs font-bold transition-all ${mark === 'LATE' ? 'bg-amber-500 text-white shadow-xs' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}">L</button>
+              </div>
+            </td>
+            <td class="py-2.5 px-3 text-right">
+              ${isDebarred ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800 border border-red-200 font-mono">UGC RED ZONE</span>' : '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono">COMPLIANT</span>'}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function markAttendanceToggle(ukid, status) {
+      OPERATIONS_STATE.attendanceMarks[ukid] = status;
+      renderAttendanceSheet();
+    }
+
+    function markAllAttendance(status) {
+      if (!state.mockData) return;
+      state.mockData.students.forEach(s => {
+        OPERATIONS_STATE.attendanceMarks[s.ukid] = status;
+      });
+      renderAttendanceSheet();
+      showToast(`Marked all students as ${status} for this session!`);
+    }
+
+    function submitDailyAttendance() {
+      if (!state.mockData) return;
+      let redZoneTriggered = [];
+
+      state.mockData.students.forEach(s => {
+        const mark = OPERATIONS_STATE.attendanceMarks[s.ukid] || 'PRESENT';
+        let currentAtt = s.overall_attendance_pct !== undefined ? s.overall_attendance_pct : 80;
+        
+        if (mark === 'ABSENT') {
+          currentAtt = Math.max(30, currentAtt - 2.5);
+        } else if (mark === 'PRESENT') {
+          currentAtt = Math.min(100, currentAtt + 0.5);
+        }
+        
+        currentAtt = Math.round(currentAtt * 10) / 10;
+        s.overall_attendance_pct = currentAtt;
+        s.attendance = currentAtt;
+
+        // Recalculate Risk Score
+        let risk = 35;
+        if (currentAtt < 75) {
+          risk += (75 - currentAtt) * 2.2;
+          redZoneTriggered.push(s.name);
+        }
+        if ((s.total_overdue || s.fee_due || 0) > 30000) risk += 25;
+        s.composite_risk_score = Math.min(99, Math.round(risk));
+      });
+
+      renderOperationsDesk();
+      renderRadarGrid();
+
+      if (redZoneTriggered.length > 0) {
+        showToast(`AMS Session locked! Attendance dropped below 75% for: ${redZoneTriggered.slice(0, 2).join(', ')}. Flagged on Predictive Radar!`);
+      } else {
+        showToast("AMS Daily Attendance successfully locked and committed to MySQL ams_attendance table!");
+      }
+    }
+
+    // 3. Cashier & Fee Collection (dues_v2)
+    function renderCashierDesk() {
+      const select = document.getElementById('ops-cashier-student-select');
+      if (!select || !state.mockData) return;
+
+      const currentSelected = select.value;
+      select.innerHTML = state.mockData.students.map(s => {
+        const dues = s.total_overdue !== undefined ? s.total_overdue : (s.fee_due || 0);
+        return `<option value="${s.ukid}" ${s.ukid == currentSelected ? 'selected' : ''}>${s.name} (${s.enrollment_no || s.ukid}) — Due: ${dues > 0 ? dues.toLocaleString('en-IN') + ' INR' : 'Nil'}</option>`;
+      }).join('');
+
+      const targetUkid = select.value || state.mockData.students[0]?.ukid;
+      if (targetUkid) updateCashierBreakdown(targetUkid);
+      renderCashierLogTable();
+    }
+
+    function selectCashierStudent(ukid) {
+      const select = document.getElementById('ops-cashier-student-select');
+      if (select) select.value = ukid;
+      updateCashierBreakdown(ukid);
+    }
+
+    function updateCashierBreakdown(ukid) {
+      if (!state.mockData) return;
+      const s = state.mockData.students.find(st => st.ukid == ukid);
+      if (!s) return;
+
+      const total = s.total_overdue !== undefined ? s.total_overdue : (s.fee_due || 0);
+      const tuition = Math.round(total * 0.65);
+      const hostel = Math.round(total * 0.30);
+      const fines = total - tuition - hostel;
+
+      const tuitionEl = document.getElementById('cashier-tuition');
+      const hostelEl = document.getElementById('cashier-hostel');
+      const finesEl = document.getElementById('cashier-fines');
+      const totalEl = document.getElementById('cashier-total');
+      const amtInput = document.getElementById('ops-cashier-amount');
+
+      if (tuitionEl) tuitionEl.textContent = `${tuition.toLocaleString('en-IN')} INR`;
+      if (hostelEl) hostelEl.textContent = `${hostel.toLocaleString('en-IN')} INR`;
+      if (finesEl) finesEl.textContent = `${fines.toLocaleString('en-IN')} INR`;
+      if (totalEl) totalEl.textContent = `${total.toLocaleString('en-IN')} INR`;
+      if (amtInput) amtInput.value = total;
+    }
+
+    function processFeePayment() {
+      const select = document.getElementById('ops-cashier-student-select');
+      const amtInput = document.getElementById('ops-cashier-amount');
+      const modeSelect = document.getElementById('ops-cashier-mode');
+      const utrInput = document.getElementById('ops-cashier-utr');
+
+      if (!select || !state.mockData) return;
+      const ukid = parseInt(select.value);
+      const s = state.mockData.students.find(st => st.ukid === ukid);
+      if (!s) return;
+
+      const payAmount = parseInt(amtInput.value) || 0;
+      if (payAmount <= 0) {
+        showToast("Please enter a valid payment amount greater than zero.");
+        return;
+      }
+
+      // Deduct from student dues
+      const oldDues = s.total_overdue !== undefined ? s.total_overdue : (s.fee_due || 0);
+      const remaining = Math.max(0, oldDues - payAmount);
+      s.total_overdue = remaining;
+      s.fee_due = remaining;
+      s.overdue_fees = remaining;
+
+      // Lower Risk Score
+      if (s.composite_risk_score) {
+        s.composite_risk_score = Math.max(25, s.composite_risk_score - 28);
+        if (s.composite_risk_score < 50) s.risk_zone = 'GREEN';
+      }
+
+      const receiptId = `REC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+      const logEntry = {
+        id: receiptId,
+        studentUkid: s.ukid,
+        studentName: s.name,
+        amount: payAmount,
+        mode: modeSelect.value,
+        date: new Date().toISOString().replace('T', ' ').substring(0, 16),
+        status: remaining === 0 ? "Accounts Cleared (No-Dues Unlocked)" : "Partial Settlement"
+      };
+
+      OPERATIONS_STATE.cashierLogs.unshift(logEntry);
+
+      // Add to Student 360 Event Log
+      if (!s.events) s.events = [];
+      s.events.unshift({
+        module: "FINANCE",
+        timestamp: logEntry.date,
+        title: `Fee Settlement (${receiptId})`,
+        description: `Collected ${payAmount.toLocaleString('en-IN')} INR via ${modeSelect.value}. Reference: ${utrInput.value}. Remaining balance: ${remaining} INR.`,
+        severity: "INFO"
+      });
+
+      renderOperationsDesk();
+      renderRadarGrid();
+      renderFinanceTables();
+
+      // Download Official Printable Receipt
+      downloadFeeReceipt(logEntry, s, utrInput.value);
+
+      showToast(`SUCCESS: Payment of ${payAmount.toLocaleString('en-IN')} INR processed! Receipt ${receiptId} generated and No-Dues clearance updated!`);
+    }
+
+    function renderCashierLogTable() {
+      const tbody = document.getElementById('ops-cashier-log-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = OPERATIONS_STATE.cashierLogs.map(l => `
+        <tr class="hover:bg-slate-50">
+          <td class="py-2.5 px-3 font-mono font-bold text-indigo-700">${l.id}</td>
+          <td class="py-2.5 px-3 font-sans font-bold text-slate-800">${l.studentName}</td>
+          <td class="py-2.5 px-3 font-mono font-bold text-emerald-600">${l.amount.toLocaleString('en-IN')} INR</td>
+          <td class="py-2.5 px-3 text-slate-600">${l.mode}</td>
+          <td class="py-2.5 px-3 text-slate-500">${l.date}</td>
+          <td class="py-2.5 px-3 text-right">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${l.status.includes('Cleared') ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'}">${l.status}</span>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function downloadFeeReceipt(logEntry, student, utr) {
+      let txt = `================================================================================\n`;
+      txt += `DIGII CAMPUS (COLLPOLL) — OFFICIAL TUITION & HOSTEL FEE RECEIPT\n`;
+      txt += `================================================================================\n`;
+      txt += `Receipt No:             ${logEntry.id}\n`;
+      txt += `Transaction Reference:  ${utr || 'UTR-2026-ONLINE'}\n`;
+      txt += `Date of Settlement:     ${logEntry.date} IST\n`;
+      txt += `Student Name:           ${student.name} (Roll: ${student.enrollment_no || 'N/A'} | UKID: ${student.ukid})\n`;
+      txt += `Academic Department:    ${student.department || 'Engineering'}\n`;
+      txt += `Semester:               Semester ${student.current_semester || 5}\n`;
+      txt += `--------------------------------------------------------------------------------\n`;
+      txt += `FEE SETTLEMENT BREAKDOWN:\n`;
+      txt += `- Amount Collected:     INR ${logEntry.amount.toLocaleString('en-IN')}.00\n`;
+      txt += `- Settlement Channel:   ${logEntry.mode}\n`;
+      txt += `- Balance Remaining:    INR ${(student.total_overdue || 0).toLocaleString('en-IN')}.00\n`;
+      txt += `--------------------------------------------------------------------------------\n`;
+      txt += `DEGREE NO-DUES IMPACT:  ${(student.total_overdue || 0) === 0 ? 'CLEARED IN FULL (Zero Liability in dues_v2)' : 'PARTIAL (Conditional Exam Admit)'}\n`;
+      txt += `Issuer Authority:       Chief Finance & Accounts Officer, Digii Campus\n`;
+      txt += `================================================================================\n`;
+
+      const blob = new Blob([txt], { type: "text/plain;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Official_Fee_Receipt_${logEntry.id}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // 4. Hostel Warden Out-Pass & Kitchen Sync
+    function renderHostelOutpasses() {
+      const tbody = document.getElementById('ops-hostel-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = OPERATIONS_STATE.pendingOutpasses.map(p => {
+        let statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">PENDING WARDEN</span>';
+        if (p.status === 'APPROVED') statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">APPROVED & GATE LOGGED</span>';
+        else if (p.status === 'REJECTED') statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">REJECTED</span>';
+
+        return `
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-2.5 px-3 font-mono font-bold text-indigo-700">${p.id}</td>
+            <td class="py-2.5 px-3">
+              <div class="font-bold text-slate-900">${p.name}</div>
+              <div class="text-[10px] text-slate-400 font-mono">${p.roll}</div>
+            </td>
+            <td class="py-2.5 px-3 text-slate-600">${p.hostel}</td>
+            <td class="py-2.5 px-3 text-slate-700">${p.reason}</td>
+            <td class="py-2.5 px-3 font-mono text-[11px] text-slate-600">${p.dateRange}</td>
+            <td class="py-2.5 px-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">-${p.mealsDeducted} Meals (PRGE Saved)</span>
+            </td>
+            <td class="py-2.5 px-3 text-right">
+              ${p.status === 'PENDING' ? `
+                <div class="flex items-center justify-end gap-1.5">
+                  <button onclick="approveHostelOutPass('${p.id}')" class="px-2.5 py-1 text-xs font-bold rounded bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-colors">Approve</button>
+                  <button onclick="rejectHostelOutPass('${p.id}')" class="px-2.5 py-1 text-xs font-bold rounded bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">Reject</button>
+                </div>
+              ` : statusBadge}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function approveHostelOutPass(passId) {
+      const pass = OPERATIONS_STATE.pendingOutpasses.find(p => p.id === passId);
+      if (!pass) return;
+
+      pass.status = 'APPROVED';
+      renderHostelOutpasses();
+
+      // Trigger PRGE Kitchen Batch Reduction
+      if (typeof window.dailyWasteKg !== 'undefined') {
+        window.dailyWasteKg = Math.max(10, window.dailyWasteKg - 14.5);
+      }
+      renderOperationsDesk();
+      showToast(`Out-pass ${passId} approved for ${pass.name}. PRGE Mess Kitchen batch count decremented by ${pass.mealsDeducted} meals!`);
+    }
+
+    function rejectHostelOutPass(passId) {
+      const pass = OPERATIONS_STATE.pendingOutpasses.find(p => p.id === passId);
+      if (!pass) return;
+
+      pass.status = 'REJECTED';
+      renderHostelOutpasses();
+      renderOperationsDesk();
+      showToast(`Out-pass ${passId} rejected.`);
+    }
+
+    function openCreateOutpassModal() {
+      const select = document.getElementById('new-pass-student');
+      if (select && state.mockData) {
+        select.innerHTML = state.mockData.students.map(s => `
+          <option value="${s.ukid}">${s.name} (${s.enrollment_no || s.ukid}) — ${s.hostel_room || 'Block A'}</option>
+        `).join('');
+      }
+      document.getElementById('modal-create-outpass').classList.remove('hidden');
+    }
+
+    function closeCreateOutpassModal() {
+      document.getElementById('modal-create-outpass').classList.add('hidden');
+    }
+
+    function submitNewOutpass(event) {
+      event.preventDefault();
+      const select = document.getElementById('new-pass-student');
+      const reason = document.getElementById('new-pass-reason').value.trim();
+      const start = document.getElementById('new-pass-start').value;
+      const end = document.getElementById('new-pass-end').value;
+
+      if (!select || !state.mockData) return;
+      const s = state.mockData.students.find(st => st.ukid == select.value);
+      if (!s) return;
+
+      const newPass = {
+        id: `GP-${Math.floor(9100 + Math.random() * 800)}`,
+        studentUkid: s.ukid,
+        name: s.name,
+        roll: s.enrollment_no || '2026STU',
+        hostel: s.hostel_room || 'Block A - Room 101',
+        reason: reason,
+        dateRange: `${start.replace('T', ' ')} - ${end.replace('T', ' ')}`,
+        mealsDeducted: 6,
+        status: 'APPROVED'
+      };
+
+      OPERATIONS_STATE.pendingOutpasses.unshift(newPass);
+      closeCreateOutpassModal();
+      renderHostelOutpasses();
+      renderOperationsDesk();
+      showToast(`Manual Emergency Out-Pass issued for ${s.name}. Gate log registered & 6 meals deducted from mess batch!`);
+    }
+
+    // 5. CHC Service Desk & Tickets
+    function renderChcServiceDesk() {
+      const tbody = document.getElementById('ops-chc-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = OPERATIONS_STATE.chcTickets.map(t => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-2.5 px-3 font-mono font-bold text-blue-700">${t.id}</td>
+          <td class="py-2.5 px-3 font-bold text-slate-800">${t.name}</td>
+          <td class="py-2.5 px-3 text-slate-700">${t.category}</td>
+          <td class="py-2.5 px-3 text-slate-600 font-mono text-[11px]">${t.workCentre}</td>
+          <td class="py-2.5 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${t.priority.includes('P1') ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}">${t.priority}</span>
+            <div class="text-[10px] text-slate-400 font-mono mt-0.5">SLA: ${t.slaRemaining}</div>
+          </td>
+          <td class="py-2.5 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${t.status === 'RESOLVED' ? 'bg-emerald-100 text-emerald-800' : (t.status === 'IN_PROGRESS' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-800')}">${t.status}</span>
+          </td>
+          <td class="py-2.5 px-3 text-right">
+            <select onchange="updateChcTicketStatus('${t.id}', this.value)" class="px-2 py-1 text-xs rounded border border-slate-300 bg-white font-medium">
+              <option value="SUBMITTED" ${t.status === 'SUBMITTED' ? 'selected' : ''}>Submitted</option>
+              <option value="IN_PROGRESS" ${t.status === 'IN_PROGRESS' ? 'selected' : ''}>In Progress</option>
+              <option value="RESOLVED" ${t.status === 'RESOLVED' ? 'selected' : ''}>Resolved</option>
+              <option value="CLOSED" ${t.status === 'CLOSED' ? 'selected' : ''}>Closed</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function updateChcTicketStatus(ticketId, newStatus) {
+      const ticket = OPERATIONS_STATE.chcTickets.find(t => t.id === ticketId);
+      if (!ticket) return;
+
+      ticket.status = newStatus;
+      renderChcServiceDesk();
+      showToast(`Ticket ${ticketId} workflow updated to: ${newStatus}`);
+    }
+
+    function openNewChcTicketModal() {
+      const select = document.getElementById('new-chc-student');
+      if (select && state.mockData) {
+        select.innerHTML = state.mockData.students.map(s => `
+          <option value="${s.ukid}">${s.name} (${s.enrollment_no || s.ukid})</option>
+        `).join('');
+      }
+      document.getElementById('modal-create-chc-ticket').classList.remove('hidden');
+    }
+
+    function closeNewChcTicketModal() {
+      document.getElementById('modal-create-chc-ticket').classList.add('hidden');
+    }
+
+    function submitNewChcTicket(event) {
+      event.preventDefault();
+      const select = document.getElementById('new-chc-student');
+      const cat = document.getElementById('new-chc-category').value;
+      const prio = document.getElementById('new-chc-priority').value;
+      const desc = document.getElementById('new-chc-desc').value.trim();
+
+      if (!select || !state.mockData) return;
+      const s = state.mockData.students.find(st => st.ukid == select.value);
+      if (!s) return;
+
+      let workCentre = "Hostel Facilities & Maintenance";
+      if (cat.includes("Fee")) workCentre = "Accounts & Finance Syndicate";
+      else if (cat.includes("Mess")) workCentre = "Dining Services & Hygiene";
+      else if (cat.includes("Wi-Fi")) workCentre = "Campus Network Operations Center";
+      else if (cat.includes("LMS")) workCentre = "Academic Computing Desk";
+
+      const newTicket = {
+        id: `CHC-REQ-${Math.floor(4830 + Math.random() * 500)}`,
+        studentUkid: s.ukid,
+        name: s.name,
+        category: cat,
+        workCentre: workCentre,
+        priority: prio,
+        slaRemaining: prio.includes("P1") ? "23h 59m" : "47h 59m",
+        status: "SUBMITTED"
+      };
+
+      OPERATIONS_STATE.chcTickets.unshift(newTicket);
+      closeNewChcTicketModal();
+      renderChcServiceDesk();
+      renderOperationsDesk();
+      showToast(`CHC Ticket ${newTicket.id} logged and dispatched to ${workCentre}!`);
+    }
+
 </script>
 
   <!-- ===================================================================== -->
@@ -12008,6 +13384,171 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
           <button type="button" onclick="closePledgeEndowmentModal()" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">Cancel</button>
           <button type="submit" class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold shadow-xs">Confirm Pledge & Download 80G Receipt</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Modal: Add Single Student Enrollment -->
+  <div id="modal-add-student" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+          <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+          Direct Student Onboarding & Ledger Initialization
+        </h3>
+        <button onclick="closeAddStudentModal()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form onsubmit="submitNewStudent(event)" class="space-y-3 text-xs">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Full Student Name</label>
+            <input type="text" id="new-std-name" required placeholder="e.g. Ananya Deshmukh" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-blue-500">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Enrollment / Roll No</label>
+            <input type="text" id="new-std-roll" required placeholder="e.g. 2026CSE108" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono focus:outline-blue-500">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Department</label>
+            <select id="new-std-dept" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+              <option value="Computer Science">Computer Science & Engg</option>
+              <option value="Electronics & Comm">Electronics & Comm</option>
+              <option value="Mechanical Engg">Mechanical Engg</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Biotechnology">Biotechnology</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Current Semester</label>
+            <select id="new-std-sem" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+              <option value="1">Semester 1 (First Year)</option>
+              <option value="3">Semester 3 (Second Year)</option>
+              <option value="5" selected>Semester 5 (Third Year)</option>
+              <option value="7">Semester 7 (Final Year)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Initial Attendance %</label>
+            <input type="number" id="new-std-att" min="0" max="100" value="88" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Outstanding Fee Due (INR)</label>
+            <input type="number" id="new-std-dues" min="0" value="0" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Hostel Room</label>
+            <input type="text" id="new-std-hostel" placeholder="e.g. Block A - Room 204" value="Block A - Room 204" class="w-full px-3 py-2 rounded-lg border border-slate-300">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Admissions Quota</label>
+            <select id="new-std-quota" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+              <option value="General Merit">General Merit</option>
+              <option value="OBC-NCL">OBC-NCL</option>
+              <option value="SC / ST">SC / ST</option>
+              <option value="EWS Quota">EWS Quota</option>
+            </select>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeAddStudentModal()" class="px-3 py-2 rounded-lg bg-slate-100 text-slate-700 font-medium">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-xs">Enroll Student & Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Manual Out-Pass -->
+  <div id="modal-create-outpass" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-sm font-bold text-slate-900">Issue Emergency Out-Pass</h3>
+        <button onclick="closeCreateOutpassModal()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form onsubmit="submitNewOutpass(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Student</label>
+          <select id="new-pass-student" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            <!-- Populated by JS -->
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Reason for Leave</label>
+          <input type="text" id="new-pass-reason" required placeholder="e.g. Family Emergency / Medical Consult" class="w-full px-3 py-2 rounded-lg border border-slate-300">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Exit Date & Time</label>
+            <input type="datetime-local" id="new-pass-start" value="2026-11-12T17:00" class="w-full px-2.5 py-1.5 rounded border border-slate-300">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Return Date & Time</label>
+            <input type="datetime-local" id="new-pass-end" value="2026-11-14T20:00" class="w-full px-2.5 py-1.5 rounded border border-slate-300">
+          </div>
+        </div>
+        <div class="p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-[11px]">
+          <strong>PRGE Cross-Module Action:</strong> Approving this out-pass automatically deducts 2 breakfast, 2 lunch, and 2 dinner headcounts from the mess cooking ledger.
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeCreateOutpassModal()" class="px-3 py-2 rounded-lg bg-slate-100 text-slate-700 font-medium">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold shadow-xs">Approve & Deduct Kitchen Batch</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create CHC Service Ticket -->
+  <div id="modal-create-chc-ticket" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-sm font-bold text-slate-900">Create Campus Help Centre Ticket</h3>
+        <button onclick="closeNewChcTicketModal()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form onsubmit="submitNewChcTicket(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Student</label>
+          <select id="new-chc-student" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            <!-- Populated by JS -->
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Service Category</label>
+          <select id="new-chc-category" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            <option value="Hostel Maintenance">Hostel Maintenance (Plumbing / Electrical)</option>
+            <option value="Fee Ledger Discrepancy">Fee Ledger & Challan Adjustment</option>
+            <option value="Mess Hygiene & Quality">Mess Hygiene & Food Quality</option>
+            <option value="Wi-Fi & LAN Network">Campus Wi-Fi & LAN Connection</option>
+            <option value="LMS Submission Glitch">LMS Assignment Upload Glitch</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Priority (SLA Timer)</label>
+          <select id="new-chc-priority" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            <option value="P1 - Urgent (24h SLA)">P1 - Urgent (24h SLA)</option>
+            <option value="P2 - Medium (48h SLA)" selected>P2 - Medium (48h SLA)</option>
+            <option value="P3 - Normal (72h SLA)">P3 - Normal (72h SLA)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Description</label>
+          <textarea id="new-chc-desc" rows="3" required placeholder="Describe issue in detail..." class="w-full p-2.5 rounded-lg border border-slate-300"></textarea>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeNewChcTicketModal()" class="px-3 py-2 rounded-lg bg-slate-100 text-slate-700 font-medium">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-xs">Dispatch Request</button>
         </div>
       </form>
     </div>
