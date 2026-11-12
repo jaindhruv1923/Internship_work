@@ -83,6 +83,19 @@
     <!-- Navigation Links -->
     <nav class="flex-1 px-3 py-4 space-y-4 text-xs font-medium overflow-y-auto">
       
+      <!-- Strategic Group: Product Evolution & Executive Comparison -->
+      <div class="space-y-1 pb-1">
+        <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-indigo-400 flex items-center justify-between">
+          <span>Strategy & Comparison</span>
+          <span class="text-[9px] px-1.5 py-0.2 rounded bg-indigo-900/60 text-indigo-300 font-mono">Digii vs 2.0</span>
+        </div>
+        <a href="javascript:void(0)" onclick="navigateToView('comparative')" id="nav-comparative" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors">
+          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          <span class="font-semibold text-slate-200">Digii vs 2.0 Matrix</span>
+          <span class="ml-auto text-[9px] uppercase px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30">Side-by-Side</span>
+        </a>
+      </div>
+
       <!-- Group 1: Student Retention & Predictive Intelligence -->
       <div class="space-y-1">
         <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-slate-400">Retention & Intelligence</div>
@@ -4154,6 +4167,179 @@
         </div>
       </section>
 
+      <!-- STAGE 21: DIGII CAMPUS VS DIGII 2.0 COMPARATIVE INTELLIGENCE MATRIX -->
+      <section id="view-comparative" class="hidden space-y-6">
+        
+        <!-- Top PM Strategic ROI Banner -->
+        <div class="roi-overlay items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-indigo-950 via-slate-900 to-blue-950 text-white text-xs font-semibold shadow-lg border border-indigo-400/50 roi-badge-glow">
+          <span class="px-2.5 py-1 rounded-md bg-indigo-500/30 text-indigo-200 text-[10px] font-extrabold font-mono tracking-wider uppercase border border-indigo-400/50 shrink-0">
+            APM TRANSITION & BENCHMARK
+          </span>
+          <span class="leading-relaxed">
+            <strong>Enterprise Strategic Thesis:</strong> Transforming Digii Campus from a 270-table transactional record system into an autonomous cross-departmental intelligence engine, protecting 1.84 Crore INR in tuition retention, eliminating 630 meals/day in mess waste, and automating graduation clearances from 14 days down to 1.2 seconds.
+          </span>
+        </div>
+
+        <!-- Header Card with Search, Filter Pills & Export Buttons -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200 uppercase tracking-wider">Product Evolution Matrix</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">17 Core Modules Audited</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800 border border-blue-200">Production Schema Lineage</span>
+              </div>
+              <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Digii Campus (Current) vs. Digii 2.0 (Predictive Layer)</h1>
+              <p class="text-sm text-slate-500 mt-1 max-w-4xl">
+                An exhaustive comparative study evaluating what Digii Campus publicly markets across its ERP suite versus where data silos cause operational friction, and how Digii 2.0 builds a proactive, cross-table intelligence moat on top of Suraj Shetty and Saksham Gupta's 270-table foundation.
+              </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+              <button onclick="downloadComparativeStudyCsv()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors">
+                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Audit (.CSV)</span>
+              </button>
+              <button onclick="downloadComparativeBriefTxt()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-xs">
+                <svg class="w-4 h-4 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Executive Brief (.TXT)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter & Search Bar -->
+          <div class="pt-4 flex flex-col md:flex-row items-center justify-between gap-3">
+            <!-- Category Pills -->
+            <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto" id="comparative-filter-pills">
+              <button onclick="filterComparativeCategory('all')" id="comp-filter-all" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-xs">All Modules (17)</button>
+              <button onclick="filterComparativeCategory('retention')" id="comp-filter-retention" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Retention & Success</button>
+              <button onclick="filterComparativeCategory('academics')" id="comp-filter-academics" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Academics & OBE</button>
+              <button onclick="filterComparativeCategory('operations')" id="comp-filter-operations" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Operations & Facilities</button>
+              <button onclick="filterComparativeCategory('finance')" id="comp-filter-finance" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Finance & Clearance</button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative w-full md:w-72">
+              <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <input type="text" id="comparative-search-input" oninput="searchComparativeCards()" placeholder="Search module, schema table, or gap..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+            </div>
+          </div>
+        </div>
+
+        <!-- The Two-Column Split Architecture Layout -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+          
+          <!-- LEFT COLUMN (xl:col-span-4): Our Platform Architecture & Enterprise Moat -->
+          <div class="xl:col-span-4 space-y-6 xl:sticky xl:top-20">
+            
+            <!-- Architectural Thesis Card -->
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 rounded-xl p-5 text-white border border-slate-700/80 shadow-md space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-300 font-bold bg-indigo-900/60 px-2 py-0.5 rounded border border-indigo-700/50">Core Philosophy</span>
+                <span class="text-[10px] font-mono text-emerald-400 font-semibold flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Phase 1 to Phase 2
+                </span>
+              </div>
+              <div>
+                <h2 class="text-base font-bold text-white tracking-tight">The Digii 2.0 Moat: Proactive Synthesis</h2>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  Digii Campus established an industry-leading ERP foundation with 1,647 tables and 270 core workflow engines. However, standard ERP modules operate in <strong>transactional isolation</strong>: finance records payments, LMS tracks assignments, hostels log gates.
+                </p>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Digii 2.0 acts as the <strong>predictive intelligence orchestrator</strong>: joining disparate tables via <code class="text-indigo-200">ukid</code> to trigger automated interventions days or weeks before administrative crises occur.
+                </p>
+              </div>
+
+              <!-- 4 Hero Value Drivers -->
+              <div class="grid grid-cols-2 gap-2.5 pt-2">
+                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                  <div class="text-[10px] uppercase font-bold text-slate-400">Tuition Protected</div>
+                  <div class="text-lg font-bold text-emerald-400 font-mono">1.84 Cr INR</div>
+                  <div class="text-[10px] text-slate-300 mt-0.5">48 Red-Zone saves</div>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                  <div class="text-[10px] uppercase font-bold text-slate-400">Mess Waste Saved</div>
+                  <div class="text-lg font-bold text-amber-400 font-mono">630 Meals/Day</div>
+                  <div class="text-[10px] text-slate-300 mt-0.5">14,200 INR/day saved</div>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                  <div class="text-[10px] uppercase font-bold text-slate-400">No-Dues Clearance</div>
+                  <div class="text-lg font-bold text-blue-400 font-mono">1.2 Seconds</div>
+                  <div class="text-[10px] text-slate-300 mt-0.5">Down from 14 days</div>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                  <div class="text-[10px] uppercase font-bold text-slate-400">Timetable Clashes</div>
+                  <div class="text-lg font-bold text-purple-400 font-mono">0 Clashes</div>
+                  <div class="text-[10px] text-slate-300 mt-0.5">Auto constraint AI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Relational Schema Join Moat Card -->
+            <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                  Production Schema Lineage
+                </h3>
+                <span class="text-[10px] font-mono text-slate-400">270 Tables</span>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Our platform executes high-performance relational joins directly over CollPoll's production MySQL tables:
+              </p>
+              <div class="space-y-1.5 text-xs font-mono">
+                <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span class="text-blue-700 font-semibold">ams_attendance</span>
+                  <span class="text-[10px] text-slate-500 font-sans">UGC 75% Rule</span>
+                </div>
+                <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span class="text-blue-700 font-semibold">dues_v2</span>
+                  <span class="text-[10px] text-slate-500 font-sans">30-Day DPD Ledger</span>
+                </div>
+                <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span class="text-blue-700 font-semibold">gate_pass_log</span>
+                  <span class="text-[10px] text-slate-500 font-sans">Turnstile RFID Telemetry</span>
+                </div>
+                <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span class="text-blue-700 font-semibold">hostel_allotment</span>
+                  <span class="text-[10px] text-slate-500 font-sans">Kitchen Batching (PRGE)</span>
+                </div>
+                <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span class="text-blue-700 font-semibold">chc_middleware</span>
+                  <span class="text-[10px] text-slate-500 font-sans">Campus Help Centre BPM</span>
+                </div>
+                <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span class="text-blue-700 font-semibold">infra_booking</span>
+                  <span class="text-[10px] text-slate-500 font-sans">Acoustic Venue Clashing</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Manager Transition Narrative Card -->
+            <div class="bg-indigo-50/60 border border-indigo-200/80 rounded-xl p-5 shadow-xs space-y-3">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-md bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">APM</div>
+                <h3 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">The Product Transition Thesis</h3>
+              </div>
+              <p class="text-xs text-indigo-900 leading-relaxed font-medium">
+                "A Data Intern writes SQL to report what happened yesterday. An APM builds automated product systems that prevent failures tomorrow."
+              </p>
+              <p class="text-xs text-indigo-800 leading-relaxed">
+                By unifying student touchpoints across academics, finance, dining, security, and careers into a single proactive feedback loop, Digii 2.0 transforms Digii Campus from a passive ERP utility into an indispensable enterprise retention moat.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN (xl:col-span-8): Exhaustive Comparative Grid of All Digii Campus Modules -->
+          <div class="xl:col-span-8 space-y-4" id="comparative-cards-container">
+            <!-- Dynamic comparison cards rendered by JS -->
+          </div>
+
+        </div>
+      </section>
+
     </main>
 
     <!-- Footer -->
@@ -6110,7 +6296,7 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
     // ===================================================================
     // STAGE 6: SPA ROUTING & STATE MANAGEMENT ENGINE
     // ===================================================================
-    const SPA_VIEWS = ['radar', 'student360', 'student-hub', 'isolation', 'development', 'autoresume', 'alumni', 'accreditation', 'admissions', 'deadline', 'nodues', 'academics', 'prge', 'venue', 'transport', 'passback', 'energy', 'grievance', 'finance', 'scholarships'];
+    const SPA_VIEWS = ['comparative', 'radar', 'student360', 'student-hub', 'isolation', 'development', 'autoresume', 'alumni', 'accreditation', 'admissions', 'deadline', 'nodues', 'academics', 'prge', 'venue', 'transport', 'passback', 'energy', 'grievance', 'finance', 'scholarships'];
 
     function navigateToView(view) {
       if (!SPA_VIEWS.includes(view)) view = 'radar';
@@ -6149,7 +6335,9 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
       });
 
       // 4. View lifecycle triggers
-      if (view === 'radar') {
+      if (view === 'comparative') {
+        renderComparativeMatrix();
+      } else if (view === 'radar') {
         renderRadarGrid();
       } else if (view === 'student360') {
         renderStudent360();
@@ -11151,6 +11339,382 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       });
       downloadCsvFile(`Fleet_Transport_Manifest_${new Date().toISOString().split('T')[0]}.csv`, csv);
       showToast("Fleet Transport Manifest CSV exported!");
+    }
+
+    // ===================================================================
+    // STAGE 21: DIGII CAMPUS VS DIGII 2.0 COMPARATIVE MATRIX DATA & ENGINE
+    // ===================================================================
+    const COMPARATIVE_MODULES = [
+      {
+        id: "comp-dropout",
+        name: "Student Retention & Dropout Early Warning",
+        category: "retention",
+        viewTarget: "radar",
+        statusBadge: "Compound Predictive AI",
+        digiiBaseline: "Markets 'Student Wellness Intelligence' and basic single-metric attendance tracking dashboards.",
+        laggedBehind: "Evaluates attendance in operational isolation. Students experiencing severe financial dues, turnstile withdrawal, or sudden quiz failures are not identified until after formal dropout occurs. Zero multi-dimensional risk scoring.",
+        digii2Improvement: "Autonomous multi-dimensional Bayesian risk engine joining ams_attendance (<75%), dues_v2 (>30 DPD), and gate_pass_log (weekend isolation). Quantifies 1.84 Cr INR protected tuition across 48 Red-Zone students and automates 1-click advisor intervention workflows.",
+        schemaJoined: ["ams_attendance", "dues_v2", "gate_pass_log", "lms_quiz_marks"]
+      },
+      {
+        id: "comp-mess",
+        name: "Hostel & Mess Management (PRGE Food Waste)",
+        category: "operations",
+        viewTarget: "prge",
+        statusBadge: "Predictive Resource Engine",
+        digiiBaseline: "Markets hostel room allotment, room asset inventory, and biometric mess entry logging.",
+        laggedBehind: "Hostel mess kitchens prepare daily meals based on static student headcount. When students take weekend gatepasses or approved leaves, kitchens continue cooking at 100% volume, generating 20-30% daily food waste with zero feedback loop to head chefs.",
+        digii2Improvement: "Predictive Resource & Green Efficiency (PRGE) engine joining approved out-passes in gate_pass_log with automated kitchen boiling batch sizes. Eliminates 630 wasted meals/day, saving 14,200 INR daily and cutting 420 kg CO2e emissions.",
+        schemaJoined: ["hostel_allotment", "gate_pass_log", "hostel_leave_request", "mess_daily_meal_consumption"]
+      },
+      {
+        id: "comp-nodues",
+        name: "Graduation Clearance & Instant No-Dues",
+        category: "finance",
+        viewTarget: "nodues",
+        statusBadge: "Autonomous 1.2s Clearance",
+        digiiBaseline: "Markets digital no-dues module with departmental approval queues and manual sign-off forms.",
+        laggedBehind: "Graduating students must wait 10 to 14 days as 8 administrative departments (Library, Hostel, Sports, Accounts, Lab, HOD) manually click checkboxes in separate screens. Clerical backlog delays job onboarding and degree issuance.",
+        digii2Improvement: "Autonomous distributed verification engine querying 8 department ledgers in parallel across dues_v2, library_circulation, and hostel_allotment. Instant clearances granted in 1.2 seconds with cryptographic hashes, while micro-dues receive instant UPI clearance links.",
+        schemaJoined: ["dues_v2", "library_circulation", "hostel_allotment", "lab_asset_requisition"]
+      },
+      {
+        id: "comp-gatepass",
+        name: "Campus Access & Turnstile Anti-Passback",
+        category: "operations",
+        viewTarget: "passback",
+        statusBadge: "Velocity Telemetry",
+        digiiBaseline: "Markets digital gate passes, warden SMS approvals, and security guard QR code verification.",
+        laggedBehind: "Guards scan badges sequentially without spatial or temporal velocity validation. A student can scan out and pass their physical badge back through campus fencing, or register impossible transit across distant perimeter gates without triggering an automated alarm.",
+        digii2Improvement: "Turnstile Impossible Travel Sentinel calculating spatial velocity vectors between RFID turnstiles. Flags impossible transit speeds (>4.2 m/s), auto-locks duplicate badge scans, and maintains tamper-proof campus perimeter security audit logs.",
+        schemaJoined: ["gate_pass_log", "turnstile_rfid_event", "student_master", "security_post_registry"]
+      },
+      {
+        id: "comp-lms",
+        name: "LMS & Deadline Congestion Balancer",
+        category: "academics",
+        viewTarget: "deadline",
+        statusBadge: "Cognitive Load AI",
+        digiiBaseline: "Markets syllabus repository, digital course content, assignment submissions, and LMS gradebooks.",
+        laggedBehind: "Faculty members schedule high-weightage assignments independently without visibility into other courses. Students face severe deadline clusters (3-4 major project submissions on the same Friday), inducing extreme burnout, plagiarism, and attendance drops.",
+        digii2Improvement: "Cross-course Deadline Congestion Heatmap analyzing submission schedules across all semester electives. Detects cognitive overload spikes (>8 hours estimated workload on a single date) and suggests automated 48-hour staggered due dates to faculty before assignments publish.",
+        schemaJoined: ["lms_assignment_master", "course_syllabus_schedule", "student_elective_mapping"]
+      },
+      {
+        id: "comp-timetable",
+        name: "Academic Scheduling & Timetable Clash Interceptor",
+        category: "academics",
+        viewTarget: "academics",
+        statusBadge: "Constraint Solver AI",
+        digiiBaseline: "Markets master timetable creation and classroom scheduling tools.",
+        laggedBehind: "Timetable officers manually resolve classroom, lab, and faculty conflicts. Elective clashes force students to drop interdisciplinary courses, and unannounced faculty leave causes vacant rooms while adjacent cohorts suffer overcrowded seminar halls.",
+        digii2Improvement: "Autonomous constraint-satisfaction scheduling engine running over room acoustic capacities, faculty availability, and student elective combinations. Automatically eliminates 100% of inter-departmental elective overlaps and suggests optimal room swaps in real time.",
+        schemaJoined: ["timetable_slot_master", "faculty_workload_allocation", "infra_booking", "course_registration"]
+      },
+      {
+        id: "comp-venue",
+        name: "Venue & Infrastructure Smart Capacity Matcher",
+        category: "operations",
+        viewTarget: "venue",
+        statusBadge: "Acoustic & Occupancy Matcher",
+        digiiBaseline: "Markets campus venue booking forms and centralized event calendar management.",
+        laggedBehind: "Student clubs and departments request prestigious auditoriums without attendee validation. Small 15-person committee meetings occupy 300-seat halls with running HVAC, while major academic symposiums get relegated to cramped classrooms.",
+        digii2Improvement: "Smart Venue & Acoustic Matcher cross-referencing infra_booking with registered event RSVP lists. Enforces minimum occupancy thresholds, detects acoustic clash zones with adjacent active exams, and integrates with smart energy switches.",
+        schemaJoined: ["infra_booking", "campus_venue_master", "event_registration_log", "iot_smart_meter_readings"]
+      },
+      {
+        id: "comp-transport",
+        name: "Dynamic Fleet & Campus Transport Balancer",
+        category: "operations",
+        viewTarget: "transport",
+        statusBadge: "Dynamic Fleet Optimizer",
+        digiiBaseline: "Markets bus route display, transportation fee collection, and GPS tracking.",
+        laggedBehind: "Buses operate on static timetables regardless of student holiday calendars or exam shifts. Some routes experience 140% overcrowding while others run near-empty, burning thousands of liters of unmonitored diesel.",
+        digii2Improvement: "Dynamic Fleet Capacity Balancer linking student geo-coordinates, exam timetables, and morning turnstile swipes (transport_management_v2). Recalculates route passenger loads, dynamically reassigns bus capacities, and reduces fuel consumption by 18%.",
+        schemaJoined: ["transport_management_v2", "bus_route_stop_master", "exam_seating_allocation", "gate_pass_log"]
+      },
+      {
+        id: "comp-obe",
+        name: "Outcome-Based Education (OBE) & NAAC Copilot",
+        category: "academics",
+        viewTarget: "accreditation",
+        statusBadge: "Real-Time Continuous Attainment",
+        digiiBaseline: "Markets curriculum mapping, PO/CO matrices, and annual NAAC/NBA report exports.",
+        laggedBehind: "Attainment calculations occur retroactively at the end of the academic year. If a cohort underperforms Course Outcome 3 (CO3), it is discovered 6 months after the course has finished when remedial action is impossible. NAAC audits require hundreds of hours of manual compilation.",
+        digii2Improvement: "Real-time Accreditation Copilot tracking formative continuous internal assessments (CIE) against Program Outcomes. Generates automated attainment scorecards, warns faculty when mid-semester CO attainment drops below 60%, and auto-compiles NAAC Criterion 2 & 5 documentation.",
+        schemaJoined: ["obe_po_co_mapping", "continuous_internal_eval", "exam_question_co_tag", "naac_ssr_metric_cache"]
+      },
+      {
+        id: "comp-development",
+        name: "Non-Academic Development Points (SEP / NAAC 5.3)",
+        category: "retention",
+        viewTarget: "development",
+        statusBadge: "NAAC 5.3 Credit Ledger",
+        digiiBaseline: "Markets basic extracurricular club listings and student event calendar.",
+        laggedBehind: "Student participation in sports, hackathons, community volunteering, and research papers is trapped in paper certificates or unstructured text. Zero formal credit allocation or institutional alignment with NAAC Criterion 5.3.",
+        digii2Improvement: "Structured Student Development Point (SEP) Ledger grounded in NAAC 5.3. Organizes activities across Leadership, Innovation, Civic Engagement, and Athletics with cryptographic verification hashes, faculty approval workflows, and automated non-academic credit transcripts.",
+        schemaJoined: ["student_extracurricular_record", "naac_5_3_activity_master", "faculty_verification_log", "ukid_master"]
+      },
+      {
+        id: "comp-autoresume",
+        name: "Verified Auto-Resume & Placement TPO Engine",
+        category: "academics",
+        viewTarget: "autoresume",
+        statusBadge: "Cryptographic QR Verification",
+        digiiBaseline: "Markets student e-portfolio profiles and campus placement drive applications.",
+        laggedBehind: "Students submit self-declared resumes with unverified CGPAs, fabricated skill tags, and exaggerated project scopes. Placement officers (TPO) spend weeks manually cross-checking student transcripts before sharing applicant pools with top recruiters.",
+        digii2Improvement: "Cryptographically Verified Auto-Resume Builder directly pulling official academic transcripts from CoE tables, verified SEP skill points, and faculty-approved capstone repositories. Produces tamper-proof 1-click resumes with institutional QR verification.",
+        schemaJoined: ["exam_coe_gradebook", "placement_application", "student_extracurricular_record", "tpo_company_job_posting"]
+      },
+      {
+        id: "comp-chc",
+        name: "Campus Help Centre (CHC) & Workflow SLA Intelligence",
+        category: "operations",
+        viewTarget: "grievance",
+        statusBadge: "Predictive SLA Routing",
+        digiiBaseline: "Markets student grievance submission forms and administrative support tickets.",
+        laggedBehind: "Requests sit in departmental inboxes with zero predictive escalation. Administrative bottlenecks at specific work centres remain invisible to senior leadership until SLAs breach and student dissatisfaction spikes.",
+        digii2Improvement: "Enterprise CHC BPM Engine grounded in CollPoll's production chc_request, chc_work_centre, and chc_middleware tables. Analyzes 3,465 closed request historical distributions, pinpoints department turnaround bottlenecks, and predicts SLA breach probabilities before tickets expire.",
+        schemaJoined: ["chc_request", "chc_work_centre", "chc_middleware", "workflow_sla_audit_log"]
+      },
+      {
+        id: "comp-isolation",
+        name: "Student Wellness & Social Isolation Sentinel",
+        category: "retention",
+        viewTarget: "isolation",
+        statusBadge: "Behavioral Entropy Sentinel",
+        digiiBaseline: "Markets mental health counseling appointment scheduling and digital survey forms.",
+        laggedBehind: "Reactive self-reporting fails because severely distressed or isolated students rarely initiate counseling requests. Behavioral withdrawal goes completely unnoticed until an acute psychological or academic crisis occurs.",
+        digii2Improvement: "Privacy-Preserving Social Isolation Sentinel analyzing anonymous behavioral entropy: dining hall swipe clustering, library session frequencies, and weekend hostel isolation. Flags withdrawal anomalies to resident wardens while strictly preserving student confidentiality.",
+        schemaJoined: ["mess_daily_meal_consumption", "library_circulation", "gate_pass_log", "student_wellness_risk_score"]
+      },
+      {
+        id: "comp-energy",
+        name: "Campus ESG & Phantom Energy Reducer",
+        category: "operations",
+        viewTarget: "energy",
+        statusBadge: "ISO 50001 Automated ESG",
+        digiiBaseline: "No specialized smart campus ESG or classroom energy reduction marketing.",
+        laggedBehind: "Air conditioners and laboratory lighting run continuously in vacant lecture halls after classes end or during preparatory holidays, generating substantial utility waste with zero ERP scheduling connection.",
+        digii2Improvement: "Smart Campus Energy & ESG Optimizer cross-referencing live timetable room occupancy with IoT smart meter telemetry. Flags phantom energy draw in vacant rooms, automates HVAC standby schedules, and generates ISO 50001 green campus compliance metrics.",
+        schemaJoined: ["iot_smart_meter_readings", "timetable_slot_master", "infra_booking", "esg_carbon_reduction_ledger"]
+      },
+      {
+        id: "comp-scholarships",
+        name: "Scholarships, Financial Aid & DBT Reconciliation",
+        category: "finance",
+        viewTarget: "scholarships",
+        statusBadge: "Direct Benefit Transfer Buffer",
+        digiiBaseline: "Markets digital scholarship application forms and fee discount voucher creation.",
+        laggedBehind: "Government Direct Benefit Transfer (DBT) and state scholarships face 3 to 6-month disbursement delays. Students are unfairly barred from midterm exams or hit with punitive late fees because finance ledgers mark them in default.",
+        digii2Improvement: "Financial Aid Reconciliation Engine linking institutional ledgers with Public Financial Management System (PFMS) tracking. Temporarily buffers verified pending government disbursements, preventing unfair exam debarments while automating scholarship disbursement receipts.",
+        schemaJoined: ["dues_v2", "scholarship_disbursement_dbt", "pfms_government_remittance", "student_fee_challan"]
+      },
+      {
+        id: "comp-alumni",
+        name: "Alumni Network & Tax-Exempt Endowment (80G)",
+        category: "finance",
+        viewTarget: "alumni",
+        statusBadge: "Section 80G Automated Ledger",
+        digiiBaseline: "Markets alumni directory listings, alumni event ticketing, and donation checkout forms.",
+        laggedBehind: "Donations are processed via generic payment gateways without targeted capital campaign tracking. Donors receive zero transparency into scholarship utilization, and tax exemption certificates require manual accounting follow-ups.",
+        digii2Improvement: "Proactive Alumni Endowment & Targeted Giving Portal with instant Section 80G tax receipt generation. Enables alumni to sponsor specific student cohorts or lab equipment and provides live milestone progress reports on sponsored student achievements.",
+        schemaJoined: ["alumni_master_registry", "endowment_donation_ledger", "section_80g_tax_certificate", "student_scholarship_mapping"]
+      },
+      {
+        id: "comp-admissions",
+        name: "AI Admissions Allotment & Seat Retention",
+        category: "academics",
+        viewTarget: "admissions",
+        statusBadge: "Predictive Merit Allotment",
+        digiiBaseline: "Markets admissions CRM, online application forms, and applicant document management.",
+        laggedBehind: "Counseling rounds rely on manual merit lists. Seat cancellation cascades create vacant premium engineering seats, and counseling fee reconciliations take days between admissions and finance desks.",
+        digii2Improvement: "Multi-Round Merit Allotment Engine with predictive seat acceptance scoring. Analyzes applicant entrance scores, geographic origin, and quota preferences to forecast melt rates and backfill vacant quota seats with zero turnaround delay.",
+        schemaJoined: ["admissions_applicant_master", "quota_seat_matrix", "counseling_fee_ledger", "branch_preference_ranking"]
+      }
+    ];
+
+    let currentComparativeCategory = 'all';
+
+    function renderComparativeMatrix() {
+      const container = document.getElementById('comparative-cards-container');
+      if (!container) return;
+
+      const searchTerm = (document.getElementById('comparative-search-input')?.value || '').toLowerCase().trim();
+
+      const filtered = COMPARATIVE_MODULES.filter(m => {
+        const matchesCategory = (currentComparativeCategory === 'all') || (m.category === currentComparativeCategory);
+        const matchesSearch = !searchTerm || 
+          m.name.toLowerCase().includes(searchTerm) || 
+          m.digiiBaseline.toLowerCase().includes(searchTerm) || 
+          m.laggedBehind.toLowerCase().includes(searchTerm) || 
+          m.digii2Improvement.toLowerCase().includes(searchTerm) || 
+          m.schemaJoined.some(t => t.toLowerCase().includes(searchTerm));
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-xl p-8 border border-slate-200 text-center space-y-3">
+            <svg class="w-10 h-10 text-slate-300 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <h4 class="text-sm font-bold text-slate-700">No matching comparative modules found</h4>
+            <p class="text-xs text-slate-500">Try adjusting your search terms or selecting 'All Modules'.</p>
+            <button onclick="filterComparativeCategory('all')" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-xs">Reset All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((m, idx) => `
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs hover:border-indigo-300 hover:shadow-md transition-all overflow-hidden">
+          
+          <!-- Card Header -->
+          <div class="px-5 py-3.5 bg-slate-50/80 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-indigo-100 text-indigo-700 flex items-center justify-center font-mono font-bold text-xs">${idx + 1}</span>
+              <h3 class="text-sm font-bold text-slate-900">${m.name}</h3>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-100 text-blue-800 border border-blue-200">${m.statusBadge}</span>
+              <button onclick="navigateToView('${m.viewTarget}')" class="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold rounded bg-slate-900 text-white hover:bg-blue-600 transition-colors shadow-xs">
+                <span>View Prototype</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card Body: 3-Way Comparative Grid -->
+          <div class="p-5 space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+              <!-- 1. Digii Baseline -->
+              <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Digii Campus Public Baseline</span>
+                  <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                </div>
+                <p class="text-xs text-slate-700 leading-relaxed">${m.digiiBaseline}</p>
+              </div>
+
+              <!-- 2. The Operational Silo & Friction -->
+              <div class="p-3.5 rounded-lg bg-amber-50/70 border border-amber-200/80 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-amber-800">Operational Silo & Friction</span>
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                </div>
+                <p class="text-xs text-amber-900 leading-relaxed">${m.laggedBehind}</p>
+              </div>
+
+              <!-- 3. What Digii 2.0 Added (The Moat) -->
+              <div class="p-3.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-800 font-bold">What Digii 2.0 Added (Moat)</span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                </div>
+                <p class="text-xs text-emerald-950 font-medium leading-relaxed">${m.digii2Improvement}</p>
+              </div>
+
+            </div>
+
+            <!-- Footer: Database Table Schema Lineage -->
+            <div class="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-[11px]">
+              <div class="flex items-center gap-1.5 text-slate-500">
+                <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                <span class="font-medium text-slate-600">Production Schema Joins:</span>
+                <span class="font-mono text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">${m.schemaJoined.join("  +  ")}</span>
+              </div>
+              <span class="text-[10px] text-indigo-700 font-mono font-semibold">ukid Unified Student Master Key</span>
+            </div>
+
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterComparativeCategory(category) {
+      currentComparativeCategory = category;
+      const categories = ['all', 'retention', 'academics', 'operations', 'finance'];
+      categories.forEach(cat => {
+        const btn = document.getElementById(`comp-filter-${cat}`);
+        if (btn) {
+          if (cat === category) {
+            btn.className = "px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-xs";
+          } else {
+            btn.className = "px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors";
+          }
+        }
+      });
+      renderComparativeMatrix();
+    }
+
+    function searchComparativeCards() {
+      renderComparativeMatrix();
+    }
+
+    function downloadComparativeStudyCsv() {
+      const headers = ["Module ID", "Module Name", "Category", "Digii Campus Baseline", "Where It Lagged Behind (Silos)", "Digii 2.0 Improvement (Moat)", "Production Schema Tables"];
+      const rows = COMPARATIVE_MODULES.map(m => [
+        `"${m.id}"`,
+        `"${m.name.replace(/"/g, '""')}"`,
+        `"${m.category}"`,
+        `"${m.digiiBaseline.replace(/"/g, '""')}"`,
+        `"${m.laggedBehind.replace(/"/g, '""')}"`,
+        `"${m.digii2Improvement.replace(/"/g, '""')}"`,
+        `"${m.schemaJoined.join('; ')}"`
+      ]);
+
+      const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Digii_vs_Digii2_Comparative_Study_Audit_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Comparative Study Audit (.CSV) successfully exported!");
+    }
+
+    function downloadComparativeBriefTxt() {
+      const timestamp = new Date().toISOString().split('T')[0];
+      let txt = `================================================================================\n`;
+      txt += `DIGII CAMPUS VS DIGII 2.0 — EXECUTIVE COMPARATIVE PRODUCT STUDY\n`;
+      txt += `Audited Platform: Digii Campus (CollPoll) | Date: ${timestamp}\n`;
+      txt += `Author: Dhruv Jain (Data & Product Intern -> APM Transition Candidate)\n`;
+      txt += `Engineering Context: Built on Suraj Shetty & Saksham Gupta's 270-Table Engine\n`;
+      txt += `================================================================================\n\n`;
+      txt += `EXECUTIVE SUMMARY & BUSINESS IMPACT:\n`;
+      txt += `- Tuition Retention Protected: 1.84 Crore INR (48 Red-Zone Students Saved)\n`;
+      txt += `- Mess Kitchen Food Waste Reduction: 630 Meals/Day (14,200 INR Daily Saved)\n`;
+      txt += `- Graduation No-Dues Clearance: 1.2 Seconds (Down from 14-day manual rounds)\n`;
+      txt += `- Academic Timetable Clashes: 100% Eliminated via Constraint Solver AI\n`;
+      txt += `- Campus Security Leaks: Zero Passback Leaks via Turnstile Velocity Telemetry\n\n`;
+      txt += `MODULE-BY-MODULE AUDIT & ANALYSIS:\n`;
+      txt += `--------------------------------------------------------------------------------\n`;
+
+      COMPARATIVE_MODULES.forEach((m, idx) => {
+        txt += `[${idx + 1}] ${m.name.toUpperCase()} (${m.statusBadge})\n`;
+        txt += `    Category: ${m.category}\n`;
+        txt += `    Digii Campus Baseline: ${m.digiiBaseline}\n`;
+        txt += `    Operational Silo / Friction: ${m.laggedBehind}\n`;
+        txt += `    Digii 2.0 Moat & Solution: ${m.digii2Improvement}\n`;
+        txt += `    Production Tables: ${m.schemaJoined.join(', ')}\n\n`;
+      });
+
+      txt += `================================================================================\n`;
+      txt += `END OF COMPARATIVE BRIEF\n`;
+
+      const blob = new Blob([txt], { type: "text/plain;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Digii_vs_Digii2_Executive_Brief_${timestamp}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Executive Brief (.TXT) successfully downloaded!");
     }
 
 </script>

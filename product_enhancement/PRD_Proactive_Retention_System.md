@@ -262,6 +262,11 @@ A core responsibility of an APM is defending algorithmic weights against managem
 - **Data Integrity Model:** Uses a synthetic 4,850-student cohort modeled strictly on the statistical distributions of the 10.08 GB MySQL replica.
 - **Compliance Guarantee:** Contains zero live student PII, satisfying FERPA, GDPR, and ISO 27001 data protection standards for internal product demonstrations.
 
+### 5.21 Module 21: Digii Campus vs. Digii 2.0 Comparative Intelligence Matrix
+- **Strategic Context:** Full executive-grade comparative study contrasting the public marketing and baseline capabilities of `digiicampus.com` against the proactive intelligence moat built into Digii 2.0.
+- **Audited Modules (17 Core Workflows):** Student Retention Radar, PRGE Food Waste Reducer, Degree No-Dues Clearance, Turnstile Anti-Passback, LMS Deadline Balancer, Timetable Clash Interceptor, Venue Smart Matcher, Dynamic Fleet Optimizer, OBE NAAC Copilot, SEP Non-Academic Development Points (NAAC 5.3), Verified Auto-Resume Builder, CHC BPM SLA Engine, Social Isolation Sentinel, ESG Phantom Energy Reducer, DBT Scholarship Reconciliation, Alumni 80G Endowment Ledger, and AI Admissions Allotment.
+- **Enterprise Features:** Two-column split UI (Platform Moat & Production Lineage on the left, 17-module card matrix on the right), multi-category filtering, instant full-text search, live direct prototype jump buttons, and automated RFC 4180 CSV / executive TXT exports.
+
 ---
 
 ## 6. Success Metrics & Product KPIs
