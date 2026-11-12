@@ -64,7 +64,6 @@
 <body class="h-screen flex overflow-hidden antialiased bg-slate-50 text-slate-800">
 
   <!-- Left Sidebar Navigation (Digii Campus Enterprise Shell) -->
-    <!-- Left Sidebar Navigation (Digii Campus Enterprise Shell) -->
   <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col shrink-0 border-r border-slate-800 select-none hidden md:flex">
     <!-- Brand Header -->
     <div class="h-16 px-5 flex items-center gap-3 border-b border-slate-800">
@@ -76,8 +75,7 @@
           <span class="font-bold text-white text-base tracking-tight">Digii Campus</span>
           <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">2.0</span>
         </div>
-        <p class="text-[11px] text-slate-400 font-medium">Enterprise ERP &amp; Intelligence</p>
-        <p id="sidebar-brand-subtitle" class="text-[11px] text-slate-400 font-medium">Enterprise ERP &amp; Intelligence</p>
+        <p id="sidebar-brand-subtitle" class="text-[11px] text-slate-400 font-medium">Enterprise ERP Suite</p>
       </div>
     </div>
 
@@ -87,9 +85,7 @@
       <!-- GROUP 1: DIGII CAMPUS EXISTING CORE ERP MODULES -->
       <div class="space-y-1">
         <div class="px-3 pb-1.5 text-[10px] uppercase font-bold tracking-wider text-slate-400 flex items-center justify-between">
-          <span>Digii Campus Core Modules</span>
-          <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">ERP Suite</span>
-          <span id="sidebar-group1-title">Digii Campus Core Modules</span>
+          <span id="sidebar-group1-title">Digii Core Modules</span>
           <span id="sidebar-group1-badge" class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">ERP Suite</span>
         </div>
 
@@ -163,8 +159,6 @@
       <!-- GROUP 2: DIGII 2.0 STRATEGIC INTELLIGENCE (PROPOSED PM UPGRADES) -->
       <div class="space-y-1 pt-2 border-t border-slate-800">
         <div class="px-3 pb-1.5 text-[10px] uppercase font-bold tracking-wider text-blue-400 flex items-center justify-between">
-          <span>Digii 2.0 Intelligence</span>
-          <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-900/50 text-blue-300 font-mono">APM Proposal</span>
           <span id="sidebar-group2-title">Digii 2.0 Intelligence</span>
           <span id="sidebar-group2-badge" class="text-[9px] px-1.5 py-0.2 rounded bg-blue-900/50 text-blue-300 font-mono">APM Proposal</span>
         </div>
@@ -287,7 +281,7 @@
       </div>
 
       <!-- Right Header Actions -->
-      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- Academic Context Tag -->
         <div class="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1 bg-slate-50 rounded-md border border-slate-200 text-xs font-medium text-slate-600">
           <span class="w-2 h-2 rounded-full bg-blue-600"></span>
@@ -295,14 +289,13 @@
         </div>
 
         <!-- Notification Bell -->
-        <button onclick="triggerNotificationToast()" class="relative p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors shrink-0" title="System Alerts & Retention Notifications">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+        <button onclick="triggerNotificationToast()" class="relative p-2 rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors shrink-0" title="System Alerts & Retention Notifications">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
           <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>
 
         <!-- PM ROI Mode Toggle -->
-        <div class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
-        <div id="header-roi-container" class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
+        <div id="header-roi-container" class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
           <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
           <span class="text-xs font-medium text-slate-700 tracking-tight">ROI Mode</span>
           <button id="roi-toggle-btn" type="button" class="relative inline-flex h-4 w-7 shrink-0 pointer-events-none rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out" role="switch" aria-checked="false">
@@ -326,28 +319,26 @@
         </button>
 
         <!-- Executive Pitch Deck Button -->
-        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs transition-colors shrink-0">
-        <button id="header-pitch-deck-btn" onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs transition-colors shrink-0">
+        <button id="header-pitch-deck-btn" onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs transition-colors shrink-0">
           <svg class="w-3.5 h-3.5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
           <span class="hidden sm:inline">Pitch Deck</span>
           <span class="sm:hidden">Deck</span>
         </button>
 
         <!-- PM Strategy Cockpit Button -->
-        <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium text-xs shadow-xs transition-colors shrink-0">
-        <button id="header-pm-cockpit-btn" onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium text-xs shadow-xs transition-colors shrink-0">
-          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <button id="header-pm-cockpit-btn" onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-medium text-xs shadow-xs transition-colors shrink-0">
+          <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span class="hidden sm:inline">PM Cockpit</span>
           <span class="sm:hidden">PM</span>
         </button>
 
         <!-- Enterprise Profile Badge & Role Switcher Dropdown (RBAC) -->
-        <div class="relative">
+        <div class="relative pl-1 border-l border-slate-200">
           <button 
             type="button" 
             id="profile-dropdown-btn" 
             onclick="toggleRoleDropdown()" 
-            class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-slate-200 shrink-0 hover:bg-slate-50 py-1 px-2 rounded-lg transition-colors cursor-pointer select-none focus:outline-none"
+            class="flex items-center gap-2 py-1 px-1.5 sm:px-2 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer select-none focus:outline-none"
             title="Click to Switch Role (Admin, Faculty, Student)"
           >
             <div id="user-avatar-badge" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xs text-white select-none transition-colors shadow-xs">
@@ -15918,8 +15909,8 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const g2Badge = document.getElementById('sidebar-group2-badge');
 
       if (role === 'admin') {
-        if (brandSubtitle) brandSubtitle.textContent = 'Enterprise ERP & Intelligence';
-        if (g1Title) g1Title.textContent = 'Digii Campus Core Modules';
+        if (brandSubtitle) brandSubtitle.textContent = 'Enterprise ERP Suite';
+        if (g1Title) g1Title.textContent = 'Digii Core Modules';
         if (g1Badge) {
           g1Badge.textContent = 'ERP Suite';
           g1Badge.className = 'text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono';
