@@ -76,6 +76,7 @@
           <span class="font-bold text-white text-base tracking-tight">Digii Campus</span>
           <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">2.0</span>
         </div>
+        <p class="text-[11px] text-slate-400 font-medium">Enterprise ERP &amp; Intelligence</p>
         <p id="sidebar-brand-subtitle" class="text-[11px] text-slate-400 font-medium">Enterprise ERP &amp; Intelligence</p>
       </div>
     </div>
@@ -86,6 +87,8 @@
       <!-- GROUP 1: DIGII CAMPUS EXISTING CORE ERP MODULES -->
       <div class="space-y-1">
         <div class="px-3 pb-1.5 text-[10px] uppercase font-bold tracking-wider text-slate-400 flex items-center justify-between">
+          <span>Digii Campus Core Modules</span>
+          <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">ERP Suite</span>
           <span id="sidebar-group1-title">Digii Campus Core Modules</span>
           <span id="sidebar-group1-badge" class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono">ERP Suite</span>
         </div>
@@ -160,6 +163,8 @@
       <!-- GROUP 2: DIGII 2.0 STRATEGIC INTELLIGENCE (PROPOSED PM UPGRADES) -->
       <div class="space-y-1 pt-2 border-t border-slate-800">
         <div class="px-3 pb-1.5 text-[10px] uppercase font-bold tracking-wider text-blue-400 flex items-center justify-between">
+          <span>Digii 2.0 Intelligence</span>
+          <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-900/50 text-blue-300 font-mono">APM Proposal</span>
           <span id="sidebar-group2-title">Digii 2.0 Intelligence</span>
           <span id="sidebar-group2-badge" class="text-[9px] px-1.5 py-0.2 rounded bg-blue-900/50 text-blue-300 font-mono">APM Proposal</span>
         </div>
@@ -296,6 +301,7 @@
         </button>
 
         <!-- PM ROI Mode Toggle -->
+        <div class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
         <div id="header-roi-container" class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
           <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
           <span class="text-xs font-medium text-slate-700 tracking-tight">ROI Mode</span>
@@ -320,6 +326,7 @@
         </button>
 
         <!-- Executive Pitch Deck Button -->
+        <button onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs transition-colors shrink-0">
         <button id="header-pitch-deck-btn" onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs transition-colors shrink-0">
           <svg class="w-3.5 h-3.5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
           <span class="hidden sm:inline">Pitch Deck</span>
@@ -327,6 +334,7 @@
         </button>
 
         <!-- PM Strategy Cockpit Button -->
+        <button onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium text-xs shadow-xs transition-colors shrink-0">
         <button id="header-pm-cockpit-btn" onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium text-xs shadow-xs transition-colors shrink-0">
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span class="hidden sm:inline">PM Cockpit</span>
@@ -340,7 +348,7 @@
             id="profile-dropdown-btn" 
             onclick="toggleRoleDropdown()" 
             class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-slate-200 shrink-0 hover:bg-slate-50 py-1 px-2 rounded-lg transition-colors cursor-pointer select-none focus:outline-none"
-            title="Click to Switch Role / View Permissions (Admin, Faculty, Student)"
+            title="Click to Switch Role (Admin, Faculty, Student)"
           >
             <div id="user-avatar-badge" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xs text-white select-none transition-colors shadow-xs">
               AD
@@ -355,25 +363,22 @@
             <svg class="w-3.5 h-3.5 text-slate-400 ml-0.5 transition-transform duration-200" id="role-chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
 
-          <!-- Role Switcher Dropdown Menu -->
-          <div id="role-switcher-dropdown" class="hidden absolute right-0 top-12 w-84 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 p-2 divide-y divide-slate-100 select-none">
+          <!-- Role Switcher Dropdown Menu (Clean, Minimalist, Single-Liner) -->
+          <div id="role-switcher-dropdown" class="hidden absolute right-0 top-12 w-80 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 p-2 divide-y divide-slate-100 select-none">
             <!-- Header -->
-            <div class="p-2.5">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-mono">Switch ERP Persona</span>
-                <span id="active-persona-indicator" class="text-[10px] px-2 py-0.5 rounded-full font-bold bg-blue-50 text-blue-700 border border-blue-200 font-mono">RBAC Active</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1 leading-normal">Select a role to preview tailored permissions, navigation, and module capabilities.</p>
+            <div class="px-2.5 py-2 flex items-center justify-between">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono">Switch ERP Persona</span>
+              <span id="active-persona-indicator" class="text-[9px] px-2 py-0.5 rounded-full font-bold bg-blue-50 text-blue-700 border border-blue-200 font-mono">RBAC Active</span>
             </div>
 
             <!-- Role Options List -->
-            <div class="py-2 space-y-1.5">
+            <div class="py-1.5 space-y-1">
               
               <!-- 1. Administrator -->
               <div 
                 id="role-option-admin" 
                 onclick="switchUserRole('admin')" 
-                class="group p-2.5 rounded-lg border border-blue-600 bg-blue-50/60 hover:bg-blue-50 transition-all cursor-pointer flex items-start gap-3 shadow-2xs"
+                class="group px-3 py-2 rounded-lg border border-blue-600 bg-blue-50/60 hover:bg-blue-50 transition-all cursor-pointer flex items-center gap-3 shadow-2xs"
               >
                 <div class="w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
                   AD
@@ -385,12 +390,7 @@
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                     </span>
                   </div>
-                  <p class="text-[11px] text-slate-600 font-medium">Enterprise Administrator • Super Admin</p>
-                  <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">Full access across all 22 modules, dues overrides (dues_v2), and MySQL audit logs.</p>
-                  <div class="flex items-center gap-1.5 mt-1.5">
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-800 font-mono font-semibold">22 Modules Active</span>
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-800 font-mono font-semibold">Superuser</span>
-                  </div>
+                  <p class="text-[11px] text-slate-500 font-medium truncate">Enterprise Administrator &bull; Super Admin</p>
                 </div>
               </div>
 
@@ -398,7 +398,7 @@
               <div 
                 id="role-option-faculty" 
                 onclick="switchUserRole('faculty')" 
-                class="group p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-emerald-50/60 hover:border-emerald-300 transition-all cursor-pointer flex items-start gap-3"
+                class="group px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-emerald-50/60 hover:border-emerald-300 transition-all cursor-pointer flex items-center gap-3"
               >
                 <div class="w-8 h-8 rounded-full bg-emerald-700 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
                   RS
@@ -410,12 +410,7 @@
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                     </span>
                   </div>
-                  <p class="text-[11px] text-slate-600 font-medium">Faculty Mentor &amp; HOD Computer Science</p>
-                  <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">AMS attendance marking, student mentoring dossier, classroom bookings, and academic advising.</p>
-                  <div class="flex items-center gap-1.5 mt-1.5">
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-mono font-semibold">Academic AMS</span>
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-teal-100 text-teal-800 font-mono font-semibold">Mentor Access</span>
-                  </div>
+                  <p class="text-[11px] text-slate-500 font-medium truncate">Faculty Mentor &amp; HOD &bull; Computer Science</p>
                 </div>
               </div>
 
@@ -423,7 +418,7 @@
               <div 
                 id="role-option-student" 
                 onclick="switchUserRole('student')" 
-                class="group p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-blue-50/60 hover:border-blue-300 transition-all cursor-pointer flex items-start gap-3"
+                class="group px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-blue-50/60 hover:border-blue-300 transition-all cursor-pointer flex items-center gap-3"
               >
                 <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
                   AM
@@ -435,21 +430,16 @@
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                     </span>
                   </div>
-                  <p class="text-[11px] text-slate-600 font-medium">Student • B.Tech CSE (Sem 6) | 2023CS0142</p>
-                  <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">Self-service student portal: digital gatepass QR, hostel bed allocation, mess menus, and 1-click No-Dues.</p>
-                  <div class="flex items-center gap-1.5 mt-1.5">
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-100 text-blue-800 font-mono font-semibold">Self-Service</span>
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 font-mono font-semibold">Gatepass QR</span>
-                  </div>
+                  <p class="text-[11px] text-slate-500 font-medium truncate">Enrolled Student &bull; B.Tech CSE (Sem 6)</p>
                 </div>
               </div>
 
             </div>
 
             <!-- Footer / Session Status -->
-            <div class="pt-2 px-2.5 pb-1 flex items-center justify-between text-[10px] text-slate-400">
-              <span>Security: Session Grounded</span>
-              <span class="font-mono text-slate-500">RBAC Level: Tier-1</span>
+            <div class="pt-2 px-2.5 pb-1 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+              <span>Digii Campus Identity</span>
+              <span class="text-slate-500">Tier-1 Grounded</span>
             </div>
           </div>
         </div>
@@ -2947,8 +2937,217 @@
             </div>
           </div>
 
+          <!-- Dual-Perspective Workbench Navigation Tabs -->
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-3 pt-4">
+            <button 
+              id="tab-btn-hostel-admin" 
+              onclick="switchHostelTab('admin')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs transition-all flex items-center gap-1.5"
+            >
+              <span>Hostel V2 Allocation &amp; Block Master</span>
+            </button>
+            <button 
+              id="tab-btn-hostel-isolation" 
+              onclick="switchHostelTab('isolation')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5"
+            >
+              <span>Campus Isolation Sentinel</span>
+            </button>
+            <button 
+              id="tab-btn-hostel-student" 
+              onclick="switchHostelTab('student')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5"
+            >
+              <span>Student Resident Portal (Aarav Mehta)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: HOSTEL V2 ALLOCATION & BLOCK MASTER (ADMIN CONSOLE) -->
+        <div id="hostel-tab-admin" class="space-y-6">
+          <!-- 6 Hostel Blocks Master Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-1">
+              <span class="text-[10px] font-bold font-mono text-slate-400 uppercase">Block H-1</span>
+              <h4 class="text-xs font-bold text-slate-900">Senior Boys</h4>
+              <p class="text-[11px] font-mono text-emerald-700 font-bold">637 / 650 Beds (98%)</p>
+              <span class="text-[9px] text-slate-500 block">Warden: Dr. K. Verma</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-1">
+              <span class="text-[10px] font-bold font-mono text-slate-400 uppercase">Block H-2</span>
+              <h4 class="text-xs font-bold text-slate-900">First-Year Boys</h4>
+              <p class="text-[11px] font-mono text-amber-700 font-bold">700 / 700 Beds (100%)</p>
+              <span class="text-[9px] text-slate-500 block">Warden: Prof. S. Sen</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-1">
+              <span class="text-[10px] font-bold font-mono text-slate-400 uppercase">Block H-3</span>
+              <h4 class="text-xs font-bold text-slate-900">Girls Residency A</h4>
+              <p class="text-[11px] font-mono text-emerald-700 font-bold">808 / 850 Beds (95%)</p>
+              <span class="text-[9px] text-slate-500 block">Warden: Dr. M. Roy</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/40 shadow-2xs space-y-1">
+              <span class="text-[10px] font-bold font-mono text-blue-600 uppercase">Block H-4</span>
+              <h4 class="text-xs font-bold text-slate-900">Girls Residency B</h4>
+              <p class="text-[11px] font-mono text-blue-700 font-bold">828 / 900 Beds (92%)</p>
+              <span class="text-[9px] text-slate-500 block">Warden: Ms. A. Thomas</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-1">
+              <span class="text-[10px] font-bold font-mono text-slate-400 uppercase">Block H-5</span>
+              <h4 class="text-xs font-bold text-slate-900">PG &amp; Research</h4>
+              <p class="text-[11px] font-mono text-slate-700 font-bold">396 / 450 Beds (88%)</p>
+              <span class="text-[9px] text-slate-500 block">Warden: Dr. P. Iyer</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-1">
+              <span class="text-[10px] font-bold font-mono text-slate-400 uppercase">Block H-6</span>
+              <h4 class="text-xs font-bold text-slate-900">International</h4>
+              <p class="text-[11px] font-mono text-slate-700 font-bold">210 / 250 Beds (84%)</p>
+              <span class="text-[9px] text-slate-500 block">Warden: Dr. J. Smith</span>
+            </div>
+          </div>
+
+          <!-- Floor 3 Bed Allocation Matrix (Block H-4) -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Block H-4 Floor 3 Room &amp; Bed Allocation Layout</h4>
+                <p class="text-[11px] text-slate-500">Live bed inventory synced with biometric check-in turnstiles and hostel_bed_allotment</p>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">
+                Floor Occupancy: 94.4%
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
+              <div class="p-3 rounded-lg border border-slate-200 bg-slate-50/60 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-slate-800 font-mono">Room 301</span>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-700 font-mono">Double</span>
+                </div>
+                <div class="space-y-1 text-[10px] font-mono">
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed A</span><span class="font-bold">Occupied</span></div>
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed B</span><span class="font-bold">Occupied</span></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border-2 border-blue-400 bg-blue-50/50 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-blue-900 font-mono">Room 302</span>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-200 text-blue-800 font-mono font-bold">Aarav Mehta</span>
+                </div>
+                <div class="space-y-1 text-[10px] font-mono">
+                  <div class="p-1.5 rounded bg-blue-600 text-white flex justify-between"><span>Bed 1</span><span class="font-bold">Aarav M.</span></div>
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed 2</span><span class="font-bold">Rohan D.</span></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-slate-200 bg-slate-50/60 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-slate-800 font-mono">Room 303</span>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-700 font-mono">Double</span>
+                </div>
+                <div class="space-y-1 text-[10px] font-mono">
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed A</span><span class="font-bold">Occupied</span></div>
+                  <div class="p-1.5 rounded bg-slate-200 text-slate-600 flex justify-between border border-dashed border-slate-400"><span>Bed B</span><span class="font-bold">Vacant</span></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-slate-200 bg-slate-50/60 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-slate-800 font-mono">Room 304</span>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded bg-purple-100 text-purple-800 font-mono font-bold">Single AC</span>
+                </div>
+                <div class="space-y-1 text-[10px] font-mono">
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed A</span><span class="font-bold">Occupied</span></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-slate-200 bg-slate-50/60 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-slate-800 font-mono">Room 305</span>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-700 font-mono">Triple</span>
+                </div>
+                <div class="space-y-1 text-[10px] font-mono">
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed A</span><span class="font-bold">Occupied</span></div>
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed B</span><span class="font-bold">Occupied</span></div>
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed C</span><span class="font-bold">Occupied</span></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-slate-200 bg-slate-50/60 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-slate-800 font-mono">Room 306</span>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-700 font-mono">Double</span>
+                </div>
+                <div class="space-y-1 text-[10px] font-mono">
+                  <div class="p-1.5 rounded bg-emerald-100 text-emerald-900 flex justify-between"><span>Bed A</span><span class="font-bold">Occupied</span></div>
+                  <div class="p-1.5 rounded bg-slate-200 text-slate-600 flex justify-between border border-dashed border-slate-400"><span>Bed B</span><span class="font-bold">Vacant</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pending Room Transfer Requests Queue -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Room Change &amp; Re-allocation Approvals Queue</h4>
+                <p class="text-[11px] text-slate-500">Student requested room transfers requiring Chief Warden authorization</p>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold">2 Pending Reviews</span>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <tr>
+                    <th class="py-2.5 px-3">Student &amp; Roll</th>
+                    <th class="py-2.5 px-3">Current Bed</th>
+                    <th class="py-2.5 px-3">Requested Space</th>
+                    <th class="py-2.5 px-3">Reason / Justification</th>
+                    <th class="py-2.5 px-3 text-right">Chief Warden Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-sans">
+                  <tr id="hostel-req-101" class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-medium text-slate-900">
+                      <strong>Aarav Mehta</strong>
+                      <span class="text-[10px] text-slate-500 block font-mono">2023CS0142 &bull; B.Tech CSE</span>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-slate-700">Block H-4 &bull; Room 302 (Bed 1)</td>
+                    <td class="py-3 px-3 font-mono font-bold text-blue-700">Block H-5 &bull; Single AC (Bed A)</td>
+                    <td class="py-3 px-3 text-slate-600">Final-year Capstone AI research &bull; Requires quiet study space</td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="flex items-center justify-end gap-1.5">
+                        <button onclick="approveHostelRoomTransfer(101)" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px]">Approve</button>
+                        <button onclick="rejectHostelRoomTransfer(101)" class="px-2.5 py-1 rounded bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-[10px]">Decline</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr id="hostel-req-102" class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-medium text-slate-900">
+                      <strong>Sneha Rao</strong>
+                      <span class="text-[10px] text-slate-500 block font-mono">2024ECE0082 &bull; B.Tech ECE</span>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-slate-700">Block H-3 &bull; Room 104 (Bed B)</td>
+                    <td class="py-3 px-3 font-mono font-bold text-blue-700">Block H-3 &bull; Room 210 (Bed A)</td>
+                    <td class="py-3 px-3 text-slate-600">Shift to peer study group wing</td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="flex items-center justify-end gap-1.5">
+                        <button onclick="approveHostelRoomTransfer(102)" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px]">Approve</button>
+                        <button onclick="rejectHostelRoomTransfer(102)" class="px-2.5 py-1 rounded bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-[10px]">Decline</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: CAMPUS ISOLATION & MENTAL WELL-BEING SENTINEL -->
+        <div id="hostel-tab-isolation" class="hidden space-y-6">
           <!-- Isolation Stats -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
               <p class="text-xs font-bold text-red-800 uppercase tracking-wider">High Isolation Flag</p>
               <div class="flex items-baseline gap-2 mt-1">
@@ -2978,33 +3177,180 @@
               <p class="text-[11px] text-emerald-700 mt-1">94% Retention Success Rate</p>
             </div>
           </div>
-        </div>
 
-        <!-- Interactive Sentinel Roster -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Spatial-Temporal Social Withdrawal Risk Queue</h4>
-              <span class="text-[11px] text-slate-500">Cross-Referenced from Gate Turnstiles, Library Swipes, and Campus Booth Feeds</span>
+          <!-- Interactive Sentinel Roster -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Spatial-Temporal Social Withdrawal Risk Queue</h4>
+                <span class="text-[11px] text-slate-500">Cross-Referenced from Gate Turnstiles, Library Swipes, and Campus Booth Feeds</span>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <tr>
+                    <th class="py-2.5 px-3">Student Roll No</th>
+                    <th class="py-2.5 px-3">Candidate &amp; Dept</th>
+                    <th class="py-2.5 px-3 text-center">Days Confined to Hostel</th>
+                    <th class="py-2.5 px-3 text-center">Library / Club Swipes</th>
+                    <th class="py-2.5 px-3">Isolation Risk Tier</th>
+                    <th class="py-2.5 px-3 text-right">Counselor Action</th>
+                  </tr>
+                </thead>
+                <tbody id="isolation-roster-body" class="divide-y divide-slate-100 font-sans">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-2.5 px-3">Student Roll No</th>
-                  <th class="py-2.5 px-3">Candidate & Dept</th>
-                  <th class="py-2.5 px-3 text-center">Days Confined to Hostel</th>
-                  <th class="py-2.5 px-3 text-center">Library / Club Swipes</th>
-                  <th class="py-2.5 px-3">Isolation Risk Tier</th>
-                  <th class="py-2.5 px-3 text-right">Counselor Action</th>
-                </tr>
-              </thead>
-              <tbody id="isolation-roster-body" class="divide-y divide-slate-100 font-sans">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
+        <!-- TAB 3: STUDENT RESIDENT PORTAL (AARAV MEHTA) -->
+        <div id="hostel-tab-student" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left: Room Allotment Dossier -->
+            <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900">My Hostel Room &amp; Bed Dossier</h4>
+                  <p class="text-[11px] text-slate-500 font-mono">Academic Year 2026-27 &bull; Semester 6</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono">
+                  ACTIVE ALLOTMENT
+                </span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-blue-50/50 border border-blue-200 space-y-3">
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <span class="text-[10px] text-slate-400 font-medium block">Resident Student</span>
+                    <strong class="text-slate-900">Aarav Mehta</strong>
+                    <span class="text-[10px] font-mono text-slate-500 block">UKID: 10842 &bull; 2023CS0142</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400 font-medium block">Allocated Space</span>
+                    <strong class="text-blue-800 font-mono">Block H-4 &bull; Room 302</strong>
+                    <span class="text-[10px] text-slate-600 block">Bed 1 (Double Non-AC)</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400 font-medium block">Roommate</span>
+                    <strong class="text-slate-800">Rohan Deshmukh</strong>
+                    <span class="text-[10px] font-mono text-slate-500 block">2023CS0148 (CSE)</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400 font-medium block">Floor Warden</span>
+                    <strong class="text-slate-800">Dr. S. K. Mukherjee</strong>
+                    <span class="text-[10px] font-mono text-slate-500 block">+91 98112-40912</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inventory & Fixture Handover Status -->
+              <div class="space-y-2">
+                <span class="text-xs font-bold text-slate-800">Room Handover &amp; Fixture Checklist</span>
+                <div class="grid grid-cols-2 gap-2 text-[11px]">
+                  <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Study Desk &amp; Chair</span>
+                    <span class="text-emerald-700 font-bold font-mono">Verified</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Steel Almirah + Key</span>
+                    <span class="text-emerald-700 font-bold font-mono">Handed Over</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Ceiling Fan &amp; Light</span>
+                    <span class="text-emerald-700 font-bold font-mono">Functional</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Ethernet LAN Port #4B</span>
+                    <span class="text-blue-700 font-bold font-mono">100 Mbps Active</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Night Curfew Status -->
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                <div>
+                  <span class="text-[10px] font-bold text-slate-500 uppercase font-mono block">Curfew Attendance Compliance</span>
+                  <span class="font-bold text-slate-800">100% On-Time Check-In (Last 7 Days)</span>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-mono font-bold text-[10px]">No Violations</span>
+              </div>
+            </div>
+
+            <!-- Right: Resident Actions (Maintenance & Room Change) -->
+            <div class="space-y-6">
+              <!-- Requisition 1: Maintenance Ticket -->
+              <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-3.5">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                  <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700">Submit Hostel Maintenance Ticket</h4>
+                  <span class="text-[10px] font-mono text-slate-400">24-Hour SLA</span>
+                </div>
+
+                <div class="space-y-2.5">
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-700 mb-1">Issue Category</label>
+                    <select id="hostel-maint-cat" class="w-full text-xs p-2 rounded-lg border border-slate-300 bg-white">
+                      <option value="Electrical">Electrical (Geyser / Light / Switch / Fan)</option>
+                      <option value="Plumbing">Plumbing (Washroom Tap / Leakage)</option>
+                      <option value="Carpentry">Carpentry (Bed Frame / Wardrobe Door)</option>
+                      <option value="Network">Hostel Wi-Fi / LAN Socket</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-700 mb-1">Specific Problem Details</label>
+                    <input type="text" id="hostel-maint-desc" value="Washroom geyser trip switch not holding power" class="w-full text-xs p-2 rounded-lg border border-slate-300">
+                  </div>
+
+                  <button onclick="submitHostelMaintenanceTicket()" class="w-full py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-2xs transition-all flex items-center justify-center gap-1.5">
+                    <span>Dispatch Maintenance Request</span>
+                  </button>
+                </div>
+
+                <div id="hostel-student-tickets-list" class="space-y-2 pt-2 border-t border-slate-100">
+                  <div class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-between text-xs">
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-slate-800">H-TKT-1942</span>
+                        <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-slate-200 text-slate-700">Carpentry</span>
+                      </div>
+                      <p class="text-[10px] text-slate-500 mt-0.5">Study chair wheel replaced</p>
+                    </div>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono">RESOLVED</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Requisition 2: Room Change Request -->
+              <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-3">
+                <div class="border-b border-slate-100 pb-2">
+                  <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700">Apply for Room / Block Transfer</h4>
+                  <p class="text-[11px] text-slate-500">Formal transfer application forwarded to Chief Warden office</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <label class="block text-[10px] font-bold text-slate-700 mb-1">Target Hostel / Room</label>
+                    <select id="hostel-transfer-target" class="w-full text-xs p-1.5 rounded-lg border border-slate-300 bg-white">
+                      <option value="Block H-5 (Single AC)">Block H-5 &bull; Single AC</option>
+                      <option value="Block H-4 (Double AC)">Block H-4 &bull; Double AC</option>
+                      <option value="Block H-6 (Scholars Wing)">Block H-6 &bull; Scholars Wing</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-[10px] font-bold text-slate-700 mb-1">Primary Justification</label>
+                    <input type="text" id="hostel-transfer-reason" value="Academic Capstone AI Research focus" class="w-full text-xs p-1.5 rounded-lg border border-slate-300">
+                  </div>
+                </div>
+
+                <button onclick="submitHostelRoomTransferRequest()" class="w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-all">
+                  <span>Submit Room Transfer Application</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -3053,8 +3399,36 @@
             </div>
           </div>
 
+          <!-- Dual-Perspective Workbench Navigation Tabs -->
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-3 pt-4">
+            <button 
+              id="tab-btn-mess-admin" 
+              onclick="switchMessTab('admin')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs transition-all flex items-center gap-1.5"
+            >
+              <span>PRGE Food Waste Reducer &amp; Prep Optimization</span>
+            </button>
+            <button 
+              id="tab-btn-mess-menu" 
+              onclick="switchMessTab('menu')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5"
+            >
+              <span>Weekly Menu &amp; Nutritional Matrix</span>
+            </button>
+            <button 
+              id="tab-btn-mess-student" 
+              onclick="switchMessTab('student')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5"
+            >
+              <span>Student Dining &amp; Rebate Portal (Aarav Mehta)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: PRGE FOOD WASTE REDUCER & PREP OPTIMIZATION (ADMIN) -->
+        <div id="mess-tab-admin" class="space-y-6">
           <!-- PRGE Metrics -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
               <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Registered Boarders</p>
               <div class="flex items-baseline gap-2 mt-1">
@@ -3079,37 +3453,239 @@
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
               <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Monthly Food Savings</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-slate-900" id="prge-monthly-savings">₹4,20,000</span>
+                <span class="text-2xl font-bold text-slate-900" id="prge-monthly-savings">&#8377;4,20,000</span>
               </div>
               <p class="text-[11px] text-slate-500 mt-1">Direct Raw Material Savings</p>
             </div>
           </div>
+
+          <!-- PRGE Procurement Table -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Raw Kitchen Procurement Rebalancing Ledger</h4>
+                <span class="text-[11px] text-slate-500">Live Portions Breakdown for Central Mess Hall (Aravali &amp; Shivalik)</span>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <tr>
+                    <th class="py-2.5 px-3">Commodity Item</th>
+                    <th class="py-2.5 px-3 text-center">Baseline Bulk Order (4,050 Diners)</th>
+                    <th class="py-2.5 px-3 text-center">PRGE Optimized Order (3,420 Diners)</th>
+                    <th class="py-2.5 px-3 text-center">Procurement Cut</th>
+                    <th class="py-2.5 px-3 text-right">Daily Cost Savings</th>
+                  </tr>
+                </thead>
+                <tbody id="prge-kitchen-body" class="divide-y divide-slate-100 font-sans">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
-        <!-- PRGE Procurement Table -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Raw Kitchen Procurement Rebalancing Ledger</h4>
-              <span class="text-[11px] text-slate-500">Live Portions Breakdown for Central Mess Hall (Aravali & Shivalik)</span>
+        <!-- TAB 2: WEEKLY MENU & NUTRITIONAL MATRIX (ADMIN / CATERING) -->
+        <div id="mess-tab-menu" class="hidden space-y-6">
+          <!-- Nutrition & Dietary Standards Card -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Daily Calorie Target</span>
+              <p class="text-xl font-bold text-slate-900 font-mono mt-0.5">2,450 kcal</p>
+              <span class="text-[10px] text-emerald-700 font-semibold block">ICMR / NIN Balanced</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Protein Intake</span>
+              <p class="text-xl font-bold text-slate-900 font-mono mt-0.5">78 grams</p>
+              <span class="text-[10px] text-blue-700 font-semibold block">Paneer, Dal, Soya, Eggs</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Allergen Auditing</span>
+              <p class="text-xl font-bold text-slate-900 font-mono mt-0.5">100% Flagged</p>
+              <span class="text-[10px] text-purple-700 font-semibold block">Gluten &amp; Dairy Segregated</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Special Diets</span>
+              <p class="text-xl font-bold text-slate-900 font-mono mt-0.5">142 Enrolled</p>
+              <span class="text-[10px] text-amber-700 font-semibold block">Jain (No Root Veg) &amp; Sick Diet</span>
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-2.5 px-3">Commodity Item</th>
-                  <th class="py-2.5 px-3 text-center">Baseline Bulk Order (4,050 Diners)</th>
-                  <th class="py-2.5 px-3 text-center">PRGE Optimized Order (3,420 Diners)</th>
-                  <th class="py-2.5 px-3 text-center">Procurement Cut</th>
-                  <th class="py-2.5 px-3 text-right">Daily Cost Savings</th>
-                </tr>
-              </thead>
-              <tbody id="prge-kitchen-body" class="divide-y divide-slate-100 font-sans">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
+          <!-- Weekly Menu Table -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Approved 7-Day Institutional Dining Menu</h4>
+                <p class="text-[11px] text-slate-500">Student Mess Committee verified rotation schedule</p>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">Week Cycle: Phase A</span>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <tr>
+                    <th class="py-2.5 px-3">Day of Week</th>
+                    <th class="py-2.5 px-3">Breakfast (07:30 - 09:30)</th>
+                    <th class="py-2.5 px-3">Lunch (12:00 - 02:30)</th>
+                    <th class="py-2.5 px-3">Evening Snacks (05:00 - 06:00)</th>
+                    <th class="py-2.5 px-3">Dinner (07:30 - 09:30)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-sans">
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-bold text-slate-900">Monday</td>
+                    <td class="py-3 px-3 text-slate-600">Aloo Paratha, Curd, Pickles, Sprouts, Milk/Tea</td>
+                    <td class="py-3 px-3 text-slate-600">Rajma Masala, Steamed Rice, Roti, Boondi Raita, Salad</td>
+                    <td class="py-3 px-3 text-slate-600">Veg Cutlet, Green Chutney, Masala Chai</td>
+                    <td class="py-3 px-3 text-slate-600">Mix Veg Curry, Dal Tadka, Phulka, Rice, Kheer</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-bold text-slate-900">Tuesday</td>
+                    <td class="py-3 px-3 text-slate-600">Idli Sambar, Coconut Chutney, Poha, Fresh Fruit</td>
+                    <td class="py-3 px-3 text-slate-600">Kadhi Pakoda, Jeera Rice, Chapati, Aloo Gobi, Papad</td>
+                    <td class="py-3 px-3 text-slate-600">Samosa, Tamarind Chutney, Tea/Coffee</td>
+                    <td class="py-3 px-3 text-slate-600">Mutter Paneer, Dal Makhani, Tandoori Roti, Pulao, Gulab Jamun</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 bg-blue-50/30">
+                    <td class="py-3 px-3 font-bold text-blue-900">Wednesday (Today)</td>
+                    <td class="py-3 px-3 text-slate-700">Masala Dosa, Sambar, Upma, Boiled Eggs / Banana</td>
+                    <td class="py-3 px-3 text-slate-700">Chole Bhature / Roti, Jeera Rice, Cucumber Raita</td>
+                    <td class="py-3 px-3 text-slate-700">Bread Pakoda, Mint Chutney, Tea</td>
+                    <td class="py-3 px-3 text-blue-900 font-semibold">Paneer Butter Masala, Dal Fry, Phulka, Rice, Ice Cream</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-bold text-slate-900">Thursday</td>
+                    <td class="py-3 px-3 text-slate-600">Puri Bhaji, Halwa, Cornflakes with Hot Milk</td>
+                    <td class="py-3 px-3 text-slate-600">Dum Aloo, Dal Palak, Steamed Rice, Phulka, Curd</td>
+                    <td class="py-3 px-3 text-slate-600">Bhel Puri, Masala Lemonade / Tea</td>
+                    <td class="py-3 px-3 text-slate-600">Shahi Paneer, Yellow Moong Dal, Roti, Rice, Fruit Custard</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-bold text-slate-900">Friday</td>
+                    <td class="py-3 px-3 text-slate-600">Uttapam, Tomato Chutney, Veg Semiya Upma, Milk/Tea</td>
+                    <td class="py-3 px-3 text-slate-600">Soyabean Curry, Dal Arhar, Roti, Steamed Rice, Green Salad</td>
+                    <td class="py-3 px-3 text-slate-600">Veg Spring Rolls, Dip, Tea/Coffee</td>
+                    <td class="py-3 px-3 text-slate-600">Special Biryani (Veg/Chicken), Mirchi Ka Salan, Raita, Rasgulla</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: STUDENT DINING & REBATE PORTAL (AARAV MEHTA) -->
+        <div id="mess-tab-student" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left: Live Meal Today & Diet Preference -->
+            <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900">Today's Dining Card</h4>
+                  <p class="text-[11px] text-slate-500">Boarder: Aarav Mehta &bull; Main Hostel Dining Hall</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 font-mono">
+                  MEAL PASS ACTIVE
+                </span>
+              </div>
+
+              <!-- Next Meal Card -->
+              <div class="p-4 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50/50 border border-amber-200 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-200 text-amber-900 font-mono uppercase">Upcoming Meal</span>
+                  <span class="text-xs font-mono font-bold text-amber-800">07:30 PM - 09:30 PM</span>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-slate-900">Dinner: Paneer Butter Masala &amp; Phulka</h3>
+                  <p class="text-xs text-slate-600 mt-0.5">Accompaniments: Dal Fry, Steamed Basmati Rice, Fresh Salad &amp; Vanilla Ice Cream</p>
+                </div>
+                <div class="pt-2 border-t border-amber-200/60 flex items-center justify-between text-[11px] text-slate-700 font-mono">
+                  <span>Calories: <strong>820 kcal</strong> &bull; Protein: <strong>26g</strong></span>
+                  <span class="text-emerald-700 font-bold">Turnstile Check-In Open</span>
+                </div>
+              </div>
+
+              <!-- Dietary Preference Selector -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-slate-800">Dietary Profile</span>
+                  <span class="text-[10px] font-mono text-slate-500">Current: <strong id="mess-active-diet-tag" class="text-blue-700">Standard Vegetarian</strong></span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <button onclick="updateMessDietPreference('Standard Vegetarian')" class="p-2 rounded-lg border border-blue-500 bg-blue-50/60 text-blue-800 font-bold text-left">
+                    Standard Vegetarian
+                  </button>
+                  <button onclick="updateMessDietPreference('Jain Diet (No Onion/Garlic)')" class="p-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium text-left">
+                    Jain (No Root Veg)
+                  </button>
+                  <button onclick="updateMessDietPreference('Vegan (Dairy-Free)')" class="p-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium text-left">
+                    Vegan (Dairy-Free)
+                  </button>
+                  <button onclick="updateMessDietPreference('Sick Meal (Khichdi & Curd)')" class="p-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium text-left">
+                    Sick Diet (Khichdi)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Rate Today's Meal -->
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 space-y-2">
+                <span class="text-xs font-bold text-slate-800 block">Rate Today's Food Quality &amp; Hygiene</span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="submitMessFeedbackRating(1)" class="px-2.5 py-1 rounded bg-white hover:bg-amber-100 border border-slate-200 text-xs font-bold text-slate-700">1</button>
+                  <button onclick="submitMessFeedbackRating(2)" class="px-2.5 py-1 rounded bg-white hover:bg-amber-100 border border-slate-200 text-xs font-bold text-slate-700">2</button>
+                  <button onclick="submitMessFeedbackRating(3)" class="px-2.5 py-1 rounded bg-white hover:bg-amber-100 border border-slate-200 text-xs font-bold text-slate-700">3</button>
+                  <button onclick="submitMessFeedbackRating(4)" class="px-2.5 py-1 rounded bg-white hover:bg-amber-100 border border-slate-200 text-xs font-bold text-slate-700">4</button>
+                  <button onclick="submitMessFeedbackRating(5)" class="px-2.5 py-1 rounded bg-white hover:bg-amber-100 border border-slate-200 text-xs font-bold text-slate-700">5 (Excellent)</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Apply for Mess Rebate (Hostel Leave Refund) -->
+            <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+              <div class="border-b border-slate-100 pb-3">
+                <h4 class="font-bold text-sm text-slate-900">Apply for Mess Leave Rebate</h4>
+                <p class="text-[11px] text-slate-500">Automated &#8377;140/day deduction for approved leaves (&gt;2 days) credited to dues_v2</p>
+              </div>
+
+              <div class="space-y-3 text-xs">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-700 mb-1">Approved Hostel Leave Period</label>
+                  <select id="mess-rebate-days" class="w-full text-xs p-2 rounded-lg border border-slate-300 bg-white">
+                    <option value="3">3 Days (14 Nov - 17 Nov) &bull; Weekend Diwali Break</option>
+                    <option value="4">4 Days (20 Nov - 24 Nov) &bull; Family Wedding</option>
+                    <option value="7">7 Days (01 Dec - 08 Dec) &bull; Inter-University Hackathon</option>
+                  </select>
+                </div>
+
+                <div class="p-3 rounded-lg bg-emerald-50 border border-emerald-200 space-y-1.5">
+                  <div class="flex items-center justify-between text-emerald-950 font-bold">
+                    <span>Calculated Mess Fee Credit</span>
+                    <span class="text-sm font-mono">&#8377;420.00</span>
+                  </div>
+                  <p class="text-[11px] text-emerald-800 leading-snug">
+                    Verified against gatepass passback turnstile logs. Directly credits semester dining dues in CollPoll <code class="font-mono">dues_v2</code>.
+                  </p>
+                </div>
+
+                <button onclick="applyMessRebateVoucher()" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center justify-center gap-1.5">
+                  <span>Submit Mess Rebate Application</span>
+                </button>
+              </div>
+
+              <!-- Past Rebates Log -->
+              <div class="pt-3 border-t border-slate-100 space-y-2">
+                <span class="text-[11px] font-bold text-slate-700 block">Past Rebates Ledger</span>
+                <div class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-between text-xs">
+                  <div>
+                    <span class="font-bold text-slate-800">REBATE-7741</span>
+                    <span class="text-[10px] text-slate-500 block">Dussehra Break (4 Days)</span>
+                  </div>
+                  <span class="font-mono font-bold text-emerald-700 text-xs">&#8377;560 CREDITED</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -3550,14 +4126,42 @@
             </div>
           </div>
 
+          <!-- Dual-Perspective Workbench Navigation Tabs -->
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-3 pt-4">
+            <button 
+              id="tab-btn-passback-admin" 
+              onclick="switchPassbackTab('admin')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs transition-all flex items-center gap-1.5"
+            >
+              <span>Turnstile Anti-Passback Sentinel</span>
+            </button>
+            <button 
+              id="tab-btn-passback-approvals" 
+              onclick="switchPassbackTab('approvals')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5"
+            >
+              <span>Gatepass Approvals &amp; Security Register</span>
+            </button>
+            <button 
+              id="tab-btn-passback-student" 
+              onclick="switchPassbackTab('student')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5"
+            >
+              <span>Student Gatepass Self-Service (Aarav Mehta)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: ADMIN TURNSTILE ANOMALY & PASSBACK SENTINEL -->
+        <div id="passback-tab-admin" class="space-y-6">
           <!-- Passback Metrics -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="p-4 rounded-lg bg-red-50/70 border border-red-200">
               <p class="text-xs font-bold text-red-800 uppercase tracking-wider">Impossible Travel Violations</p>
               <div class="flex items-baseline gap-2 mt-1">
                 <span class="text-2xl font-bold text-red-800" id="passback-violations-count">2 Violations</span>
               </div>
-              <p class="text-[11px] text-red-700 mt-1">&lt;180s Between Gate 01 & Gate 05</p>
+              <p class="text-[11px] text-red-700 mt-1">&lt;180s Between Gate 01 &amp; Gate 05</p>
             </div>
             <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
               <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Turnstile Locks</p>
@@ -3581,33 +4185,312 @@
               <p class="text-[11px] text-emerald-700 mt-1">ETA: 90 Seconds</p>
             </div>
           </div>
+
+          <!-- Real-Time Gate Anomaly Table -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Real-Time Biometric Turnstile Telemetry &amp; Velocity Anomalies</h4>
+                <span class="text-[11px] text-slate-500">Live RFID &amp; Biometric Swipes flagging physical speed-of-travel impossibility</span>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <tr>
+                    <th class="py-2.5 px-3">Student Roll No</th>
+                    <th class="py-2.5 px-3">Candidate Name</th>
+                    <th class="py-2.5 px-3">First Swipe (Gate &amp; Time)</th>
+                    <th class="py-2.5 px-3">Second Swipe (Gate &amp; Time)</th>
+                    <th class="py-2.5 px-3 text-center">Elapsed Velocity</th>
+                    <th class="py-2.5 px-3 text-right">Security Protocol</th>
+                  </tr>
+                </thead>
+                <tbody id="passback-telemetry-body" class="divide-y divide-slate-100 font-sans">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
-        <!-- Real-Time Gate Anomaly Table -->
-        <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-            <div>
-              <h4 class="font-bold text-sm text-slate-900">Real-Time Biometric Turnstile Telemetry & Velocity Anomalies</h4>
-              <span class="text-[11px] text-slate-500">Live RFID & Biometric Swipes flagging physical speed-of-travel impossibility</span>
+        <!-- TAB 2: WARDEN & SECURITY APPROVALS REGISTER -->
+        <div id="passback-tab-approvals" class="hidden space-y-6">
+          <!-- Gate Security Headcount KPIs -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Passes Approved Today</span>
+              <p class="text-xl font-bold text-slate-900 font-mono mt-0.5">142 Passes</p>
+              <span class="text-[10px] text-emerald-700 font-semibold block">100% Parent SMS Confirmed</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Pending Warden Review</span>
+              <p class="text-xl font-bold text-amber-700 font-mono mt-0.5">2 Requests</p>
+              <span class="text-[10px] text-amber-800 font-semibold block">Awaiting Warden Digital Sign</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Students Outside Campus</span>
+              <p class="text-xl font-bold text-blue-700 font-mono mt-0.5">630 Students</p>
+              <span class="text-[10px] text-blue-800 font-semibold block">Synced with Mess PRGE Engine</span>
+            </div>
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">Curfew Alert Flags</span>
+              <p class="text-xl font-bold text-red-700 font-mono mt-0.5">2 Overdue</p>
+              <span class="text-[10px] text-red-800 font-semibold block">Security SMS Dispatched</span>
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-2.5 px-3">Student Roll No</th>
-                  <th class="py-2.5 px-3">Candidate Name</th>
-                  <th class="py-2.5 px-3">First Swipe (Gate & Time)</th>
-                  <th class="py-2.5 px-3">Second Swipe (Gate & Time)</th>
-                  <th class="py-2.5 px-3 text-center">Elapsed Velocity</th>
-                  <th class="py-2.5 px-3 text-right">Security Protocol</th>
-                </tr>
-              </thead>
-              <tbody id="passback-telemetry-body" class="divide-y divide-slate-100 font-sans">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
+          <!-- Pending & Active Gatepass Requisitions Table -->
+          <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Gatepass Authorizations &amp; Warden Approvals Queue</h4>
+                <p class="text-[11px] text-slate-500">Day Outing, Weekend Leave, and Medical pass requests per CollPoll Gatepass workflow</p>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">Gate 01 &amp; Gate 02 Active</span>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <tr>
+                    <th class="py-2.5 px-3">Pass ID &amp; Student</th>
+                    <th class="py-2.5 px-3">Pass Type</th>
+                    <th class="py-2.5 px-3">Out &bull; In Window</th>
+                    <th class="py-2.5 px-3">Destination &amp; Purpose</th>
+                    <th class="py-2.5 px-3">Parent Consent</th>
+                    <th class="py-2.5 px-3 text-right">Warden Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-sans">
+                  <tr id="gatepass-row-8842" class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-medium text-slate-900">
+                      <div class="flex items-center gap-2">
+                        <span class="font-mono font-bold text-blue-700">GP-2026-8842</span>
+                        <span class="font-bold">Aarav Mehta</span>
+                      </div>
+                      <span class="text-[10px] text-slate-500 font-mono block">2023CS0142 &bull; Hostel Block H-4 (Room 302)</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Day Pass</span>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-700">
+                      <div>Out: Today 04:30 PM</div>
+                      <div>In: Today 08:30 PM</div>
+                    </td>
+                    <td class="py-3 px-3 text-slate-600">City Centre &bull; Hardware &amp; Academic Stationery</td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono">SMS Verified</span>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="flex items-center justify-end gap-1.5">
+                        <button onclick="approveGatepass('8842')" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px]">Approve</button>
+                        <button onclick="rejectGatepass('8842')" class="px-2.5 py-1 rounded bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-[10px]">Reject</button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr id="gatepass-row-8843" class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-medium text-slate-900">
+                      <div class="flex items-center gap-2">
+                        <span class="font-mono font-bold text-blue-700">GP-2026-8843</span>
+                        <span class="font-bold">Priya Nair</span>
+                      </div>
+                      <span class="text-[10px] text-slate-500 font-mono block">2023CS0188 &bull; Hostel Block H-3 (Room 112)</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-800 border border-purple-200">Weekend Leave</span>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-700">
+                      <div>Out: 14 Nov 08:00 AM</div>
+                      <div>In: 17 Nov 09:00 PM</div>
+                    </td>
+                    <td class="py-3 px-3 text-slate-600">Jaipur &bull; Family Wedding Ceremony</td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono">Parent Confirmed</span>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px] font-mono">APPROVED</span>
+                    </td>
+                  </tr>
+
+                  <tr id="gatepass-row-8844" class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-medium text-slate-900">
+                      <div class="flex items-center gap-2">
+                        <span class="font-mono font-bold text-blue-700">GP-2026-8844</span>
+                        <span class="font-bold">Rohan Verma</span>
+                      </div>
+                      <span class="text-[10px] text-slate-500 font-mono block">2024ME0091 &bull; Hostel Block H-2 (Room 205)</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-800 border border-red-200">Emergency Medical</span>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-700">
+                      <div>Out: Today 02:15 PM</div>
+                      <div>In: Today 07:00 PM</div>
+                    </td>
+                    <td class="py-3 px-3 text-slate-600">Fortis Hospital &bull; Orthopedic Consultation</td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-800 font-mono">Doctor Signed</span>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px] font-mono">APPROVED</span>
+                    </td>
+                  </tr>
+
+                  <tr id="gatepass-row-8845" class="hover:bg-slate-50">
+                    <td class="py-3 px-3 font-medium text-slate-900">
+                      <div class="flex items-center gap-2">
+                        <span class="font-mono font-bold text-blue-700">GP-2026-8845</span>
+                        <span class="font-bold">Siddharth Rao</span>
+                      </div>
+                      <span class="text-[10px] text-slate-500 font-mono block">2022EC0045 &bull; Hostel Block H-1 (Room 410)</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Day Pass</span>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-700">
+                      <div>Out: Today 05:00 PM</div>
+                      <div>In: Today 09:30 PM</div>
+                    </td>
+                    <td class="py-3 px-3 text-slate-600">IIT Delhi &bull; Inter-College Hackathon Tech Meet</td>
+                    <td class="py-3 px-3">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 font-mono">Awaiting SMS</span>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="flex items-center justify-end gap-1.5">
+                        <button onclick="approveGatepass('8845')" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px]">Approve</button>
+                        <button onclick="rejectGatepass('8845')" class="px-2.5 py-1 rounded bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-[10px]">Reject</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: STUDENT GATEPASS SELF-SERVICE (AARAV MEHTA) -->
+        <div id="passback-tab-student" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left: Active Dynamic QR Gatepass Card -->
+            <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900">Active Digital QR Gatepass</h4>
+                  <p class="text-[11px] text-slate-500 font-mono">Pass No: GP-2026-8842 &bull; Day Outing</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono animate-pulse">
+                  APPROVED &amp; ACTIVE
+                </span>
+              </div>
+
+              <!-- Pass Card Visual -->
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950 text-white space-y-4 shadow-md">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-3">
+                  <div>
+                    <span class="text-[10px] font-mono uppercase text-blue-400 font-bold tracking-wider">DIGII CAMPUS TURNSTILE PASS</span>
+                    <h3 class="text-sm font-bold text-white mt-0.5">National Institute of Technology</h3>
+                  </div>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono">
+                    VALID TODAY
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-4">
+                  <!-- QR Code Box -->
+                  <div class="w-24 h-24 rounded-xl bg-white p-2 flex flex-col items-center justify-center text-slate-900 shrink-0 shadow-xs">
+                    <div class="w-full h-full bg-slate-900 rounded flex items-center justify-center text-[9px] font-mono text-white p-1 text-center font-bold">
+                      [DYNAMIC QR]
+                    </div>
+                  </div>
+
+                  <!-- Details -->
+                  <div class="space-y-1 text-xs">
+                    <p class="font-bold text-white text-sm">Aarav Mehta</p>
+                    <p class="text-[11px] text-slate-300 font-mono">2023CS0142 &bull; Hostel Block H-4 (302)</p>
+                    <p class="text-[11px] text-blue-300">Out: <strong>04:30 PM</strong> &bull; Curfew In: <strong>08:30 PM</strong></p>
+                    <p class="text-[10px] text-slate-400 font-mono">Authorized: Gate 01 (Main) &amp; Gate 02 (South)</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                  <span>Parent SMS: Verified (+91 98765-43210)</span>
+                  <span class="text-blue-300 font-bold">Warden: Dr. S. K. Mukherjee</span>
+                </div>
+              </div>
+
+              <!-- Interactive Turnstile Simulation Buttons -->
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span class="text-xs font-bold text-slate-800 block">Physical Turnstile Simulator (Demonstration Mode)</span>
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="simulateGateTurnstileScan('OUT')" class="py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center justify-center gap-1.5">
+                    <span>Scan Exit at Gate 01</span>
+                  </button>
+                  <button onclick="simulateGateTurnstileScan('IN')" class="py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-all flex items-center justify-center gap-1.5">
+                    <span>Scan Entry at Gate 01</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Request New Gatepass Form -->
+            <div class="p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
+              <div class="border-b border-slate-100 pb-3">
+                <h4 class="font-bold text-sm text-slate-900">Apply for New Gatepass</h4>
+                <p class="text-[11px] text-slate-500">Automated parent SMS consent + warden routing per university policy</p>
+              </div>
+
+              <div class="space-y-3 text-xs">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-700 mb-1">Gatepass Category</label>
+                  <select id="gatepass-req-cat" class="w-full text-xs p-2 rounded-lg border border-slate-300 bg-white">
+                    <option value="Day Outing Pass">Day Outing Pass (Return before 08:30 PM)</option>
+                    <option value="Weekend Home Leave">Weekend Home Leave (Requires Parent Consent)</option>
+                    <option value="Emergency Medical Pass">Emergency Medical Pass (Fast-Tracked)</option>
+                    <option value="Official Academic Duty">Official Academic Duty (HOD Endorsed)</option>
+                  </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-700 mb-1">Departure Time</label>
+                    <input type="time" value="16:30" class="w-full text-xs p-2 rounded-lg border border-slate-300">
+                  </div>
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-700 mb-1">Expected Return Time</label>
+                    <input type="time" value="20:30" class="w-full text-xs p-2 rounded-lg border border-slate-300">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-700 mb-1">Destination &amp; Purpose</label>
+                  <input type="text" id="gatepass-req-dest" value="City Centre Tech Market (Academic Hardware)" class="w-full text-xs p-2 rounded-lg border border-slate-300">
+                </div>
+
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-700 mb-1">Parent Contact Number</label>
+                  <input type="text" value="+91 98765-43210 (Verified Father)" disabled class="w-full text-xs p-2 rounded-lg border border-slate-200 bg-slate-50 font-mono text-slate-600">
+                </div>
+
+                <button onclick="submitStudentGatepassRequest()" class="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-2xs transition-all flex items-center justify-center gap-1.5">
+                  <span>Submit Gatepass Application</span>
+                </button>
+              </div>
+
+              <!-- Past Gatepasses History -->
+              <div class="pt-3 border-t border-slate-100 space-y-2">
+                <span class="text-[11px] font-bold text-slate-700 block">Recent Gate Activity Log</span>
+                <div class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-between text-xs">
+                  <div>
+                    <span class="font-bold text-slate-800">GP-2026-8710</span>
+                    <span class="text-[10px] text-slate-500 block">Day Pass &bull; 08 Nov (Returned 07:45 PM)</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 font-mono">CLOSED ON TIME</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -6964,7 +7847,7 @@ FROM StudentCompoundMetrics;
                 Reset Funnel
               </button>
               <button id="btn-funnel-intervene" onclick="simulatePmFunnelIntervention()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all flex items-center gap-1.5">
-                <span>Simulate Dhruv's PM Intervention (+14% Boost)</span>
+                <span>Simulate Strategic PM Intervention (+14% Boost)</span>
               </button>
             </div>
           </div>
@@ -7030,7 +7913,7 @@ FROM StudentCompoundMetrics;
           <!-- PM Insight Callout -->
           <div id="funnel-insight-box" class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs space-y-1.5">
             <div class="flex items-center gap-2 text-emerald-400 font-bold font-mono text-[11px] uppercase tracking-wider">
-              <span> Dhruv's PM Diagnostic Note</span>
+              <span>Strategic PM Diagnostic Note</span>
             </div>
             <p id="funnel-insight-text" class="leading-relaxed text-slate-300">
               "Analyzing our 10GB database ledger (`collpoll.academic_fee_dues`), 68% of uncollected fees are held up not because parents refuse to pay, but because the current ERP forces full-semester lump-sum bank challans. By rolling out <strong>1-Click Instant UPI Split Installments</strong> (Innovation 09) and <strong>Zero-Friction No-Dues</strong> (Innovation 01), we recover an additional <strong>₹52 Lakhs</strong> in retained revenue."
@@ -7313,6 +8196,8 @@ FROM StudentCompoundMetrics;
         <button onclick="closeDeadlineModal()" class="px-4 py-2 text-xs font-bold rounded-lg text-slate-700 bg-slate-200 hover:bg-slate-300">
           Close
         </button>
+        <button onclick="rebalanceAssignmentDeadline(); closeDeadlineModal();" class="px-4 py-2 text-xs font-bold rounded-lg text-whi
+... [truncated for diff preview]
         <button onclick="rebalanceAssignmentDeadline(); closeDeadlineModal();" class="px-4 py-2 text-xs font-bold rounded-lg text-white bg-amber-600 hover:bg-amber-700 shadow-xs flex items-center gap-1.5">
           <span>Apply AI Rebalance (Move CS502 to Monday)</span>
         </button>
@@ -9809,8 +10694,8 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
     function launchRoadmapFeature(id) {
       closePmCockpitModal();
       if (id === 'nodues') {
-        openClearanceModal();
-        showToast("Launched Zero-Friction Digital No-Dues Clearance!");
+        navigateToView('nodues');
+        showToast("Launched Zero-Friction Digital No-Dues Clearance Workbench!");
       } else if (id === 'radar') {
         navigateToView('radar');
         showToast("Launched Predictive Student Dropout Radar!");
@@ -9818,14 +10703,14 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         navigateToView('finance');
         showToast("Launched Automated Fee Reconciliation Engine!");
       } else if (id === 'deadline') {
-        openDeadlineModal();
-        showToast("Launched Smart Assignment Deadline Balancer Modal!");
+        navigateToView('deadline');
+        showToast("Launched Smart Assignment Deadline Balancer Module!");
       } else if (id === 'resume') {
-        openResumeModal();
-        showToast("Launched Verified Digital Auto-Resume Credential!");
+        navigateToView('autoresume');
+        showToast("Launched Placement Cell & Verified Auto-Resume Hub!");
       } else if (id === 'medical') {
-        openMedicalSlipModal();
-        showToast("Launched Automated Medical Leave & CHC Sync!");
+        navigateToView('grievance');
+        showToast("Launched Campus Help Centre & Medical Leave Sync!");
       } else if (id === 'clash') {
         navigateToView('academics');
         const cardCs502 = document.getElementById('course-card-cs502');
@@ -14636,6 +15521,205 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       showToast(`Thank you! Recorded CSAT rating of ${stars}/5 stars in chc_feedback table.`);
     }
 
+    // --- 6. HOSTEL V2 MANAGEMENT (ADMIN & STUDENT PORTAL) ---
+    function switchHostelTab(tab) {
+      const adminEl = document.getElementById('hostel-tab-admin');
+      const isoEl = document.getElementById('hostel-tab-isolation');
+      const stuEl = document.getElementById('hostel-tab-student');
+      if (adminEl) adminEl.classList.add('hidden');
+      if (isoEl) isoEl.classList.add('hidden');
+      if (stuEl) stuEl.classList.add('hidden');
+
+      const btnAdmin = document.getElementById('tab-btn-hostel-admin');
+      const btnIso = document.getElementById('tab-btn-hostel-isolation');
+      const btnStu = document.getElementById('tab-btn-hostel-student');
+
+      if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnIso) btnIso.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+
+      if (tab === 'admin') {
+        if (adminEl) adminEl.classList.remove('hidden');
+        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs transition-all flex items-center gap-1.5';
+      } else if (tab === 'isolation') {
+        if (isoEl) isoEl.classList.remove('hidden');
+        if (btnIso) btnIso.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-purple-700 text-white shadow-2xs transition-all flex items-center gap-1.5';
+        renderIsolationRoster();
+      } else if (tab === 'student') {
+        if (stuEl) stuEl.classList.remove('hidden');
+        if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-2xs transition-all flex items-center gap-1.5';
+      }
+    }
+
+    function approveHostelRoomTransfer(id) {
+      const row = document.getElementById(`hostel-req-${id}`);
+      if (row) {
+        row.innerHTML = `
+          <td colspan="5" class="py-3 px-3 bg-emerald-50 text-emerald-800 text-xs font-bold text-center">
+            Approved &bull; Room transfer allocated. MySQL <code class="font-mono">hostel_bed_allotment</code> updated.
+          </td>
+        `;
+      }
+      showToast(`Hostel Transfer Request ${id} approved! Digital room key generated.`);
+    }
+
+    function rejectHostelRoomTransfer(id) {
+      const row = document.getElementById(`hostel-req-${id}`);
+      if (row) {
+        row.innerHTML = `
+          <td colspan="5" class="py-3 px-3 bg-slate-100 text-slate-500 text-xs text-center">
+            Declined &bull; Requisition archived.
+          </td>
+        `;
+      }
+      showToast(`Hostel Transfer Request ${id} declined.`);
+    }
+
+    function submitHostelMaintenanceTicket() {
+      const cat = document.getElementById('hostel-maint-cat')?.value || "Electrical";
+      const desc = document.getElementById('hostel-maint-desc')?.value || "";
+      const id = `H-TKT-${Math.floor(2100 + Math.random() * 800)}`;
+      const list = document.getElementById('hostel-student-tickets-list');
+      if (list) {
+        const item = document.createElement('div');
+        item.className = 'p-2.5 rounded-lg border border-slate-200 bg-white flex items-center justify-between text-xs';
+        item.innerHTML = `
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900">${id}</span>
+              <span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-800">${cat}</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-0.5">${desc || "Reported fixture issue"}</p>
+          </div>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 font-mono">DISPATCHED (SLA: 24h)</span>
+        `;
+        list.prepend(item);
+      }
+      showToast(`Hostel Maintenance Ticket ${id} logged! Electrician/Plumber dispatched.`);
+    }
+
+    function submitHostelRoomTransferRequest() {
+      const block = document.getElementById('hostel-transfer-target')?.value || "Block H-5";
+      showToast(`Room transfer requisition to ${block} submitted for Chief Warden review.`);
+    }
+
+    // --- 7. MESS MANAGEMENT (PRGE ENGINE & STUDENT DINING) ---
+    function switchMessTab(tab) {
+      const adminEl = document.getElementById('mess-tab-admin');
+      const menuEl = document.getElementById('mess-tab-menu');
+      const stuEl = document.getElementById('mess-tab-student');
+      if (adminEl) adminEl.classList.add('hidden');
+      if (menuEl) menuEl.classList.add('hidden');
+      if (stuEl) stuEl.classList.add('hidden');
+
+      const btnAdmin = document.getElementById('tab-btn-mess-admin');
+      const btnMenu = document.getElementById('tab-btn-mess-menu');
+      const btnStu = document.getElementById('tab-btn-mess-student');
+
+      if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnMenu) btnMenu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+
+      if (tab === 'admin') {
+        if (adminEl) adminEl.classList.remove('hidden');
+        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs transition-all flex items-center gap-1.5';
+        renderPrgeKitchen();
+      } else if (tab === 'menu') {
+        if (menuEl) menuEl.classList.remove('hidden');
+        if (btnMenu) btnMenu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-amber-600 text-white shadow-2xs transition-all flex items-center gap-1.5';
+      } else if (tab === 'student') {
+        if (stuEl) stuEl.classList.remove('hidden');
+        if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-2xs transition-all flex items-center gap-1.5';
+      }
+    }
+
+    function updateMessDietPreference(pref) {
+      const el = document.getElementById('mess-active-diet-tag');
+      if (el) el.textContent = pref;
+      showToast(`Dietary preference updated to: ${pref}. Dining turnstile profile synced.`);
+    }
+
+    function applyMessRebateVoucher() {
+      const days = parseInt(document.getElementById('mess-rebate-days')?.value || "3", 10);
+      const amount = days * 140;
+      const ref = `REBATE-${Math.floor(1000 + Math.random() * 9000)}`;
+      showToast(`Mess Rebate of Rs.${amount} (${days} days) auto-credited to dues_v2 (Voucher: ${ref})!`);
+    }
+
+    function submitMessFeedbackRating(stars) {
+      showToast(`Recorded ${stars}/5 star dining feedback in collpoll.mess_feedback!`);
+    }
+
+    // --- 8. GATEPASS MANAGEMENT & SECURITY REGISTER ---
+    function switchPassbackTab(tab) {
+      const adminEl = document.getElementById('passback-tab-admin');
+      const appEl = document.getElementById('passback-tab-approvals');
+      const stuEl = document.getElementById('passback-tab-student');
+      if (adminEl) adminEl.classList.add('hidden');
+      if (appEl) appEl.classList.add('hidden');
+      if (stuEl) stuEl.classList.add('hidden');
+
+      const btnAdmin = document.getElementById('tab-btn-passback-admin');
+      const btnApp = document.getElementById('tab-btn-passback-approvals');
+      const btnStu = document.getElementById('tab-btn-passback-student');
+
+      if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnApp) btnApp.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+
+      if (tab === 'admin') {
+        if (adminEl) adminEl.classList.remove('hidden');
+        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shadow-2xs transition-all flex items-center gap-1.5';
+        renderPassbackTelemetry();
+      } else if (tab === 'approvals') {
+        if (appEl) appEl.classList.remove('hidden');
+        if (btnApp) btnApp.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-red-700 text-white shadow-2xs transition-all flex items-center gap-1.5';
+      } else if (tab === 'student') {
+        if (stuEl) stuEl.classList.remove('hidden');
+        if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-2xs transition-all flex items-center gap-1.5';
+      }
+    }
+
+    function approveGatepass(id) {
+      const row = document.getElementById(`gatepass-row-${id}`);
+      if (row) {
+        row.innerHTML = `
+          <td colspan="6" class="py-3 px-3 bg-emerald-50 text-emerald-800 text-xs font-bold text-center">
+            Approved &bull; Digital QR pass generated. Parent consent SMS sent. Valid at Gate 01 & Gate 02.
+          </td>
+        `;
+      }
+      showToast(`Gatepass ${id} approved! Digital QR Pass activated for student.`);
+    }
+
+    function rejectGatepass(id) {
+      const row = document.getElementById(`gatepass-row-${id}`);
+      if (row) {
+        row.innerHTML = `
+          <td colspan="6" class="py-3 px-3 bg-slate-100 text-slate-500 text-xs text-center">
+            Rejected &bull; Requisition declined by Warden.
+          </td>
+        `;
+      }
+      showToast(`Gatepass ${id} rejected.`);
+    }
+
+    function submitStudentGatepassRequest() {
+      const cat = document.getElementById('gatepass-req-cat')?.value || "Day Pass";
+      const dest = document.getElementById('gatepass-req-dest')?.value || "City Market";
+      const id = `GP-${Math.floor(9100 + Math.random() * 800)}`;
+      showToast(`Gatepass Requisition ${id} (${cat} to ${dest}) submitted! Parent SMS verification queued.`);
+    }
+
+    function simulateGateTurnstileScan(dir) {
+      const time = new Date().toLocaleTimeString();
+      if (dir === 'OUT') {
+        showToast(`Turnstile Scan (OUT) verified at Gate 01 Main Turnstile [${time}]. Status: EXIT GRANTED.`);
+      } else {
+        showToast(`Turnstile Scan (IN) verified at Gate 01 Main Turnstile [${time}]. Status: ENTRY GRANTED.`);
+      }
+    }
+
     // ===================================================================
     // ROLE-BASED ACCESS CONTROL (RBAC) & PERSONA ENGINE
     // ===================================================================
@@ -14680,9 +15764,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         const check = document.getElementById(`role-check-${r}`);
         if (opt) {
           if (r === role) {
-            opt.className = `group p-2.5 rounded-lg border ${r === 'faculty' ? 'border-emerald-600 bg-emerald-50/60' : r === 'student' ? 'border-blue-600 bg-blue-50/60' : 'border-blue-600 bg-blue-50/60'} transition-all cursor-pointer flex items-start gap-3 shadow-2xs`;
+            opt.className = `group px-3 py-2 rounded-lg border ${r === 'faculty' ? 'border-emerald-600 bg-emerald-50/60' : r === 'student' ? 'border-blue-600 bg-blue-50/60' : 'border-blue-600 bg-blue-50/60'} transition-all cursor-pointer flex items-center gap-3 shadow-2xs`;
           } else {
-            opt.className = "group p-2.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-all cursor-pointer flex items-start gap-3";
+            opt.className = "group px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-all cursor-pointer flex items-center gap-3";
           }
         }
         if (check) {
@@ -14739,6 +15823,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (typeof switchTransportTab === 'function') switchTransportTab('admin');
         if (typeof switchPlacementTab === 'function') switchPlacementTab('admin');
         if (typeof switchVenueTab === 'function') switchVenueTab('admin');
+        if (typeof switchPassbackTab === 'function') switchPassbackTab('admin');
+        if (typeof switchHostelTab === 'function') switchHostelTab('admin');
+        if (typeof switchMessTab === 'function') switchMessTab('admin');
 
         updateSidebarForRole('admin');
         showToast("Switched to Enterprise Administrator Console: Full write and disciplinary authorization loaded.");
@@ -14774,6 +15861,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (typeof switchTransportTab === 'function') switchTransportTab('admin');
         if (typeof switchPlacementTab === 'function') switchPlacementTab('student');
         if (typeof switchVenueTab === 'function') switchVenueTab('wizard');
+        if (typeof switchPassbackTab === 'function') switchPassbackTab('approvals');
+        if (typeof switchHostelTab === 'function') switchHostelTab('admin');
+        if (typeof switchMessTab === 'function') switchMessTab('menu');
 
         updateSidebarForRole('faculty');
         navigateToView('academics');
@@ -14810,6 +15900,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (typeof switchTransportTab === 'function') switchTransportTab('student');
         if (typeof switchPlacementTab === 'function') switchPlacementTab('student');
         if (typeof switchVenueTab === 'function') switchVenueTab('wizard');
+        if (typeof switchPassbackTab === 'function') switchPassbackTab('student');
+        if (typeof switchHostelTab === 'function') switchHostelTab('student');
+        if (typeof switchMessTab === 'function') switchMessTab('student');
 
         updateSidebarForRole('student');
         navigateToView('student-hub');
