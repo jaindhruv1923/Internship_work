@@ -8,12 +8,14 @@
     </script>
   <style>
     :root {
-      --digii-navy: #0f172a;
-      --digii-blue: #1e40af;
-      --digii-accent: #2563eb;
-      --digii-surface: #f8fafc;
-      --digii-card: #ffffff;
-      --digii-border: #e2e8f0;
+      --digii-navy: #0B192C;
+      --digii-blue: #0284C7;
+      --digii-blue-hover: #0369A1;
+      --digii-sky: #38BDF8;
+      --digii-sky-light: #E0F2FE;
+      --digii-surface: #F0F4F8;
+      --digii-card: #FFFFFF;
+      --digii-border: #D0E2EC;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -47,16 +49,44 @@
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
-        /* Stage 9: PM ROI Mode Floating Overlays (Crisp Minimalist Card) */
+        /* Stage 9: PM ROI Mode Floating Overlays (Crisp Minimalist Cloud Card) */
     .roi-overlay {
       display: none;
       animation: spaFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      background-color: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-      border-left: 3px solid #2563eb !important;
+      background-color: #F0F7FF !important;
+      border: 1px solid #BAE6FD !important;
+      border-left: 3px solid #0284C7 !important;
     }
     body.roi-mode-active .roi-overlay {
       display: flex !important;
+    }
+    /* Cloud & Sky Blue Theme System (White Clouds with Atmospheric Sky Blue) */
+    .border-slate-200 {
+      border-color: #D0E2EC !important;
+    }
+    .border-slate-100 {
+      border-color: #E2EDF8 !important;
+    }
+    .border-slate-300 {
+      border-color: #BAE6FD !important;
+    }
+    .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+      border-color: #D0E2EC !important;
+    }
+    .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+      border-color: #E2EDF8 !important;
+    }
+    .bg-slate-50 {
+      background-color: #F8FAFD !important;
+    }
+    .text-slate-900 {
+      color: #0F172A !important;
+    }
+    .hover\:bg-slate-50:hover {
+      background-color: #F0F7FF !important;
+    }
+    .hover\:bg-slate-100:hover {
+      background-color: #E0F2FE !important;
     }
     /* Clean Minimalist Scrollbar & Transitions */
     ::-webkit-scrollbar {
@@ -74,29 +104,29 @@
       background: #94a3b8;
     }
     aside ::-webkit-scrollbar-thumb {
-      background: #282f3d;
+      background: #182E4B;
     }
     aside ::-webkit-scrollbar-thumb:hover {
-      background: #3b4455;
+      background: #25446E;
     }
     .spa-fade-in {
       animation: spaFadeIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
   </style>
 </head>
-<body class="h-screen flex overflow-hidden antialiased bg-[#EEF1F6] text-slate-800">
+<body class="h-screen flex overflow-hidden antialiased bg-[#F0F4F8] text-slate-800">
 
-  <!-- Left Sidebar Navigation (Digii Campus Enterprise Shell - Palette A #2B2D31) -->
-  <aside class="w-64 bg-[#2B2D31] text-slate-300 flex flex-col shrink-0 border-r border-[#3A3D45] select-none hidden md:flex">
+  <!-- Left Sidebar Navigation (Digii Campus Enterprise Shell - Cloud & Sky Blue Theme) -->
+  <aside class="w-64 bg-[#0B192C] text-slate-300 flex flex-col shrink-0 border-r border-[#182E4B] select-none hidden md:flex">
     <!-- Brand Header -->
-    <div class="h-16 px-5 flex items-center gap-3 border-b border-[#3A3D45]">
-      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-[#1E2532] border border-[#FFC93C]/40 flex items-center justify-center text-white font-bold text-base shadow-sm">
+    <div class="h-16 px-5 flex items-center gap-3 border-b border-[#182E4B]">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-[#0284C7] to-[#1E40AF] border border-sky-400/40 flex items-center justify-center text-white font-bold text-base shadow-sm">
         D
       </div>
       <div>
         <div class="flex items-center gap-1.5">
           <span class="font-semibold text-white text-base tracking-tight">Digii Campus</span>
-          <span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-[#FFC93C]/15 text-[#FFC93C] border border-[#FFC93C]/30 font-mono">2.0</span>
+          <span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-sky-500/20 text-sky-300 border border-sky-400/30 font-mono">2.0</span>
         </div>
         <p id="sidebar-brand-subtitle" class="text-[11px] text-slate-400 font-normal">Enterprise ERP Suite</p>
       </div>
@@ -113,142 +143,142 @@
         </div>
 
         <!-- 1. Academics & AMS -->
-        <a href="javascript:void(0)" onclick="navigateToView('academics')" id="nav-academics" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('academics')" id="nav-academics" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
           <span>Academic &amp; Attendance (AMS)</span>
         </a>
 
         <!-- 2. Hostel & Residential Life -->
-        <a href="javascript:void(0)" onclick="navigateToView('isolation')" id="nav-isolation" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('isolation')" id="nav-isolation" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           <span>Hostel &amp; Residential Life</span>
         </a>
 
         <!-- 3. Smart Gate Pass -->
-        <a href="javascript:void(0)" onclick="navigateToView('passback')" id="nav-passback" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('passback')" id="nav-passback" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
           <span>Gate Pass &amp; Turnstiles</span>
         </a>
 
         <!-- 4. Transport Management -->
-        <a href="javascript:void(0)" onclick="navigateToView('transport')" id="nav-transport" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('transport')" id="nav-transport" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
           <span>Transport Fleet Management</span>
         </a>
 
         <!-- 5. Placement Cell -->
-        <a href="javascript:void(0)" onclick="navigateToView('autoresume')" id="nav-autoresume" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('autoresume')" id="nav-autoresume" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           <span>Placement Cell (TPO Drives)</span>
         </a>
 
         <!-- 6. Campus Help Center -->
-        <a href="javascript:void(0)" onclick="navigateToView('grievance')" id="nav-grievance" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('grievance')" id="nav-grievance" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <span>Campus Help Center (CHC)</span>
         </a>
 
         <!-- 7. Venue Booking & Assets -->
-        <a href="javascript:void(0)" onclick="navigateToView('venue')" id="nav-venue" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('venue')" id="nav-venue" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           <span>Venue Booking &amp; Assets</span>
         </a>
 
         <!-- 8. Mess & Dining Operations -->
-        <a href="javascript:void(0)" onclick="navigateToView('prge')" id="nav-prge" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('prge')" id="nav-prge" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           <span>Mess &amp; Dining Operations</span>
         </a>
 
         <!-- 9. Finance & Accounts (dues_v2) -->
-        <a href="javascript:void(0)" onclick="navigateToView('finance')" id="nav-finance" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('finance')" id="nav-finance" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <span>Finance &amp; Dues (dues_v2)</span>
         </a>
 
         <!-- 10. Graduation No-Dues -->
-        <a href="javascript:void(0)" onclick="navigateToView('nodues')" id="nav-nodues" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('nodues')" id="nav-nodues" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <span>Graduation No-Dues Desk</span>
         </a>
 
         <!-- 11. Scholarships -->
-        <a href="javascript:void(0)" onclick="navigateToView('scholarships')" id="nav-scholarships" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('scholarships')" id="nav-scholarships" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <span>Scholarships &amp; Concessions</span>
         </a>
       </div>
 
       <!-- GROUP 2: DIGII 2.0 STRATEGIC INTELLIGENCE (PROPOSED PM UPGRADES) -->
-      <div class="space-y-1 pt-2 border-t border-[#3A3D45]">
+      <div class="space-y-1 pt-2 border-t border-[#182E4B]">
         <div class="px-3 pb-1.5 text-[10px] uppercase font-bold tracking-wider text-slate-300 flex items-center justify-between">
           <span id="sidebar-group2-title">Digii 2.0 Intelligence</span>
-          <span id="sidebar-group2-badge" class="text-[9px] px-1.5 py-0.2 rounded bg-[#FFC93C]/15 text-[#FFC93C] border border-[#FFC93C]/30 font-mono">APM Proposal</span>
+          <span id="sidebar-group2-badge" class="text-[9px] px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30 font-mono">APM Proposal</span>
         </div>
 
         <!-- 12. Operations Desk (View 22) -->
-        <a href="javascript:void(0)" onclick="navigateToView('operations-desk')" id="nav-operations-desk" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('operations-desk')" id="nav-operations-desk" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
           <span>Enterprise Operations Desk</span>
         </a>
 
         <!-- 13. Comparative Matrix (View 21) -->
-        <a href="javascript:void(0)" onclick="navigateToView('comparative')" id="nav-comparative" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('comparative')" id="nav-comparative" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span>Digii vs 2.0 Matrix</span>
         </a>
 
         <!-- 14. Retention Radar -->
-        <a href="javascript:void(0)" onclick="navigateToView('radar')" id="nav-radar" class="flex items-center gap-3 px-3 py-1.5 rounded-lg bg-[#3A3D45] text-white font-semibold shadow-xs border-l-2 border-[#FFC93C] transition-colors">
-          <svg class="w-4 h-4 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <a href="javascript:void(0)" onclick="navigateToView('radar')" id="nav-radar" class="flex items-center gap-3 px-3 py-1.5 rounded-lg bg-[#16335C] text-[#38BDF8] font-semibold border-l-2 border-[#38BDF8] transition-colors">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           <span>Predictive Dropout Radar</span>
         </a>
 
         <!-- 15. Student 360 -->
-        <a href="javascript:void(0)" onclick="navigateToView('student360')" id="nav-student360" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('student360')" id="nav-student360" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
           <span>Student 360 Risk Dossier</span>
           <span id="nav-student360-tag" class="ml-auto text-[10px] text-slate-400 font-mono">Select</span>
         </a>
 
         <!-- 16. Student Hub -->
-        <a href="javascript:void(0)" onclick="navigateToView('student-hub')" id="nav-student-hub" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('student-hub')" id="nav-student-hub" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <span>Student Experience Hub</span>
         </a>
 
         <!-- 17. Faculty Retention & PBAS -->
-        <a href="javascript:void(0)" onclick="navigateToView('development')" id="nav-development" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('development')" id="nav-development" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
           <span>Faculty Retention (PBAS)</span>
         </a>
 
         <!-- 18. NAAC Accreditation -->
-        <a href="javascript:void(0)" onclick="navigateToView('accreditation')" id="nav-accreditation" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('accreditation')" id="nav-accreditation" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           <span>NAAC / NIRF Copilot</span>
         </a>
 
         <!-- 19. Admissions -->
-        <a href="javascript:void(0)" onclick="navigateToView('admissions')" id="nav-admissions" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('admissions')" id="nav-admissions" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           <span>Predictive Admissions</span>
         </a>
 
         <!-- 20. Deadline Balancer -->
-        <a href="javascript:void(0)" onclick="navigateToView('deadline')" id="nav-deadline" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('deadline')" id="nav-deadline" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           <span>Assignment Deadline Balancer</span>
         </a>
 
         <!-- 21. Campus Energy -->
-        <a href="javascript:void(0)" onclick="navigateToView('energy')" id="nav-energy" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('energy')" id="nav-energy" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           <span>Campus Energy Telemetry</span>
         </a>
 
         <!-- 22. Alumni -->
-        <a href="javascript:void(0)" onclick="navigateToView('alumni')" id="nav-alumni" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/60 text-slate-400 hover:text-slate-200 transition-colors">
+        <a href="javascript:void(0)" onclick="navigateToView('alumni')" id="nav-alumni" class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white text-slate-400 hover:text-slate-200 transition-colors">
           <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <span>Alumni Mentorship Network</span>
         </a>
@@ -257,8 +287,8 @@
     </nav>
 
     <!-- Sidebar Footer -->
-    <div class="p-3 border-t border-slate-800 text-slate-400">
-      <div class="px-2 py-2 rounded-lg bg-slate-800/60 border border-slate-700/60 text-[11px] space-y-1">
+    <div class="p-3 border-t border-[#182E4B] text-slate-400">
+      <div class="px-2 py-2 rounded-lg bg-[#0F223D]/80 border border-[#182E4B] text-[11px] space-y-1">
         <div class="flex items-center justify-between text-slate-300 font-semibold">
           <span>Digii Campus System</span>
           <span class="text-emerald-400 font-mono text-[10px]">CONNECTED</span>
@@ -272,13 +302,13 @@
   <div class="flex-1 flex flex-col min-w-0">
 
     <!-- Top Navigation Header (CollPoll / Digii Campus Enterprise Bar) -->
-    <header class="h-16 bg-white border-b border-[#D9DAEC] px-4 sm:px-6 flex items-center justify-between gap-3 sticky top-0 z-30 select-none">
+    <header class="h-16 bg-white border-b border-[#D0E2EC] px-4 sm:px-6 flex items-center justify-between gap-3 sticky top-0 z-30 select-none">
       
       <!-- Left: Campus Selector & Global Search Bar -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- Campus Selector -->
         <div class="hidden lg:flex items-center shrink-0">
-          <select id="campus-context-select" onchange="switchCampusContext(this.value)" class="text-xs font-semibold bg-[#F8FAFC] hover:bg-slate-100 border border-[#D9DAEC] rounded-lg px-2.5 py-1.5 text-slate-700 cursor-pointer transition-colors focus:ring-1 focus:ring-slate-400 outline-none max-w-[200px] truncate" title="Campus Scope">
+          <select id="campus-context-select" onchange="switchCampusContext(this.value)" class="text-xs font-semibold bg-[#F8FAFC] hover:bg-slate-100 border border-[#D0E2EC] rounded-lg px-2.5 py-1.5 text-slate-700 cursor-pointer transition-colors focus:ring-1 focus:ring-slate-400 outline-none max-w-[200px] truncate" title="Campus Scope">
             <option value="MAIN">Main Campus (Gurugram)</option>
             <option value="NORTH">North Campus (Delhi NCR)</option>
             <option value="BLR">Bengaluru Center</option>
@@ -293,32 +323,32 @@
               id="global-search-input" 
               type="text" 
               placeholder="Search student or UKID..." 
-              class="w-full pl-9 pr-14 py-1.5 bg-[#F8FAFC] hover:bg-white focus:bg-white border border-[#D9DAEC] focus:border-slate-400 rounded-lg text-xs transition-colors outline-none text-slate-800 placeholder-slate-400 font-medium"
+              class="w-full pl-9 pr-14 py-1.5 bg-[#F8FAFC] hover:bg-white focus:bg-white border border-[#D0E2EC] focus:border-slate-400 rounded-lg text-xs transition-colors outline-none text-slate-800 placeholder-slate-400 font-medium"
               oninput="handleGlobalSearch(this.value)"
             />
-            <kbd class="hidden sm:inline-flex absolute right-2.5 px-1.5 py-0.5 text-[10px] font-mono text-slate-400 bg-white border border-[#D9DAEC] rounded shadow-2xs pointer-events-none">Ctrl K</kbd>
+            <kbd class="hidden sm:inline-flex absolute right-2.5 px-1.5 py-0.5 text-[10px] font-mono text-slate-400 bg-white border border-[#D0E2EC] rounded shadow-2xs pointer-events-none">Ctrl K</kbd>
           </div>
           <!-- Auto-suggest Dropdown -->
-          <div id="search-dropdown" class="hidden absolute top-10 left-0 right-0 bg-white border border-[#D9DAEC] rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto divide-y divide-slate-100"></div>
+          <div id="search-dropdown" class="hidden absolute top-10 left-0 right-0 bg-white border border-[#D0E2EC] rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto divide-y divide-slate-100"></div>
         </div>
       </div>
 
       <!-- Right Header Actions (Separated with ml-auto) -->
       <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-auto">
         <!-- Academic Context Tag -->
-        <div class="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1 bg-slate-50 rounded-md border border-[#D9DAEC] text-xs font-medium text-slate-600">
+        <div class="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1 bg-slate-50 rounded-md border border-[#D0E2EC] text-xs font-medium text-slate-600">
           <span class="w-2 h-2 rounded-full bg-blue-600"></span>
           <span>AY 2026-27 (Fall)</span>
         </div>
 
         <!-- Notification Bell -->
-        <button onclick="triggerNotificationToast()" class="relative p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent hover:border-[#D9DAEC] transition-colors shrink-0 mr-1" title="System Alerts & Retention Notifications">
+        <button onclick="triggerNotificationToast()" class="relative p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent hover:border-[#D0E2EC] transition-colors shrink-0 mr-1" title="System Alerts & Retention Notifications">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
           <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
         </button>
 
         <!-- PM ROI Mode Toggle -->
-        <div id="header-roi-container" class="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#F8FAFC] hover:bg-slate-100 border border-[#D9DAEC] transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
+        <div id="header-roi-container" class="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#F8FAFC] hover:bg-slate-100 border border-[#D0E2EC] transition-colors cursor-pointer select-none shrink-0" onclick="togglePmRoiMode()" title="Toggle PM Strategic ROI Overlays">
           <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
           <span class="text-xs font-semibold text-slate-700 tracking-tight">ROI Mode</span>
           <button id="roi-toggle-btn" type="button" class="relative inline-flex h-4 w-7 shrink-0 pointer-events-none rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 ease-in-out" role="switch" aria-checked="false">
@@ -341,30 +371,30 @@
           <span class="sm:hidden">Clearance</span>
         </button>
 
-        <!-- Executive Pitch Deck Button (Palette A #2B2D31 Charcoal + #FFC93C Amber) -->
-        <button id="header-pitch-deck-btn" onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#2B2D31] hover:bg-[#3A3D45] text-white font-medium text-xs shadow-xs border border-[#3A3D45] transition-colors shrink-0">
-          <svg class="w-3.5 h-3.5 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+        <!-- Executive Pitch Deck Button (Cloud & Sky Blue Theme) -->
+        <button id="header-pitch-deck-btn" onclick="openPitchDeckModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white font-medium text-xs shadow-xs border border-[#0284C7] transition-colors shrink-0">
+          <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
           <span class="hidden sm:inline">Pitch Deck</span>
           <span class="sm:hidden">Deck</span>
         </button>
 
         <!-- PM Strategy Cockpit Button -->
-        <button id="header-pm-cockpit-btn" onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-800 border border-[#D9DAEC] font-semibold text-xs shadow-2xs transition-colors shrink-0">
-          <svg class="w-3.5 h-3.5 text-[#2B2D31]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <button id="header-pm-cockpit-btn" onclick="openPmCockpitModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-800 border border-[#D0E2EC] font-semibold text-xs shadow-2xs transition-colors shrink-0">
+          <svg class="w-3.5 h-3.5 text-[#0284C7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span class="hidden sm:inline">PM Cockpit</span>
           <span class="sm:hidden">PM</span>
         </button>
 
         <!-- Enterprise Profile Badge & Role Switcher Dropdown (RBAC) -->
-        <div class="relative pl-1 border-l border-[#D9DAEC]">
+        <div class="relative pl-1 border-l border-[#D0E2EC]">
           <button 
             type="button" 
             id="profile-dropdown-btn" 
             onclick="toggleRoleDropdown()" 
-            class="flex items-center gap-2 py-1 px-1.5 sm:px-2 rounded-lg hover:bg-slate-50 border border-transparent hover:border-[#D9DAEC] transition-colors cursor-pointer select-none focus:outline-none"
+            class="flex items-center gap-2 py-1 px-1.5 sm:px-2 rounded-lg hover:bg-slate-50 border border-transparent hover:border-[#D0E2EC] transition-colors cursor-pointer select-none focus:outline-none"
             title="Click to Switch Role (Admin, Faculty, Student)"
           >
-            <div id="user-avatar-badge" class="w-8 h-8 rounded-full bg-[#2B2D31] border border-[#3A3D45] flex items-center justify-center font-bold text-xs text-white select-none transition-colors shadow-xs">
+            <div id="user-avatar-badge" class="w-8 h-8 rounded-full bg-[#0284C7] border border-[#0284C7] flex items-center justify-center font-bold text-xs text-white select-none transition-colors shadow-xs">
               AD
             </div>
             <div class="hidden lg:block text-left select-none">
@@ -465,22 +495,22 @@
     <main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto overflow-x-hidden min-w-0 max-w-full space-y-6">
 
       <!-- Simulated Data Disclaimer (Minimalist Enterprise Grounding) -->
-      <div class="flex items-center gap-2.5 px-3.5 py-2 rounded-lg bg-white border border-[#D9DAEC] shadow-2xs text-xs text-slate-600 font-medium">
+      <div class="flex items-center gap-2.5 px-3.5 py-2 rounded-lg bg-white border border-[#D0E2EC] shadow-2xs text-xs text-slate-600 font-medium">
         <svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         <span class="text-slate-600 font-normal"><strong class="font-semibold text-slate-800">Simulated Enterprise Cohort:</strong> 4,850 students modeled on 10.08 GB MySQL replica distributions. No live student PII. Schema grounded in CollPoll production tables per Suraj Shetty's workflow document (270 tables, 6 modules).</span>
       </div>
 
       <!-- Interactive Role-Based Access Control (RBAC) Context Banner -->
-      <div id="rbac-context-banner" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-[#2B2D31] text-white text-xs border border-[#3A3D45] shadow-2xs transition-all">
+      <div id="rbac-context-banner" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-[#0B192C] text-white text-xs border border-[#182E4B] shadow-2xs transition-all">
         <div class="flex items-center gap-2.5 min-w-0">
-          <span id="rbac-dot" class="w-2 h-2 rounded-full bg-[#FFC93C] shrink-0 animate-pulse"></span>
+          <span id="rbac-dot" class="w-2 h-2 rounded-full bg-[#38BDF8] shrink-0 animate-pulse"></span>
           <span id="rbac-role-title" class="font-bold text-white shrink-0">Active Persona: Super Administrator</span>
           <span class="text-slate-500 hidden md:inline">|</span>
           <span id="rbac-role-desc" class="text-slate-300 text-[11px] truncate hidden md:inline">Full read, write, financial clearance (dues_v2), and institutional governance across all 22 modules.</span>
         </div>
         <div class="flex flex-wrap items-center gap-2">
-          <span id="rbac-permission-badge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#3A3D45] text-slate-300 border border-slate-600">Tier-1 Permissions</span>
-          <button onclick="toggleRoleDropdown()" class="text-[10px] font-medium px-2.5 py-1 rounded-md bg-[#3A3D45] hover:bg-slate-700 text-slate-200 border border-slate-600 flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs">
+          <span id="rbac-permission-badge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#132845] text-sky-300 border border-sky-800/60">Tier-1 Permissions</span>
+          <button onclick="toggleRoleDropdown()" class="text-[10px] font-medium px-2.5 py-1 rounded-md bg-[#132845] hover:bg-[#1A3760] text-sky-200 border border-sky-800/60 flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs">
             <span>Switch Persona</span>
             <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -493,8 +523,8 @@
       <section id="view-radar" class="space-y-6">
         
         <!-- STAGE 9: PM ROI MODE OVERLAY - RADAR -->
-        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-white border border-[#D9DAEC] text-slate-700 text-xs shadow-2xs">
-          <span class="px-2 py-0.5 rounded-md bg-[#FFC93C]/20 text-amber-900 text-[10px] font-bold font-mono tracking-wider uppercase border border-[#FFC93C]/40 shrink-0">
+        <div class="roi-overlay items-center gap-3 p-3 rounded-lg bg-white border border-[#D0E2EC] text-slate-700 text-xs shadow-2xs">
+          <span class="px-2 py-0.5 rounded-md bg-[#0284C7] text-white text-[10px] font-bold font-mono tracking-wider uppercase border border-[#0284C7] shrink-0">
             Executive ROI
           </span>
           <span class="leading-relaxed text-slate-700">
@@ -503,34 +533,34 @@
         </div>
 
         <!-- Executive KPI Banner -->
-        <div class="bg-white border border-[#D9DAEC] rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#FFC93C]/15 text-amber-900 border border-[#FFC93C]/40 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider">
                   Proactive Intelligence
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Algorithm: Cross-Module Compound Decay Risk Model</span>
               </div>
-              <h1 class="text-2xl font-bold text-[#2B2D31] mt-1.5 tracking-tight">Predictive Student Dropout Radar</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Predictive Student Dropout Radar</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Continuously analyzes <strong>Academics, Fee Deadlines, Gate Telemetry, and CHC Grievance Logs</strong> from the 10GB replica to detect early student disengagement 60 days before potential attrition.
               </p>
             </div>
             
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="openWeightTunerModal()" class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium rounded-lg border border-[#D9DAEC] transition-colors flex items-center gap-1.5 shadow-2xs">
+              <button onclick="openWeightTunerModal()" class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium rounded-lg border border-[#D0E2EC] transition-colors flex items-center gap-1.5 shadow-2xs">
                 <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
                 <span>Tune Algorithm</span>
               </button>
 
-              <button onclick="openSqlLineageModal()" class="px-3 py-1.5 bg-[#2B2D31] hover:bg-[#3A3D45] text-white text-xs font-medium rounded-lg shadow-2xs transition-colors flex items-center gap-1.5 border border-[#3A3D45]">
-                <svg class="w-3.5 h-3.5 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <button onclick="openSqlLineageModal()" class="px-3 py-1.5 bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold rounded-lg shadow-2xs transition-colors flex items-center gap-1.5 border border-[#0284C7]">
+                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                 <span>Behind the Data (SQL)</span>
               </button>
 
-              <button onclick="exportCohortReport()" class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium rounded-lg border border-[#D9DAEC] transition-colors flex items-center gap-1.5 shadow-2xs">
+              <button onclick="exportCohortReport()" class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium rounded-lg border border-[#D0E2EC] transition-colors flex items-center gap-1.5 shadow-2xs">
                 <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                 <span>Export CSV</span>
               </button>
@@ -539,10 +569,10 @@
 
           <!-- 4 Executive Scorecard Metrics (Palette A Clean White Cards with Disciplinary Highlights) -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            <div class="p-4 rounded-xl bg-white border border-[#D9DAEC] shadow-2xs hover:shadow-xs transition-shadow">
+            <div class="p-4 rounded-xl bg-white border border-[#D0E2EC] shadow-2xs hover:shadow-xs transition-shadow">
               <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Active Cohort</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-[#2B2D31]">4,850</span>
+                <span class="text-2xl font-bold text-[#0F172A]">4,850</span>
                 <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">98.2% Enrolled</span>
               </div>
               <p class="text-[11px] text-slate-500 mt-1">6 Academic Schools | 48 Batches</p>
@@ -560,19 +590,19 @@
               <p class="text-[11px] text-red-600 mt-1">Severe Multi-Module Compound Threat</p>
             </div>
 
-            <div class="p-4 rounded-xl bg-white border border-[#FFC93C]/50 shadow-2xs hover:shadow-xs transition-shadow">
+            <div class="p-4 rounded-xl bg-white border border-amber-200 shadow-2xs hover:shadow-xs transition-shadow">
               <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Moderate Amber Zone</p>
               <div class="flex items-baseline gap-2 mt-1">
                 <span class="text-2xl font-bold text-amber-900">386</span>
-                <span class="text-xs font-semibold text-amber-900 bg-[#FFC93C]/25 px-1.5 py-0.5 rounded border border-[#FFC93C]/40">7.9% of Cohort</span>
+                <span class="text-xs font-semibold text-amber-900 bg-amber-100 px-1.5 py-0.5 rounded border border-amber-300">7.9% of Cohort</span>
               </div>
               <p class="text-[11px] text-amber-700 mt-1">Marginal Attendance or Due Pending</p>
             </div>
 
-            <div class="p-4 rounded-xl bg-white border border-[#D9DAEC] shadow-2xs hover:shadow-xs transition-shadow">
-              <p class="text-xs font-bold text-[#2B2D31] uppercase tracking-wider">Estimated Revenue At Risk</p>
+            <div class="p-4 rounded-xl bg-white border border-[#D0E2EC] shadow-2xs hover:shadow-xs transition-shadow">
+              <p class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">Estimated Revenue At Risk</p>
               <div class="flex items-baseline gap-2 mt-1">
-                <span class="text-2xl font-bold text-[#2B2D31]">₹1.84 Cr</span>
+                <span class="text-2xl font-bold text-[#0F172A]">₹1.84 Cr</span>
                 <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100">Fee Exposure</span>
               </div>
               <p class="text-[11px] text-blue-600 mt-1">Pending Semester Installments</p>
@@ -581,7 +611,7 @@
         </div>
 
         <!-- Filter & Search Control Strip -->
-        <div class="bg-white border border-[#D9DAEC] rounded-xl p-4 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-4 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="flex flex-wrap items-center gap-2">
             <!-- Department Filter -->
           <div class="flex items-center gap-1.5 mr-2 pr-3 border-r border-slate-200">
@@ -660,7 +690,7 @@
         </div>
 
         <!-- Student Profile Master Banner -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
           <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-slate-200">
             <div class="flex items-start gap-4">
               <img id="s360-avatar" src="" alt="avatar" class="w-20 h-20 rounded-xl object-cover border-2 border-slate-200 shadow-xs shrink-0">
@@ -814,7 +844,7 @@
             </div>
             <div class="overflow-x-auto border border-slate-200 rounded-xl">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-bold uppercase tracking-wider text-[10px]">
+                <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase tracking-wider text-[10px] font-mono">
                   <tr>
                     <th class="px-4 py-3">Audit ID / Ref</th>
                     <th class="px-4 py-3">Action Type</th>
@@ -880,23 +910,23 @@
           </span>
         </div>
         <!-- Module Header & Breadcrumb -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Core ERP Module
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Database Domain: <code>ams_attendance</code> & <code>exam_marks</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Academics & Learning Management System</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Academics & Learning Management System</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Centralized curriculum control, professor workload allocation, and real-time lecture scheduling across 6 academic schools.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -1393,23 +1423,23 @@
         </div>
 
         <!-- Module Header & Breadcrumb -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Core ERP Module
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Database Domain: <code>academic_fee_dues</code> & <code>fee_payment_transactions</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Finance & Accounts Management</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Finance & Accounts Management</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Automated student fee collection, bank reconciliation, and automated overdue dues recovery.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -1673,23 +1703,23 @@
             <strong>ROI: Saves ₹4.2 Lakhs/month in dining food waste</strong> by predicting daily meal headcount with 96.4% biometric accuracy and auto-tuning kitchen procurement.
           </span>
         </div>
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Core ERP Module
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Database Domain: <code>hostel_room_allocations</code> & <code>mess_attendance</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Hostel & Dining Management</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Hostel & Dining Management</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Residential hostel occupancy, biometric night roll-calls, and campus dining meal distribution.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -1783,9 +1813,9 @@
           </div>
 
           <!-- Occupancy Table -->
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Student Resident</th>
                   <th class="py-2.5 px-3">Block & Room</th>
@@ -1856,23 +1886,23 @@
             <strong>ROI: Eliminates proxy turnstile punching and automates residential curfew compliance</strong> using SQL window functions detecting multi-gate punches within 180 seconds.
           </span>
         </div>
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Core ERP Module
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Database Domain: <code>access_gate_logs</code> & <code>turnstile_entry_exit_events</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus Access & Turnstile Telemetry</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Campus Access & Turnstile Telemetry</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Perimeter security telemetry, biometric RFID turnstile monitoring, and impossible travel anomaly detection.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -2005,23 +2035,23 @@
             <strong>ROI: Proactively triages 68% of student mental health risks</strong> before formal academic failure by correlating repeat clinic visits with classroom absence trends.
           </span>
         </div>
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Core ERP Module
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Database Domain: <code>chc_consultation_records</code> & <code>campus_health_prescriptions</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus Health & Wellness Center (CHC)</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Campus Health & Wellness Center (CHC)</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Confidential medical consultations, proactive mental health support, and emergency student wellness management.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -2081,9 +2111,9 @@
           </div>
 
           <!-- Confidential Triage Cases Table -->
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Student Patient</th>
                   <th class="py-2.5 px-3">Health Reason / Symptom</th>
@@ -2185,23 +2215,23 @@
         </div>
 
         <!-- Module Header & Breadcrumb -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   B2B2C Product Innovation
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Dual-Value Architecture: <strong>Student + University Win-Win</strong></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Student Experience Hub — 10 Win-Win Innovations</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Student Experience Hub — 10 Win-Win Innovations</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Transforming Digii Campus from a passive administrative ERP into an indispensable campus companion that students love and universities rely upon.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -2778,27 +2808,27 @@
         </div>
 
         <!-- Module Header & Breadcrumb -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Core ERP Capability • Week 02 Framework
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Database Domain: <code>student_clubs_societies</code>, <code>enrichment_credits</code> & <code>volunteering_log</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Non-Academic Student Development & Holistic Competency</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Non-Academic Student Development & Holistic Competency</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Quantified tracking of co-curricular excellence: student leadership, chartered clubs, national hackathons, and accredited enrichment credits.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="downloadNonAcademicTranscript()" class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="downloadNonAcademicTranscript()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Co-Curricular Diploma Supplement (.txt)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -2876,9 +2906,9 @@
           </div>
 
           <!-- Roster Table -->
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Student Contributor</th>
                   <th class="py-2.5 px-3">Chartered Society / Initiative</th>
@@ -2920,17 +2950,17 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Student Life & Psychological Counseling • Week 3 Research
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Net-New Intelligence Module</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Student Campus Isolation & Mental Well-Being Sentinel</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Student Campus Isolation & Mental Well-Being Sentinel</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Proactive spatial-temporal behavioral correlation detecting silent social withdrawal without invasive surveillance.
               </p>
@@ -2940,11 +2970,11 @@
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Dispatch Counselor Triage</span>
               </button>
-              <button onclick="downloadIsolationReportCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadIsolationReportCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Wellness Audit (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -3110,9 +3140,9 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold">2 Pending Reviews</span>
             </div>
 
-            <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                   <tr>
                     <th class="py-2.5 px-3">Student &amp; Roll</th>
                     <th class="py-2.5 px-3">Current Bed</th>
@@ -3201,9 +3231,9 @@
               </div>
             </div>
 
-            <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                   <tr>
                     <th class="py-2.5 px-3">Student Roll No</th>
                     <th class="py-2.5 px-3">Candidate &amp; Dept</th>
@@ -3382,31 +3412,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Predictive Resource Engine (PRGE) • Week 3 Proposal
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Cross-Module Hostel-Mess Sync</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Predictive Kitchen Prep & Food Waste Reducer (PRGE)</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Predictive Kitchen Prep & Food Waste Reducer (PRGE)</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Automated dynamic linkage between approved hostel night leaves and dining hall preparation headcounts.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="executePrgeKitchenReduction()" id="btn-prge-optimize" class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="executePrgeKitchenReduction()" id="btn-prge-optimize" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                 <span>Optimize Kitchen Prep (-630 Portions)</span>
               </button>
-              <button onclick="downloadPrgeVoucher()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadPrgeVoucher()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Waste Voucher (.txt)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -3482,9 +3512,9 @@
               </div>
             </div>
 
-            <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                   <tr>
                     <th class="py-2.5 px-3">Commodity Item</th>
                     <th class="py-2.5 px-3 text-center">Baseline Bulk Order (4,050 Diners)</th>
@@ -3537,9 +3567,9 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">Week Cycle: Phase A</span>
             </div>
 
-            <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                   <tr>
                     <th class="py-2.5 px-3">Day of Week</th>
                     <th class="py-2.5 px-3">Breakfast (07:30 - 09:30)</th>
@@ -3717,31 +3747,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Registrar &amp; Graduation Clearance Desk &bull; Week 3 Proposal
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Cross-Table Clearance Engine</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Instant Automated No-Dues Clearance Engine</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Instant Automated No-Dues Clearance Engine</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Simultaneous clearance verification across Library, Hostel, Laboratories, Examination Cell, Sports, and Accounts (<code class="font-mono">dues_v2</code>).
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="simulateNoDuesFeePayment()" id="btn-nodues-clear-fee" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="simulateNoDuesFeePayment()" id="btn-nodues-clear-fee" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                 <span>Clear Pending Accounts Dues (&#8377;14,200)</span>
               </button>
-              <button onclick="downloadNoDuesCertificate()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadNoDuesCertificate()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Download Clearance Slip (.txt)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -3856,31 +3886,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Academic Scheduling & Student Well-Being • AI Balancer
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Net-New LMS Intelligence Layer</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Smart Assignment Congestion & Deadline Balancer</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Smart Assignment Congestion & Deadline Balancer</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Campus-wide submission heatmap detecting deadline collisions across disparate courses and staggering deadlines automatically.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="rebalanceAssignmentDeadlines()" id="btn-rebalance-deadlines" class="px-3.5 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="rebalanceAssignmentDeadlines()" id="btn-rebalance-deadlines" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Auto-Stagger Deadlines to Monday</span>
               </button>
-              <button onclick="downloadDeadlineScheduleCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadDeadlineScheduleCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Balancer Schedule (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -3948,31 +3978,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Career Services &amp; Placement Operations &bull; Week 3 Proposal
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Linked Tables: <code class="text-slate-700 font-mono">placement_opportunity</code>, <code class="text-slate-700 font-mono">placement_application</code>, <code class="text-slate-700 font-mono">student_master</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Placement Management &amp; Tamper-Proof Relational Auto-Resume</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Placement Management &amp; Tamper-Proof Relational Auto-Resume</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Automated eligibility validation against CGPA/backlogs, multi-tier placement cycles (Super Dream / Dream / Regular), TPO candidate Kanban, and cryptographically sealed CV compiler.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="downloadAutoResumeDocument()" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="downloadAutoResumeDocument()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Download Verified Resume (.txt)</span>
               </button>
-              <button onclick="downloadVerifiedCandidatesCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadVerifiedCandidatesCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Recruiter Roster (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -4004,9 +4034,9 @@
                 <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">4 Active Drives</span>
               </div>
 
-              <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                     <tr>
                       <th class="py-2.5 px-3">Company &amp; Role</th>
                       <th class="py-2.5 px-3">Tier Category</th>
@@ -4109,31 +4139,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Campus Security & Gate Biometrics • Week 4 Optimization
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Spatial-Temporal Physics Velocity Model</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Turnstile Anti-Passback & Impossible Travel Sentinel</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Turnstile Anti-Passback & Impossible Travel Sentinel</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Physics-based biometric anomaly engine detecting proxy card sharing across distant physical perimeter gates.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="dispatchGuardToGate05()" class="px-3.5 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="dispatchGuardToGate05()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                 <span>Dispatch Guard to Gate 05</span>
               </button>
-              <button onclick="downloadPassbackSecurityCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadPassbackSecurityCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Security Incident Log (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -4209,9 +4239,9 @@
               </div>
             </div>
 
-            <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                   <tr>
                     <th class="py-2.5 px-3">Student Roll No</th>
                     <th class="py-2.5 px-3">Candidate Name</th>
@@ -4265,9 +4295,9 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">Gate 01 &amp; Gate 02 Active</span>
             </div>
 
-            <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                   <tr>
                     <th class="py-2.5 px-3">Pass ID &amp; Student</th>
                     <th class="py-2.5 px-3">Pass Type</th>
@@ -4520,17 +4550,17 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Campus Help Center &bull; Service Desk &amp; SLA BPM Engine
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Linked Tables: <code class="text-slate-700 font-mono">chc_request</code>, <code class="text-slate-700 font-mono">chc_work_centre</code>, <code class="text-slate-700 font-mono">chc_middleware</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus Help Center (CHC) Workflow &amp; SLA Engine</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Campus Help Center (CHC) Workflow &amp; SLA Engine</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Service request taxonomy discovery, dynamic workcentre dispatch, automated SLA escalation matrix (L1/L2/L3 breaches), and student CSAT rating loops.
               </p>
@@ -4614,9 +4644,9 @@
                 </div>
               </div>
 
-              <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                     <tr>
                       <th class="py-2.5 px-3">Request ID</th>
                       <th class="py-2.5 px-3">Service Desk</th>
@@ -4746,31 +4776,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   University Financial Aid Office • Direct Benefit Transfer
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Framework: PFMS / DBT Direct Benefit Transfer 2026</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Institutional Scholarship & Financial Aid Disbursement Engine</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Institutional Scholarship & Financial Aid Disbursement Engine</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Automated income verification, relational tuition ledger offsets, and 1-click PFMS bank transfer batch execution.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="executeDbtBankDisbursementBatch()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="executeDbtBankDisbursementBatch()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Execute PFMS Bank Batch</span>
               </button>
-              <button onclick="downloadDbtBankDisbursementCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadDbtBankDisbursementCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export DBT Advice (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -4819,9 +4849,9 @@
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Beneficiary ID</th>
                   <th class="py-2.5 px-3">Student Candidate</th>
@@ -4849,31 +4879,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-50 text-teal-700 border border-teal-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Campus Facilities & Sustainability • Smart IoT Metering
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Framework: ISO 50001 Energy Management Standard</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Campus ESG & Green Audit Energy Telemetry</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Campus ESG & Green Audit Energy Telemetry</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Real-time sub-metering telemetry, phantom midnight HVAC load shedding, and carbon emission audit reporting.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="triggerSmartLoadShedding()" class="px-3.5 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="triggerSmartLoadShedding()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Trigger HVAC Load Shedding</span>
               </button>
-              <button onclick="downloadGreenAuditReportCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadGreenAuditReportCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export ISO 50001 Audit (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -4922,9 +4952,9 @@
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Campus Sub-Station Zone</th>
                   <th class="py-2.5 px-3">Live Power Draw</th>
@@ -4952,31 +4982,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Dean of Alumni Affairs & Corporate Relations
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Framework: Institutional Endowment Network 2026</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Alumni Mentorship & Capstone Endowment Network</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Alumni Mentorship & Capstone Endowment Network</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Direct 1:1 industry mentorship booking, capstone project grant pledges, and verifiable alumni directories.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="openPledgeEndowmentModal()" class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="openPledgeEndowmentModal()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Pledge Capstone Grant</span>
               </button>
-              <button onclick="downloadAlumniDirectoryCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadAlumniDirectoryCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Alumni Directory (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -5025,9 +5055,9 @@
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Alumnus Name & Batch</th>
                   <th class="py-2.5 px-3">Current Executive Role</th>
@@ -5055,31 +5085,31 @@
           </span>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Internal Quality Assurance Cell (IQAC) • Accreditation Engine
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Framework: NAAC Revised SSR Manual (Autonomous Colleges 2026)</span>
               </div>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">Institutional Accreditation & NAAC / NIRF Copilot</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Institutional Accreditation & NAAC / NIRF Copilot</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Automated 7-Criteria SSR data bundling, live CGPA projection, and cross-module relational proof verification.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="runNaacEvidenceVerificationScan()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-2xs transition-all flex items-center gap-1.5">
+              <button onclick="runNaacEvidenceVerificationScan()" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                 <span>Verify Relational Lineage</span>
               </button>
-              <button onclick="downloadNaacSsrBundleCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadNaacSsrBundleCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export NAAC SSR (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -5129,9 +5159,9 @@
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">NAAC Criterion</th>
                   <th class="py-2.5 px-3">Focus Area & Institutional Metric</th>
@@ -5164,35 +5194,35 @@
           </span>
         </div>
 
-        <div class="bg-white border border-[#D9DAEC] rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#FFC93C]/15 text-amber-900 border border-[#FFC93C]/40 uppercase tracking-wider font-mono">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Admissions Office & Central Counseling • Multi-Quota Engine
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Linked Tables: <code class="text-slate-700 font-mono">admissions_lead</code>, <code class="text-slate-700 font-mono">merit_rank_master</code>, <code class="text-slate-700 font-mono">dues_v2</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-[#2B2D31] mt-1.5 tracking-tight">AI Merit & Multi-Quota Seat Allotment Matrix</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">AI Merit & Multi-Quota Seat Allotment Matrix</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Automated multi-round cutoff calculation, reservation quota reallocation (General, OBC, SC/ST, EWS, Sports), and 1-click provisional offer generation.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="runAdmissionsAllotmentRound()" id="btn-adm-round" class="px-3.5 py-2 rounded-lg bg-[#2B2D31] hover:bg-[#3A3D45] text-white text-xs font-bold shadow-2xs border border-[#3A3D45] transition-all flex items-center gap-1.5 shrink-0">
-                <svg class="w-4 h-4 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <button onclick="runAdmissionsAllotmentRound()" id="btn-adm-round" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Run Allotment Batch</span>
               </button>
-              <button onclick="downloadProvisionalAdmissionOffer()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadProvisionalAdmissionOffer()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Issue Offer Letter</span>
               </button>
-              <button onclick="downloadAdmissionsAllotmentCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadAdmissionsAllotmentCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Seat Matrix</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -5224,9 +5254,9 @@
             </div>
           </div>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
             <table class="w-full text-left text-xs">
-              <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+              <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                 <tr>
                   <th class="py-2.5 px-3">Programme / Specialisation</th>
                   <th class="py-2.5 px-3 text-center">Sanctioned Intake</th>
@@ -5258,35 +5288,35 @@
           </span>
         </div>
 
-        <div class="bg-white border border-[#D9DAEC] rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#FFC93C]/15 text-amber-900 border border-[#FFC93C]/40 uppercase tracking-wider font-mono">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider font-mono">
                   Campus Facilities &amp; Asset Management &bull; Infrastructure v2
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Linked Tables: <code class="text-slate-700 font-mono">infra_booking</code>, <code class="text-slate-700 font-mono">infrastructure_master</code>, <code class="text-slate-700 font-mono">asset_fixed_registry</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-[#2B2D31] mt-1.5 tracking-tight">Smart Campus Venue Booking &amp; Asset Management</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Smart Campus Venue Booking &amp; Asset Management</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Acoustic collision interception, 3-step booking wizard with departmental services, IoT HVAC pre-cooling triggers, and QR-tagged campus asset registry.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="resolveAcousticVenueCollision()" id="btn-venue-resolve" class="px-3.5 py-2 rounded-lg bg-[#2B2D31] hover:bg-[#3A3D45] text-white text-xs font-bold shadow-2xs border border-[#3A3D45] transition-all flex items-center gap-1.5 shrink-0">
-                <svg class="w-4 h-4 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <button onclick="resolveAcousticVenueCollision()" id="btn-venue-resolve" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Resolve Conflict</span>
               </button>
-              <button onclick="triggerHvacPrecoolingCycle()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="triggerHvacPrecoolingCycle()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
                 <span>HVAC Pre-Cooling</span>
               </button>
-              <button onclick="downloadVenueRosterCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
+              <button onclick="downloadVenueRosterCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Roster (.csv)</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] shadow-2xs transition-colors flex items-center gap-1.5 shrink-0">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -5294,17 +5324,17 @@
           </div>
 
           <!-- Dual-Perspective Mode Tabs -->
-          <div class="flex flex-wrap items-center gap-2 mt-4 border-b border-[#D9DAEC] pb-3">
+          <div class="flex flex-wrap items-center gap-2 mt-4 border-b border-[#D0E2EC] pb-3">
             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2 font-mono">Operational Perspective:</span>
-            <button onclick="switchVenueTab('admin')" id="tab-btn-venue-admin" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#2B2D31] text-white shadow-xs border border-[#3A3D45] transition-all flex items-center gap-1.5 shrink-0">
-              <svg class="w-3.5 h-3.5 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <button onclick="switchVenueTab('admin')" id="tab-btn-venue-admin" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284C7] text-white shadow-xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0">
+              <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               <span>Admin: Spatial Schedule &amp; Approvals</span>
             </button>
-            <button onclick="switchVenueTab('wizard')" id="tab-btn-venue-wizard" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D9DAEC] transition-all flex items-center gap-1.5 shrink-0">
+            <button onclick="switchVenueTab('wizard')" id="tab-btn-venue-wizard" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D0E2EC] transition-all flex items-center gap-1.5 shrink-0">
               <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
               <span>Faculty/Student: 3-Step Booking Wizard</span>
             </button>
-            <button onclick="switchVenueTab('assets')" id="tab-btn-venue-assets" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D9DAEC] transition-all flex items-center gap-1.5 shrink-0">
+            <button onclick="switchVenueTab('assets')" id="tab-btn-venue-assets" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D0E2EC] transition-all flex items-center gap-1.5 shrink-0">
               <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
               <span>Asset Management: Fixed Assets &amp; QR Registry</span>
             </button>
@@ -5336,9 +5366,9 @@
                 </div>
               </div>
 
-              <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                     <tr>
                       <th class="py-2.5 px-3">Campus Venue Space</th>
                       <th class="py-2.5 px-3 text-center">Seating Capacity</th>
@@ -5365,9 +5395,9 @@
                 <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200" id="venue-pending-count">2 Requisitions Pending</span>
               </div>
 
-              <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                     <tr>
                       <th class="py-2.5 px-3">Booking ID</th>
                       <th class="py-2.5 px-3">Requester &amp; Department</th>
@@ -5568,9 +5598,9 @@
                 </div>
               </div>
 
-              <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                     <tr>
                       <th class="py-2.5 px-3">Asset Tag ID</th>
                       <th class="py-2.5 px-3">Product Name &amp; Category</th>
@@ -5604,35 +5634,35 @@
           </span>
         </div>
 
-        <div class="bg-white border border-[#D9DAEC] rounded-xl p-6 shadow-xs">
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D9DAEC]">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-[#D0E2EC]">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#FFC93C]/15 text-amber-900 border border-[#FFC93C]/40 uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD] uppercase tracking-wider">
                   Campus Fleet &amp; Transport Operations &bull; Transport v2
                 </span>
                 <span class="text-xs text-slate-400">|</span>
                 <span class="text-xs text-slate-500">Linked Tables: <code class="text-slate-700 font-mono">transport_management_v2_route</code>, <code class="text-slate-700 font-mono">_vehicle_inventory_lock</code>, <code class="text-slate-700 font-mono">dues_v2</code></span>
               </div>
-              <h1 class="text-2xl font-bold text-[#2B2D31] mt-1.5 tracking-tight">Smart Dynamic Fleet &amp; Transport Route Optimizer</h1>
+              <h1 class="text-2xl font-bold text-[#0F172A] mt-1.5 tracking-tight">Smart Dynamic Fleet &amp; Transport Route Optimizer</h1>
               <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
                 Dynamic route consolidation, real-time vehicle inventory lock, stop-level fee tariffing, and student RFID/QR bus boarding pass generator.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="consolidateUnderutilizedBusRoutes()" id="btn-transport-merge" class="px-3.5 py-2 rounded-lg bg-[#2B2D31] hover:bg-[#3A3D45] text-white text-xs font-bold shadow-2xs border border-[#3A3D45] transition-all flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <button onclick="consolidateUnderutilizedBusRoutes()" id="btn-transport-merge" class="px-3.5 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-bold shadow-2xs border border-[#0284C7] transition-all flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Merge Underutilized Routes</span>
               </button>
-              <button onclick="downloadTransportManifestCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs">
+              <button onclick="downloadTransportManifestCsv()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Manifest (.csv)</span>
               </button>
-              <button onclick="downloadBulkCheckoutCsvTemplate()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold border border-[#D9DAEC] transition-all flex items-center gap-1.5 shadow-2xs">
+              <button onclick="downloadBulkCheckoutCsvTemplate()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-bold border border-[#D0E2EC] transition-all flex items-center gap-1.5 shadow-2xs">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                 <span>Checkout Template</span>
               </button>
-              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-[#D9DAEC] transition-colors flex items-center gap-1.5 shadow-2xs">
+              <button onclick="navigateToView('radar')" class="px-3 py-2 bg-white hover:bg-sky-50 text-[#0F172A] text-xs font-semibold rounded-lg border border-[#D0E2EC] transition-colors flex items-center gap-1.5 shadow-2xs">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Back to Radar</span>
               </button>
@@ -5640,13 +5670,13 @@
           </div>
 
           <!-- Dual-Perspective Mode Tabs -->
-          <div class="flex flex-wrap items-center gap-2 mt-4 border-b border-[#D9DAEC] pb-3">
+          <div class="flex flex-wrap items-center gap-2 mt-4 border-b border-[#D0E2EC] pb-3">
             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Operational Perspective:</span>
-            <button onclick="switchTransportTab('admin')" id="tab-btn-transport-admin" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#2B2D31] text-white border border-[#3A3D45] shadow-xs transition-all flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <button onclick="switchTransportTab('admin')" id="tab-btn-transport-admin" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284C7] text-white border border-[#0284C7] shadow-xs transition-all flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               <span>Fleet Admin: Route Allocation &amp; Diesel Balancer</span>
             </button>
-            <button onclick="switchTransportTab('student')" id="tab-btn-transport-student" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D9DAEC] transition-all flex items-center gap-1.5">
+            <button onclick="switchTransportTab('student')" id="tab-btn-transport-student" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D0E2EC] transition-all flex items-center gap-1.5">
               <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
               <span>Student Portal: Route Registration &amp; Digital QR Pass</span>
             </button>
@@ -5656,10 +5686,10 @@
           <div id="transport-tab-admin" class="space-y-5 mt-4">
             <!-- Transport KPIs (Palette A Crisp Cards) -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div class="p-4 rounded-xl bg-white border border-[#D9DAEC] shadow-2xs hover:shadow-xs transition-all">
+              <div class="p-4 rounded-xl bg-white border border-[#D0E2EC] shadow-2xs hover:shadow-xs transition-all">
                 <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Active Bus Fleet</p>
                 <div class="flex items-baseline gap-2 mt-1">
-                  <span class="text-2xl font-bold text-[#2B2D31]" id="transport-bus-count">18 Buses</span>
+                  <span class="text-2xl font-bold text-[#0F172A]" id="transport-bus-count">18 Buses</span>
                 </div>
                 <p class="text-[11px] text-slate-500 mt-1">12 Dedicated Routes</p>
               </div>
@@ -5670,17 +5700,17 @@
                 </div>
                 <p class="text-[11px] text-emerald-700 mt-1">Optimal Seat Load</p>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-[#FFC93C]/50 shadow-2xs hover:shadow-xs transition-all">
+              <div class="p-4 rounded-xl bg-white border border-amber-200 shadow-2xs hover:shadow-xs transition-all">
                 <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Underutilized Routes</p>
                 <div class="flex items-baseline gap-2 mt-1">
                   <span class="text-2xl font-bold text-amber-900" id="transport-waste-routes">2 Routes (&lt;40% Load)</span>
                 </div>
                 <p class="text-[11px] text-amber-700 mt-1">Route 04 &amp; Route 09 Flagged</p>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-[#D9DAEC] shadow-2xs hover:shadow-xs transition-all">
+              <div class="p-4 rounded-xl bg-white border border-[#D0E2EC] shadow-2xs hover:shadow-xs transition-all">
                 <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Monthly Diesel Savings</p>
                 <div class="flex items-baseline gap-2 mt-1">
-                  <span class="text-2xl font-bold text-[#2B2D31]" id="transport-savings-val">&#8377;2,80,000</span>
+                  <span class="text-2xl font-bold text-[#0F172A]" id="transport-savings-val">&#8377;2,80,000</span>
                 </div>
                 <p class="text-[11px] text-emerald-600 font-semibold mt-1">Via Dynamic Route Consolidation</p>
               </div>
@@ -5695,9 +5725,9 @@
                 </div>
               </div>
 
-              <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 text-slate-600 font-bold uppercase text-[10px] font-mono tracking-wider border-b border-slate-200">
+                  <thead class="bg-[#F0F6FC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider border-b border-[#D0E2EC]">
                     <tr>
                       <th class="py-2.5 px-3">Route Identifier</th>
                       <th class="py-2.5 px-3">Corridor &amp; Primary Stops</th>
@@ -5850,7 +5880,7 @@
         </div>
 
         <!-- Header Card with Search, Filter Pills & Export Buttons -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
               <div class="flex items-center gap-2 mb-1">
@@ -5866,13 +5896,13 @@
 
             <!-- Action Buttons -->
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="downloadComparativeStudyCsv()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors">
-                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Export Audit (.CSV)</span>
-              </button>
-              <button onclick="downloadComparativeBriefTxt()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-xs">
-                <svg class="w-4 h-4 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <button onclick="downloadComparativeBriefTxt()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white transition-colors shadow-2xs border border-[#0284C7]">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Executive Brief (.TXT)</span>
+              </button>
+              <button onclick="downloadComparativeStudyCsv()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] border border-[#D0E2EC] transition-colors shadow-2xs">
+                <svg class="w-4 h-4 text-[#0284C7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Export Audit (.CSV)</span>
               </button>
             </div>
           </div>
@@ -6023,7 +6053,7 @@
         </div>
 
         <!-- Header Card with Live Counters & Action Toolbar -->
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+        <div class="bg-white border border-[#D0E2EC] rounded-xl p-6 shadow-xs">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
               <div class="flex items-center gap-2 mb-1">
@@ -6039,15 +6069,15 @@
 
             <!-- Quick Action Buttons -->
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="openAddStudentModal()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-xs">
+              <button onclick="openAddStudentModal()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg bg-[#0284C7] text-white hover:bg-[#0369A1] transition-colors shadow-2xs border border-[#0284C7]">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
                 <span>Add Single Student</span>
               </button>
-              <button onclick="switchOperationsTab('roster')" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors">
-                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+              <button onclick="switchOperationsTab('roster')" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] border border-[#D0E2EC] transition-colors shadow-2xs">
+                <svg class="w-4 h-4 text-[#0284C7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
                 <span>Bulk CSV Ingest</span>
               </button>
-              <button onclick="exportStudentRosterCsv()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-colors">
+              <button onclick="exportStudentRosterCsv()" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg bg-white hover:bg-sky-50 text-[#0F172A] border border-[#D0E2EC] transition-colors shadow-2xs">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <span>Export Roster (.CSV)</span>
               </button>
@@ -6160,7 +6190,7 @@
               </div>
               <div class="overflow-x-auto border border-slate-200 rounded-lg">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                  <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider">
                     <tr>
                       <th class="py-2.5 px-3">Roll No</th>
                       <th class="py-2.5 px-3">Student Name</th>
@@ -6209,7 +6239,7 @@
             <!-- Student Master Table -->
             <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider">
                   <tr>
                     <th class="py-2.5 px-3">UKID / Roll No</th>
                     <th class="py-2.5 px-3">Student Name</th>
@@ -6283,7 +6313,7 @@
             <!-- Real-Time Session Attendance Tracker -->
             <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider">
                   <tr>
                     <th class="py-2.5 px-3">Roll No</th>
                     <th class="py-2.5 px-3">Student Name</th>
@@ -6382,7 +6412,7 @@
 
               <div class="overflow-x-auto border border-slate-200 rounded-lg">
                 <table class="w-full text-left text-xs">
-                  <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                  <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider">
                     <tr>
                       <th class="py-2.5 px-3">Receipt ID</th>
                       <th class="py-2.5 px-3">Student</th>
@@ -6422,7 +6452,7 @@
             <!-- Out-Pass Approval Queue Table -->
             <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider">
                   <tr>
                     <th class="py-2.5 px-3">Pass ID</th>
                     <th class="py-2.5 px-3">Student Name & Roll</th>
@@ -6461,7 +6491,7 @@
             <!-- CHC Tickets Table -->
             <div class="overflow-x-auto border border-slate-200 rounded-lg">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+                <thead class="bg-[#F0F6FC] border-b border-[#D0E2EC] text-[#0369A1] font-bold uppercase text-[10px] font-mono tracking-wider">
                   <tr>
                     <th class="py-2.5 px-3">Ticket ID</th>
                     <th class="py-2.5 px-3">Student</th>
@@ -7182,7 +7212,7 @@ FROM StudentCompoundMetrics;
 
       <!-- Tab Buttons -->
       <div class="px-6 pt-3 bg-slate-100/70 border-b border-slate-200 flex gap-4 text-xs font-bold">
-        <button id="tab-mp-browse" onclick="switchMarketplaceTab('browse')" class="pb-2.5 border-b-2 border-indigo-600 text-indigo-700">
+        <button id="tab-mp-browse" onclick="switchMarketplaceTab('browse')" class="pb-2.5 border-b-2 border-[#0284C7] text-[#0284C7]">
           Browse Active Listings (48)
         </button>
         <button id="tab-mp-post" onclick="switchMarketplaceTab('post')" class="pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900">
@@ -7648,15 +7678,15 @@ FROM StudentCompoundMetrics;
   <div id="pm-cockpit-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-4xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in duration-150 flex flex-col max-h-[90vh]">
       
-      <!-- Cockpit Header (Palette A #2B2D31 Charcoal + #FFC93C Gold Accent) -->
-      <div class="px-6 py-4 bg-[#2B2D31] text-white border-b border-[#3A3D45] flex items-center justify-between shrink-0">
+      <!-- Cockpit Header (Cloud & Sky Blue Theme) -->
+      <div class="px-6 py-4 bg-[#0B192C] text-white border-b border-[#182E4B] flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#3A3D45] border border-[#FFC93C]/40 text-[#FFC93C] flex items-center justify-center text-sm font-bold shadow-xs">
-            <svg class="w-5 h-5 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          <div class="w-10 h-10 rounded-xl bg-[#132845] border border-sky-400/40 text-[#38BDF8] flex items-center justify-center text-sm font-bold shadow-xs">
+            <svg class="w-5 h-5 text-[#38BDF8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-[#FFC93C] font-extrabold bg-[#FFC93C]/15 px-2 py-0.5 rounded border border-[#FFC93C]/30">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-[#38BDF8] font-extrabold bg-sky-500/20 px-2 py-0.5 rounded border border-sky-400/30">
                 Product Intern Transition Showcase
               </span>
               <span class="text-xs text-slate-400">|</span>
@@ -7671,9 +7701,9 @@ FROM StudentCompoundMetrics;
       </div>
 
       <!-- Tab Navigation Bar -->
-      <div class="px-6 pt-3 bg-slate-50 border-b border-[#D9DAEC] flex flex-wrap gap-2 sm:gap-6 text-xs font-bold shrink-0">
-        <button id="cockpit-btn-rice" onclick="switchCockpitTab('rice')" class="pb-2.5 border-b-2 border-[#2B2D31] text-[#2B2D31] flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-[#FFC93C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      <div class="px-6 pt-3 bg-slate-50 border-b border-[#D0E2EC] flex flex-wrap gap-2 sm:gap-6 text-xs font-bold shrink-0">
+        <button id="cockpit-btn-rice" onclick="switchCockpitTab('rice')" class="pb-2.5 border-b-2 border-[#0284C7] text-[#0284C7] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span>1. RICE Roadmap Matrix</span>
         </button>
         <button id="cockpit-btn-flags" onclick="switchCockpitTab('flags')" class="pb-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
@@ -7722,7 +7752,7 @@ FROM StudentCompoundMetrics;
           </div>
 
           <!-- RICE Data Table -->
-          <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-2xs">
+          <div class="overflow-x-auto rounded-xl border border-[#D0E2EC] bg-white shadow-2xs shadow-2xs">
             <table class="w-full text-left text-xs">
               <thead class="bg-slate-100 text-slate-700 font-bold uppercase text-[10px] tracking-wider border-b border-slate-200 font-mono">
                 <tr>
@@ -7994,12 +8024,12 @@ FROM StudentCompoundMetrics;
       </div>
 
       <!-- Cockpit Footer -->
-      <div class="px-6 py-3.5 bg-slate-50 border-t border-[#D9DAEC] flex items-center justify-between shrink-0 text-xs">
+      <div class="px-6 py-3.5 bg-slate-50 border-t border-[#D0E2EC] flex items-center justify-between shrink-0 text-xs">
         <div class="flex items-center gap-2 text-slate-500 font-mono text-[11px]">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>PM Frameworks: RICE • LaunchDarkly Flags • Amplitude Funnels • Full PRD Spec</span>
         </div>
-        <button onclick="closePmCockpitModal()" class="px-4 py-1.5 text-xs font-bold rounded-lg text-white bg-[#2B2D31] hover:bg-[#3A3D45] transition-colors border border-[#3A3D45] shadow-2xs">
+        <button onclick="closePmCockpitModal()" class="px-4 py-1.5 text-xs font-bold rounded-lg text-white bg-[#0284C7] hover:bg-[#0369A1] transition-colors border border-[#0284C7] shadow-2xs">
           Close Cockpit
         </button>
       </div>
@@ -8334,9 +8364,9 @@ FROM StudentCompoundMetrics;
       <!-- Deck Header Bar -->
       <div class="px-6 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-[#3A3D45] border border-[#FFC93C]/40 flex items-center justify-center text-[#FFC93C] font-bold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg></div>
+          <div class="w-8 h-8 rounded-lg bg-[#0F223D] border border-sky-400/40 flex items-center justify-center text-[#38BDF8] font-bold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg></div>
           <div>
-            <span class="text-[10px] font-mono uppercase tracking-wider text-[#FFC93C] font-extrabold">Executive Role Transition Deck</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#38BDF8] font-extrabold">Executive Role Transition Deck</span>
             <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight">Digii Campus 2.0 &mdash; Executive Presentation (Suraj Bhatt &amp; Saksham Gupta)</h3>
           </div>
         </div>
@@ -8360,7 +8390,7 @@ FROM StudentCompoundMetrics;
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
             <span>Previous</span>
           </button>
-          <button id="deck-btn-next" onclick="changeDeckSlide(1)" class="px-4 py-2 text-xs font-bold rounded-lg bg-[#FFC93C] hover:bg-[#eab308] text-slate-900 shadow-xs flex items-center gap-1.5 transition-all">
+          <button id="deck-btn-next" onclick="changeDeckSlide(1)" class="px-4 py-2 text-xs font-bold rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white shadow-xs flex items-center gap-1.5 transition-all">
             <span>Next Slide</span>
             <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </button>
@@ -8582,12 +8612,12 @@ WHERE seconds_since_last_punch BETWEEN 1 AND 180
         const navEl = document.getElementById(`nav-${v}`);
         if (navEl) {
           if (v === view) {
-            navEl.className = "flex items-center gap-3 px-3 py-1.5 rounded-lg bg-[#3A3D45] text-white font-semibold shadow-xs border-l-2 border-[#FFC93C] transition-colors";
+            navEl.className = "flex items-center gap-3 px-3 py-1.5 rounded-lg bg-[#16335C] text-[#38BDF8] font-semibold border-l-2 border-[#38BDF8] transition-colors";
             const svg = navEl.querySelector('svg');
-            if (svg) svg.setAttribute('class', 'w-4 h-4 text-[#FFC93C]');
+            if (svg) svg.setAttribute('class', 'w-4 h-4 text-white');
             try { navEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch(e){}
           } else {
-            navEl.className = "flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#3A3D45]/50 text-slate-400 hover:text-slate-200 transition-colors";
+            navEl.className = "flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-[#132845] hover:text-white/50 text-slate-400 hover:text-slate-200 transition-colors";
             const svg = navEl.querySelector('svg');
             if (svg) svg.setAttribute('class', 'w-4 h-4 text-slate-400');
           }
@@ -10218,13 +10248,13 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       if (tab === 'browse') {
         if (browseView) browseView.classList.remove('hidden');
         if (postView) postView.classList.add('hidden');
-        if (tabBrowse) tabBrowse.className = "pb-2.5 border-b-2 border-indigo-600 text-indigo-700 font-bold";
+        if (tabBrowse) tabBrowse.className = "pb-2.5 border-b-2 border-[#0284C7] text-[#0284C7] font-bold";
         if (tabPost) tabPost.className = "pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-bold";
       } else {
         if (browseView) browseView.classList.add('hidden');
         if (postView) postView.classList.remove('hidden');
         if (tabBrowse) tabBrowse.className = "pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-bold";
-        if (tabPost) tabPost.className = "pb-2.5 border-b-2 border-indigo-600 text-indigo-700 font-bold";
+        if (tabPost) tabPost.className = "pb-2.5 border-b-2 border-[#0284C7] text-[#0284C7] font-bold";
       }
     }
 
@@ -10668,7 +10698,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (view) view.classList.toggle('hidden', t !== tab);
         if (btn) {
           if (t === tab) {
-            btn.className = "pb-2.5 border-b-2 border-[#2B2D31] text-[#2B2D31] font-bold flex items-center gap-1.5";
+            btn.className = "pb-2.5 border-b-2 border-[#0284C7] text-[#0284C7] font-bold flex items-center gap-1.5";
           } else {
             btn.className = "pb-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-bold flex items-center gap-1.5";
           }
@@ -14089,9 +14119,9 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         const view = document.getElementById(`ops-view-${t}`);
         if (btn) {
           if (t === tab) {
-            btn.className = "px-4 py-2 rounded-lg bg-blue-600 text-white shadow-xs flex items-center gap-2";
+            btn.className = "px-4 py-2 rounded-lg bg-[#0284C7] text-white shadow-xs border border-[#0284C7] flex items-center gap-2";
           } else {
-            btn.className = "px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors flex items-center gap-2";
+            btn.className = "px-4 py-2 rounded-lg bg-white text-[#0F172A] hover:bg-sky-50 border border-[#D0E2EC] transition-colors flex items-center gap-2";
           }
         }
         if (view) {
@@ -14907,20 +14937,20 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
 
       [btnAdmin, btnWiz, btnAssets].forEach(b => {
         if (b) {
-          b.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D9DAEC] transition-all flex items-center gap-1.5 shrink-0';
+          b.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-[#D0E2EC] transition-all flex items-center gap-1.5 shrink-0';
         }
       });
 
       if (tab === 'admin') {
         document.getElementById('venue-tab-admin').classList.remove('hidden');
-        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#2B2D31] text-white shadow-xs border border-[#3A3D45] transition-all flex items-center gap-1.5 shrink-0';
+        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284C7] text-white shadow-xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0';
         renderVenuePendingApprovals();
       } else if (tab === 'wizard') {
         document.getElementById('venue-tab-wizard').classList.remove('hidden');
-        if (btnWiz) btnWiz.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#2B2D31] text-white shadow-xs border border-[#3A3D45] transition-all flex items-center gap-1.5 shrink-0';
+        if (btnWiz) btnWiz.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284C7] text-white shadow-xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0';
       } else if (tab === 'assets') {
         document.getElementById('venue-tab-assets').classList.remove('hidden');
-        if (btnAssets) btnAssets.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#2B2D31] text-white shadow-xs border border-[#3A3D45] transition-all flex items-center gap-1.5 shrink-0';
+        if (btnAssets) btnAssets.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284C7] text-white shadow-xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0';
         renderCampusAssets();
       }
     }
@@ -15083,12 +15113,12 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
       const btnAdmin = document.getElementById('tab-btn-transport-admin');
       const btnStu = document.getElementById('tab-btn-transport-student');
 
-      if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
-      if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all flex items-center gap-1.5';
+      if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-sky-50 border border-[#D0E2EC] transition-all flex items-center gap-1.5 shrink-0';
+      if (btnStu) btnStu.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-sky-50 border border-[#D0E2EC] transition-all flex items-center gap-1.5 shrink-0';
 
       if (tab === 'admin') {
         document.getElementById('transport-tab-admin').classList.remove('hidden');
-        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all flex items-center gap-1.5';
+        if (btnAdmin) btnAdmin.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0284C7] text-white shadow-xs border border-[#0284C7] transition-all flex items-center gap-1.5 shrink-0';
         renderTransportRoutes();
       } else if (tab === 'student') {
         document.getElementById('transport-tab-student').classList.remove('hidden');
@@ -15943,7 +15973,7 @@ Counselor: Dr. Arvind / Ms. Ananya Sen`;
         if (g2Title) g2Title.textContent = 'Digii 2.0 Intelligence';
         if (g2Badge) {
           g2Badge.textContent = 'APM Proposal';
-          g2Badge.className = 'text-[9px] px-1.5 py-0.2 rounded bg-[#FFC93C]/15 text-[#FFC93C] border border-[#FFC93C]/30 font-mono';
+          g2Badge.className = 'text-[9px] px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30 font-mono';
         }
       } else if (role === 'faculty') {
         if (brandSubtitle) brandSubtitle.textContent = 'Faculty & Academic Portal';
