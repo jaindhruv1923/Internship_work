@@ -311,6 +311,55 @@ flowchart LR
 
 ---
 
-## 8. Conclusion & Pitch Value
+## 9. Dual-Perspective Operational Workbenches & Digii Campus Architecture (v2.7)
+
+Following the exhaustive study of 18 official Digii Campus product slide decks (>500 pages), the platform embraces an asymmetric, two-sided operational paradigm:
+
+```mermaid
+flowchart TD
+    subgraph S_USER ["Student & End-User Experience (Mobile PWA)"]
+        U1["Venue Requisition Wizard"]
+        U2["Bus Route & Stop Picker"]
+        U3["Placement Drive 1-Click Apply"]
+        U4["Digital No-Dues Certificate"]
+        U5["CHC Helpdesk Requisition"]
+    end
+
+    subgraph S_CORE ["Unified CollPoll Data Spine (270 Tables)"]
+        C1[("ukid Master Registry")]
+        C2[("dues_v2 Central Ledger")]
+        C3[("ams_attendance")]
+        C4[("chc_middleware")]
+        C5[("infra_booking")]
+    end
+
+    subgraph S_ADMIN ["Enterprise Admin Console (Desktop Workbench)"]
+        A1["Acoustic Clash & Space Schedule"]
+        A2["Fleet Roster & Diesel Balancer"]
+        A3["TPO Kanban & Drive Pipeline"]
+        A4["6-Dept Clearance Checklist"]
+        A5["Multi-tier SLA Escalation Engine"]
+    end
+
+    U1 <--> C5 <--> A1
+    U2 <--> C2 <--> A2
+    U3 <--> C3 <--> A3
+    U4 <--> C2 <--> A4
+    U5 <--> C4 <--> A5
+```
+
+### 9.1 Operational Specifications Across Upgraded Modules
+
+| Module Domain | Student / End-User Viewport | Enterprise Admin Command Console | Linked Tables |
+| :--- | :--- | :--- | :--- |
+| **Smart Venue Booking & Assets** | 3-step requisition wizard (Space, Date, Slot), departmental service toggles (IT AV, HVAC 30m, Chairs), instant printable slip with QR. | Acoustic clash diagnostic (<55 dB), pending approval queue, HVAC pre-cool dispatch, 72-page fixed asset registry with QR audits. | `infra_booking`, `infrastructure_master`, `asset_fixed_registry` |
+| **Smart Transport Management** | Student route registration, pickup stop dropdown, dynamic fee calculation, digital RFID/QR bus boarding pass card. | Live fleet roster (4 routes), bus load ratios, 1-click diesel consolidation (stands down idle buses), bulk checkout CSV template. | `transport_management_v2_route`, `transport_allotment`, `dues_v2` |
+| **Placement & Career Services** | Candidate dossier (Aarav Sharma 8.42 CGPA), live drive board with automated CGPA/backlog eligibility badges, 1-click apply, verified auto-resume preview. | TPO Master Drive Table (Super Dream / Dream / Regular), 4-stage applicant Kanban pipeline (`Applied` &gt; `OA` &gt; `Interview` &gt; `Offer`), digital offer letter generator. | `placement_opportunity`, `placement_application`, `marks_sheet` |
+| **Instant No-Dues Clearance** | Verifiable tamper-proof graduation certificate with holographic seal, cryptographic SHA-256 hash, and Registrar digital signature. | 6-department simultaneous checklist (Library, Hostel, Accounts, Labs, Sports, Exams) with 1-click `dues_v2` ledger clearance. | `dues_v2`, `hostel_allotment_v2`, `lms_circulation`, `asset_registry` |
+| **Campus Help Center (CHC)** | Service taxonomy discovery (5 categories), priority selector (Normal 48h, High 24h, Urgent 6h), live ticket tracker, student CSAT 5-star rating widget. | Real-time SLA ticket queue, breach risk countdown tags, workcentre routing, and multi-tier escalation triggers (`L1` &gt; `L2` &gt; `Dean`). | `chc_request`, `chc_work_centre`, `chc_middleware` |
+
+---
+
+## 10. Conclusion & Pitch Value
 This feature transforms Digii Campus from a passive ERP storage repository into an **Active Campus Intelligence Platform**. By proving how existing data tables can be monetized and leveraged to protect university tuition revenue, this deliverable demonstrates the exact product thinking, systems architecture, and business intuition expected of an Enterprise Product Manager.
 
