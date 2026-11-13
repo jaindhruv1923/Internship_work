@@ -1,0 +1,4 @@
+# No third-party dependencies required.
+# The backend uses only Python 3 standard library modules:
+# http.server, urllib.parse, json, csv, datetime, hashlib, secrets, threading, unittest
+# Minimum Python version: 3.8

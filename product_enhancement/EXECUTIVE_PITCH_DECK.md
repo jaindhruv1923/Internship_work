@@ -4,7 +4,7 @@
 **Presenter:** Dhruv Jain (Data & Product Intern)  
 **Proposed Title:** Product Intern / APM (Enterprise Intelligence & Core ERP)  
 **Audience:** Mr. Suraj Bhatt (Engineering & BI Manager), Saksham Gupta (Principal Engineer)  
-**Demo Prototype URL:** `http://localhost:3000/index.html`  
+**Demo Prototype URL:** `http://localhost:8000/index.html`  
 **Repository:** [github.com/jaindhruv1923/Internship_work](https://github.com/jaindhruv1923/Internship_work)  
 
 ---
@@ -12,9 +12,9 @@
 ### Slide 1: Title & Career Transition Vision (The 3-Minute Hook)
 * **Headline:** Digii Campus 2.0: Unlocking Phase 2 Cross-Module Predictive Intelligence
 * **Sub-headline:** Building Predictive Intelligence atop CollPoll's 270-Table Production Architecture
-* **Presenter:** Dhruv Jain — Role Transition Pitch: Data & Product Intern ➔ **Product Intern / APM**
+* **Presenter:** Dhruv Jain — Role Transition Pitch: Data & Product Intern -> **Product Intern / APM**
 * **The 3-Minute Executive Summary:**
-  > *"Suraj sir and Saksham sir’s engineering team built a rock-solid transactional foundation across 270 tables that handles thousands of daily gate passes, hostel allotments, and fee payments. Over the past 5 weeks, I audited our 10.08 GB MySQL replica and mapped these exact workflows (`chc_middleware`, `gate_pass_log`, `hostel_allotment`, `dues_v2`, `infra_booking`). My APM proposal does NOT rebuild commodity ERP features; it builds a predictive intelligence layer on top of those exact tables to protect **₹1.84 Cr in tuition**, eliminate **₹14,200/day in kitchen food waste**, and automate **NAAC 5.3 co-curricular accreditation**."*
+  > *"Suraj sir and Saksham sir’s engineering team built a rock-solid transactional foundation across 270 tables that handles thousands of daily gate passes, hostel allotments, and fee payments. Over the past 5 weeks, I audited our 10.08 GB MySQL replica and mapped these exact workflows (`chc_middleware`, `gate_pass_log`, `hostel_allotment`, `dues_v2`, `infra_booking`). My APM proposal does NOT rebuild commodity ERP features; it builds a predictive intelligence layer on top of those exact tables to protect **₹1.95 Cr in tuition**, eliminate **630 wasted meals/day in kitchen food waste**, and automate **NAAC 5.3 co-curricular accreditation**."*
 
 ---
 
@@ -27,7 +27,7 @@
   - `chc_request` records open student service tickets.
 * **The Synthesis Moat:** By joining these tables on `ukid` and `due_id`, Digii 2.0 catches compound student distress 60 days before administrative failure occurs.
 * **Quantified Bottom-Line Impact:**
-  - **₹1.84 Cr** protected tuition across a 4,850-student cohort.
+  - **₹1.95 Cr** protected tuition across a 4,850-student cohort *(142 Red Zone students × avg overdue fee; active demo sample protects ₹1.25 Lakhs)*.
   - **₹14,200/day** in raw food savings by deducting approved hostel leaves from mess preparation.
   - **40 hours/week** of manual accounts reconciliation automated.
 
@@ -42,13 +42,13 @@
 ---
 
 ### Slide 4: Predictive Student Dropout Radar (Stage 3)
-* **What it Does:** Evaluates the entire cohort in real time using compound multi-factor risk heuristics:
-  - Academics (35%) + Fees Overdue (25%) + Gate Telemetry (15%) + Hostel Curfew (15%) + Wellness (10%).
-* **Live Metrics:**
-  - 4,850 Total Cohort
-  - 142 High Risk (Red Zone)
-  - 386 Moderate Risk (Amber Zone)
-  - ₹1.84 Cr Tuition Capital at Immediate Risk
+* **What it Does:** Evaluates the cohort in real time using compound multi-factor risk heuristics:
+  - Academics (35%) + Fees Overdue (25%) + Gate Telemetry (15%) + Hostel Curfew (15%) + Campus Help Centre (10%).
+* **Cohort Metrics (illustrative assumption; active demo renders 8 verified relational profiles):**
+  - 4,850 Total Cohort *(illustrative assumption: hypothetical modeling baseline of 4,850 students, not an empirical Digii figure; active sample = 8)*
+  - 142 High Risk (Red Zone) *(illustrative assumption: assume ~3% red zone of hypothetical cohort; active sample = 1)*
+  - 386 Moderate Risk (Amber Zone) *(illustrative assumption: assume ~8% amber zone of hypothetical cohort; active sample = 2)*
+  - ₹1.84 Cr Tuition Capital at Immediate Risk *(illustrative assumption: 142 × ₹1.30L; active sample = ₹1.25 Lakhs)*
 * **Manager Flex:** Interactive Heuristic Weight Tuner allows leadership to stress-test weights and observe cohort distribution changes instantly.
 
 ---
@@ -118,14 +118,14 @@
 ### Slide 10: Feature Flags & Engineering Safety (LaunchDarkly Model)
 * **Engineered for Saksham Gupta (Principal Engineer):**
 * **Canary Deployments:**
-  - Progressive rollout sliders (e.g., 25% Canary to CSE Batch ➔ 100% General Availability).
+  - Progressive rollout sliders (e.g., 25% Canary to CSE Batch -> 100% General Availability).
   - Blast-radius isolation by hostel block, graduation year, or department.
-* **Circuit Breaker Auto-Rollback:**
-  - Automated threshold monitoring: if p99 query latency exceeds 120ms, the system instantly throttles traffic back to 0% to protect the production database replica.
+* **Circuit Breaker Architectural Pattern (Proposed):**
+  - Proposed design pattern: latency-based circuit breaker to throttle background traffic if analytical query load spikes.
 
 ---
 
-### Slide 11: Product Telemetry & Retention Conversion Funnel (Amplitude Model)
+### Slide 11: Product Telemetry & Retention Conversion Funnel (Amplitude Model - Simulated Macro Model)
 * **The Funnel:**
   - Stage 1: Cohort Flagged (4,850 students - 100%)
   - Stage 2: Alert Delivered & Opened (3,589 students - 74%)
@@ -133,7 +133,7 @@
   - Stage 4: Dues Reconciled & Student Retained (2,328 students - 48%)
 * **PM Diagnostic & Solution:**
   - Legacy portal forced desktop NetBanking challans.
-  - Introducing in-app 1-click UPI split installments boosts Stage 3 conversion by **+14%**, recovering an incremental **₹52 Lakhs** in retained tuition!
+  - Introducing in-app 1-click UPI split installments boosts Stage 3 conversion by **+14%**, recovering an incremental **₹52 Lakhs** in retained tuition *(illustrative assumption: +14% lift × 2,522 checkout starts × ₹15,000 tranche)*!
 
 ---
 
@@ -142,7 +142,7 @@
   1. *Database Engineering:* 10.08 GB MySQL audit, 1,647 tables mapped, covering index optimization.
   2. *Product Architecture:* 22 KB comprehensive PRD, JSON schemas, 20-view SPA (731 KB) with zero dependencies, 157 interactive handlers, 0 emojis.
   3. *Engineering Partnership:* Canary feature flags, circuit breaker guardrails, automated test suite, CollPoll 270-table workflow integration.
-  4. *Quantified Business Impact:* ₹1.84 Cr protected tuition, 40 hrs/wk saved in manual finance work.
+  4. *Quantified Business Impact:* ₹1.84 Cr protected tuition *(illustrative assumption)*, 40 hrs/wk saved in manual finance work.
 * **The Formal Transition Request:**
   > *"I want to formally step into the **Product Intern** role at Digii Campus. I've proven that I can bridge technical database depth, enterprise customer value, and user delight. Let's work together to make Digii Campus the undisputed market leader."*
 

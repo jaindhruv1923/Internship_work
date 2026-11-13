@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.vscode/
+*.zip
+modules/
+dev_scripts/
+*.db-shm
+*.db-wal
+
+

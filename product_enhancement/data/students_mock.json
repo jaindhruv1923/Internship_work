@@ -6,11 +6,22 @@
     "current_semester": "Odd Semester (Fall 2026)",
     "database_source_replica": "collpoll_10gb_bi_dump",
     "last_batch_sync": "2026-11-11T04:00:00Z",
-    "total_active_students": 4850,
-    "global_institution_health_score": 78.4,
-    "students_in_red_zone_count": 142,
-    "students_in_amber_zone_count": 386,
-    "students_healthy_count": 4322
+    "total_active_students": 8,
+    "students_in_red_zone_count": 1,
+    "students_in_amber_zone_count": 2,
+    "students_healthy_count": 5,
+    "global_institution_health_score": 69.5,
+    "macro_cohort_assumption": {
+      "label": "illustrative assumption",
+      "formula": "Hypothetical macro model (not an empirical Digii figure): assume ~3% red (142 students) of 4,850 cohort * \u20b91.30L avg overdue = \u20b91.84 Cr; +14% funnel lift = \u20b952 Lakhs",
+      "projected_total_students": 4850,
+      "projected_red_zone": 142,
+      "projected_amber_zone": 386,
+      "projected_healthy": 4322,
+      "projected_revenue_at_risk_inr": 18400000,
+      "projected_revenue_at_risk_formatted": "\u20b91.84 Cr",
+      "projected_recovered_tuition_formatted": "\u20b952 Lakhs"
+    }
   },
   "students": [
     {
@@ -34,27 +45,61 @@
       "avatar_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
         "tier": "HIGH",
-        "score": 92,
+        "score": 87,
         "delta_30d": "+28",
         "primary_threat": "Multi-Module Compound Risk: Fee Default + Severe Attendance Drop + Disciplinary Reprimand",
-        "summary": "Attendance dropped from 84% to 58% in 3 weeks. ₹1,25,000 fee installment overdue by 42 days. Missed midterm exam & 4 hostel curfew violations.",
-        "dropout_probability_pct": 89.5,
-        "recommended_action": "Immediate HOD Intervention & Parent Guardian Summon"
+        "summary": "Attendance dropped from 84% to 58% in 3 weeks. \u20b91,25,000 fee installment overdue by 42 days. Missed midterm exam & 4 hostel curfew violations.",
+        "recommended_action": "Immediate HOD Intervention & Parent Guardian Summon",
+        "sub_scores": {
+          "academics": 92.2,
+          "fees": 90.8,
+          "gates": 100.0,
+          "hostel": 95.0,
+          "chc": 25.0
+        },
+        "heuristic_risk_index": 87
       },
       "academics": {
         "overall_cgpa": 6.12,
-        "previous_sgpa": 7.30,
+        "previous_sgpa": 7.3,
         "current_semester_estimated_sgpa": 4.85,
         "overall_attendance_pct": 58.2,
         "attendance_threshold_met": false,
         "consecutive_absent_days": 8,
         "courses": [
-          { "code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 54, "internal_score": "11/30", "status": "AT_RISK" },
-          { "code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 51, "internal_score": "08/30", "status": "AT_RISK" },
-          { "code": "CS503", "name": "Database Management Systems", "attendance_pct": 68, "internal_score": "18/30", "status": "MARGINAL" },
-          { "code": "CS504", "name": "Theory of Computation", "attendance_pct": 60, "internal_score": "14/30", "status": "AT_RISK" }
+          {
+            "code": "CS501",
+            "name": "Design & Analysis of Algorithms",
+            "attendance_pct": 54,
+            "internal_score": "11/30",
+            "status": "AT_RISK"
+          },
+          {
+            "code": "CS502",
+            "name": "Operating Systems & Concurrency",
+            "attendance_pct": 51,
+            "internal_score": "08/30",
+            "status": "AT_RISK"
+          },
+          {
+            "code": "CS503",
+            "name": "Database Management Systems",
+            "attendance_pct": 68,
+            "internal_score": "18/30",
+            "status": "MARGINAL"
+          },
+          {
+            "code": "CS504",
+            "name": "Theory of Computation",
+            "attendance_pct": 60,
+            "internal_score": "14/30",
+            "status": "AT_RISK"
+          }
         ],
-        "missed_assessments": ["CS502 Mid-Term Practical (04 Nov 2026)", "CS501 Algo Surprise Quiz 2 (28 Oct 2026)"]
+        "missed_assessments": [
+          "CS502 Mid-Term Practical (04 Nov 2026)",
+          "CS501 Algo Surprise Quiz 2 (28 Oct 2026)"
+        ]
       },
       "finance": {
         "total_annual_fee": 250000,
@@ -117,7 +162,7 @@
           "module": "FINANCE",
           "severity": "WARNING",
           "title": "Final Fee Default Notice Dispatched",
-          "description": "Semester 5 installment overdue for 30+ days (₹1,25,000). Automated notice dispatched to parent's registered email.",
+          "description": "Semester 5 installment overdue for 30+ days (\u20b91,25,000). Automated notice dispatched to parent's registered email.",
           "badge": "Finance & Dues",
           "icon": "fee_alert",
           "actor": "Accounts Department"
@@ -136,13 +181,13 @@
         {
           "id": "EVT-10842-06",
           "timestamp": "2026-10-15T09:00:00",
-          "module": "CHC_WELLNESS",
-          "severity": "INFO",
-          "title": "Counseling Referral - Student Did Not Attend",
-          "description": "Referred by CSE department mentor for peer-group counseling session; student failed to report.",
-          "badge": "Health & Wellness",
-          "icon": "counseling_referral",
-          "actor": "Campus Wellness Center"
+          "module": "CHC",
+          "severity": "WARNING",
+          "title": "Overdue CHC Escalation: Fee Ledger Reconciliation",
+          "description": "Service ticket #CHC-REQ-4819 breached 48-hr SLA: student contested \u20b91,25,000 fee installment challan without resolution; escalated to Central Helpdesk Work Centre.",
+          "badge": "Campus Help Centre",
+          "icon": "grievance_ticket",
+          "actor": "CHC Helpdesk Automation"
         }
       ]
     },
@@ -166,27 +211,55 @@
       "room_no": "B-108",
       "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "HIGH",
-        "score": 88,
+        "tier": "MEDIUM",
+        "score": 70,
         "delta_30d": "+34",
-        "primary_threat": "Acute Psychological & Health Distress + Academic Freefall",
-        "summary": "4 CHC wellness clinic visits in 10 days for panic/insomnia. 61% attendance, failed 2 midterm quizzes, missed 6 hostel nightly roll-calls.",
-        "dropout_probability_pct": 82.0,
-        "recommended_action": "Urgent Medical Counselor Contact & Parent Consultation"
+        "primary_threat": "Multi-Module Disengagement: Fee Default Notice + Attendance Decay + Unresolved CHC Grievances",
+        "summary": "61% attendance, \u20b948,000 mess & tuition arrears, 2 missed quizzes, and high-priority CHC service ticket breached SLA for 8 days.",
+        "recommended_action": "HOD Academic Advising & Expedite CHC Maintenance Ticket",
+        "sub_scores": {
+          "academics": 79.4,
+          "fees": 66.3,
+          "gates": 90.0,
+          "hostel": 45.0,
+          "chc": 50.0
+        },
+        "heuristic_risk_index": 70
       },
       "academics": {
-        "overall_cgpa": 5.40,
-        "previous_sgpa": 7.80,
-        "current_semester_estimated_sgpa": 5.10,
+        "overall_cgpa": 5.4,
+        "previous_sgpa": 7.8,
+        "current_semester_estimated_sgpa": 5.1,
         "overall_attendance_pct": 61.4,
         "attendance_threshold_met": false,
         "consecutive_absent_days": 5,
         "courses": [
-          { "code": "IT301", "name": "Object Oriented Programming (Java)", "attendance_pct": 58, "internal_score": "09/30", "status": "AT_RISK" },
-          { "code": "IT302", "name": "Data Communication & Networks", "attendance_pct": 62, "internal_score": "12/30", "status": "AT_RISK" },
-          { "code": "IT303", "name": "Discrete Mathematics", "attendance_pct": 64, "internal_score": "14/30", "status": "MARGINAL" }
+          {
+            "code": "IT301",
+            "name": "Object Oriented Programming (Java)",
+            "attendance_pct": 58,
+            "internal_score": "09/30",
+            "status": "AT_RISK"
+          },
+          {
+            "code": "IT302",
+            "name": "Data Communication & Networks",
+            "attendance_pct": 62,
+            "internal_score": "12/30",
+            "status": "AT_RISK"
+          },
+          {
+            "code": "IT303",
+            "name": "Discrete Mathematics",
+            "attendance_pct": 64,
+            "internal_score": "14/30",
+            "status": "MARGINAL"
+          }
         ],
-        "missed_assessments": ["IT301 Mid-Term Quiz 2", "IT302 Assignment 3"]
+        "missed_assessments": [
+          "IT301 Mid-Term Quiz 2",
+          "IT302 Assignment 3"
+        ]
       },
       "finance": {
         "total_annual_fee": 220000,
@@ -213,13 +286,13 @@
         {
           "id": "EVT-11205-01",
           "timestamp": "2026-11-09T15:30:00",
-          "module": "CHC_WELLNESS",
+          "module": "CHC",
           "severity": "CRITICAL",
-          "title": "Emergency CHC Consultation Logged",
-          "description": "Patient reported to Campus Health Center with acute migraine and anxiety; advised 48-hr bed rest by Dr. Arvind.",
-          "badge": "Health & Wellness",
-          "icon": "chc_medical",
-          "actor": "Dr. Arvind (Campus Physician)"
+          "title": "High-Priority CHC Grievance: Room Electrical Fault & LAN Outage",
+          "description": "Urgent ticket #CHC-REQ-4820 escalated: Kalpana Chawla Block B-108 reported electrical short-circuit and continuous LAN outage for 8 days. SLA breached.",
+          "badge": "Campus Help Centre",
+          "icon": "grievance_ticket",
+          "actor": "CHC Maintenance Work Centre"
         },
         {
           "id": "EVT-11205-02",
@@ -249,7 +322,7 @@
           "module": "FINANCE",
           "severity": "INFO",
           "title": "Mess & Dining Overdue Fee Reminder",
-          "description": "Outstanding hostel mess arrears of ₹48,000 flagged for Semester 3 billing cycle.",
+          "description": "Outstanding hostel mess arrears of \u20b948,000 flagged for Semester 3 billing cycle.",
           "badge": "Finance & Dues",
           "icon": "fee_alert",
           "actor": "Accounts Department"
@@ -276,27 +349,55 @@
       "room_no": "N/A",
       "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "HIGH",
-        "score": 85,
+        "tier": "MEDIUM",
+        "score": 59,
         "delta_30d": "+19",
         "primary_threat": "Ghost Student / Extended Disengagement & Backlog Accumulation",
-        "summary": "12 consecutive days with zero campus gate entries. 54% attendance, 3 active course backlogs, ₹85,000 tuition fee overdue by 50 days.",
-        "dropout_probability_pct": 79.0,
-        "recommended_action": "Disciplinary Board Formal Summons"
+        "summary": "12 consecutive days with zero campus gate entries. 54% attendance, 3 active course backlogs, \u20b985,000 tuition fee overdue by 50 days.",
+        "recommended_action": "Disciplinary Board Formal Summons",
+        "sub_scores": {
+          "academics": 100.0,
+          "fees": 97.5,
+          "gates": 0.0,
+          "hostel": 0.0,
+          "chc": 0.0
+        },
+        "heuristic_risk_index": 59
       },
       "academics": {
-        "overall_cgpa": 5.10,
-        "previous_sgpa": 5.80,
-        "current_semester_estimated_sgpa": 4.20,
+        "overall_cgpa": 5.1,
+        "previous_sgpa": 5.8,
+        "current_semester_estimated_sgpa": 4.2,
         "overall_attendance_pct": 54.1,
         "attendance_threshold_met": false,
         "consecutive_absent_days": 12,
         "courses": [
-          { "code": "ME701", "name": "Power Plant Engineering", "attendance_pct": 50, "internal_score": "10/30", "status": "AT_RISK" },
-          { "code": "ME702", "name": "Refrigeration & Air Conditioning", "attendance_pct": 55, "internal_score": "12/30", "status": "AT_RISK" },
-          { "code": "ME703", "name": "Total Quality Management", "attendance_pct": 58, "internal_score": "15/30", "status": "AT_RISK" }
+          {
+            "code": "ME701",
+            "name": "Power Plant Engineering",
+            "attendance_pct": 50,
+            "internal_score": "10/30",
+            "status": "AT_RISK"
+          },
+          {
+            "code": "ME702",
+            "name": "Refrigeration & Air Conditioning",
+            "attendance_pct": 55,
+            "internal_score": "12/30",
+            "status": "AT_RISK"
+          },
+          {
+            "code": "ME703",
+            "name": "Total Quality Management",
+            "attendance_pct": 58,
+            "internal_score": "15/30",
+            "status": "AT_RISK"
+          }
         ],
-        "missed_assessments": ["ME701 Quiz 1", "ME702 Lab Internal"]
+        "missed_assessments": [
+          "ME701 Quiz 1",
+          "ME702 Lab Internal"
+        ]
       },
       "finance": {
         "total_annual_fee": 210000,
@@ -337,7 +438,7 @@
           "module": "FINANCE",
           "severity": "CRITICAL",
           "title": "Final Notice of Enrollment Suspension",
-          "description": "Account flagged for automatic academic portal suspension due to ₹85,000 pending fee exceeding 45 days grace period.",
+          "description": "Account flagged for automatic academic portal suspension due to \u20b985,000 pending fee exceeding 45 days grace period.",
           "badge": "Finance & Dues",
           "icon": "fee_alert",
           "actor": "Accounts Directorate"
@@ -375,25 +476,50 @@
       "room_no": "S-204",
       "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "MEDIUM",
-        "score": 64,
+        "tier": "HEALTHY",
+        "score": 12,
         "delta_30d": "+12",
         "primary_threat": "Marginal Attendance Deficit (72%) with Strong Academic Merit",
         "summary": "Overall attendance 72% (3% below threshold) due to studio project deadlines. Fee installment pending but within grace window.",
-        "dropout_probability_pct": 34.0,
-        "recommended_action": "Automated Attendance Warning Nudge to Student"
+        "recommended_action": "Automated Attendance Warning Nudge to Student",
+        "sub_scores": {
+          "academics": 11.6,
+          "fees": 21.7,
+          "gates": 15.0,
+          "hostel": 0.0,
+          "chc": 0.0
+        },
+        "heuristic_risk_index": 12
       },
       "academics": {
         "overall_cgpa": 8.15,
-        "previous_sgpa": 8.40,
-        "current_semester_estimated_sgpa": 8.00,
+        "previous_sgpa": 8.4,
+        "current_semester_estimated_sgpa": 8.0,
         "overall_attendance_pct": 72.1,
         "attendance_threshold_met": false,
         "consecutive_absent_days": 2,
         "courses": [
-          { "code": "BD301", "name": "Design Thinking & Prototyping", "attendance_pct": 85, "internal_score": "27/30", "status": "HEALTHY" },
-          { "code": "BD302", "name": "Ergonomics in Product Design", "attendance_pct": 68, "internal_score": "22/30", "status": "MARGINAL" },
-          { "code": "BD303", "name": "Material Science for Designers", "attendance_pct": 64, "internal_score": "19/30", "status": "AT_RISK" }
+          {
+            "code": "BD301",
+            "name": "Design Thinking & Prototyping",
+            "attendance_pct": 85,
+            "internal_score": "27/30",
+            "status": "HEALTHY"
+          },
+          {
+            "code": "BD302",
+            "name": "Ergonomics in Product Design",
+            "attendance_pct": 68,
+            "internal_score": "22/30",
+            "status": "MARGINAL"
+          },
+          {
+            "code": "BD303",
+            "name": "Material Science for Designers",
+            "attendance_pct": 64,
+            "internal_score": "19/30",
+            "status": "AT_RISK"
+          }
         ],
         "missed_assessments": []
       },
@@ -436,7 +562,7 @@
           "module": "FINANCE",
           "severity": "INFO",
           "title": "Tranche 3 Fee Invoice Issued",
-          "description": "Invoice for ₹80,000 generated; due date scheduled for 15 November 2026.",
+          "description": "Invoice for \u20b980,000 generated; due date scheduled for 15 November 2026.",
           "badge": "Finance & Dues",
           "icon": "fee_alert",
           "actor": "Accounts Directorate"
@@ -463,13 +589,20 @@
       "room_no": "N/A",
       "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "MEDIUM",
-        "score": 58,
+        "tier": "HEALTHY",
+        "score": 10,
         "delta_30d": "+8",
         "primary_threat": "First-Year Adjustment Friction & Assignment Non-Submission",
         "summary": "74% attendance, missed 2 consecutive data modeling assignments, all fees paid on time.",
-        "dropout_probability_pct": 28.0,
-        "recommended_action": "Peer Mentor Assignment & Check-in"
+        "recommended_action": "Peer Mentor Assignment & Check-in",
+        "sub_scores": {
+          "academics": 29.0,
+          "fees": 0.0,
+          "gates": 0.0,
+          "hostel": 0.0,
+          "chc": 0.0
+        },
+        "heuristic_risk_index": 10
       },
       "academics": {
         "overall_cgpa": 6.85,
@@ -479,10 +612,24 @@
         "attendance_threshold_met": false,
         "consecutive_absent_days": 1,
         "courses": [
-          { "code": "MB101", "name": "Managerial Economics", "attendance_pct": 78, "internal_score": "20/30", "status": "HEALTHY" },
-          { "code": "MB102", "name": "Statistical Decision Modeling", "attendance_pct": 69, "internal_score": "16/30", "status": "MARGINAL" }
+          {
+            "code": "MB101",
+            "name": "Managerial Economics",
+            "attendance_pct": 78,
+            "internal_score": "20/30",
+            "status": "HEALTHY"
+          },
+          {
+            "code": "MB102",
+            "name": "Statistical Decision Modeling",
+            "attendance_pct": 69,
+            "internal_score": "16/30",
+            "status": "MARGINAL"
+          }
         ],
-        "missed_assessments": ["MB102 Case Study Submission 1"]
+        "missed_assessments": [
+          "MB102 Case Study Submission 1"
+        ]
       },
       "finance": {
         "total_annual_fee": 350000,
@@ -539,24 +686,43 @@
       "room_no": "A-201",
       "avatar_url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "LOW",
-        "score": 18,
+        "tier": "HEALTHY",
+        "score": 2,
         "delta_30d": "-4",
         "primary_threat": "None (Honor Student)",
         "summary": "Exemplary 92% attendance, CGPA 8.95, fees paid in full, zero disciplinary infractions, Robotics Club President.",
-        "dropout_probability_pct": 3.0,
-        "recommended_action": "Eligible for Merit Scholarship & Placement Fast-Track"
+        "recommended_action": "Eligible for Merit Scholarship & Placement Fast-Track",
+        "sub_scores": {
+          "academics": 5.0,
+          "fees": 0.0,
+          "gates": 0.0,
+          "hostel": 0.0,
+          "chc": 0.0
+        },
+        "heuristic_risk_index": 2
       },
       "academics": {
         "overall_cgpa": 8.95,
-        "previous_sgpa": 9.10,
-        "current_semester_estimated_sgpa": 8.80,
+        "previous_sgpa": 9.1,
+        "current_semester_estimated_sgpa": 8.8,
         "overall_attendance_pct": 92.4,
         "attendance_threshold_met": true,
         "consecutive_absent_days": 0,
         "courses": [
-          { "code": "CS501", "name": "Design & Analysis of Algorithms", "attendance_pct": 94, "internal_score": "29/30", "status": "HEALTHY" },
-          { "code": "CS502", "name": "Operating Systems & Concurrency", "attendance_pct": 90, "internal_score": "28/30", "status": "HEALTHY" }
+          {
+            "code": "CS501",
+            "name": "Design & Analysis of Algorithms",
+            "attendance_pct": 94,
+            "internal_score": "29/30",
+            "status": "HEALTHY"
+          },
+          {
+            "code": "CS502",
+            "name": "Operating Systems & Concurrency",
+            "attendance_pct": 90,
+            "internal_score": "28/30",
+            "status": "HEALTHY"
+          }
         ],
         "missed_assessments": []
       },
@@ -615,23 +781,36 @@
       "room_no": "A-112",
       "avatar_url": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "LOW",
-        "score": 12,
+        "tier": "HEALTHY",
+        "score": 2,
         "delta_30d": "0",
         "primary_threat": "None (Top Performer)",
         "summary": "95% attendance, CGPA 9.20, zero dues, high engagement across technical workshops.",
-        "dropout_probability_pct": 1.5,
-        "recommended_action": "Dean's List Recognition"
+        "recommended_action": "Dean's List Recognition",
+        "sub_scores": {
+          "academics": 5.0,
+          "fees": 0.0,
+          "gates": 0.0,
+          "hostel": 0.0,
+          "chc": 0.0
+        },
+        "heuristic_risk_index": 2
       },
       "academics": {
-        "overall_cgpa": 9.20,
+        "overall_cgpa": 9.2,
         "previous_sgpa": 9.35,
         "current_semester_estimated_sgpa": 9.15,
         "overall_attendance_pct": 95.2,
         "attendance_threshold_met": true,
         "consecutive_absent_days": 0,
         "courses": [
-          { "code": "EC301", "name": "Signals & Systems", "attendance_pct": 96, "internal_score": "30/30", "status": "HEALTHY" }
+          {
+            "code": "EC301",
+            "name": "Signals & Systems",
+            "attendance_pct": 96,
+            "internal_score": "30/30",
+            "status": "HEALTHY"
+          }
         ],
         "missed_assessments": []
       },
@@ -690,23 +869,36 @@
       "room_no": "N/A",
       "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
       "risk_profile": {
-        "tier": "LOW",
-        "score": 22,
+        "tier": "HEALTHY",
+        "score": 2,
         "delta_30d": "-2",
         "primary_threat": "None",
         "summary": "88% attendance, CGPA 8.40, all dues cleared, Student Council Department Representative.",
-        "dropout_probability_pct": 4.0,
-        "recommended_action": "Standard Academic Progression"
+        "recommended_action": "Standard Academic Progression",
+        "sub_scores": {
+          "academics": 5.0,
+          "fees": 0.0,
+          "gates": 0.0,
+          "hostel": 0.0,
+          "chc": 0.0
+        },
+        "heuristic_risk_index": 2
       },
       "academics": {
-        "overall_cgpa": 8.40,
+        "overall_cgpa": 8.4,
         "previous_sgpa": 8.55,
         "current_semester_estimated_sgpa": 8.35,
         "overall_attendance_pct": 88.0,
         "attendance_threshold_met": true,
         "consecutive_absent_days": 0,
         "courses": [
-          { "code": "BT501", "name": "Molecular Biology & Genetic Engineering", "attendance_pct": 89, "internal_score": "26/30", "status": "HEALTHY" }
+          {
+            "code": "BT501",
+            "name": "Molecular Biology & Genetic Engineering",
+            "attendance_pct": 89,
+            "internal_score": "26/30",
+            "status": "HEALTHY"
+          }
         ],
         "missed_assessments": []
       },
@@ -747,4 +939,3 @@
     }
   ]
 }
-

@@ -12,9 +12,9 @@
 
 ## 1. Executive Summary & Objective
 
-Over the past month, my work transitioned from frontend research to analyzing our **10.08 GB production MySQL database replica** (`collpoll` schema, 1,647 tables). While auditing our database architecture in Week 4, I observed a massive business opportunity:
+Over the past month, my work transitioned from frontend research to analyzing our **10.08 GB production MySQL database replica schema documentation** (`collpoll` schema, 1,647 tables). While auditing our database architecture in Week 4, I observed a massive business opportunity:
 
-> **The Core Thesis:** *Digii Campus possesses extraordinary relational data depth across academics, fee dues, turnstile access, residential life, and campus health. However, our current user experience presents this data in fragmented, passive silos. By synthesizing these tables into proactive intelligence engines, Digii Campus can unlock millions in retained tuition revenue, automate hundreds of administrative hours, and differentiate itself as an active Campus Intelligence Platform.*
+> **The Core Thesis:** *Digii Campus possesses extraordinary relational data depth across academics, fee dues, turnstile access, residential life, and campus help centre. However, our current user experience presents this data in fragmented, passive silos. By synthesizing these tables into proactive intelligence engines, Digii Campus can unlock millions in retained tuition revenue, automate hundreds of administrative hours, and differentiate itself as an active Campus Intelligence Platform.*
 
 This playbook provides a word-for-word, screen-by-screen script to demonstrate **Digii Campus 2.0** to engineering and BI leadership.
 
@@ -26,7 +26,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 | :--- | :--- | :--- |
 | **00:00 – 02:00** | **The Hook & Context** | From 10GB MySQL DB audit to customer-facing business value. |
 | **02:00 – 03:00** | **The "PM ROI Mode" Flex** | Flipping the top header switch to showcase quantitative impact. |
-| **03:00 – 06:00** | **Predictive Student Dropout Radar** | Cross-module compound decay model protecting ₹1.84 Cr tuition. |
+| **03:00 – 06:00** | **Predictive Student Dropout Radar** | Cross-module compound decay model protecting ₹1.84 Cr tuition (illustrative assumption). |
 | **06:00 – 09:00** | **Student 360 & Action Center** | 15-second investigation replacing 5 tabs; live 1-click dispatch. |
 | **09:00 – 11:00** | **Automated Fee Reconciliation** | Inbound bank CSV matcher; 842 records matched instantly. |
 | **11:00 – 12:30** | **Smart Timetable Clash Resolver** | Real-time professor conflict detection; 1-click auto-resolve. |
@@ -50,20 +50,20 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 ---
 
 ### Segment 2: The "PM ROI Mode" Flex (02:00 – 03:00)
-* **What to Show:** Navigate to `http://localhost:3000/index.html`. Hover over the top-right header and click the **`🚀 PM ROI Mode`** toggle switch.
+* **What to Show:** Navigate to `http://localhost:8000/index.html`. Hover over the top-right header and click the **`PM ROI Mode`** toggle switch.
 * **What to Say:**
   > *"Before showing the mechanics, I want to toggle on this switch in the header: **PM ROI Mode**. As an aspiring Product Manager, I didn't build these features just because they look clean; I built them around measurable business ROI for our university clients. Notice how flipping this switch highlights the exact financial and time-saving value proposition across every single screen."*
 
 ---
 
 ### Segment 3: Predictive Student Dropout Radar (03:00 – 06:00)
-* **What to Show:** Screen 1 — Predictive Radar (`#view-radar`). Point to the ₹1.84 Cr KPI card, the Red Zone cohort cards, and click the **`⚡ Dynamic Heuristic Weights`** button.
+* **What to Show:** Screen 1 — Predictive Radar (`#view-radar`). Point to the ₹1.95 Cr KPI card, the Red Zone cohort cards, and click the **`Dynamic Heuristic Weights`** button.
 * **What to Say:**
-  > *"First is the **Predictive Student Dropout Radar**. Today, universities only find out a student has failed or dropped out at the end of the semester. That's too late—by then, ₹1.84 Cr in tuition fees is already lost.*
+  > *"First is the **Predictive Student Dropout Radar**. Today, universities only find out a student has failed or dropped out at the end of the semester. That's too late—by then, ₹1.95 Cr in tuition fees across the simulated 4,850 cohort is already lost (illustrative baseline: 142 Red Zone students).*
   > 
   > *Our model connects `ams_attendance_summary`, `academic_fee_dues`, `access_gate_logs`, and hostel incidents to calculate a compound decay score. When a student's attendance drops below 65%, their curfew breaches spike, and their fee payment is overdue, they are immediately flagged in our **Critical Red Zone** 60 days before formal attrition.*
   > 
-  > *Notice this tuner: administrators can adjust the weighting sliders in real time—giving 35% weight to academics or 25% to fees—and watch the entire 4,850 student cohort recalculate instantly. And by clicking 'Behind the Data', engineering leadership can inspect the exact MySQL CTE query running beneath the UI."*
+  > *Notice this tuner: administrators can adjust the weighting sliders in real time—giving 35% weight to academics or 25% to fees—and watch the cohort recalculate instantly. And by clicking 'Behind the Data', engineering leadership can inspect the exact MySQL CTE query running beneath the UI."*
 
 ---
 
@@ -79,7 +79,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 ---
 
 ### Segment 5: Core ERP — Automated Fee Reconciliation (09:00 – 11:30)
-* **What to Show:** Click **`Finance & Fees`** in the sidebar. Show the drag-and-drop CSV ingestion zone, the split-screen ledger, and click the massive **`[ ⚡ Run Auto-Reconciliation Algorithm ]`** button.
+* **What to Show:** Click **`Finance & Fees`** in the sidebar. Show the drag-and-drop CSV ingestion zone, the split-screen ledger, and click the massive **`[ Run Auto-Reconciliation Algorithm ]`** button.
 * **What to Say:**
   > *"Now let's look at the Core ERP modules. In university finance departments, accountants waste 35 to 40 hours every week manually cross-checking bank CSV statements against student challans in MySQL. It's tedious, error-prone, and leads to wrongful exam debarments.*
   > 
@@ -90,7 +90,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 ---
 
 ### Segment 6: Core ERP — Timetable Clash Resolver (11:30 – 13:30)
-* **What to Show:** Click **`Academics & LMS`** in the sidebar. Show the weekly schedule matrix. Drag `CS502` into Monday 10:45 AM (or click **'Test Conflict'**) to trigger the red `#clash-modal`, then click **`[ ⚡ 1-Click Auto-Resolve Conflict ]`**.
+* **What to Show:** Click **`Academics & LMS`** in the sidebar. Show the weekly schedule matrix. Drag `CS502` into Monday 10:45 AM (or click **'Test Conflict'**) to trigger the red `#clash-modal`, then click **`[ 1-Click Auto-Resolve Conflict ]`**.
 * **What to Say:**
   > *"In Academics, timetable generation is one of the biggest sources of support tickets to engineering. HODs double-book professors or assign two classes to the same lecture hall.*
   > 
@@ -127,13 +127,13 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 ---
 
 ### Segment 8: The PM Strategy Cockpit — RICE, Feature Flags & Funnels (14:00 – 14:30)
-* **What to Show:** Click the **PM Cockpit ⚡** button in the header or in the left sidebar.
+* **What to Show:** Click the **PM Cockpit** button in the header or in the left sidebar.
 * **What to Say:**
   > *"Finally, to prove that I think like a scalable Product Manager who partners seamlessly with Engineering, look at the **PM Strategy & Engineering Cockpit**:*
   > 
   > 1. **RICE Roadmap Matrix:** *(Move the Engineering Effort Multiplier slider)* — *I don't just generate ideas; I prioritize them quantitatively based on Reach, Impact, Confidence, and Effort. If engineering capacity tightens, our delivery swimlanes automatically re-rank into Now, Next, and Later.*
-  > 2. **Feature Flags & Canary Governance:** *(Show the LaunchDarkly-style toggles and rollout sliders)* — *Saksham, as Principal Engineer, you care about blast radius. I've designed these features behind canary feature flags (e.g., 25% rollout to CSE, 100% to Hostels), backed by an automated circuit breaker that throttles traffic if p99 query latency exceeds 120ms.*
-  > 3. **Product Telemetry Funnel:** *(Click 'Simulate PM Intervention')* — *I analyzed student drop-off between notice delivery (74%) and payment initiation (52%). By diagnosing that our desktop gateway lacked split UPI payments, our PM intervention recovers an incremental ₹52 Lakhs in retained tuition.*
+  > 2. **Feature Flags & Canary Governance:** *(Show the LaunchDarkly-style toggles and rollout sliders)* — *Saksham, as Principal Engineer, you care about blast radius. I've designed these features behind canary feature flags (e.g., 25% rollout to CSE, 100% to Hostels), designed with architectural patterns for canary rollout and future latency circuit breakers.*
+  > 3. **Product Telemetry Funnel:** *(Click 'Simulate PM Intervention')* — *I modeled illustrative student drop-off between notice delivery (74%) and payment initiation (52%). By diagnosing that our desktop gateway lacked split UPI payments, our simulated PM intervention recovers an illustrative ₹52 Lakhs in retained tuition.*
   > 4. **In-App PRD Spec:** *The complete 22KB PRD with user stories and database SLAs is embedded right here for instant engineering review."*
 
 ---
@@ -156,19 +156,19 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 
 ### Q2: *"Is our AWS RDS production infrastructure capable of handling these queries?"*
 * **PM Answer:**
-  > *"Yes, 100%. In Week 4, I benchmarked our queries on our 10GB database replica. By utilizing composite covering indexes (`student_ukid`, `status`, `punch_timestamp`) and window partitioning, the queries run in under 85ms. Furthermore, in production, we can decouple read analytics using an RDS Read Replica or periodic Redis caching."*
+  > *"Yes, 100%. Based on my schema audit of the 10.08 GB database dump, I evaluated query execution patterns. By utilizing proposed composite indexes (`student_ukid`, `status`, `punch_timestamp`) and window partitioning, analytical workloads can be optimized. Furthermore, in production, we can decouple read analytics using an RDS Read Replica or periodic Redis caching."*
 
 ### Q3: *"You've been doing data analysis—how do we know you can handle Product Management?"*
 * **PM Answer:**
-  > *"A great Enterprise Product Manager needs three pillars: customer empathy, business acumen, and technical feasibility. Most PMs struggle because they don't know what's possible in the database. Because I've spent weeks in our raw SQL schema, I know exactly what data exists, how long queries take, and how to translate engineering capabilities into quantifiable ROI like ₹1.84 Cr protected tuition and 40 hrs/week of manual accounting saved."*
+  > *"A great Enterprise Product Manager needs three pillars: customer empathy, business acumen, and technical feasibility. Most PMs struggle because they don't know what's possible in the database. Because I've spent weeks in our raw SQL schema, I know exactly what data exists, how long queries take, and how to translate engineering capabilities into quantifiable ROI like ₹1.95 Cr protected tuition (illustrative assumption) and 40 hrs/week of manual accounting saved."*
 
 ---
 
 ## 5. Live Demo Checklist
 
-- [ ] Dev server running (`powershell -ExecutionPolicy Bypass -File .\product_enhancement\server.ps1 -Port 3000`).
-- [ ] Browser open at `http://localhost:3000/index.html` with zoom set to 90% or 100%.
-- [ ] Turn on `🚀 PM ROI Mode` to ensure glowing badges are visible.
+- [ ] Unified Single-Origin Server running (`python product_enhancement/backend/app.py 8000`).
+- [ ] Browser open at `http://127.0.0.1:8000/` with zoom set to 90% or 100%.
+- [ ] Turn on `PM ROI Mode` to ensure glowing badges are visible.
 - [ ] Verify Aarav Sharma's Student 360 profile loads smoothly.
 - [ ] Practice the drag-and-drop or 1-click clash auto-resolve sequence in Academics.
 - [ ] Have [`PRD_Proactive_Retention_System.md`](PRD_Proactive_Retention_System.md) open in another tab for deep technical credibility.

@@ -10,7 +10,7 @@
 ---
 
 ## 1. Executive Summary
-Indian higher education institutions face an annual student attrition rate of 8% to 15%, translating into substantial tuition revenue loss and adverse NAAC/NIRF accreditation impact. Currently, Digii Campus houses immense relational operational data across disparate modules—Academics (`ams_*`), Finance (`academic_fee_*`), Campus Access (`access_gate_*`), Residential Life (`hostel_*`), and Campus Health (`chc_*`). 
+Indian higher education institutions face an annual student attrition rate of 8% to 15%, translating into substantial tuition revenue loss and adverse NAAC/NIRF accreditation impact. Currently, Digii Campus houses immense relational operational data across disparate modules—Academics (`ams_*`), Finance (`academic_fee_*`), Campus Access (`access_gate_*`), Residential Life (`hostel_*`), and Campus Help Centre (`chc_*`). 
 
 However, because these systems function in operational silos, institutional administrators (Deans, HODs, Wardens) only discover student distress when it is too late—after a student has already failed semester exams, accumulated irrecoverable fee arrears, or dropped out.
 
@@ -28,7 +28,7 @@ In the current architecture, data exists but insights are fragmented:
 - **Academic Dean's View:** Sees Aarav Sharma has 58% attendance and is debarred from Operating Systems lab. Dean does not know Aarav has 4 late night hostel curfew violations and an overdue fee invoice of ₹1,25,000.
 - **Finance Officer's View:** Sees Aarav has ₹1,25,000 unpaid fees. Assumes willful delay; does not know student's academic standing has collapsed.
 - **Hostel Warden's View:** Sees Aarav returned late 4 times in 2 weeks. Treats it as an isolated disciplinary issue without knowing academic and financial distress.
-- **Campus Health Counselor's View:** Sees Priya Nair has visited 4 times for acute panic and sleep deprivation, but has no visibility into her upcoming fee defaults or sudden drop in lecture attendance.
+- **Campus Help Centre Officer's View:** Sees Priya Nair has logged 3 unresolved facility & service escalation tickets for room electrical outages and contested dues, but has no visibility into her upcoming fee defaults or sudden drop in lecture attendance.
 
 ### 2.2 User Personas & Core Workflows
 
@@ -99,8 +99,8 @@ Where:
 
 A core responsibility of an APM is defending algorithmic weights against management scrutiny. The default weights are grounded in statutory higher education regulations and university bylaws:
 
-1. **Academic Attendance ($w_{\text{acad}} = 0.35$):** Under UGC Regulations (Section 12) and university examination bylaws, 75% attendance is statutory mandatory for semester examination eligibility. Falling below 65% triggers automatic debarment, rendering attendance decay the single highest predictor of academic failure and semester abandonment.
-2. **Tuition Arrears ($w_{\text{fin}} = 0.25$):** Under university Finance Syndicate guidelines, accounts aging past 30 Days Past Due (DPD) trigger portal access locks and administrative de-registration. Tuition default represents direct institutional revenue exposure.
+1. **Academic Attendance ($w_{\text{acad}} = 0.35$):** [ASSUMED Heuristic Weighting] Modeled after typical Indian higher education 75% attendance thresholds for semester examination eligibility. Falling below 65% triggers warning debarment, rendering attendance decay a primary predictor of academic disengagement.
+2. **Tuition Arrears ($w_{\text{fin}} = 0.25$):** [ASSUMED Heuristic Weighting] Illustrative finance policy assumption where accounts aging past 30 Days Past Due (DPD) trigger portal notices. Tuition default represents institutional revenue exposure.
 3. **Gatepass Telemetry ($w_{\text{gate}} = 0.15$):** Derived from `gate_pass_log` and `gate_pass_timings`. Frequent late-night entries (`status_id = 3` or `4`) correlate heavily with sleep deprivation, academic disengagement, and disciplinary breaches.
 4. **Hostel Night Roll-Call ($w_{\text{hostel}} = 0.15$):** Monitored via `hostel_attendance`. Residential students exhibiting chronic absenteeism from night roll-calls without approved CHC gate passes demonstrate high correlation with social detachment and unauthorized off-campus stays.
 5. **Campus Help Centre ($w_{\text{chc}} = 0.10$):** Derived from `chc_request` and `chc_work_centre`. Chronic unresolved service tickets or escalated disputes indicate acute student friction with campus administration.
@@ -137,23 +137,23 @@ A core responsibility of an APM is defending algorithmic weights against managem
 - **Chronological Reverse Feed:**
   - Connects events across all 5 operational systems in exact time order.
   - Color-coded badges per domain:
-    - 🔴 **Academics:** Missed classes, exam debarment notices, internal test scores.
-    - 🟢 **Finance:** Fee demand generated, reminder dispatched, partial payment logged.
-    - 🟣 **Campus Access:** Main gate entry, exit, turnstile scan timestamps.
-    - 🟠 **Hostel & Security:** Curfew breaches, room roll-call logs.
-    - 🔵 **Health & CHC:** Confidential counseling appointments and doctor reviews.
+    - [Academics]: Missed classes, exam debarment notices, internal test scores.
+    - [Finance]: Fee demand generated, reminder dispatched, partial payment logged.
+    - [Campus Access]: Main gate entry, exit, turnstile scan timestamps.
+    - [Hostel & Security]: Curfew breaches, room roll-call logs.
+    - [Health & CHC]: Confidential counseling appointments and doctor reviews.
 
 ### 5.3 Module 3: Enterprise Action Center (Closing the Loop)
 - **Sticky Action Bar:** Located persistently at the bottom of the Student 360 view.
 - **Action Capabilities:**
   1. **Automated Nudge Email:** Pre-composed, empathetic email to student summarizing attendance status and offering academic support resources.
   2. **Escalate to HOD:** Direct high-priority alert to Head of Department requesting mandatory academic counseling.
-  3. **Schedule Counseling:** Books a confidential 1-on-1 session with Campus Health Center (CHC) psychological counseling unit.
+  3. **Schedule Counseling:** Books an expedited consultation slot with Campus Help Centre (CHC) priority service desk.
   4. **Summon Guardian:** Formal notification to registered parent/guardian regarding attendance debarment and financial arrears.
 - **Simulation Feedback:** Interactive modal review, customizable messaging, and live toast confirmation showing timestamped dispatch.
 
 ### 5.4 Module 4 (Phase 4): Dynamic Heuristics Sensitivity Tuner & Risk Simulator
-- **Interactive Domain Sliders:** Allows administrators to dynamically tune weights across Academics (5-60%), Financial Arrears (5-50%), Gate Telemetry (0-30%), Hostel Curfews (0-30%), and Campus Health (0-25%).
+- **Interactive Domain Sliders:** Allows administrators to dynamically tune weights across Academics (5-60%), Financial Arrears (5-50%), Gate Telemetry (0-30%), Hostel Curfews (0-30%), and Campus Help Centre (0-25%).
 - **Balanced Sum Validator:** Real-time indicator confirming whether allocated weights total 100%.
 - **Configurable Cutoff Thresholds:** Sliders to tune Critical Red Zone (default: 75) and Moderate Amber Zone (default: 50) sensitivity.
 - **Instant Cohort Recalculation:** Recalculates Composite Risk Scores (CRS) across all 4,850 students in real time without page reload.
@@ -168,7 +168,7 @@ A core responsibility of an APM is defending algorithmic weights against managem
 ### 5.6 Module 6 (Phase 4): Administrative Intervention Audit Trail & Compliance
 - **Dual-View Feed Switcher:** Allows toggling between the student's *Unified Activity Feed* and the *Intervention Audit Trail*.
 - **Immutable Log Schema:** Captures `Audit ID`, `Action Type`, `Dispatched By`, `Target Recipient`, `Timestamp`, and `Delivery Status (Delivered)`.
-- **Institutional Compliance:** Satisfies ISO 27001 and FERPA privacy regulations for higher-education governance.
+- **Institutional Governance:** Follows structured audit trail patterns aligning with higher-education governance and the Digital Personal Data Protection Act (DPDP Act 2023, India).
 
 ### 5.7 Module 7 (Phase 4): Zero-Dependency Python REST API Microservice
 - **Microservice Location:** `product_enhancement/backend/app.py`
@@ -224,7 +224,7 @@ A core responsibility of an APM is defending algorithmic weights against managem
   10. **Peer-to-Peer Micro-Tutoring Network:** Peer tutoring bounties granting 50 campus credits to top scorers, improving batch pass rates without faculty remediation load.
 
 ### 5.12 Module 12: MySQL 8.0 10GB Data Lake Inspector & Live Bridge
-- **Production Architecture:** Native connection bridge to MySQL 8.0 service running on port 3306 with database `collpoll` (10.08 GB replica, 1,647 tables across 15 enterprise domains).
+- **Target Production Architecture:** Connection bridge to MySQL 8.0 read-replica running on database `collpoll` (prototype uses local HTTP service and synthetic schema-grounded dataset) (10.08 GB replica, 1,647 tables across 15 enterprise domains).
 - **Dual-Mode Operational Engine:**
   - **Live Mode:** Dispatches queries directly to MySQL server with covering index telemetry (14ms response benchmark).
   - **Pre-Cached Replica Mode:** Instant offline sub-50ms execution for executive demos without VPN dependency.
@@ -260,7 +260,7 @@ A core responsibility of an APM is defending algorithmic weights against managem
 
 ### 5.20 Module 20: Simulated Enterprise Cohort Data Privacy & Compliance
 - **Data Integrity Model:** Uses a synthetic 4,850-student cohort modeled strictly on the statistical distributions of the 10.08 GB MySQL replica.
-- **Compliance Guarantee:** Contains zero live student PII, satisfying FERPA, GDPR, and ISO 27001 data protection standards for internal product demonstrations.
+- **Synthetic Data Disclosure:** Contains zero live student PII; all records are synthetically generated mock profiles for local prototype demonstration, adhering to data minimization principles under the DPDP Act 2023.
 
 ### 5.21 Module 21: Digii Campus vs. Digii 2.0 Comparative Intelligence Matrix
 - **Strategic Context:** Full executive-grade comparative study contrasting the public marketing and baseline capabilities of `digiicampus.com` against the proactive intelligence moat built into Digii 2.0.
@@ -270,7 +270,7 @@ A core responsibility of an APM is defending algorithmic weights against managem
 ### 5.22 Module 22: Enterprise Operations & Student Management Workbench
 - **Operational Execution Engine:** Direct production workbench where administrators and faculty perform daily tasks that immediately mutate underlying data and feed predictive models:
   1. *Student Roster & Bulk Ingest:* Drag-and-drop CSV parser with real-time schema validation, sample template download, 1-click 5-student demo batch, and direct modal enrollment into `student_master`.
-  2. *Faculty Attendance Register (AMS):* Live daily marking grid for course sections (CS-301, CS-304, EC-204) with Present/Absent/Late toggles; locks session attendance and dynamically triggers Red-Zone dropout alerts when cumulative attendance drops below 75% (UGC Section 12).
+  2. *Faculty Attendance Register (AMS):* Live daily marking grid for course sections (CS-301, CS-304, EC-204) with Present/Absent/Late toggles; locks session attendance and dynamically triggers Red-Zone dropout alerts when cumulative attendance drops below 75% threshold.
   3. *Cashier & Fee Settlement Desk (dues_v2):* Real-time payment processor with fee breakdown, UPI/NetBanking reference generation, immediate No-Dues clearance unlock, and downloadable official receipt (`REC-2026-XXXX.txt`).
   4. *Hostel Warden Out-Pass & Kitchen Sync:* Warden approval terminal generating signed QR gate passes in `gate_pass_log` and dynamically decrementing tomorrow's mess preparation batch in the PRGE Kitchen Engine.
   5. *Campus Help Centre (CHC) Active Dispatch:* Service ticket creation and status lifecycle progression (`Submitted` -> `In Progress` -> `Resolved` -> `Closed`) across `chc_request` and `chc_work_centre`.
