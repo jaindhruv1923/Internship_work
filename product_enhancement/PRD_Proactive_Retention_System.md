@@ -3,7 +3,7 @@
 
 **Document Version:** 1.0.0  
 **Author:** Dhruv Jain (Product & Data Architecture Intern)  
-**Target Stakeholders:** Mr. Suraj Bhatt (Manager — Engineering & BI), Saksham Gupta (Principal Engineer), Gurdeep Singh, Piyush Anand  
+**Target Stakeholders:** Mr. Suraj Bhatt Sir (Engineering & BI Manager), Gurdeep Singh, Piyush Anand  
 **Target Platform:** Digii Campus (CollPoll) Enterprise ERP & BI Analytics Suite  
 **Status:** Prototype & Engineering Pitch Complete  
 

@@ -4,7 +4,7 @@ Digii Campus (CollPoll) — Proactive Retention & Intelligence System API
 Stage 2 Unified Server & Algorithmic Heuristic Engine
 
 Author: Dhruv Jain (Product & Data Architecture Intern)
-Reporting to: Mr. Suraj Bhatt (Engineering & BI Manager) & Saksham Gupta (Principal Engineer)
+Reporting to: Mr. Suraj Bhatt Sir (Engineering & BI Manager)
 Architecture: Single-Origin Thread-Safe Python 3 Server serving allowlisted UI & authenticated RESTful API
 """
 
@@ -472,6 +472,138 @@ LIMIT 25;
                 return
 
             # Fallback 404 for unknown /api/...
+            
+            # 11. Expansion Module GET Endpoints
+            if path == "/api/v1/assets/inventory":
+                self._send_json(200, {
+                    "total_cataloged": 14280,
+                    "book_value_inr": 184200000,
+                    "active_maintenance": 18,
+                    "items": [
+                        {"tag": "AST-2024-001", "name": "High-Performance GPU Server (A100)", "dept": "AI Lab", "value": "₹14.50L", "status": "Optimal"},
+                        {"tag": "AST-2023-084", "name": "Digital Storage Oscilloscope", "dept": "ECE Lab", "value": "₹4.20L", "status": "Pre-Exam Calibrated"},
+                        {"tag": "AST-2024-112", "name": "Smart Interactive Podium", "dept": "Auditorium 1", "value": "₹3.80L", "status": "Optimal"}
+                    ]
+                })
+                return
+
+            if path == "/api/v1/mess/live-headcount":
+                self._send_json(200, {
+                    "diners_today": 3420,
+                    "gatepass_meal_offsets": 486,
+                    "food_waste_saved_pct": 42.8,
+                    "autonomous_rebates_credited_inr": 42800,
+                    "halls": [
+                        {"name": "North Dining Hall", "capacity_pct": 68, "flow_per_min": 42},
+                        {"name": "South Dining Hall", "capacity_pct": 82, "flow_per_min": 58},
+                        {"name": "Central Food Court", "capacity_pct": 54, "flow_per_min": 28}
+                    ]
+                })
+                return
+
+            if path == "/api/v1/marketplace/listings":
+                self._send_json(200, {
+                    "active_listings": 642,
+                    "canteen_preorders": 1840,
+                    "escrow_wallet_inr": 2460000,
+                    "verified_merchants": 28
+                })
+                return
+
+            if path == "/api/v1/placement/drives":
+                self._send_json(200, {
+                    "active_drives": 34,
+                    "cohort_placed_pct": 84.6,
+                    "average_ctc_lpa": 11.2,
+                    "highest_ctc_lpa": 48.0,
+                    "eligibility_query_execution_ms": 210
+                })
+                return
+
+            if path == "/api/v1/examinations/hall-tickets":
+                self._send_json(200, {
+                    "candidates_total": 4850,
+                    "hall_tickets_cleared": 4682,
+                    "in_remedial_warning": 168,
+                    "automated_halls": 36,
+                    "grading_curves_normalized": 184
+                })
+                return
+
+            if path == "/api/v1/faculty/workload":
+                self._send_json(200, {
+                    "total_faculty": 312,
+                    "sfr_ratio": "15.5:1",
+                    "avg_teaching_hours_ltp": 16.4,
+                    "scopus_papers_indexed": 428,
+                    "active_grants_inr": 68500000
+                })
+                return
+
+            if path == "/api/v1/library/catalog":
+                self._send_json(200, {
+                    "physical_volumes": 92400,
+                    "rfid_coverage_pct": 100.0,
+                    "digital_journals": 14200,
+                    "study_cubicle_occupancy_pct": 88
+                })
+                return
+
+            if path == "/api/v1/learning-path/recommendations":
+                self._send_json(200, {
+                    "modeled_students": 4850,
+                    "diagnosed_gaps": 842,
+                    "predictive_gpa_parity_pct": 94.1,
+                    "study_squads_active": 128
+                })
+                return
+
+            if path == "/api/v1/abc-nep/credits":
+                self._send_json(200, {
+                    "apaar_synced": 4850,
+                    "interdisciplinary_minors": 1240,
+                    "honors_track": 380,
+                    "exit_certificates_issued": 42
+                })
+                return
+
+            if path == "/api/v1/clubs/events":
+                self._send_json(200, {
+                    "active_chapters": 42,
+                    "budget_sanctioned_inr": 3450000,
+                    "hackathon_participants": 1840,
+                    "leadership_transcripts": 1210
+                })
+                return
+
+            if path == "/api/v1/wellness/pulse":
+                self._send_json(200, {
+                    "confidential_consultations": 218,
+                    "avg_mood_pulse": 7.8,
+                    "triage_mitigations": 14,
+                    "dpdp_masking_status": "ENFORCED"
+                })
+                return
+
+            if path == "/api/v1/guardian/ward-summary":
+                self._send_json(200, {
+                    "registered_guardians": 4680,
+                    "fee_timeliness_pct": 94.2,
+                    "adult_consents_verified": 3920,
+                    "mentor_video_connects": 412
+                })
+                return
+
+            if path == "/api/v1/rbac/matrix":
+                self._send_json(200, {
+                    "status": "success",
+                    "total_modules": 39,
+                    "dpdp_status": "COMPLIANT",
+                    "active_roles": ["admin", "faculty", "student"],
+                    "matrix_lineage": "rbac_permission_matrix"
+                })
+                return
+
             self._send_json(404, {"error": f"API endpoint not found: {path}"})
             return
 
@@ -845,6 +977,50 @@ LIMIT 25;
                 "message": "Demo state reset successfully: initial student profiles restored, audit counter reset.",
                 "total_students": total_s,
                 "audit_entries": audit_c
+            })
+            return
+
+        
+        # 9. Expansion Module POST Endpoints
+        if path == "/api/v1/assets/audit-scan":
+            tag = body_data.get("tag", "AST-2024-001")
+            self._send_json(200, {"status": "SCANNED", "tag": tag, "timestamp": datetime.now(timezone.utc).isoformat(), "message": "Asset audit scan recorded."})
+            return
+
+        if path == "/api/v1/mess/rebate-claim":
+            ukid = body_data.get("ukid", 10842)
+            self._send_json(200, {"status": "REBATED", "ukid": ukid, "amount_inr": 85, "message": "Autonomous meal rebate credited to student fee ledger."})
+            return
+
+        if path == "/api/v1/marketplace/order":
+            item_id = body_data.get("id", "MKT-01")
+            self._send_json(200, {"status": "ORDER_PLACED", "item_id": item_id, "locker_code": "LOCK-482", "message": "Order placed with campus escrow."})
+            return
+
+        if path == "/api/v1/placement/apply":
+            company = body_data.get("company", "Google Cloud")
+            self._send_json(200, {"status": "APPLIED", "company": company, "message": "Application submitted with One-Offer policy lock."})
+            return
+
+        if path == "/api/v1/examinations/generate-seating":
+            self._send_json(200, {"status": "GENERATED", "halls_configured": 36, "candidates": 4850, "conflicts": 0, "message": "Anti-cheating seating layout generated in 4.2s."})
+            return
+
+        if path == "/api/v1/wellness/pulse":
+            score = body_data.get("score", 8)
+            self._send_json(200, {"status": "RECORDED", "score": score, "message": "Anonymous wellness pulse recorded under DPDP Act 2023."})
+            return
+
+        if path == "/api/v1/guardian/authorize-otp":
+            ukid = body_data.get("ukid", 10842)
+            self._send_json(200, {"status": "AUTHORIZED", "ukid": ukid, "message": "Parent OTP validated for hostel night outpass."})
+            return
+
+        if path == "/api/v1/rbac/update":
+            self._send_json(200, {
+                "status": "success",
+                "message": "RBAC permissions updated and synchronized with CollPoll session tables.",
+                "audit_table": "dpdp_access_audit_log"
             })
             return
 

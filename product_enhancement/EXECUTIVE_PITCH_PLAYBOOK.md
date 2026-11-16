@@ -3,7 +3,7 @@
 **Author:** Dhruv Jain  
 **Current Role:** Data & Product Intern  
 **Target Role:** Product Intern (Enterprise Intelligence & Core ERP)  
-**Audience:** Mr. Suraj Bhatt (Engineering & BI Manager), Saksham Gupta (Principal Engineer)  
+**Audience:** Mr. Suraj Bhatt Sir (Engineering & BI Manager)  
 **Demo Duration:** 15 Minutes  
 **Live Prototype URL:** `http://localhost:3000/index.html` (or `product_enhancement/index.html`)  
 **Repository:** [github.com/jaindhruv1923/Internship_work](https://github.com/jaindhruv1923/Internship_work)  
@@ -41,7 +41,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 ### Segment 1: The Hook (00:00 – 02:00)
 * **What to Show:** Start on the landing page or your GitHub repo overview.
 * **What to Say:**
-  > *"Hi Suraj, Hi Saksham. Thanks for making time. Over the last four weeks, I've had the privilege of working deeply with our 10GB database replica, reverse-engineering 1,647 tables across AMS, fees, turnstiles, and housing.*
+  > *"Hi Suraj sir. Thanks for making time. Over the last four weeks, I've had the privilege of working deeply with our 10GB database replica, reverse-engineering 1,647 tables across AMS, fees, turnstiles, and housing.*
   > 
   > *While optimizing our queries and auditing foreign keys, I realized something critical: our clients—university Deans, Registrars, and Finance heads—are struggling with massive operational friction that our raw data already solves. But because the current ERP treats each module as an isolated silo, admins have to manually connect the dots.*
   > 
@@ -107,7 +107,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 ### Segment 7: The B2B2C Student Experience Hub — 10 Win-Win Innovations (12:30 – 14:00)
 * **What to Show:** Click on **Student Hub** in the left sidebar or the "View 10 Innovations" button on the top banner.
 * **What to Say:**
-  > *"Suraj, Saksham: While building the administrative workflows, I realized an essential SaaS truth: **Digii Campus is fundamentally a B2B2C company**. The university purchases the contract, but the students and faculty live inside the software every day. If students hate the app, adoption plummets; if students love the app, universities will never churn.*
+  > *"Suraj sir: While building the administrative workflows, I realized an essential SaaS truth: **Digii Campus is fundamentally a B2B2C company**. The university purchases the contract, but the students and faculty live inside the software every day. If students hate the app, adoption plummets; if students love the app, universities will never churn.*
   > 
   > *I designed and built the **Student Experience Hub: 10 Win-Win Innovations**, proving that we can bridge the gap between administrative compliance and end-user joy:*
   > 
@@ -140,7 +140,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 
 ### Segment 9: The Formal Ask (14:30 – 15:00)
 * **What to Say:**
-  > *"Suraj, Saksham: I love the deep data work I've done here. But as this prototype demonstrates, my greatest passion and impact lie at the intersection of **technical database depth, product architecture, and enterprise customer value**.*
+  > *"Suraj sir: I love the deep data work I've done here. But as this prototype demonstrates, my greatest passion and impact lie at the intersection of **technical database depth, product architecture, and enterprise customer value**.*
   > 
   > *I've written the complete Product Requirements Document (PRD), designed the JSON schemas, built a working zero-dependency Python REST microservice, and delivered this fully navigable prototype.*
   > 

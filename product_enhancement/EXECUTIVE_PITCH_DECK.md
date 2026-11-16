@@ -3,7 +3,7 @@
 
 **Presenter:** Dhruv Jain (Data & Product Intern)  
 **Proposed Title:** Product Intern / APM (Enterprise Intelligence & Core ERP)  
-**Audience:** Mr. Suraj Bhatt (Engineering & BI Manager), Saksham Gupta (Principal Engineer)  
+**Audience:** Mr. Suraj Bhatt Sir (Engineering & BI Manager)  
 **Demo Prototype URL:** `http://localhost:8000/index.html`  
 **Repository:** [github.com/jaindhruv1923/Internship_work](https://github.com/jaindhruv1923/Internship_work)  
 
@@ -14,7 +14,7 @@
 * **Sub-headline:** Building Predictive Intelligence atop CollPoll's 270-Table Production Architecture
 * **Presenter:** Dhruv Jain — Role Transition Pitch: Data & Product Intern -> **Product Intern / APM**
 * **The 3-Minute Executive Summary:**
-  > *"Suraj sir and Saksham sir’s engineering team built a rock-solid transactional foundation across 270 tables that handles thousands of daily gate passes, hostel allotments, and fee payments. Over the past 5 weeks, I audited our 10.08 GB MySQL replica and mapped these exact workflows (`chc_middleware`, `gate_pass_log`, `hostel_allotment`, `dues_v2`, `infra_booking`). My APM proposal does NOT rebuild commodity ERP features; it builds a predictive intelligence layer on top of those exact tables to protect **₹1.95 Cr in tuition**, eliminate **630 wasted meals/day in kitchen food waste**, and automate **NAAC 5.3 co-curricular accreditation**."*
+  > *"Suraj sir’s engineering team built a rock-solid transactional foundation across 270 tables that handles thousands of daily gate passes, hostel allotments, and fee payments. Over the past 5 weeks, I audited our 10.08 GB MySQL replica and mapped these exact workflows (`chc_middleware`, `gate_pass_log`, `hostel_allotment`, `dues_v2`, `infra_booking`). My APM proposal does NOT rebuild commodity ERP features; it builds a predictive intelligence layer on top of those exact tables to protect **₹1.95 Cr in tuition**, eliminate **630 wasted meals/day in kitchen food waste**, and automate **NAAC 5.3 co-curricular accreditation**."*
 
 ---
 
@@ -85,7 +85,7 @@
 ---
 
 ### Slide 8: Disruptive Intelligence Modules Grounded in CollPoll 270-Table Schema
-* **The Strategic APM Pitch to Mr. Suraj Bhatt & Saksham Gupta:**
+* **The Strategic APM Pitch to Mr. Suraj Bhatt Sir:**
   - *The Commodity Pitfall:* Current Digii Campus already sells Admissions, LMS, Fees, Placements, and Hostels. We are NOT rebuilding commodity ERP features!
   - *The Product Moat:* We built predictive intelligence modules that connect our 1,647 siloed MySQL tables (and CollPoll's 270-table core workflow schema) to solve multi-crore pain points no competitor touches:
   1. **Predictive Food Waste & Meal Prep (PRGE):** Dynamically links approved hostel night leaves (`hostel_allotment`) to morning mess cooking (`mess_meal`), cutting 630 wasted meals/day and saving ₹4.2L/month (from Week 3 Proposal).
@@ -116,7 +116,7 @@
 ---
 
 ### Slide 10: Feature Flags & Engineering Safety (LaunchDarkly Model)
-* **Engineered for Saksham Gupta (Principal Engineer):**
+* **Enterprise Reliability:**
 * **Canary Deployments:**
   - Progressive rollout sliders (e.g., 25% Canary to CSE Batch -> 100% General Availability).
   - Blast-radius isolation by hostel block, graduation year, or department.
