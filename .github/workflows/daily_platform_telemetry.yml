@@ -1,0 +1,45 @@
+name: Daily Platform Telemetry & Compliance Audit
+
+on:
+  schedule:
+    # Runs everyday at 04:15 UTC (09:45 AM IST)
+    - cron: '15 4 * * *'
+  workflow_dispatch: # Allows manual trigger anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  telemetry-audit:
+    name: Execute Daily Platform Health & Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Automated Telemetry Audit
+        id: run_audit
+        run: |
+          COMMIT_MSG=$(python scripts/daily_platform_audit.py)
+          echo "commit_msg=${COMMIT_MSG}" >> $GITHUB_OUTPUT
+
+      - name: Commit and Push Daily Telemetry Ledger
+        run: |
+          git config user.name "Dhruv Jain"
+          git config user.email "jaindhruv1923@gmail.com"
+          git add docs/DAILY_PLATFORM_AUDIT.md docs/telemetry_ledger.json
+          if git diff --staged --quiet; then
+            echo "No telemetry changes to commit"
+          else
+            git commit -m "${{ steps.run_audit.outputs.commit_msg }}"
+            git push origin main
+          fi
