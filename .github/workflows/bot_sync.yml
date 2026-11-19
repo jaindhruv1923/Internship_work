@@ -57,8 +57,6 @@ jobs:
             "campus_event_scheduler"
           )
           
-          mkdir -p docs/specifications/modules
-          
           for i in $(seq 1 $COUNT); do
             IDX=$(( (i - 1) % 15 ))
             MOD_ID="${MODULE_NAMES[$IDX]}"
@@ -66,6 +64,7 @@ jobs:
             
             git checkout main
             git checkout -b "$BRANCH"
+            mkdir -p docs/specifications/modules
             
             DOC_FILE="docs/specifications/modules/${MOD_ID}.md"
             cat << EOF > "$DOC_FILE"
