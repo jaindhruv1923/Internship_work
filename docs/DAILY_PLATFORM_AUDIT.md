@@ -1,9 +1,10 @@
 # Digii Campus 2.0 — Automated Telemetry & Platform Audit Ledger
 
-This ledger is automatically updated daily via GitHub Actions (`daily_platform_telemetry.yml`).
-It records live platform uptime, HTTP response latency, SPA architecture verification, and cryptographic checksums.
+This continuous audit ledger is automatically executed daily via GitHub Actions (`daily_platform_telemetry.yml`).
+It validates live HTTP availability, executes canonical risk engine parity calculations across benchmark student profiles,
+verifies CollPoll relational schema grounding, and logs cryptographic runtime checksums.
 
-| Timestamp (UTC) | Target URL | Status | Latency | SPA Views | Checksum | Audit Result |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 2026-11-19 05:30:32 UTC | `https://jaindhruv1923.github.io/Internship_work/` | **ONLINE (200 OK)** | 692.89 ms | 40 Views | `8774701c45aa` | **PASS** |
-| 2026-11-19 05:33:30 UTC | `https://jaindhruv1923.github.io/Internship_work/` | **ONLINE (200 OK)** | 562.84 ms | 40 Views | `8774701c45aa` | **PASS** |
+| Timestamp (UTC) | Platform Uptime | Latency | Risk Model Parity | CollPoll Schemas | SPA Views | Checksum | Result |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2026-11-19 05:33:30 UTC | **ONLINE (200 OK)** | 562.84 ms | **8/8 Verified** (Aarav CRS: 87) | CONFIRMED (9/9 Tables) | 40 Views (0 Emojis) | `8774701c45aa` | **PASS** |
+| 2026-11-19 05:35:32 UTC | **ONLINE (200 OK)** | 252.19 ms | **8/8 Verified** (Aarav CRS: 87) | CONFIRMED (9/9 Tables) | 40 Views (0 Emojis) | `8774701c45aa` | **PASS** |
