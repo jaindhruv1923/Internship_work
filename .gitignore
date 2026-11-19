@@ -13,10 +13,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Large Archives & Editor Configurations
+*.zip
+.vscode/
+
 # OS & Environment Artifacts
 Thumbs.db
 .DS_Store
 *.tmp
-*.zip
-.vscode/
-

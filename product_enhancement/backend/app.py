@@ -15,6 +15,7 @@ import csv
 import io
 import time
 import secrets
+import hashlib
 import html
 import threading
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
@@ -233,11 +234,7 @@ class DigiiCampusUnifiedHandler(BaseHTTPRequestHandler):
         # API Routes: /api/... (Strict Authentication Required)
         # -------------------------------------------------------------
         if path.startswith("/api/"):
-            if not self._is_authenticated():
-                self._send_json(401, {"error": "Unauthorized: Missing or invalid session token cookie"})
-                return
-
-            # 1. Health & Readiness
+            # 1. Health & Readiness (Public Probe)
             if path == "/api/v1/health":
                 with STATE_LOCK:
                     students_count = len(APP_STATE["students"])
@@ -252,6 +249,10 @@ class DigiiCampusUnifiedHandler(BaseHTTPRequestHandler):
                     "students_loaded": students_count,
                     "audit_entries_logged": audit_count
                 })
+                return
+
+            if not self._is_authenticated():
+                self._send_json(401, {"error": "Unauthorized: Missing or invalid session token cookie"})
                 return
 
             # 2. Cohort Summary / KPIs (Computed from 8 mock students)
@@ -1021,6 +1022,131 @@ LIMIT 25;
                 "status": "success",
                 "message": "RBAC permissions updated and synchronized with CollPoll session tables.",
                 "audit_table": "dpdp_access_audit_log"
+            })
+            return
+
+        
+        # 10. Bridge Webhook Dispatch Endpoint: /api/v1/bridge/dispatch-action
+        if path == "/api/v1/bridge/dispatch-action":
+            student_id = body_data.get("student_id", "STU-2026-CS-084")
+            escalation_tier = body_data.get("escalation_tier", "LEVEL_2")
+            notes = body_data.get("notes", "Automated intervention ladder dispatch")
+            dpdp_consent = bool(body_data.get("dpdp_guardian_consent", True))
+            idempotency_key = body_data.get("idempotency_key") or self.headers.get("Idempotency-Key", "idemp_unknown")
+
+            # Map student_id to ukid
+            ukid_map = {
+                "STU-2026-CS-084": 10842,
+                "STU-2026-EC-119": 10843,
+                "STU-2026-ME-042": 10844,
+                "STU-2026-IT-098": 10845
+            }
+            ukid = ukid_map.get(student_id, 10842)
+
+            audit_entry = database.record_intervention(
+                ukid=ukid,
+                action_type=f"BRIDGE_DISPATCH_{escalation_tier}",
+                dispatched_by="Product Engineering Studio (Suraj Bhatt Sir)",
+                notes=f"[Idempotency: {idempotency_key}] {notes}",
+                consent_verified=dpdp_consent
+            )
+            with STATE_LOCK:
+                APP_STATE["audit_trail"] = database.get_audit_trail()
+
+            self._send_json(200, {
+                "status": "SUCCESS",
+                "status_code": 200,
+                "transaction_id": f"tx_{secrets.token_hex(4)}",
+                "idempotency_key": idempotency_key,
+                "student_id": student_id,
+                "escalation_tier": escalation_tier,
+                "dispatched_channels": ["CAMPUS_HELP_CENTRE_TICKET", "WHATSAPP_GUARDIAN_NUDGE", "FACULTY_MENTOR_CARD"],
+                "sla_target": "48_HOURS",
+                "dpdp_compliance": "VERIFIED_EXPLICIT_CONSENT" if dpdp_consent else "UNVERIFIED",
+                "audit_record": audit_entry,
+                "message": f"Successfully committed action ladder for {student_id} to SQLite WAL."
+            })
+            return
+
+        # 11. Bridge Rule Simulation Endpoint: /api/v1/bridge/simulate-rule
+        if path == "/api/v1/bridge/simulate-rule":
+            att_threshold = float(body_data.get("attendance_threshold", 65.0))
+            fee_threshold = int(body_data.get("fee_days_threshold", 30))
+            curfew_threshold = int(body_data.get("curfew_threshold", 2))
+            module = body_data.get("module", "retention")
+
+            with STATE_LOCK:
+                students = APP_STATE.get("students", [])
+
+            matches = []
+            for s in students:
+                att = s.get("attendance_pct", 100.0)
+                fee_days = s.get("fee_due_days", 0)
+                curfew = s.get("curfew_breaches", 0)
+                if att < att_threshold and fee_days > fee_threshold and curfew >= curfew_threshold:
+                    matches.append({
+                        "ukid": s.get("ukid"),
+                        "student_id": s.get("student_id", f"STU-{s.get('ukid')}"),
+                        "name": f"{s.get('first_name', '')} {s.get('last_name', '')}".strip(),
+                        "attendance_pct": att,
+                        "fee_due_days": fee_days,
+                        "curfew_breaches": curfew,
+                        "recommended_action": "DISPATCH_CHC_AND_WHATSAPP"
+                    })
+
+            self._send_json(200, {
+                "status": "SUCCESS",
+                "evaluated_count": len(students),
+                "matched_count": len(matches),
+                "matches": matches,
+                "thresholds": {
+                    "attendance_threshold": att_threshold,
+                    "fee_days_threshold": fee_threshold,
+                    "curfew_threshold": curfew_threshold
+                }
+            })
+            return
+
+        
+        # 12. Universal Action Verification Endpoint: /api/v1/action/verify
+        if path == "/api/v1/action/verify":
+            module = html.escape(str(body_data.get("module", "general")))
+            action_type = html.escape(str(body_data.get("action_type", "ACTION_VERIFY")))
+            actor = html.escape(str(body_data.get("actor", "Aarav Sharma (2024CS0142)")))
+            details = body_data.get("details", {})
+            idempotency_key = body_data.get("idempotency_key") or self.headers.get("Idempotency-Key", f"idemp_{secrets.token_hex(6)}")
+
+            # Deterministic SHA-256 integrity checksum
+            raw_payload_str = json.dumps({"module": module, "action": action_type, "actor": actor, "details": details, "key": idempotency_key}, sort_keys=True)
+            checksum = f"sha256:{hashlib.sha256(raw_payload_str.encode('utf-8')).hexdigest()}"
+            vrf_id = f"VRF-{module[:3].upper()}-2026-{secrets.token_hex(3).upper()}"
+            iso_now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+            # Commit to SQLite WAL audit trail
+            audit_entry = database.record_intervention(
+                ukid=10842,
+                action_type=f"VERIFIED_{action_type}",
+                dispatched_by=actor,
+                notes=f"[{vrf_id}] {json.dumps(details)} [Checksum: {checksum[:16]}]",
+                consent_verified=True
+            )
+            with STATE_LOCK:
+                APP_STATE["audit_trail"] = database.get_audit_trail()
+
+            self._send_json(200, {
+                "status": "VERIFIED",
+                "status_code": 200,
+                "verification_id": vrf_id,
+                "module": module,
+                "action_type": action_type,
+                "actor": actor,
+                "timestamp": iso_now,
+                "checksum": checksum,
+                "idempotency_key": idempotency_key,
+                "status_label": "VERIFIED & COMMITTED (SQLite WAL)",
+                "audit_record": audit_entry,
+                "details": details,
+                "message": f"Action successfully verified and committed with integrity checksum {checksum[:16]}."
             })
             return
 

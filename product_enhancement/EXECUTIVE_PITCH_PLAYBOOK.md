@@ -170,6 +170,7 @@ This playbook provides a word-for-word, screen-by-screen script to demonstrate *
 - [ ] Browser open at `http://127.0.0.1:8000/` with zoom set to 90% or 100%.
 - [ ] Turn on `PM ROI Mode` to ensure glowing badges are visible.
 - [ ] Verify Aarav Sharma's Student 360 profile loads smoothly.
+- [ ] Open **Data-to-Product Studio** (`#view-data-bridge`) to showcase live schema simulation, RICE calculator, dry-run rule terminal, and one-click Engineering RFC compilation.
 - [ ] Practice the drag-and-drop or 1-click clash auto-resolve sequence in Academics.
 - [ ] Have [`PRD_Proactive_Retention_System.md`](PRD_Proactive_Retention_System.md) open in another tab for deep technical credibility.
 

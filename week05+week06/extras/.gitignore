@@ -1,0 +1,22 @@
+# Database Production Replica Dumps (10GB+ exceeds GitHub 100MB limit)
+bi_dump_*.sql
+*.dump
+*.sql.gz
+*.sql.tar.gz
+
+# SQLite Ephemeral & Journal Files
+*.db-shm
+*.db-wal
+
+# Python Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS & Environment Artifacts
+Thumbs.db
+.DS_Store
+*.tmp
+*.zip
+.vscode/
+

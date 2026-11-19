@@ -271,5 +271,57 @@ class TestDigiiCampusAPIRealHTTP(unittest.TestCase):
         self.assertEqual(resp.get("total_students"), 8)
         self.assertEqual(resp.get("audit_entries"), 0)
 
+
+    def test_14_bridge_dispatch_action(self):
+        payload = {
+            "student_id": "STU-2026-CS-084",
+            "escalation_tier": "LEVEL_2",
+            "notes": "Dean authorized counseling intervention",
+            "dpdp_guardian_consent": True,
+            "idempotency_key": "idemp_test_998822"
+        }
+        status, headers, body = self._http_request("POST", "/api/v1/bridge/dispatch-action", data=payload)
+        self.assertEqual(status, 200)
+        resp = json.loads(body.decode("utf-8"))
+        self.assertEqual(resp.get("status"), "SUCCESS")
+        self.assertEqual(resp.get("student_id"), "STU-2026-CS-084")
+        self.assertEqual(resp.get("idempotency_key"), "idemp_test_998822")
+        self.assertIn("audit_record", resp)
+
+    def test_15_bridge_simulate_rule(self):
+        payload = {
+            "attendance_threshold": 70.0,
+            "fee_days_threshold": 10,
+            "curfew_threshold": 1,
+            "module": "retention"
+        }
+        status, headers, body = self._http_request("POST", "/api/v1/bridge/simulate-rule", data=payload)
+        self.assertEqual(status, 200)
+        resp = json.loads(body.decode("utf-8"))
+        self.assertEqual(resp.get("status"), "SUCCESS")
+        self.assertIn("matched_count", resp)
+        self.assertIn("matches", resp)
+
+    def test_16_action_verify(self):
+        payload = {
+            "module": "placement",
+            "action_type": "SUBMIT_JOB_APPLICATION",
+            "actor": "Aarav Sharma (2024CS0142)",
+            "details": {
+                "company": "Google Cloud",
+                "role": "Software Engineering Intern",
+                "ctc": "32.0 LPA",
+                "one_offer_locked": True
+            }
+        }
+        status, headers, body = self._http_request("POST", "/api/v1/action/verify", data=payload)
+        self.assertEqual(status, 200)
+        resp = json.loads(body.decode("utf-8"))
+        self.assertEqual(resp.get("status"), "VERIFIED")
+        self.assertTrue(resp.get("verification_id").startswith("VRF-PLA-2026-"))
+        self.assertTrue(resp.get("checksum").startswith("sha256:"))
+        self.assertEqual(resp.get("module"), "placement")
+        self.assertEqual(resp.get("actor"), "Aarav Sharma (2024CS0142)")
+
 if __name__ == "__main__":
     unittest.main()
